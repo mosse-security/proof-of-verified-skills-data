@@ -24,9 +24,10 @@ cyber domains are introduced.
    pages, save successful responses, and support pagination, multiple years,
    retries, timeouts, and bounded concurrency.
 5. Emit one endorsement per person when one source item names multiple people.
-   Emit a `PersonProfile` alongside it when biography or contact information is
-   present. Store profile fragments under `data/profiles`; do not add profile
-   fields to the endorsement contract.
+   Emit a `PersonProfile` alongside it when contact information is present.
+   Keep the required biography field empty; biographies are generated later
+   from the complete endorsement set. Store profile fragments under
+   `data/profiles`; do not add profile fields to the endorsement contract.
 6. Run the merger after scraping. It reads all endorsement arrays and profile
    fragments, groups names case-insensitively, removes duplicate endorsements,
    combines biography/contact data, and writes one `individual.tpl` record per
@@ -78,7 +79,7 @@ extension examples, read [references/architecture.md](references/architecture.md
   does not store the evidence text.
 - When a source has several page layouts, add a focused parser function and a
   fixture test instead of weakening an existing layout parser.
-- Treat biographies and contacts as potentially incomplete: merge the richest
-  biography and the union of unique contacts without inventing data.
+- Keep biographies empty until the later AI summarization step; merge the
+  union of unique contacts without inventing data.
 
 

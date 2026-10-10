@@ -169,7 +169,8 @@ class PersonProfile:
     def to_record(self) -> JsonObject:
         record = {
             "name": self.name,
-            "biography": self.biography,
+            # Biography generation is deferred until the AI summarization step.
+            "biography": "",
             "contact": [dict(item) for item in self.contact],
         }
         validate_profile_record(record)

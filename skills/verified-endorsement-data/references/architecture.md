@@ -58,14 +58,14 @@ recipient. A four-digit year is required for standard records.
 
 When a page lists multiple speakers, create one endorsement for each speaker
 and map each speaker's profile fragment separately. Do not copy one speaker's
-bio or contacts to every co-speaker. Normalize contact labels such as
+contacts to every co-speaker. Biography fields remain empty until a later AI
+summarization step. Normalize contact labels such as
 `linkedin`, `website`, `twitter`, and `email`, preserve absolute URLs, and
 avoid scraping navigation links such as “Return to Top”.
 
 The merger matches names case-insensitively and tolerates whitespace changes.
-It removes exact duplicate endorsement objects, chooses the richest available
-biography, and unions contacts. It does not infer aliases beyond parser-side
-matching or invent missing profile data.
+It removes exact duplicate endorsement objects and unions contacts. It does
+not infer aliases beyond parser-side matching or invent missing profile data.
 
 ## DEF CON lessons
 

@@ -87,7 +87,7 @@ def merge_endorsements(
         path = output_directory / filename
         payload = {
             "name": person["name"],
-            "biography": _merged_biography(person.get("profiles", [])),
+            "biography": "",
             "contact": _merged_contacts(person.get("profiles", [])),
             "endorsements": records,
         }
@@ -146,14 +146,6 @@ def _validate_profile(profile: Any, *, source: str) -> None:
             raise IndividualMergeError(f"{source}.contact[{index}] is invalid")
         if set(contact) - {"label", "url", "email"}:
             raise IndividualMergeError(f"{source}.contact[{index}] has unsupported fields")
-
-
-def _merged_biography(profiles: list[dict[str, Any]]) -> str:
-    biographies = sorted(
-        {profile["biography"].strip() for profile in profiles if profile["biography"].strip()},
-        key=lambda value: (-len(value), value.casefold()),
-    )
-    return biographies[0] if biographies else ""
 
 
 def _merged_contacts(profiles: list[dict[str, Any]]) -> list[dict[str, str]]:

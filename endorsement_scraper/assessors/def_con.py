@@ -263,8 +263,7 @@ def parse_def_con_page(
                 link,
                 calendar_year,
                 detect_domains(name, talk, evidence, conference),
-                profiles.get(_person_key(name), {}).get("biography", ""),
-                tuple(profiles.get(_person_key(name), {}).get("contact", ())),
+                contact=tuple(profiles.get(_person_key(name), {}).get("contact", ())),
             )
             unique.setdefault((name.casefold(), talk.casefold(), link), item)
     return list(unique.values())
@@ -633,7 +632,7 @@ def _modern_abstract_text(block: Tag) -> str:
 
 
 def _modern_profiles(block: Tag) -> dict[str, dict[str, object]]:
-    """Extract biographies and links from the speaker-bio blocks in a talk."""
+    """Extract contact links from speaker blocks; biographies are deferred."""
 
     profiles: dict[str, dict[str, object]] = {}
     current: dict[str, object] | None = None
@@ -648,18 +647,6 @@ def _modern_profiles(block: Tag) -> dict[str, dict[str, object]]:
                 current = profiles.setdefault(
                     _person_key(name), {"biography": "", "contact": []}
                 )
-            # A biography may contain inline links; collect those as contacts
-            # while retaining only prose in the biography field.
-            if current is not None:
-                remainder = BeautifulSoup(str(node), "html.parser").find(node.name)
-                if remainder is None:
-                    continue
-                strong_copy = remainder.find("strong")
-                if strong_copy is not None:
-                    strong_copy.decompose()
-                for anchor in remainder.find_all("a"):
-                    anchor.decompose()
-                _append_biography(current, remainder.get_text(" ", strip=True))
         if current is None:
             continue
         links = node.find_all("a", href=True) if is_bio_marker else []
@@ -676,8 +663,6 @@ def _modern_profiles(block: Tag) -> dict[str, dict[str, object]]:
                     contact = {"label": label, "url": href}
                 if contact not in contacts:
                     contacts.append(contact)
-        elif node.name in {"p", "span"} and strong is None:
-            _append_biography(current, node.get_text(" ", strip=True))
     return profiles
 
 
@@ -697,7 +682,7 @@ def _profiles_after_heading(title_node: Tag) -> dict[str, dict[str, object]]:
 def _align_profiles(
     speakers: list[str], profiles: dict[str, dict[str, object]]
 ) -> dict[str, dict[str, object]]:
-    """Match abbreviated biography names (for example ``David``) to speakers."""
+    """Match abbreviated profile names (for example ``David``) to speakers."""
 
     aligned: dict[str, dict[str, object]] = {}
     for speaker in speakers:
@@ -713,14 +698,6 @@ def _align_profiles(
         if len(candidates) == 1:
             aligned[key] = candidates[0]
     return aligned
-
-
-def _append_biography(profile: dict[str, object], text: str) -> None:
-    text = _clean(text)
-    if not text or text.casefold() in {"back to top", "return to top"}:
-        return
-    existing = str(profile["biography"])
-    profile["biography"] = _clean(" ".join(filter(None, (existing, text))))
 
 
 def _contact_label(text: str, href: str) -> str:

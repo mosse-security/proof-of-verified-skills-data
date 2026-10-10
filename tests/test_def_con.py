@@ -83,7 +83,7 @@ class DefConTests(unittest.TestCase):
         )
 
         self.assertEqual(records[0].domains, ("vulnerability research",))
-        self.assertEqual(records[0].biography, "Gavin previously worked on AWS cloud security.")
+        self.assertEqual(records[0].biography, "")
         self.assertEqual(
             records[0].contact,
             (

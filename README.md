@@ -182,7 +182,7 @@ later:
 return PageResult.build(
     endorsements,
     follow,
-    profiles=[PersonProfile("Alice Example", biography, contacts)],
+    profiles=[PersonProfile("Alice Example", "", contacts)],
 )
 ```
 
@@ -257,9 +257,10 @@ to `data/individuals`, for example `data/individuals/alice-example.json`:
 ```
 
 It also reads profile fragments from `data/profiles` (or `--profiles-dir`),
-combining the richest available biography and the union of discovered contact
-links. This keeps source-specific profile extraction separate from the
-canonical endorsement records.
+keeping biography empty for now and combining the union of discovered contact
+links. AI-generated biography summaries will be added in a later step. This
+keeps source-specific profile extraction separate from the canonical
+endorsement records.
 
 Existing individual files are replaced on rerun so the result cannot accumulate
 duplicates. Use `--no-overwrite` to preserve existing profile files.
