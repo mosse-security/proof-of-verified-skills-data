@@ -123,6 +123,15 @@ def merge_endorsements(
             skipped += 1
         else:
             existed = path.exists()
+            if existed:
+                try:
+                    existing = json.loads(path.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError):
+                    existing = None
+                if existing == payload:
+                    skipped += 1
+                    files.append(path)
+                    continue
             _atomic_write(
                 path,
                 (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"),

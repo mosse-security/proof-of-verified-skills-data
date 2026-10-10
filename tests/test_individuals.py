@@ -83,7 +83,8 @@ class IndividualMergeTests(unittest.TestCase):
                 source, root / "individuals", profiles_directory=root / "profiles"
             )
             self.assertEqual(first.created, 1)
-            self.assertEqual(second.overwritten, 1)
+            self.assertEqual(second.overwritten, 0)
+            self.assertEqual(second.skipped, 1)
             self.assertEqual(second.endorsements, 1)
 
     def test_last_updated_is_preserved_when_content_is_unchanged(self) -> None:
