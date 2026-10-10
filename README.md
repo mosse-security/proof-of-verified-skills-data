@@ -254,6 +254,7 @@ to `data/individuals`, for example `data/individuals/alice-example.json`:
 ```json
 {
   "name": "Alice Example",
+  "last-updated": "2026-01-01T00:00:00Z",
   "biography": "",
   "contact": [],
   "endorsements": []
@@ -269,7 +270,10 @@ emptied after every merger run, including failed runs; pass `--keep-tmp` when
 you need to inspect them.
 
 Existing individual files are replaced on rerun so the result cannot accumulate
-duplicates. Use `--no-overwrite` to preserve existing profile files.
+duplicates. The merger compares the content before writing: unchanged records
+retain their existing `last-updated` UTC timestamp, while changed records get a
+new timestamp suitable for ascending or descending database sorting. Use
+`--no-overwrite` to preserve existing profile files.
 
 ## HTML snapshots
 

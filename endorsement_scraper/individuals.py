@@ -10,6 +10,7 @@ import tempfile
 import unicodedata
 from collections import OrderedDict
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -104,15 +105,19 @@ def merge_endorsements(
         # A profile-only pass must never erase an existing person's
         # endorsements. This also makes cleanup/rerun races harmless.
         if not records and path.exists():
+            if overwrite:
+                _upgrade_existing_timestamp(path)
             skipped += 1
             files.append(path)
             continue
         payload = {
             "name": person["name"],
+            "last-updated": "",
             "biography": "",
             "contact": _merged_contacts(person.get("profiles", [])),
             "endorsements": records,
         }
+        payload["last-updated"] = _last_updated_for(path, payload)
         _validate_individual(payload, source=str(path))
         if path.exists() and not overwrite:
             skipped += 1
@@ -126,6 +131,13 @@ def merge_endorsements(
             created += int(not existed)
         files.append(path)
 
+    # Upgrade legacy records that have no current source rows (for example,
+    # people retained from an older profile-only run).
+    if overwrite:
+        for existing_path in output_directory.glob("*.json"):
+            if existing_path not in files:
+                _upgrade_existing_timestamp(existing_path)
+
     return IndividualMergeResult(
         people=len(grouped),
         endorsements=total,
@@ -137,11 +149,15 @@ def merge_endorsements(
 
 
 def _validate_individual(document: dict[str, Any], *, source: str) -> None:
-    expected = {"name", "biography", "contact", "endorsements"}
+    expected = {"name", "last-updated", "biography", "contact", "endorsements"}
     if set(document) != expected:
         raise IndividualMergeError(f"{source} must contain exactly {sorted(expected)}")
     if not isinstance(document["name"], str) or not document["name"].strip():
         raise IndividualMergeError(f"{source}.name must be a non-empty string")
+    if not _is_timestamp(document["last-updated"]):
+        raise IndividualMergeError(
+            f"{source}.last-updated must be an ISO-8601 UTC timestamp"
+        )
     if not isinstance(document["biography"], str):
         raise IndividualMergeError(f"{source}.biography must be a string")
     if not isinstance(document["contact"], list):
@@ -150,6 +166,57 @@ def _validate_individual(document: dict[str, Any], *, source: str) -> None:
         raise IndividualMergeError(f"{source}.endorsements must be an array")
     for index, endorsement in enumerate(document["endorsements"]):
         validate_endorsement_record(endorsement, source=f"{source}.endorsements[{index}]")
+
+
+def _last_updated_for(path: Path, payload: dict[str, Any]) -> str:
+    """Preserve the timestamp when content is unchanged; otherwise refresh it."""
+
+    if path.exists():
+        try:
+            existing = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            existing = None
+        if isinstance(existing, dict):
+            previous_content = dict(existing)
+            previous_timestamp = previous_content.pop("last-updated", None)
+            current_content = dict(payload)
+            current_content.pop("last-updated", None)
+            if previous_content == current_content and _is_timestamp(previous_timestamp):
+                return previous_timestamp
+    return _utc_timestamp()
+
+
+def _upgrade_existing_timestamp(path: Path) -> None:
+    """Add the timestamp to legacy individual records without source rows."""
+
+    try:
+        existing = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return
+    if not isinstance(existing, dict) or "last-updated" in existing:
+        return
+    existing["last-updated"] = _utc_timestamp()
+    _validate_individual(existing, source=str(path))
+    _atomic_write(
+        path,
+        (json.dumps(existing, ensure_ascii=False, indent=2) + "\n").encode("utf-8"),
+    )
+
+
+def _utc_timestamp() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace(
+        "+00:00", "Z"
+    )
+
+
+def _is_timestamp(value: Any) -> bool:
+    if not isinstance(value, str) or not value:
+        return False
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    return parsed.tzinfo is not None and parsed.utcoffset() == timezone.utc.utcoffset(parsed)
 
 
 def _validate_profile(profile: Any, *, source: str) -> None:

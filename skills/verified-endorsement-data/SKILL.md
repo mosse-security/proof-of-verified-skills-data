@@ -48,8 +48,10 @@ cyber domains are introduced.
 - Every endorsement has a non-empty `domains` array. Use the canonical taxonomy
   in `endorsement_scraper/domains.py`; use `unknown` only when no rule matches.
   Update the central classifier and tests when expanding the taxonomy.
-- Every individual record has exactly `name`, `biography`, `contact`, and
-  `endorsements`. Contact entries use the template's label plus URL or email.
+- Every individual record has exactly `name`, `last-updated`, `biography`,
+  `contact`, and `endorsements`. `last-updated` is an ISO-8601 UTC timestamp:
+  unchanged merges preserve it, while content changes refresh it. Contact
+  entries use the template's label plus URL or email.
 - Preserve deterministic output, atomic writes, and idempotent reruns. Default
   overwrite behavior must be explicit, and provide a no-overwrite option where
   generated files may be protected.
