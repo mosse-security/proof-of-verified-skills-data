@@ -66,9 +66,10 @@ python -m endorsement_scraper --assessor def-con
 python -m scrapers.def_con
 ```
 
-It reads `data/archives/html/def-con/defcon-N/speakers.html` first. A missing file is
-downloaded from that conference's `processUrls` entry and saved at that path
-before parsing. Conference files are processed in parallel. Existing JSON is
+It reads `data/archives/html/def-con.zip` in memory first, with the equivalent
+`data/archives/html/def-con/defcon-N/speakers.html` directory layout supported as
+a fallback. A missing entry is downloaded from that conference's `processUrls`
+entry and saved back to the selected archive before parsing. Conference files are processed in parallel. Existing JSON is
 atomically overwritten by default, so reruns contain no duplicates or stale
 records; pass `--no-overwrite` to preserve existing outputs. Speaker profile
 fragments are written to `data/tmp/profiles/def-con/` for the later individual
@@ -269,12 +270,18 @@ duplicates. Use `--no-overwrite` to preserve existing profile files.
 
 ## HTML snapshots
 
-`--save-html` writes every successful response plus metadata to:
+`--save-html` writes every successful response plus metadata to the configured
+HTML archive. The archive can be either a directory:
 
 ```text
 data/archives/html/<assessor-id>/<scraper-id>/<request-hash>.html
 data/archives/html/<assessor-id>/<scraper-id>/<request-hash>.json
 ```
+
+or a ZIP file with the same paths as member names, such as
+`data/archives/html/def-con.zip`. ZIP entries are read directly without
+extraction. The archive interface is byte-oriented so future CSV/XLSX source
+readers can be added without changing scraper storage or caching behavior.
 
 The request hash is stable, so a rerun refreshes the same snapshot rather than
 creating unbounded copies. Curated source caches may also be kept in

@@ -13,6 +13,7 @@ from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
+from ..archives import ArchiveStore
 from ..domains import detect_domains
 from ..http import HttpClient
 from ..models import Request
@@ -151,23 +152,24 @@ class DefConScraper:
         return sorted(results, key=lambda result: result.year, reverse=True)
 
     def _process_conference(self, year: int, source_url: str) -> ConferenceResult:
-        cache_path = self.html_directory / f"defcon-{year}" / "speakers.html"
-        if cache_path.is_file():
-            body = cache_path.read_bytes()
+        cache_member = f"defcon-{year}/speakers.html"
+        archive = ArchiveStore(self.html_directory)
+        body = archive.read(cache_member)
+        if body is not None:
             cache_status = "local"
         else:
             response = self.fetch(Request(source_url, meta={"conference": year}))
             body = getattr(response, "body", None)
             if not isinstance(body, bytes):
                 raise TypeError("The DEF CON fetch function must return a response with bytes body")
-            cache_path.parent.mkdir(parents=True, exist_ok=True)
-            _atomic_write(cache_path, body)
+            archive.write(cache_member, body)
             cache_status = "fetched"
 
         endorsements = parse_def_con_page(year, body, source_url)
         if not endorsements:
             raise DefConParseError(
-                f"DEF CON {year} produced no endorsements from {cache_path}"
+                f"DEF CON {year} produced no endorsements from "
+                f"{self.html_directory}!{cache_member}"
             )
 
         output = self.output_directory / f"defcon-{year}.json"

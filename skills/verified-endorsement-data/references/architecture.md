@@ -4,8 +4,10 @@
 
 - `data/assessors/<id>.json`: authoritative assessor metadata and
   source URLs. DEF CON uses `links.processUrls` for its historical archive.
-- `data/archives/html/<assessor>/...`: local source HTML. Scrapers are local-first
-  and fetch missing pages over HTTP.
+- `data/archives/html/<assessor>/...` or `<assessor>.zip`: local source HTML.
+  Scrapers are local-first and fetch missing pages over HTTP. ZIP entries are
+  read in memory; the archive layer is byte-oriented so CSV/XLSX readers can
+  be added later without changing scraper orchestration.
 - `data/tmp/endorsements/<assessor>/...json`: canonical endorsement records.
   Collection scrapers may write arrays, usually one file per conference/year.
 - `data/tmp/profiles/<assessor>/...json`: temporary profile fragments shaped as
@@ -26,6 +28,7 @@
 - `runner.py`: concurrent scraper execution, page fingerprinting, endorsement
   validation, and profile storage.
 - `storage.py`: atomic `EndorsementStore` and `ProfileStore`.
+- `archives.py`: directory/ZIP source archive access.
 - `schema.py`: assessor metadata loading, endorsement/profile construction,
   and strict output validation.
 - `domains.py`: canonical taxonomy, detection rules, normalization, and output

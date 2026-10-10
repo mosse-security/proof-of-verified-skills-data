@@ -1,5 +1,6 @@
 """Public API for assessor endorsement scrapers."""
 
+from .archives import ArchiveStore
 from .base import (
     BaseCollectionScraper,
     BaseScraper,
@@ -35,6 +36,7 @@ __all__ = [
     "PageResult",
     "Request",
     "Response",
+    "ArchiveStore",
     "ALLOWED_DOMAINS",
     "CYBER_DOMAINS",
     "UNKNOWN_DOMAIN",

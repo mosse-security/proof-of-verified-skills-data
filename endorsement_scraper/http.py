@@ -2,15 +2,14 @@ from __future__ import annotations
 
 import json
 import logging
-import os
 import random
-import tempfile
 import time
 import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Mapping
 
+from .archives import ArchiveStore
 from .models import Request, Response
 
 
@@ -94,12 +93,10 @@ class HttpClient:
         self._last_request_at = time.monotonic()
 
     def _save_snapshot(self, response: Response) -> None:
-        directory = (
-            self.html_directory / self.assessor_id / self.scraper_id
-        )
-        directory.mkdir(parents=True, exist_ok=True)
+        archive = ArchiveStore(self.html_directory)
         stem = response.request.fingerprint
-        _atomic_write(directory / f"{stem}.html", response.body)
+        member = f"{self.assessor_id}/{self.scraper_id}/{stem}"
+        archive.write(f"{member}.html", response.body)
         metadata = {
             "requestedUrl": response.request.url,
             "finalUrl": response.url,
@@ -107,24 +104,10 @@ class HttpClient:
             "fetchedAt": response.fetched_at,
             "headers": dict(response.headers),
         }
-        _atomic_write(
-            directory / f"{stem}.json",
+        archive.write(
+            f"{member}.json",
             (json.dumps(metadata, indent=2, ensure_ascii=False) + "\n").encode(),
         )
-
-
-def _atomic_write(path: Path, content: bytes) -> None:
-    temporary_name: str | None = None
-    try:
-        with tempfile.NamedTemporaryFile(
-            dir=path.parent, prefix=f".{path.name}.", delete=False
-        ) as temporary:
-            temporary.write(content)
-            temporary_name = temporary.name
-        os.replace(temporary_name, path)
-    finally:
-        if temporary_name and os.path.exists(temporary_name):
-            os.unlink(temporary_name)
 
 
 

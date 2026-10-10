@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -113,6 +114,7 @@ class DefConTests(unittest.TestCase):
                 assessor_file=assessor_file,
                 html_directory=root / "html",
                 output_directory=root / "endorsements",
+                profile_directory=root / "profiles",
                 workers=1,
                 fetch=unexpected_fetch,
             )
@@ -163,6 +165,7 @@ class DefConTests(unittest.TestCase):
                 assessor_file=assessor_file,
                 html_directory=root / "html",
                 output_directory=root / "endorsements",
+                profile_directory=root / "profiles",
                 workers=1,
                 fetch=fetch,
             )
@@ -174,6 +177,34 @@ class DefConTests(unittest.TestCase):
                 (root / "html" / "defcon-34" / "speakers.html").read_bytes(),
                 MODERN_HTML,
             )
+
+    def test_zip_cache_is_read_without_extracting_files(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            assessor_file = root / "def-con.json"
+            assessor_file.write_text(
+                json.dumps(assessor_document([
+                    "https://defcon.org/html/defcon-34/dc-34-speakers.html"
+                ])),
+                encoding="utf-8",
+            )
+            archive = root / "def-con.zip"
+            with zipfile.ZipFile(archive, "w") as handle:
+                handle.writestr("defcon-34/speakers.html", MODERN_HTML)
+
+            scraper = DefConScraper(
+                assessor_file=assessor_file,
+                html_directory=archive,
+                output_directory=root / "endorsements",
+                profile_directory=root / "profiles",
+                workers=1,
+                fetch=lambda _request: self.fail("The ZIP cache should be used"),
+            )
+            result = scraper.run()[0]
+
+            self.assertEqual(result.cache, "local")
+            self.assertTrue(archive.is_file())
+            self.assertFalse((root / "defcon-34").exists())
 
 
 if __name__ == "__main__":

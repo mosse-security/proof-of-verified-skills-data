@@ -101,6 +101,12 @@ def merge_endorsements(
         total += len(records)
         filename = _individual_filename(person["name"], identity, used_paths)
         path = output_directory / filename
+        # A profile-only pass must never erase an existing person's
+        # endorsements. This also makes cleanup/rerun races harmless.
+        if not records and path.exists():
+            skipped += 1
+            files.append(path)
+            continue
         payload = {
             "name": person["name"],
             "biography": "",
