@@ -20,9 +20,10 @@ cyber domains are introduced.
    site adapters in `scrapers/`, normally one adapter per assessor. Use a
    `BaseCollectionScraper` when one site controls grouped output or local cache
    layout.
-4. Prefer cached HTML under `data/archives/html/<assessor>/`. Fetch only missing
-   pages, save successful responses, and support pagination, multiple years,
-   retries, timeouts, and bounded concurrency.
+4. Prefer cached HTML under `data/archives/html/<assessor>/` or the matching
+   `<assessor>.zip`. Fetch only missing pages, save successful responses, and
+   support pagination, multiple years, retries, timeouts, and bounded
+   concurrency.
 5. Emit one endorsement per person when one source item names multiple people.
    Emit a `PersonProfile` alongside it when contact information is present.
    Keep the required biography field empty; biographies are generated later
@@ -31,7 +32,8 @@ cyber domains are introduced.
 6. Run the merger after scraping. It reads all endorsement arrays and profile
    fragments, groups names case-insensitively, removes duplicate endorsements,
    combines contact data, writes one `individual.tpl` record per person under
-   `data/individuals`, and clears the temporary output directories.
+   `data/individuals`, and clears the temporary output directories even when
+   merging fails. Use `--keep-tmp` only when debugging.
 7. Run tests, compile checks, and schema validation before reporting completion.
 
 ## Non-negotiable contracts

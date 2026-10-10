@@ -230,9 +230,15 @@ def build_parser() -> argparse.ArgumentParser:
         prog="merge-individuals",
         description="Merge endorsement records into one file per individual.",
     )
-    parser.add_argument("--endorsements-dir", type=Path, default=Path("data/tmp/endorsements"))
-    parser.add_argument("--profiles-dir", type=Path, default=Path("data/tmp/profiles"))
-    parser.add_argument("--output-dir", type=Path, default=Path("data/individuals"))
+    parser.add_argument(
+        "--endorsements-dir", type=Path, default=Path("data/tmp/endorsements")
+    )
+    parser.add_argument(
+        "--profiles-dir", type=Path, default=Path("data/tmp/profiles")
+    )
+    parser.add_argument(
+        "--output-dir", type=Path, default=Path("data/individuals")
+    )
     parser.add_argument(
         "--keep-tmp",
         action="store_true",
@@ -266,16 +272,22 @@ def main(argv: list[str] | None = None) -> int:
         )
     except (OSError, IndividualMergeError) as exc:
         print(f"Individual merge failed: {exc}")
+        if not args.keep_tmp:
+            _cleanup_tmp(args)
         return 1
     print(
         f"Individuals: people={result.people} endorsements={result.endorsements} "
         f"created={result.created} overwritten={result.overwritten} skipped={result.skipped}"
     )
     if not args.keep_tmp:
-        removed = cleanup_generated_directory(args.endorsements_dir)
-        removed += cleanup_generated_directory(args.profiles_dir)
-        print(f"Cleaned temporary output entries: {removed}")
+        print(f"Cleaned temporary output entries: {_cleanup_tmp(args)}")
     return 0
+
+
+def _cleanup_tmp(args: argparse.Namespace) -> int:
+    removed = cleanup_generated_directory(args.endorsements_dir)
+    removed += cleanup_generated_directory(args.profiles_dir)
+    return removed
 
 
 if __name__ == "__main__":

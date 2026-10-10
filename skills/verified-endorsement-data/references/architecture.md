@@ -28,7 +28,9 @@
 - `runner.py`: concurrent scraper execution, page fingerprinting, endorsement
   validation, and profile storage.
 - `storage.py`: atomic `EndorsementStore` and `ProfileStore`.
-- `archives.py`: directory/ZIP source archive access.
+- `archives.py`: directory/ZIP source archive access. Keep this byte-oriented
+  boundary when adding CSV/XLSX readers so format parsing stays out of scraper
+  orchestration.
 - `schema.py`: assessor metadata loading, endorsement/profile construction,
   and strict output validation.
 - `domains.py`: canonical taxonomy, detection rules, normalization, and output

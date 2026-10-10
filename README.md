@@ -261,9 +261,9 @@ It also reads profile fragments from `data/tmp/profiles` (or `--profiles-dir`),
 keeping biography empty for now and combining the union of discovered contact
 links. AI-generated biography summaries will be added in a later step. This
 keeps source-specific profile extraction separate from the canonical
-endorsement records. After a successful merge, the temporary endorsement and
-profile directories are emptied automatically; pass `--keep-tmp` when you need
-to inspect them.
+endorsement records. The temporary endorsement and profile directories are
+emptied after every merger run, including failed runs; pass `--keep-tmp` when
+you need to inspect them.
 
 Existing individual files are replaced on rerun so the result cannot accumulate
 duplicates. Use `--no-overwrite` to preserve existing profile files.

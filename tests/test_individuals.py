@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from endorsement_scraper.individuals import merge_endorsements
+from endorsement_scraper.individuals import cleanup_generated_directory, merge_endorsements
 
 
 def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
@@ -26,6 +26,20 @@ def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
 
 
 class IndividualMergeTests(unittest.TestCase):
+    def test_cleanup_removes_temporary_children_but_keeps_root(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "tmp"
+            (root / "endorsements" / "def-con").mkdir(parents=True)
+            (root / "profiles" / "def-con").mkdir(parents=True)
+            (root / "endorsements" / "def-con" / "one.json").write_text("{}")
+            (root / "profiles" / "def-con" / "one.json").write_text("{}")
+
+            removed = cleanup_generated_directory(root)
+
+            self.assertEqual(removed, 2)
+            self.assertTrue(root.is_dir())
+            self.assertEqual(list(root.iterdir()), [])
+
     def test_groups_case_insensitive_names_and_deduplicates_records(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
