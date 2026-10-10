@@ -9,6 +9,11 @@ The framework deliberately leaves HTML/API parsing to each site module. It
 handles discovery, parallel execution, page traversal, retrying, optional raw
 page snapshots, deterministic record IDs, atomic output, and reruns.
 
+The repository's evolving operating knowledge is captured in
+`skills/verified-endorsement-data/SKILL.md` and its architecture reference.
+Update that skill when conventions, templates, domains, or scraper workflows
+change.
+
 ## Quick start
 
 The framework requires Python 3.11+; site scrapers declare their parser
