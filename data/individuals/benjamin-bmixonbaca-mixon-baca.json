@@ -1,0 +1,23 @@
+{
+  "name": "Benjamin \"bmixonbaca\" Mixon-Baca",
+  "biography": "I am a security researcher focused on Internet Freedom, censorship circumvention, and pwning middleboxes, firewalls, and other devices that are supposed to keep me \"safe\". I have developed attacks against VPN software. The one relevant to this presentation is CVE-2021-3773. This vulnerability affects VPNs but is actually because of issues in the firewall/connection tracking framework (e.g., Netfilter) of the underlying OS running the VPN. An attacker can use this vulnerability to redirect packets in various ways and can even let an attacker escalate from adjacent to-in-path between the victim and VPN server. I applied insights I gained while developing this attack to testing the TSPU and was able to develop bypass strategies. This is because the underlying design of connection tracking frameworks, such as how they track TCP states and direction, is basically the same for both network layer VPNs like OpenVPN and WireGuard and firewalls like the TSPU.",
+  "contact": [],
+  "endorsements": [
+    {
+      "name": "Benjamin \"bmixonbaca\" Mixon-Baca",
+      "label": "TSPU: Russia's Firewall and Defending Against the Future of Digital Repression",
+      "type": "presentation",
+      "organization": "DEF CON",
+      "organization-id": "def-con",
+      "organization-category": "conference_community",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60354",
+      "year": 2025,
+      "domains": [
+        "cyber defense",
+        "vulnerability research"
+      ]
+    }
+  ]
+}

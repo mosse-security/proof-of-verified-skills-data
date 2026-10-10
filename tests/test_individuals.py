@@ -1,0 +1,74 @@
+from __future__ import annotations
+
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+from endorsement_scraper.individuals import merge_endorsements
+
+
+def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
+    return {
+        "name": name,
+        "label": label,
+        "type": "presentation",
+        "organization": "Example Conference",
+        "organization-id": "example",
+        "organization-category": "conference_community",
+        "reviewType": "community_review",
+        "subtitle": "Example 2026",
+        "url": f"https://example.test/{label.replace(' ', '-')}",
+        "year": year,
+        "domains": ["unknown"],
+    }
+
+
+class IndividualMergeTests(unittest.TestCase):
+    def test_groups_case_insensitive_names_and_deduplicates_records(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "endorsements" / "example"
+            source.mkdir(parents=True)
+            records = [
+                endorsement("Alice Example", "Second Talk"),
+                endorsement("alice   example", "First Talk", 2025),
+                endorsement("Alice Example", "Second Talk"),
+            ]
+            (source / "records.json").write_text(json.dumps(records), encoding="utf-8")
+
+            result = merge_endorsements(
+                root / "endorsements", root / "individuals", profiles_directory=root / "profiles"
+            )
+
+            self.assertEqual(result.people, 1)
+            self.assertEqual(result.endorsements, 2)
+            document = json.loads(
+                (root / "individuals" / "alice-example.json").read_text()
+            )
+            self.assertEqual(document["name"], "Alice Example")
+            self.assertEqual([item["year"] for item in document["endorsements"]], [2025, 2026])
+            self.assertEqual(document["biography"], "")
+            self.assertEqual(document["contact"], [])
+
+    def test_rerun_overwrites_without_appending_duplicates(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "endorsements"
+            source.mkdir()
+            (source / "one.json").write_text(
+                json.dumps([endorsement("Bob Example", "Talk")]), encoding="utf-8"
+            )
+            first = merge_endorsements(
+                source, root / "individuals", profiles_directory=root / "profiles"
+            )
+            second = merge_endorsements(
+                source, root / "individuals", profiles_directory=root / "profiles"
+            )
+            self.assertEqual(first.created, 1)
+            self.assertEqual(second.overwritten, 1)
+            self.assertEqual(second.endorsements, 1)
+
+
+if __name__ == "__main__":
+    unittest.main()
