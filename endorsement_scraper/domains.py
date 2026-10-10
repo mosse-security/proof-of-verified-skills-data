@@ -287,3 +287,5 @@ def _flatten_text(value: Any) -> str:
     if isinstance(value, (list, tuple, set, frozenset)):
         return " ".join(_flatten_text(item) for item in value)
     return str(value)
+
+

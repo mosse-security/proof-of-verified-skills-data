@@ -14,9 +14,9 @@ REQUIRED_ENDORSEMENT_FIELDS = (
     "name",
     "label",
     "type",
-    "organization",
-    "organization-id",
-    "organization-category",
+    "assessor",
+    "assessor-id",
+    "assessor-category",
     "reviewType",
     "url",
     "year",
@@ -51,8 +51,8 @@ def validate_profile_record(record: Mapping[str, Any], *, source: str = "profile
 
 
 @dataclass(frozen=True, slots=True)
-class OrganizationMetadata:
-    """Organization fields copied into every endorsement template record."""
+class AssessorMetadata:
+    """Assessor fields copied into every endorsement template record."""
 
     id: str
     name: str
@@ -60,12 +60,12 @@ class OrganizationMetadata:
     review_type: str
 
     @classmethod
-    def from_file(cls, path: Path) -> OrganizationMetadata:
+    def from_file(cls, path: Path) -> AssessorMetadata:
         try:
             document = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as exc:
             raise EndorsementSchemaError(
-                f"Cannot read organization metadata from {path}: {exc}"
+                f"Cannot read assessor metadata from {path}: {exc}"
             ) from exc
         if not isinstance(document, dict):
             raise EndorsementSchemaError(f"{path} must contain a JSON object")
@@ -88,13 +88,13 @@ class OrganizationMetadata:
         ]
         if invalid:
             raise EndorsementSchemaError(
-                f"{path} is missing non-empty organization field(s): "
+                f"{path} is missing non-empty assessor field(s): "
                 + ", ".join(invalid)
             )
         metadata = cls(**values)
         if path.stem != metadata.id:
             raise EndorsementSchemaError(
-                f"Organization file {path.name!r} contains id {metadata.id!r}"
+                f"Assessor file {path.name!r} contains id {metadata.id!r}"
             )
         return metadata
 
@@ -104,7 +104,7 @@ def build_endorsement_record(
     name: str,
     label: str,
     endorsement_type: str,
-    organization: OrganizationMetadata,
+    assessor: AssessorMetadata,
     url: str,
     year: int,
     domains: Iterable[str],
@@ -116,10 +116,10 @@ def build_endorsement_record(
         "name": name,
         "label": label,
         "type": endorsement_type,
-        "organization": organization.name,
-        "organization-id": organization.id,
-        "organization-category": organization.category,
-        "reviewType": organization.review_type,
+        "assessor": assessor.name,
+        "assessor-id": assessor.id,
+        "assessor-category": assessor.category,
+        "reviewType": assessor.review_type,
     }
     if subtitle is not None:
         record["subtitle"] = subtitle
@@ -130,7 +130,7 @@ def build_endorsement_record(
             "domains": list(normalize_domains(domains)),
         }
     )
-    validate_endorsement_record(record, organization=organization)
+    validate_endorsement_record(record, assessor=assessor)
     return record
 
 
@@ -138,7 +138,7 @@ def validate_endorsement_record(
     record: Mapping[str, Any],
     *,
     source: str = "record",
-    organization: OrganizationMetadata | None = None,
+    assessor: AssessorMetadata | None = None,
 ) -> None:
     """Enforce the endorsement template, including its optional subtitle."""
 
@@ -157,9 +157,9 @@ def validate_endorsement_record(
         "name",
         "label",
         "type",
-        "organization",
-        "organization-id",
-        "organization-category",
+        "assessor",
+        "assessor-id",
+        "assessor-category",
         "reviewType",
         "url",
     )
@@ -185,19 +185,19 @@ def validate_endorsement_record(
 
     validate_record_domains(record, source=source)
 
-    if organization is not None:
+    if assessor is not None:
         expected = {
-            "organization": organization.name,
-            "organization-id": organization.id,
-            "organization-category": organization.category,
-            "reviewType": organization.review_type,
+            "assessor": assessor.name,
+            "assessor-id": assessor.id,
+            "assessor-category": assessor.category,
+            "reviewType": assessor.review_type,
         }
         mismatched = [
             field for field, value in expected.items() if record[field] != value
         ]
         if mismatched:
             raise EndorsementSchemaError(
-                f"{source} does not match organization metadata for field(s): "
+                f"{source} does not match assessor metadata for field(s): "
                 + ", ".join(mismatched)
             )
 
@@ -206,7 +206,7 @@ def validate_endorsement_output_files(
     paths: Iterable[Path],
     *,
     expected_records: int | None = None,
-    organization: OrganizationMetadata | None = None,
+    assessor: AssessorMetadata | None = None,
 ) -> int:
     """Validate every template record in one or more scraper output files."""
 
@@ -230,7 +230,7 @@ def validate_endorsement_output_files(
             validate_endorsement_record(
                 record,
                 source=f"{path}[{index}]",
-                organization=organization,
+                assessor=assessor,
             )
             count += 1
     if expected_records is not None and count != expected_records:
@@ -239,3 +239,5 @@ def validate_endorsement_output_files(
             f"output files contain {count} records"
         )
     return count
+
+

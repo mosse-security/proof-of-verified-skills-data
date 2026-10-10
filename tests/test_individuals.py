@@ -13,9 +13,9 @@ def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
         "name": name,
         "label": label,
         "type": "presentation",
-        "organization": "Example Conference",
-        "organization-id": "example",
-        "organization-category": "conference_community",
+        "assessor": "Example Conference",
+        "assessor-id": "example",
+        "assessor-category": "conference_community",
         "reviewType": "community_review",
         "subtitle": "Example 2026",
         "url": f"https://example.test/{label.replace(' ', '-')}",
@@ -72,3 +72,5 @@ class IndividualMergeTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+

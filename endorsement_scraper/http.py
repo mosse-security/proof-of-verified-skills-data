@@ -27,7 +27,7 @@ class HttpClient:
     def __init__(
         self,
         *,
-        organization_id: str,
+        assessor_id: str,
         scraper_id: str,
         timeout: float = 30,
         retries: int = 2,
@@ -37,7 +37,7 @@ class HttpClient:
         save_html: bool = False,
         html_directory: Path = Path("data/html"),
     ) -> None:
-        self.organization_id = organization_id
+        self.assessor_id = assessor_id
         self.scraper_id = scraper_id
         self.timeout = timeout
         self.retries = retries
@@ -95,7 +95,7 @@ class HttpClient:
 
     def _save_snapshot(self, response: Response) -> None:
         directory = (
-            self.html_directory / self.organization_id / self.scraper_id
+            self.html_directory / self.assessor_id / self.scraper_id
         )
         directory.mkdir(parents=True, exist_ok=True)
         stem = response.request.fingerprint
@@ -125,4 +125,6 @@ def _atomic_write(path: Path, content: bytes) -> None:
     finally:
         if temporary_name and os.path.exists(temporary_name):
             os.unlink(temporary_name)
+
+
 

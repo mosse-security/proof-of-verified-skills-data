@@ -16,21 +16,21 @@ from .storage import EndorsementStore, ProfileStore
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="scrape-endorsements",
-        description="Discover and run organization endorsement scrapers.",
+        description="Discover and run assessor endorsement scrapers.",
     )
     parser.add_argument("--scrapers-dir", type=Path, default=Path("scrapers"))
     parser.add_argument(
-        "--organizations-dir", type=Path, default=Path("data/organizations")
+        "--assessors-dir", type=Path, default=Path("data/assessors")
     )
     parser.add_argument("--output-dir", type=Path, default=Path("data/endorsements"))
     parser.add_argument("--html-dir", type=Path, default=Path("data/html"))
     parser.add_argument("--profiles-dir", type=Path, default=Path("data/profiles"))
     parser.add_argument(
-        "--organization",
+        "--assessor",
         action="append",
-        dest="organizations",
+        dest="assessors",
         metavar="ID",
-        help="Run only this organization (repeatable).",
+        help="Run only this assessor (repeatable).",
     )
     parser.add_argument(
         "--scraper",
@@ -97,26 +97,26 @@ def main(argv: list[str] | None = None) -> int:
     selected_pages = [
         cls
         for cls in discovered.page_scrapers
-        if (not args.organizations or cls.organization_id in args.organizations)
+        if (not args.assessors or cls.assessor_id in args.assessors)
         and (not args.scraper_ids or cls.scraper_id in args.scraper_ids)
     ]
     selected_collections = [
         cls
         for cls in discovered.collection_scrapers
-        if (not args.organizations or cls.organization_id in args.organizations)
+        if (not args.assessors or cls.assessor_id in args.assessors)
         and (not args.scraper_ids or cls.scraper_id in args.scraper_ids)
     ]
     if args.list:
         for cls in [*selected_pages, *selected_collections]:
-            print(f"{cls.scraper_id}\t{cls.organization_id}\t{cls.__module__}.{cls.__name__}")
+            print(f"{cls.scraper_id}\t{cls.assessor_id}\t{cls.__module__}.{cls.__name__}")
         return 0
     if not selected_pages and not selected_collections:
         print("No scrapers matched. Add a scraper or adjust the filters.", file=sys.stderr)
         return 2
 
-    def client_factory(organization_id: str, scraper_id: str) -> HttpClient:
+    def client_factory(assessor_id: str, scraper_id: str) -> HttpClient:
         return HttpClient(
-            organization_id=organization_id,
+            assessor_id=assessor_id,
             scraper_id=scraper_id,
             timeout=args.timeout,
             retries=args.retries,
@@ -128,7 +128,7 @@ def main(argv: list[str] | None = None) -> int:
         )
 
     runner = ScraperRunner(
-        store=EndorsementStore(args.output_dir, args.organizations_dir),
+        store=EndorsementStore(args.output_dir, args.assessors_dir),
         profile_store=ProfileStore(args.profiles_dir),
         client_factory=client_factory,
         workers=args.workers,
@@ -137,7 +137,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     page_report = runner.run(selected_pages) if selected_pages else RunReport()
     collection_context = CollectionScraperContext(
-        organizations_directory=args.organizations_dir,
+        assessors_directory=args.assessors_dir,
         output_directory=args.output_dir,
         html_directory=args.html_dir,
         workers=args.workers,
@@ -174,3 +174,5 @@ def main(argv: list[str] | None = None) -> int:
         f"failed={len(report.failed)}"
     )
     return 1 if report.failed else 0
+
+

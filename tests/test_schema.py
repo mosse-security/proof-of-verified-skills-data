@@ -7,7 +7,7 @@ from pathlib import Path
 from endorsement_scraper import (
     ENDORSEMENT_FIELDS,
     EndorsementSchemaError,
-    OrganizationMetadata,
+    AssessorMetadata,
     build_endorsement_record,
     validate_endorsement_record,
 )
@@ -22,7 +22,7 @@ class EndorsementSchemaTests(unittest.TestCase):
         self.assertEqual(set(ENDORSEMENT_FIELDS), set(template))
 
     def test_builder_emits_only_template_fields_and_validator_rejects_extras(self) -> None:
-        organization = OrganizationMetadata(
+        assessor = AssessorMetadata(
             id="example",
             name="Example Conference",
             category="conference_community",
@@ -32,7 +32,7 @@ class EndorsementSchemaTests(unittest.TestCase):
             name="Alice Example",
             label="Breaking Things Safely",
             endorsement_type="presentation",
-            organization=organization,
+            assessor=assessor,
             subtitle="Example Conference 2026",
             url="https://example.test/talk",
             year=2026,
@@ -42,8 +42,10 @@ class EndorsementSchemaTests(unittest.TestCase):
         self.assertEqual(set(record), set(ENDORSEMENT_FIELDS))
         record["legacyField"] = "not in the template"
         with self.assertRaises(EndorsementSchemaError):
-            validate_endorsement_record(record, organization=organization)
+            validate_endorsement_record(record, assessor=assessor)
 
 
 if __name__ == "__main__":
     unittest.main()
+
+

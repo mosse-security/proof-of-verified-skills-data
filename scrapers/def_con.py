@@ -10,13 +10,13 @@ from endorsement_scraper import (
     CollectionScraperContext,
     CollectionScraperResult,
 )
-from endorsement_scraper.organizations.def_con import DefConScraper
+from endorsement_scraper.assessors.def_con import DefConScraper
 
 
 class DefConArchiveScraper(BaseCollectionScraper):
     """Plugin adapter used by the unified scraper runner."""
 
-    organization_id = "def-con"
+    assessor_id = "def-con"
     scraper_id = "def-con-speakers"
     overwrite_by_default = True
 
@@ -27,12 +27,12 @@ class DefConArchiveScraper(BaseCollectionScraper):
             else context.overwrite
         )
         results = DefConScraper(
-            organization_file=(
-                context.organizations_directory / f"{self.organization_id}.json"
+            assessor_file=(
+                context.assessors_directory / f"{self.assessor_id}.json"
             ),
-            html_directory=context.html_directory / self.organization_id,
-            output_directory=context.output_directory / self.organization_id,
-            profile_directory=context.profile_directory / self.organization_id,
+            html_directory=context.html_directory / self.assessor_id,
+            output_directory=context.output_directory / self.assessor_id,
+            profile_directory=context.profile_directory / self.assessor_id,
             workers=context.workers,
             overwrite=overwrite,
             timeout=context.timeout,
@@ -57,9 +57,9 @@ def build_parser() -> argparse.ArgumentParser:
         description="Parse cached DEF CON speaker pages, fetching missing pages."
     )
     parser.add_argument(
-        "--organization-file",
+        "--assessor-file",
         type=Path,
-        default=Path("data/organizations/def-con.json"),
+        default=Path("data/assessors/def-con.json"),
     )
     parser.add_argument(
         "--html-dir", type=Path, default=Path("data/html/def-con")
@@ -84,7 +84,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     scraper = DefConScraper(
-        organization_file=args.organization_file,
+        assessor_file=args.assessor_file,
         html_directory=args.html_dir,
         output_directory=args.output_dir,
         profile_directory=args.profile_dir,
@@ -110,3 +110,5 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+

@@ -1,4 +1,4 @@
-"""Public API for organization endorsement scrapers."""
+"""Public API for assessor endorsement scrapers."""
 
 from .base import (
     BaseCollectionScraper,
@@ -19,7 +19,7 @@ from .schema import (
     OPTIONAL_ENDORSEMENT_FIELDS,
     REQUIRED_ENDORSEMENT_FIELDS,
     EndorsementSchemaError,
-    OrganizationMetadata,
+    AssessorMetadata,
     build_endorsement_record,
     validate_endorsement_record,
     validate_profile_record,
@@ -44,8 +44,10 @@ __all__ = [
     "OPTIONAL_ENDORSEMENT_FIELDS",
     "REQUIRED_ENDORSEMENT_FIELDS",
     "EndorsementSchemaError",
-    "OrganizationMetadata",
+    "AssessorMetadata",
     "build_endorsement_record",
     "validate_endorsement_record",
     "validate_profile_record",
 ]
+
+

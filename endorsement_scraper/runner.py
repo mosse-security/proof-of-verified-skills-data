@@ -14,7 +14,7 @@ from .base import (
 )
 from .http import HttpClient
 from .models import Endorsement, PageResult, PersonProfile, Request
-from .schema import OrganizationMetadata, validate_endorsement_output_files
+from .schema import AssessorMetadata, validate_endorsement_output_files
 from .storage import EndorsementStore, ProfileStore
 
 
@@ -25,7 +25,7 @@ ClientFactory = Callable[[str, str], HttpClient]
 @dataclass(slots=True)
 class ScraperReport:
     scraper_id: str
-    organization_id: str
+    assessor_id: str
     pages: int = 0
     endorsements: int = 0
     created: int = 0
@@ -87,12 +87,12 @@ class ScraperRunner:
                     reports.append(future.result())
                 except Exception as exc:
                     scraper_id = getattr(scraper_class, "scraper_id", scraper_class.__name__)
-                    organization_id = getattr(scraper_class, "organization_id", "unknown")
+                    assessor_id = getattr(scraper_class, "assessor_id", "unknown")
                     LOGGER.exception("Could not initialize scraper %s", scraper_id)
                     reports.append(
                         ScraperReport(
                             scraper_id=scraper_id,
-                            organization_id=organization_id,
+                            assessor_id=assessor_id,
                             error=f"{type(exc).__name__}: {exc}",
                         )
                     )
@@ -101,10 +101,10 @@ class ScraperRunner:
 
     def _run_one(self, scraper_class: type[BaseScraper]) -> ScraperReport:
         scraper = scraper_class()
-        report = ScraperReport(scraper.scraper_id, scraper.organization_id)
+        report = ScraperReport(scraper.scraper_id, scraper.assessor_id)
         LOGGER.info("Starting %s", scraper.scraper_id)
         try:
-            client = self.client_factory(scraper.organization_id, scraper.scraper_id)
+            client = self.client_factory(scraper.assessor_id, scraper.scraper_id)
             pending = deque(scraper.start_requests())
             seen_requests: set[str] = set()
 
@@ -141,7 +141,7 @@ class ScraperRunner:
                             )
                         self.profile_store.save(
                             profile,
-                            organization_id=scraper.organization_id,
+                            assessor_id=scraper.assessor_id,
                             scraper_id=scraper.scraper_id,
                         )
                 pending.extend(result.follow)
@@ -163,10 +163,10 @@ class ScraperRunner:
                 f"{scraper.scraper_id} emitted a non-Endorsement value: "
                 f"{endorsement!r}"
             )
-        if endorsement.organization_id != scraper.organization_id:
+        if endorsement.assessor_id != scraper.assessor_id:
             raise ValueError(
-                f"{scraper.scraper_id} emitted organization_id "
-                f"{endorsement.organization_id!r}; expected {scraper.organization_id!r}"
+                f"{scraper.scraper_id} emitted assessor_id "
+                f"{endorsement.assessor_id!r}; expected {scraper.assessor_id!r}"
             )
         result = self.store.save(
             endorsement,
@@ -178,7 +178,7 @@ class ScraperRunner:
         validate_endorsement_output_files(
             (result.path,),
             expected_records=1,
-            organization=self.store.organization_metadata(scraper.organization_id),
+            assessor=self.store.assessor_metadata(scraper.assessor_id),
         )
 
 
@@ -212,7 +212,7 @@ class CollectionScraperRunner:
                     reports.append(
                         ScraperReport(
                             scraper_id=scraper_class.scraper_id,
-                            organization_id=scraper_class.organization_id,
+                            assessor_id=scraper_class.assessor_id,
                             error=f"{type(exc).__name__}: {exc}",
                         )
                     )
@@ -223,7 +223,7 @@ class CollectionScraperRunner:
         self, scraper_class: type[BaseCollectionScraper]
     ) -> ScraperReport:
         scraper = scraper_class()
-        report = ScraperReport(scraper.scraper_id, scraper.organization_id)
+        report = ScraperReport(scraper.scraper_id, scraper.assessor_id)
         LOGGER.info("Starting %s", scraper.scraper_id)
         try:
             result = scraper.run(self.context)
@@ -232,14 +232,14 @@ class CollectionScraperRunner:
                     f"{scraper.scraper_id}.run() must return CollectionScraperResult, "
                     f"not {type(result).__name__}"
                 )
-            organization = OrganizationMetadata.from_file(
-                self.context.organizations_directory
-                / f"{scraper.organization_id}.json"
+            assessor = AssessorMetadata.from_file(
+                self.context.assessors_directory
+                / f"{scraper.assessor_id}.json"
             )
             validate_endorsement_output_files(
                 result.output_files,
                 expected_records=result.endorsements,
-                organization=organization,
+                assessor=assessor,
             )
             report.pages = result.pages
             report.endorsements = result.endorsements
@@ -252,3 +252,5 @@ class CollectionScraperRunner:
         else:
             LOGGER.info("Finished %s", scraper.scraper_id)
         return report
+
+

@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 
-from endorsement_scraper.organizations.def_con import DefConScraper, parse_def_con_page
+from endorsement_scraper.assessors.def_con import DefConScraper, parse_def_con_page
 
 
 MODERN_HTML = b"""
@@ -20,7 +20,7 @@ MODERN_HTML = b"""
 """
 
 
-def organization_document(process_urls: list[str]) -> dict[str, object]:
+def assessor_document(process_urls: list[str]) -> dict[str, object]:
     return {
         "id": "def-con",
         "name": "DEF CON",
@@ -95,9 +95,9 @@ class DefConTests(unittest.TestCase):
     def test_local_cache_is_preferred_and_output_is_overwritten(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            organization_file = root / "def-con.json"
-            organization_file.write_text(
-                json.dumps(organization_document([
+            assessor_file = root / "def-con.json"
+            assessor_file.write_text(
+                json.dumps(assessor_document([
                     "https://defcon.org/html/defcon-34/dc-34-speakers.html"
                 ])),
                 encoding="utf-8",
@@ -110,7 +110,7 @@ class DefConTests(unittest.TestCase):
                 self.fail("The network must not be used when a cache file exists")
 
             scraper = DefConScraper(
-                organization_file=organization_file,
+                assessor_file=assessor_file,
                 html_directory=root / "html",
                 output_directory=root / "endorsements",
                 workers=1,
@@ -128,15 +128,15 @@ class DefConTests(unittest.TestCase):
             self.assertEqual(
                 set(payload[0]),
                 {
-                    "name", "label", "type", "organization", "organization-id",
-                    "organization-category", "reviewType", "subtitle", "url",
+                    "name", "label", "type", "assessor", "assessor-id",
+                    "assessor-category", "reviewType", "subtitle", "url",
                     "year", "domains",
                 },
             )
             self.assertEqual(payload[0]["type"], "presentation")
-            self.assertEqual(payload[0]["organization"], "DEF CON")
-            self.assertEqual(payload[0]["organization-id"], "def-con")
-            self.assertEqual(payload[0]["organization-category"], "conference_community")
+            self.assertEqual(payload[0]["assessor"], "DEF CON")
+            self.assertEqual(payload[0]["assessor-id"], "def-con")
+            self.assertEqual(payload[0]["assessor-category"], "conference_community")
             self.assertEqual(payload[0]["reviewType"], "community_review")
             self.assertEqual(payload[0]["subtitle"], "DEF CON 34")
             self.assertEqual(payload[0]["year"], 2026)
@@ -145,9 +145,9 @@ class DefConTests(unittest.TestCase):
     def test_missing_cache_is_fetched_once_and_saved(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            organization_file = root / "def-con.json"
-            organization_file.write_text(
-                json.dumps(organization_document([
+            assessor_file = root / "def-con.json"
+            assessor_file.write_text(
+                json.dumps(assessor_document([
                     "https://defcon.org/html/defcon-34/dc-34-speakers.html"
                 ])),
                 encoding="utf-8",
@@ -159,7 +159,7 @@ class DefConTests(unittest.TestCase):
                 return SimpleNamespace(body=MODERN_HTML)
 
             scraper = DefConScraper(
-                organization_file=organization_file,
+                assessor_file=assessor_file,
                 html_directory=root / "html",
                 output_directory=root / "endorsements",
                 workers=1,
@@ -177,3 +177,5 @@ class DefConTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+

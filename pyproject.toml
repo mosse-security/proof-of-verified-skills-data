@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "verified-endorsement-scraper"
 version = "0.1.0"
-description = "Extensible scrapers for collecting organization endorsements"
+description = "Extensible scrapers for collecting assessor endorsements"
 requires-python = ">=3.11"
 dependencies = ["beautifulsoup4>=4.12"]
 
@@ -16,3 +16,4 @@ merge-individuals = "endorsement_scraper.individuals:main"
 
 [tool.setuptools.packages.find]
 include = ["endorsement_scraper*", "scrapers*"]
+

@@ -10,7 +10,7 @@ from typing import Any, Mapping
 
 from .domains import detect_domains, normalize_domains
 from .schema import (
-    OrganizationMetadata,
+    AssessorMetadata,
     build_endorsement_record,
     validate_profile_record,
 )
@@ -69,7 +69,7 @@ class Response:
 
 @dataclass(frozen=True, slots=True)
 class Endorsement:
-    """A normalized endorsement found on an organization's website.
+    """A normalized endorsement found on an assessor's website.
 
     ``recipient`` becomes the template's person ``name``; ``title`` becomes
     ``label``; ``kind`` becomes ``type``; and ``source_url`` becomes ``url``.
@@ -80,7 +80,7 @@ class Endorsement:
     when omitted, the core classifier derives it from the endorsement content.
     """
 
-    organization_id: str
+    assessor_id: str
     kind: str
     title: str
     source_url: str
@@ -109,13 +109,13 @@ class Endorsement:
     def record_id(self) -> str:
         if self.external_id:
             identity: JsonObject = {
-                "organizationId": self.organization_id,
+                "assessorId": self.assessor_id,
                 "type": self.kind,
                 "externalId": self.external_id,
             }
         else:
             identity = {
-                "organizationId": self.organization_id,
+                "assessorId": self.assessor_id,
                 "type": self.kind,
                 "title": self.title,
                 "sourceUrl": self.source_url,
@@ -130,7 +130,7 @@ class Endorsement:
         )
         return hashlib.sha256(canonical.encode()).hexdigest()
 
-    def to_record(self, *, organization: OrganizationMetadata) -> JsonObject:
+    def to_record(self, *, assessor: AssessorMetadata) -> JsonObject:
         if not self.recipient or not self.recipient.strip():
             raise ValueError(
                 f"Endorsement {self.title!r} must supply the endorsed person's name"
@@ -150,7 +150,7 @@ class Endorsement:
             name=self.recipient,
             label=self.title,
             endorsement_type=self.kind,
-            organization=organization,
+            assessor=assessor,
             subtitle=subtitle,
             url=self.source_url,
             year=year,
@@ -204,3 +204,5 @@ class PageResult:
         profiles: Any = (),
     ) -> PageResult:
         return cls(tuple(endorsements), tuple(follow), tuple(profiles))
+
+

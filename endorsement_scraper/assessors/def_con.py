@@ -16,10 +16,10 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 from ..domains import detect_domains
 from ..http import HttpClient
 from ..models import Request
-from ..schema import OrganizationMetadata, build_endorsement_record
+from ..schema import AssessorMetadata, build_endorsement_record
 
 
-DEFAULT_ORGANIZATION_FILE = Path("data/organizations/def-con.json")
+DEFAULT_ASSESSOR_FILE = Path("data/assessors/def-con.json")
 DEFAULT_HTML_DIRECTORY = Path("data/html/def-con")
 DEFAULT_OUTPUT_DIRECTORY = Path("data/endorsements/def-con")
 DEFAULT_PROFILE_DIRECTORY = Path("data/profiles/def-con")
@@ -47,12 +47,12 @@ class DefConEndorsement:
             "contact": [dict(item) for item in self.contact],
         }
 
-    def to_record(self, organization: OrganizationMetadata) -> dict[str, object]:
+    def to_record(self, assessor: AssessorMetadata) -> dict[str, object]:
         return build_endorsement_record(
             name=self.name,
             label=self.label,
             endorsement_type="presentation",
-            organization=organization,
+            assessor=assessor,
             subtitle=self.subtitle,
             url=self.url,
             year=self.year,
@@ -72,13 +72,13 @@ class ConferenceResult:
 class DefConScraper:
     """Local-first scraper for all DEF CON speaker archive layouts."""
 
-    organization_id = "def-con"
+    assessor_id = "def-con"
     scraper_id = "def-con-speakers"
 
     def __init__(
         self,
         *,
-        organization_file: Path = DEFAULT_ORGANIZATION_FILE,
+        assessor_file: Path = DEFAULT_ASSESSOR_FILE,
         html_directory: Path = DEFAULT_HTML_DIRECTORY,
         output_directory: Path = DEFAULT_OUTPUT_DIRECTORY,
         profile_directory: Path = DEFAULT_PROFILE_DIRECTORY,
@@ -91,12 +91,12 @@ class DefConScraper:
         delay: float = 0,
         user_agent: str = "verified-endorsement-scraper/0.1",
     ) -> None:
-        self.organization_file = organization_file
-        self.organization = OrganizationMetadata.from_file(organization_file)
-        if self.organization.id != self.organization_id:
+        self.assessor_file = assessor_file
+        self.assessor = AssessorMetadata.from_file(assessor_file)
+        if self.assessor.id != self.assessor_id:
             raise ValueError(
-                f"Expected organization id {self.organization_id!r}, "
-                f"found {self.organization.id!r}"
+                f"Expected assessor id {self.assessor_id!r}, "
+                f"found {self.assessor.id!r}"
             )
         self.html_directory = html_directory
         self.output_directory = output_directory
@@ -105,7 +105,7 @@ class DefConScraper:
         self.overwrite = overwrite
         if fetch is None:
             client = HttpClient(
-                organization_id=self.organization_id,
+                assessor_id=self.assessor_id,
                 scraper_id=self.scraper_id,
                 timeout=timeout,
                 retries=retries,
@@ -117,11 +117,11 @@ class DefConScraper:
         self.fetch = fetch
 
     def conference_urls(self) -> list[tuple[int, str]]:
-        document = json.loads(self.organization_file.read_text(encoding="utf-8"))
+        document = json.loads(self.assessor_file.read_text(encoding="utf-8"))
         urls = document.get("links", {}).get("processUrls")
         if not isinstance(urls, list) or not urls:
             raise ValueError(
-                f"{self.organization_file} must contain a non-empty links.processUrls array"
+                f"{self.assessor_file} must contain a non-empty links.processUrls array"
             )
         conferences: list[tuple[int, str]] = []
         seen: set[int] = set()
@@ -177,7 +177,7 @@ class DefConScraper:
         else:
             output.parent.mkdir(parents=True, exist_ok=True)
             payload = json.dumps(
-                [item.to_record(self.organization) for item in endorsements],
+                [item.to_record(self.assessor) for item in endorsements],
                 ensure_ascii=False,
                 indent=2,
             ) + "\n"
@@ -866,3 +866,5 @@ def _atomic_write(path: Path, content: bytes) -> None:
     finally:
         if temporary_name and os.path.exists(temporary_name):
             os.unlink(temporary_name)
+
+

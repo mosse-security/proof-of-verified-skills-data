@@ -52,13 +52,13 @@ class FakeUrlResponse:
 
 
 class PaginatedScraper(BaseScraper):
-    organization_id = "test-org"
+    assessor_id = "test-org"
     scraper_id = "test-pages"
     start_urls = ("https://example.test/page/1",)
 
     def parse(self, response: Response, request: Request) -> PageResult:
         shared = Endorsement(
-            organization_id=self.organization_id,
+            assessor_id=self.assessor_id,
             kind="cve",
             title="Shared finding",
             recipient="Researcher One",
@@ -72,7 +72,7 @@ class PaginatedScraper(BaseScraper):
                 [PersonProfile("Researcher One", "A security researcher.", ())],
             )
         second = Endorsement(
-            organization_id=self.organization_id,
+            assessor_id=self.assessor_id,
             kind="cash_prize",
             title="Winner",
             recipient="Alice",
@@ -87,7 +87,7 @@ class PaginatedScraper(BaseScraper):
 
 
 class GroupedScraper(BaseCollectionScraper):
-    organization_id = "grouped-org"
+    assessor_id = "grouped-org"
     scraper_id = "grouped-records"
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
@@ -99,9 +99,9 @@ class GroupedScraper(BaseCollectionScraper):
                     "name": f"Person {index}",
                     "label": "Example endorsement",
                     "type": "presentation",
-                    "organization": "Grouped Org",
-                    "organization-id": "grouped-org",
-                    "organization-category": "conference_community",
+                    "assessor": "Grouped Org",
+                    "assessor-id": "grouped-org",
+                    "assessor-category": "conference_community",
                     "reviewType": "community_review",
                     "url": f"https://example.test/{index}",
                     "year": 2026,
@@ -120,7 +120,7 @@ class GroupedScraper(BaseCollectionScraper):
 
 
 class InvalidGroupedScraper(BaseCollectionScraper):
-    organization_id = "invalid-grouped-org"
+    assessor_id = "invalid-grouped-org"
     scraper_id = "invalid-grouped-records"
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
@@ -134,12 +134,12 @@ class InvalidGroupedScraper(BaseCollectionScraper):
 
 class FrameworkTests(unittest.TestCase):
     @staticmethod
-    def write_organization(directory: Path, organization_id: str, name: str) -> None:
+    def write_assessor(directory: Path, assessor_id: str, name: str) -> None:
         directory.mkdir(parents=True, exist_ok=True)
-        (directory / f"{organization_id}.json").write_text(
+        (directory / f"{assessor_id}.json").write_text(
             json.dumps(
                 {
-                    "id": organization_id,
+                    "id": assessor_id,
                     "name": name,
                     "category": "conference_community",
                     "peerReview": {"reviewType": "community_review"},
@@ -152,12 +152,12 @@ class FrameworkTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             output = root / "endorsements"
-            organizations = root / "organizations"
-            self.write_organization(organizations, "test-org", "Test Org")
+            assessors = root / "assessors"
+            self.write_assessor(assessors, "test-org", "Test Org")
             runner = ScraperRunner(
-                store=EndorsementStore(output, organizations),
+                store=EndorsementStore(output, assessors),
                 profile_store=ProfileStore(root / "profiles"),
-                client_factory=lambda _organization, _scraper: FakeClient(),
+                client_factory=lambda _assessor, _scraper: FakeClient(),
                 workers=2,
             )
 
@@ -181,11 +181,11 @@ class FrameworkTests(unittest.TestCase):
     def test_overwrite_updates_an_existing_stable_id(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            organizations = root / "organizations"
-            self.write_organization(organizations, "test-org", "Test Org")
-            store = EndorsementStore(root / "endorsements", organizations)
+            assessors = root / "assessors"
+            self.write_assessor(assessors, "test-org", "Test Org")
+            store = EndorsementStore(root / "endorsements", assessors)
             original = Endorsement(
-                organization_id="test-org",
+                assessor_id="test-org",
                 kind="cve",
                 title="Old title",
                 recipient="Researcher One",
@@ -194,7 +194,7 @@ class FrameworkTests(unittest.TestCase):
                 year=2026,
             )
             changed = Endorsement(
-                organization_id="test-org",
+                assessor_id="test-org",
                 kind="cve",
                 title="Corrected title",
                 recipient="Researcher One",
@@ -224,7 +224,7 @@ class FrameworkTests(unittest.TestCase):
                 from endorsement_scraper import BaseScraper, PageResult
 
                 class Found(BaseScraper):
-                    organization_id = "found-org"
+                    assessor_id = "found-org"
                     scraper_id = "found-scraper"
                     start_urls = ("https://example.test",)
 
@@ -250,7 +250,7 @@ class FrameworkTests(unittest.TestCase):
                 )
 
                 class FoundCollection(BaseCollectionScraper):
-                    organization_id = "found-org"
+                    assessor_id = "found-org"
                     scraper_id = "found-collection"
 
                     def run(self, context):
@@ -269,11 +269,11 @@ class FrameworkTests(unittest.TestCase):
     def test_collection_runner_reports_grouped_scraper_totals(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            self.write_organization(
-                root / "organizations", "grouped-org", "Grouped Org"
+            self.write_assessor(
+                root / "assessors", "grouped-org", "Grouped Org"
             )
             context = CollectionScraperContext(
-                organizations_directory=root / "organizations",
+                assessors_directory=root / "assessors",
                 output_directory=root / "endorsements",
                 html_directory=root / "html",
                 workers=2,
@@ -296,11 +296,11 @@ class FrameworkTests(unittest.TestCase):
     def test_collection_runner_rejects_output_without_domains(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            self.write_organization(
-                root / "organizations", "invalid-grouped-org", "Invalid Grouped Org"
+            self.write_assessor(
+                root / "assessors", "invalid-grouped-org", "Invalid Grouped Org"
             )
             context = CollectionScraperContext(
-                organizations_directory=root / "organizations",
+                assessors_directory=root / "assessors",
                 output_directory=root / "endorsements",
                 html_directory=root / "html",
                 workers=1,
@@ -324,7 +324,7 @@ class FrameworkTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             snapshots = Path(temporary)
             client = HttpClient(
-                organization_id="test-org",
+                assessor_id="test-org",
                 scraper_id="test-pages",
                 save_html=True,
                 html_directory=snapshots,
@@ -350,3 +350,5 @@ class FrameworkTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+

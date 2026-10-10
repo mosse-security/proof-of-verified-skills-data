@@ -1,26 +1,26 @@
 ---
 name: verified-endorsement-data
-description: Maintain this repository's organization endorsement scrapers, HTML caches, template-shaped records, cyber-domain classification, profile fragments, and per-person individual merges. Use when adding organizations, changing templates or domains, writing parsers, regenerating data, or debugging scraper output.
+description: Maintain this repository's assessor endorsement scrapers, HTML caches, template-shaped records, cyber-domain classification, profile fragments, and per-person individual merges. Use when adding assessors, changing templates or domains, writing parsers, regenerating data, or debugging scraper output.
 ---
 
 # Verified endorsement data
 
 Use this skill as the repository's operating contract. Preserve the existing
-data pipeline and extend it deliberately as new organizations, templates, and
+data pipeline and extend it deliberately as new assessors, templates, and
 cyber domains are introduced.
 
 ## Workflow
 
 1. Inspect `data/templates/endorsement.tpl` and `data/templates/individual.tpl`
    before changing output. Treat the templates as contracts, not suggestions.
-2. Inspect the target organization JSON in `data/organizations/<id>.json`.
-   Keep organization metadata in the organization file; never duplicate or
+2. Inspect the target assessor JSON in `data/assessors/<id>.json`.
+   Keep assessor metadata in the assessor file; never duplicate or
    edit unrelated fields such as `peerReview.processUrl` while changing links.
 3. Put reusable framework behavior in `endorsement_scraper/`. Put discovered
-   site adapters in `scrapers/`, normally one adapter per organization. Use a
+   site adapters in `scrapers/`, normally one adapter per assessor. Use a
    `BaseCollectionScraper` when one site controls grouped output or local cache
    layout.
-4. Prefer cached HTML under `data/html/<organization>/`. Fetch only missing
+4. Prefer cached HTML under `data/html/<assessor>/`. Fetch only missing
    pages, save successful responses, and support pagination, multiple years,
    retries, timeouts, and bounded concurrency.
 5. Emit one endorsement per person when one source item names multiple people.
@@ -37,7 +37,7 @@ cyber domains are introduced.
 
 - Endorsement records must contain exactly the fields represented by
   `endorsement.tpl`; `subtitle` is the only optional field.
-- Organization metadata comes from the organization JSON: name, ID, category,
+- Assessor metadata comes from the assessor JSON: name, ID, category,
   and `peerReview.reviewType`.
 - Every endorsement has a non-empty `domains` array. Use the canonical taxonomy
   in `endorsement_scraper/domains.py`; use `unknown` only when no rule matches.
@@ -48,16 +48,16 @@ cyber domains are introduced.
   overwrite behavior must be explicit, and provide a no-overwrite option where
   generated files may be protected.
 - Validate generated output centrally. A scraper must not silently introduce
-  unsupported fields, domains, organization metadata, or duplicate records.
+  unsupported fields, domains, assessor metadata, or duplicate records.
 
 ## Commands
 
 ```powershell
-# Discover and run all organization adapters
+# Discover and run all assessor adapters
 python -m endorsement_scraper
 
-# Run one organization and refresh its grouped output
-python -m endorsement_scraper --organization def-con --overwrite
+# Run one assessor and refresh its grouped output
+python -m endorsement_scraper --assessor def-con --overwrite
 
 # Merge all endorsements and profiles into individual records
 python -m endorsement_scraper.individuals --overwrite
@@ -80,3 +80,5 @@ extension examples, read [references/architecture.md](references/architecture.md
   fixture test instead of weakening an existing layout parser.
 - Treat biographies and contacts as potentially incomplete: merge the richest
   biography and the union of unique contacts without inventing data.
+
+

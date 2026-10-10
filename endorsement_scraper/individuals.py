@@ -176,7 +176,7 @@ def _person_identity(name: str) -> str:
 def _endorsement_sort_key(record: dict[str, Any]) -> tuple[Any, ...]:
     return (
         record["year"],
-        record.get("organization-id", ""),
+        record.get("assessor-id", ""),
         record.get("type", ""),
         record.get("label", "").casefold(),
         record.get("url", ""),
@@ -257,3 +257,5 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+

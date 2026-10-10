@@ -91,7 +91,7 @@ def discover_all_scrapers(directory: Path) -> DiscoveredScrapers:
 def _validate(
     scraper: type[BaseScraper] | type[BaseCollectionScraper], path: Path
 ) -> None:
-    for attribute in ("organization_id", "scraper_id"):
+    for attribute in ("assessor_id", "scraper_id"):
         value = getattr(scraper, attribute, None)
         if not isinstance(value, str) or not value.strip():
             raise DiscoveryError(
@@ -112,3 +112,5 @@ def _duplicates(values: Iterable[str]) -> set[str]:
             duplicate.add(value)
         seen.add(value)
     return duplicate
+
+

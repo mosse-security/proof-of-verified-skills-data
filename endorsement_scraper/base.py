@@ -12,12 +12,12 @@ from .models import PageResult, Request, Response
 class BaseScraper(ABC):
     """Base class for every dynamically discovered scraper.
 
-    Multiple scraper classes may target one organization. Give each one a
+    Multiple scraper classes may target one assessor. Give each one a
     globally unique ``scraper_id`` (for example ``black-hat-briefings`` and
     ``black-hat-arsenal``).
     """
 
-    organization_id: ClassVar[str]
+    assessor_id: ClassVar[str]
     scraper_id: ClassVar[str]
     start_urls: ClassVar[tuple[str, ...]] = ()
 
@@ -39,7 +39,7 @@ class BaseScraper(ABC):
 class CollectionScraperContext:
     """Shared command-line settings supplied to a collection scraper."""
 
-    organizations_directory: Path
+    assessors_directory: Path
     output_directory: Path
     html_directory: Path
     workers: int
@@ -67,10 +67,12 @@ class CollectionScraperResult:
 class BaseCollectionScraper(ABC):
     """Plugin contract for scrapers that control their own grouped output."""
 
-    organization_id: ClassVar[str]
+    assessor_id: ClassVar[str]
     scraper_id: ClassVar[str]
     overwrite_by_default: ClassVar[bool] = False
 
     @abstractmethod
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         """Run the scraper and return aggregate output counts."""
+
+

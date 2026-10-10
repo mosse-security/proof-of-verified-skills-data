@@ -12,7 +12,7 @@ from typing import Literal
 
 from .models import Endorsement
 from .schema import (
-    OrganizationMetadata,
+    AssessorMetadata,
     validate_endorsement_record,
     validate_profile_record,
 )
@@ -34,12 +34,12 @@ class EndorsementStore:
     def __init__(
         self,
         directory: Path,
-        organizations_directory: Path = Path("data/organizations"),
+        assessors_directory: Path = Path("data/assessors"),
     ) -> None:
         self.directory = directory
-        self.organizations_directory = organizations_directory
+        self.assessors_directory = assessors_directory
         self._lock = threading.Lock()
-        self._organizations: dict[str, OrganizationMetadata] = {}
+        self._assessors: dict[str, AssessorMetadata] = {}
 
     def save(
         self,
@@ -48,13 +48,13 @@ class EndorsementStore:
         scraper_id: str,
         overwrite: bool,
     ) -> WriteResult:
-        _validate_component(endorsement.organization_id, "organization_id")
-        organization = self.organization_metadata(endorsement.organization_id)
-        record = endorsement.to_record(organization=organization)
-        validate_endorsement_record(record, organization=organization)
+        _validate_component(endorsement.assessor_id, "assessor_id")
+        assessor = self.assessor_metadata(endorsement.assessor_id)
+        record = endorsement.to_record(assessor=assessor)
+        validate_endorsement_record(record, assessor=assessor)
         path = (
             self.directory
-            / endorsement.organization_id
+            / endorsement.assessor_id
             / f"{endorsement.record_id}.json"
         )
         serialized = (json.dumps(record, indent=2, ensure_ascii=False) + "\n").encode()
@@ -67,16 +67,16 @@ class EndorsementStore:
             _atomic_write(path, serialized)
             return WriteResult(path, "overwritten" if existed else "created")
 
-    def organization_metadata(self, organization_id: str) -> OrganizationMetadata:
-        """Load and cache the authoritative organization template fields."""
+    def assessor_metadata(self, assessor_id: str) -> AssessorMetadata:
+        """Load and cache the authoritative assessor template fields."""
 
         with self._lock:
-            cached = self._organizations.get(organization_id)
+            cached = self._assessors.get(assessor_id)
             if cached is None:
-                cached = OrganizationMetadata.from_file(
-                    self.organizations_directory / f"{organization_id}.json"
+                cached = AssessorMetadata.from_file(
+                    self.assessors_directory / f"{assessor_id}.json"
                 )
-                self._organizations[organization_id] = cached
+                self._assessors[assessor_id] = cached
             return cached
 
 
@@ -91,19 +91,19 @@ class ProfileStore:
         self,
         profile: "PersonProfile",
         *,
-        organization_id: str,
+        assessor_id: str,
         scraper_id: str,
     ) -> Path:
         from .models import PersonProfile
 
         if not isinstance(profile, PersonProfile):
             raise TypeError(f"Expected PersonProfile, got {type(profile).__name__}")
-        _validate_component(organization_id, "organization_id")
+        _validate_component(assessor_id, "assessor_id")
         _validate_component(scraper_id, "scraper_id")
         record = profile.to_record()
         identity = json.dumps(record, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
         digest = hashlib.sha256(identity.encode("utf-8")).hexdigest()
-        path = self.directory / organization_id / scraper_id / f"{digest}.json"
+        path = self.directory / assessor_id / scraper_id / f"{digest}.json"
         serialized = (json.dumps(record, ensure_ascii=False, indent=2) + "\n").encode()
         with self._lock:
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -129,3 +129,5 @@ def _atomic_write(path: Path, content: bytes) -> None:
     finally:
         if temporary_name and os.path.exists(temporary_name):
             os.unlink(temporary_name)
+
+

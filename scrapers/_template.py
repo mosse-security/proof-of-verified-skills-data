@@ -16,7 +16,7 @@ class ExampleParser(HTMLParser):
 
 
 class ExampleScraper(BaseScraper):
-    organization_id = "replace-with-organization-id"
+    assessor_id = "replace-with-assessor-id"
     scraper_id = "replace-with-unique-scraper-id"
     start_urls = ("https://example.com/endorsements",)
 
@@ -30,7 +30,7 @@ class ExampleScraper(BaseScraper):
         parser.feed(response.text)
         endorsements = [
             Endorsement(
-                organization_id=self.organization_id,
+                assessor_id=self.assessor_id,
                 kind="conference_presentation",
                 title=item["title"],
                 recipient=item.get("speaker"),
@@ -48,3 +48,5 @@ class ExampleScraper(BaseScraper):
             else ()
         )
         return PageResult.build(endorsements, follow)
+
+

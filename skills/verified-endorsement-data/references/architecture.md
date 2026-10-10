@@ -2,13 +2,13 @@
 
 ## Data paths
 
-- `data/organizations/<id>.json`: authoritative organization metadata and
+- `data/assessors/<id>.json`: authoritative assessor metadata and
   source URLs. DEF CON uses `links.processUrls` for its historical archive.
-- `data/html/<organization>/...`: local source HTML. Scrapers are local-first
+- `data/html/<assessor>/...`: local source HTML. Scrapers are local-first
   and fetch missing pages over HTTP.
-- `data/endorsements/<organization>/...json`: canonical endorsement records.
+- `data/endorsements/<assessor>/...json`: canonical endorsement records.
   Collection scrapers may write arrays, usually one file per conference/year.
-- `data/profiles/<organization>/...json`: profile fragments shaped as
+- `data/profiles/<assessor>/...json`: profile fragments shaped as
   `{name, biography, contact}`. Standard scrapers use `PersonProfile` and
   `ProfileStore`; collection scrapers may write grouped fragments directly.
 - `data/individuals/<slug>.json`: final merged records shaped as
@@ -24,7 +24,7 @@
 - `runner.py`: concurrent scraper execution, page fingerprinting, endorsement
   validation, and profile storage.
 - `storage.py`: atomic `EndorsementStore` and `ProfileStore`.
-- `schema.py`: organization metadata loading, endorsement/profile construction,
+- `schema.py`: assessor metadata loading, endorsement/profile construction,
   and strict output validation.
 - `domains.py`: canonical taxonomy, detection rules, normalization, and output
   validation.
@@ -41,10 +41,10 @@ The internal `Endorsement` fields map to the template as follows:
 | `recipient` | `name` |
 | `title` | `label` |
 | `kind` | `type` |
-| organization JSON `name` | `organization` |
-| organization ID | `organization-id` |
-| organization JSON `category` | `organization-category` |
-| organization `peerReview.reviewType` | `reviewType` |
+| assessor JSON `name` | `assessor` |
+| assessor ID | `assessor-id` |
+| assessor JSON `category` | `assessor-category` |
+| assessor `peerReview.reviewType` | `reviewType` |
 | `subtitle` | `subtitle` |
 | `source_url` | `url` |
 | `year`/date/details year | `year` |
@@ -68,7 +68,7 @@ matching or invent missing profile data.
 
 ## DEF CON lessons
 
-`endorsement_scraper/organizations/def_con.py` supports multiple historical
+`endorsement_scraper/assessors/def_con.py` supports multiple historical
 HTML layouts. Modern pages use `.talk`, `.speaker`, `.speaker-bio`/
 `.speakerBio`, and empty abstract markers whose description is in following
 siblings. DEF CON 18–21 use `h2.title`/`h4.byLine`; their speaker bios may be
@@ -90,3 +90,5 @@ After parser/schema changes:
 5. Validate all generated individual files through
    `endorsement_scraper.individuals._validate_individual` or the public schema
    helpers, and report record/profile counts.
+
+

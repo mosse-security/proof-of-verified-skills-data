@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from endorsement_scraper import Endorsement, OrganizationMetadata, detect_domains, normalize_domains
+from endorsement_scraper import Endorsement, AssessorMetadata, detect_domains, normalize_domains
 from endorsement_scraper.domains import DomainMappingError, validate_record_domains
 
 
@@ -46,7 +46,7 @@ class DomainMappingTests(unittest.TestCase):
 
     def test_endorsement_always_has_mapped_domains(self) -> None:
         endorsement = Endorsement(
-            organization_id="example",
+            assessor_id="example",
             kind="conference_presentation",
             title="Kubernetes penetration testing and incident response",
             recipient="Alice Example",
@@ -54,7 +54,7 @@ class DomainMappingTests(unittest.TestCase):
             year=2026,
         )
         record = endorsement.to_record(
-            organization=OrganizationMetadata(
+            assessor=AssessorMetadata(
                 id="example",
                 name="Example",
                 category="conference_community",
@@ -79,3 +79,5 @@ class DomainMappingTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
