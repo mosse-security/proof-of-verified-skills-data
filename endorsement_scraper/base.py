@@ -49,7 +49,7 @@ class CollectionScraperContext:
     backoff: float
     delay: float
     user_agent: str
-    profile_directory: Path = Path("data/profiles")
+    profile_directory: Path = Path("data/tmp/profiles")
 
 
 @dataclass(frozen=True, slots=True)

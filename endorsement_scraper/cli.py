@@ -22,9 +22,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--assessors-dir", type=Path, default=Path("data/assessors")
     )
-    parser.add_argument("--output-dir", type=Path, default=Path("data/endorsements"))
-    parser.add_argument("--html-dir", type=Path, default=Path("data/html"))
-    parser.add_argument("--profiles-dir", type=Path, default=Path("data/profiles"))
+    parser.add_argument("--output-dir", type=Path, default=Path("data/tmp/endorsements"))
+    parser.add_argument("--html-dir", type=Path, default=Path("data/archives/html"))
+    parser.add_argument("--profiles-dir", type=Path, default=Path("data/tmp/profiles"))
     parser.add_argument(
         "--assessor",
         action="append",

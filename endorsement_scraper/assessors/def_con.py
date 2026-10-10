@@ -20,9 +20,9 @@ from ..schema import AssessorMetadata, build_endorsement_record
 
 
 DEFAULT_ASSESSOR_FILE = Path("data/assessors/def-con.json")
-DEFAULT_HTML_DIRECTORY = Path("data/html/def-con")
-DEFAULT_OUTPUT_DIRECTORY = Path("data/endorsements/def-con")
-DEFAULT_PROFILE_DIRECTORY = Path("data/profiles/def-con")
+DEFAULT_HTML_DIRECTORY = Path("data/archives/html/def-con")
+DEFAULT_OUTPUT_DIRECTORY = Path("data/tmp/endorsements/def-con")
+DEFAULT_PROFILE_DIRECTORY = Path("data/tmp/profiles/def-con")
 
 
 class DefConParseError(RuntimeError):

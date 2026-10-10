@@ -51,8 +51,8 @@ The first collection scraper reads every URL in
 conference:
 
 ```text
-data/endorsements/def-con/defcon-34.json
-data/endorsements/def-con/defcon-33.json
+data/tmp/endorsements/def-con/defcon-34.json
+data/tmp/endorsements/def-con/defcon-33.json
 ...
 ```
 
@@ -66,12 +66,12 @@ python -m endorsement_scraper --assessor def-con
 python -m scrapers.def_con
 ```
 
-It reads `data/html/def-con/defcon-N/speakers.html` first. A missing file is
+It reads `data/archives/html/def-con/defcon-N/speakers.html` first. A missing file is
 downloaded from that conference's `processUrls` entry and saved at that path
 before parsing. Conference files are processed in parallel. Existing JSON is
 atomically overwritten by default, so reruns contain no duplicates or stale
 records; pass `--no-overwrite` to preserve existing outputs. Speaker profile
-fragments are written to `data/profiles/def-con/` for the later individual
+fragments are written to `data/tmp/profiles/def-con/` for the later individual
 merge.
 
 Each array item follows `data/templates/endorsement.tpl`. Assessor fields
@@ -175,7 +175,7 @@ crawl is intentional.
 
 When a page also exposes a speaker's profile, return a `PersonProfile` in the
 page result alongside the endorsement. The runner stores these fragments under
-`data/profiles/<assessor>/<scraper>/`; the individual merger combines them
+`data/tmp/profiles/<assessor>/<scraper>/`; the individual merger combines them
 later:
 
 ```python
@@ -195,7 +195,7 @@ needs them.
 Each endorsement is saved as:
 
 ```text
-data/endorsements/<assessor-id>/<deterministic-id>.json
+data/tmp/endorsements/<assessor-id>/<deterministic-id>.json
 ```
 
 When `external_id` exists, the ID is derived from assessor, endorsement
@@ -242,7 +242,7 @@ python -m endorsement_scraper.individuals
 merge-individuals
 ```
 
-The merger reads every JSON file below `data/endorsements`, groups records by
+The merger reads every JSON file below `data/tmp/endorsements`, groups records by
 case-insensitive person name, removes duplicate endorsement objects, and sorts
 each person's endorsements deterministically. It writes one file per person
 to `data/individuals`, for example `data/individuals/alice-example.json`:
@@ -256,11 +256,13 @@ to `data/individuals`, for example `data/individuals/alice-example.json`:
 }
 ```
 
-It also reads profile fragments from `data/profiles` (or `--profiles-dir`),
+It also reads profile fragments from `data/tmp/profiles` (or `--profiles-dir`),
 keeping biography empty for now and combining the union of discovered contact
 links. AI-generated biography summaries will be added in a later step. This
 keeps source-specific profile extraction separate from the canonical
-endorsement records.
+endorsement records. After a successful merge, the temporary endorsement and
+profile directories are emptied automatically; pass `--keep-tmp` when you need
+to inspect them.
 
 Existing individual files are replaced on rerun so the result cannot accumulate
 duplicates. Use `--no-overwrite` to preserve existing profile files.
@@ -270,13 +272,13 @@ duplicates. Use `--no-overwrite` to preserve existing profile files.
 `--save-html` writes every successful response plus metadata to:
 
 ```text
-data/html/<assessor-id>/<scraper-id>/<request-hash>.html
-data/html/<assessor-id>/<scraper-id>/<request-hash>.json
+data/archives/html/<assessor-id>/<scraper-id>/<request-hash>.html
+data/archives/html/<assessor-id>/<scraper-id>/<request-hash>.json
 ```
 
 The request hash is stable, so a rerun refreshes the same snapshot rather than
 creating unbounded copies. Curated source caches may also be kept in
-`data/html/`, such as the year-specific DEF CON pages. Change the runtime
+`data/archives/html/`, such as the year-specific DEF CON pages. Change the runtime
 snapshot location with `--html-dir` when those responses should live elsewhere.
 
 ## Operational notes

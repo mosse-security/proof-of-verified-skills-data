@@ -4,15 +4,17 @@
 
 - `data/assessors/<id>.json`: authoritative assessor metadata and
   source URLs. DEF CON uses `links.processUrls` for its historical archive.
-- `data/html/<assessor>/...`: local source HTML. Scrapers are local-first
+- `data/archives/html/<assessor>/...`: local source HTML. Scrapers are local-first
   and fetch missing pages over HTTP.
-- `data/endorsements/<assessor>/...json`: canonical endorsement records.
+- `data/tmp/endorsements/<assessor>/...json`: canonical endorsement records.
   Collection scrapers may write arrays, usually one file per conference/year.
-- `data/profiles/<assessor>/...json`: profile fragments shaped as
+- `data/tmp/profiles/<assessor>/...json`: temporary profile fragments shaped as
   `{name, biography, contact}`. Standard scrapers use `PersonProfile` and
   `ProfileStore`; collection scrapers may write grouped fragments directly.
 - `data/individuals/<slug>.json`: final merged records shaped as
   `{name, biography, contact, endorsements}`.
+- The individual merger clears `data/tmp/endorsements` and
+  `data/tmp/profiles` after a successful run; use `--keep-tmp` for debugging.
 - `data/templates/`: current user-facing contracts. Update validators and tests
   whenever these change.
 

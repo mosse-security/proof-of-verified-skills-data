@@ -62,13 +62,13 @@ def build_parser() -> argparse.ArgumentParser:
         default=Path("data/assessors/def-con.json"),
     )
     parser.add_argument(
-        "--html-dir", type=Path, default=Path("data/html/def-con")
+        "--html-dir", type=Path, default=Path("data/archives/html/def-con")
     )
     parser.add_argument(
-        "--output-dir", type=Path, default=Path("data/endorsements/def-con")
+        "--output-dir", type=Path, default=Path("data/tmp/endorsements/def-con")
     )
     parser.add_argument(
-        "--profile-dir", type=Path, default=Path("data/profiles/def-con")
+        "--profile-dir", type=Path, default=Path("data/tmp/profiles/def-con")
     )
     parser.add_argument(
         "--workers", type=int, default=min(32, (os.cpu_count() or 1) + 4)

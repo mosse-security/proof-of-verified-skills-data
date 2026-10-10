@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import tempfile
 import unicodedata
 from collections import OrderedDict
@@ -29,12 +30,27 @@ class IndividualMergeError(ValueError):
     pass
 
 
+def cleanup_generated_directory(directory: Path) -> int:
+    """Remove generated files below one temporary output directory."""
+
+    if not directory.exists():
+        return 0
+    removed = 0
+    for child in directory.iterdir():
+        if child.is_dir() and not child.is_symlink():
+            shutil.rmtree(child)
+        else:
+            child.unlink()
+        removed += 1
+    return removed
+
+
 def merge_endorsements(
-    endorsements_directory: Path = Path("data/endorsements"),
+    endorsements_directory: Path = Path("data/tmp/endorsements"),
     output_directory: Path = Path("data/individuals"),
     *,
     overwrite: bool = True,
-    profiles_directory: Path = Path("data/profiles"),
+    profiles_directory: Path = Path("data/tmp/profiles"),
 ) -> IndividualMergeResult:
     """Merge all endorsement records into one template-shaped file per person."""
 
@@ -208,9 +224,14 @@ def build_parser() -> argparse.ArgumentParser:
         prog="merge-individuals",
         description="Merge endorsement records into one file per individual.",
     )
-    parser.add_argument("--endorsements-dir", type=Path, default=Path("data/endorsements"))
-    parser.add_argument("--profiles-dir", type=Path, default=Path("data/profiles"))
+    parser.add_argument("--endorsements-dir", type=Path, default=Path("data/tmp/endorsements"))
+    parser.add_argument("--profiles-dir", type=Path, default=Path("data/tmp/profiles"))
     parser.add_argument("--output-dir", type=Path, default=Path("data/individuals"))
+    parser.add_argument(
+        "--keep-tmp",
+        action="store_true",
+        help="Keep temporary endorsements and profiles after merging.",
+    )
     overwrite = parser.add_mutually_exclusive_group()
     overwrite.add_argument(
         "--overwrite",
@@ -244,6 +265,10 @@ def main(argv: list[str] | None = None) -> int:
         f"Individuals: people={result.people} endorsements={result.endorsements} "
         f"created={result.created} overwritten={result.overwritten} skipped={result.skipped}"
     )
+    if not args.keep_tmp:
+        removed = cleanup_generated_directory(args.endorsements_dir)
+        removed += cleanup_generated_directory(args.profiles_dir)
+        print(f"Cleaned temporary output entries: {removed}")
     return 0
 
 

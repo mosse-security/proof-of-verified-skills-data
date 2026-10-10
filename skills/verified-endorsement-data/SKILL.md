@@ -20,18 +20,18 @@ cyber domains are introduced.
    site adapters in `scrapers/`, normally one adapter per assessor. Use a
    `BaseCollectionScraper` when one site controls grouped output or local cache
    layout.
-4. Prefer cached HTML under `data/html/<assessor>/`. Fetch only missing
+4. Prefer cached HTML under `data/archives/html/<assessor>/`. Fetch only missing
    pages, save successful responses, and support pagination, multiple years,
    retries, timeouts, and bounded concurrency.
 5. Emit one endorsement per person when one source item names multiple people.
    Emit a `PersonProfile` alongside it when contact information is present.
    Keep the required biography field empty; biographies are generated later
    from the complete endorsement set. Store profile fragments under
-   `data/profiles`; do not add profile fields to the endorsement contract.
+   `data/tmp/profiles`; do not add profile fields to the endorsement contract.
 6. Run the merger after scraping. It reads all endorsement arrays and profile
    fragments, groups names case-insensitively, removes duplicate endorsements,
-   combines biography/contact data, and writes one `individual.tpl` record per
-   person under `data/individuals`.
+   combines contact data, writes one `individual.tpl` record per person under
+   `data/individuals`, and clears the temporary output directories.
 7. Run tests, compile checks, and schema validation before reporting completion.
 
 ## Non-negotiable contracts
@@ -62,6 +62,9 @@ python -m endorsement_scraper --assessor def-con --overwrite
 
 # Merge all endorsements and profiles into individual records
 python -m endorsement_scraper.individuals --overwrite
+
+# Preserve temporary outputs for inspection
+python -m endorsement_scraper.individuals --overwrite --keep-tmp
 
 # Run the complete test suite
 python -m unittest discover -s tests -q

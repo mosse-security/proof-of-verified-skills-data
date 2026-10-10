@@ -35,7 +35,7 @@ class HttpClient:
         delay: float = 0,
         user_agent: str = "verified-endorsement-scraper/0.1",
         save_html: bool = False,
-        html_directory: Path = Path("data/html"),
+        html_directory: Path = Path("data/archives/html"),
     ) -> None:
         self.assessor_id = assessor_id
         self.scraper_id = scraper_id
