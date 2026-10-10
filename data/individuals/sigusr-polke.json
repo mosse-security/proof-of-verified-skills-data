@@ -6,6 +6,7 @@
     {
       "name": "Sigusr Polke",
       "label": "Emulating Embedded Linux Devices at Scale with Light-Touch Firmware Rehosting",
+      "description": "We will present a higher-level “rehosting” approach to the emulation of embedded Linux systems. While most existing embedded Linux emulation frameworks work in userspace, we try not to touch userspace or modify a firmware image at all. Instead, we take a higher-level and somewhat “hybrid” approach, which involves building patched Linux kernels and using modified or custom QEMU machines. We do this to model the terrain of a system as closely as possible to that which a userspace firmware image expects, allowing userspace to run essentially unimpeded. This approach involves a considerable amount of reverse-engineering of userspace binaries and libraries, alongside poring over whatever GPL code we can find, in order to write kernel patches, dummy drivers and make QEMU changes “reactively”. Our goal is to end up with a rehosting environment which, from the perspective of userspace, looks almost exactly like the real system. References: All the following provided inspiration, although our methodology is different: Firmguide Firmadyne EMUX Jetset",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -11,6 +11,7 @@
     {
       "name": "Ben Gardiner",
       "label": "Blind Trailer Shouting",
+      "description": "Tanker trailers? Turns out those aren't just big, dumb hunks of metal. They have a powerline network, PLC4TRUCKS, which is unintentionally accessible wirelessly (CVEs 2020-14514 and 2022-26131). We found new trailer brake controllers using diagnostic protocol KWP2000, secured with access control by seed-key (a challenge-response protocol). We'll show how to use Wireshark to analyze the diag. traffic. We'll discuss why randomness is critical for any challenge-response protocol. We'll cover two ways to bypass this access control: using a SMT solver to crack the routine from a few request-response pairs (automated with AHK), and a classic reset attack that makes seeds entirely predictable. This second way allows for a blind, wireless attack, a finding now recognized as CVE-2024-12054. We'll detail how we ran timing search 'campaigns' with a custom sigrok decoder to PoC it. The trailer brake controller is also at risk from trailer-installed telematics devices too. We'll show how to use Scapy Automotive's UDS scanner on a faked CAN bus for PLC4TRUCKS (plus modify that for a known seed-key routine) so we can get a picture of that attack surface. This and the previous CVEs are a result of the heavy vehicle testing we do. We'll share some details of how we do onsite truck tests and how we do bench tests.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -27,6 +28,7 @@
     {
       "name": "Ben Gardiner",
       "label": "Reversing a Recall: From ‘Noise Triggered’ to RCE",
+      "description": "Heavy-duty trucks move the majority of freight in North America, making them a critical component of our infrastructure. When a major supplier issued a recall to address a seemingly harmless noise issue, the explanation didn't quite add up. This talk follows the reverse engineering journey that began with a simple question and led to a much larger discovery. By tearing apart firmware, analyzing the update protocols, and tracing ECU behavior, we uncovered evidence that the recall was not just remediating noise triggered flaws. Hidden within the recall's firmware update was a security mitigation addressing undisclosed vulnerabilities affecting a critical vehicle system. Attendees will see how modern tractor ECUs can be analyzed using professional and public tools and techniques (IDA Pro, idapython, qbindiff), the challenges of working with the safety-critical microcontrollers in heavy-vehicles (S12XE), and the evidence that revealed security impacts of the patch. Along the way, we'll discuss the growing cybersecurity risks facing commercial vehicles. Whether you're interested in automotive hacking, embedded systems, reverse engineering, or critical infrastructure security, this session offers a look inside the cybersecurity reality of the machines that keep the supply chain moving.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

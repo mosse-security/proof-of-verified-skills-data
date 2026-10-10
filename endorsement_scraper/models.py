@@ -72,7 +72,8 @@ class Endorsement:
     """A normalized endorsement found on an assessor's website.
 
     ``recipient`` becomes the template's person ``name``; ``title`` becomes
-    ``label``; ``kind`` becomes ``type``; and ``source_url`` becomes ``url``.
+    ``label``; ``description`` stores the source abstract or detailed
+    evidence; ``kind`` becomes ``type``; and ``source_url`` becomes ``url``.
     A four-digit ``year`` (or a date/details value containing one) is required.
     ``external_id`` should be set when the source exposes a stable identifier
     such as a CVE ID. Otherwise a deterministic ID is derived from all of the
@@ -84,6 +85,7 @@ class Endorsement:
     kind: str
     title: str
     source_url: str
+    description: str = ""
     recipient: str | None = None
     date: str | None = None
     year: int | None = None
@@ -99,6 +101,7 @@ class Endorsement:
             else detect_domains(
                 self.kind,
                 self.title,
+                self.description,
                 self.recipient,
                 self.details,
             )
@@ -135,6 +138,8 @@ class Endorsement:
             raise ValueError(
                 f"Endorsement {self.title!r} must supply the endorsed person's name"
             )
+        if not self.description.strip():
+            raise ValueError(f"Endorsement {self.title!r} must supply a description")
         year = self.year or _year_from_value(self.date) or _year_from_value(
             self.details.get("year")
         )
@@ -149,6 +154,7 @@ class Endorsement:
         return build_endorsement_record(
             name=self.recipient,
             label=self.title,
+            description=self.description,
             endorsement_type=self.kind,
             assessor=assessor,
             subtitle=subtitle,

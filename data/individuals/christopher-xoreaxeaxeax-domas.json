@@ -6,6 +6,7 @@
     {
       "name": "Christopher \"xoreaxeaxeax\" Domas",
       "label": "Ghosts in the Machine Check - Conjuring Hardware Failures for Cross-ring Privilege Escalation",
+      "description": "Catastrophic hardware failures. From an aging I/O device to cosmic ray bit flips, memory degradation to CPU fires. When an unrecoverable hardware error is detected, the common platform response is to generate a Machine Check Exception, and shut down before the problem gets worse. In this talk, we'll see what happens when we circumvent all the traditional fail safes. What happens when, instead of exceptionally rare failures from natural causes, we deliberately create these fatal events from software. When instead of a platform shutdown, we force the system to limp along, damaged but alive. We'll show how carefully injecting these signals during privileged CPU operations can disrupt secure transitions, how those disruptions progress to cascading system failures, and how to ride the chaos to gain hardware privilege escalation. Finally, we'll see how to undo the damage, recover from the unrecoverable, and let the system continue as if nothing happened - now with a foothold in privileged space, all through hardware failure events synthesized through software-only attacks. We'll conclude by showing how to use this vector to reveal all-new hardware vulnerabilities, and walk through a brave new world of machine check research opportunities - for both attackers and defenders - across technologies and architectures.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -22,6 +23,7 @@
     {
       "name": "Christopher \"xoreaxeaxeax\" Domas",
       "label": "Weaponizing Uselessness: Breaking SMM with the Slowest Instruction Ever Written",
+      "description": "This is a talk about making your CPU go slow. Really, really, really slow. It is also, somehow, a talk about breaking platform security on nearly every x86 system ever shipped, activating a hundred dormant CVEs, repeatedly ignoring processor specifications, racing intra-core interrupts, and finding a vulnerability that cannot be fixed. But mostly, it's about going slow.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

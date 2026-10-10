@@ -19,6 +19,7 @@
     {
       "name": "James \"Acorn221\" Arnott",
       "label": "8 Out of 10 Banks in Belgium HATE This One Weird eID RCE",
+      "description": "A major signing extension which has over 2 million users, primarily in Belgium, and lets websites interact with electronic ID (eID) and Maestro payment cards. It's used by \"8 of the 10 largest banks in Belgium and 60+ Belgian government agencies and departments\", and it facilitates eIDAS signatures, a cryptographically \"secure\" signature format trusted by governments and organizations. The company behind it, is a Qualified Trust Service Provider on the EU eIDAS Trusted List, the highest trust tier the regulation defines. We found multiple major issues with this system. Any site a user visited could read their eID and Maestro card data, and recover their eID PIN, which the binary handed back to the page inside a token that carried both the ciphertext and the key to decrypt it. And, worst of all, any site could trigger a drive-by RCE by getting the native binary to load and run an attacker-supplied library. All the user would see is a file download, like a PDF, when they are getting RCE'd. We'll show how they messed literally everything possible, and more!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

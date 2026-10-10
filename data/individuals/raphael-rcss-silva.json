@@ -11,6 +11,7 @@
     {
       "name": "Raphael \"rcss\" Silva",
       "label": "Install Me Maybe: Turning Claimable VS Code Extension IDs into Supply-Chain Attacks",
+      "description": "Developer tools trust extension identifiers way more than they should. A VS Code extension ID like publisher.extension shows up everywhere a dev environment gets set up, and people treat it as the same trusted thing no matter where it's resolved, but it isn't. Extension identity is marketplace-specific. An extension can be trusted and popular in one marketplace while the matching namespace sits unclaimed in another that the main forks actually pull from. Claim that namespace, publish under the same identifier, and a name people already trust now runs your code. It's dependency confusion, but for editor extensions. I've been calling it Extension Confusion. I'll show where the trust boundary breaks, the IDE quirks that carry these identifiers across the gap, and what happened when I published proof-of-concept extensions to measure it for real. The scale got out of hand fast: 1M+ callbacks, hundreds of organizations, $200k+ in bounties, all in under 3 months. Code running on laptops, managed corporate machines, remote dev setups, WSL, and containers, across SaaS, fintech, Fortune 500s, healthcare, government, and universities. A trusted name, a missing namespace, and the marketplace gap no one was watching. Editor extensions are supply chain. Treat them that way.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

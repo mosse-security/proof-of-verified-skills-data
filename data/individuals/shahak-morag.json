@@ -11,6 +11,7 @@
     {
       "name": "Shahak Morag",
       "label": "Win-DoS Epidemic: A crash course in abusing RPC for Win-DoS & Win-DDoS",
+      "description": "DCs are organizations’ core. A successful DoS attack against them can break authentication and paralyze operations. Following our LdapNightmare release, the first public DoS exploit for CVE-2024-49113, we found two new DoS-style attack surfaces on DCs: new critical DoS vulnerabilities, and creating a botnet harnessing public DCs for DDoS. Our goal: create the Win-DoS epidemic - infect DCs with Win-DoS and make them infect others, forming Win-DDoS. Building on LDAPNightmare, we explored client-side targeting, often exposing weaker code. By turning DCs into LDAP clients via NetLogon RPC, using LDAP referrals, we redirected them to chosen domains/ports, matching our goals. Moreover, we knew DDoS was powerful, but aimed to replicate its effect from a single machine. We focused on RPC servers - abundant in Windows with wide attack surfaces, especially those not requiring authentication. By abusing security gaps in RPC bindings, we hit the same RPC server relentlessly from one system, far surpassing standard concurrency limits! and WOW, found vulns crashing any Windows: servers and endpoints alike! We present “Win-DoS Epidemic” - DoS tools exploiting four new Win-DoS and one Win-DDoS zero-click vulns! Crash any Windows endpoint/server, including DCs, or launch a botnet using public DCs for DDoS. The epidemic has begun References: link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -27,6 +28,7 @@
     {
       "name": "Shahak Morag",
       "label": "Bring-Your-Own-EDR - Breaking Windows Process Protection to build EDR-Protected Malware",
+      "description": "The core assumption of modern endpoint defense is broken. While Endpoint Detection and Response (EDR) solutions are built to restrict administrators through Protected Process Light (PPL) and anti-tampering, this research reveals an industry-wide design flaw: the \"Bring-Your-Own-EDR\" (BYOEDR) technique. We demonstrate a post-exploitation scenario where a local administrator weaponizes the EDR's own trusted installer to bypass its formidable defenses, establishing a self-protected malware. This shows a structural weakness in how security products handle installation and trust. We will show a complete exploit chain that any attacker can leverage to achieve arbitrary unsigned code execution within PPL boundaries. Ultimately, the strongest defender becomes the attacker’s most powerful tool.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -23,6 +23,7 @@
     {
       "name": "Daniel Selifonov",
       "label": "A Password is Not Enough: Why disk encryption is broken and how we might fix it",
+      "description": "Since the publication of the cold boot attack on software disk encryption 5 years ago, there has been little progress on developing countermeasures and implementing defenses in the disk encryption technologies already in wide use. Furthermore, many users of full disk encryption have physical security habits that fall outside the security models of disk encryption software and thus are more vulnerable than they realize. After examining a set of effective, easily executable, attacks on off- the-shelf disk encryption, and contextualizing them in x86 system architecture, we examine recent research on means of mitigating these attacks. By integrating AES new instructions, x86 debugging registers, encrypted RAM, IOMMU, and the TPM into a combined encryption system, the difficulty of executing a successful attack is raised significantly. We will examine the construction of this system in detail, and, at a higher level, the role of full disk encryption in assuring meaningful security in the face of physical access. Source to an experimental version of the system will be made available.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -39,6 +40,7 @@
     {
       "name": "Daniel Selifonov",
       "label": "Drinking from LETHE: New methods of exploiting and mitigating memory corruption vulnerabilities",
+      "description": "Memory corruption vulnerabilities have plagued computer systems since we started programming software. Techniques for transforming memory corruption primitives into arbitrary code execution exploits have evolved significantly over the past two decades, from \"smashing the stack for fun and profit\" to the current apex of \"just in time code reuse\" while playing a cat and mouse game with similarly evolving defensive mitigations: from PaX/NX-bit to fine-grained ASLR and beyond. By contextualizing this battle between attack and defense, I will demonstrate new defense strategies based on augmenting fine-grained ASLR with memory disclosure mitigations to render existing exploitation techniques unreliable. Modifications to the Xen hypervisor exploiting hardware accelerated virtualization extensions on the modern Intel platform enable realizing these new defense strategies without imposing significant runtime CPU overhead.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

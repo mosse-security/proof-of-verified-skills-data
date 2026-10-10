@@ -6,6 +6,7 @@
     {
       "name": "Josh Datko",
       "label": "NSA Playset: DIY WAGONBED Hardware Implant over I2C",
+      "description": "In this talk we present an open source hardware version of the NSA's hardware trojan codenamed WAGONBED. From the leaked NSA ANT catalog, WAGONBED is described as a malicious hardware device that is connected to a server's I2C bus. Other exploits, like IRONCHEF, install a software exploit that exfiltrate data to the WAGONBED device. Once implanted, the WAGONBED device is connected to a GSM module to produce the NSA's dubbed CROSSBEAM attack. We present CHUCKWAGON, an open source hardware device that attaches to the I2C bus. With the CHUCKWAGON adapter, we show how to attach an embedded device, like a BeagleBone, to create your own hardware implant. We show how to add a GSM module to CHUCKWAGON to provide the hardware for the CROSSBEAM exploit. We improve the WAGONBED implant concept by using a Trusted Platform Module (TPM) to protect data collection from the target. The talk will demonstrate how these features can be used for good, and evil!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -22,6 +23,7 @@
     {
       "name": "Josh Datko",
       "label": "Breaking Bitcoin Hardware Wallets",
+      "description": "Sunday at 10:00 in Track 3 20 minutes | Demo, Exploit Josh Datko Principal Engineer, Cryptotronix LLC Chris Quartier Embedded Engineer, Cryptotronix, LLC The security of your bitcoins rests entirely in the security of your private key. Bitcoin hardware wallets help protect against software-based attacks to recover or misuse your key. However, hardware attacks on these wallets are not as well studied. In 2015, Jochen Hoenicke was able to extract the private key from a TREZOR using a simple power analysis technique. While that vulnerability was patched, he suggested the Microcontroller on the TREZOR, which is also the same on the KeepKey, may be vulnerable to additional side channel attacks. In this presentation we will quickly overview fault injection techniques, timing, and power analysis methods using the Open Source Hardware tool, the ChipWhisperer. We then show how to apply these techniques to the STM32F205 which is the MCU on the Trezor and KeepKey. Lastly, we will present our findings of a timing attack vulnerability and conclude with software and hardware recommendations to improve bitcoin hardware wallets. We will show and share our tools and methods to help you get started in breaking your own wallet!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

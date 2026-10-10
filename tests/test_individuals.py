@@ -12,6 +12,7 @@ def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
     return {
         "name": name,
         "label": label,
+        "description": f"Detailed description for {label}.",
         "type": "presentation",
         "assessor": "Example Conference",
         "assessor-id": "example",

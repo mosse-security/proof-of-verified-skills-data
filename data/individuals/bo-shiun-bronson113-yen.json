@@ -11,6 +11,7 @@
     {
       "name": "Bo-Shiun \"bronson113\" Yen",
       "label": "Looking and Peering: Attacking from beyond BGP Adjacency",
+      "description": "The internet is fragile. A single misconfiguration in BGP can cause worldwide outages. There have been various efforts to harden BGP, like BGPsec, RPKI, and MANRS, but those mostly address route validation. The session-level boundary that everything else rests on is adjacency trust. If your router only connects to trusted peers, the router should be safe. That assumption shaped a lot of the security design around BGP: peer whitelisting, MD5 / TCP-AO authentication, GTSM (RFC 5082) using TTL to enforce that a peer is one hop away. In this talk, we look beyond that boundary. Building on Route to Bugs (dos Santos & Guiot, DC31) and From Spoofing to Tunneling (123ojp, DC33), we demonstrate three vectors that undermine the assumption. We hijack a trusted peer through pre-auth command injection in BGP monitoring tools. We abuse tunnel injection to establish adjacency from off-path, and chain into a heap UAF for unauthenticated RCE. We turn implementation disagreement between FRR, BIRD, and other daemons into a weapon: we craft UPDATEs that one router type happily re-emits while causing denial of service in a different implementation.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

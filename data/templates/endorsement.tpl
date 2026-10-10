@@ -1,6 +1,7 @@
 {
   "name": "Name of the person",
   "label": "Title",
+  "description": "Detailed description or abstract of the endorsement",
   "type": "presentation|tool|cve|...",
   "assessor": "Name of assessor from where the endorsement was retrieved",
   "assessor-id": "ID of the assessor in the data folder",

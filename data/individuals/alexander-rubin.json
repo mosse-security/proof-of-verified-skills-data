@@ -6,6 +6,7 @@
     {
       "name": "Alexander Rubin",
       "label": "Atomic Honeypot: A MySQL Honeypot That Drops Shells",
+      "description": "Meet an attacking MySQL honepot which can “Attack the attackers”. In 2023 we have found a CVE (CVE-2023-21980) in MySQL that allows a rogue MySQL “server” to attack a client connecting to it; attack meaning RCE on the client side. Since then we were thinking on how to use it for good. One obvious application is to create a honeypot which will attack the attackers. In 2024 we have found another RCE in mysqldump utility (CVE-2024-21096), so we have created a rogue MySQL server and weaponized it with a chain of 3 vulnerabilities: 1/ arbitrary file read 2/ RCE from 2023 (CVE-2023- 21980) 3/ the new RCE (CVE-2024-21096). With this atomic honeypot we were able to discover 2 new attacks against MySQL server. Using arbitrary file read vulnerability in MySQL we were able to download and analyze the attackers' code and then execute an “attack against attackers” using a chain of exploits. CVE-2023-21980 CVE-2024-21096",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -6,6 +6,7 @@
     {
       "name": "Anish Athalye",
       "label": "Want Strong Isolation? Just Reset Your Processor",
+      "description": "Today's systems sandbox code through traditional techniques: memory protection and user-kernel mode. Even high-security devices like hardware cryptocurrency wallets use such an architecture. Unfortunately, this arrangement has a history of security bugs due to misconfigured protection hardware, bugs in kernel code, hardware bugs, and side channels. This talk proposes a new approach to isolation for devices like crypto wallets: separate the user and kernel onto two CPUs and multiplex processes by completely resetting the user processor between tasks so that there is no leakage. Processor reset is more complicated than might be expected. Simply asserting the reset line isn't enough to clear all CPU-internal state, but it turns out that software can be used to clear this state. However, reasoning about the correctness of such code is challenging. This talk presents a tool that can be used to develop and formally verify the correctness of reset code for a given CPU implementation. This talk also walks through a design of a wallet based on this reset-based isolation technique, discusses known security vulnerabilities in current designs such as the Ledger and Trezor wallets (including bugs in MPU misconfiguration, system calls, and drivers), and explores how a reset-based design could prevent such vulnerabilities.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

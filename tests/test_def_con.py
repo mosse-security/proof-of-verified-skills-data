@@ -130,7 +130,7 @@ class DefConTests(unittest.TestCase):
             self.assertEqual(
                 set(payload[0]),
                 {
-                    "name", "label", "type", "assessor", "assessor-id",
+                    "name", "label", "description", "type", "assessor", "assessor-id",
                     "assessor-category", "assessor-rigor-level", "reviewType", "subtitle", "url",
                     "year", "domains",
                 },

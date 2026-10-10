@@ -11,6 +11,7 @@
     {
       "name": "Christopher \"TRIODE\" Le",
       "label": "Pwning Rekordbox: Unauthenticated filesystem access in the world's most popular DJ software",
+      "description": "First public disclosure. rekordbox, the world's most popular DJ software, silently runs an NFS server whenever you play over the network, and it shares your whole hard drive, not just your music. Any device on the same subnet can quietly read your SSH keys, passwords, and files. It works the same on Windows, macOS, iOS, and Android. The catch: the obvious fix would break 20 years of hardware compatibility. This talk breaks down the PRO DJ LINK protocol, shows how any device on the wire talks its way into full filesystem access, and explains why the fix is stranger than it looks.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

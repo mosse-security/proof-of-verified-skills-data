@@ -15,6 +15,7 @@
     {
       "name": "Christopher Wade",
       "label": "Tag-side attacks against NFC",
+      "description": "This talk covers tag-side attacks against NFC communication protocols, including cracking of Mifare encryption keys and performing targeted attacks against NFC readers. In addition, it will cover the design and creation of devices capable of emulating NFC tags down to the raw protocol using standard components and tools, with no abstraction to dedicated hardware, covering and expanding on the capabilities of available products. This talk will contain how 13.56MHz NFC works at a raw level, how tools can be built for analysing it, how the protocol can be implemented in full on standard Microcontrollers, and the security weaknesses present in its design.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -31,6 +32,7 @@
     {
       "name": "Christopher Wade",
       "label": "Beyond Root: Custom Firmware for Embedded Mobile Chipsets",
+      "description": "Rooting a smartphone is often considered the ultimate method to allow a user to take complete control of their device. Despite this, many smartphones contain hardware which is closed off to any modification. This talk aims to show how this hardware can be reverse engineered in order to bypass its protections and further expand its functionality. Using proprietary NFC Controllers as an example, we will cover analysis of the protocols used by the chips, how the firmware protections could be broken, and how custom firmware could be developed and deployed to the phone with no hardware modifications. This will include methodologies for analyzing weaknesses in firmware update protocols, leveraging the Unicorn CPU Emulator to bypass debugging restrictions, and techniques for reverse engineering the hardware capabilities of an unknown chip in order to implement custom features. This will end with demonstration of a smartphone with passive NFC sniffing capabilities and expanded tag emulation functionality.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +50,7 @@
     {
       "name": "Christopher Wade",
       "label": "Breaking Secure Bootloaders",
+      "description": "Bootloaders often use signature verification mechanisms in order to protect a device from executing malicious software. This talk aims to outline actionable weaknesses in modern bootloaders which allow attackers to deploy unsigned code, despite these protection mechanisms. In the first phase of this talk, we will discuss exploitation of the bootloaders in modern Android smartphones, demonstrating weaknesses which allow for bypassing bootloader unlocking restrictions, decryption of protected user data, and deployment of malicious software to devices using full disk encryption. In the second phase, we will discuss bootloader weaknesses in the secondary hardware used by smartphones. Using an embedded RF chip as a target, we will demonstrate reverse engineering techniques which identified weaknesses in the signature verification mechanisms of the firmware update protocols used by the bootloader, allowing for deployment of custom firmware to the chip. REFERENCES: Travis Goodspeed - Great Ideas in Reversing the Tytera MD380: https://nullcon.net/website/archives/ppt/goa-16/Great-Ideas-in-Reversing-the-Tytera-MD380-by-Travis-Goodspeed.pdf Roee Hay - fastboot oem vuln: Android Bootloader Vulnerabilities in Vendor Customizations: https://www.usenix.org/system/files/conference/woot17/woot17-paper-hay.pdf",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -65,6 +68,7 @@
     {
       "name": "Christopher Wade",
       "label": "Physical Attacks Against Smartphones",
+      "description": "Android devices are constantly improving their security to protect against attackers with physical access, with new protection techniques being added year-by-year. This talk aims to demonstrate vulnerabilities in modern Android smartphones that are still viable, despite the mitigations in place. In the first phase of this talk, we will discuss analysis and exploitation of vendor-customised versions of Android's Recovery mode, demonstrating weaknesses that allow for privilege escalation to root, and traversal from Recovery to Android, without Bootloader access, using nothing but a Micro SD card. In the second phase, we will discuss weaknesses in the Secondary Bootloader of devices produced by a popular smartphone manufacturer. We will demonstrate how, using a vulnerability in the core USB stack, code execution can be achieved, and a modified Android image can be booted, without compromising the functionality of the device.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

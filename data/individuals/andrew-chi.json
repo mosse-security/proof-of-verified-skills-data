@@ -6,6 +6,7 @@
     {
       "name": "Andrew Chi",
       "label": "Assessing the Security of Certificates at Scale",
+      "description": "The security of digital certificates is too often undermined by the use of poor entropy sources in key generation. Flawed entropy can be hard to discover, especially when analyzing individual devices. However, some flaws can be detected when a large set of keys from the same entropy source are analyzed, as was dramatically demonstrated in 2012 and 2016 by the detection of weak HTTPS keys on the Internet. In this talk, we present tools and techniques to identify weak keys at scale, by checking issued certificates obtained from passive monitoring, active network scans, or certificate authority logs. Our tools use efficient multithreaded implementations of network monitors, scanners, certificate parsers, and mathematical tests. The batch greatest common divisor test (BGCD) identifies RSA public keys with common factors, and outputs the corresponding private keys. The common key test identifies distinct devices that share identical keys. We report on findings from both tests and demonstrate how to audit HTTPS servers, run BGCD on 100M+ keys, identify RSA keys with common factors, and generate the corresponding private keys. Because nothing convinces like an attack, we show how to produce and use PEM files for factored keys.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

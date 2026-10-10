@@ -6,6 +6,7 @@
     {
       "name": "Joshua Maddux",
       "label": "API-Induced SSRF: How Apple Pay Scattered Vulnerabilities Across the Web",
+      "description": "The 2016 WWDC saw the dawn of Apple Pay Web, an API that lets websites embed an Apple Pay button within their web-facing stores. Supporting it required a complex request flow, complete with client certificates and a custom session server. This proved detrimental, since Apple failed to caution against important side effects of taking in untrusted URLs. As a result, many new SSRF vulnerabilities entered the world. Worse yet, while they were exploitable and discoverable in similar ways, they were spread across distinct codebases in several programming languages, so could not be patched in any generic way. Apple is not alone - in the process of gluing the web together, Twilio, Salesforce, and others have all created similarly broad attack surfaces. When companies fail to take an honest, empathetic look at how clients will use a product, they shove along hidden security burdens. Those who integrate with an API have less context than those who create it, so are in a worse position to recognize these risks. Engineers have been talking about defensive programming for decades, but top companies still have trouble practicing it. In this talk we explore these mistakes with demos of affected software, and introduce a powerful model for finding broad classes of bugs.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -22,6 +23,7 @@
     {
       "name": "Joshua Maddux",
       "label": "When TLS Hacks You",
+      "description": "Lots of people try to attack the security of TLS. But what if we use TLS to attack other things? It's a huge standard, and it turns out that features intended to make TLS fast have also made it useful as an attack vector. Among other things, these features provide a lot of flexibility for Server-Side Request Forgery (SSRF). While past work using HTTPS URLs in SSRF has relied upon platform-specific bugs such as SNI injection, we can go further. In this talk, I present a novel, cross-platform way of leveraging TLS to target internal services. Uniquely, these attacks are more effective the more comprehensively a platform supports modern TLS, so won't go away with library upgrades. It is also unlikely that the TLS spec will change overnight at the whim of a random security researcher. Instead, we need to walk through scenarios and dispel common assumptions so the audience can know what to look out for. Of course, the best way to do so is with demos!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

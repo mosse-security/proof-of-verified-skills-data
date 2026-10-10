@@ -6,6 +6,7 @@
     {
       "name": "Sam Bowne",
       "label": "Teaching Hacking at College",
+      "description": "No abstract provided. Talk title: Teaching Hacking at College",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -22,6 +23,7 @@
     {
       "name": "Sam Bowne",
       "label": "Hijacking Web 2.0 Sites with SSLstrip--Hands-on Training",
+      "description": "Many Websites mix secure and insecure content on the same page, like Facebook. This makes it possible to steal all the data entered on such a page easily, using Moxie Marlinspike's new SSLstrip tool. First I will give a brief explanation and demonstration of the technique, and then I will help audience members set up the attack themselves on their own laptops. Detailed instructions and all required software will be provided. Audience members should bring a laptop computer to participate in the hands-on training.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -38,6 +40,7 @@
     {
       "name": "Sam Bowne",
       "label": "Who Cares About IPv6?",
+      "description": "What is IPv6? Why should you care? If we ignore it, will it just go away? The current Internet Protocol numbering scheme, IPv4, is nearing its end-of-life. Within two years, all the IPv4 numbers will be allocated, so that new devices will not be able to connect directly to the Internet. We all will be forced to adapt to the new IPv6 system soon. But how can we get started? This talk explains why IPv6 is necessary, how it works, and how everyone can quickly and easily start using it now. I will explain and demonstrate how to set up a free tunnel to access the Internet via IPv6. I will also explain the Hurricane Electric IPv6 certifications. The certifications are great because they guide a novice through the stages of IPv6 knowledge: connecting as a client, setting up an IPv6-enabled Web server, email server, DNS server, and glue records. There are large security implications to IPv6 too. I will explain several important IPv6 vulnerabilities and countermeasures, including auto-configuration privacy risks, torrents over IPv6, bypassing VPNs with IPv6, Routing Header Zero packet amplification attacks, and the ping-pong IPv6 DoS vulnerability. My goal is to convince the audience to pay attention to IPv6 and to guide them to an easy way to start learning about it and using it now. All my students at City College San Francisco will have IPv6 homework from now on--you need to get on board now or be left behind!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -54,6 +57,7 @@
     {
       "name": "Sam Bowne",
       "label": "Three Generations of DoS Attacks (with Audience Participation, as Victims)",
+      "description": "Denial-of-service (DoS) attacks are very common. They are used for extortion, political protest, revenge, or just LULz. Most of them use old, inefficient methods like UDP Floods, which require thousands of attackers to bring down a Web server. The newer Layer 7 attacks like Slowloris and Rudy are more powerful, and can stop a Web server from a single attacker with incomplete Http requests. The newest and most powerful attack uses IPv6 multicasts, and can bring down all the Windows machines on an entire network from a single attacker. I will explain and demonstrate these tools: Low Orbit Ion Cannon, OWASP Http DoS Tool, and flood_router6 from the thc-ipv6 attack suite. This deadly IPv6 Router Advertisement Flood attack is a zero-day attack--Microsoft has known about it since June 2010 but has not patched it yet (as of May 4, 2011). Audience Participation: Bring a device to test for vulnerability to the Router Advertisement Flood! Some cell phones and game consoles have been reported to be vulnerable--let's find out! If your device crashes, please come to the Q&A room so we can video-record it and arrange disclosure to the vendor.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -70,6 +74,7 @@
     {
       "name": "Sam Bowne",
       "label": "Data Evaporation from SSDs",
+      "description": "Files on magnetic hard drives remain on the drive even after they are deleted, so they can be recovered later with forensic tools. Sometimes SSDs work the same way, but under other conditions they erase this latent data in a \"garbage collection\" process. Understanding when and how this happens is important to forensic investigators and people who handle confidential data. I'll explain the purpose of garbage collection, and how it is affected by the operating system, SSD model, BIOS settings, TRIM, and drive format. I'll demonstrate SSD data evaporation on a MacBook Air and a Windows system, using my \"evap\" tool (available for everyone to use) that makes it easy to test SSDs for data evaporation.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -86,6 +91,7 @@
     {
       "name": "Sam Bowne",
       "label": "Evil DoS Attacks and Strong Defenses",
+      "description": "On the attack side, this talk will explain and demonstrate attacks which crash Mac OS X, Windows 8, Windows Server 2012, and Web servers; causing a BSOD or complete system freeze. The Mac and Windows systems fall to the new IPv6 Router Advertisement flood in thc-ipv6-2.1, but only after creating a vulnerable state with some \"priming\" router advertisements. Servers fail from Sockstress--a brutal TCP attack which was invented in 2008, but still remains effective today. On the defense side: the inside story of the DDoS that almost Broke the Internet. In March 2013, attackers launched an attack against Spamhaus that topped 300Gbps. Spamhaus gave us permission to talk about the details of the attack. While CloudFlare was able to fend off the attack, it exposed some vulnerabilities in the Internet's infrastructure that attackers will inevitably exploit. If an Internet-crippling attack happens, this is what it will look like. And here's what the network needs to do in order to protect itself.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

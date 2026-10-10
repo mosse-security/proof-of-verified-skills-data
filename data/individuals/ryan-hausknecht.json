@@ -6,6 +6,7 @@
     {
       "name": "Ryan Hausknecht",
       "label": "Wrestling with a Python: Escaping Copilot Studio's AI-Guarded Sandbox",
+      "description": "Microsoft Copilot Studio lets anyone build AI agents that execute Python. Behind the scenes, that code runs in a Windows container on Azure Service Fabric, wrapped in a Python sandbox and guarded by a GPT-4.1 mini model that decides what's safe to run. Three layers of defense. The presenter broke all of them. Starting from a standard agent with code interpreter enabled, we used classic MRO introspection with string concatenation to bypass dunder filters, escaped Python entirely through pythonnet (which nobody thought to block), and systematically defeated the LLM guardrail by exploiting its leaked reasoning chain. The result: exfiltrated TLS private keys and certificates, 75 environment variables including Azure AD client IDs and Service Fabric cluster topology, complete application source code, and confirmed command execution as ContainerUser. The most interesting finding was the LLM guardrail itself. It is non-deterministic: identical payloads sometimes pass and sometimes get blocked. It leaks its full security reasoning in the API response, turning the defender's AI into an oracle for the attacker. This talk walks through the full attack chain, demos a C2 tool that turns the code interpreter into a persistent shell, and releases all tooling.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

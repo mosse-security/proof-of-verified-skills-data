@@ -15,6 +15,7 @@
     {
       "name": "Aidan \"luu176\" Nakache",
       "label": "Riding for Free - Breaking Public Transport RFID at Scale",
+      "description": "How many of you tapped an RFID card to ride a train this year? How many of you know what's actually stored on it? Every transit authority in the world builds their own proprietary card formats, and not one has ever published a spec. The security model is the same everywhere: if nobody knows the format, nobody can exploit it. I spent two years testing that assumption. Across 50+ cities and every major contactless protocol, I reverse engineered the proprietary data formats that transit systems treat as their last line of defense. Along the way I built Metroflip, an open source transit card reader for the Flipper Zero, and found critical vulnerabilities in Spain's two largest transit systems that allow unlimited free travel. On RENFE, Spain's national rail, I cracked a proprietary checksum algorithm that lets you directly modify trip counters, expiry dates, and zones on any card in the country. On T-Mobilitat, Barcelona's modern encrypted metro platform, I bypassed card-level crypto entirely by changing a single byte in the mobile app's relay, getting free trips and automatic refunds. I'll walk through the methodology, demo the RENFE exploit live on stage with a Flipper Zero, and share some hard lessons about what happens when you try to responsibly disclose vulnerabilities in infrastructure you depend on every day.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

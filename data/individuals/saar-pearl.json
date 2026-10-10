@@ -11,6 +11,7 @@
     {
       "name": "Saar Pearl",
       "label": "WASM Was Not the Boundary: Sandcastles, Not Sandboxes",
+      "description": "Pyodide is often treated as a ready-made sandbox: block os, block js, and untrusted Python is assumed to stay inside WebAssembly. In n8n and the other products we tested, that assumption failed. When ctypes or reflection remained reachable, attacker-controlled Python could cross from CPython-in-WASM into the Emscripten/JavaScript host boundary the product actually relied on. We show this as an architectural failure, not a one-off bug. In Node.js embeddings, that boundary break typically becomes immediate host-side code execution because the escaped code lands in a runtime with no native permission model. In Deno embeddings, the same break still reaches the embedding runtime, but the final blast radius depends on the permissions the product granted; in one default configuration, that still meant full RCE. In CI environments, the same mistake turns tests and build steps into a supply-chain risk because the escaped code runs next to tokens, secrets, and release artifacts. Across workflow automation, spreadsheets, AI agents, desktop wrappers, and build tooling, we found seven escapes, two public CVEs, and multiple additional disclosures. Attendees leave with a precise mental model of where Pyodide isolation actually ends, how to test similar deployments, and how to harden them beyond fragile denylists.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

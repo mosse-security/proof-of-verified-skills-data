@@ -11,6 +11,7 @@
     {
       "name": "Peyton \"p80n-sec\" Kennedy",
       "label": "Hacking Your Life with AI Can Get You Hacked: How AI Orchestration Platforms Ship RCE by Design",
+      "description": "AI orchestration platforms promise to automate your life. They deliver, just not always for you. Kestra, Langflow, Nocobase, Flowise, Activepieces, Dify, and Apache Airflow have quietly become critical infrastructure, and they all share the same dangerous assumption: anyone who can touch a workflow is trusted to run code on the host. I went hunting across seven major platforms and walked out with multiple CVEs and critical-severity findings. I'll share an arsenal of RCE primitives: shell injection through template rendering, exec() on user-supplied \"validation\" code, eval() on raw LLM output, and unauthenticated API endpoints that hand you a shell. Then I'll demonstrate the kill shot: an unauthenticated attacker achieving full RCE through a single prompt injection into an LLM module. When I reported these, some vendors told me code execution is intended behavior and security is the deployer's problem. I'll show you why that argument falls apart in real deployments, and walk through the trust boundary failures that keep producing the same bugs across the ecosystem. You'll leave with a methodology for tearing these platforms apart, a catalog of recurring vulnerability patterns, and a framework for evaluating whether a platform's threat model survives contact with reality.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

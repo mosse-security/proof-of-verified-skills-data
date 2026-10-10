@@ -31,6 +31,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Optical Surgery; Implanting a DropCam",
+      "description": "Video Monitoring solutions such as DropCam aim to provide remote monitoring, protection and security. But what if they could be maliciously subverted? This presentation details a reverse-engineering effort that resulted in the full compromise of a DropCam. Specifically, given physical access and some creative hardware and software hacks, any malicious software may be persistently installed upon the device. Implanting a wireless video monitoring solution presents some unique opportunities, such as intercepting the video stream, ‘hot-micing’, or even acting as persistent access/attack point within a network. This presentation will describe such an implant and well as revealing a method of infecting either Windows or OS X hosts that are used to configure a subverted DropCam.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -47,6 +48,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Stick That In Your (root)Pipe & Smoke It",
+      "description": "You may ask; \"why would Apple add an XPC service that can create setuid files anywhere on the system - and then blindly allow any local user to leverage this service?\" Honestly, I have no idea! The undocumented 'writeconfig' XPC service was recently uncovered by Emil Kvarnhammar, who determined its lax controls could be abused to escalate one's privileges to root. Dubbed ‘rootpipe,' this bug was patched in OS X 10.10.3. End of story, right? Nope, instead things then got quite interesting. First, Apple decided to leave older versions of OS X un-patched. Then, an astute researcher discovered that the OSX/XSLCmd malware which pre-dated the disclosure, exploited this same vulnerability as a 0day! Finally, yours truly, found a simple way to side-step Apple's patch to re-exploit the core vulnerability on a fully-patched system. So come attend (but maybe leave your MacBooks at home), as we dive into the technical details XPC and the rootpipe vulnerability, explore how malware exploited this flaw, and then fully detail the process of completely bypassing Apple's patch. The talk will conclude by examining Apple’s response, a second patch, that appears to squash ‘rootpipe’…for now.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -63,6 +65,7 @@
     {
       "name": "Patrick Wardle",
       "label": "I've got 99 Problems, but Little Snitch ain't one",
+      "description": "Security products should make our computers more secure, not less. Little Snitch is the de facto personal firewall for OS X that aims to secure a Mac by blocking unauthorized network traffic. Unfortunately bypassing this firewall's network monitoring mechanisms is trivial...and worse yet, the firewall's kernel core was found to contain an exploitable ring-0 heap-overflow. #fail Though briefly touching on generic firewall bypass techniques, this talk will largely focus on the kernel-mode vulnerability. Specifically, I’ll discuss bypassing OS X specific anti-debugging mechanisms employed by the product, reverse-engineering the firewall's I/O Kit kernel interfaces and 'authentication' mechanisms, and the discovery of the exploitable heap-overflow. Finally, methods of exploitation will be briefly discussed, including how an Apple kernel-fix made this previously un-exploitable bug, exploitable on OS X 10.11 So if you simply want to see yet another 'security' product fall, or more generically, learn methods of OS X kernel extension reversing in a practical manner, then this talk is for you :)",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -80,6 +83,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Death By 1000 Installers; on macOS, it's all broken!",
+      "description": "Friday at 14:00 in Track 2 45 minutes | Demo, Exploit Patrick Wardle Chief Security Researcher, Synack Ever get an uneasy feeling when an installer asks for your password? Well, your gut was right! The majority of macOS installers & updaters are vulnerable to a wide range of priv-esc attacks. It began with the discovery that Apple's OS updater could be abused to bypass SIP (CVE-2017-6974). Next, turns out Apple's core installer app may be subverted to load unsigned dylibs which may elevate privileges to root. And what about 3rd-party installers? I looked at what's installed on my Mac, and ahhh, so many bugs! Firewall, Little Snitch: EoP via race condition of insecure plist Anti-Virus, Sophos: EoP via hijack of binary component Browser, Google Chrome: EoP via script hijack Virtualization, VMWare Fusion: EoP via race condition of insecure script IoT, DropCam: EoP via hijack of binary component and more! ...and 3rd-party auto-update frameworks like Sparkle -yup vulnerable too! Though root is great, we can't bypass SIP nor load unsigned kexts. However with root, I discovered one could now trigger a ring-0 heap-overflow that provides complete system control. Though the talk will discuss a variety of discovery mechanisms, 0days, and macOS exploitation techniques, it won't be all doom & gloom. We'll end by discussing ways to perform authorized installs/upgrades that don't undermine system security.\"",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -97,6 +101,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Offensive Malware Analysis: Dissecting OSX/FruitFly via a Custom C&C Server",
+      "description": "Friday at 10:20 in 101 Track 20 minutes | Demo, Tool Patrick Wardle Chief Security Researcher, Synack / Creator of Objective-See Creating a custom command and control (C&C) server for someone else's malware has a myriad of benefits. If you can take over it a domain, you then may able to fully hijack other hackers' infected hosts. A more prosaic benefit is expediting analysis. While hackers and governments may be more interested in the former, malware analysts can benefit from the later FruitFly, the first OS X/macOS malware of 2017, is a rather intriguing specimen. Selectively targeting biomedical research institutions, it is thought to have flown under the radar for many years. In this talk, we'll focus on the 'B' variant of FruitFly that even now, is only detected by a handful of security products. We'll begin by analyzing the malware's dropper, an obfuscated perl script. As this language is rather archaic and uncommon in malware droppers, we'll discuss some debugging techniques and fully deconstruct the script. While this dropper component also communicates with the C&C server and supports some basic commands, it drops a binary payload in order to perform more complex actions. However, instead of fully reversing this piece of the malware, the talk will focus on an initial triage and show how this was sufficient for the creation of a custom C&C server. With such a server, we can easily coerce the malware to reveal it's full capabilities. For example, the malware invokes a handful of low-level mouse & graphics APIs, passing in a variety of dynamic parameters. Instead of spending hours reversing and debugging this complex code, via the C&C server, we can simply send it various commands and observe the effects. Of course this approach hinges on the ability to closely observe the malware's actions. As such, we'll discuss macOS-specific tools that can monitor various events, and where necessary detail the creation of custom ones (e.g. a 'mouse sniffer' that locally observes and decodes commands sent from the malware to the OS, in order to control the mouse). While some of this talk is FruitFly and/or macOS specific, conceptually it should broadly apply to analyzing other malware, even on other operating systems :)",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -115,6 +120,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Fire & Ice: Making and Breaking macOS Firewalls",
+      "description": "In the ever raging battle between malicious code and anti-malware tools, firewalls play an essential role. Many a malware has been generically thwarted thanks to the watchful eye of these products. However on macOS, firewalls are rather poorly understood. Apple's documentation surrounding it's network filter interfaces is rather lacking and all commercial macOS firewalls are closed source. This talk aims to take a peek behind the proverbial curtain revealing how to both create and 'destroy' macOS firewalls. In this talk, we'll first dive into what it takes to create an effective firewall for macOS. Yes we'll discuss core concepts such as kernel-level socket filtering—but also how to communicate with user-mode components, install privileged code in a secure manner, and simple ways to implement self-defense mechanisms (including protecting the UI from synthetic events). Of course any security tool, including firewalls, can be broken. After looking at various macOS malware specimens that proactively attempt to detect such firewalls, we'll don our 'gray' (black?) hats to discuss various attacks against these products. And while some attacks are well known, others are currently undisclosed and can generically bypass even today's most vigilant Mac firewalls. But all is not lost. By proactively discussing such attacks, combined with our newly-found understandings of firewall internals, we can improve the existing status quo, advancing firewall development. With a little luck, such advancements may foil, or at least complicate the lives of tomorrow's sophisticated Mac malware!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -132,6 +138,7 @@
     {
       "name": "Patrick Wardle",
       "label": "The Mouse is Mightier than the Sword",
+      "description": "In today's digital world the mouse, not the pen is arguably mightier than the sword. Via a single click, countless security mechanisms may be completely bypassed. Run untrusted app? click ...allowed. Authorize keychain access? click ...allowed. Load 3rd-party kernel extension? click ...allowed. Authorize outgoing network connection? click ...allowed. Luckily security-conscious users will (hopefully) heed such warning dialogues—stopping malicious code in its tracks. But what if such clicks can be synthetically generated and interact with such prompts in a completely invisible way? Well, then everything pretty much goes to hell. Of course OS vendors such as Apple are keenly aware of this 'attack' vector, and thus strive to design their UI in a manner that is resistant against synthetic events. Unfortunately they failed. In this talk we'll discuss a vulnerability (CVE-2017-7150) found in all recent versions of macOS that allowed unprivileged code to interact with any UI component including 'protected' security dialogues. Armed with the bug, it was trivial to programmatically bypass Apple's touted 'User-Approved Kext' security feature, dump all passwords from the keychain, bypass 3rd-party security tools, and much more! And as Apple's patch was incomplete (surprise surprise) we'll drop an 0day that (still) allows unprivileged code to post synthetic events and bypass various security mechanisms on a fully patched macOS box! And while it may seem that such synthetic interactions with the UI will be visible to the user, we'll discuss an elegant way to ensure they happen completely invisibly!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -148,6 +155,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Harnessing Weapons of Mac Destruction",
+      "description": "Whenever a new Mac malware specimen is uncovered, it provides a unique insight into the offensive Mac capabilities of hackers or nation-state adversaries. Better yet, such discoveries provide fully-functional capabilities that may be weaponized for our own surreptitious purposes! I mean, life is short, why write your own? We'll begin this talk by discussing the methodology of subverting existing malware for \"personal use\", highlighting both the challenges and benefits of such an approach. Next, we'll walk-thru the weaponization of various Mac malware specimens, including an interactive backdoor, a file-exfiltration implant, ransomware, and yes, even adware. Customizations include various runtime binary modifications that will coerce such malware to accept tasking from our own C&C servers, and/or automatically perform actions on our behalf. Of course, in their pristine state, such samples are currently detected by AV products. As such we'll also walk-thru subtle modifications that will ensure our modified tools remains undetected by traditional detection approaches. In conclusion, we'll highlight novel heuristic methods that can generically detect such threats to ensure Mac users remain protected even from such weaponized threats.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -164,6 +172,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Office Drama on macOS",
+      "description": "On the Windows platform, macro-based Office attacks are well understood (and frankly are rather old news). However on macOS, though such attacks are growing in popularity and are quite en vogue, they have received far less attention from the research and security community. In this talk, we will begin by analyzing recent documents that contain macro-based attacks targeting Apple's desktop OS, highlighting the macOS-specific exploit code and payloads. Though sophisticated APT groups are behind several of these attacks, (luckily) these malicious documents and their payloads are constrained by recent application and OS-level security mechanisms. However, things could be far worse! To illustrate this claim, we'll detail the creation of a powerful exploit chain, that begins with CVE-2019-1457, leveraged a new sandbox escape and ended with a full bypass of Apple's stringent notarization requirements. Triggered by simply opening a malicious (macro-laced) Office document, no other user interaction was required in order to persistently infect even a fully-patched macOS Catalina system! To end the talk, we'll discuss various prevention and detection mechanisms that could thwart each stage of the exploit chain, as well as that aim to generically provide protection against future attacks!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -180,6 +189,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Bundles of Joy: Breaking macOS via Subverted Applications Bundles",
+      "description": "A recent vulnerability, CVE-2021-30657, neatly bypassed a myriad of foundational macOS security features such as File Quarantine, Gatekeeper, and Notarization. Armed with this capability attackers could (and were!) hacking macOS systems with a simple user (double)-click. Yikes! In this presentation we’ll dig deep into the bowels of macOS to uncover the root cause of the bug: a subtle logic flaw in the complex and undocumented policy subsystem. Moreover, we’ll highlight the discovery of malware exploiting this bug as an 0day, reversing Apple’s patch, and discuss novel methods of both detection and prevention. REFERENCES: “All Your Macs Are Belong To Us” https://objective-see.com/blog/blog_0x64.html “macOS Gatekeeper Bypass (2021 Edition)” https://cedowens.medium.com/macos-gatekeeper-bypass-2021-edition-5256a2955508 “Shlayer Malware Abusing Gatekeeper Bypass On Macos” https://www.jamf.com/blog/shlayer-malware-abusing-gatekeeper-bypass-on-macos/",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -196,6 +206,7 @@
     {
       "name": "Patrick Wardle",
       "label": "You’re Muted Rooted",
+      "description": "Track 4 You’re Muted Rooted Patrick Wardle 45 minutes 💻 🛠 🪲",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -212,6 +223,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Demystifying (& Bypassing) macOS's Background Task Management",
+      "description": "To retain a foothold on an infected system, most Mac malware will persist; installing itself in a manner that ensures it will be automatically (re)launched each time the infected system is rebooted. In macOS Ventura, Apple's rearchitected core persistence mechanisms and added a new security mechanism that alerts the user any time an item is persisted. As the former is both undocumented and implemented in a proprietary manner this poses a problem for existing security and forensics tools (that aim to heuristically detect malware via unauthorized persistence events). On the other hand, the latter is problematic to malware authors, who obviously want their malicious creations to persist without an alert being shown to the user. In this talk, we'll indiscriminately provide solutions for all! First, we'll dive into the internals of macOS's Background Task Management (BTM) which, as we'll see, contains a central (albeit proprietary) repository of persistent items. Armed with this information, we'll release open-source code capable of programmatically enumerating all persistent items from BTM, ensuring security and forensics tools regain compatibility. We'll also highlight design weaknesses that malicious code could trivially employ to sidestep the new security features of BTM, such that persistence may still be silently achieved.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -230,6 +242,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Nothing but Net: Leveraging macOS's Networking Frameworks to Heuristically Detect Malware",
+      "description": "As the majority of malware contains networking capabilities, it is well understood that detecting unauthorized network access is a powerful detection heuristic. However, while the concepts of network traffic analysis and monitoring to detect malicious code are well established and widely implemented on platforms such as Windows, there remains a dearth of such capabilities on macOS. This talk aims to remedy this situation by delving deeply into a myriad of programmatic approaches capable of enumerating network state, statistics, and traffic, directly on a macOS host. We will showcase open-source implementations of relatively overlooked low-level APIs, private frameworks, and user-mode extensions that provide insight into all networking activity. And, by leveraging these techniques, you will learn how to efficiently and generically detect both known and unknown threats targeting macOS!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -246,6 +259,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Binary Facades: Reversing approaches to extract embedded scripts in compiled macOS malware",
+      "description": "When confronted with malicious macOS binaries, analysts typically reach for a disassembler and immerse themselves in the complexities of low-level assembly. But what if this tedious process could be skipped entirely? While many malware samples are distributed as native macOS binaries (easily run with a simple double-click), they frequently encapsulate scripts hidden within executable wrappers. Leveraging frameworks such as PyInstaller, Appify, Tauri, and Platypus, malware authors embed their scripts with binaries, complicating traditional analysis. Although these frameworks share the goal of producing natively executable binaries, each employs a distinct method to embed scripts, thus necessitating tailored extraction tools and approaches. Using real-world macOS malware (such as Shlayer, CreativeUpdate, GravityRAT, and many others), we'll first demonstrate how to identify these faux binaries and then how to efficiently extract or reconstruct their embedded scripts, bypassing the disassembler entirely! References: P.Wardle: The Art of Mac Malware (Vol I: Analysis) \"Reverse Engineering a Native Desktop Application (Tauri App)\" link \"From The DPRK With Love:analyzing a recent north korean macOS backdoor\" link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -263,6 +277,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Mastering Apple's Endpoint Security for Advanced macOS Malware Detection",
+      "description": "Five years after Apple radically empowered third-party security developers on macOS with the introduction of Endpoint Security, most developers grasp its fundamentals, but subtle nuances remain, and advanced features are still underutilized. And as the framework continues to evolve, even experienced developers can struggle to keep pace with its rapidly expanding capabilities. This talk explores critical areas that frequently trip up developers, such as caching behaviors and authorization deadlines, before diving into Endpoint Security’s more advanced features like mute inversions. We'll also cover recently introduced capabilities—including the long-awaited TCC event monitoring which offer unprecedented visibility into permission-related activity often targeted by malware. Each topic will include practical code examples, demonstrated and validated against sophisticated macOS malware. Join us to move beyond the basics and unlock the full power of Apple's Endpoint Security framework. References: link \"The Art of Mac Malware, Volume 2: Detecting Malicious Software\" No Starch Press",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -279,6 +294,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Dylib Hijacking on macOS: Dead or Alive?",
+      "description": "Over a decade ago, a much younger Patrick showed that macOS (then OS X) was vulnerable to what had long been considered a Windows-only attack: dynamic library hijacking. By planting malicious libraries in the right place, attackers could achieve stealthy persistence, inject code into trusted processes, and even bypass core Apple security mechanisms. Today, an older (and hopefully wiser) Patrick revisits that work to answer a simple question: is dylib hijacking truly dead on modern macOS, or has Apple’s decade of defenses, including Gatekeeper, App Translocation, Notarization, and the Hardened Runtime, simply made it harder? This talk revisits the technique in 2026, analyzing these mitigations and evaluating their real-world effectiveness. While the attack surface has been significantly reduced, we show dylib hijacking remains possible under the right conditions. Through real-world examples and live demos, we explore how modern applications can still be coerced into loading attacker-controlled libraries, enabling code execution within trusted processes and bypassing controls such as TCC. Finally, we present practical detection and defense strategies, including novel approaches leveraging Endpoint Security to detect (and block!) malicious library loads at runtime.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

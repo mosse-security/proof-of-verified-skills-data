@@ -47,6 +47,7 @@ The internal `Endorsement` fields map to the template as follows:
 | --- | --- |
 | `recipient` | `name` |
 | `title` | `label` |
+| `description` | `description` |
 | `kind` | `type` |
 | assessor JSON `name` | `assessor` |
 | assessor ID | `assessor-id` |

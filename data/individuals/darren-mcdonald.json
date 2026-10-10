@@ -11,6 +11,7 @@
     {
       "name": "Darren McDonald",
       "label": "Thin Client? Thin Crypto - Bypassing Full-Disk Encryption Across Three Major Thin Clients Vendors without Breaking a Cipher",
+      "description": "Thin clients are deployed across healthcare, finance, government and critical infrastructure, environments where full disk encryption is a compliance requirement, not optional. Dell, IGEL and HP all ship FDE backed by TPM hardware and modern cryptography. I broke all three. I present new research demonstrating vulnerabilities that permit full disk encryption bypass across Dell ThinOS 9.x - 10.x, HP ThinPro 8.x - 9.x, and IGEL OS 11.x - 12.x. Every attack achieving filesystem access from a powered-off device with no credentials and no specialist hardware. Behind the encryption: WiFi credentials, 802.1x NAC client certificates, VDI session configs, management server credentials, and password hashes. Compromised devices provide a foothold into the infrastructure it was connected to. I trace Dell's implementation across three generations getting progressively further from best practice, show IGEL's correct PCR policy and modern cryptography bypassed through their own signed bootloader, and demonstrate HP's implementation undone by an unmeasured boot chain.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

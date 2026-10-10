@@ -11,6 +11,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Gateway Cryptography: Hacking Impossible Tunnels Through Improbable Networks with OpenSSH and the GNU Privacy Guard",
+      "description": "Gateway Cryptography: Hacking Impossible Tunnels Through Improbable Networks with OpenSSH and the GNU Privacy Guard 1) Theory of Gateway Cryptography 2) Methods of securely connecting mutually firewalled hosts 3) Turning any SSHD into a VPN termination point (without using PPP over SSH) 4) Dynamically Rekeyed OpenPGP 5) PPTP over SSH 6) Securely SUing to root 7) Robustifying live-configuration of OpenSSH 8) SFTP Compatibility Mode (implementing everything with cat, tar, and tail)",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -27,6 +28,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Black Ops of TCP/IP: Work NAT, Work. Good NAT. Woof",
+      "description": "Communication under TCP/IP networks has become extraordinarily popular; still, there remains significant problems that as of yet have remained unsolved within its layered rules. So, lets break the rules, elegance (and possibly security) be damned. Signficant new techniques and code will be unveiled to answer the following questions:",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -43,6 +45,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Black Ops of TCP/IP 2004",
+      "description": "Black Ops of TCP/IP 2004 Continuing the research done in previous years on advanced protocol manipulation and the high speed evaluation of large network characteristics, this year's Black Ops of TCP/IP goes into new territory with a deep analysis of the Domain Name System. A core element of the TCP/IP application suite, it is everywhere—and there is unexpected power contained within. Interesting Facets of the Global DNS Architecture: A high speed scanner for DNS servers, modeled after my TCP scanner \"scanrand\", recently executed several Internet-scale sweeps of the net. Surprising results, with direct implications for computer forensics operations, will be discussed and analyzed. Distributed, High Speed, Large File Dissemination via DNS, A.K.A. \"Reinventing the Square Wheel.\" Although there have been previous attempts to serve files over the DNS architecture, none have been even remotely usable. I will discuss a new approach that, through its significant performance improvement, is indeed remotely usable. One-To-Many Streaming Data Dissemination over DNS: The previous system maximizes speed at the expense of making streaming impossible. We will discuss an interesting alternate approach that almost usefully distributes streaming audio data to endpoints via their DNS queries. SSH over DNS: I will demonstrate a cross-platform, userspace mechanism for moving SSH data over DNS queries. This has implications for captive wireless portals, which often allow bidirectional DNS traffic. To complete this work, some enormously complex data needed to be understood, and tools were worked with and written towards that end. Experimental 3D information visualization mechanisms and tools are thus available to be demonstrated, extending from using a 3D renderer usually used for MRI medical data as a generic static 3D canvas to using a custom OpenGL particle plotter to dynamically plot multidimensional factors of incoming data streams. A number of other topics will be raised as well, including: Uses and abuses of remotely visible incrementers and decrementers (such as the IPID field in many TCP/IP stacks, and initial TTL values on arbitrary DNS queries) Uses of generic packet race conditions, whereby useful information can be gleaned from which packet of a relatively large set effects the state change Protocol transliteration between TCP and UDP, allowing unreliable communication over what appears to be a TCP session, and allowing reliable data to be transmitted, with zero data expansion, over a UDP link Potential solutions to the SSH bastion host security problem, whereby the invocation of remote ssh binaries at a firewall or \"bastion host\" opens up a single point of major failure for a server infrastructure.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -60,6 +63,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Black Ops 2006",
+      "description": "Black Ops 2006 Dan Kaminsky Abstract: The known topics for this year include: The Worldwide SSL Analysis—There's a major flaw in the way many, many SSL devices operate. I'll discuss how widespread this flaw is, as well as announce results from this worldwide SSL scan. Syntax Highlighting...on Hexdumps. Reverse Engineering efforts often require looking at hex dumps—without much context for whats being looked at. I will discuss a \"bridge\" position between AI and manual operation in which compression code is used to automatically visualize patterns in analyzed data. Everything else Bio: Dan Kaminsky, Dox Para Research. Formerly of Cisco and Avaya.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -76,6 +80,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Black Ops 2007: Design Reviewing The Web",
+      "description": "No abstract provided. Talk title: Black Ops 2007: Design Reviewing The Web",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -92,6 +97,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "TBA",
+      "description": "No abstract provided. Talk title: TBA",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -108,6 +114,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Hello, My Name is /hostname/",
+      "description": "It is widely known that MAC addresses are spoofable, however many access control models rely on them to uniquely identify devices. When host names are set to be user's real names and are broadcast to the Internet and accessible with reverse DNS lookups, everybody on the Internet, with no work, knows exactly who you are. You can't do medical research without saying JANE PHILLIPS IS CURIOUS ABOUT PREGNANCY and you can't study the effects of marijuana without TOM STEVENS IS READING UP ON SMOKING OUT. We will discuss the technical, legal, and ethical implications of transparency of identity online versus the war on combating piracy and how it pressures IT departments to design and maintain systems with these fallacies.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -124,6 +131,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Something about Network Security",
+      "description": "Abstract to come.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -140,6 +148,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Black Ops Of Fundamental Defense: Web Edition",
+      "description": "Lets be honest: Year in, year out, we keep finding the same bugs in the same places, and wondering: Why don't they learn? Why don't developers use these beautiful tools we provide them -- parameterized queries, XSRF tokens, X.509 certificates, and escapes in all their glorious forms? I will tell you: It is because these tools are not very good. And they are not very good, because their quality simply has not mattered. Security demands, devs implement, and if devs don't implement, security complains. And six months later, it's the same bugs, in the same places, by the same devs. It doesn't have to be this way. In this talk, I will discuss the theory that most classes of security flaws are actually symptoms of deeper causes. Furthermore, I will present attempts at addressing these causes. Specific areas of investigation will include potential answers to questions, specifically: 1) Why can't we keep code and data separate? 2) Why can't we log into web sites? 3) Why can't we authenticate across organizational boundaries? By answers, I mean code, and by code, I mean _a lot_ of code. I will not provide any assurances that the code is secure -- only extended peer review can do that — but I want to show another way of doing things. This talk is going to be packed with live demos.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -156,6 +165,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Panel:DNS Systemic Vulnerabilities and Risk Management: A Discussion with the Experts",
+      "description": "The experts on this panel will provide their views on systemic risks facing the DNS and provide thoughts on measures that should be undertaken to remediate the risks. The panelists will discuss both the challenges and the security benefits that will arise from the implementation of DNSSec.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -173,6 +183,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Black Ops of TCP/IP 2011",
+      "description": "Remember when networks represented interesting targets, when TCP/IP was itself a vector for messiness, when packet crafting was a required skill? In this thoroughly retro talk, we're going to play with systems the old fashioned way, cobbling together various interesting behaviors with the last few shreds of what low level networking has to offer. Here's a few things to expect: • IPv4 and IPv6 Fragmentation Attacks, Eight Years In The Making • TCP Sequence Number Attacks In Modern Stacks • IP TTLs: Not Actually Expired • Inverse Bug Hunting: More Things Found On The Open Net • Rebinding Attacks Against Enterprise Infrastructure • BitCoin: Network Manipulation for Fun And (Literal) Profit • The Net Neutrality Transparency Engine DNS might show up, and applications are going to be poked at. But this will be an old style networking talk, through and through.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -189,6 +200,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Black Ops",
+      "description": "If there's one thing we know, it's that we're doing it wrong. Sacred cows make the best hamburgers, so in this year's talk I'm going to play with some techniques that are obviously wrong and evil and naive. There will also be a lot of very interesting code, spanning the range from high speed network stacks to random number engines to a much deeper analysis of non-neutral networks. Finally, we will revisit DNSSEC, both in code, and in what it can mean to change the battleground in your favor.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -205,6 +217,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "World War 3.0: Chaos, Control & the Battle for the Net",
+      "description": "There is a battle under way for control of the Internet. Some see it as a fight between forces of Order (who want to superimpose existing, pre-digital power structures and their notions of privacy, intellectual property, security, and sovereignty onto the Net) and forces of Disorder (who want to abandon those old structures and let the will of the crowd control a new global culture). Yet this binary view of the conflict excludes the characters with the best chance of resolving it: those who know that control is impossible and chaos is untenable, a group that Vanity Fair, in an article called \"World War 3.o,\" called \"the forces of Organized Chaos.\" This panel gathers leading proponents of that worldview to discuss urgent issues of Internet governance, which may come to a head later this year in a Dubai meeting of the U.N.'s International Telecommunications Union. If government control and anarchistic chaos online are unacceptable, what exactly do the forces of organized chaos propose as an alternative? And what is the DefCon community's role in helping to realize that vision of the Net?",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -221,6 +234,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "Secure Random By Default",
+      "description": "As a general rule in security, we have learned that the best way to achieve security is to enable it by default. However, across operating systems and languages, random number generation is always exposed via two separate and most assuredly unequal APIs -- insecure and default, and secure but obscure. Why not fix this? Why not make JavaScript and PHP and Java and Python and even libc rand() return strong entropy? What are the issues stopping us? Should we just shell back to /dev/urandom, or is there merit to userspace entropy gathering? How does fork() and virtualization impact the question? What of performance, and memory consumption, and headless machines? Turns out the above questions are not actually rhetorical. Just because a change might be a good idea doesn't mean it's a simple one. This will be a deep dive, but one that I believe will actually yield a fix for the repeated *real world* failures of random number generation systems.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -237,6 +251,7 @@
     {
       "name": "Dan Kaminsky",
       "label": "I want these * bugs off my * Internet",
+      "description": "Are you interested in the gory details in fixing ugly bugs? No? Just like watching stuff blow up? Go to some other talk! But if you want to see what it takes to comprehensively end an entire bug class -- how you dive into a code base, what performance and usability and maintainability and debuggability constraints it takes to make a web browser more secure -- oh do I have some dirt for you.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

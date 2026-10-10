@@ -11,6 +11,7 @@
     {
       "name": "William Liu",
       "label": "Patch Gap to Mobile Renderer RCE: Pwning Samsung Internet's V8 on the Galaxy S25",
+      "description": "What happens when a flagship phone like the Samsung Galaxy S25 ships with an outdated Javascript engine in its default browser? For the past 6 months, Samsung Internet shipped with an out-of-date V8 build that had already-fixed, publicly known vulnerabilities. One such bug is CVE-2025-10891, a flaw in Ignition bytecode generation for Javascript exception handling. In this talk, we show how we transform this vulnerability into reliable renderer code execution through instruction smuggling and internal native V8 runtime calls. We then showcase how we exploit weaker isolation mechanisms on mobile Chromium engines to upgrade the renderer RCE’s capability into a universal XSS primitive.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

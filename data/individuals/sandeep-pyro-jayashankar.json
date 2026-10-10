@@ -6,6 +6,7 @@
     {
       "name": "Sandeep \"pyro\" Jayashankar",
       "label": "The Enclave is Lying to You: Breaking TEE Trust Boundaries Through Boot-Time State",
+      "description": "Confidential computing on cloud TEEs: Nitro Enclaves, SEV-SNP, and TDX promises that a fully compromised host cannot reach into a hardware-isolated enclave. The cryptographic attestation story holds. The deployment story does not. This talk demonstrates attacks that bypass TEE isolation without touching the enclave image. We target the inputs an enclave trusts at boot: cloud object storage, host-supplied environment variables, and KMS keys whose policies forget to enforce attestation. None are covered by attestation. All reach inside. We demonstrate remote code execution as root inside a Nitro Enclave with a single s3:PutObject permission. No host access. No SSH. One file upload containing a path traversal, one boot cycle, and the enclave executes attacker-controlled code. From inside we intercept KMS decrypts live to extract the database encryption key in plaintext, exfiltrate the enclave's IAM credentials, and establish persistence across reboots without re-exploitation - all while PCR measurements remain unchanged and attestation reports a healthy enclave. We release an open-source auditing tool, walk through which defenses held, and provide a hardening checklist for any team running workloads inside TEEs. The enclave isn't broken. The way we deploy it is.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

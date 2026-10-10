@@ -15,6 +15,7 @@
     {
       "name": "Charles \"cfreal\" Fol",
       "label": "Iconv, set the charset to RCE: exploiting the glibc to hack the PHP engine",
+      "description": "Upon its discovery, CVE-2024-2961, a very old buffer overflow in the glibc, seemed like a terrible bug. Within the prism of the PHP engine, however, the vulnerability shone, and provided both a new remote code execution vector and a few 0-days. This talk will first walk you through the discovery of the bug and its limitations, before describing the conception of remote binary PHP exploits using this bug, and through them offer unique insight in the internal of the engine of the web language, and the difficulties one faces when exploiting it. After this, it will reveal the impact on PHP's ecosystem, from well-known functions to unsuspected sinks, by showcasing the vulnerability on several popular libraries and applications.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

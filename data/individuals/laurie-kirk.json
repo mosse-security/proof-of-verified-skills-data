@@ -15,6 +15,7 @@
     {
       "name": "Laurie Kirk",
       "label": "Runtime Riddles: Abusing Manipulation Points in the Android Source",
+      "description": "Android malware creators constantly struggle to devise innovative methods to obscure apps and impede reverse engineering. As numerous standard techniques have lost efficacy, I'll unveil the next frontier in Android obfuscation: runtime manipulation. Runtime manipulation alters standard application flow-of-control to bypass decompilers and emulators. In this talk, I'll reveal my strategy for pinpointing manipulation targets in Android's source code. I will describe how I craft manipulators in native C++ once a suitable target has been located. This is accomplished by hooking Java methods via the Java Native Interface (JNI) and typecasting the handle to a C-style pointer. Runtime manipulation can entirely remove traces of ClassLoader calls which are unavoidable for standard Dalvik Executable (DEX) packing, but are also easily discovered and hooked. This technique also effectively breaks cross-reference calculations within all Android decompilers. I will demonstrate and equip attendees with a custom Android library for devices running Android 13, providing a new tool that enables runtime manipulation experimentation. In addition, I'll demonstrate my methodology for pinpointing Java targets and modifying their underlying native data structures.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

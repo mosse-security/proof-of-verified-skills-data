@@ -6,6 +6,7 @@
     {
       "name": "Slava Makkaveev",
       "label": "Unboxing Android: Everything you wanted to know about Android packers",
+      "description": "Sunday at 10:00 in 101 Track 45 minutes | Demo, Tool Avi Bashan Mobile R&D Team Leader, Check Point Slava Makkaveev Security Researcher, Check Point To understand the Android ecosystem today, one must understand Android packers. Whether used for protecting legitimate apps' business logic or hiding malicious content, Android packer usage is on the rise. Android packers continue to increase their efforts to prevent reverse engineers and static analysis engines from understanding what's inside the package. To do so they employ elaborate tactics, including state of the art ELF tampering, obfuscation and various anti-debugging techniques. In this talk, we will provide an overview of the packer industry and present real world test cases. We will do a deep technical dive into the internal workings of popular Android packers, exposing the different methods which protect the app's code. As a countermeasure, we will provide various techniques to circumvent them, allowing hackers and security researchers to unpack the secrets they withhold.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -22,6 +23,7 @@
     {
       "name": "Slava Makkaveev",
       "label": "Man-In-The-Disk",
+      "description": "Most of modern OS are using sandboxing in order to prevent malicious apps from affecting other apps or even harming the OS itself. Google is constantly reinforcing Android’s sandbox protection, introducing new features to prevent any kind of sandbox bypass. In this talk we want to shed new light on a less known attack surface which affects all Android devices and allows an attacker to hijack the communication between privileged apps and the disk, bypassing Android’s latest sandbox protection. The problem begins when privileged apps interact with files stored in exposed areas, and even worse, some of them will unintentionally break the sandbox by insecurely appending such data to its confinements. Can you imagine if someone could execute code in the context of your keyboard, or install an unwanted app without your consent? Well… It’s hardly within the realm of imagination. The external storage and network based vulnerabilities we discovered, can be leveraged by the attacker to corrupt data, steal sensitive information or even take control of your device.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -38,6 +40,7 @@
     {
       "name": "Slava Makkaveev",
       "label": "Pwn2Own Qualcomm compute DSP for fun and profit",
+      "description": "Qualcomm Snapdragon SoC integrates multiple subsystems, each one is customized for a particular application domain. Compute digital-signal processor (cDSP) is a subsystem which allows a mobile device to process simple sets of data with high performance on low power. In the talk we will show that this little studied proprietary subsystem has many security problems that open the door to malicious Android applications for PE and DoS attacks of the device. For security reasons, the cDSP is licensed for programming by OEMs and by a limited number of third-party software vendors. The code running on DSP is signed by Qualcomm. However, we will demonstrate how an Android application can bypass Qualcomm’s signature and execute privileged code on DSP, and what further security issues this can lead to. Hexagon SDK is the official way for the vendors to prepare DSP related code. We discovered serious bugs in the SDK that have led to the hundreds of hidden vulnerabilities in the Qualcomm-owned and vendors’ code. The truth is that almost all DSP executable libraries embedded in Qualcomm-based smartphones are vulnerable to attacks due to issues in the Hexagon SDK. We are going to highlight the auto generated security holes in the DSP software and then exploit them.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -55,6 +58,7 @@
     {
       "name": "Slava Makkaveev",
       "label": "Do you like to read? I know how to take over your Kindle with an e-book",
+      "description": "Since 2007, Amazon has sold tens of millions of Kindles, which is impressive. But this also means that tens of millions of people can be hacked through a software bug in those same Kindles. Their devices can be turned into bots, their private local networks can be compromised, and perhaps even information in their billing accounts can be stolen. The easiest way to remotely reach a user's Kindle is through an e-book. A malicious book can be published and made available for free access in any virtual library, including the Kindle Store, or sent directly to the end-user device via Amazon services. While you might not be happy with the writing in a particular book, nobody expects to download one that is malicious. No such scenarios have been publicized. Antiviruses do not have signatures for e-books. But... we succeeded in making a malicious book for you. If you open this book on a Kindle device, it causes a hidden piece of code to be executed with root rights. From this moment on, you lost your e-reader, account and more. Want to know the details?",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -71,6 +75,7 @@
     {
       "name": "Slava Makkaveev",
       "label": "Digging into Xiaomi’s TEE to get to Chinese money",
+      "description": "Track 2 Digging into Xiaomi’s TEE to get to Chinese money Slava Makkaveev 20 minutes 💻 🪲",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

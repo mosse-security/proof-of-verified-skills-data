@@ -11,6 +11,7 @@
     {
       "name": "Alex Tipan",
       "label": "Your Bank Thinks I'm You: A Complete Kill Chain Against Mobile Banking Security",
+      "description": "Mobile banking apps stack multiple security layers: RASP (runtime protection), root/jailbreak detection, anti-instrumentation, biometric KYC with liveness detection, and AI-powered anti-deepfake. Each layer promises to stop attackers. We defeated all of them -- in production apps used by millions. We present a full kill chain against mobile banks and digital wallet apps from a Latin American country, demonstrating how an attacker with an Android phone and open-source tools can: (1) bypass RASP and root detection using kernel-level root solutions and publicly available modules, achieving 100% evasion of OS integrity and anti-hacking controls; (2) use Frida to dynamically instrument biometric SDKs, injecting controlled frames into the liveness capture flow by hooking the \"best result\" getter and replacing the YUV buffer; (3) bypass KYC identity verification by substituting selfie images and crafting coherent template+photo payloads that the backend accepts as legitimate; and (4) generate AI-synthetic faces from photos that pass liveness detection with 0% detection rate. Every banking app we tested fell. The different RASPs and biometric SDKs are deployed in 30+ countries, protecting hundreds of millions of users. We'll show why that should worry you. Video demos included.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -34,6 +34,7 @@ class DefConParseError(RuntimeError):
 class DefConEndorsement:
     name: str
     label: str
+    description: str
     subtitle: str
     url: str
     year: int
@@ -52,6 +53,7 @@ class DefConEndorsement:
         return build_endorsement_record(
             name=self.name,
             label=self.label,
+            description=self.description,
             endorsement_type="presentation",
             assessor=assessor,
             subtitle=self.subtitle,
@@ -259,16 +261,23 @@ def parse_def_con_page(
             if not name or _is_noise_name(name):
                 continue
             item = DefConEndorsement(
-                name,
-                talk,
-                conference,
-                link,
-                calendar_year,
-                detect_domains(name, talk, evidence, conference),
+                name=name,
+                label=talk,
+                description=_description(evidence, talk),
+                subtitle=conference,
+                url=link,
+                year=calendar_year,
+                domains=detect_domains(name, talk, evidence, conference),
                 contact=tuple(profiles.get(_person_key(name), {}).get("contact", ())),
             )
             unique.setdefault((name.casefold(), talk.casefold(), link), item)
     return list(unique.values())
+
+
+def _description(evidence: str, title: str) -> str:
+    """Return source abstract text, with a deterministic fallback."""
+
+    return _clean(evidence) or f"No abstract provided. Talk title: {title}"
 
 
 def _parse_modern(

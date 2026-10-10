@@ -6,6 +6,7 @@
     {
       "name": "Jenko \"edleft\" Hwong",
       "label": "CloudBashing: Exploiting free CloudShells for mining, networking, exfil, and persistence at scale",
+      "description": "CloudBashing started with reversing the private AWS, Azure, and GCP CloudShell REST and websocket terminal protocols, then tracing and analyzing janky browser authentication/credential flows from cookies to OAuth tokens. Along the way, we automated the APIs to access free CPU/networking, maintained access across container/VM resets, utilized persistent $HOME for implants/data, locked users out of sudo access, and installed a C2 framework. We discovered IAM design issues like: AWS role assumption that result in a large # of environments per compromised identity, web socket sessions that survive API token revocation, and M365/Gmail consumer email accounts that have default CloudShell access. This turned into a newly released exploit toolkit, CloudBasher, that enumerates, validates, installs, and runs distributed workloads with virtual storage and private networking across a large-scale agent network with persistence and resilience. We'll demo distributing CPU-intensive workloads, using virtual storage for staging/exfiltration, secure networking for proxy and obfuscated exfil paths, while automating the discovery, enumeration, creation of CloudShell environments from initial credentials/sessions to implants/setup/networking to management and control.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

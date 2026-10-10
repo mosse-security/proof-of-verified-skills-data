@@ -11,6 +11,7 @@
     {
       "name": "Angelo Frasca Caccia",
       "label": "Chaining Microsoft Binaries to get Privileged Primitives in the Windows kernel",
+      "description": "System Guard Runtime Monitor was meant to be an OS integrity anchor on Windows. A kernel driver, gated behind Protected Process Light (PPL), and a runtime attestation engine running in a secure enclave. In this talk, we revisit a classic code injection technique and adapt it into what we call \"Bring Your Own Vulnerable WerFaultSecure\". Instead of loading a third-party vulnerable driver, we bring our own vulnerable copy of a PPL-enabled Microsoft binary and its dependencies to get code execution as a protected process. From there, we pivot into the Microsoft System Guard kernel driver, a component that was built to support the integrity attestation of kernel objects, specifically processes, but which can be abused to tamper with those exact objects instead. We will close by sharing Indicators of Compromise (IOCs), along with prevention and detection ideas for defenders, and by discussing the innovation this exploit chain brings to the offensive security landscape.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

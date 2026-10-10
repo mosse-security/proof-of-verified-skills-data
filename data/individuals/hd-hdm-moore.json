@@ -23,6 +23,7 @@
     {
       "name": "HD \"hdm\" Moore",
       "label": "Lights Out: Out-of-Band, Out of Mind, Out of Control",
+      "description": "Every enterprise server has a second computer you probably forgot about. The baseboard management controller runs its own OS, has its own network stack, and stays on even when the server is off. It speaks IPMI, a protocol from the 1990s that Dan Farmer thoroughly dismantled in 2013. Thirteen years later, nobody went back to check. We did. We scanned 15,000 internet-facing BMCs and 125,000 across corporate networks, extracted RAKP password hashes from three out of four targets without credentials, and cracked thousands offline. We show how to fingerprint vendors from unauthenticated GUID responses, extract Dell service tags and HPE serial numbers before logging in, and brute-force the \"random\" passwords that California's SB-327 law was supposed to fix. Then we show what comes next: pivoting from a compromised host to its BMC over the internal bus without touching the network, jumping to the out-of-band management VLAN, reusing shared credentials across the fleet, and landing on production hosts via Serial-over-LAN and virtual media. The host and BMC are the same physical machine; network segmentation means nothing when the bridge is a PCIe bus. We release OOBscan, an open-source IPMI exploitation tool, and demonstrate the full attack chain.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

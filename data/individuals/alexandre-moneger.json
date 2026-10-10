@@ -6,6 +6,7 @@
     {
       "name": "Alexandre Moneger",
       "label": "Generating ROP payloads from numbers",
+      "description": "Is it possible to generate a ROP payload whilst using as few gadgets from the target binary as possible? Is it also possible to build any shellcode in memory regardless of the opcodes in the target binary? An approach to this is to build the ROP payload by summing selected pieces of memory together and copying them to a stack in the process address space. A method and tool will be presented, which allows to stitch together selected numbers found in memory into a payload and execute it. Return Oriented Programming is at the core of modern exploitation technics, but the automation of the payload generation can be time consuming. The intent was to write a tool which is able to generate a generic enough ROP payload that it worked in most situations. I will present a new method to generate ROP payloads which relies on very few gadgets within the target binary (sometimes none), nor will rely on string copying particular bytes to build the in memory payload.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -6,6 +6,7 @@
     {
       "name": "Campbell Murray",
       "label": "GSM: We Can Hear Everyone Now!",
+      "description": "The presentation demonstrates that the security of the A5/1 and A5/3 ciphers used to protect cellular calls are vulnerable to compromise leading to full decryption of GSM communications, using freely available open source solutions along with our tools we developed for this task. The flaw being exploited lies in the heart of the design of GSM. In all implementations the standard requires GSM messages to first be error control encoded using a convolutional code and then encrypted. In the vast majority of implementations used today, encryption is performed using the A5/1 or A5/3 cipher. The convolutional code adds redundancy to the transmitted message, which can act like a fingerprint to identify the key used to encrypt the GSM message. To exploit the vulnerability an attacker simply needs to capture a transmission and identify the GSM channel used. The standard defines the convolutional code and therefore how the redundancy may be interpreted to recover the encryption key. This presentation considers passively capturing GSM traffic using A5/3 encryption and demonstrates a novel solution to cracking the key used without interacting with the mobile or network.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

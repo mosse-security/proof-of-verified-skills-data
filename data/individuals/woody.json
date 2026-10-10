@@ -6,6 +6,7 @@
     {
       "name": "Woody",
       "label": "Mobile Mesh RF Network Exploitation: Getting the Tea from goTenna",
+      "description": "False sense of security in devices that guarantee security is worse than no security at all. One device used by personnel who require communication security is goTenna Pro radio that creates an \"off-the-grid\" encrypted mobile mesh network.This network does not require any traditional cellular or satellite infrastructure and they may be found locally in your community. The datasheet says it is using AES-256 encryption. Has anyone bothered to verify that it is being implemented in the most secure manner? We examined this device and found that it was possible to fingerprint and track every off-the-grid message regardless of encryption. We also identified vulnerabilities that result in interception and decryption of the most secure encryption algorithm AES-256 as well as injection of messages into the existing mesh network. We don’t just trust what datasheets say, we verify it for you. We will explain our testing methodologies and demonstrate exploitation in a live demo. We will discuss the operational implications of these vulnerabilities and safe ways of using these devices that decrease the chance of a compromise. The tools developed as part of this research will be released open-source to inform what was possible to inspire future research against similar devices. We will discuss how we worked with goTenna to remedy these issues.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -22,6 +23,7 @@
     {
       "name": "Woody",
       "label": "One Key, Two Key, I Just Stole Your goTenna Key",
+      "description": "Encrypted radios promise off-grid privacy and security, but what if their core trust anchors can be broken with one message? Our latest research shows that a single, unauthenticated RF packet can overwrite any public keys goTenna Pro stores for peer-to-peer and group chats, silently substituting attacker-controlled keys so that every AES-256 encrypted message is now readable only to the attacker, not the intended recipient; by repeating the swap on both ends the attacker becomes an undetectable man-in-the-middle who alone can forward, alter, or drop traffic, leaving victims blind to compromise. We will live-demo three outcomes: pulling teams into GPS dead zones by injecting phantom coordinates; impersonating a surveillance teammate to feed disinformation and fracture cohesion; and detonating a network-wide blackout that forces operators onto weaker radio communication that allows easy direction-finding. The audience will watch us craft the packet, poison key stores, pivot between victims, and restore normalcy - all from commodity SDR hardware and open-source code released at the session. We close with a hardening guidance and a patch in goTenna Pro version 2.0.3 (CVE-2024-47130) proving once again that cryptography is only as strong as the key lifecycle surrounding it.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

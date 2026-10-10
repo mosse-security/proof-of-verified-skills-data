@@ -6,6 +6,7 @@
     {
       "name": "Kağan Çapar",
       "label": "From Fuzzer Noise to a Weaponized PHP Exploit: Exploiting a PHP Use-After-Free Vulnerability",
+      "description": "It started as fuzzer noise: an OSS-Fuzz crash in PHP's concat_function, filed under a JIT target but with no JIT in the stack. It is a core Zend Engine use-after-free, reproducible with php -n and no extensions. This is an honest exploitability study on Linux x86-64: from the mistriaged crash to native command execution (arbitrary read/write via stale DateInterval, zif_system resolved in-process, ASLR and PIE defeated at runtime) even where disable_functions is set. It builds on the public exploitation lineage, with an SPL ArrayObject delivery trick as our own delta.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

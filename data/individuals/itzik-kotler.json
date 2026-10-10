@@ -6,6 +6,7 @@
     {
       "name": "Itzik Kotler",
       "label": "The Day of the Updates",
+      "description": "Software updates apply patches or introduce new features to an application. In most cases, the update procedure is conducted in an insecure manner, exposing the updater to execution of malicious code or to manipulation of application data such as anti-virus signatures. This presentation will describe in detail different application-update procedures. It will then demonstrate several techniques of update-exploitation attacks, and introduce a new tool, which leverages a man-in-the-middle technique, to build and inject a fake update reply or hijack an on-going update session.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -22,6 +23,7 @@
     {
       "name": "Itzik Kotler",
       "label": "Represent! Defcon Groups, Hackerspaces, and You.",
+      "description": "Fabricating, circumventing, forging, partying, milling, crafting, building breaking — Defcon Groups have risen, fallen, and endured the last 8 years as decentralized and smoldering embers of the local hacker think-tank. This year Defcon sets out to stoke that fire and unite our groups, at and outside of the conference. The talk will consist of a panel of Defcon Groups leaders, uncovering the secrets and follies of several groups: what makes them work, when do they fail, and ultimately .. WTF have these people been doing all this time? Come hear how hackerspaces have influenced these local groups and the cool ways that these groups are propping the hackerspace. What can you break?",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -38,6 +40,7 @@
     {
       "name": "Itzik Kotler",
       "label": "Sounds Like Botnet",
+      "description": "VoIP is one of the most widely-used technologies among businesses and, increasingly, in households. It represents a combination of Internet technology and phone technology that enhances and expands the possibilities of both. One of these possibilities involves using it for botnet command and control infrastructure and a data exfiltration vector. The concept of VoIP Botnet is to operate in closed networks with limited access and the potential of censorship using everyday telecommunication and telephony services such as voicemail, conference calls, voice and signaling information. Moshi Moshi is a proof of concept VoIP Botnet that allows the operator to dial in from a pay phone or mobile phone, and get shell access and exfiltrate data from the bots. This presentation will discuss and demonstrate the use of VoIP technology to create \"Moshi Moshi,\" we also explore some interesting properties of VoIP based botnet. Additionally, we will discuss mitigating factors and ways that VoIP providers should implement in order to prevent further VoIP abuse.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -55,6 +58,7 @@
     {
       "name": "Itzik Kotler",
       "label": "The Adventures of AV and the Leaky Sandbox",
+      "description": "Friday at 16:00 in Track 2 45 minutes | Demo, Tool Itzik Kotler Co-Founder & CTO, SafeBreach Amit Klein VP Security Research, SafeBreach Everyone loves cloud-AV. Why not harness the wisdom of clouds to protect the enterprise? Consider a high-security enterprise with strict egress filtering - endpoints have no direct Internet connection, or the endpoints' connection to the Internet is restricted to hosts used by their legitimately installed software. Let's say there's malware running on an endpoint with full privileges. The malware still can't exfiltrate data due to the strict egress filtering. Now let'also assume that this enterprise uses cloud-enhanced anti-virus (AV).You'd argue that if malware is already running on the endpoint with full privileges, then an AV agent can't degrade the security of the endpoint. And you'd be completely wrong. In this presentation, we describe and demonstrate a novel technique for exfiltrating data from highly secure enterprises which employ strict egress filtering. Assuming the endpoint has a cloud-enhanced antivirus installed, we show that if the AV employs an Internet-connected sandbox in its cloud, it in fact facilitates such exfiltration. We release a tool implementing the exfiltration technique, and provide real-world results from several prominent AV products. We also provide insights on AV in-the-cloud sandboxes. Finally we address the issues of how to further enhance the attack, and possible mitigations.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -71,6 +75,7 @@
     {
       "name": "Itzik Kotler",
       "label": "Process Injection Techniques - Gotta Catch Them All",
+      "description": "When it comes to process injection in Windows, there are only 6-7 fundamental techniques, right? Wrong. In this talk, we provide the most comprehensive to-date “Windows process injection” collection of techniques. We focus on Windows 10 x64, and on injections from running 64-bit medium integrity process to another running 64-bit medium integrity process, without privilege elevation. We pay special attention to the new Windows protection technologies, e.g. CFG and CIG. We differentiate between memory write primitives and execution techniques, and discuss memory allocation strategies. Our collection is curated, analyzed, tabulated, with straight-forward, research-grade PoCs. We tested each technique against Windows 10 x64 with and without protections, and we report on the requirements, limitations, and quirks of each technique. And of course – no decent DEF CON presentation is complete without new attacks. We describe a new memory writing primitive which is CFG-agnostic. We describe a new “stack bombing” execution method (based on the memory write primitive above) that is inherently safe (even though overwriting the stack is a-priori a dangerous and destabilizing action). Finally, we release a library of all write primitives and execution methods, so users can generate “tailor-made” process injections.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

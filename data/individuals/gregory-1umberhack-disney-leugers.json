@@ -6,6 +6,7 @@
     {
       "name": "Gregory \"1umberhack\" Disney-Leugers",
       "label": "Reflections on Disregarding Trust (Weaponizing CDP and MHTML for Header-Agnostic Session Hijacking)",
+      "description": "Adversary-in-the-Middle (AitM) phishing has become the de facto standard for bypassing legacy Multi-Factor Authentication (MFA). However, modern AitM frameworks rely on complex, fragile regex rules to rewrite HTTP streams on the fly. When target applications implement strict client-side security headers like Subresource Integrity (SRI) and Content Security Policy (CSP), traditional proxies break, alerting defenders. This presentation introduces a novel \"Browser-in-the-Middle\" architecture. By weaponizing the Chrome DevTools Protocol (CDP), this custom-built Go toolkit renders the target application server-side, allows legitimate scripts to execute, and captures the resulting DOM as an MHTML snapshot. I will demonstrate how converting external assets into Base64 Data URIs and serving a self-contained, live DOM neutralizes SRI and CSP organically without triggering browser security violations. Finally, the talk will detail a Just-In-Time (JIT) JavaScript shim that hooks API calls to silently harvest post-MFA tokens from major IdPs including Okta, Microsoft, Google, and Shibboleth effectively trapping the user in a perfectly mirrored, attacker-controlled environment.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

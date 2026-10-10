@@ -15,6 +15,7 @@
     {
       "name": "Paul Gerste",
       "label": "Visual Studio Code is why I have (Workspace) Trust issues",
+      "description": "Developers are threat actors' targets of choice because of their access to business-critical services. After compromising a single developer, they could push code changes or obtain sensitive information. For instance, a recent campaign attributed to North Korea set up social network profiles to social engineer and infect prominent figures of the developer community with malicious Visual Studio projects and browser exploits. At the same time, modern development tools offer increasingly advanced features and deep integration with ecosystems, sometimes at the cost of basic security measures. Code editors tried to counterbalance it by introducing new lines of defense (e.g., \"Workspace Trust\"), leading to a cat-and-mouse game to restrict access while keeping most features available by default. In this talk, we present the state of the art of Visual Studio Code's security. We go in-depth into its attack surface, how its extensions work, and the technical details of two vulnerabilities we found in Visual Studio Code. These findings, CVE-2021-43891 and CVE-2022-30129, led to a $30.000 bounty with an unexpected twist. We also present 1-days discovered by other researchers to develop the audience's intuition. These concepts apply to most IDEs of the market so everybody will now think twice before opening third-party code!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -31,6 +32,7 @@
     {
       "name": "Paul Gerste",
       "label": "SQL Injection Isn't Dead: Smuggling Queries at the Protocol Level",
+      "description": "SQL injections seem to be a solved problem; databases even have built-in support for prepared statements, leaving no room for injections. In this session, we will go a level deeper: instead of attacking the query syntax, we will explore smuggling attacks against database wire protocols, through which remote, unauthenticated attackers can inject entire (No)SQL statements into an application's database connection. Using vulnerable database driver libraries as case studies, we will bring the concept of HTTP request smuggling to binary protocols. By corrupting the boundaries between protocol messages, we desynchronize an application and its database, allowing the insertion of malicious messages that lead to authentication bypasses, data leakage, and remote code execution. To put our findings into context, we will explore the real-world applicability of this new concept by comparing how robust various languages and frameworks are against these attacks. We will also discuss how smuggling attacks are not specific to database wire protocols but affect all kinds of binary protocols, from databases over message queues to caching. We will end the session with inspirations for future research to explore the topic further. link link link link link link link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

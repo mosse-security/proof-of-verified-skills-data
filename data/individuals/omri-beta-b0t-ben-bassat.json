@@ -11,6 +11,7 @@
     {
       "name": "Omri \"beta_b0t\" Ben Bassat",
       "label": "Breaking Hardware CFI with Sigreturn",
+      "description": "Modern ARM64 systems rely on hardware Control-Flow Integrity (CFI) such as PAC and BTI to kill classic ROP/JOP exploits. Indirect branches must land on valid targets, returns are signed, and arbitrary jumps are supposed to be over. Except… it isn’t. In this talk, we show that, by design, there is a fundamental gap between POSIX signal handling and hardware CFI. Sigreturn acts as a built-in, kernel-assisted CFI bypass primitive, enabling arbitrary control-flow transfers via crafted signal frames while bypassing CFI enforcement. We then explore what makes this work in practice on modern Linux and Android systems (including latest Ubuntu and Pixel devices): using sigreturn as a practical exploitation primitive, then pivoting with \"\"cfi-safe stack pivots\"\", abusing missing BTI enforcement on the vDSO, and leveraging GCC’s common default settings. I'll present a PoC showing how these primitives can be chained in classic SROP style, and demonstrate how you can extend COOP/CFOP beyond function-level control to achieve reliable arbitrary code execution, effectively breaking CFI again and again.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

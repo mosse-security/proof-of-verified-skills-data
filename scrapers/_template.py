@@ -33,6 +33,7 @@ class ExampleScraper(BaseScraper):
                 assessor_id=self.assessor_id,
                 kind="conference_presentation",
                 title=item["title"],
+                description=item["description"],
                 recipient=item.get("speaker"),
                 year=int(item["year"]),
                 subtitle=item.get("conference"),

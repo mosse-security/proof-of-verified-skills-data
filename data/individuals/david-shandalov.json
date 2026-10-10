@@ -15,6 +15,7 @@
     {
       "name": "David Shandalov",
       "label": "SHIM me what you got - Manipulating Shim and Office for Code Injection",
+      "description": "This talk brings back from the dead an attack surface that security vendors believed they had addressed a long time ago. We will introduce a novel and stealthy technique to apply malicious shims on a process that does not require registry modification or SDB files and leaves no traces on the disk. The reverse engineering of the shim infrastructure will be shown while focusing on undocumented API and the kernel driver of the infrastructure. The various operations offered by the infrastructure will be analyzed from an offensive point of view, and the course we took to achieve this unique technique will be presented. In addition, we will unveil an attack surface research that resulted in a noteworthy attack that manipulates 2 different OS components into performing DLL injection and privilege escalation. Researching the undocumented RPC interfaces of the service OfficeClickToRun.exe uncovered a method that can inject a DLL into another process running as “NT AUTHORITY\\SYSTEM”, which achieves privilege escalation. For this to work, specific conditions had to be met. The conditions we tailored will be displayed as we abuse the Opportunistic Lock and App Compatibility (shim) mechanisms. link link link link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

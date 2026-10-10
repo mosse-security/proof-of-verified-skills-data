@@ -11,6 +11,7 @@
     {
       "name": "Aviv Donenfeld",
       "label": "LGTM: Bypassing an LLM Build Gate When Prompt Injection Fails",
+      "description": "Models are starting to make security decisions that used to be written as rules. Instead of matching an input against a policy, a model reads the request and decides what to do with it. OpenSearch is one of the first to put one in production as the only thing standing between an anonymous pull request and CI pipeline secrets. When I reported a vulnerability, the team told me their model would catch it. So I tried to get past it the way you'd expect, hiding the attack. The model caught all of it, and going at it head-on wasn't going to work. So I stopped trying to outsmart it and started thinking like it, reading why each attempt got caught until I understood what it could actually verify and what it only assumed. What got through in the end hid no attack, because the only dangerous part lived somewhere the model had no way to check. This talk walks the whole path, from first failed attempt to the bypass that worked. Along the way I mapped the model's decision boundary - what it catches, what slips past, and how far an input bends before its judgment flips. The deeper gap is what it never sees at all, the blind spots built into how it reads a change. You'll see where a model can be trusted to make this call and where it can't, and what that means before you put one in front of something that matters.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

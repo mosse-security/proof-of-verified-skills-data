@@ -11,6 +11,7 @@
     {
       "name": "Dimitry \"Op_Nomad\" Snezhkov",
       "label": "Racketeer Toolkit. Prototyping Controlled Ransomware Operations",
+      "description": "Offensive testing in organizations has shown a tremendous value for simulating controlled attacks. While cyber extortion may be one of the main high ROI end goals for the attacker, surprisingly few tools exist to simulate ransomware operations. Racketeer is one such tool. It is an offensive agent coupled with a C2 base, built to help teams to prototype and exercise a tightly controlled ransomware campaign. We walk through the design considerations and implementation of a ransomware implant which emulates logical steps taken to manage connectivity and asset encryption and decryption capabilities. We showcase flexible and actionable ways to prototype components of fully remote ransomware operation including key and data management, as well as data communication that is used in ransomware campaigns. Racketeer is equipped with practical safeguards for lights out operations, and can address the goals of keeping strict control of data and key management in its deployment, including target containment policy, safe credential management, and implementing operational security in simulated operations. Racketeer can help gain better optics into IoCs, and is helpful in providing detailed logs that can be used to study the behavior and execution artifacts of a ransomware agent.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -27,6 +28,7 @@
     {
       "name": "Dimitry \"Op_Nomad\" Snezhkov",
       "label": "Your House is My House: Use of Offensive Enclaves In Adversarial Operations",
+      "description": "As developers start to rely more on hardware-based memory encryption controls that isolate specific application code and data in memory - secure enclaves, adversaries can use enclaves to successfully coexist on the host and enjoy similar protections. In this talk we venture into a practical implementation of such an offensive enclave, with the help of Intel SGX enclave technology, supported on a wide variety of processors present in enterprise data-centers and in the cloud. We discuss how malware can avoid detection in defensively instrumented environments and protect their operational components from processes running at high privilege levels, including the Operating System. We dive deeper into using enclaves in implants and stagers, and discuss the design and implementation of an enclave that is capable of facilitating secure communication and storage of sensitive data in offensive operations. We cover how the enclaves can be built to help secure external communication while resisting system and network inspection efforts and to achieve deployment with minimal dependencies where possible. Finally, we release the enclave code and a library of offensive enclave primitives as a useful reference for teams that leverage Intel SGX technology or have the hardware platform capable to support such adversarial efforts.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

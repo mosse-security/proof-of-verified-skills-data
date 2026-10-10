@@ -11,6 +11,7 @@
     {
       "name": "Nils Amiet",
       "label": "Reaping and breaking keys at scale: when crypto meets big data",
+      "description": "Public keys are everywhere, after all, they are public. These keys are waiting to be reaped by those who know their real value. Hidden behind this public face lurks some potentially dangerous issues which could lead to a compromise of data and privacy. Leveraging hundreds of minion devices, we built a public key reaping machine (which we are open sourcing) and operated it on a global scale. Collected keys are tested for vulnerabilities such as the recent ROCA vulnerability or factorization using batch-GCD. We've collected over 300 million keys so far and built a database 4 to 10 times bigger than previous public works. Performing the initial computation on over 300 million keys took about 10 days on a 280 vCPU cluster. Many optimizations allow our tool to incrementally test new RSA keys for common prime factors against the whole dataset in just a few minutes. As a result of our research, we could have impersonated hundreds of people by breaking their PGP keys, mimicked thousands of servers thanks to their factored SSH keys and performed MitM attacks on over 200k websites relying on vulnerable X509 certificates. In the end, we were able to do this in an entirely passive way. Going further is possible, but it would lead us to the dark side. Would big brother hesitate to go there?",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -27,6 +28,7 @@
     {
       "name": "Nils Amiet",
       "label": "Polynonce: An ECDSA Attack and Polynomial Dance",
+      "description": "ECDSA is a widely used digital signature algorithm. ECDSA signatures can be found everywhere since they are public. In this talk, we tell a tale of how we discovered a novel attack against ECDSA and how we applied it to datasets we found in the wild, including the Bitcoin and Ethereum networks. Although we didn't recover Satoshi's private key (we’d be throwing a party on our private yacht instead of writing this abstract), we could see evidence that someone had previously attacked vulnerable wallets with a different exploit and drained them. We cover our journey, findings, and the rabbit holes we explored. We also provide an academic paper with the details of the attack and open-source code implementing it, so people building software and products using ECDSA can identify and avoid this vulnerability in their systems. We've only scratched the surface, there's still plenty of room for exploration.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

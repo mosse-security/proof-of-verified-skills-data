@@ -6,6 +6,7 @@
     {
       "name": "Yuval Hanoch Hirschenbein Sadde",
       "label": "Rage Against the Sandbox: Bypassing Apple’s iOS Security to Run Unsigned Code via SSH",
+      "description": "Apple’s Sandbox and code signing have made traditional security research impractical on iPhones - researchers must use full-system emulation or hunt for increasingly rare jailbreak exploits. The Sandbox blocks fork(), which shells need for job control. Code signing prevents unsigned code execution. We present techniques that bypass both restrictions without exploiting vulnerabilities. Using only standard APIs, we built a system that runs SSH servers and interactive shells on iPhones with full fork() support and unsigned code execution. We’ll dive deep into the technical implementation: userspace memory management, thread-based process virtualization, stack frame manipulation, and selective CPU emulation. Then we'll demonstrate the real impact: running an unsigned public exploit directly on an iPhone through SSH - no jailbreak, no signing, no problem.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

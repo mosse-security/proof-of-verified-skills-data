@@ -11,6 +11,7 @@
     {
       "name": "Jonathan Birch",
       "label": "Second Breakfast: Implicit and Mutation-Based Serialization Vulnerabilities in .NET",
+      "description": "Exploits of insecure serialization leading to remote code execution have been a common attack against .NET applications for some time. But it's generally assumed that exploiting serialization requires that an application directly uses a serializer and that it unsafely reads data that an attacker can tamper with. This talk demonstrates attacks that violate both of these assumptions. This includes serialization exploits of platforms that don't use well-known .NET serializers and methods to exploit deserialization even when the serialized data cannot be tampered with. Remote code execution vulnerabilities in MongoDB, LiteDB, ServiceStack.Redis, RavenDB, MartenDB, JSON.Net and the .NET JavaScriptSerializer are all demonstrated. Techniques to both scan for and mitigate these vulnerabilities are also discussed, along with methods and obstacles for exploiting serialization in .NET 6+.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

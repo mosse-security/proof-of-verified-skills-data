@@ -11,6 +11,7 @@
     {
       "name": "Charlie Miller",
       "label": "Kim Jong-il and Me: How to Build a Cyber Army to Defeat the U.S.",
+      "description": "Think you might ever be \"asked\" by a dictator of an Axis of Evil country to take down the USA in a cyberwar? Ever wonder how someone who finds vulnerabilities and breaks into computers for a living would approach cyberwar, i.e. not Richard Clarke? Then this is the talk for you! In this talk, I outline how to construct a cyber army to attack a developed country, based on my experience as a penetration tester and security researcher. This will highlight anticipated costs, resources needed, roles of individuals, and numbers of people needed, as well as tactics and strategies to use. It will also outline time required to get the unit operational as well as timeframes to achieve particular objectives. That's right, the USA is going down!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -28,6 +29,7 @@
     {
       "name": "Charlie Miller",
       "label": "Battery Firmware Hacking",
+      "description": "Ever wonder how your laptop battery knows when to stop charging when it is plugged into the wall, but the computer is powered off? Modern computers are no longer just composed of a single processor. Computers possess many other embedded microprocessors. Researchers are only recently considering the security implications of multiple processors, multiple pieces of embedded memory, etc. This paper takes an in depth look at a common embedded controller used in Lithium Ion and Lithium Polymer batteries, in particular, this controller is used in a large number of MacBook, MacBook Pro, and MacBook Air laptop computers. In this talk, I will demonstrate how the embedded controller works. I will reverse engineer the firmware and the firmware flashing process for a particular smart battery controller. In particular, I will show how to completely reprogram the smart battery by modifying the firmware on it. Also, I will show how to disable the firmware checksum so you can make changes. I present a simple API that can be used to read values from the smart battery as well as reprogram the firmware. Being able to control the working smart battery and smart battery host may be enough to cause safety issues, such as overcharging or fire.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -45,6 +47,7 @@
     {
       "name": "Charlie Miller",
       "label": "Don't Stand So Close To Me: An Analysis of the NFC Attack Surface",
+      "description": "Near Field Communication (NFC) has been used in mobile devices in some countries for a while and is now emerging on devices in use in the United States. This technology allows NFC enabled devices to communicate with each other within close range, typically a few centimeters. It is being rolled out as a way to make payments, by using the mobile device to communicate credit card information to an NFC enabled terminal. It is a new, cool, technology. But as with the introduction of any new technology, the question must be asked what kind of impact the inclusion of this new functionality has on the attack surface of mobile devices. In this paper, we explore this question by introducing NFC and its associated protocols. Next we describe how to fuzz the NFC protocol stack for two devices as well as our results. Then we see for these devices what software is built on top of the NFC stack. It turns out that through NFC, using technologies like Android Beam or NDEF content sharing, one can make some phones parse images, videos, contacts, office documents, even open up web pages in the browser, all without user interaction. In some cases, it is even possible to completely take over control of the phone via NFC, including stealing photos, contacts, even sending text messages and making phone calls. So next time you present your phone to pay for your cab, be aware you might have just gotten owned.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -61,6 +64,7 @@
     {
       "name": "Charlie Miller",
       "label": "Adventures in Automotive Networks and Control Units",
+      "description": "Automotive computers, or Electronic Control Units (ECU), were originally introduced to help with fuel efficiency and emissions problems of the 1970s but evolved into integral parts of in-car entertainment, safety controls, and enhanced automotive functionality. This presentation will examine some controls in two modern automobiles from a security researcherís point of view. We will first cover the requisite tools and software needed to analyze a Controller Area Network (CAN) bus. Secondly, we will demo software to show how data can be read and written to the CAN bus. Then we will show how certain proprietary messages can be replayed by a device hooked up to an ODB-II connection to perform critical car functionality, such as braking and steering. Finally, weíll discuss aspects of reading and modifying the firmware of ECUs installed in todayís modern automobile.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -77,6 +81,7 @@
     {
       "name": "Charlie Miller",
       "label": "A Survey of Remote Automotive Attack Surfaces",
+      "description": "Automotive security concerns have gone from the fringe to the mainstream with security researchers showing the susceptibility of the modern vehicle to local and remote attacks. A malicious attacker leveraging a remote vulnerability could do anything from enabling a microphone for eavesdropping to turning the steering wheel to disabling the brakes. Last year, we discussed 2 particular vehicles. However, since each manufacturer designs their fleets differently; analysis of remote threats must avoid generalities. This talk takes a step back and examines the automotive network of a large number of different manufacturers from a security perspective. From this larger dataset we can begin to answer questions like: Are some cars more secure from remote compromise than others? Has automotive network security changed for the better (or worse) in the last 5 years? What does the future of automotive security hold and how can we protect our vehicles from attack moving forward?",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -93,6 +98,7 @@
     {
       "name": "Charlie Miller",
       "label": "Remote Exploitation of an Unaltered Passenger Vehicle",
+      "description": "Although the hacking of automobiles is a topic often discussed, details regarding successful attacks, if ever made public, are non-comprehensive at best. The ambiguous nature of automotive security leads to narratives that are polar opposites: either we’re all going to die or our cars are perfectly safe. In this talk, we will show the reality of car hacking by demonstrating exactly how a remote attack works against an unaltered, factory vehicle. Starting with remote exploitation, we will show how to pivot through different pieces of the vehicle’s hardware in order to be able to send messages on the CAN bus to critical electronic control units. We will conclude by showing several CAN messages that affect physical systems of the vehicle. By chaining these elements together, we will demonstrate the reality and limitations of remote car attacks.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

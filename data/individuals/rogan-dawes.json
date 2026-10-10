@@ -11,6 +11,7 @@
     {
       "name": "Rogan Dawes",
       "label": "Unlocking KeeLoq – A Reverse Engineering Story",
+      "description": "KeeLoq Remote Keyless Entry systems make use of radio frequency transmissions to operate and have many known weaknesses. A 64-bit manufacturer key is used in transmissions to encrypt an incrementing transmission sequence number in order to provide replay protection. This presentation is a journey into bringing existing research together to make personal Keeloq projects practical, ultimately repurposing a commercial receiver as part of a home automation system integration project. I will demonstrate how I recovered the manufacturer key by extracting and reverse engineering the receiver’s firmware using a JTAG adapter and Ghidra. Next, I will cover decoding and decrypting the KeeLoq transmissions (verified using a logic analyzer), cloning the captured serial and sequence numbers to a new transmitter, and finally, how to export the received transmissions to a home automation system via an add-on WiFi-capable microcontroller. REFERENCES: http://ww1.microchip.com/downloads/en/appnotes/00744a.pdf https://link.springer.com/chapter/10.1007/978-3-540-78967-3_1 https://link.springer.com/chapter/10.1007/978-3-540-85174-5_12 https://github.com/jpleger/hcs301_programming https://www.wired.com/2015/08/hackers-tiny-device-unlocks-cars-opens-garages/",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

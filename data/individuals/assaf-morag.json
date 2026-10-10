@@ -15,6 +15,7 @@
     {
       "name": "Assaf Morag",
       "label": "Hacking the Hackers who Hack Hackers: Supply-Chain Backdoors in Underground VPN Infrastructure",
+      "description": "Underground VPN and tunneling ecosystems are widely used to monetize compromised servers and sell “free internet” access through SSH, SOCKS, and multi-protocol tunnels. These operations rely heavily on open-source infrastructure management tools deployed on rented or hacked Linux servers. But what happens when the tools themselves are weaponized? In this talk we dissect FirewallFalcon Manager, a VPN/SSH server management toolkit widely promoted in Telegram communities. While it presents itself as a legitimate open-source platform, our analysis reveals a multi-layered supply-chain attack targeting the very operators who deploy it. FirewallFalcon silently installs backdoors, injects a rogue TLS root certificate, hijacks DNS resolution, and redirects proxy traffic through attacker-controlled infrastructure to enable large-scale Man-in-the-Middle interception. Earlier versions also deployed a Telegram reconnaissance bot and a universal SSH backdoor granting root access to infected servers. Using reverse engineering, GitHub history analysis, DNS infrastructure mapping, and large-scale internet scanning, we uncovered hundreds of active servers inside this compromised ecosystem. This talk exposes a new class of supply-chain attacks: hackers hacking the infrastructure used by other hackers.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

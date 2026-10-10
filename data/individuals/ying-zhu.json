@@ -6,6 +6,7 @@
     {
       "name": "Ying Zhu",
       "label": "Client or Server? The Hidden Sword of Damocles in Kafka",
+      "description": "Apache Kafka is an open-source distributed event streaming platform. At the heart of Kafka lies the Broker, which acts as the central server node in a Kafka cluster. Brokers are responsible for storing streams of data and managing the flow of messages between producers and consumers. The Kafka Server we often refer to is essentially the Kafka Broker. While Kafka’s main system handles data streams well, its real strength comes from its growing ecosystem. The components in the ecosystem greatly expands its abilities: Confluent ksqlDB transforms raw streams into queryable tables for real-time analytics; Schema Registry standardizes data formats across microservices, and so on. However, behind the rich components lie hidden security threats. Prior research has revealed Remote Code Execution (RCE) vulnerabilities in Kafka Client, yet notably absent were any exploitable RCE vulnerabilities in the Kafka Server — until now. In this work, we present the first-ever RCE vulnerability affecting Kafka Server itself. At the same time, we also used similar techniques to attack other components in the Kafka ecosystem. And these vulnerabilities can also affect the cloud service providers themselves. What's more, Since Kafka users remain unaware of this risk, thousands of Kafka servers are now exposed to this RCE vulnerability.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

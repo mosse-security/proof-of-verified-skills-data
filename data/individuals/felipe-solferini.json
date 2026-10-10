@@ -6,6 +6,7 @@
     {
       "name": "Felipe Solferini",
       "label": "Tracking the Trackers: How We Took Over 36 Million GPS Devices Protecting Children and Vehicles",
+      "description": "We performed our research against three major GPS tracking platforms: SETracker (~10M devices, 39 brands), SinoTrack (6M+ devices), and TKSTAR/Thinkrace (20M+ devices). All three come from the same Shenzhen supply chain. All three are completely broken. We achieved RCE on every platform, including NT AUTHORITY\\SYSTEM on TKSTAR. From a free account with no device purchase, we can silently wiretap any child's watch, force video surveillance, steal vehicles through remote door unlock and fuel cutoff, and take over the backend servers. We filed 45 CVEs, 19 critical, 9 of them CVSS v3.1 10.0. The worst part is the supply chain structure. 39 consumer brands in 20+ countries (Wonlex, SaveFamily, KidiWatch, Garett, etc.) all connect to the same myaqsh.com server in China. Parents think they are choosing between brands. They are not. Brand diversity in this market is an illusion. We release full PoC chains, CVE details, and a brand-to-backend mapping that shows how this industry actually works.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

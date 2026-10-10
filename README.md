@@ -82,6 +82,7 @@ are copied from `data/assessors/def-con.json`:
 {
   "name": "Alice Example",
   "label": "Breaking All The Things",
+  "description": "A detailed abstract describing the talk and its security research.",
   "type": "presentation",
   "assessor": "DEF CON",
   "assessor-id": "def-con",
@@ -112,10 +113,11 @@ library detects zero, one, or several values from this fixed taxonomy:
 - `vulnerability research`
 
 When no rule matches, the array is `["unknown"]`. Standard `Endorsement`
-objects are mapped automatically from their type, label, person, and
-details. Site parsers should also pass the source description or abstract to
-`detect_domains`; this evidence is used for classification but does not need
-to be stored in the compact output record. A scraper may pass explicit domains, but unsupported values fail
+objects are mapped automatically from their type, label, person, description,
+and details. Every endorsement must include a non-empty `description`, which
+should contain the source abstract or other detailed evidence. Site parsers
+should also pass that text to `detect_domains` so classification can use it.
+A scraper may pass explicit domains, but unsupported values fail
 validation. Collection scrapers report every generated JSON file to the core
 runner, which validates every record and fails that scraper if `domains` is
 missing, empty, unsupported, duplicated, or out of canonical order.
@@ -154,6 +156,7 @@ class ConferenceArchive(BaseScraper):
                 assessor_id=self.assessor_id,
                 kind="conference_presentation",
                 title=talk.title,
+                description=talk.abstract,
                 recipient=talk.speaker,
                 year=request.meta["year"],
                 subtitle=f"Example Conference {request.meta['year']}",

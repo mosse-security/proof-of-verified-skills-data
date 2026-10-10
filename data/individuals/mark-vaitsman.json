@@ -11,6 +11,7 @@
     {
       "name": "Mark Vaitsman",
       "label": "Data Tomb Raider: Raiding Modern AI Vaults with Legacy Flaws for Treasure Stealing",
+      "description": "Click a link, lose your MFA codes. Your AI assistant reads your email and exfiltrates the data through Bing, and you never notice. We found a 1-click attack chain against Microsoft 365 Copilot that combines three vulnerability classes everyone assumed were solved - CSP, SSRF, and HTML injection - into one kill shot. A URL parameter lands directly in the AI engine as an executable prompt, a vector we call Parameter-to-Prompt (P2P) injection. The AI searches the victim's mailbox, grabs sensitive data, and emits an img tag with the loot in the URL. That tag renders mid-stream, before the output sanitizer fires, because sanitization is a post-processing step. The img src hits Bing's Search by Image endpoint - CSP-allowlisted - which server-side fetches to our domain, tunneling stolen data through Microsoft's own infrastructure. CSP enforced. Sanitizer running. AI guardrails active. All three defenses in place - the chain walked right through them. None of these bugs are new. Each has textbook mitigations. But nobody tests what happens when old web bugs compose with AI behaviors - web teams and AI teams don't test each other's seams. We break down the full chain, demo it live, and hand you a methodology for hunting composition bugs across AI-integrated platforms.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

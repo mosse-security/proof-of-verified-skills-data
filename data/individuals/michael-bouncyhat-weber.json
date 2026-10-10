@@ -6,6 +6,7 @@
     {
       "name": "Michael \"bouncyhat\" Weber",
       "label": "ChromeAlone: Transforming a Browser into a C2 Platform",
+      "description": "A long time ago, browsers were wrappers for HTTP web requests and little else. The modern browser, however, is crammed with so many features that it is practically an operating system. This talk will demonstrate how to (ab)use years of legacy features along with recent additions to Google Chrome to mimic the capabilities of a conventional C2 implant while evading traditional endpoint protection. We will introduce our new open-source framework \"ChromeAlone\" which implements features such as proxying raw TCP traffic, phishing for Yubikey USB codes, dumping cookies and credentials, keylogging browser windows, and executing shell commands from Chrome. Our implementation leverages Chrome's built-in features, sideloads malicious components without user interaction, and obfuscates code using WebAssembly to evade detection. This research exposes significant security implications of Chrome's expanding feature set and the challenges of securing modern browsers against abuse. References: link - Matthew Bryant's WONDERFUL public PoC of a malicious chrome extension for cookie theft / session riding. link - Sneaky Extensions: The MV3 Escape Artists - A presentation from last year's DEFCON detailing how to evade manifest v3 protections in Chrome Extensions.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -15,6 +15,7 @@
     {
       "name": "Matteo Giordano",
       "label": "Beyond the Ceremony: The 2026 Passkey Attack Surface",
+      "description": "Passkeys are marketed as phishing-resistant, and the WebAuthn ceremony at their center genuinely is. The catch: almost nobody runs only the ceremony. Roughly five billion passkeys are in active use (FIDO, 2026), yet only about a third of organizations use them as the primary sign-in, so a passkey almost always sits next to a weaker method. The cryptography covers only the ceremony, but the login rides on many moving parts, from the metal to the cloud: authenticator, cross-device transport, client, relying party, cloud sync, and the human who recovers the account. That is where it breaks, more often than the reputation suggests: in a recent audit, all 103 live relying parties tested were vulnerable to at least one server-side attack. This talk pulls the scattered research into one pass over all of them, one attack per stop that survives a correct ceremony, shown in action, heaviest on the relying party where engagements land, with a suggested testing order and the sources to go deeper. You also get Passkey Editor, a Burp extension that decodes and re-encodes the vendor wrappers that make this traffic unreadable, ships preset ceremony-layer attacks, and lets you craft any relying-party manipulation by hand in intercept and Repeater. Walk away knowing where passkey deployments break, with a tool to test them.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

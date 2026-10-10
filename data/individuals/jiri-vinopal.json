@@ -15,6 +15,7 @@
     {
       "name": "Jiří Vinopal",
       "label": "BTR Reforged: Weaponizing Defender's Remediation Driver as a Kernel Operation Primitive",
+      "description": "What if a trusted security component could be repurposed into an attacker-controlled kernel primitive? What if a signed Microsoft remediation driver could be instructed to execute arbitrary file and registry operations from Ring 0 — without exploits, vulnerabilities, or memory corruption? In this talk, we present the first full reverse engineering of the Windows Defender Boot-Time Removal driver (BTR.sys) and its proprietary transaction format. We dissect its encrypted configuration mechanism, integrity validation logic, and execution pipeline, and demonstrate how this legitimate remediation component can be transformed into a universal kernel operation engine. We introduce BTR_CLI, a research tool that constructs valid encrypted transactions and exercises the driver's capabilities. We demonstrate how BTR_CLI can be used as an EDR/AV bypass technique, disarming security solutions using a trusted Windows built-in, Microsoft-signed driver — without relying on typical BYOVD techniques. Our research reveals how trusted security infrastructure can unintentionally expose powerful primitives and what this means for defenders. This talk blends reverse engineering, kernel internals, and detection engineering into a practical case study of when defensive technology becomes offensive capability.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

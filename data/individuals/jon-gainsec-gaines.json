@@ -15,6 +15,7 @@
     {
       "name": "Jon \"GainSec\" Gaines",
       "label": "Bird Hunting Season: The Final Flight",
+      "description": "Surveillance tech often operates as a \"black box\" burdened by systemic technical debt. This session is the capstone of \"Bird Hunting Season,\" an independent, self-funded teardown and research of the Flock Safety ecosystem. What began with an eBay purchase evolved into 51+ vulnerabilities across Raven gunshot detectors, Falcon LPRs, and Picard/Bravo compute boxes. I detail the project's lifecycle: from hardware root via UART and unauthenticated EDL mode to protocol-layer failures. I demonstrate how broken mTLS, hardcoded Java Keystore secrets, and debugging compilations led to system level escalation. The narrative reaches its climax with an an explanation of how I found 63 live production camera feeds exposed without authentication to the public internet. I also formalize the \"Flea Market Supply Chain\" attack, detailing how direct communication with upstream SoM manufacturers can bypass months of reverse engineering. The talk culminates in the release of BirdShot: a 12 module testing framework that incorporates the exploits I've discovered as well as a TensorFlow harness (BirdEye) for hijacking proprietary ML models. I demonstrate how BirdShot automates the journey from a three button physical hotspot trigger to a persistent root shell, proving that when the birds are watching you, you can watch them back.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

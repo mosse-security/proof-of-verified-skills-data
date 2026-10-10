@@ -6,6 +6,7 @@
     {
       "name": "Mehdi \"kalimer0x00\" Elyassa",
       "label": "SCCM: The tree that always bears bad fruits",
+      "description": "Microsoft Configuration Manager, better known as SCCM, has become my go-to target for red team operations. While multiple attack paths were uncovered recently, companies still struggle to close all security gaps. This is largely due to the solution's complexity and historical technical debt, which make it challenging to effectively address and mitigate all security vulnerabilities. Moreover, as it primarily manages computers, taking over an SCCM deployment often leads to the full compromise of the Active Directory, with less hassle than traditional attack paths. In this talk, I'll be sharing insights gained from my research on the solution that led to the discovery of multiple 0 Day vulnerabilities, such as CVE-2024-43468, an unauthenticated SQL injection. After introducing key concepts, I'll delve into various techniques for performing reconnaissance, tips for understanding the hierarchy and tricks for bypassing certain security boundaries. The session will also cover the discovered vulnerabilities that can lead to the compromise of the deployment. After showcasing post-exploitation techniques from database access, I'll introduce a battle-tested open-source tool that implements them. And for those interested in persistence, a technique for installing a backdoor as a legitimate servicing endpoint will be shared.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

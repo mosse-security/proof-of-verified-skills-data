@@ -11,6 +11,7 @@
     {
       "name": "Daniel dos Santos",
       "label": "Route to bugs: Analyzing the security of BGP message parsing",
+      "description": "This talk discusses an overlooked aspect of Border Gateway Protocol (BGP) security: vulnerabilities in how its implementations parse BGP messages. Software implementing BGP is relied upon for Internet routing and for functions such as internal routing in large data centers. A lot of (deserved) attention is given to aspects of BGP protocol security discussed in RFC4272, which can be mitigated with the use of RPKI and BGPsec. However, recent BGP incidents show that it might take only a malformed packet to cause a large disruption. We will present a quantitative analysis of previous vulnerabilities in both open and closed-source popular BGP implementations and focus the talk on a new analysis of seven modern implementations. Main findings in this research include: 1. Some implementations process parts of OPEN messages before validating the BGP ID and ASN fields of the originating router, which means that only TCP spoofing is required to inject malformed packets. 2. Three new vulnerabilities in a leading open-source implementation, which could be exploited to achieve denial of service on vulnerable peers, thus dropping all BGP sessions and routing tables and rendering the peer unresponsive. These vulnerabilities were found using a fuzzer we developed and will release to the community.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

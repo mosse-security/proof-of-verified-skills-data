@@ -23,6 +23,7 @@
     {
       "name": "Veronica Kovah",
       "label": "How much of our Bluetooth firmware reverse engineering work can now be automated with LLMs?",
+      "description": "Last year Xeno manually reverse-engineered Realtek RTL8761B* Bluetooth chips' ROM & firmware, to inject code into them that allows everyone to send custom packets that aren't supposed to be possible on a well-behaved device. Previous to that Veronica manually reverse-engineered multiple firmware to find link layer over-the-air exploitable vulnerabilities. This year we wanted to understand how much time we could have saved on past projects if we had used LLMs to automate the reversing process. The answer turns out to be \"quite a lot!\". In this talk we'll discuss how we've created skills for LLMs to almost entirely automate the reverse engineering of Bluetooth Low Energy / Classic chip firmwares' low level packet handling & Host Controller Interface layers. The key is to focus on helping the LLMs find the code that you know must be there in order for a chip to be spec-compliant (\"Waypoints\"). If you work in another firmware/OS RE domain, with well-defined specification-required interfaces and data structures, we expect you'll be able to follow the same process as us to significantly accelerate your reversing. Especially if you have binaries that you've already reverse-engineered in the past that you can feed into an automation process for grading purposes.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

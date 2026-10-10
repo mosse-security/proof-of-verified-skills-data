@@ -15,6 +15,7 @@
     {
       "name": "Keanu \"RedByte\" Nys",
       "label": "Turning Microsoft's Login Page into our Phishing Infrastructure",
+      "description": "Microsoft Entra ID – one of the most used identity providers in the enterprise market. Or from our perspective: the most targeted platform in phishing attacks. Getting our phishing infrastructure up and running is usually the easy part. The real challenge is often keeping it online long enough to deliver the phishing link and collect credentials without detection before it gets burned. But what if we could use Microsoft's official login domain for our phishing purposes? And no, I'm not talking about the heavily mitigated OAuth Consent or Device Code Phishing techniques, or simply hosting a phishing page on Azure Web App subdomains. I'm talking about stealing credentials directly from the legitimate login.microsoftonline.com domain. In this talk, I will share multiple novel methods that can be used to achieve this. And the best of all? It all relies on legitimate functionality, making it mostly unpatchable. 😈 References: link link link link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -31,6 +32,7 @@
     {
       "name": "Keanu \"RedByte\" Nys",
       "label": "This Message Was Sent by Microsoft: Turning Microsoft Apps into our Phishing Platform",
+      "description": "Last DEF CON, we stole cleartext credentials directly from the real Microsoft login page. This year, we take it a step further by making Microsoft deliver our phishing emails! We've all seen threat actors abuse built-in email notifications from legitimate SaaS platforms to send phishing links from trusted domains, bypassing email security solutions. But in most cases, they only control a small portion of the email content, making the end result far from convincing. While the execution of these examples has mostly been fairly poor and limited in complexity so far, the idea of making a legitimate application deliver your phishing payload did intrigue me. So I started digging for more advanced ways to push this concept further, looking for techniques that would allow taking over the majority (or sometimes the entirety) of the email content. In this talk, I'll present several novel techniques to inject custom phishing pretexts into emails sent by multiple first-party Microsoft services, taking advantage of their trusted email addresses and domain reputation. These emails seem so legitimate that even seasoned IT and security professionals would trust them (and we have the proof from our assessments to back this up). After all, who doesn't trust Microsoft? 😉",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

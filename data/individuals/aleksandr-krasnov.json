@@ -15,6 +15,7 @@
     {
       "name": "Aleksandr Krasnov",
       "label": "Harvest Now, Decrypt Later: Practical Attacks on Post-Quantum Cryptography Implementations",
+      "description": "Post-quantum cryptography is being deployed to defeat a computer that doesn't exist yet - and the rush is opening a wide, purely classical attack surface today. This talk walks three implementation attack vectors against NIST's lattice standards (ML-KEM / FIPS 203, ML-DSA / FIPS 204): (1) memory corruption at the deserialization boundary, culminating in remote code execution through a hybrid TLS 1.3 key exchange; (2) compiler-induced timing side channels, where \"constant-time\" source becomes variable-time binary and yields a chosen-ciphertext key-recovery oracle; and (3) fault injection against ML-DSA's signing state machine on a low-cost ChipWhisperer. No quantum computer is required for any of them. The talk closes with the limits of hybrid cryptography as a defense and the live release of LatticeScope, an open-source timing-leak detector and lattice-aware fuzzer for auditing compiled PQC binaries.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

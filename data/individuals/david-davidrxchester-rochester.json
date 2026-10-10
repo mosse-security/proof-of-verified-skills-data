@@ -15,6 +15,7 @@
     {
       "name": "David \"davidrxchester\" Rochester",
       "label": "No Socket, No Privs, No Problem: Weaponizing OCI Registries for SSRF, Credential Theft, and Container Escapes",
+      "description": "Every day, developers and ML engineers pull containers and models from OCI registries without a second thought. What if that pull, no privileges, no special access, could be turned into host enumeration, credential theft, remote code execution, or even a container escape? We found a class of vulnerabilities that spans the OCI ecosystem. Not just in registry clients, but in the underlying technologies they feed into, container runtimes, ML inference engines, and more. By standing up malicious registries and abusing how these tools handle registry responses, we turned routine pull operations into attack primitives. The result: multiple critical vulnerabilities across widely used tools and platforms, including SSRFs, arbitrary file reads for credential exfiltration, and a novel path to escaping a Docker container to the underlying host. What do they all have in common? They all either use or offer OCI services through a client or a registry. This talk walks through the different attack paths we’ve found, how they were discovered, trends we’ve noticed across multiple products, proof-of-concepts, and what it means for the ecosystem moving forward.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -49,6 +49,7 @@ class DomainMappingTests(unittest.TestCase):
             assessor_id="example",
             kind="conference_presentation",
             title="Kubernetes penetration testing and incident response",
+            description="A detailed talk about Kubernetes security operations.",
             recipient="Alice Example",
             source_url="https://example.test/talk",
             year=2026,
@@ -65,7 +66,12 @@ class DomainMappingTests(unittest.TestCase):
 
         self.assertEqual(
             record["domains"],
-            ["cloud security", "incident response", "penetration testing"],
+            [
+                "cloud security",
+                "cyber defense",
+                "incident response",
+                "penetration testing",
+            ],
         )
         validate_record_domains(record)
 

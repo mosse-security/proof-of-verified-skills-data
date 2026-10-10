@@ -6,6 +6,7 @@
     {
       "name": "Yuval Gordon",
       "label": "The (Un)Rightful Heir: My dMSA Is Your New Domain Admin",
+      "description": "Delegated Managed Service Accounts (dMSA) are Microsoft’s shiny new addition to Active Directory in Windows Server 2025. Their primary goal was to improve the security of domain environments. As it turns out, that didn’t go so well. In this talk, we introduce BadSuccessor - an attack that abuses dMSAs to escalate privileges in Active Directory. Crucially, the attack works even if your domain doesn’t use dMSAs at all. We’ll demonstrate how a very common, and seemingly benign, permission in Active Directory can allow us to trick a Domain Controller into issuing a Kerberos ticket for any principal - including Domain Admins and Domain Controllers. Then we’ll take it a step further, showing how the same technique can be used to obtain the NTLM hash of every user in the domain - without ever touching the domain controller. We’ll walk through how we found this attack, how it works, and its potential impact on AD environments References: Rubeus with dMSA support, thanks to Joe Dibley: link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -19,6 +19,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "We Have You by the Gadgets",
+      "description": "Why send someone an executable when you can just send them a sidebar gadget? We will be talking about the windows gadget platform and what the nastyness that can be done with it, how are gadgets made, how are they distributed and more importantly their weaknesses. Gadgets are comprised of JS, CSS and HTML and are application that the Windows operating system has embedded by default. As a result there are a number of interesting attack vectors that are interesting to explore and take advantage of. We will be talking about our research into creating malicious gadgets, misappropriating legitimate gadgets and the sorts of flaws we have found in published gadgets.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -35,6 +36,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "USB for all!",
+      "description": "USB is used in almost every computing device produced in recent years. In addition to well-known usages like keyboard, mouse, and mass storage, a much wider range of capabilities exist such as Device Firmware Update, USB On-The-Go, debug over USB, and more. What actually happens on the wire? Is there interesting data we can observe or inject into these operations that we can take advantage of? In this talk, we will present an overview of USB and its corresponding attack surface. We will demonstrate different tools and methods that can be used to monitor and abuse USB for malicious purposes.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -51,6 +53,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "Scared Poopless – LTE and *your* laptop",
+      "description": "With today’s advancement in connectivity and internet access using 3G and LTE modems it seems we all can have a device that’s always internet capable, including our laptops, tablets, 2 in 1’s ultrabook. It becomes easier to be online without using your WiFi at all. In our talk we will demonstrate and discuss the exploitation of an internal LTE modem from Huawei which can be found in a number of devices including laptops by HP.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -67,6 +70,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "Driving down the rabbit hole",
+      "description": "Saturday at 12:00 in 101 Track 45 minutes | Demo Mickey Shkatov Security Researcher, McAfee. Jesse Michael Security Researcher, McAfee. Oleksandr Bazhaniuk Security Researcher Over the past few years, cars and automotive systems have gained increasing attention as cyber-attack targets. Cars are expensive. Breaking cars can cost a lot. So how can we find vulnerabilities in a car with no budget? We’ll take you with us on a journey from zero car security validation experience through the discovery and disclosure of multiple remotely-exploitable automotive vulnerabilities. Along the way, we’ll visit a wrecking yard, reassemble (most) of a 2015 Nissan Leaf in our lab, discuss how we picked our battles, fought them, and won. During our talk, we’ll examine the details of three different classes of vulnerabilities we found in this vehicle, how they can be exploited, and the potential ramifications to the owner of their real-world exploitation. We’ll also discuss the broader scope of the vulnerabilities discovered, how they extend beyond just this specific vehicle, and what the industry can do better to prevent these types of problems in the future.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -83,6 +87,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "UEFI exploitation for the masses",
+      "description": "So how do you debug bios and triage a vulnerability for exploitability with no stack trace or error log? How do BIOS developers do it? Do not worry! We will explain how anyone can have debug capabilities on modern Intel platforms and show you how this massively simplifies exploit dev. Developing an exploit for a BIOS vulnerability is a different experience than other types of exploit dev. Your available code base to draw from is unlike what you would expect when running at the operating system level and you have no gdb you can use. In this talk we will summarize BIOS exploitation techniques and dive deeper into the specifics of an exploit we developed to provide reliable arbitrary code execution for an\"over-the-internet\" bios update vulnerability we found and responsibly disclosed. We will explain the relevant parts of UEFI and talk more about the exploit mitigations that exist there. We will also explain how to explore System Management Mode (SMM) in an Intel based platform, utilizing Intel hardware debug capabilities on an Intel 8th gen platform to obtain SMRAM content, analyze its contents, and search for vulnerable code.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -99,6 +104,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "Get off the Kernel if you can’t Drive",
+      "description": "For software to communicate with hardware, it needs to talk to a kernel-mode driver that serves as a middle-man between the two, helping to make sure everything operates as it should. In Windows that is done using the Kernel-Mode Driver Framework (KMDF). These drivers are used to control everything in your computer, from small things like CPU fan speed, color of your motherboard LED lights, up to flashing a new BIOS. However, as the code in these drivers runs with the same privileges as the rest of the kernel, malicious drivers can be used to compromise the security of the platform. To that end, Microsoft relies on WHQL, code signing, and EV Signing to prevent drivers which have not been approved by Microsoft from being loaded into the kernel. Unfortunately, security vulnerabilities in signed drivers can be used to as a proxy to read and write hardware resources such as kernel memory, internal CPU configuration registers, PCI devices, and more. These helpful driver capabilities can even be misused to bypass and disable Windows protection mechanisms. Let us teach you how these drivers work, show you the unbelievable risk they pose, and enjoy our walk of shame as we parade all the silly and irresponsible things we discovered in our research.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -116,6 +122,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "Bytes In Disguise",
+      "description": "Non-Volatile Memory. EVERY computer has it, from the chip that stores your BIOS to the controller that runs your laptop trackpad and even your new fancy USB-C monitor. These small nooks of storage can be (ab)used by anyone to store data or code without causing any side effects and none would be the wiser. We will show you more than one example of how this is possible and walk through everything you need to know to do it, too. In this talk, we will describe how to hide persistence in these obscure memory chips using simple tools that we are releasing as open source. We will show multiple ways to accomplish this without detection. On the defensive front, we’ll discuss what can be done to detect and lock down systems.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -132,6 +139,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "High-Stakes Updates | BIOS RCE OMG WTF BBQ",
+      "description": "With attacks moving below the operating system and computer firmware vulnerability discovery on the rise, the need to keep current platforms updated becomes important and new technology is developed to help defend against such threats. Major computer manufacturers are adding capabilities to make it easier to update BIOS. Our research has identified multiple vulnerabilities in Dell's BiosConnect feature used for remote update and recovery of the operating system. These vulnerabilities are easy to exploit by an adversary in the right position, and are not prevented by protective technologies such as Secured Core PCs, BitLocker, BootGuard, and BIOS Guard. Join us and together we will explore the new attack surfaces introduced by these UEFI firmware update mechanisms -- including a full walk-through of multiple vulnerability findings and the methods we used to create fully working exploits that gain remote code execution within the laptop BIOS and their effects on the operating system.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -148,6 +156,7 @@
     {
       "name": "Mickey Shkatov",
       "label": "Help! Linux in my Webcam! (•_•)",
+      "description": "In this talk, we dive into a world of webcams that secretly run Linux. What started as a casual curiosity turned into a deep dive into embedded Linux systems, obscure supply chains, and alarming security oversights. Along the way, we discovered how decisions made far upstream – by silicon vendors and OEMs – can introduce vulnerabilities that quietly ship in tens of thousands of devices. This presentation explores the broader implications of insecure firmware, broken update mechanisms, and the surprising autonomy of devices many assume to be simple peripherals. We share how we traced the tech stack from brand-name distributors back to little-known chipset manufacturers, and what that journey revealed about responsibility, transparency, and the risks of neglecting security at the hardware-software boundary. Come for curiosity, stay for the demos and laughs.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

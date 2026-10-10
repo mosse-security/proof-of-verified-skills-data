@@ -6,6 +6,7 @@
     {
       "name": "Steven Flores",
       "label": "A Provider for the MOFia - Distributed Post-Ex Capabilities",
+      "description": "From time to time I take another pass at WMI to see if there's anything left in it that hasn't been picked over. For most of the last decade, offensive WMI has meant Win32_Process Create and event subscription persistence. Defenders built their detections around those two primitives, EDR vendors optimized for them, and the rest of WMI mostly got ignored. The provider architecture is one of the parts that got ignored. This talk is about turning it into a distributed post-exploitation framework. The core technique is remote installation of custom WMI providers without dropping anything over SMB or WinRM. To get there, I had to reimplement the parts of mofcomp.exe that handle MOF parsing and provider registration, and push the resulting object instances over the wire using the MS-WMIO binary protocol. Getting the DLL onto the target needed its own primitive, so along the way I found that there are existing WMI classes on every supported Windows version that can be abused for arbitrary file upload and download. As far as I can tell that hasn't been published before. Once a provider is installed, it runs inside WMIPrvSE.exe, which is a very different execution context from spawning cmd.exe through Win32_Process. The provider library I'm releasing covers a series of post exploitation primitives.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

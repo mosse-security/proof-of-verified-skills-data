@@ -6,6 +6,7 @@
     {
       "name": "bughardy",
       "label": "OTP, It won't save you from free rides!",
+      "description": "RFID technologies are becoming more and more prevalent in our lives. This motivated us to study them, and in particular to study the MIFARE ULTRALIGHT chips, which are widely used in public/mass transport systems. We focused on multiple-ride tickets, and were surprised that MIFARE ULTRALIGHT chips do not seem to use any type of encryption. We were excited at the idea of simply cloning a new, unused ticket onto older ones to \"refill\" them. Our excitement was cut short by a security feature called OTP. OTP, in the context of MIFARE chips, is a sector of the data that can be edited (initialized) only one time. In this way, the ticket can store how many rides you still have, and this value cannot be changed back. After much tinkering, we were able to completely bypass this security feature, by (ab)using a separate security feature, the so-called \"lockbyte sector\". Join us in this session to learn how we found out how to use security features of the chip against each other, and obtain endless free rides with a 5-ride ticket.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

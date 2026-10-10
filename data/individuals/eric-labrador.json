@@ -15,6 +15,7 @@
     {
       "name": "Eric Labrador",
       "label": "Certified Re-Pwned: escalating all the way up",
+      "description": "Four years after KB5014754 and one year after CVE-2024-49019, every hardening guide says Active Directory Certificate Services is a closed book. This talk reopens it. We present five new primitives — proposed as ESC18 through ESC22, extending the public ESC1–ESC17 numbering — each validated end-to-end on a fully-patched Windows Server 2025 Enterprise CA with every Microsoft-recommended mitigation applied. Every primitive starts from a Domain Users account with no ACL, GPO, or template edges, and ends at krbtgt extraction. Each primitive targets a different component of the post-2022 defence: the CA's CSR processor, the CA's Security-Extension writer, the KDC's PKINIT binder, the CA's Enroll-On-Behalf-Of path, and the registry-level enforcement layer everyone thinks is already hardened. Together they argue that Microsoft's 2022 and 2024 fixes patched specific instances of the underlying bug classes, not the classes themselves — and that at least one control has an undocumented fallback path its own documentation does not mention. A Certipy research fork will be released at the time of the talk to check and exploit the new techniques.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

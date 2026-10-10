@@ -15,6 +15,7 @@
     {
       "name": "Adnan Khan",
       "label": "Grand Theft Actions: Abusing Self-Hosted GitHub Runners at Scale",
+      "description": "GitHub Actions is quickly becoming the de facto CI/CD provider for open-source projects, startups, and enterprises. At the same time, GitHub’s security model is full of insecure defaults. This makes it easy for their customers to expose themselves to critical attacks from the public internet. The end result? A systemic vulnerability class that won’t go away. During our research, we identified GitHub Actions misconfigurations at scale that would allow threat actors to backdoor major open-source projects. An example of this is our attack on PyTorch, a prominent ML framework used by companies and researchers around the world. Through this attack, we could contribute code directly to the main branch of the PyTorch repository, upload malicious releases, backdoor other PyTorch projects, and more. These attacks began by compromising self-hosted runners, which are machines that execute jobs in a GitHub Actions workflow. From there, we leveraged misconfigurations and GitHub “features” to elevate our privileges within GitHub Actions workflows. Our research campaign included dozens of reports, over $250,000 in bug bounties, and endless war stories. Tune in for a deep dive into the TTPs that allow turning a trivial runner compromise into a full supply chain attack. link link link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

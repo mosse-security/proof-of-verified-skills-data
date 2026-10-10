@@ -15,6 +15,7 @@
     {
       "name": "Mikhail Shcherbakov",
       "label": "Silent Spring: Prototype Pollution Leads to Remote Code Execution in Node.js",
+      "description": "Many have heard about Prototype Pollution vulnerabilities in JavaScript applications. This kind of vulnerability allows an attacker to inject properties into an object's root prototype that may lead to flow control alteration and unexpected program behavior. Every time a successful exploit looks like magic or is limited to a denial of service (DoS). Would you be surprised if I told you that every application has a chain of methods that can be triggered by Prototype Pollution and leads to arbitrary code execution? Such gadgets populated Node.js core code and popular NPM packages. Keep calm. Not every app can be exploited! However, this fact increases the risk of exploitation many times over. In our research, we studied Prototype Pollution beyond DoS and analyzed Node.js source code against the gadgets. We then analyzed 15 popular Node.js apps from GitHub and got 8 RCEs. Through this talk, I will elaborate on the detected gadgets and vulnerabilities. We will also take a look at how the recent changes in Node.js mitigate these issues.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -31,6 +32,7 @@
     {
       "name": "Mikhail Shcherbakov",
       "label": "Exploiting the Unexploitable: Insights from the Kibana Bug Bounty",
+      "description": "aWe explore case studies of exploiting vulnerabilities in modern JavaScript and TypeScript applications, drawing on experiences from participating in the Kibana Bug Bounty Program. It's not uncommon to encounter a vulnerability that appears unexploitable at first glance, or to be told by a triage team that the behavior is \"by design.\" So, what options does a security researcher have in such situations? And what primitives can be utilized to construct an exploitation chain with significant impact? Our study involves breaking out of properly isolated containers in scenarios where there is RCE-by-design. We will examine several Prototype Pollutions that crash an application in less than one second after exploitation and explore how these vulnerabilities can ultimately lead to critical RCEs. Furthermore, we introduce new primitives and gadgets that enable the achievement of RCE from Prototype Pollutions previously deemed unexploitable beyond DoS attacks. By highlighting these methods, the talk aims to equip attendees with advanced techniques for exploiting complex vulnerability chains in JavaScript applications, as well as recommendations for proper defense and mitigations against them. Mikhail Shcherbakov, Musard Balliu and Cristian-Alexandru Staicu \"Silent Spring: Prototype Pollution Leads to Remote Code Execution in Node.js\" \"Collection of Server-Side Prototype Pollution gadgets\" link Olivier Arteau \"JavaScript prototype pollution attack in NodeJS\" Nir Chako \"Attacking Kubernetes Clusters Through Your Network Plumbing\" link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

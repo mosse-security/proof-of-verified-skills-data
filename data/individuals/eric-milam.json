@@ -6,6 +6,7 @@
     {
       "name": "Eric Milam",
       "label": "Getting The Goods With smbexec",
+      "description": "Individuals often upload and execute a payload to a remote system during penetration tests for foot printing, gathering information, and to compromise additional hosts. When trying to remain stealthy, uploading a shell to a target may not be wise. smbexec takes advantage of native Windows functionality and SMB authentication to execute commands on remote Windows systems without having to upload a payload, decreasing the likelihood of being stopped by AntiVirus. The original intent of creating smbexec was to upload and execute obfuscated payloads using samba tools. Since the first PoC, it has expanded its capability to do more, including dumping local and domain cached password hashes, clear text passwords from memory, and stealing the NTDS.dit file from a Windows Domain controller all without the need for a shell on the victim. We will explore the creation of smbexec, the components behind it, and how to leverage its functionality to get the goods from a system without having to use a payload.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

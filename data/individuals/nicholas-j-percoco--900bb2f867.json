@@ -11,6 +11,7 @@
     {
       "name": "Nicholas J. Percoco",
       "label": "Malware Freak Show",
+      "description": "We see a lot of compromised environments every year. In 2008 alone, we performed full forensic investigations on over 150 different environments ranging from financial institutions, hotels, restaurants and even some casinos not too far from DEF CON. This presentation will show the inner workings of three very interesting pieces of malware, ranging from somewhat simple to very complex. Each sample was actually used to steal confidential data that resulted in significant fraud and business loss for the organizations we found them at. Many of the pieces of malware we have been running across are very advanced pieces of software written by very skilled developers. The complexity in their propagation, control channels, and data exporting properties will be very interesting to anyone interested in this topic.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -28,6 +29,7 @@
     {
       "name": "Nicholas J. Percoco",
       "label": "\"This is not the droid you're looking for...\"",
+      "description": "Android is a software stack for mobile devices that includes an operating system, middleware and key applications and uses a modified version of the Linux kernel. 60,000 cell phones with Android are shipping every day. Android platform ranks as the fourth most popular smartphone device-platform in the United States as of February 2010. To date, very little has been discussed regarding rootkits on mobile devices. Android forms a perfect platform for further investigation due to its use of the Linux kernel and the existence of a very established body of knowledge regarding kernel-level rootkits in Linux. We have developed a kernel-level Android rootkit in the form of a loadable kernel module. As a proof of concept, it is able to send an attacker a reverse TCP over 3G/WIFI shell upon receiving an incoming call from a 'trigger number'. This ultimately results in full root access on the Android device. This will be demonstrated (live). The implications of this are huge; an attacker can proceed to read all SMS messages on the device/incur the owner with long-distance costs, even potentially pin-point the mobile device's exact GPS location. Such a rootkit could be delivered over-the-air or installed alongside a rogue app. Our talk will take participants down this path of development, describing how the PoC was written and laying the foundations for our research to be taken further.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -45,6 +47,7 @@
     {
       "name": "Nicholas J. Percoco",
       "label": "Malware Freak Show 2: The Client-Side Boogaloo",
+      "description": "We had a busy year. We investigated over 200 incidents in 24 different countries. We ended up collecting enough malware freaks [samples] to fill up Kunstkammer a few times over. Building upon last year's talk, we want to dive deeper and bring you the most interesting samples from around the world - including one that made international headlines and the rest we're positive no one's ever seen before (outside of us and the kids who wrote them). This talk will bring you 4 new freaks and 4 new victims including: a Sports Bar in Miami, Online Adult Toy Store, US Defense Contractor, and an International VoiP Provider. The malware we are going to demo are very advanced pieces of software written by very skilled developers. The complexity in their propagation, control channels, anti-forensic techniques and data exporting properties will be very interesting to anyone interested in this topic.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -61,6 +64,7 @@
     {
       "name": "Nicholas J. Percoco",
       "label": "Getting SSLizzard",
+      "description": "The world has seen a seismic shift from browser-based web applications to GUI-rich semi-thick client applications running on handheld mobile devices. In the browser world, the industry had placed a great deal of time and energy towards providing users visual cues to indicate the level security and trust that their data being transmitted to the remote server is protected and not falling into the hands of unintended recipients. In the mobile device world, these visual cues are mostly nonexistent, resulting in the inherent trust that the underlying APIs are ensuring a level of security before transmitting a users sensitive data. In our research, we tested the most popular apps on both the iOS and Android platforms. We ran each app through a data transmission assault course that contained various historic, contemporary, and obscure SSL attacks and documented the results. In this presentation, we will discuss and demonstrate flaws at both the application an OS layer that need to be addressed by both the mobile app developers and well the mobile device manufactures. A utility called \"SSLizzard\" will also be released for use by mobile application developers to test their mobile apps and their behavior against SSL-based attacks discussed in this talk.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -77,6 +81,7 @@
     {
       "name": "Nicholas J. Percoco",
       "label": "Malware Freak Show 3: They're pwning er'body out there!",
+      "description": "Well There's malware on the interwebs. They're pwning all your systems, snatching your data up. So hide your cards, hide your docs, and hide your phone, 'cause they're pwning er'body out there! This may be the 3rd and final installment of the Malware Freak Show series, so we're pulling out all the stops. This year we'll highlight 4 new pieces of malware but the victims are you and the people you know. We will analyze and demo malware found in your place of employment, your watering hole, your friendly neighborhood grocer, and finally your mobile phone. The malware we are going to demo are very advanced pieces of software written by very skilled developers that are target your world's data. The complexity in their propagation, control channels, anti-forensic techniques and data exporting properties will be very interesting to anyone interested in this topic.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -94,6 +99,7 @@
     {
       "name": "Nicholas J. Percoco",
       "label": "This is REALLY not the droid you're looking for...",
+      "description": "Last year, we presented a talk on the implication of malware and rootkits on mobile devices. We focused on the kernel layer of the Android OS stack. With the proliferation of Apps of every size, shape and color being published this year, we focused solely upon the User Interface (UI) of the Android OS. The results of our research yielded a very dangerous flaw that is likely going to require a UI overhaul of the Android OS. Our talk will demonstrate a technique using legitimate and documented APIs to steal credentials and other user information from the most popular Apps in the Android Market. We will demo this technique live and provide a technical walkthrough of the specific methods being used. At the conclusion of our talk, we'll release a Proof of Concept (PoC) built to demo this technique.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -110,6 +116,7 @@
     {
       "name": "Nicholas J. Percoco",
       "label": "Adventures in Bouncerland",
+      "description": "Meet [REDACTED]. He is a single function app that wanted to be much more. He always looked up those elite malware and botnet apps but now that the Google’s Bouncer moved into town his hopes and dreams appeared to be shattered. This was until he was handed a text file while strolling along a shady part of the Internet (AKA Pastebin). The title of this txt file was “Bypassing Google’s Bouncer in 7 steps for Fun and Profit”. Upon reading this, our little app began to glow with excitement. He routed himself all the way to the gates of Google Play and began his journey from a simple benign app that [REDACTED], to a full-fledged info stealing botnet warrior. In this presentation we will tell the story of how our little app beat the Bouncer and got the girl (well, at least all her personal information, and a few naughty pics).",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -126,6 +133,7 @@
     {
       "name": "Nicholas J. Percoco",
       "label": "The Cavalry Isn't Coming: Starting the Revolution to Fsck it All!",
+      "description": "We have some good news and some bad news. The good news is that security is now top of mind for the people of planet Earth. The bad news is that their security illiteracy has lead to very dangerous precedents and this is likely just the beginning. The reactionary stances taken by the hacker community has induced burnout and fatigue with many of us watching our own demise. We're here to help us all hit rock bottom in the pursuit of something better. At some point the pain of maintaining inertia will exceed the pain of making changes, so it is time for some uncomfortable experimentation. While it may be overwhelming to think about, this is what we do. We hack systems. Finding flaws in the digital world comes naturally to us. We can and must do the same to the physical world; the media, governments, and lawmakers in order to survive the next decade. Let's get started.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

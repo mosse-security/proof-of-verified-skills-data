@@ -39,7 +39,10 @@ cyber domains are introduced.
 ## Non-negotiable contracts
 
 - Endorsement records must contain exactly the fields represented by
-  `endorsement.tpl`; `subtitle` is the only optional field.
+  `endorsement.tpl`; `subtitle` is the only optional field. `description`
+  is required and must be non-empty: prefer the source abstract or detailed
+  evidence, with a deterministic fallback only when the source has no such
+  text.
 - Assessor metadata comes from the assessor JSON: name, ID, category,
   `peerReview.rigorLevel`, and `peerReview.reviewType`.
 - Every endorsement has a non-empty `domains` array. Use the canonical taxonomy
@@ -80,8 +83,8 @@ extension examples, read [references/architecture.md](references/architecture.md
 - Add or update tests with every parser, schema, domain, or merge behavior.
 - Regenerate affected output after parser changes; do not hand-edit generated
   endorsement or individual JSON.
-- Keep source evidence available to domain detection even when compact output
-  does not store the evidence text.
+- Keep source evidence available to domain detection and store it in the
+  endorsement `description` field.
 - When a source has several page layouts, add a focused parser function and a
   fixture test instead of weakening an existing layout parser.
 - Keep biographies empty until the later AI summarization step; merge the

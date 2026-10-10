@@ -15,6 +15,7 @@
     {
       "name": "Hxr1",
       "label": "Memory Laundering via Metal: What EDR Can't See on Your Mac",
+      "description": "DEF CON Abstract Metal is Apple's GPU framework, it replaced OpenGL and is now the only way to talk to the GPU on macOS. Among its buffer types is StorageModePrivate: memory managed entirely by the GPU. The CPU can't read it, write to it, or map it into virtual address space. macOS endpoint security scans process memory through mach_vm_region and task_for_pid. Apple's own Endpoint Security framework watches mappings via ES_EVENT_TYPE_NOTIFY_MMAP. None of them see StorageModePrivate buffers. Those pages live in GPU firmware page tables, allocated through IOGPUDevice in the IOAccelerator family, completely outside Mach VM. No API exists to let a security tool inspect them from another process. I turned this gap into a working evasion technique. Incoming payload gets XOR-encoded to destroy signatures, staged through a shared MTLBuffer, then blitted into private GPU memory via MTLBlitCommandEncoder on AGXCommandQueue. All CPU-side artifacts get wiped, volatile pointers, __sync_synchronize barriers, multi-pass zeroing. At that point the data exists only in pages no process on the box can read. When I need it back, I reverse the blit, decode, execute, and wipe again. Total CPU exposure is milliseconds. Tested on the latest Apple Silicon hardware. 100% evasion. No entitlements, no kexts, no root. Runs from a sandbox",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

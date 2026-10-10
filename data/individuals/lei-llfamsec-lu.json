@@ -6,6 +6,7 @@
     {
       "name": "Lei \"llfamsec\" Lu",
       "label": "One Chain to Own Them All — Breaking AI Infrastructures",
+      "description": "2025 marks the dawn of AI security. Pwn2Own Berlin launched its first AI track, featuring Ollama and Triton Inference Server, while ZeroDay.Cloud introduced new challenges targeting vLLM and Ollama. These competitions pushed us to take a closer look at the security of core AI infrastructures. vLLM exposes limited API functionality by default — until we discovered that its completions endpoint accepts prompt_embeds, which are loaded via torch.load with weights_only enabled. We had previously disclosed CVE-2025-32434, a bypass for the weights_only mechanism; after it was patched, we wondered: could we succeed again? This led us to a heap overflow vulnerability that bypasses weights_only entirely (CVE-2026-24747), which we leveraged to compromise vLLM. This finding overturned a common assumption: that PyTorch flaws only enable model poisoning, requiring victims to load malicious models locally. In fact, many AI applications expose APIs that invoke torch.load for routine operations such as model loading and LoRA fine-tuning — turning a \"local\" vulnerability into a remote one. After mapping this attack surface, we developed exploits against ComfyUI, NVIDIA Dynamo and others. In this talk, we'll walk through the discovery of this new PyTorch weights_only bypass and demonstrate its exploitation across AI infrastructures.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

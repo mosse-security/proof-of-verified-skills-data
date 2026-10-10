@@ -11,6 +11,7 @@
     {
       "name": "Zhipeng Huo",
       "label": "Evil Printer: How to Hack Windows Machines with Printing Protocol",
+      "description": "Printer Spooler service, one of the important services in Microsoft Windows, has existed for more than 25 years. It runs at highest privilege level, unsandboxed, does networking, and dynamically loads third-party binaries. What could possibly go wrong? In this talk, we will walk you through an incredibly fun bug we have discovered in printer spooler service. It can be exploited both locally and remotely, escapes sandbox, executes arbitrary code, and also elevates to SYSTEM. While Microsoft managed to develop the most restrictive sandbox for Microsoft Edge, this bug easily goes through it like it's a sieve. We will talk in detail the implementation of this ancient service, the method we used to discover and exploit the bug, and also throw in some tips and tricks for logic bugs in between.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -27,6 +28,7 @@
     {
       "name": "Zhipeng Huo",
       "label": "Caught you - reveal and exploit IPC logic bugs inside Apple",
+      "description": "Apple's iOS, macOS and other OS have existed for a long time. There are numerous interesting logic bugs hidden for many years. We demonstrated the world's first public 0day exploit running natively on Apple M1 on a MacBook Air (M1, 2020). Without any modification, we exploited an iPhone 12 Pro with the same bug. In this talk, we will show you the advantage and beauty of the IPC logic bugs, how we rule all Apple platforms, Intel and Apple Silicon alike, even with all the latest hardware mitigations enabled, without changing one line of code. We would talk about the security features introduced by Apple M1, like Pointer Authentication Code (PAC), System Integrity, and Data Protection. How did they make exploiting much harder to provide better security and protect user's privacy. We will talk about different IPC mechanisms like Mach Message, XPC, and NSXPC. They are widely used on Apple platforms which could be abused to break the well designed security boundaries. We will walk you through some incredibly fun logic bugs we have discovered, share the stories behind them and methods of finding them, and also talk about how to exploit these logic bugs to achieve privilege escalation. REFERENCES: https://www.youtube.com/watch?v=Kh6sEcdGruU https://support.apple.com/en-us/HT211931 https://support.apple.com/en-us/HT211850 https://support.apple.com/en-us/HT212011 https://support.apple.com/en-us/HT212317 https://helpx.adobe.com/security/products/acrobat/apsb20-24.html https://helpx.adobe.com/security/products/acrobat/apsb20-48.html https://helpx.adobe.com/security/products/acrobat/apsb20-67.html",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

@@ -19,6 +19,7 @@
     {
       "name": "Jonathan \"endrazine\" Brossard",
       "label": "Witchcraft Solver: Automated 0day Discovery in Stripped Binaries",
+      "description": "You have a stripped binary. No source. No symbols. No harness. You want a PoC. How do you get there? Witchcraft Solver (wsolver) is a fully automated binary-only 0day discovery pipeline. Phase 1 lifts the binary to LLVM IR via wunstrip (.eh_frame symbol recovery, 99.98% accuracy), runs an SSA taint pre-filter to cut targets by ~50%, then drives four parallel formal verification engines (KLEE, IKOS, SeaHorn, SMACK) to produce concrete violation witnesses - covering the entire binary in ~30 minutes, no source required. Phase 2 uses those witnesses to seed directed fuzzing (AFLGo) and binary-only concolic execution (SymQEMU), converting symbolic candidates into working PoCs. An optional Phase 0 handles non-Intel targets via a lifter portfolio (RetDec + Anvill + rev.ng), covering 93% of 39,364 production ELF binaries across ARM64, ARMv7, RISC-V, and s390x. Validated against CVE-2023-2804 (libjpeg-turbo heap-buffer-overflow): SymQEMU produces the first crash in 25 minutes from a stripped binary with zero source access. The tool will be released under MIT license at the conference at: https://github.com/endrazine/wsolver Experimental validation against the wider internet is left as an exercise to the audience...",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

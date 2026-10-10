@@ -6,6 +6,7 @@
     {
       "name": "Sharon Brizinov",
       "label": "The Evil PLC Attack: Weaponizing PLCs",
+      "description": "Track 4 The Evil PLC Attack: Weaponizing PLCs Sharon Brizinov 20 minutes 💻 🛠 🪲",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -22,6 +23,7 @@
     {
       "name": "Sharon Brizinov",
       "label": "A Pain in the NAS: Exploiting Cloud Connectivity to PWN your NAS",
+      "description": "Have you ever wondered how you can access your family pictures on your home network-attached storage (NAS) device remotely from your mobile? Do you know how this magic works? At Pwn2Own Toronto 2022, we chained multiple bugs to exploit both Synology and Western Digital NAS devices by abusing vulnerabilities in the device, cloud and the mutual trust between them. In our research, we reviewed the pairing mechanism of NAS devices with the WD and Synology cloud platforms. To our surprise we discovered that devices authenticate to the cloud using a hardware identifier which is later used by users to remotely access their devices. Using this, we were able to impersonate any given NAS device and perform phishing attacks that yielded us admin rights on any targeted WD or Synology device. In this talk, we will explain the pairing process of WD and Synology NAS. We will elaborate on the overall architecture of their cloud offering and focus on the vulnerabilities we found including ways to enumerate and impersonate all edge devices using certificate transparency log (CTL), and steal cloud proxy auth tokens. This enabled us to download every file saved on the NAS devices, alter or encrypt them, and bypass NAT/Firewall protection to achieve full remote code execution on all cloud-connected NAS (and to gain $$$ from Pwn2Own).",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -39,6 +41,7 @@
     {
       "name": "Sharon Brizinov",
       "label": "Exploiting OPC-UA in Every Possible Way: Practical Attacks Against Modern OPC-UA Architectures",
+      "description": "OPC-UA is the most popular protocol today in ICS/SCADA and IoT environments for data exchanges from sensors to on-premises or cloud applications. OPC-UA is therefore the bridge between different OT trust zones and a crown jewel for attacks attempting to break security zones and crossover from the industrial to corporate networks. We have been researching during the past two years dozens of OPC-UA protocol stack implementations being used in millions of industrial products. We focused on two main attack vectors: attacking OPC-UA servers and protocol gateways, and attacking OPC-UA clients. The research yielded unique attack techniques that targeted specific OPC-UA protocol specification pitfalls that enabled us to create a wide range of vulns ranging from denial of service to remote code execution. For example, we explored OPC-UA features such as method call processing, chunking mechanisms, certification handling, complex variant structures, monitored items, race-conditions, and many more. For each part of the specification, we tried to understand its caveats and exploit them to achieve RCE, information leaks, or denial of service attacks. In this talk, we will share our journey, methods, and release an open-source framework with all of our techniques and vulnerabilities to exploit modern OPC-UA protocol stacks.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

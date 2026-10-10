@@ -13,6 +13,7 @@ from .domains import normalize_domains, validate_record_domains
 REQUIRED_ENDORSEMENT_FIELDS = (
     "name",
     "label",
+    "description",
     "type",
     "assessor",
     "assessor-id",
@@ -110,6 +111,7 @@ def build_endorsement_record(
     *,
     name: str,
     label: str,
+    description: str,
     endorsement_type: str,
     assessor: AssessorMetadata,
     url: str,
@@ -122,6 +124,7 @@ def build_endorsement_record(
     record: dict[str, Any] = {
         "name": name,
         "label": label,
+        "description": description,
         "type": endorsement_type,
         "assessor": assessor.name,
         "assessor-id": assessor.id,
@@ -164,6 +167,7 @@ def validate_endorsement_record(
     text_fields = (
         "name",
         "label",
+        "description",
         "type",
         "assessor",
         "assessor-id",
