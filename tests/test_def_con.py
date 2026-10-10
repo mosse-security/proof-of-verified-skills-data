@@ -25,7 +25,7 @@ def assessor_document(process_urls: list[str]) -> dict[str, object]:
         "id": "def-con",
         "name": "DEF CON",
         "category": "conference_community",
-        "peerReview": {"reviewType": "community_review"},
+        "peerReview": {"rigorLevel": "medium", "reviewType": "community_review"},
         "links": {"processUrls": process_urls},
     }
 
@@ -129,7 +129,7 @@ class DefConTests(unittest.TestCase):
                 set(payload[0]),
                 {
                     "name", "label", "type", "assessor", "assessor-id",
-                    "assessor-category", "reviewType", "subtitle", "url",
+                    "assessor-category", "assessor-rigor-level", "reviewType", "subtitle", "url",
                     "year", "domains",
                 },
             )
@@ -137,6 +137,7 @@ class DefConTests(unittest.TestCase):
             self.assertEqual(payload[0]["assessor"], "DEF CON")
             self.assertEqual(payload[0]["assessor-id"], "def-con")
             self.assertEqual(payload[0]["assessor-category"], "conference_community")
+            self.assertEqual(payload[0]["assessor-rigor-level"], "medium")
             self.assertEqual(payload[0]["reviewType"], "community_review")
             self.assertEqual(payload[0]["subtitle"], "DEF CON 34")
             self.assertEqual(payload[0]["year"], 2026)

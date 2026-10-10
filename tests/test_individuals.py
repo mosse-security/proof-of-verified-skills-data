@@ -16,6 +16,7 @@ def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
         "assessor": "Example Conference",
         "assessor-id": "example",
         "assessor-category": "conference_community",
+        "assessor-rigor-level": "medium",
         "reviewType": "community_review",
         "subtitle": "Example 2026",
         "url": f"https://example.test/{label.replace(' ', '-')}",

@@ -58,6 +58,7 @@ class DomainMappingTests(unittest.TestCase):
                 id="example",
                 name="Example",
                 category="conference_community",
+                rigor_level="medium",
                 review_type="community_review",
             )
         )

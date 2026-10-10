@@ -16,10 +16,11 @@ change.
 
 ## Quick start
 
-The framework requires Python 3.11+; site scrapers declare their parser
-dependencies in `pyproject.toml`.
+The framework requires Python 3.11+. Install runtime dependencies from
+`requirements.txt`:
 
 ```powershell
+python -m pip install -r requirements.txt
 python -m endorsement_scraper --list
 python -m endorsement_scraper --workers 8
 python -m endorsement_scraper --assessor black-hat --save-html

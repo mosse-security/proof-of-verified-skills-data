@@ -26,6 +26,7 @@ class EndorsementSchemaTests(unittest.TestCase):
             id="example",
             name="Example Conference",
             category="conference_community",
+            rigor_level="medium",
             review_type="community_review",
         )
         record = build_endorsement_record(

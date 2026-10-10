@@ -44,6 +44,7 @@ The internal `Endorsement` fields map to the template as follows:
 | assessor JSON `name` | `assessor` |
 | assessor ID | `assessor-id` |
 | assessor JSON `category` | `assessor-category` |
+| assessor `peerReview.rigorLevel` | `assessor-rigor-level` |
 | assessor `peerReview.reviewType` | `reviewType` |
 | `subtitle` | `subtitle` |
 | `source_url` | `url` |

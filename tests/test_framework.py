@@ -102,6 +102,7 @@ class GroupedScraper(BaseCollectionScraper):
                     "assessor": "Grouped Org",
                     "assessor-id": "grouped-org",
                     "assessor-category": "conference_community",
+                    "assessor-rigor-level": "medium",
                     "reviewType": "community_review",
                     "url": f"https://example.test/{index}",
                     "year": 2026,
@@ -142,7 +143,7 @@ class FrameworkTests(unittest.TestCase):
                     "id": assessor_id,
                     "name": name,
                     "category": "conference_community",
-                    "peerReview": {"reviewType": "community_review"},
+                    "peerReview": {"rigorLevel": "medium", "reviewType": "community_review"},
                 }
             ),
             encoding="utf-8",

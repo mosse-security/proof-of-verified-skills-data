@@ -17,6 +17,7 @@ REQUIRED_ENDORSEMENT_FIELDS = (
     "assessor",
     "assessor-id",
     "assessor-category",
+    "assessor-rigor-level",
     "reviewType",
     "url",
     "year",
@@ -57,6 +58,7 @@ class AssessorMetadata:
     id: str
     name: str
     category: str
+    rigor_level: str
     review_type: str
 
     @classmethod
@@ -75,6 +77,11 @@ class AssessorMetadata:
             "id": document.get("id"),
             "name": document.get("name"),
             "category": document.get("category"),
+            "rigor_level": (
+                peer_review.get("rigorLevel")
+                if isinstance(peer_review, dict)
+                else None
+            ),
             "review_type": (
                 peer_review.get("reviewType")
                 if isinstance(peer_review, dict)
@@ -119,6 +126,7 @@ def build_endorsement_record(
         "assessor": assessor.name,
         "assessor-id": assessor.id,
         "assessor-category": assessor.category,
+        "assessor-rigor-level": assessor.rigor_level,
         "reviewType": assessor.review_type,
     }
     if subtitle is not None:
@@ -160,6 +168,7 @@ def validate_endorsement_record(
         "assessor",
         "assessor-id",
         "assessor-category",
+        "assessor-rigor-level",
         "reviewType",
         "url",
     )
@@ -190,6 +199,7 @@ def validate_endorsement_record(
             "assessor": assessor.name,
             "assessor-id": assessor.id,
             "assessor-category": assessor.category,
+            "assessor-rigor-level": assessor.rigor_level,
             "reviewType": assessor.review_type,
         }
         mismatched = [

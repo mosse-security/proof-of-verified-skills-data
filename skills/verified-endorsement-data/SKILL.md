@@ -38,7 +38,7 @@ cyber domains are introduced.
 - Endorsement records must contain exactly the fields represented by
   `endorsement.tpl`; `subtitle` is the only optional field.
 - Assessor metadata comes from the assessor JSON: name, ID, category,
-  and `peerReview.reviewType`.
+  `peerReview.rigorLevel`, and `peerReview.reviewType`.
 - Every endorsement has a non-empty `domains` array. Use the canonical taxonomy
   in `endorsement_scraper/domains.py`; use `unknown` only when no rule matches.
   Update the central classifier and tests when expanding the taxonomy.
