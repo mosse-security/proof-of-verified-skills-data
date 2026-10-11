@@ -4,6 +4,7 @@ import argparse
 import logging
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 from .base import CollectionScraperContext
@@ -11,6 +12,7 @@ from .discovery import DiscoveryError, discover_all_scrapers
 from .http import HttpClient
 from .runner import CollectionScraperRunner, RunReport, ScraperRunner
 from .storage import EndorsementStore, ProfileStore
+from .stats import build_run_stats, write_run_stats
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -25,6 +27,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output-dir", type=Path, default=Path("data/tmp/endorsements"))
     parser.add_argument("--html-dir", type=Path, default=Path("data/archives/html"))
     parser.add_argument("--profiles-dir", type=Path, default=Path("data/tmp/profiles"))
+    parser.add_argument("--stats-file", type=Path, default=Path("data/stats.json"))
     parser.add_argument(
         "--assessor",
         action="append",
@@ -84,6 +87,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    started_at = datetime.now(timezone.utc)
     logging.basicConfig(
         level=getattr(logging, args.log_level),
         format="%(asctime)s %(levelname)s %(threadName)s %(message)s",
@@ -173,6 +177,9 @@ def main(argv: list[str] | None = None) -> int:
         f"skipped={totals['skipped']} overwritten={totals['overwritten']} "
         f"failed={len(report.failed)}"
     )
+    stats = build_run_stats(report, started_at=started_at)
+    write_run_stats(args.stats_file, stats)
+    print(f"Stats: {args.stats_file} status={stats['status']} last-run={stats['last-run']}")
     return 1 if report.failed else 0
 
 

@@ -38,6 +38,8 @@ cyber domains are introduced.
 8. Run enrichers before endorsement generation when external datasets are
    needed. Enrichers are discovered recursively under `enrichers/` and write
    one dataset archive per enricher under `data/enrichments/`.
+9. Inspect `data/stats.json` after each scraper run. It is the operator and
+   test contract for timestamps, counts, errors, and capture sanity checks.
 
 ## Non-negotiable contracts
 

@@ -88,6 +88,13 @@ array as `data.json` inside `data/enrichments/<enricher-id>/data.zip`.
 into `additional-links`, keeping collection, storage, matching, and rendering
 separate as the number of enrichers grows.
 
+## Run statistics
+
+`endorsement_scraper.stats` writes an atomic `data/stats.json` after the main
+scraper CLI completes. It records UTC timestamps, duration, per-scraper counts,
+totals, errors, and validations such as the DEF CON non-zero endorsement check.
+Tests can call `validate_run_stats` against the file or synthetic reports.
+
 ## DEF CON lessons
 
 `endorsement_scraper/assessors/def_con.py` supports multiple historical

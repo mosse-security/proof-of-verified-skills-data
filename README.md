@@ -295,6 +295,14 @@ in endorsement records as `additional-links` entries containing a title and
 URL. Future enrichers should write a JSON array as `data.json` in their own
 `<enricher-id>/data.zip` archive.
 
+## Run statistics
+
+Every scraper run writes `data/stats.json` with the UTC run timestamp, duration,
+per-scraper page and endorsement counts, totals, errors, and sanity checks.
+Use `--stats-file` to choose another location. The DEF CON sanity check marks a
+run failed when zero endorsements are produced, making accidental empty crawls
+visible to operators and automated tests.
+
 ## HTML snapshots
 
 `--save-html` writes every successful response plus metadata to the configured
