@@ -1,0 +1,84 @@
+{
+  "name": "Aimin Pan",
+  "last-updated": "2026-10-11T05:47:38Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "with-evidence": 0,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 3
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Aimin Pan",
+      "label": "Is Your TimeSpace Safe?  - Time and Position Spoofing Opensourcely",
+      "description": "We have found a way to produce GPS spoofing with an extremely low cost SDR device and both iPhone and Apple Watch could be affected. (Tech details have already been submitted to Apple Product Security Team. ) The map apps of iOS and Android can be cheated too, and you can even produce an Uber position spoofing, which make LBS apps vulnerable. Futhermore, the time information of smart devices could be easily cheated, since those devices rely heavily on GPS based timing or NTP service (also based on GPS timing). Additionally, we will examine other common positioning methods used by smart devices, such as iBeacon/BLE/WiFi. We will give a demo on how we collect WiFi Access Point SSID data, and then make a fake WiFi environment to cheat WiFi positioning system of Android. In the end, we will also give some suggestions in order to prevent such spoofing.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2015",
+      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Aimin Pan",
+      "label": "Optimized Fuzzing IOKit in iOS",
+      "description": "Fuzzing is the most common way of exploiting vulnerabilities, and IOKit is an ideal target in kernel extensions for fuzzing. The interfaces in IOKit use specific structures, such as IOExternalMethod, IOExternalMethodDispatch, to check the input parameters in various ways. Purely random inputs when fuzzing IOKit can hardly pass the interfaces' parameter checking, so that most of fuzzing data cannot reach the kernel IOUserClient subclass at all. Thus, such kind of blindly fuzzing is inefficient. One way to improve it is to use the static information exported by sMethod symbols, which can be dumped by a static analysis tools such as IDA. However, it is not available since iOS 7 because of symbols hiding. In this presentation, we will introduce an approach to resolve the symbols and parameter information dynamically based on a kernel patch to read and write memories. In this approach we can exploit quite a lot of useful information, including not only the standard parameters of IOKit interfaces, but also other supplementary data. We have also built a fuzzing framework, which uses the resolved information and generates the random inputs, which can pass the basic parameter checking by IOKit interfaces. Therefore, the fuzzing can be done efficiently. Finally, we also present the information of IOKit interfaces exported by our approach, and several typical vulnerabilities found by our fuzzing framework.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Aimin Pan",
+      "label": "Sonic Gun to Smart Devices: Your Devices Lose Control Under Ultrasound/Sound",
+      "description": "MEMS sensors, such as accelerometers and gyroscopes, play non-substitutive roles in modern smart devices. A vulnerability has been revealed that the inside sensing elements will resonate when imposed acoustic wave at the certain frequencies, thus yielding spoiled data. We developed the attack method and achieved data manipulation via precise parameter tuning for both gyroscopes and accelerometers. Also, we invented a joint attack by combining both ones providing hackers with more versatility. We will explore extensively the impact of this vulnerability among several categories of devices with MEMS sensors onboard, including VR devices, self-balancing vehicles, and drones. Using a home-built ultrasound/sound emitting system, we launch attacks towards prevailing VR products, including smartphones such as iPhone 7 and Galaxy S7. By emitting an ultrasound/sound beam onto devices at resonant frequencies, we are able to manipulate the \"virtual world.\" For example, we can steer the facing direction without the user's movement, trigger quake with different frequencies and amplitudes and so on. It could daze some users as it contradicts with their real feeling, which may cause a fall or even physical injury. \"Shooting\" a self-balancing vehicle, we show that it would lose balance as soon as we \"pull the trigger.\" In a realistic circumstance, the user would probably fall and even get injured while riding speedily. We also attack a commercial product of DJI, induced change of its flight state, which could ultimately lead to a crash. These attacks can exclusively deprive users of their control. Moreover, in the cases of the VR device and the self-balancing vehicle, users may get physically injured! We also introduce several countermeasures, on both hardware and software to mitigate the vulnerability. Last but not least, through all these attacks, we call for the attention of related companies to prevent further exploitations.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

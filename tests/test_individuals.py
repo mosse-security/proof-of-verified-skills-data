@@ -73,6 +73,26 @@ class IndividualMergeTests(unittest.TestCase):
             self.assertEqual(document["stats"]["without-evidence"], 2)
             self.assertEqual(document["stats"]["by-domain"]["unknown"], 2)
 
+    def test_merges_records_from_unlimited_assessor_directories(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for assessor_id, assessor_name in (("one", "Assessor One"), ("two", "Assessor Two")):
+                source = root / "endorsements" / assessor_id
+                source.mkdir(parents=True)
+                record = endorsement("Shared Person", f"{assessor_name} Talk")
+                record["assessor"] = assessor_name
+                record["assessor-id"] = assessor_id
+                (source / "records.json").write_text(json.dumps([record]), encoding="utf-8")
+
+            result = merge_endorsements(
+                root / "endorsements", root / "individuals", profiles_directory=root / "profiles"
+            )
+
+            self.assertEqual(result.people, 1)
+            self.assertEqual(result.endorsements, 2)
+            document = json.loads((root / "individuals" / "shared-person.json").read_text())
+            self.assertEqual({item["assessor-id"] for item in document["endorsements"]}, {"one", "two"})
+
     def test_rerun_overwrites_without_appending_duplicates(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

@@ -1,6 +1,6 @@
 {
   "name": "Tom Van Goethem",
-  "last-updated": "2026-10-11T02:29:04Z",
+  "last-updated": "2026-10-11T05:48:55Z",
   "biography": "",
   "contact": [
     {
@@ -9,9 +9,9 @@
     }
   ],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -24,10 +24,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Tom Van Goethem",
+      "label": "HEIST: HTTP Encrypted Information can be Stolen Through TCP-Windows",
+      "description": "Over the last few years, a worryingly number of attacks against SSL/TLS and other secure channels have been discovered. Fortunately, at least from a defenders perspective, these attacks require an adversary capable of observing or manipulating network traffic. This prevented a wide and easy exploitation of these vulnerabilities. In contrast, we introduce HEIST, a set of techniques that allows us to carry out attacks against SSL/TLS purely in the browser. More generally, and surprisingly, with HEIST it becomes possible to exploit certain flaws in network protocols without having to sniff actual traffic. HEIST abuses weaknesses and subtleties in the browser, and the underlying HTTP, SSL/TLS, and TCP layers. Most importantly, we discover a side-channel attack that leaks the exact size of any cross-origin response. This side-channel abuses the way responses are sent at the TCP level. Combined with the fact that SSL/TLS lacks length-hiding capabilities, HEIST can directly infer the length of the plaintext message. Concretely, this means that compression-based attacks such as CRIME and BREACH can now be performed purely in the browser, by any malicious website or script, without requiring network access. Moreover, we also show that our length-exposing attacks can be used to obtain sensitive information from unwitting victims by abusing services on popular websites. Finally, we explore the reach and feasibility of exploiting HEIST. We show that attacks can be performed on virtually every web service, even when HTTP/2 is used. In fact, HTTP/2 allows for more damaging attack techniques, further increasing the impact of HEIST. In short, HEIST is a set of novel attack techniques that brings network-level attacks to the browser, posing an imminent threat to our online security and privacy.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Tom Van Goethem",
       "label": "Timeless Timing Attacks",

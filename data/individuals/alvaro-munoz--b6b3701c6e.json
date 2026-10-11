@@ -1,12 +1,12 @@
 {
   "name": "Alvaro Muñoz",
-  "last-updated": "2026-10-11T02:28:48Z",
+  "last-updated": "2026-10-11T05:48:50Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
+    "endorsements": 3,
     "with-evidence": 2,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,10 +19,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 2,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Alvaro Muñoz",
+      "label": "Friday the 13th: JSON Attacks",
+      "description": "2016 was the year of Java deserialization apocalypse. Although Java Deserialization attacks were known for years, the publication of the Apache Commons Collection Remote Code Execution (RCE from now on) gadget finally brought this forgotten vulnerability to the spotlight and motivated the community to start finding and fixing these issues. One of the most suggested solutions for avoiding Java deserialization issues was to move away from Java Deserialization altogether and use safer formats such as JSON. In this talk, we will analyze the most popular JSON parsers in both .NET and Java for potential RCE vectors. We will demonstrate that RCE is also possible in these libraries and present details about the ones that are vulnerable to RCE by default. We will also discuss common configurations that make other libraries vulnerable. In addition to focusing on JSON format, we will generalize the attack techniques to other serialization formats. In particular, we will pay close attention to several serialization formats in .NET. These formats have also been known to be vulnerable since 2012 but the lack of known RCE gadgets led some software vendors to not take this issue seriously. We hope this talk will change this. With the intention of bringing the due attention to this vulnerability class in .NET, we will review the known vulnerable formats, present other formats which we found to be vulnerable, and conclude with presenting several gadgets from system libraries that may be used to achieve RCE in a stable way: no memory corruption -- just simple process invocation. Finally, we will provide recommendations on how to determine if your code is vulnerable, provide remediation advice, and discuss alternative approaches.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Alvaro Muñoz",
       "label": "Friday the 13th: JSON attacks!",

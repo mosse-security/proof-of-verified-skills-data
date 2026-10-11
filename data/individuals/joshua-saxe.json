@@ -1,0 +1,84 @@
+{
+  "name": "Joshua Saxe",
+  "last-updated": "2026-10-11T05:47:41Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "with-evidence": 0,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 3
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Joshua Saxe",
+      "label": "CrowdSource: An Open Source, Crowd Trained Machine Learning Model for Malware Capability Detection",
+      "description": "Due to the exploding number of unique malware binaries on the Internet and the slow process required for manually analyzing these binaries, security practitioners today have only limited visibility into the functionality implemented by the global population of malware. To date little work has been focused explicitly on quickly and automatically detecting the broad range of high level malware functionality such as the ability of malware to take screenshots, communicate via IRC, or surreptitiously operate users’ webcams.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Joshua Saxe",
+      "label": "A Scalable, Ensemble Approach for Building and Visualizing Deep Code-Sharing Networks Over Millions of Malicious Binaries",
+      "description": "The millions of unique malicious binaries gathered in today's white-hat malware repositories are connected through a dense web of hidden code-sharing relationships. If we could recover this shared-code network, we could provide much needed context for and insight into newly observed malware. For example, our analysis could leverage previous reverse engineering work performed on a new malware sample's older \"relatives,\" giving important context and accelerating the reverse engineering process. Various approaches have been proposed to see through malware packing and obfuscation to identify code sharing.  A significant limitation of these existing approaches, however, is that they are either scalable but easily defeated or that they are complex but do not scale to millions of malware samples.  A final issue is that even the more complex approaches described in the research literature tend to only exploit one \"feature domain,\" be it malware instruction sequences, call graph structure, application binary interface metadata, or dynamic API call traces, leaving these methods open to defeat by intelligent adversaries. How, then, do we assess malware similarity and \"newness\" in a way that both scales to millions of samples and is resilient to the zoo of obfuscation techniques that malware authors employ?  In this talk, I propose an answer: an obfuscation-resilient ensemble similarity analysis approach that addresses polymorphism, packing, and obfuscation by estimating code-sharing in multiple static and dynamic technical domains at once, such that it is very difficult for a malware author to defeat all of the estimation functions simultaneously.  To make this algorithm scale, we use an approximate feature counting technique and a feature-hashing trick drawn from the machine-learning domain, allowing for the fast feature extraction and fast retrieval of sample \"near neighbors\" even when handling millions of binaries. Our algorithm was developed over the course of three years and has been evaluated both internally and by an independent test team at MIT Lincoln Laboratories: we scored the highest on these tests against four competing malware cluster recognition techniques and we believe this was because of our unique \"ensemble\" approach.  In the presentation, I will give details on how to implement the algorithm and will go over these algorithm results in a series of large-scale interactive malware visualizations. As part of the algorithm description I will walk through a Python machine learning library that we will be releasing in the conference material which allows users to detect feature frequencies over billions of items on commodity hardware.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Joshua Saxe",
+      "label": "Why Security Data Science Matters and How Its Different: Pitfalls and Promises of Data Science Based Breach Detection and Threat Intelligence",
+      "description": "As our networks generate an ever-larger deluge of security-relevant data, data science (machine learning, data visualization, and scalable storage technologies) has become necessary if we are to succeed in both stopping advanced attackers and gaining intelligence about their tactics. Unfortunately, there is still a gap between the security and data science communities: security professionals often have limited knowledge of data science, and security data scientists often come from non-security backgrounds and may not understand why security data science is different than the solutions taught in traditional machine learning and visualization programs. In my talk, I will bridge this gap, speaking to both audiences, discussing the challenges and opportunities posed by applying data science to security, demonstrating exciting results achieved by my research group, and empowering attendees to apply security data science in new and powerful ways. The first part of the talk will provide a non-mathematical overview of security data science, introducing state of the art data visualization and the big three machine learning tasks (classification, clustering and regression). For each of the topics, I will give examples of how my colleagues and I have successfully applied the topic to problems like attack detection, threat intelligence, malware analysis and scalable malware analytics. The second part of the talk will cover both major security-specific data science challenges and solutions to these challenges. One challenge is that malicious activity exists as a needle in the haystack of terabytes of benign data, causing textbook data science methods, which are often not designed for such scenarios, to generate reams of false positives. Another challenge is the inevitable lack of access to 0-day attack data with which to train machine-learning approaches. I will go over multiple mitigations for both of these problems, including statistical methods designed to generalize to new attacks and minimize false positives, and will show how these methods have performed impressively in detecting 0-day malware in my groups work. The third part of my talk will address security data visualization, discussing my groups ongoing and past log visualization, malware analysis visualization, and threat intelligence visualization work [4][5]. In discussing this work I will describe how we use machine-learning approaches to address a challenge unique to security data visualization: the semantic gap between low-level security data and the high-level activity we actually care about. In summary, my talk will explore the emerging and exciting world of security data science, discussing opportunities, challenges and effective approaches. My goal is that attendees leave the talk excited about the possibilities of applying data science to their own security related work, newly aware of the pitfalls of this area, and more knowledgeable about solutions to these pitfalls.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

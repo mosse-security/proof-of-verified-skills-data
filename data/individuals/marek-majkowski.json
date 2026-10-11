@@ -1,0 +1,46 @@
+{
+  "name": "Marek Majkowski",
+  "last-updated": "2026-10-11T05:47:42Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Marek Majkowski",
+      "label": "Lessons from Defending the Indefensible",
+      "description": "For the last year, we've been working hard to optimize CloudFlare's infrastructure to survive different types of denial of service attacks. If you have plenty of servers the usual advice of \"buy more bandwidth\" may be sufficient, but it certainly wasn't useful to us. At some point you need to do _something_ with the incoming traffic, and the servers have only so many CPU cycles. In this talk, we'll share our experiences in defending our services. We'll go through many layers, from flowspec and sflow, to ethtool tweaks, kernel bypass techniques, iptables examples to useful sysctls. We'll touch on details such as: why increasing backlog queue size may hurt you, why your servers can't send more than 200k syn cookies per second, how to stop a botnet with iptables ipsets and hashlimits, when enabling conntrack makes sense or how to process 10M pps on a single commodity server. Our favorite defense techniques are using BPF, so we will spent a fair bit of time discussing this. We'll discuss what we tried, what worked, what didn't, and why some of the technically sound ideas turned up to be totally impractical. Our experience is in defending HTTP/S and DNS services, on which this talk will focus, but our techniques are applicable to the usual variety of DDoS'es like Chargen, SSDP, NTP or DNS reflection.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2015",
+      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

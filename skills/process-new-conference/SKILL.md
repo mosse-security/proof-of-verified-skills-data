@@ -1,0 +1,143 @@
+---
+name: process-new-conference
+description: Onboard a new security conference into this repository's assessor, archive, endorsement, enrichment, validation, statistics, and individual-profile pipeline. Use when the user names a conference that is not yet implemented, asks to retrieve its historical talks or speakers, or wants a new conference scraper and its generated records.
+---
+
+# Process a new conference
+
+Use this skill when the user provides a conference name or website and expects
+the repository to collect endorsements and produce individual records. Treat
+the existing DEF CON implementation as the reference architecture, but verify
+each new site's layouts and data sources instead of copying assumptions.
+
+## Completion contract
+
+Do not call a conference onboarded until all of these are true:
+
+- An assessor file exists at `data/assessors/<id>.json` with stable metadata,
+  `peerReview.rigorLevel`, `peerReview.reviewType`, and historical source URLs.
+- Source pages are cached under `data/archives/html/<id>/` or an equivalent
+  archive ZIP. Prefer local archives on reruns.
+- A discovered adapter exists below `scrapers/` (or the collection adapter
+  equivalent) and produces one validated endorsement per person.
+- Every endorsement has a detailed non-empty `description`, canonical
+  lowercase hyphenated `domains`, `evidence-links`, and a derived boolean
+  `evidence` that is true exactly when links exist.
+- Any useful external dataset has an enricher below `enrichers/`, with its own
+  `data/enrichments/<enricher-id>/data.zip` dataset and matching logic.
+- `data/stats.json` reports a non-zero capture and evidence counts are known.
+- The individual merger succeeds, profile biographies remain empty, profile
+  stats match the final deduplicated endorsements, and temporary directories
+  are cleaned.
+
+## Workflow
+
+### 1. Identify and normalize the assessor
+
+1. Research the official conference name, canonical website, stable URL, and
+   identifier. Use lowercase hyphenated IDs such as `example-conference`.
+2. Inspect `data/templates/endorsement.tpl` and `individual.tpl` before coding.
+3. Create `data/assessors/<id>.json` with `id`, `name`, `url`, category,
+   description, peer-review metadata, attribution, recognition, and a `links`
+   object. Keep historical processing URLs in `links.processUrls`; never edit
+   unrelated assessor fields while adding a source link.
+4. Put official video, audio, slides, CSV, XLSX, API, or other evidence source
+   URLs in `links` with descriptive names (for example `youtubeUrl`). Verify
+   URLs rather than guessing them.
+
+### 2. Discover the source inventory
+
+Build a year/page inventory before writing a parser:
+
+- Find every historical conference page, schedule, speaker list, talk detail,
+  or proceedings endpoint.
+- Record pagination links, archives, alternate layouts, and redirects.
+- Determine whether a page contains abstracts, speaker bios, contact links,
+  talk URLs, or only index data.
+- Determine whether an external source (video channel, slides, papers,
+  awards, CVE database) can independently validate an endorsement.
+
+Use HTTP retrieval only when the local archive lacks the page. Save successful
+responses and preserve a deterministic member path such as
+`<conference-number>/speakers.html`. For ZIP-backed archives, use
+`ArchiveStore`; keep the source layer byte-oriented so future CSV/XLSX readers
+can be added without changing the scraper contract.
+
+### 3. Implement the adapter
+
+1. Add a module under `scrapers/`, splitting layout-specific parsing into
+   focused functions. Use `BaseCollectionScraper` when one conference emits
+   grouped per-year JSON; use page scrapers when pagination is naturally
+   request-driven.
+2. Parse every speaker/talk pair. If one talk has multiple speakers, emit one
+   endorsement per speaker and never copy one speaker's profile data to
+   another.
+3. Set `label` to the talk or recognition title, `subtitle` to the conference
+   and year, `url` to the canonical source page, and `year` to a four-digit
+   calendar year. Store the abstract or detailed source evidence in
+   `description`; use a deterministic fallback only when the source has no
+   abstract.
+4. Pass description and relevant source text to domain detection. Outputs must
+   use only these canonical values:
+   `cloud-security`, `cyber-defense`, `devsecops`, `digital-forensics`, `grc`,
+   `incident-response`, `open-source-intelligence`, `penetration-testing`,
+   `red-teaming`, `reverse-engineering`, `vulnerability-research`, `unknown`.
+5. Emit `PersonProfile` fragments only for contact information. Keep
+   biographies empty; do not scrape or invent biographies.
+
+### 4. Add enrichers
+
+For every independent evidence source, create one stable enricher under
+`enrichers/`. Enrichers must be independently discoverable and runnable:
+
+```powershell
+python -m endorsement_scraper.enrichment_cli --list
+python -m endorsement_scraper.enrichment_cli --enricher <id> --overwrite
+python -m endorsement_scraper.enrichment_cli --overwrite
+```
+
+Use `yt-dlp` for video channels when appropriate. Store a JSON array as
+`data.json` inside `data/enrichments/<enricher-id>/data.zip`. Include stable
+IDs, titles, URLs, conference/year hints, and any metadata needed for matching.
+Implement matching that tolerates conference prefixes, speaker-name prefixes,
+punctuation, subtitles, and meaningful title variants. Add a regression test
+for every discovered mismatch.
+
+### 5. Validate and generate
+
+Run the selected scraper with overwrite enabled, then merge profiles:
+
+```powershell
+python -m endorsement_scraper --assessor <id> --overwrite
+python -m endorsement_scraper.individuals --overwrite
+```
+
+Inspect `data/stats.json`. Confirm pages and endorsements are non-zero, no
+scraper failed, and evidence counts are plausible. Confirm every endorsement
+has a boolean `evidence` consistent with `evidence-links` and that every link
+has a title and absolute HTTP(S) URL.
+
+Inspect at least one generated endorsement, one multi-speaker talk, one
+enrichment match, and one individual profile. Verify profile `stats` contains:
+
+- `endorsements`
+- `with-evidence`
+- `without-evidence`
+- `by-domain` counts for every canonical domain, including `unknown`
+
+Run tests and compilation checks before reporting completion:
+
+```powershell
+python -m unittest discover -s tests -p 'test_*.py' -q
+python -m compileall -q endorsement_scraper scrapers enrichers tests
+```
+
+### 6. Add failure guards
+
+Add tests for empty pages, malformed layouts, duplicate speakers, pagination,
+missing abstracts, missing archives, evidence matching, and zero-result runs.
+The stats contract must mark a run failed when a required assessor produces no
+endorsements. Never silently accept an empty crawl as a successful onboarding.
+
+Read [the repository architecture reference](../verified-endorsement-data/references/architecture.md)
+for storage, schema, archive, enrichment, and merger details.

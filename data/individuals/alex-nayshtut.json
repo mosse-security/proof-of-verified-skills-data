@@ -1,0 +1,46 @@
+{
+  "name": "Alex Nayshtut",
+  "last-updated": "2026-10-11T05:47:38Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Alex Nayshtut",
+      "label": "Creating a Spider Goat: Using Transactional Memory Support for Security",
+      "description": "Often a solution from one area helps solve problems in a completely different field. In this session, we will show you how Intel CPU improvements designed to speed up computations have boosted security by creating a flexible memory monitor capable of detecting and reversing unauthorized memory changes. Modern CPUs support the detection and resolution of memory conflicts between multiple threads that access the same data: This is called the Transactional Synchronisation Extension (TSX) in modern Intel CPUs. Hardware-supported TSX technology (represented by XBEGIN and XEND instructions) helps avoid expensive software locks. Instead, TSX can automatically detect read/write memory conflicts and roll back corresponding RAM changes. We will show how TSX capabilities can be used for security. A special security thread reads protected RAM cells (data or code) in TSX mode; any other (potentially malicious) thread writing to the same cells will cause the CPU to abort the transaction. The abort context can be attributed to the address of the unauthorized memory write and to the instruction that caused it. We will discuss the following practical security scenarios: - Detecting unwanted memory accesses by suspicious threads and rolling them back (for example, in a HIPS system to verify if the code is malicious) - Detecting the execution of suspected shell code (with the rollback of all RAM changes the code performed) - Detecting memory changes with TSX but without the rollback capability. This could be highly useful for kernel and hypervisor self-protection (such as Microsoft PatchGuard). We will show a demo of TSX detecting malicious RAM modifications. There are three leading security benefits of using TSX to monitor protected memory areas: - Fully flexible via read accesses made by the security thread - Operates in hardware, leading to minimal overhead - Provides automatic rollback of memory changes (which is prohibitively expensive in software) We will also discuss potential problems - for example, a DoS attack on TSX to exhaust the Level 1 cache.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

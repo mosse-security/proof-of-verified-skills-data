@@ -1,0 +1,84 @@
+{
+  "name": "Christopher Kruegel",
+  "last-updated": "2026-10-11T05:47:39Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "with-evidence": 0,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 3
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Christopher Kruegel",
+      "label": "Full System Emulation: Achieving Successful Automated Dynamic Analysis of Evasive Malware",
+      "description": "Today, forensics experts and anti-malware solutions face a multitude of challenges when attempting to extract information from malicious files; dynamic analysis (sandboxing) is a popular method of identifying behavior associated with running or opening a given file, and provides the ability to examine the actions which that file is responsible for. Dynamic analysis technology is gaining popularity for use in detecting targeted threats and zero-day attacks, because this approach need not rely on detecting the malicious code. Instead, it can leverage the ability to identify generic \"suspicious behaviors\" to assess the risk inherent in running a given sample, and provide intelligence about the protocols and infrastructure attackers can use to control malicious samples. Of course, many of the attackers have a vested interest in making it much more difficult to extract intelligence from their backdoors or implants. New techniques to evade or complicate analysis of samples are growing in popularity and diversity. With malware authors constantly evolving new techniques to hamper automated analysis, what is a researcher to do? In the first part of our presentation, Christopher Kruegel, Co-Founder and Chief Scientist at Lastline, will talk about designing dynamic analysis systems, how one might go about building such a system, and what information one should seek to extract with a dynamic analysis platform. He will explain the advantages and limitations of externally instrumented full-system emulation, and demonstrate its value in comparison with other approaches such as OS emulation or traditional virtualization solutions which instrument from inside the analysis environment. In the second part, Christopher will discuss and provide recent examples of several classes of evasion techniques observed in the wild, including environment triggers, stalling code, and detection of human interaction, and demonstrate the evolution of techniques over time. In the third part, he will present a number of solutions to these challenges, each enabled by full system emulation. He will discuss how to extend a sandbox to detect environment-dependent branching, identifying or circumventing environment detection attempts, and forcing execution along each possible path, covering as much of the executable code as possible. Christopher will also present approaches to identify and mitigate stalling code blocks, dramatically reducing the overhead of analysis when this approach is sufficient, or forcing the execution to exit the costly blocks when it is not. The session will also cover methods for identifying attempts to detect human behaviors, and recipes for bypassing these detection attempts.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Christopher Kruegel",
+      "label": "Using Static Binary Analysis to Find Vulnerabilities and Backdoors in Firmware",
+      "description": "Over the last few years, as the world has moved closer to realizing the idea of the Internet of Things, an increasing amount of the things with which we interact every day have been replaced with embedded devices. These include previously non-electronic devices, such as locks, light switches, and utility meters (such as electric meters and water meters), as well as increasingly more complex and ubiquitous devices, such as network routers and printers. Other devices are becoming increasingly intelligent as well. Modern printers and cameras include complex social media functionality, smart televisions are increasingly including Internet-based entertainment options, and even previously-simple devices, such as watches and glasses are being augmented with complex embedded components. The increasingly-complex systems that drive these devices have one thing in common: they must all communicate to carry out their intended functionality. Smart TVs communicate with (and accept communication from) online media services, smart locks allow themselves to be unlocked by phones or keypads, digital cameras contact social media services, and smart meters communicate with the users utility company. Such communication, along with other functionalities of the device, is handled by software (termed firmware) embedded in the device. Because these devices often receive privacy-sensitive information from their sensors (such as what a user is watching, or how much electricity they are using), or carry out a safety-critical function (such as actuators that lock the front door), errors in the devices firmware, whether present due to an accidental mistake or purposeful malice, can have serious and varying implications in both the digital and physical world. Firmware, like any piece of software, is susceptible to a wide range of software errors. These include memory corruption flaws, command injection vulnerabilities and application logic flaws. Another common error seen in firmware is a logic flaw called an authentication bypass or less formally, a backdoor. An authentication bypass occurs when an error in the authentication routine of a device allows a user to perform actions for which they would otherwise need to know a set of credentials. In other cases, backdoors are deliberately inserted by the manufacturer to get access to deployed devices for maintenance and upgrade. Detecting vulnerabilities and backdoors in firmware is challenging for several reasons. To begin with, the devices in question are usually proprietary, and therefore the source code of the firmware is not available. While this is a problem common to analyzing binary software in general, firmware takes it one step further: firmware often takes the form of a single binary image that runs directly on the hardware of the device, without an underlying operating system. Because of this, OS and library abstractions do not exist in some cases, and are non-standard or undocumented in others, and it is frequently unknown how to properly initialize the runtime environment of the firmware sample (or even, at what offset to load the binary and at what address to begin execution). We term such firmware as binary blob firmware. These blobs can be very large, and therefore any analysis tool must be able to handle such complex firmware. Additionally, embedded devices frequently require their firmware to be cryptographically signed by the manufacturer, making modification of the firmware on the device for analysis purposes infeasible. In this presentation, we will talk about the challenges of performing automated vulnerability analysis and backdoor finding in firmware. Then, we report on a binary static analysis system, called Angr, that automates most of the process of searching firmware binaries for the presence of flaws. To the best of our knowledge, Angr is the first firmware analysis system working at the binary level, in a scalable manner, and with no requirement to instrument code on the original device. To this end, Angr utilizes advanced program analysis techniques to analyze binary code in complex firmware of diverse hardware platforms, and it automates much of the process of identifying occurrences of buffer overflow and authentication bypass vulnerabilities. The tool uses novel techniques to improve the scalability of the analysis, which we will explain during the presentation. This includes a combination of more traditional static program analysis, value set analysis (VSA), and symbolic execution. The presentation will conclude with a few examples of vulnerabilities that our tool has discovered in firmware samples. We also plan to run a live demo that highlights the capabilities of our system.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Christopher Kruegel",
+      "label": "Talking Behind Your Back: Attacks and Countermeasures of Ultrasonic Cross-Device Tracking",
+      "description": "Cross-device tracking (XDT) technologies are currently the \"Holy Grail\" for marketers because they allow to track the user's visited content across different devices to then push relevant, more targeted content. For example, if a user clicks on a particular advertisement while browsing the web at home, the advertisers are very interested in collecting this information to display, later on, related advertisements on other devices belonging to the same user (e.g., phone, tablet). Currently, the most recent innovation in this area is ultrasonic cross-device tracking (uXDT), which is the use of the ultrasonic spectrum as a communication channel to \"pair\" devices for the aforementioned tracking purposes. Technically, this pairing happens through a receiver application installed on the phone or tablet. The business model is that users will receive rewards or useful services for keeping those apps active, pretty much like it happens for proximity-marketing apps (e.g., Shopkick), where users receive deals for walk-ins recorded by their indoor-localizing apps. This talk will describe and demonstrate the practical security and privacy risks that arise with the adoption of uXDT-enabled systems. The uXDT technology has caught the attention of major companies (e.g., IDG Ventures, Google, Nestle, Dominos), many of which either invested in uXDT providers (e.g., SilverPush, Signal360, Audible Magic), or approached such companies as clients. Unfortunately, unbeknownst to the users, we found that numerous mobile applications, some with millions of downloads, include uXDT advertising frameworks that actively listen for ultrasounds, with no opt-out option for the users! Security experts and the authorities (e.g., the Federal Trade Commission) have promptly raised concerns about uXDT, but until now no comprehensive security analysis of the technology has been released. In this talk, we will explore the uXDT ecosystem, dig into the inner workings of popular uXDT frameworks, and perform an in-depth technical analysis of the underlying technology, exposing both implementation & design vulnerabilities, and critical security & privacy shortcomings that we discovered. In the offensive part of our talk, we will demonstrate (through practical demo sessions) how an attacker can exploit uXDT frameworks to reveal the true IP addresses of users who browse the Internet through anonymity networks (e.g., VPNs or Tor). Moreover, we will describe how an attacker can tamper with the \"pairing\" process or affect the results of the advertising/bidding algorithms. For example, an attacker equipped with a simple beacon-emitting device (e.g., a smartphone) can walk into a Starbucks at peak hour and launch a profile-corruption attack against all customers currently taking advantage of uXDT-enabled apps. In the defensive part of our talk, we will introduce three countermeasures that we designed, implemented, and will publicly release. These include (1) a mobile application that detects ultrasound beacons \"in the air\" with the goal of raising awareness, (2) a browser extension that acts as a personal firewall by selectively filtering ultrasonic beacons, and (3) an brand-new OS permission control in Android that allows applications to declaratively ask access to the ultrasound spectrum. We will go into the technical details and provide remediation advice useful both for the users and developers.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2016",
+      "url": "https://blackhat.com/archive/europe/2016/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

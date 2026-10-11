@@ -1,6 +1,6 @@
 {
   "name": "Jasiel Spelman",
-  "last-updated": "2026-10-11T02:32:30Z",
+  "last-updated": "2026-10-11T05:48:52Z",
   "biography": "",
   "contact": [
     {
@@ -13,9 +13,9 @@
     }
   ],
   "stats": {
-    "endorsements": 2,
+    "endorsements": 5,
     "with-evidence": 2,
-    "without-evidence": 0,
+    "without-evidence": 3,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -28,10 +28,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 2,
-      "unknown": 0
+      "unknown": 3
     }
   },
   "endorsements": [
+    {
+      "name": "Jasiel Spelman",
+      "label": "Java Every-Days: Exploiting Software Running on 3 Billion Devices",
+      "description": "Over the last three years, Oracle Java has become the exploit author's best friend, and why not? Java has a rich attack surface, broad install base, and runs on multiple platforms allowing attackers to maximize their return-on-investment. The increased focus on uncovering weaknesses in the Java Runtime Environment (JRE) shifted research beyond classic memory corruption issues into abuses of the reflection API that allow for remote code execution. This talk focuses on the vulnerability trends in Java over the last three years and intersects public vulnerability data with Java vulnerabilities submitted to the Zero Day Initiative (ZDI) program. We begin by reviewing Java's architecture and patch statistics to identify a set of vulnerable Java components. We then highlight the top five vulnerability types seen in ZDI researcher submissions that impact these JRE components and emphasize their recent historical significance. The presentation continues with an in-depth look at specific weaknesses in several Java sub-components, including vulnerability details and examples of how the vulnerabilities manifest and what vulnerability researchers should look for when auditing the component. Finally, we discuss how attackers typically leverage weaknesses in Java. We focus on specific vulnerability types attackers and exploit kits authors are using and what they are doing beyond the vulnerability itself to compromise machines. We conclude with details on the vulnerabilities that were used in this year's Pwn2Own competition and review steps Oracle has taken to address recent issues uncovered in Java.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Jasiel Spelman",
       "label": "Java Every-Days: Exploiting Software Running on 3 Billion Devices",
@@ -58,6 +77,25 @@
     },
     {
       "name": "Jasiel Spelman",
+      "label": "Thinking Outside the Sandbox - Violating Trust Boundaries in Uncommon Ways",
+      "description": "Attacking the modern browser and its plugins is becoming harder. Vendors are employing numerous mitigation technologies to increase the cost of exploit development. An attacker is now forced to uncover multiple vulnerabilities to gain privileged-level code execution on his targets. First, an attacker needs to find a vulnerability, leak an address to get around ASLR, and bypass DEP to gain code execution within the renderer process. The attacker then needs to bypass the application sandbox to elevate his privileges, which will allow him to do something interesting. Our journey begins at the sandbox and investigates some of the more obscure techniques used to violate this trust boundary. What should you focus on when you are auditing a sandbox implementation? There are the traditional approaches: find a memory corruption vulnerability in IPC message handling, attack the kernel to get SYSTEM-level privilege escalation, or abuse shared memory regions. Sure, any of these will work but they may not be the easiest way. Our presentation will examine four bypass techniques successfully used in winning entries at this year's Pwn2Own contest. We will analyze the attack vector used, root causes, and possible fixes for each technique. These uncommon, yet highly effective, approaches have been used to bypass the most advanced application sandboxes in use today, and understanding them will provide a unique perspective for those working to find and verify such bypasses.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jasiel Spelman",
       "label": "Abusing Adobe Reader’s JavaScript APIs",
       "description": "Adobe Reader’s JavaScript APIs offer a rich set of functionality for document authors. These APIs allow for processing forms, controlling multimedia events, and communicating with databases, all of which provide end-users the ability to create complex documents. This complexity provides a perfect avenue for attackers to take advantage of weaknesses that exist in Reader’s JavaScript APIs. In this talk, we will provide insight into both the documented and undocumented APIs available in Adobe Reader. Several code auditing techniques will be shared to aid in vulnerability discovery, along with numerous proofs-of-concept which highlight real-world examples. We’ll detail out how to chain several unique issues to obtain execution in a privileged context. Finally, we’ll describe how to construct an exploit that achieves remote code execution without the need for memory corruption.",
       "type": "presentation",
@@ -78,6 +116,25 @@
       "year": 2015,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Jasiel Spelman",
+      "label": "$hell on Earth: From Browser to System Compromise",
+      "description": "The winning submissions to Pwn2Own 2016 provided unprecedented insight into the state of the art in software exploitation. Every successful submission provided remote code execution as the super user (SYSTEM/root) via the browser or a default browser plugin. In most cases, these privileges were attained by exploiting the Microsoft Windows or Apple OS X kernel. Kernel exploitation using the browser as an initial vector was a rare sight in previous contests. This presentation will detail the eight winning browser to super user exploitation chains (21 total vulnerabilities) demonstrated at this year's Pwn2Own contest. We will cover topics such as modern browser exploitation, the complexity of kernel Use-After-Free exploitation, and the simplicity of exploiting logic errors and directory traversals in the kernel. We will analyze all attack vectors, root causes, exploitation techniques, and possible remediations for the vulnerabilities presented. Reducing attack surfaces with application sandboxing is a step in the right direction, but the attack surface remains expansive and sandboxes are clearly still just a speed bump on the road to complete compromise. Kernel exploitation is clearly a problem which has not disappeared and is possibly on the rise. If you're like us, you can't get enough of it; it's shell on earth.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
       ]
     }
   ]

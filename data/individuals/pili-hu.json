@@ -1,0 +1,46 @@
+{
+  "name": "Pili Hu",
+  "last-updated": "2026-10-11T05:47:43Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Pili Hu",
+      "label": "How to Leak a 100-Million-Node Social Graph in Just One Week? - A Reflection on Oauth and API Design in Online Social Networks",
+      "description": "Many Online Social Networks (OSN) are using OAuth 2.0 to grant access to API endpoints nowadays. Despite many thorough threat model analyses (e.g. RFC6819), only a few real world attacks have been discovered and demonstrated. To our knowledge, previously discovered loopholes are all based on the misuse of OAuth. It was generally believed that the correct use of OAuth 2.0 (by OSN provider and application developer) is secure enough. We break this belief by demonstrating a massive leakage of user data which roots from the scotoma of OAuth's fundamental design rationale: focus on protecting user, not protecting application. We show that, even if OSN providers and application developers follow best practice, application impersonation is inevitable on many platforms: According to the OAuth 2.0 standard, they support implicit-authorization-grant flow and bearer-token usage. Although it has become common knowledge for application developers to use authorization-code-grant flow and use access token in a MAC-token style wherever possible, there is no mechanism for them to opt out from the OSN platforms' support of implicit-authorization-grant flow and bearer-token usage. Since different applications may have different privileges like accessing permissions and rate limits, application impersonation in general enables privilege escalation and the consequence depends on platform-specific details. As a proof-of-concept experiment, application impersonation has been demonstrated on a large-scale Facebook-like (not Facebook) OSN. Based on this technique, one can use a casual crawler to collect its 100-million-user social graph within just one week and the projected cost based on Amazon Web Service is just $150 USD. Due to its implementation specifics, similar techniques can be applied on this OSN to obtain other private data like all users' status lists and albums. Note that, without privilege escalation, this amount of data (order of 10^8) cannot be obtained in such short time with such little cost even on open graphs like Twitter. Our discovery shows that it is urgent for industrial practitioners to provide the two aforementioned opt-outs in OAuth and review their API design. This work also highlights that application protection must be considered in the design of the next version of OAuth, and similarly other Single-Sign-On protocols.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

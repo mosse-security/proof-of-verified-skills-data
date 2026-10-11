@@ -1,12 +1,12 @@
 {
   "name": "Fernando Arnaboldi",
-  "last-updated": "2026-10-11T02:28:52Z",
+  "last-updated": "2026-10-11T05:48:51Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 3,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,10 +19,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Fernando Arnaboldi",
+      "label": "Abusing XSLT for Practical Attacks",
+      "description": "Over the years, XML has been a rich target for attackers due to flaws in its design as well as implementations. It is a tempting target because it is used by other programming languages to interconnect applications and is supported by web browsers. In this talk, I will demonstrate how to use XSLT to produce documents that are vulnerable to new exploits. XSLT can be leveraged to affect the integrity of arithmetic operations, lead to code logic failure, or cause random values to use the same initialization vector. Error disclosure has always provided valuable information, but thanks to XSLT, it is possible to partially read system files that could disclose service or system's passwords. Finally, XSLT can be used to compromise end-user confidentiality by abusing the same-origin policy concept present in web browsers. This presentation includes proof-of-concept attacks demonstrating XSLTs potential to affect production systems, along with recommendations for safe development.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Fernando Arnaboldi",
       "label": "Abusing XSLT for Practical Attacks",
@@ -45,6 +64,25 @@
       "year": 2015,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Fernando Arnaboldi",
+      "label": "Exposing Hidden Exploitable Behaviors in Programming Languages Using Differential Fuzzing",
+      "description": "Securely developed applications may have unidentified vulnerabilities in the underlying programming languages. Attackers can target these programming language flaws to alter applications' behavior. This means applications are only as secure as the programming languages parsing the code. A differential fuzzing framework was created to detect dangerous and unusual behaviors in similar software implementations. Multiple implementations of the top five interpreted programming languages were tested: JavaScript, Perl, PHP, Python, and Ruby. After fuzzing the default libraries and built-in functions, several dangerous behaviors were automatically identified. This paper reveals the most serious vulnerabilities found in each language. It includes practical examples identifying which undocumented functions could allow OS command execution, when sensitive file contents may be partially exposed in error messages, how native code is being unexpectedly interpreted – locally and remotely – and when constant's names could be used as regular strings for OS command execution. The vulnerabilities, methodology, and fuzzer will be made open source, and the accompanying talk will include live demonstrations.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2017",
+      "url": "https://blackhat.com/archive/europe/2017/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
       ]
     }
   ]

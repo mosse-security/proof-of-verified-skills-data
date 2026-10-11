@@ -1,12 +1,12 @@
 {
   "name": "Hanno Böck",
-  "last-updated": "2026-10-11T02:28:53Z",
+  "last-updated": "2026-10-11T05:48:51Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,10 +19,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Hanno Böck",
+      "label": "Nonce-Disrespecting Adversaries: Practical Forgery Attacks on GCM in TLS",
+      "description": "We investigate nonce-reuse issues with the Galois/Counter Mode (GCM) algorithm as used in TLS. Nonce reuse in GCM allows an attacker to recover the authentication key and forge messages as described by Joux. With an Internet-wide scan we identified over 70,000 HTTPS servers that are at risk of nonce reuse. We also identified 184 HTTPS servers repeating nonces directly in a short connection. Affected servers include large corporations, financial institutions, and a credit card company. We implement a proof of concept attack allowing us to violate the authenticity of affected HTTPS connections and inject content.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Hanno Böck",
       "label": "Abusing Certificate Transparency Logs",

@@ -1,0 +1,84 @@
+{
+  "name": "Azzedine Benameur",
+  "last-updated": "2026-10-11T05:47:39Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "with-evidence": 0,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 3
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Azzedine Benameur",
+      "label": "All Your Root Checks Belong to Us: The Sad State of Root Detection",
+      "description": "Today, mobile devices are ubiquitous; a facet of everyday life for most people. Due to increasing computational power, these devices are used to perform a large number of tasks, from personal email to corporate expense account management. It is a hassle for users to be required to maintain multiple mobile devices to separate personal and corporate activities, but in the past this was a commonplace requirement. The Bring Your Own Device (BYOD) revolution has promised to consolidate personal and business applications onto one device for added convenience and to reduce costs. As business applications move to personal devices, a clear problem has arisen: how to keep business data secure and personal data private when they reside on the same device. Many solutions exist, both for increasing the security of mobile devices as well as BYOD and Mobile Device Management (MDM) software, to allow access to business applications and data while keeping it secure. One chink in the armor for both security and business applications is \"rooted\" devices. These devices have been unlocked, providing low-level system access to users and applications. With root access, users may be able to bypass BYOD mechanisms in place to protect data, and malware may be able to access both private personal and business data on devices. As such, security applications and business applications often attempt to identify rooted devices and report them as compromised. In this talk, we analyze the most popular Android security focused applications along with market leading BYOD solutions to discover how \"rooted\" devices are identified. We dissect the aforementioned applications with commonly available open source Android reverse engineering frameworks to demonstrate the relative ease of circumventing these root checks. Finally, we present AndroPoser, a simple tool that can subdue all the root checks we discovered, allowing \"rooted\" devices to appear \"non-rooted.\"",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2015",
+      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Azzedine Benameur",
+      "label": "All Your SMS & Contacts Belong to ADUPS & Others",
+      "description": "Our research has identified several models of Android mobile devices that contained firmware that collected sensitive personal data about their users and transmitted this sensitive data to third-party servers in China - without disclosure or the users' consent. These devices were available through major US-based online retailers (Amazon, BestBuy, for example) and included popular smartphones such as the BLU R1 HD and the BLU Life One X2. These devices actively transmitted user and device information including the full-body of text messages, call history with full telephone numbers, unique device identifiers including the International Mobile Subscriber Identity (IMSI), serial number, Media Access Control (MAC) address, and the International Mobile Equipment Identity (IMEI). The firmware could target specific users and text messages matching remotely-defined keywords. The firmware also collected and transmitted information about the use of applications installed on the monitored device, bypassed the Android permission model, executed remote commands with escalated (system) privileges, and was able to remotely reprogram the devices. The firmware that shipped with the mobile devices and subsequent updates allowed for the remote installation of applications without the users' consent and, in some versions of the software, the transmission of fine-grained device location information. The core of the monitoring activities took place using a commercial Firmware Over The Air (FOTA) update software system that was shipped with the Android devices we tested and were managed by a company named Shanghai Adups Technology Co. Ltd. Our findings are based on both code and network analysis of the firmware. The user and device information was collected automatically and transmitted periodically without the users' consent or knowledge. Some of the collected information was encrypted and then transmitted over secure web protocols to a server located in Shanghai. This software and behavior bypasses the detection of mobile anti-virus tools because they assume that software that ships with the device is not malware and thus, it is white-listed. In September 2016, Adups claimed on its web site to have a world-wide presence with over 700 million active users, and a market share exceeding 70% across over 150 countries and regions with offices in Shanghai, Shenzhen, Beijing, Tokyo, New Delhi, and Miami. The Adups web site also stated that it produces firmware that is integrated in more than 400 leading mobile operators, semiconductor vendors, and device manufacturers spanning from wearable and mobile devices to cars and televisions.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Azzedine Benameur",
+      "label": "Container Attack Surface Reduction Beyond Name Space Isolation",
+      "description": "Container Attack Surface Reduction Beyond Name Space Isolation",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2018",
+      "url": "https://blackhat.com/archive/europe/2018/briefings/schedule/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2018,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

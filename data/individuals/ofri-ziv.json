@@ -1,0 +1,65 @@
+{
+  "name": "Ofri Ziv",
+  "last-updated": "2026-10-11T05:47:42Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 2
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ofri Ziv",
+      "label": "Unleash the Infection Monkey: A Modern Alternative to Pen-Tests",
+      "description": "Security breaches never happen exactly the way you expected or planned for. Yet an organization's infrastructure should be able to withstand a breach of its perimeter security layer, and also handle the infection of internal servers. The security testing toolset available to security professionals today consists mainly of penetration testing and vulnerability scanners.These tools were designed for traditional, relatively static networks and can no longer address ALL the possible vulnerabilities of today's dynamic and hybrid network. While there is no replacement to a highly skilled human pen-test hacker, penetration tests are limited to specific parts of a network, are expensive, and may become obsolete within months. Automatic vulnerability scanners have limited accessibility and can not simulate today's advanced lateral movement attack methods. The result is network blind spots which is where security threats often arise. This calls for a new approach to testing network security resilience. An ideal tool would be easy to use, budgetary conscious, autonomous and scalable. We propose using the Infection Monkey, a new open source cyber security testing tool, designed to thoroughly test a network from an attacker's point of view. Our tool draws its inspiration from Netflix's Chaos Monkey released in 2011. Netflix's Monkey was designed to randomly delete servers in Netflix' infrastructure to test a service's ability to withstand server failures. We think that a similar approach applies to network security, \"infecting\" your network to test your defenses capabilities, so we have leveraged Netflix's Chaos Monkey concept to address the challenges of the network defense community. The Infection Monkey spins up an infected virtual machine inside random parts of your data center, to test for potential security failures. By \"inside\", we mean behind the firewall and any other perimeter defense you are deploying for your computing infrastructure. By equipping the monkey with advanced exploitation abilities (without destructive payloads), it can spread to any vulnerable machine within reach. Along with the ability to spread onwards from its victims, the monkey can detect surprising weak spots throughout the network. In our talk we will show how our Infection Monkey uncovers blind spots and argue that ongoing network-wide security testing adds strong capabilities to the security team. We will focus on vulnerabilities that up until now have stayed in the industry's 'collective blind spot'. The security community can greatly benefit from a disruptive, modern tool that helps verify security solution deployments and shed light on the weaker parts of the security chain.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Ofri Ziv",
+      "label": "Escalating Insider Threats Using VMware's API",
+      "description": "Enterprises often require that their IT teams have no access to data kept inside the machines they administer, a separation that is crucial for compliance, privacy and defense in depth. To this end, industries use VMWare's rich security model to separate the infrastructure domain from the guest machine domain. For example, most companies allow their IT teams to create, modify, backup and delete guest machines, but deny them guest machine operation functions such as file manipulation and console interaction. The VMWare VIX API allows users with the required vSphere permissions to automate guest operations functions across VMWare platform products. Using VIX to interact with a virtual machine requires the administrator to go through two distinct security domains: 1) The vSphere host; 2) The guest operating system. With this two step authentication, even high vSphere permissions wouldn't necessarily allow interaction with guest machines. VIX contains an undocumented functionality that breaks this security model, enabling a malicious user to bypass the guest domain authentication. To leverage this functionality an attacker would have to be able to modify the guest machine configuration in a way that will allow sending arbitrary commands to the guest machines and run them at root permissions. This method can be executed remotely, using an easy to use, well documented API, unlike other host-to-guest techniques which require high privileged access to the host. In this session, we will provide real world examples of VMWare networks that are exposed to this security design flaw. We will demonstrate the ease at which an attacker can move from configuring a virtual machine to running commands with root  permissions inside the guest machine. We will also showcase a tool that will allow you to test which users are capable of taking over guest machines.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "Gregory Pickett",
-  "last-updated": "2026-10-11T02:32:30Z",
+  "last-updated": "2026-10-11T05:48:51Z",
   "biography": "",
   "contact": [
     {
@@ -17,9 +17,9 @@
     }
   ],
   "stats": {
-    "endorsements": 5,
+    "endorsements": 7,
     "with-evidence": 4,
-    "without-evidence": 1,
+    "without-evidence": 3,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -32,7 +32,7 @@
       "red-teaming": 0,
       "reverse-engineering": 1,
       "vulnerability-research": 5,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
@@ -88,6 +88,25 @@
     {
       "name": "Gregory Pickett",
       "label": "Abusing Software Defined Networks",
+      "description": "Software Defined Networking (SDN) transfers all forwarding decisions to a single controller and provides the network with the same degree of control and flexibility as the cloud.  And, with all the major vendors onboard, it will soon be supporting networks everywhere. But, current implementations are full of weaknesses that could easily turn this utopian dream of the future into a nightmare and leave networks world-wide exposed. With clear-text wire protocol implementations, little support for switch TLS, no authentication for nodes, poorly conceived rate-limiting features in the controllers, controller APIs that don't require authentication, and back-door netconf access, the leading platforms Floodlight and OpenDaylight, are ripe for attack. And in this session, using a new toolkit that I developed, I'll demonstrate by showing you how to locate and identify these controllers, impersonate switches to DoS them, and engage their wide-open APIs and backdoors to map the network, locate targets, and control access to the network...even hide from sensors.  But all is not lost, because I'll show how to protect them too.  Because dream or nightmare, SDN can make a difference in the real world if we just protect it right.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2014",
+      "url": "https://blackhat.com/archive/europe/2014/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Gregory Pickett",
+      "label": "Abusing Software Defined Networks",
       "description": "Software Defined Networking (SDN) transfers all forwarding decisions to a single controller and provides the network with the same degree of control and flexibility as the cloud. And with all the major vendors onboard, it will soon be supporting networks everywhere. But current implementations are full of weaknesses that could easily turn this utopian dream of the future into a nightmare and leave networks world-wide exposed. With clear-text wire protocol implementations, little support for switch TLS, no authentication for nodes, poorly conceived rate-limiting features in the controllers, controller APIs that don’t require authentication , and back-door netconf access, the leading platforms Floodlight and OpenDaylight, are ripe for attack. And in this session, using a new toolkit that I developed, I’ll demonstrate by showing you how to locate and identify these controllers, impersonate switches to DoS them, and engage their wide-open APIs and backdoors to map the network, locate targets, and control access to the network … even hide from sensors. But all is not lost, because I’ll show how to protect them too. Because dream or nightmare, SDN can make a difference in the real world if we just protect it right.",
       "type": "presentation",
       "assessor": "DEF CON",
@@ -107,6 +126,25 @@
       "year": 2014,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Gregory Pickett",
+      "label": "Staying Persistent in Software Defined Networks",
+      "description": "The Open Network Install Environment, or ONIE, makes commodity or WhiteBox Ethernet possible. By placing a common, Linux-based, install environment onto the firmware of the switch, customers can deploy the Network Operating Systems of their choice onto the switch and do so whenever they like without replacing the hardware. The problem is, if this gets compromised, it also makes it possible for hackers to install malware onto the switch. Malware that can manipulate it and your network, and keep doing it long after a Network Operating System reinstall. With no secure boot, no encryption, no authentication, predictable HTTP/TFTP waterfalls, and exposed post-installation partition, ONIE is very susceptible to compromise. And with Network Operating Systems such as Switch Light, Cumulus Linux, and Mellanox-OS via their agents Indigo and eSwitchd not exactly putting up a fight with problems like no authentication, no encryption, poor encryption, and insufficient isolation, this is a real possibility. In this session, we'll cover the weaknesses in ONIE, ways to reach the platform through these Network Operating Systems, and what can happen if we don't properly protect the Control Plane these switches run on. I'll even demonstrate with a drive-by web-attack that is able to pivot through a Windows management station to reach the isolated control plane network, and infect one of these ONIE-based switches with malware, malware that's there even after a refresh. You'll even get the source code to take home with you to see how easily it's done. Finally, we'll talk about how to compensate for these issues so that your network doesn't become infected with and manipulated by this sort of persistent firmware-level malware.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
       ]
     },
     {

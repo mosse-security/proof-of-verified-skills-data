@@ -1,0 +1,46 @@
+{
+  "name": "Marco Grassi",
+  "last-updated": "2026-10-11T05:47:42Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Marco Grassi",
+      "label": "Subverting Apple Graphics: Practical Approaches to Remotely Gaining Root",
+      "description": "Apple graphics, both the userland and the kernel components, are reachable from most of the sandboxed applications, including browsers, where an attack can be launched first remotely and then escalated to obtain root privileges. On OS X, the userland graphics component is running under the WindowServer process, while the kernel component includes IOKit user clients created by IOAccelerator IOService. Similar components do exist on iOS system as well. It is the counterpart of \"Win32k.sys\" on Windows. In the past few years, lots of interfaces have been neglected by security researchers because some of them are not explicitly defined in the sandbox profile, yet our research reveals not only that they can be opened from a restrictive sandboxed context, but several of them are not designed to be called, exposing a large attack surface to an adversary. On the other hand, due to its complexity and various factors (such as being mainly closed source), Apple graphics internals are not well documented by neither Apple nor the security community. This leads to large pieces of code not well analyzed, including large pieces of functionality behind hidden interfaces with no necessary check in place even in fundamental components. Furthermore, there are specific exploitation techniques in Apple graphics that enable you complete the full exploit chain from inside the sandbox to gain unrestricted access. We named it \"graphic-style\" exploitation. In the first part of the talk, we introduce the userland Apple graphics component WindowServer. We start from an overview of WindowServer internals, its MIG interfaces as well as \"hello world\" sample code. After that, we explain three bugs representing three typical security flaws: - Design related logic issue CVE-2014-1314, which we used at Pwn2Own 2014 - Logic vulnerability within hidden interfaces - The memory corruption issue we used at Pwn2Own 2016 Last but not least we talk about the \"graphic-style\" approach to exploit a single memory corruption bug and elevate from windowserver to root context. The second part covers the kernel attack surface. We will show vulnerabilities residing in closed-source core graphics pipeline components of all Apple graphic drivers including the newest chipsets, analyze the root cause and explain how to use our \"graphic-style\" exploitation technique to obtain root on OS X El Capitan at Pwn2Own 2016. This part of code, mostly related to rendering algorithm, by its nature lies deeply in driver's core stack and requires much graphical programming background to understand and audit, and is overlooked by security researchers. As it's the fundamental of Apple's rendering engine, it hasn't been changed for years and similar issues do exist in this blue ocean. We'll also come up with a new way of kernel heap spraying, with less side-effect and more controllable content than any other previous known methods. The talk is concluded by showing two live demos of remote gaining root through a chain of exploits on OS X El Capitan. Our first demo is done by exploiting userland graphics and the second by exploiting kernel graphics.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

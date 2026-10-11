@@ -1,0 +1,46 @@
+{
+  "name": "Lars Haukli",
+  "last-updated": "2026-10-11T05:47:41Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Lars Haukli",
+      "label": "Exposing Bootkits with BIOS Emulation",
+      "description": "Stealth and persistency are invaluable assets to an intruder. You cannot defend against what you cannot see. This talk discusses techniques to counter attempts at subverting modern security features, and regain control of compromised machines, by drilling down deep into internal structures of the operating system to battle the threat of bootkits. The security features added in modern 64-bit versions of Windows raise the bar for kernel mode rootkits. Loading unsigned drivers, which is what most rootkits will attempt to do, is denied by Driver Signature Enforcement. PatchGuard protects the integrity of the running kernel, preventing them from modifying critical structures and setting up hooks. Although time has shown that these security measures are not perfect, and some may in fact be bypassed while actively running, an alternative approach is to subvert the system by running code before any of the security features kick in. Secure Boot has been introduced to protect the integrity of the boot process. However, the model only works when booting from signed firmware (UEFI). Legacy BIOS systems are still vulnerable as the Master Boot Record, Volume Boot Record, and the bootstrap code all reside in unsigned sectors on disk, with no security features in place to protect them from modification. Using a combination of low-level anti-rootkit techniques, emulation, and heuristic detection logic, we have devised a way to detect anomalies in the boot sectors for the purpose of detecting the presence of bootkits.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

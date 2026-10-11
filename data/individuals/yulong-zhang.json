@@ -1,0 +1,84 @@
+{
+  "name": "Yulong Zhang",
+  "last-updated": "2026-10-11T05:47:45Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "with-evidence": 0,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 3
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Yulong Zhang",
+      "label": "Sidewinder Targeted Attack Against Android in the Golden Age of Ad Libs",
+      "description": "While Google Play has little malware, many vulnerabilities exist in the apps as well as the Android system itself, and aggressive ad libs leak a lot of user privacy information. When they are combined together, more powerful targeted attacks can be conducted. We will present one practical case of such attacks called \"Sidewinder Targeted Attack.\" It targets victims by intercepting location information reported from ad libs, which can be used to locate targeted areas such as a CEO's office or some specific conference rooms. When the target is identified, \"Sidewinder Targeted Attack\" exploits popular vulnerabilities in ad libs, such as Javascript-binding-over-HTTP or dynamic-loading-over-HTTP, etc. During the exploit, it is a well-known challenge to call Android services from injected native code due to the lack of Android application context. So we will also demonstrate how attackers can invoke Android services such as taking photos, calling phone numbers, sending SMS, reading/writing the clipboard, etc. Once intruding into the target, the attackers can exploit several Android vulnerabilities to get valuable privacy information or initiate more advanced attacks. We will reveal how to exploit new vulnerabilities we discovered in this phase. In this talk, we will show demos using real-world apps downloaded from Google Play. Although we notified Google, ad vendors and app developers about related issues half a year ago, there are still millions of users under the threat of \"Sidewinder Targeted Attacks\" due to the slow patching/upgrading/fragmentation of the Android ecosystem.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Yulong Zhang",
+      "label": "Fingerprints on Mobile Devices: Abusing and Leaking",
+      "description": "Unlike passwords, fingerprints last a lifetime and are usually associated with critical identities. Thus, the leakage of fingerprints is irredeemable. It will be even a disaster if the attackers can remotely harvest fingerprints in a large scale. In this talk, we will reveal some severe issues with the current Android fingerprint frameworks that have long been neglected by vendors and users. We will provide in-depth security analysis of the popular mobile fingerprint authentication/authorization frameworks, and discuss the security problems of existing designs, including (1) the confused authorization attack that enables malware to bypass pay authorizations protected by fingerprints, (2) TrustZone design flaws and fingerprint sensor spying attack to harvest fingerprints, (3) pre-embedded fingerprint backdoors, etc. We will show live demos, such as hijacking mobile payment protected by fingerprints, and collecting fingerprints from popular mobile devices. We will also provide suggestions for vendors and users to better secure the fingerprints.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Yulong Zhang",
+      "label": "Adaptive Kernel Live Patching: An Open Collaborative Effort to Ameliorate Android N-Day Root Exploits",
+      "description": "Although 0-day exploits are dangerous, we have to admit that the largest threat for Android users are kernel vulnerabilities that have been disclosed but remain unfixed. Having been in the spotlight for weeks or even months, these kernel vulnerabilities usually have clear and stable exploits; therefore, underground businesses commonly utilize them in malware and APTs. The reason for the long periods of remaining unfixed is complex, partly due to the time-consuming patching and verification procedures, or possibly because the vendors care more about innovating new products than securing existing devices. As such, there are still a lot devices all over the world subject to root attacks. The different patching status of various vendors causes fragmentation, and vendors usually don't provide the exact up-to-date kernel source code for all devices, so it is extremely difficult to patch vulnerable devices in scale. We will provide stats of the current Android kernel vulnerability landscape, including the device model population and the corresponding vulnerability rates. Some vulnerabilities with great impact but slow fixing progress will be discussed. The whole community strives to solve this problem, but obviously this cannot be done discretely with limited hands. In this talk, we present an adaptive Android kernel live patching framework, which enables open and live patching for kernels. It has the following advantages: (1) It enables online hotpatching without interrupting user-experience. Unlike existing Linux kernel hotpatching solutions, it works directly on binaries and can automatically adjust to different device models with different Android kernel versions. (2) It enables third party vendors, who may not access the exact source code of the device kernel and drivers, to perform live patching. (3) Except for the binary patching scheme, it also provides a Lua based patching scheme, which makes patch generation and delivery even easier. It also has stronger confinement. This framework saves developers from repeating the tedious and error-prone patch porting work, and patches can be provided from various vendors, thus the patch deployment period can be greatly shortened. Only offering the power to perform adaptive live patching is not enough -- we need to regulate it just in case the hotpatches introduce further vulnerabilities and backdoors. So, a special alliance with membership qualification is formed. Only those selected vendors can provide patches and audit patches submitted from other alliance members. Furthermore, we will build a reputation ranking system for the patch providers, a mechanism similar to app stores. The Lua based patching scheme can provide even more restrictive regulations upon the operations of patches. Finally, this framework can be easily extended and applied to general Linux platforms. We believe that improving the security of the whole ecosystem is not a dream of our own. We call for more and more parties to join in this effort to fight the evils together.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

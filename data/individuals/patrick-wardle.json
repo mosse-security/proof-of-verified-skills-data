@@ -1,6 +1,6 @@
 {
   "name": "Patrick Wardle",
-  "last-updated": "2026-10-11T02:29:00Z",
+  "last-updated": "2026-10-11T05:48:54Z",
   "biography": "",
   "contact": [
     {
@@ -29,9 +29,9 @@
     }
   ],
   "stats": {
-    "endorsements": 16,
+    "endorsements": 18,
     "with-evidence": 11,
-    "without-evidence": 5,
+    "without-evidence": 7,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 4,
@@ -44,7 +44,7 @@
       "red-teaming": 3,
       "reverse-engineering": 2,
       "vulnerability-research": 13,
-      "unknown": 2
+      "unknown": 4
     }
   },
   "endorsements": [
@@ -70,6 +70,25 @@
       "year": 2014,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Patrick Wardle",
+      "label": "Writing Bad @$$ Malware for OS X",
+      "description": "In comparison to Windows malware, known OS X threats are really quite lame. As an Apple user that has drank the 'Apple Juice,' I didn't think that was fair! From novel persistence techniques, to native OS X components that can be abused to thwart analysis, this talk will detail exactly how to create elegant, bad@ss OS X malware. And since detection is often a death knell for malware, the talk will also show how OS X's native malware mitigations and 3rd-party security tools were bypassed. For example I'll detail how Gatekeeper was remotely bypassed to allow unsigned download code to be executed, how Apple's 'rootpipe' patch was side-stepped to gain root on a fully patched system, and how all popular 3rd-party AV and personal firewall products were generically bypassed by my simple proof-of-concept malware. However, don't throw out your Macs just yet! The talk will conclude by presenting several free security tools that can generically detect or even prevent advanced OS X threats. Armed with such tools, we'll ensure that our computers are better protected against both current and future OS X malware. So unless you work for Apple, come learn how to take your OS X malware skills to the next level and better secure your Mac at the same time!",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
       ]
     },
     {
@@ -119,6 +138,25 @@
       "domains": [
         "cyber-defense",
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Patrick Wardle",
+      "label": "Offensive Malware Analysis: Dissecting OSX/FruitFly via a Custom C&C Server",
+      "description": "Creating a custom command and control (C&C) server for someone else's malware has a myriad of benefits. If you can take over a domain, you then may able to fully hijack other hackers' infected hosts. A more prosaic benefit is expediting analysis. While hackers and governments may be more interested in the former, malware analysts can benefit from the latter. FruitFly, the first OS X/macOS malware of 2017, is a rather intriguing specimen. Selectively targeting biomedical research institutions, it is thought to have flown under the radar for many years. In this talk, we'll focus on the 'B' variant of FruitFly that, even now, is only detected by a handful of security products. We'll begin by analyzing the malware's dropper, an obfuscated perl script. As this language is rather archaic and uncommon in malware droppers, we'll discuss some debugging techniques and fully deconstruct the script. While this dropper component also communicates with the C&C server and supports some basic commands, it drops a binary payload in order to perform more complex actions. However, instead of fully reversing this piece of the malware, the talk will focus on an initial triage and show how this was sufficient for the creation of a custom C&C server. With such a server, we can easily coerce the malware to reveal it's full capabilities. For example, the malware invokes a handful of low-level mouse & graphics APIs, passing in a variety of dynamic parameters. Instead of spending hours reversing and debugging this complex code, via the C&C server, we can simply send it various commands and observe the effects. Of course, this approach hinges on the ability to closely observe the malware's actions. As such, we'll discuss macOS-specific tools that can monitor various events, and where necessary detail the creation of custom ones (e.g. a 'mouse sniffer' that locally observes and decodes commands sent from the malware to the OS, in order to control the mouse). While some of this talk is FruitFly and/or macOS specific, conceptually it should broadly apply to analyzing other malware, even on other operating systems :).",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
       ]
     },
     {

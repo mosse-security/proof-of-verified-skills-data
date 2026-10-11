@@ -1,6 +1,6 @@
 {
   "name": "James Kettle",
-  "last-updated": "2026-10-11T02:28:54Z",
+  "last-updated": "2026-10-11T05:48:52Z",
   "biography": "",
   "contact": [
     {
@@ -17,9 +17,9 @@
     }
   ],
   "stats": {
-    "endorsements": 3,
+    "endorsements": 6,
     "with-evidence": 3,
-    "without-evidence": 0,
+    "without-evidence": 3,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -32,10 +32,67 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 2,
-      "unknown": 1
+      "unknown": 4
     }
   },
   "endorsements": [
+    {
+      "name": "James Kettle",
+      "label": "Server-Side Template Injection: RCE for the Modern Web App",
+      "description": "Simple inputs can conceal an {expansive} attack surface. Feature-rich web applications often embed user input in web templates in an attempt to offer flexible functionality and developer shortcuts, creating a vulnerability easily mistaken for XSS. In this presentation, I'll discuss techniques to recognize template injection, then show how to take template engines on a journey deeply orthogonal to their intended purpose and ultimately gain arbitrary code execution. I'll show this technique being applied to craft exploits that hijack four popular template engines, then demonstrate RCE zero-days on two corporate web applications. This presentation will also cover techniques for automated detection of template injection, and exploiting subtle, application-specific vulnerabilities that can arise in otherwise secure template systems.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "James Kettle",
+      "label": "Backslash Powered Scanning: Hunting Unknown Vulnerability Classes",
+      "description": "Existing web scanners search for server-side injection vulnerabilities by throwing a canned list of technology-specific payloads at a target and looking for signatures - almost like an anti-virus. In this presentation, I'll share the conception and development of an alternative approach, capable of finding and confirming both known and unknown classes of injection vulnerabilities. Evolved from classic manual techniques, this approach reaps many of the benefits of manual testing including casual WAF evasion, a tiny network footprint, and flexibility in the face of input filtering. True to its heritage, this approach also manages to harness some pitfalls that will be all too familiar to experienced manual testers. I'll share some of the more entertaining findings and lessons learned from unleashing this prototype on a few thousand sites, and release a purpose-built stealthy-scanning toolkit. Finally, I'll show how it can be taken far beyond injection hunting, leaving you with numerous leads for future research.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2016",
+      "url": "https://blackhat.com/archive/europe/2016/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "James Kettle",
+      "label": "Cracking the Lens: Targeting HTTP's Hidden Attack-Surface",
+      "description": "Modern websites are browsed through a lens of transparent systems built to enhance performance, extract analytics and supply numerous additional services. This almost invisible attack surface has been largely overlooked for years. In this presentation, I'll show how to use malformed requests and esoteric headers to coax these systems into revealing themselves and opening gateways into our victim's networks. I'll share how by combining these techniques with a little Bash I was able to thoroughly perforate DoD networks, trivially earn over $30k in vulnerability bounties, and accidentally exploit my own ISP. While deconstructing the damage, I'll also showcase several hidden systems it unveiled, including not only covert request interception by the UK's largest ISP, but a substantially more suspicious Columbian ISP, a confused Tor backend, and a system that enabled reflected XSS to be escalated into SSRF. You'll also learn strategies to unblinker blind SSRF using exploit chains and caching mechanisms. Finally, to further drag these systems out into the light, I'll release Collaborator Everywhere - an open source Burp Suite extension which augments your web traffic with a selection of the best techniques to harvest leads from cooperative websites.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "James Kettle",
       "label": "HTTP/2: The Sequel is Always Worse",

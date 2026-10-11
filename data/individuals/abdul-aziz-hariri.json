@@ -1,6 +1,6 @@
 {
   "name": "Abdul-Aziz Hariri",
-  "last-updated": "2026-10-11T02:28:48Z",
+  "last-updated": "2026-10-11T05:48:49Z",
   "biography": "",
   "contact": [
     {
@@ -9,9 +9,9 @@
     }
   ],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 3,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -24,10 +24,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Abdul-Aziz Hariri",
+      "label": "Abusing Silent Mitigations - Understanding Weaknesses Within Internet Explorers Isolated Heap and MemoryProtection",
+      "description": "In the Summer of 2014, Microsoft silently introduced two new exploit mitigations into Internet Explorer with the goal of disrupting the threat landscape. These mitigations increase the complexity of successfully exploiting a use-after-free vulnerability. June's patch (MS14-035) introduced a separate heap, called Isolated Heap, which handles most of the DOM and supporting objects. July's patch (MS14-037) introduced a new strategy called MemoryProtection for freeing memory on the heap. This talk covers the evolution of the Isolated Heap and MemoryProtection mitigations, examines how they operate, and studies their weaknesses. It outlines techniques and steps an attacker must take to attack these mitigations to gain code execution on use-after-free vulnerabilities where possible. It describes how an attacker can use MemoryProtection as an oracle to determine the address at which a module will be loaded to bypass ASLR. Finally, additional recommended defenses are laid out to further harden Internet Explorer from these new attack vectors.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Abdul-Aziz Hariri",
       "label": "Abusing Adobe Reader’s JavaScript APIs",
@@ -50,6 +69,25 @@
       "year": 2015,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Abdul-Aziz Hariri",
+      "label": "$hell on Earth: From Browser to System Compromise",
+      "description": "The winning submissions to Pwn2Own 2016 provided unprecedented insight into the state of the art in software exploitation. Every successful submission provided remote code execution as the super user (SYSTEM/root) via the browser or a default browser plugin. In most cases, these privileges were attained by exploiting the Microsoft Windows or Apple OS X kernel. Kernel exploitation using the browser as an initial vector was a rare sight in previous contests. This presentation will detail the eight winning browser to super user exploitation chains (21 total vulnerabilities) demonstrated at this year's Pwn2Own contest. We will cover topics such as modern browser exploitation, the complexity of kernel Use-After-Free exploitation, and the simplicity of exploiting logic errors and directory traversals in the kernel. We will analyze all attack vectors, root causes, exploitation techniques, and possible remediations for the vulnerabilities presented. Reducing attack surfaces with application sandboxing is a step in the right direction, but the attack surface remains expansive and sandboxes are clearly still just a speed bump on the road to complete compromise. Kernel exploitation is clearly a problem which has not disappeared and is possibly on the rise. If you're like us, you can't get enough of it; it's shell on earth.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
   "name": "Sean Pierce",
-  "last-updated": "2026-10-11T02:29:02Z",
+  "last-updated": "2026-10-11T05:48:54Z",
   "biography": "",
   "contact": [
     {
@@ -9,9 +9,9 @@
     }
   ],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -24,10 +24,29 @@
       "red-teaming": 1,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Sean Pierce",
+      "label": "Defending Against Malicious Application Compatibility Shims",
+      "description": "The Application Compatibility Toolkit (ACT) is an important component of the Microsoft Application Compatibility ecosystem and holds a position of considerable tactical value on modern computer systems, but it is currently not well-known to those in the security industry. Microsoft specifically designed the ACT to intercept application API calls, alter the Portable Executable (PE) file loading process, and subvert the integrity of a number of key systems which ironically is the type of functionality seen in advanced rootkits. In my talk, I will demonstrate how the ACT is used to create Shim Database Files (sdb files / shims) which are simple to produce, easy to install, flexible, and stealthy. While the ACT offers an excellent post-exploitation avenue for novice attackers, a number of sophisticated actors have been observed leveraging the Application Compatibility Framework for advanced persistence and privilege escalation. I will go on to show far more advanced techniques such as in-memory patching, malware obfuscation, evasion, and system integrity subversion using malicious shims. To aid defenders, I have released a number of tools that detect and prevent shimming. I will also demonstrate the offensive capabilities of malicious shims, along with numerous examples of how defenders can employ my publicly available countermeasures. These tools can be used by enterprise wide defenders/responders, single host administrators, and application developers to better protect their environments. I will also demonstrate triage techniques that defenders can use for quick analysis via publicly available tools to determine an sdb file's general functionality.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2015",
+      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Sean Pierce",
       "label": "Abusing native Shims for Post Exploitation",

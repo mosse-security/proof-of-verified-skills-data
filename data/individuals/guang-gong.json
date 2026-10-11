@@ -1,12 +1,12 @@
 {
   "name": "Guang Gong",
-  "last-updated": "2026-10-11T02:28:53Z",
+  "last-updated": "2026-10-11T05:48:51Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,10 +19,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Guang Gong",
+      "label": "Fuzzing Android System Services by Binder Call to Escalate Privilege",
+      "description": "Binder is the IPC Mechanism in Android. It's used in Communication not only between processes with the same privilege but also between low privileged Apps and high privileged system services. The system services is a juicy attack surface to escalate privileges because parameters passed to it through binder call lack sanitization, but until now there are little disclosed vulnerabilities of this type. In this presentation, I'll first introduce this attack surface and then demonstrate the first fuzzing tools to find this kind of vulnerabilities. The tool take the binder interfaces exported from system services as attacked targets. This tool is simple but efficient. Through this tool I've found 8 vulnerabilities with CVE-IDs got from Android Security Team and dozens of crashes of system services. At last, I'll detail how to exploit this type of vulnerability to get Android's system_server permission by an unpublicized vulnerability.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Guang Gong",
       "label": "Pwning \"the toughest target\": the exploit chain of winning the largest bug bounty in the history of ASR program",

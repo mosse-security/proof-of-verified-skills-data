@@ -1,6 +1,6 @@
 {
   "name": "Thibault Reuille",
-  "last-updated": "2026-10-11T02:29:04Z",
+  "last-updated": "2026-10-11T05:48:55Z",
   "biography": "",
   "contact": [
     {
@@ -13,9 +13,9 @@
     }
   ],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 3,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 1,
@@ -28,10 +28,48 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Thibault Reuille",
+      "label": "Catching Malware En Masse: DNS and IP Style",
+      "description": "The Internet is constantly growing, providing a myriad of new services both legitimate and malicious. Criminals take advantage of the scalable, distributed, and rather easily accessible naming, hosting and routing infrastructures of the Internet. As a result, the battle against malware is raging on multiple fronts: the endpoint, the network perimeter, and the application layer. The need for innovative measures to gain ground against the enemy has never been greater. In this talk, we will present a novel and effective multi-pronged strategy to catch malware at the DNS and IP level, as well as our unique 3D visualization engine. We will describe the detection systems we built, and share several successful war stories about hunting down malware domains and associated rogue IP space. At the DNS level, we will describe original methods for tracking botnets, both fast flux and DGA-based. We use a combination of fast, light-weight graph clustering and DNS traffic analysis techniques and threat intelligence feeds to rapidly detect botnet domain families, identify new live CnC domains and IPs, and mitigate them. At the IP level, classical reputation methods assign \"maliciousness\" scores to IPs, BGP prefixes, or ASNs by merely counting domains and IPs. Our system takes an unconventional approach that combines two opposite, yet complementary views and leads to more effective predictive detections. On one hand, we abstract away from the ASN view. We build the AS graph and investigate its topology to uncover hotspots of malicious or suspicious activities and then scan our DNS database for new domains hosted on these malicious IP ranges. To confirm certain common patterns in the AS graph and isolate suspicious address space, we will demonstrate novel forensics and investigative methods based on the monitoring of BGP prefix announcements. On the other hand, we drill down to a granularity finer than the BGP prefix. For this, we zero in on re-assigned IP ranges reserved by bad customers within large prefixes to host Exploit kit domains, browlock, and other attack types. We will present various techniques we devised to efficiently discover suspicious reserved ranges and sweep en masse for candidate suspicious IPs. Our system provides actionable intelligence and preemptively detects and blocks malicious IP infrastructures prior to, or immediately after some of them are used to wage malware campaigns, therefore decisively closing the detection gap. During this presentation, we will publicly share some of the tools we built to gather this predictive intelligence. The discussion of these detection engines and \"war stories\" wouldn't be complete without a visualization engine that adequately displays the use cases and offers a graph navigation and investigation tool. Therefore, in this presentation, we will present and publicly release for the first time our own 3D visualization engine, demonstrating the full process which transforms raw data into stunning 3D visuals. We will also present different techniques used to build and render large graph datasets: Force Directed algorithms accelerated on the GPU using OpenCL, 3D rendering and navigation using OpenGL ES, and GLSL Shaders. Finally, we will present a few scripts and methods used to explore our large networks. Every concept is intended to detect and highlight precise features and will be presented with its corresponding visual representation related to malware detection use cases.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Thibault Reuille",
+      "label": "Unveiling the Open Source Visualization Engine for Busy Hackers",
+      "description": "The way a human efficiently digests information varies from person-to-person. Scientific studies have shown that some individuals learn better through the presentation of visual/spatial information compared to simply reading text. Why then do vendors expect customers to consume presented data following only the written word method as opposed to advanced graphical representations of the data? We believe this approach is dated. To help the neglected visually inclined masses, we decided to create a free and Open Source engine to remove the complexity of creating advanced data visualizations. The ultimate goal of the project was to allow for the visualization of any loosely related data without having to endlessly reformat that data. For the visual/spatial learners, the engine will interpret their own data, whether it be a simple or complex system, and present the results in a way that their brains can understand. Learning, for visual-spatial learners, takes place all at once, with large chunks of information grasped in intuitive leaps, rather than in the gradual accretion of isolated facts or small steps. For example, a visual-spatial learner can grasp all of the multiplication facts as a related set in a chart much easier and faster than memorizing each fact independently. We believe that some security practitioners might be able to better utilize their respective data sets if provided with an investigative model that their brains can understand. During this presentation, we will show you how you can take any relational data set, quickly massage the format, and visualize the results. We will also share some observations and conclusions drawn from the results of the visualization that may not have appeared in simple text form. We have used this engine within OpenDNS to track CryptoLocker and CryptoDefense ransomware, Red October malware, and the Kelihos botnet. Additionally, specific Syrian Electronic Army (SEA) campaigns, carding sites, and even a map of the Internet via Autonomous Systems have been visualized using the engine. Interesting data can also be isolated through the use of Python and JavaScript-based plugins that can be easily added to the engine's framework. These plugins affect the way the data is visualized and allow analysts to make sense of their data as it relates to the question they're trying to answer. The \"big picture\" model will help visually inclined incident responders, security analysts, and malware researchers visually stitch together complex data sets without needing a PhD in math or particle physics.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Thibault Reuille",
       "label": "Catching Malware En Masse: DNS and IP Style",

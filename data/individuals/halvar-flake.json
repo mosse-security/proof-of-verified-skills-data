@@ -1,12 +1,12 @@
 {
   "name": "Halvar Flake",
-  "last-updated": "2026-10-11T02:32:30Z",
+  "last-updated": "2026-10-11T05:48:51Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 3,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,7 +19,7 @@
       "red-teaming": 0,
       "reverse-engineering": 1,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
@@ -47,6 +47,44 @@
         "penetration-testing",
         "reverse-engineering",
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Halvar Flake",
+      "label": "Exploiting the DRAM Rowhammer Bug to Gain Kernel Privileges",
+      "description": "\"Rowhammer\" is a problem with DRAM in which repeatedly accessing a row of memory can cause bit flips in adjacent rows. While the industry has known about the problem for a while and has started mitigating the problem in newer hardware, it was rarely mentioned in public until the publication of Yoongu Kim et al's paper in the summer of 2014 which included hard data about the prevalence of the problem. In spite of the paper's speculations about the exploitability of the issue, most people still classified rowhammer as only a reliability issue - the probabilistic aspect of the problem seems to have made people think exploitability would be impractical. We have shown that rowhammer is practically exploitable in real-world scenarios - both in-browser through NaCl, and outside of the browser to escalate to kernel privileges. The probabilistic aspect can be effectively tamed so that the problem can be reliably exploited. Rowhammer, to our knowledge, represents the first public discussion of turning a widespread, real-world, physics-level hardware problem into a security issue. We will discuss the details of our two exploits cause and use bit flips, and how the rowhammer problem can be mitigated. We will explore whether it is possible to cause row hammering using normal cached memory accesses.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Halvar Flake",
+      "label": "Panel: What You Need to Know About the Changing Regulatory Landscape in Information Security",
+      "description": "The past two years have seen an increasing amount of scrutiny of the Information Security industry by policy makers around the world. The Wassenaar agreement and the EU Dual Use regulation are just two examples of the type of policy challenges that we face as the industry matures. What has been clear from these recent experiences is that there is a fundamental lack of communication and understanding between the parties involved and fostering communication will be essential to tackle future regulatory efforts. Join us for a panel that brings together policy makers, civil society and industry experts to examine the current status of the regulatory environment in Europe and the impact on our community.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2015",
+      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
       ]
     }
   ]

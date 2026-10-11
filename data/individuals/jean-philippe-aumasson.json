@@ -1,12 +1,12 @@
 {
   "name": "Jean-Philippe Aumasson",
-  "last-updated": "2026-10-11T02:28:54Z",
+  "last-updated": "2026-10-11T05:48:52Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 5,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 4,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,10 +19,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 5
     }
   },
   "endorsements": [
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "Password Hashing: the Future is Now",
+      "description": "Passwords are hashed everywhere: operating systems, smartphones, web services, disk encryption tools, SSH private keys, etc. Hashing passwords mitigates the impact of a compromised database by forcing attackers to bruteforce passwords. Bruteforce is easier when the hash function is not \"salted\", fast to evaluate, and easy to implement as multiple parallel instances on GPUs or multi-core systems. However existing solutions are not satisfactory, and the huge majority of systems rely on weak hashes (eg. leaks from Sony, LinkedIn, or more recently Evernote).",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Jean-Philippe Aumasson",
       "label": "Quantum Computers vs. Computers Security",
@@ -43,6 +62,63 @@
       ],
       "evidence": true,
       "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "SGX Secure Enclaves in Practice: Security and Crypto Review",
+      "description": "Software Guard Extensions (SGX) is a technology available in Intel(R) CPUs released in autumn 2015. SGX allows a remote server to process a client's secret data within a software enclave that hides the secrets from the operating system, hypervisor, and even BIOS or chipset manager, while giving cryptographic evidence to the client that the code has been executed correctly the very definition of secure remote computation. This talk is the first public assessment of SGX based on real SGX-enabled hardware and on Intel's software development environment. While researchers already scrutinized Intel's partial public documentation, many properties can only be verified and documented by working with the real thing: What's really in the development environment? Which components are implemented in microcode and which are in software? How can developers create secure enclaves that won't leak secrets? Can the development environment be trusted? How to debug and analyze SGX software? What crypto schemes are used in SGX critical components? How reliable are they? How safe are their implementations? Based on these newly documented aspects, we'll assess the attack surface and real risk for SGX users. We'll then present and demo proofs-of-concept of cryptographic functionalities leveraging SGX: secure remote storage and delegation (what fully homomorphic encryption promises, but is too slow to put in practice), and reencryption. We'll see how basic architectures can deliver powerful crypto functionalities with a wide range of applications. We'll release code as well as a tool to extract and verify an enclave's metadata.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "Automated Testing of Crypto Software Using Differential Fuzzing",
+      "description": "We present a new and efficient approach to systematic testing of cryptographic software: differential fuzzing. Unlike general purpose software fuzzing such as afl, differential fuzzing doesn't aim to find memory corruption bugs (although they might come as a by-product), but to find logic bugs. Compared to test vectors, differential fuzzing provides greater code coverage. Compared to formal verification, differential fuzzing is easier to apply, both for testers and developers. We'll release CDF, a tool that implements differential fuzzing for most common cryptographic APIs: RSA encryption and signatures, elliptic-curve cryptography, or any symmetric-key schemes through a unified interface. CDF combines differential fuzzing with a number of unit tests to detect vulnerabilities specific to the cryptographic functions tested. It can also detect timing leaks, thanks to state-of-the-art leakage detection techniques. CDF is coded in Go, and is trivially portable to various CPU architectures. Unlike other tools, CDF runs its tests in a totally black-box fashion: no source code is needed, you only need an executable file such as a binary program, Python script, or shell script calling a remote service. We ran CDF on high-profile, widely used crypto software components. CDF discovered issues in a number of libraries including Go's crypto package, OpenSSL, and mbedTLS.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "Attacking and Defending Blockchains: From Horror Stories to Secure Wallets",
+      "description": "Attacking and Defending Blockchains: From Horror Stories to Secure Wallets",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2018",
+      "url": "https://blackhat.com/archive/europe/2018/briefings/schedule/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2018,
       "domains": [
         "unknown"
       ]

@@ -1,12 +1,12 @@
 {
   "name": "Andrew Furtak",
-  "last-updated": "2026-10-11T02:28:48Z",
+  "last-updated": "2026-10-11T05:48:50Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
+    "endorsements": 4,
     "with-evidence": 2,
-    "without-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,10 +19,29 @@
       "red-teaming": 1,
       "reverse-engineering": 0,
       "vulnerability-research": 2,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Andrew Furtak",
+      "label": "A Tale of One Software Bypass of Windows 8 Secure Boot",
+      "description": "Windows 8 Secure Boot based on UEFI 2.3.1 Secure Boot is an important step towards securing platforms from malware compromising boot sequence before the OS. However, there are certain mistakes platform vendors shouldn't make which can completely undermine protections offered by Secure Boot. We will demonstrate an example of full software bypass of Windows 8 Secure Boot due to such mistakes on some of the latest platforms and explain how those mistakes can be avoided.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Andrew Furtak",
       "label": "Summary of Attacks Against BIOS and Secure Boot",
@@ -72,6 +91,25 @@
       "domains": [
         "red-teaming",
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Andrew Furtak",
+      "label": "Fractured Backbone: Breaking Modern OS Defenses with Firmware Attacks",
+      "description": "In this work we analyzed two recent trends. The first trend is the growing threat of firmware attacks which include recent disclosures of Vault7 Mac EFI implants. We will detail vulnerabilities and attacks we discovered recently in system firmware including UEFI, Mac EFI and Coreboot which could lead to stealth and persistent firmware implants. We have also developed multiple techniques that can be used to detect that something wrong is going on with the firmware using open source CHIPSEC framework. The second trend is modern operating systems started adopting stronger software defenses based on virtualization technology. Windows 10 introduced Virtualization Based Security (VBS) to provide hypervisor-based isolated execution environment to critical OS components and to protect sensitive data such as domain credentials. Previously, we discovered multiple ways adversaries could leverage firmware in attacks against hypervisors. We also demonstrated the first proof-of-concept attack on Windows 10 VBS exposing domain credentials protected by Credential Guard technology. We will apply this knowledge to analyze the security of modern hypervisor based OS defenses from the perspective of firmware and hardware attacks. We will detail firmware assisted attack vectors which can be used to compromise Windows 10 VBS. We will also describe changes done by platform vendors and Windows to improve mitigation against these attacks.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
       ]
     }
   ]

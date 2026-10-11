@@ -1,0 +1,46 @@
+{
+  "name": "Marios Pomonis",
+  "last-updated": "2026-10-11T05:47:42Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Marios Pomonis",
+      "label": "kR^X: Comprehensive Kernel Protection Against Just-In-Time Code Reuse",
+      "description": "The abundance of memory corruption and disclosure vulnerabilities in kernel code necessitates the deployment of hardening techniques to prevent privilege escalation attacks. As more strict memory isolation mechanisms between the kernel and user space, like Intel's SMEP, become commonplace, attackers increasingly rely on code reuse techniques to exploit kernel vulnerabilities. Contrary to similar attacks in more restrictive settings, such as web browsers, in kernel exploitation, non-privileged local adversaries have great flexibility in abusing memory disclosure vulnerabilities to dynamically discover, or infer, the location of certain code snippets and construct code-reuse payloads. In this talk, we present kR^X: a kernel hardening scheme that prevents kernel code reuse attacks. kR^X achieves this by coupling code diversification with the enforcement of a \"read XOR execute\" (R^X) memory safety policy. We demonstrate how to achieve this without employing a hypervisor or a super-privileged component, but rather with a self-hardening approach implemented mostly as a set of GCC plugins. We discuss multiple ways to prevent return address leaks that might allow attackers to infer the internal code layout, using encryption and deception techniques. Finally, we explore how to utilize hardware support, such as MPX on modern Intel CPUs to optimize performance.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

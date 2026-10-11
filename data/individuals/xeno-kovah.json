@@ -1,6 +1,6 @@
 {
   "name": "Xeno Kovah",
-  "last-updated": "2026-10-11T02:32:33Z",
+  "last-updated": "2026-10-11T05:48:56Z",
   "biography": "",
   "contact": [
     {
@@ -29,9 +29,9 @@
     }
   ],
   "stats": {
-    "endorsements": 4,
+    "endorsements": 8,
     "with-evidence": 2,
-    "without-evidence": 2,
+    "without-evidence": 6,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -44,7 +44,7 @@
       "red-teaming": 0,
       "reverse-engineering": 1,
       "vulnerability-research": 4,
-      "unknown": 0
+      "unknown": 4
     }
   },
   "endorsements": [
@@ -69,6 +69,63 @@
     },
     {
       "name": "Xeno Kovah",
+      "label": "BIOS Security",
+      "description": "In 2011 the National Institute of Standard and Technology (NIST) released a draft of special publication 800-155. This document provides a more detailed description than the Trusted Platform Module (TPM) PC client specification for content that should be measured in the BIOS to provide an adequate Static Root of Trust for Measurement (SRTM). To justify the importance of 800-155, in this talk we look at the implementation of the SRTM from a vendor's pre-800-155 laptop. We discuss how the BIOS and thus SRTM can be manipulated either due to a configuration that does not enable signed BIOS updates, or via an exploit we discovered that allows for BIOS reflash even in the presence of a signed update requirement.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Xeno Kovah",
+      "label": "Analyzing UEFI BIOSes from Attacker & Defender Viewpoints",
+      "description": "In 2013, MITRE released Copernicus 1, a best-effort system to capture a raw dump of the BIOS and whether it appears to be possible for an attacker to write to it. In 2014, we released Copernicus 2 to combat the ability of an attacker to subvert not just Copernicus 1, but all other BIOS capture systems. While these free tools are a good way to get a copy of your BIOS, analyzing it to detect malicious changes is still an open problem in need of further investigation before defenders can feel confident that they have un-infected BIOS. You can't just compare the MD5s from two BIOS dumps and get a valid comparison. This is a problem that leads to firmware-level malware going under-reported and under-analyzed due to not enough people with the background to jump into this area. In this presentation, we will assume that you have a suspected badBIOS dumped by Copernicus that you'd like to determine the integrity and authenticity of. We will perform a breadth-first discussion of the topics such as port IO, memory-mapped IO, PCI, SMM, UEFI, and others that you need to become more familiar with in order to effectively analyze modern BIOSes. We will especially focus on how UEFI's removal of security through obscurity is a double edged sword which helps both attackers and defenders analyze BIOSes for attacks or integrity checks. This talk will serve as a gateway for people with existing reverse engineering knowledge to start analyzing modern PC firmware.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2014",
+      "url": "https://blackhat.com/archive/europe/2014/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Xeno Kovah",
+      "label": "Extreme Privilege Escalation on Windows 8/UEFI Systems",
+      "description": "The UEFI specification has more tightly coupled the bonds of the operating system and the platform firmware by providing the well-defined \"runtime services\" interface between the operating system and the firmware. This interface is more expansive than the interface that existed in the days of conventional BIOS, which has inadvertently increased the attack surface against the platform firmware. Furthermore, Windows 8 has introduced APIs that allow accessing this UEFI interface from a userland process. Vulnerabilities in this interface can potentially allow a userland process to escalate its privileges from \"ring 3\" all the way up to that of the platform firmware, which includes permanently attaining control of the very-powerful System Management Mode (SMM). This talk will disclose two of these vulnerabilities that were discovered in the Intel provided UEFI reference implementation, and detail the unusual techniques needed to successfully exploit them.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Xeno Kovah",
       "label": "Extreme Privilege Escalation On Windows 8/UEFI Systems",
       "description": "It has come to light that state actors install implants in the BIOS. Let no one ever again question whether BIOS malware is practical or present in the wild. However, in practice attackers can install such implants without ever having physical access to the box. Exploits against the BIOS can allow an attacker to inject arbitrary code into the platform firmware. This talk will describe two such exploits we developed against the latest UEFI firmware. The UEFI specification has more tightly coupled the bonds of the operating system and the platform firmware by providing the well-defined \"runtime services\" interface between the OS and the firmware. This interface is more expansive than the interface that existed in the days of conventional BIOS, which has inadvertently increased the attack surface against the platform firmware. Furthermore, Windows 8 has introduced APIs that allow accessing this UEFI interface from a userland process. Vulnerabilities in this interface can potentially allow a userland process to escalate its privileges from \"ring 3\" all the way up to that of the platform firmware, which includes permanently attaining control of the very-powerful System Management Mode (SMM). This talk will disclose two vulnerabilities that were discovered in the Intel provided UEFI reference implementation, and detail the unusual techniques needed to successfully exploit them.",
       "type": "presentation",
@@ -89,6 +146,25 @@
       "year": 2014,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Xeno Kovah",
+      "label": "ThunderStrike 2: Sith Strike",
+      "description": "The number of vulnerabilities in firmware disclosed as affecting Wintel PC vendors has been rising over the past few years. Although several attacks have been presented against Mac firmware, unlike their PC counterparts, all of them required physical presence to perform. Interestingly, when contacted with the details of previously disclosed PC firmware attacks, Apple systematically declared themselves not vulnerable. This talk will provide conclusive evidence that Mac's are in fact vulnerable to many of the software only firmware attacks that also affect PC systems. In addition, to emphasize the consequences of successful exploitation of these attack vectors, we will demonstrate the power of the dark side by showing what Mac firmware malware is capable of.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
       ]
     },
     {

@@ -1,0 +1,65 @@
+{
+  "name": "Nitay Artenstein",
+  "last-updated": "2026-10-11T05:47:42Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 2
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Nitay Artenstein",
+      "label": "Man in the Binder: He Who Controls IPC, Controls the Droid",
+      "description": "Big Brother is watching your droid. His name is Binder. As the only vehicle of IPC in Android, Binder is the system component that makes the operating system tick. A process running in a typical OS will hold dozens of handles to the system's hardware: hard disk, display adapter, network card, and many more. Android's unique architecture, on the contrary, means that a process will achieve the same tasks just by grabbing a file descriptor to the Binder device - greatly minimizing the attack surface against the kernel. As the god of IPC in Android, Binder controls an application's interaction with just about anything. From that perspective, it becomes immediately apparent that this system component is a prime target for any Android malware. By controlling any single link in the long chain which leads down from the Java APIs to the native Binder code, an attacker could stealthily implement a keylogger, set up VNC-like functionality, modify sensitive data in transit, and do many other evil deeds. In this presentation, we will showcase a POC rootkit which provides a basis for all of the above, and more. We will also give a comprehensive overview of Binder at the lowest level. We'll talk about how the data transport buffers are actually constructed, what gets sent down to the kernel, and what comes back up. We believe this is an important contribution to the security community: Binder has simply not been researched enough.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2014",
+      "url": "https://blackhat.com/archive/europe/2014/archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Nitay Artenstein",
+      "label": "Broadpwn: Remotely Compromising Android and iOS via a Bug in Broadcom's Wi-Fi Chipsets",
+      "description": "Remote exploits that compromise Android and iOS devices without user interaction have become an endangered species in recent years. Such exploits present a unique challenge: Without access to the rich scripting environment of the browser, exploit developers have been having a hard time bypassing mitigations such as DEP and ASLR. But what happens when, underneath your heavily hardened OS, a separate chip parses all your Wi-Fi packets - and runs with no exploit mitigations whatsoever? Meet Broadpwn, a vulnerability in Broadcom's Wi-Fi chipsets which affects millions of Android and iOS devices, and can be triggered remotely, without user interaction. The Broadcom BCM43xx family of Wi-Fi chips is found in an extraordinarily wide range of mobile devices - from various iPhone models, to HTC, LG, Nexus and practically the full range of Samsung flagship devices. In this talk, we'll take a deep dive into the internals of the BCM4354, 4358 and 4359 Wi-Fi chipsets, and explore the workings of the mysterious, closed-source HNDRTE operating system. Then, we'll plunge into the confusing universe of 802.11 standards in a quest to find promising attack surfaces. Finally, we'll tell the story of how we found the bug and exploited it to achieve full code execution - and how we went on to leverage our control of the Wi-Fi chip in order to run code in the main application processor.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

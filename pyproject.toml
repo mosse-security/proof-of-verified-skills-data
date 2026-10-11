@@ -12,8 +12,10 @@ dependencies = ["beautifulsoup4>=4.12", "yt-dlp>=2024.12"]
 [project.scripts]
 scrape-endorsements = "endorsement_scraper.cli:main"
 scrape-def-con = "scrapers.def_con:main"
+scrape-black-hat = "scrapers.black_hat:main"
 merge-individuals = "endorsement_scraper.individuals:main"
 enrich-endorsements = "endorsement_scraper.enrichment_cli:main"
+archive-assessor = "endorsement_scraper.archive_cli:main"
 
 [tool.setuptools.packages.find]
 include = ["endorsement_scraper*", "scrapers*", "enrichers*"]

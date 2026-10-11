@@ -1,0 +1,46 @@
+{
+  "name": "Gabriel Gonzalez",
+  "last-updated": "2026-10-11T05:47:40Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "How to Fool an ADC Part II or Hiding Destruction of Turbine with a Little Help of Signal Processing",
+      "description": "We live in the analog world but program and develop digital systems. The key element connecting these two worlds is ADC (analog-to-digital converter), small integrated circuit (IC) that transforms physical variable (amperage or voltage) into a bunch of bytes. Most modern systems that interact with real world (like embedded systems, industrial control systems (ICS) and even a kettle in your kitchen) make decisions based on the value that has been received from ADC. Thus, it is important to use ADC and interpret its data correctly. Ignoring this fact, especially in the ICS and embedded world, could lead to decreasing safety of the process, and in the worst case, to the catastrophic conditions. Let's look at the ADC mechanisms from security perspective. Imagine that you have an ADC that monitors state of some analog process (e.g. industrial controller sending analog signal to the motor or turbine to change its speed or some other parameter). This ADC could be inside safety system that will shutdown motor in case of incorrect signal value. Will it be possible to generate such analog signal that will be misinterpreted by safety system? For example, could we supply signal that causes vibration issue in the motor or turbine (and will destroy it after some time), but is treated as a correct plain signal (e.g. constant 5V) by the safety ADC? In the previous research, we have proven that it is possible (at least with Successive approximation ADC). However, the most-popular industry type of the ADC is sigma-delta. In this talk, we will focus on its features, \"design vulnerabilities\" and attacks leading to the misinterpretations of the analog signal. Various exploit signal variants and crafting methods will be shown; we will review some of the popular \"industry standard\" ADC behaviors in case of such attacks. Also, we will discuss attack scenarios in the areas of ICS, embedded and radio-frequency systems. The talk will be concluded with possible consequences and mitigations.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2016",
+      "url": "https://blackhat.com/archive/europe/2016/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

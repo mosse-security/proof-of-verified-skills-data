@@ -1,6 +1,6 @@
 {
   "name": "Daniel Bohannon",
-  "last-updated": "2026-10-11T02:28:51Z",
+  "last-updated": "2026-10-11T05:48:50Z",
   "biography": "",
   "contact": [
     {
@@ -17,9 +17,9 @@
     }
   ],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 2,
     "with-evidence": 0,
-    "without-evidence": 1,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -32,10 +32,29 @@
       "red-teaming": 0,
       "reverse-engineering": 1,
       "vulnerability-research": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Daniel Bohannon",
+      "label": "Revoke-Obfuscation: PowerShell Obfuscation Detection (And Evasion) Using Science",
+      "description": "Attackers, administrators and many legitimate products rely on PowerShell for their core functionality. However, being a Windows-signed binary native on Windows 7 and later that enables reflective injection of binaries and DLLs and memory-resident execution of remotely hosted scripts, has made it increasingly attractive for attackers and commodity malware authors alike. In environments where PowerShell is heavily used, filtering out legitimate activity to detect malicious PowerShell usage is not trivial. A/V signatures applied to command line arguments work sometimes. AMSI-based (Anti-malware Scanning Interface) detections available in Windows 10 and PowerShell 5.0 perform significantly better, but obfuscation and evasion techniques can bypass both detection approaches. Six months after the release of Invoke-Obfuscation, these obfuscation techniques continue to bypass A/V signatures and many content matching detections. In addition, the recent release of Invoke-CradleCrafter has made detecting remote download cradle syntaxes much more difficult. The excellent logging available in PowerShell 5.0 (not to mention the many security features baked into PowerShell 5.0) is the key to detecting existing and future obfuscation techniques. However, PowerShell 5.0 logging produces a substantial amount of logs, which is great for SIEM salespeople but not ideal for your security budget. Revoke-Obfuscation is a PowerShell framework to help detect obfuscated PowerShell commands and scripts by applying a suite of unique statistical analysis, character distribution and command invocation checks against any arbitrary PowerShell command or script. It works with PowerShell .evtx files, command lines, scripts, ScriptBlock logs, Module logs, and allows for the easy addition of new custom indicators. Approaches for evading these detection techniques will be discussed and demonstrated. Revoke-Obfuscation has been used in numerous Mandiant investigations to successfully identify obfuscated and non-obfuscated malicious PowerShell scripts and commands. It also detects all obfuscation techniques in Invoke-Obfuscation, including two new techniques being released with this presentation.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Daniel Bohannon",
       "label": "(|(MaLDAPtive:¯\\_(LDAP)_/¯=ObFUsc8t10n) (De-Obfuscation &:=De*te)(!c=tion))",

@@ -1,0 +1,46 @@
+{
+  "name": "Alex Long",
+  "last-updated": "2026-10-11T05:47:38Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Alex Long",
+      "label": "Graphic Content Ahead: Towards Automated Scalable Analysis of Graphical Images Embedded in Malware",
+      "description": "While automated approaches to static and dynamic malware analysis are key pieces of todays malware analysis pipeline, little attention has been focused on the automated analysis of the images commonly embedded in malware files, such as desktop icons and GUI button skins. This leaves a blind spot in current malware triage approaches because automated image analysis could help to quickly reveal how new malware tricks users and could inform the question of whether malware samples came from known adversaries (samples with near-duplicate rare images may have come from the same attacker). Therefore, to further the application of image analysis techniques to the automated analysis of malware images, in our presentation we will describe our efforts to solve two related problems: the problem of identifying malware samples with visually similar image sets in a scalable fashion, and the problem of quickly classifying malware images into topical categories (e.g. \"video game related\", \"fake anti-virus\", installer icon\", etc.). The first component of our research focuses on identifying malware samples with similar image sets. To identify these relationships we have taken inspiration from natural image scene comparison approaches: first we reduce images statically extracted from malware to low-dimensional binary vectors using a scale and contrast invariant approach. Then we index malware images from the target malware dataset using a randomized index designed to quickly approximate Hamming distance between stored vectors. Finally, we compute pairwise distances between malware samples image sets to identify malware samples that share visually similar images (even if these images contrasts, scales, or color schemes are different). Additionally, we have built a force-directed graph based visualization to display our results to end-users, which colleagues within our organization have found useful in practice. In our presentation, we will provide a detailed account of our approach and describe an evaluation we performed which demonstrates that our approach operates at deployable levels of speed and accuracy. The second component of our research focuses on classifying malware images into topical categories. To perform classification in a scalable and automated fashion, the approach we have developed dynamically obtains labeled training examples using the Google Image Search API based on user defined queries (for example, a query for retrieving examples of anti-virus icons could be anti-virus desktop icon). Using the resulting labeled image data, we have trained and compared a number of image classifiers. To evaluate these classifiers we hand-labeled malware images with their correct class and computed confusion matrices for more than a dozen classes of malware images (for example, \"fake anti-virus\", \"fake web browser\", etc.), revealing that our classification techniques varied in accuracy, with some image category detectors (such as \"fake word processor\") providing deployable levels of accuracy and others generating misclassifications at an unacceptable rate. In conclusion, by presenting what we believe to be compelling early results vis-a-vis both malware image set similarity and malware image classification, we hope to inspire the malware research community to both adopt image analysis in practice and further research into this understudied research area.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

@@ -75,6 +75,16 @@ records; pass `--no-overwrite` to preserve existing outputs. Speaker profile
 fragments are written to `data/tmp/profiles/def-con/` for the later individual
 merge.
 
+Run the archive coverage check before parsing:
+
+```powershell
+python -m unittest tests.test_archive_coverage -v
+```
+
+The check compares every assessor `links.processUrls` entry with the members
+of `data/archives/html/<assessor-id>.zip` and prints each missing URL. This
+makes manually downloaded pages easy to identify and add before a scrape run.
+
 Each array item follows `data/templates/endorsement.tpl`. Assessor fields
 are copied from `data/assessors/def-con.json`:
 
@@ -319,6 +329,16 @@ run failed when zero endorsements are produced, making accidental empty crawls
 visible to operators and automated tests.
 
 ## HTML snapshots
+
+To archive all configured historical pages for an assessor:
+
+```powershell
+python -m endorsement_scraper.archive_cli --assessor black-hat
+```
+
+The command stores pages in `data/archives/html/<assessor>.zip`, skips existing
+members on reruns, and retries failed requests. Add `--overwrite` to refresh
+the archive.
 
 `--save-html` writes every successful response plus metadata to the configured
 HTML archive. The archive can be either a directory:
