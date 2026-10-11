@@ -1,12 +1,12 @@
 {
   "name": "James Forshaw",
-  "last-updated": "2026-10-11T07:42:17Z",
+  "last-updated": "2026-10-11T08:59:44Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 4,
+    "endorsements": 3,
     "assessors": 1,
-    "with-evidence": 4,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,226 +20,78 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 4
+      "unknown": 3
     }
   },
   "endorsements": [
     {
       "name": "James Forshaw",
-      "label": "Are You My Type? - Breaking .NET Sandboxes Through Serialization",
-      "description": "In May, Microsoft issued a security update for .NET due to a number of serious issues I found. This release was the biggest update in the product's history, it aimed to correct a number of specific issues due to unsafe serialization usage as well as changing some of the core functionality to mitigate anything which could not be easily fixed without significant compatibility issues.",
+      "label": "New and Improved UMCI, Same Old Bugs",
+      "description": "New and Improved UMCI, Same Old Bugs",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2012",
-      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2018",
+      "url": "https://www.offensivecon.org/agenda/speakers/2018/james-forshaw.html",
       "evidence-links": [
         {
-          "title": "Black Hat USA 2012 - Are You My Type? Breaking .net Sandboxes Through Serialization",
-          "url": "https://www.youtube.com/watch?v=Xfbu-pQ1tIc"
+          "title": "OffensiveCon18 - James Forshaw - New and Improved UMCI, Same Old Bugs",
+          "url": "https://www.youtube.com/watch?v=02QMna-Jp1I"
         }
       ],
       "evidence": true,
-      "year": 2012,
+      "year": 2018,
       "domains": [
         "unknown"
       ]
     },
     {
       "name": "James Forshaw",
-      "label": "Digging for IE11 Sandbox Escapes",
-      "description": "In June 2013, Microsoft started the first of their new bug-bounty programs, focusing on finding vulnerabilities in IE11 on the upcoming Windows 8.1 OS. Rather than spending my time fuzzing for RCEs, I focused on pure logic bugs and the best place to find them was in the sandbox implementation. As IE11 defaults to using Microsoft's new Enhanced Protected Mode (EPM) sandbox that repurposes Windows 8's App Container mechanism to more heavily restrict access to securable resources, it would seem to be a tough challenge, but it turned out not to be the case. This workshop will contain a deep-dive into the 4 sandbox escapes I discovered during the 30-day bug bounty period, some which have been present since Vista and IE7. I'll run through the process I undertook to find these vulnerabilities, giving time to go in-depth on how to investigate the IE11 sandbox, run your own code and analyze the attack surface. Sample source code for all issues will be provided for use to allow you to test the issues out yourself. In order to participate in the workshop, an installation of Windows 8.1 RTM will be required along with common tools such as Visual Studio 2013 and IDA Pro to analyze and develop the sandbox escape examples.",
+      "label": "These Are My Principals, If You Don't like Them, I Have Others",
+      "description": "These Are My Principals, If You Don't like Them, I Have Others",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2014",
-      "url": "https://blackhat.com/us-14/archives.html",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2022",
+      "url": "https://www.offensivecon.org/agenda/2022.html",
       "evidence-links": [
         {
-          "title": "Digging for IE11 Sandbox Escapes Part 2",
-          "url": "https://www.youtube.com/watch?v=HdB3Ozsgsao"
-        },
-        {
-          "title": "Digging for IE11 Sandbox Escapes Part 1",
-          "url": "https://www.youtube.com/watch?v=q9dnYno_Moc"
+          "title": "OffensiveCon22 - James Forshaw -These Are My Principals, If You Don't like Them, I Have Others",
+          "url": "https://www.youtube.com/watch?v=yXZQ0KKI8n0"
         }
       ],
       "evidence": true,
-      "year": 2014,
+      "year": 2022,
       "domains": [
         "unknown"
       ]
     },
     {
       "name": "James Forshaw",
-      "label": "Social Engineering the Windows Kernel: Finding and Exploiting Token Handling Vulnerabilities",
-      "description": "One successful technique in social engineering is pretending to be someone or something you're not and hoping the security guard who's forgotten their reading glasses doesn't look too closely at your fake ID. Of course there's no hyperopic guard in the Windows OS, but we do have an ID card, the Access Token which proves our identity to the system and let's us access secured resources. The Windows kernel provides simple capabilities to identify fake Access Tokens, but sometimes the kernel or other kernel-mode drivers are too busy to use them correctly. If a fake token isn't spotted during a privileged operation local elevation of privilege or information disclosure vulnerabilities can be the result. This could allow an attacker to break out of an application sandbox, elevate to administrator privileges, or even compromise the kernel itself. This presentation is about finding and then exploiting the incorrect handling of tokens in the Windows kernel as well as first and third party drivers. Examples of serious vulnerabilities, such as CVE-2015-0002 and CVE-2015-0062 will be presented. It will provide clear exploitable patterns so that you can do your own security reviews for these issues. Finally, I'll discuss some of the ways of exploiting these types of vulnerabilities to elevate local privileges.",
+      "label": "The Print Spooler Bug that Wasn’t in the Print Spooler",
+      "description": "The Print Spooler Bug that Wasn’t in the Print Spooler",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2015",
-      "url": "https://blackhat.com/us-15/briefings.html",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2023",
+      "url": "https://www.offensivecon.org/agenda/2023.html",
       "evidence-links": [
         {
-          "title": "Social Engineering The Windows Kernel: Finding And Exploiting Token Handling Vulnerabilities",
-          "url": "https://www.youtube.com/watch?v=QRpfvmMbDMg"
+          "title": "OffensiveCon23- Maddie Stone & James Forshaw- The Print Spooler Bug that Wasn’t in the Print Spooler",
+          "url": "https://www.youtube.com/watch?v=H03b0UaogVs"
         }
       ],
       "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "James Forshaw",
-      "label": "Locknote: Conclusions and Key Takeaways from Black Hat Europe 2024",
-      "description": "Locknote: Conclusions and Key Takeaways from Black Hat Europe 2024",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2024",
-      "url": "https://blackhat.com/archive/europe/2024/briefings/schedule/",
-      "evidence-links": [
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Asia 2018",
-          "url": "https://www.youtube.com/watch?v=17ah_jGcsb0"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways From Black Hat Europe 2017",
-          "url": "https://www.youtube.com/watch?v=1TN2Q1ZWJCo"
-        },
-        {
-          "title": "Trends and Top Takeaways from Black Hat Asia",
-          "url": "https://www.youtube.com/watch?v=1Z3HDB6SmDg"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Asia 2016",
-          "url": "https://www.youtube.com/watch?v=B7V0Ld40Auk"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Europe 2019",
-          "url": "https://www.youtube.com/watch?v=D4Zyp6tL-5k"
-        },
-        {
-          "title": "Black Hat USA 2025 | Locknote: Conclusions & Key Takeaways from Black Hat USA 2025",
-          "url": "https://www.youtube.com/watch?v=DmXlafnjn0M"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Day 1",
-          "url": "https://www.youtube.com/watch?v=IiKobWTnGYQ"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Day 1",
-          "url": "https://www.youtube.com/watch?v=JNAIYRjaQ-4"
-        },
-        {
-          "title": "Locknote: Conclusions & Key Takeaways from Black Hat Asia 2017",
-          "url": "https://www.youtube.com/watch?v=MJxiTy8ECnc"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Day 1",
-          "url": "https://www.youtube.com/watch?v=S8Nav6qjusU"
-        },
-        {
-          "title": "Black Hat Europe 2023 Highlights",
-          "url": "https://www.youtube.com/watch?v=SVzwqtyo-yk"
-        },
-        {
-          "title": "Locknote: Highlights & Key Takeaways from Black Hat Asia 2025",
-          "url": "https://www.youtube.com/watch?v=Y6_WXVBlMsQ"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Asia 2022",
-          "url": "https://www.youtube.com/watch?v=_3sLY-UUpGU"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Day 2",
-          "url": "https://www.youtube.com/watch?v=dxAn2DcB7cg"
-        },
-        {
-          "title": "Black Hat USA 2024 Highlights",
-          "url": "https://www.youtube.com/watch?v=fsLv2Yb0fKs"
-        },
-        {
-          "title": "The Black Hat Europe NOC Report",
-          "url": "https://www.youtube.com/watch?v=gIbv7OqiMjw"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Day 2",
-          "url": "https://www.youtube.com/watch?v=gUcAFAI7IIM"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat USA 2022",
-          "url": "https://www.youtube.com/watch?v=klVlP6LTtw0"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Europe 2021",
-          "url": "https://www.youtube.com/watch?v=neEytnFh_TY"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Europe 2018",
-          "url": "https://www.youtube.com/watch?v=nnr5Gw9KFSQ"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Europe 2016",
-          "url": "https://www.youtube.com/watch?v=nsWMLezI46s"
-        },
-        {
-          "title": "Black Hat Asia 2024 Highlights",
-          "url": "https://www.youtube.com/watch?v=oBv46CXOv6U"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Day 1",
-          "url": "https://www.youtube.com/watch?v=pOuzZzNmqFY"
-        },
-        {
-          "title": "Black Hat Europe 2019 Highlights",
-          "url": "https://www.youtube.com/watch?v=tioJKiiKlYU"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Europe 2024",
-          "url": "https://www.youtube.com/watch?v=uGjV3hkiCrw"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Day 2",
-          "url": "https://www.youtube.com/watch?v=w4JSc58kcfg"
-        },
-        {
-          "title": "Blackhat Asia 21Locknote: Conclusions and Key Takeaways from Day 1 locknote",
-          "url": "https://www.youtube.com/watch?v=wSP-ajSmuf0"
-        },
-        {
-          "title": "Black Hat Europe 2023 Highlights",
-          "url": "https://www.youtube.com/watch?v=yZ3UZ8UkqVk"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat 2015",
-          "url": "https://www.youtube.com/watch?v=z3Klcs-ijU0"
-        },
-        {
-          "title": "Locknote: Conclusions & Key Takeaways from Black Hat USA 2024",
-          "url": "https://www.youtube.com/watch?v=zbNU7kRw3tg"
-        },
-        {
-          "title": "Locknote: Conclusions and Key Takeaways from Black Hat Europe 2015",
-          "url": "https://www.youtube.com/watch?v=zyjCcup0zAE"
-        }
-      ],
-      "evidence": true,
-      "year": 2024,
+      "year": 2023,
       "domains": [
         "unknown"
       ]

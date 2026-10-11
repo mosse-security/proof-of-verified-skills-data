@@ -1,154 +1,46 @@
 {
   "name": "Bill Demirkapi",
-  "last-updated": "2026-10-11T02:28:49Z",
+  "last-updated": "2026-10-11T08:59:44Z",
   "biography": "",
-  "contact": [
-    {
-      "label": "billdemirkapi.me",
-      "url": "https://billdemirkapi.me"
-    },
-    {
-      "label": "https://billdemirkapi.me",
-      "url": "https://billdemirkapi.me"
-    },
-    {
-      "label": "twitter",
-      "url": "https://twitter.com/BillDemirkapi"
-    }
-  ],
+  "contact": [],
   "stats": {
-    "endorsements": 5,
+    "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 2,
-    "without-evidence": 3,
+    "with-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
-      "cloud-security": 2,
+      "cloud-security": 0,
       "cyber-defense": 0,
-      "devsecops": 1,
+      "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
-      "red-teaming": 1,
-      "reverse-engineering": 1,
-      "vulnerability-research": 5,
-      "unknown": 0
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
     }
   },
   "endorsements": [
     {
       "name": "Bill Demirkapi",
-      "label": "Are Your Child's Records at Risk? The Current State of School Infosec",
-      "description": "From credit reporting agencies to hotel enterprises, major data breaches happen daily. However, when was the last time we considered the data security of children and middle-level education students? The infosec community spends so much time thinking about enterprise security and user privacy, but who looks after those who can't defend themselves? Unknown to most, there are only just a handful of major educational software providers—and flaws in any of them can lead to massive holes which expose the confidential information of our rising generation, this speaker included. Additionally, while many dismiss educational data as “just containing grades”, the reality is that these systems store extremely sensitive information from religious beliefs, health and vaccine-related data, to even information about parental abuse and drug use in the family. This talk will cover never-before-seen research into the handful of prominent educational software companies, the vulnerabilities that were found, the thousands of schools and millions of students affected, and the personal fallout of such research. Vulnerabilities discussed will range from blind SQL injection to leaked credentials for the entire kingdom. If a high school student can compromise the data of over 5 million students and teachers, what can APT do?",
+      "label": "Booting with Caution: Dissecting Secure Boot's Third-Party Attack Surface",
+      "description": "Secure Boot is integral in shielding a computer’s boot environment from unauthorized code. By only allowing the execution of modules signed by Microsoft or the UEFI Certificate Authority (CA), it raises a barrier against attackers, primarily restricting them to vulnerabilities in legitimate code. Read more",
       "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 27",
-      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Demirkapi",
-      "evidence-links": [],
-      "evidence": false,
-      "year": 2019,
-      "domains": [
-        "vulnerability-research"
-      ]
-    },
-    {
-      "name": "Bill Demirkapi",
-      "label": "Demystifying Modern Windows Rootkits",
-      "description": "This talk will demystify the process of writing a rootkit, moving past theory and instead walking the audience through the process of going from a driver that says \"Hello World\" to a driver that abuses never-before-seen hooking methods to control the user-mode network stack. Analysis includes common patterns seen in malware and the drawbacks that come with malware in kernel-mode rather than user-mode. We'll walk through writing a rootkit from scratch, discussing how to load a rootkit, how to communicate with a rootkit, and how to hide a rootkit. With every method, we'll look into the drawbacks ranging from usability to detection vectors. The best part? We'll do this all under the radar, evading PatchGuard and anti-virus.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 28",
-      "url": "https://defcon.org/html/defcon-safemode/dc-safemode-speakers.html#Demirkapi",
-      "evidence-links": [
-        {
-          "title": "DEF CON Safe Mode - Bill Demirkapi - Demystifying Modern Windows Rootkits",
-          "url": "https://www.youtube.com/watch?v=1H9tEfkjFXs"
-        },
-        {
-          "title": "DEF CON Safe Mode - Bill Demirkapi - Demystifying Modern Windows Rootkits   Q&A",
-          "url": "https://www.youtube.com/watch?v=h2HGzfV_gUQ"
-        }
-      ],
-      "evidence": true,
-      "year": 2020,
-      "domains": [
-        "red-teaming",
-        "vulnerability-research"
-      ]
-    },
-    {
-      "name": "Bill Demirkapi",
-      "label": "A SSLippery Slope: Unraveling the Hidden Dangers of Certificate Misuse",
-      "description": "Digital signatures are fundamental for verifying the authenticity and integrity of untrusted data in the digital world. They ensure that software, firmware, and other digital content are not tampered with during transmission or at rest. Code signing certificates are significantly more challenging to obtain when compared to alternatives like SSL or S/MIME certificates. The latter only has a single criterion- proof of control over a domain, while the former requires significant validation of the publisher itself. This project uncovered a systemic vulnerability present in numerous signature validation implementations, enabling attackers to exploit valid certificates in an unintended manner. Vulnerable implementations mistakenly perceive files signed with incompatible certificates as legitimate, violating their respective specifications and allowing threat actors to sign untrusted code at little to no cost. In this talk, we will explore the problem at all levels, ranging from the fundamental theory to its application across multiple formats and real-world situations.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 31",
-      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Demirkapi",
-      "evidence-links": [],
-      "evidence": false,
-      "year": 2023,
-      "domains": [
-        "devsecops",
-        "vulnerability-research"
-      ]
-    },
-    {
-      "name": "Bill Demirkapi",
-      "label": "Secrets and Shadows: Leveraging Big Data for Vulnerability Discovery at Scale",
-      "description": "When we consider the conventional approaches to vulnerability discovery, be it in software or websites, we tend to confine ourselves to a specific target or platform. In the case of software, we might reverse engineer an application's attack surfaces for untrusted input, aiming to trigger edge cases. For websites, we might enumerate a domain for related assets and seek out unpatched, less defended, or occasionally abandoned resources. This presentation explores the untapped potential of scaling security research by leveraging unconventional data sources. We'll walk through design flaws that enable two examples: forgotten cloud assets and leaked secrets. Instead of starting with a target and finding vulnerabilities, we'll find vulnerabilities and relate them to our targets. We won't just stop at discovery. We'll also discuss the incentives that create them and how to solve the ecosystem issues as an industry. While you can't easily scale every issue, this project has led to tens of thousands of highly significant yet seemingly trivial weaknesses in some of the world's largest organizations. Prepare to shift your perspective on vulnerability discovery, learn scalable approaches to address commonly overlooked bugs, and understand how even the simplest misconfiguration can have a devastating impact. Toomey, Patrick. “Behind the Scenes of Github Token Scanning.” The GitHub Blog, 17 Oct. 2018, link . Meli, Michael, et al. “How Bad Can It Git? Characterizing Secret Leakage in Public Github Repositories.” Proceedings 2019 Network and Distributed System Security Symposium, 19 Feb. 2019, link . Awslabs. “Awslabs/Git-Secrets: Prevents You from Committing Secrets and Credentials into Git Repositories.” GitHub, 2015, link . Rice, Zachary. “Zricethezav/Gitleaks: Scan Git Repos (or Files) for Secrets Using Regex and Entropy.” GitHub, 2018, link . Ballenthin, Willi, and Moritz Raabe. “Mandiant/Flare-Floss: Flare Obfuscated String Solver - Automatically Extract Obfuscated Strings from Malware.” GitHub, 2016, link . Squarcina, Marco, et al. “Can I Take Your Subdomain? Exploring Same-Site Attacks in the Modern Web.” USENIX Security Symposium, vol. 30, Aug. 2021, pp. 2917–2934. MDN contributors. “Subdomain Takeovers - Web Security | MDN.” Developer.mozilla.org, 14 Oct. 2021, link . “Prevent Subdomain Takeovers with Azure DNS Alias Records and Azure App Service’s Custom Domain Verification.” Learn.microsoft.com, Microsoft, 16 June 2020, link . Shah, Shubham. “Eliminating Dangling Elastic IP Takeovers with Ghostbuster.” Assetnote, 13 Feb. 2022, link . Claudius, Jonathan. “‘Deep Thoughts’ on Subdomain Takeover Vulnerabilities.” Claudijd.github.io, 3 Feb. 2017, link . Victor Le Pochat, Tom Van Goethem, Samaneh Tajalizadehkhoob, Maciej Korczyński, and Wouter Joosen. 2019. \"Tranco: A Research-Oriented Top Sites Ranking Hardened Against Manipulation,\" Proceedings of the 26th Annual Network and Distributed System Security Symposium (NDSS 2019). link Hallam-Baker, Phillip, et al. “RFC 8659 - DNS Certification Authority Authorization (CAA) Resource Record.” Datatracker.ietf.org, IETF, Nov. 2019, link .",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 32",
-      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54509",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2024",
+      "url": "https://www.offensivecon.org/speakers/2024/speakers/2024/bill-demirkapi.html",
       "evidence-links": [],
       "evidence": false,
       "year": 2024,
       "domains": [
-        "cloud-security",
-        "reverse-engineering",
-        "vulnerability-research"
-      ]
-    },
-    {
-      "name": "Bill Demirkapi",
-      "label": "Metal-as-a-Disservice: Exploiting Legacy Flaws in Cutting-Edge Clouds",
-      "description": "Bare metal cloud providers are rapidly gaining popularity among organizations deploying high-performance machine learning workloads. While the promise of dedicated hardware and enhanced security may appear attractive, a closer look revealed that these environments are vulnerable to decades-old attacks that are sure to trigger nostalgia. This talk investigates the hidden risks posed by the \"bare metal\" trend, illustrating how weaknesses in firmware, hardware, and the network can lead to catastrophic multi-tenant compromise. We'll walk through real-world case examples demonstrating how attackers can leverage these vulnerabilities including hijacking provisioning processes, installing persistent firmware implants, intercepting sensitive network data, and compromising secure machine learning workflows. Attendees will gain insight into the unique attack surfaces of bare metal environments, understand why seemingly outdated techniques remain highly effective, and learn how major cloud providers mitigate these threats. Expect technical demonstrations, practical advice on evaluating providers, and recommendations for protecting your organization's critical infrastructure. References: 1 2 3 4 5 6 7 8 9 10 11 12 13",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 33",
-      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60361",
-      "evidence-links": [
-        {
-          "title": "DEF CON 33 - Metal-as-a-Disservice: Exploiting Legacy Flaws in Cutting Edge Clouds - Bill Demirkapi",
-          "url": "https://www.youtube.com/watch?v=EtGhHCr3VLE"
-        }
-      ],
-      "evidence": true,
-      "year": 2025,
-      "domains": [
-        "cloud-security",
-        "vulnerability-research"
+        "unknown"
       ]
     }
   ]

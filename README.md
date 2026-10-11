@@ -177,6 +177,20 @@ URLs now return 404. Source pages are cached in
 python -m endorsement_scraper --assessor cansecwest --overwrite
 ```
 
+## OffensiveCon archive
+
+OffensiveCon is inventoried from the official 2018, 2019, 2020, 2022, 2023,
+2024, 2025, and 2026 agenda/speaker pages. Its local source archive is
+`data/archives/html/offensivecon.zip`; linked talk pages are cached as they
+are discovered. The parser handles both agenda rows and speaker-card pages,
+and the YouTube enricher stores recordings in
+`data/enrichments/offensivecon-youtube-recordings/data.zip`:
+
+```powershell
+python -m endorsement_scraper.enrichment_cli --enricher offensivecon-youtube-recordings --overwrite
+python -m endorsement_scraper --assessor offensivecon --overwrite
+```
+
 ## Cyber-domain mapping
 
 Every endorsement record must contain a non-empty `domains` array. The core

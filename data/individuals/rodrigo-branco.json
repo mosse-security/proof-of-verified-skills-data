@@ -1,12 +1,12 @@
 {
   "name": "Rodrigo Branco",
-  "last-updated": "2026-10-11T07:42:25Z",
+  "last-updated": "2026-10-11T08:59:44Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 4,
+    "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 3,
+    "with-evidence": 0,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -20,97 +20,25 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 4
+      "unknown": 1
     }
   },
   "endorsements": [
     {
       "name": "Rodrigo Branco",
-      "label": "A Scientific (But Non Academic) Study of How Malware Employs Anti-Debugging, Anti-Disassembly and Anti-Virtualization Technologies",
-      "description": "Malware is widely acknowledged as a growing threat with hundreds of thousands of new samples reported each week. Analysis of these malware samples has to deal with this significant quantity but also with the defensive capabilities built into malware; Malware authors use a range of evasion techniques to harden their creations against accurate analysis. The evasion techniques aim to disrupt attempts of disassembly, debugging or analyse in a virtualized environment.",
+      "label": "Day 1",
+      "description": "Day 1",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2012",
-      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2018",
+      "url": "https://www.offensivecon.org/agenda/speakers/2018/rodrigo-branco.html",
       "evidence-links": [],
       "evidence": false,
-      "year": 2012,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Rodrigo Branco",
-      "label": "Prevalent Characteristics in Modern Malware",
-      "description": "Malware is widely acknowledged as a growing threat with hundreds of thousands of new samples reported each week. Analysis of these malware samples has to deal with this significant quantity but also with the defensive capabilities built into malware. Malware authors use a range of evasion techniques to harden their creations against accurate analysis. The evasion techniques aim to disrupt attempts of disassembly, debugging or analyze in a virtualized environment. Two years ago, in 2011, we presented (with other researchers) at Black Hat USA a wide range of anti-reverse engineering techniques that malware were currently employing. For each technique, we documented how it works, we created an algorithm to detect its usage, and we provided statistics on the technique prevalence in a 4 million samples database. We also provided a fully-working PoC implementing each of the techniques (either in C or Assembly). Our expectation was that the AV industry would use our ideas (proven with the prevalence numbers) to significantly improve the malware prevention coverage. Nothing changed. In the meanwhile, we improved our detection algorithms, fixed bugs, and expanded the research to 12+ million samples. In this talk, we are going to give another try and demonstrate the prevalence of more than 50 non-defensive additional characteristics found in modern malware. Additionally to that, we also extended our previous research demonstrating what the malware does once it detects it is being analyzed. The resulting data will help security companies and researchers around the world to focus their attention on making their tools and processes more efficient to rapidly avoid the malware authors' countermeasures. This first of its kind, comprehensive catalog of malware characteristics was compiled by the paper's authors by researching some techniques employed by malware, and in the process new detections were proposed and developed. The underlying malware sample database has an open architecture that allows researchers not only to see the results of the analysis, but also to develop and plug-in new analysis capabilities.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2014",
-      "url": "https://blackhat.com/us-14/archives.html",
-      "evidence-links": [
-        {
-          "title": "Prevalent Characteristics in Modern Malware",
-          "url": "https://www.youtube.com/watch?v=5KkuesPPC0c"
-        }
-      ],
-      "evidence": true,
-      "year": 2014,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Rodrigo Branco",
-      "label": "Distributing the Reconstruction of High-Level Intermediate Representation for Large Scale Malware Analysis",
-      "description": "Malware is acknowledged as an important threat and the number of new samples grows at an absurd pace. Additionally, targeted and so called advanced malware became the rule, not the exception. Analysts and companies use different degrees of automation to be able to handle the challenge, but there is always a gap. Reverse engineering is an even harder task due to the increased amount of work and the stricter time-frame to accomplish it. This has a direct impact on the investigative process and thus makes prevention of future threats more challenging. In this work, the authors discuss distributed reverse engineering techniques, using intermediate representation (thanks Hex-Rays team for support us in this research) in a clustered environment. The results presented demonstrate different uses for this kind of approach, for example to find algorithmic commonalities between malware families. A higher level abstraction of the malware code is constructed from the abstract syntax tree (ctree) provided by Hex-Rays Decompiler. That abstraction facilitates the extraction of characteristics such as domain generation algorithms (DGA), custom encryption and specific parsers for configuration data. In order to reduce the number of false positives in some C++ metadata identification, such as virtual function tables and RTTI, the authors created the object-oriented artifacts directly from the analyzed malware. The extracted characteristics of 2 million malware samples are analyzed and the presented results provide a rich dataset to improve malware analysis efforts and threat intelligence initiatives. With that dataset, other researchers will be able to extract a ctree from new samples and compare to the millions we performed. As an additional contribution, the gathered representation together with all the raw information from the samples will be available to other researchers after the presentation; together with additional ideas for future development. The developed Hex-Rays Decompiler plugin and analysis/automation tools used to extract the characteristics will also be made available to the audience on Github.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2015",
-      "url": "https://blackhat.com/us-15/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Distributing The Reconstruction Of High-Level Intermediate Representation...",
-          "url": "https://www.youtube.com/watch?v=QcCT2RQVgMQ"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Rodrigo Branco",
-      "label": "Firmware is the New Black - Analyzing Past Three Years of BIOS/UEFI Security Vulnerabilities",
-      "description": "In recent years, we witnessed the rise of firmware-related vulnerabilities, likely a direct result of increasing adoption of exploit mitigations in major/widespread operating systems - including for mobile phones. Pairing that with the recent (and not so recent) leaks of government offensive capabilities abusing supply chains and using physical possession to persist on compromised systems, it is clear that firmware is the new black in security. This research looks into BIOS/UEFI platform firmware, trying to help making sense of the threat. We present a threat model, discuss new mitigations that could have prevented the issues and offer a categorization of bug classes that hopefully will help focusing investments in protecting systems (and finding new vulnerabilities). Our data set comprises of 90+ security vulnerabilities handled by Intel Product Security Incident Response Team (PSIRT) in the past 3 years and the analysis was manually performed, using white-box and counting with feedback from various BIOS developers within the company (and security researchers externally that reported some of the issues - most of the issues were found by internal teams, but PSIRT is involved since they were found to also affect released products).",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2017",
-      "url": "https://blackhat.com/us-17/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Firmware is the New Black - Analyzing Past Three Years of BIOS/UEFI Security Vulnerabilities",
-          "url": "https://www.youtube.com/watch?v=MONgHW2rpY8"
-        }
-      ],
-      "evidence": true,
-      "year": 2017,
+      "year": 2018,
       "domains": [
         "unknown"
       ]

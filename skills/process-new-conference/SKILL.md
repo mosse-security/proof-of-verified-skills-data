@@ -161,3 +161,9 @@ endorsements. Never silently accept an empty crawl as a successful onboarding.
 
 Read [the repository architecture reference](../verified-endorsement-data/references/architecture.md)
 for storage, schema, archive, enrichment, and merger details.
+
+OffensiveCon is the reference for a mixed historical archive: older agenda
+pages expose row-level speaker names without detail links, while newer speaker
+index pages expose abstracts and linked detail pages. Keep both parsing paths
+and allow unavailable detail pages to fall back to the agenda's descriptive
+title without blocking the complete run.
