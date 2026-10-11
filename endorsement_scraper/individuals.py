@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any
 
 from .schema import validate_endorsement_record
+from .domains import ALLOWED_DOMAINS
 
 
 @dataclass(frozen=True, slots=True)
@@ -115,6 +116,7 @@ def merge_endorsements(
             "last-updated": "",
             "biography": "",
             "contact": _merged_contacts(person.get("profiles", [])),
+            "stats": _individual_stats(records),
             "endorsements": records,
         }
         payload["last-updated"] = _last_updated_for(path, payload)
@@ -158,7 +160,7 @@ def merge_endorsements(
 
 
 def _validate_individual(document: dict[str, Any], *, source: str) -> None:
-    expected = {"name", "last-updated", "biography", "contact", "endorsements"}
+    expected = {"name", "last-updated", "biography", "contact", "stats", "endorsements"}
     if set(document) != expected:
         raise IndividualMergeError(f"{source} must contain exactly {sorted(expected)}")
     if not isinstance(document["name"], str) or not document["name"].strip():
@@ -175,6 +177,24 @@ def _validate_individual(document: dict[str, Any], *, source: str) -> None:
         raise IndividualMergeError(f"{source}.endorsements must be an array")
     for index, endorsement in enumerate(document["endorsements"]):
         validate_endorsement_record(endorsement, source=f"{source}.endorsements[{index}]")
+    if document["stats"] != _individual_stats(document["endorsements"]):
+        raise IndividualMergeError(f"{source}.stats does not match endorsements")
+
+
+def _individual_stats(records: list[dict[str, Any]]) -> dict[str, Any]:
+    by_domain = {domain: 0 for domain in ALLOWED_DOMAINS}
+    with_evidence = 0
+    for record in records:
+        if record.get("evidence") is True:
+            with_evidence += 1
+        for domain in record["domains"]:
+            by_domain[domain] += 1
+    return {
+        "endorsements": len(records),
+        "with-evidence": with_evidence,
+        "without-evidence": len(records) - with_evidence,
+        "by-domain": by_domain,
+    }
 
 
 def _last_updated_for(path: Path, payload: dict[str, Any]) -> str:
@@ -202,9 +222,17 @@ def _upgrade_existing_timestamp(path: Path) -> None:
         existing = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return
-    if not isinstance(existing, dict) or "last-updated" in existing:
+    if not isinstance(existing, dict):
         return
-    existing["last-updated"] = _utc_timestamp()
+    changed = False
+    if "last-updated" not in existing:
+        existing["last-updated"] = _utc_timestamp()
+        changed = True
+    if "stats" not in existing:
+        existing["stats"] = _individual_stats(existing.get("endorsements", []))
+        changed = True
+    if not changed:
+        return
     _validate_individual(existing, source=str(path))
     _atomic_write(
         path,

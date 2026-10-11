@@ -72,7 +72,7 @@ class DefConTests(unittest.TestCase):
           <p class="abstract"></p>
           <p>A multi-stage exploit chain produced 11 CVEs, full RCEs, and PoCs.</p>
           <p class="speaker-bio"><strong>Gavin Example</strong></p>
-          <p>Gavin previously worked on AWS cloud security.</p>
+          <p>Gavin previously worked on AWS cloud-security.</p>
           <p class="speaker-bio"><a href="https://www.linkedin.com/in/gavin">LinkedIn</a><br>
           <a href="https://example.test/gavin">Website</a></p>
         </article>
@@ -83,7 +83,7 @@ class DefConTests(unittest.TestCase):
             "https://defcon.org/html/defcon-34/dc-34-speakers.html",
         )
 
-        self.assertEqual(records[0].domains, ("vulnerability research",))
+        self.assertEqual(records[0].domains, ("vulnerability-research",))
         self.assertEqual(records[0].biography, "")
         self.assertEqual(
             records[0].contact,

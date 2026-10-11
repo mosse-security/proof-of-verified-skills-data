@@ -8,17 +8,17 @@ from typing import Any
 
 
 CYBER_DOMAINS = (
-    "cloud security",
-    "cyber defense",
+    "cloud-security",
+    "cyber-defense",
     "devsecops",
-    "digital forensics",
-    "GRC",
-    "incident response",
-    "open source intelligence",
-    "penetration testing",
-    "red teaming",
-    "reverse engineering",
-    "vulnerability research",
+    "digital-forensics",
+    "grc",
+    "incident-response",
+    "open-source-intelligence",
+    "penetration-testing",
+    "red-teaming",
+    "reverse-engineering",
+    "vulnerability-research",
 )
 UNKNOWN_DOMAIN = "unknown"
 ALLOWED_DOMAINS = (*CYBER_DOMAINS, UNKNOWN_DOMAIN)
@@ -29,14 +29,14 @@ class DomainMappingError(ValueError):
 
 
 _RULES: dict[str, tuple[str, ...]] = {
-    "cloud security": (
+    "cloud-security": (
         r"\bcloud security\b",
         r"\b(?:AWS|Amazon Web Services|Azure|GCP|Google Cloud)\b",
         r"\b(?:Kubernetes|K8s|container security|cloud native|serverless|IAM)\b",
         r"\b(?:S3 bucket|EC2|EKS|AKS|Lambda function|cloud metadata service)\b",
         r"\b(?:Entra ID|Azure AD|cloud identity|multi[ -]tenant|SaaS security)\b",
     ),
-    "cyber defense": (
+    "cyber-defense": (
         r"\bcyber defen[cs]e\b",
         r"\bblue team(?:ing)?\b",
         r"\bdefen[cs]ive security\b",
@@ -65,7 +65,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:build system security|secure build|pipeline security)\b",
         r"\b(?:upstream|open[ -]source) (?:project|package|library).{0,80}\b(?:backdoor|compromis)(?:e|ed|es|ing)?\b",
     ),
-    "digital forensics": (
+    "digital-forensics": (
         r"\bdigital forensics?\b",
         r"\bcomputer forensics?\b",
         r"\b(?:memory|disk|mobile|network) forensics?\b",
@@ -76,7 +76,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\banti[ -]?forensics?\b",
         r"\bforensic(?:s|ally)?\b",
     ),
-    "GRC": (
+    "grc": (
         r"\bGRC\b",
         r"\bgovernance,? risk,? and compliance\b",
         r"\b(?:risk management|security compliance|security governance)\b",
@@ -87,7 +87,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:cybersecurity|cyber security|privacy) polic(?:y|ies)\b",
         r"\b(?:cyber law|computer crime law|security regulation)\b",
     ),
-    "incident response": (
+    "incident-response": (
         r"\bincident response\b",
         r"\bDFIR\b",
         r"\b(?:breach|ransomware) response\b",
@@ -95,7 +95,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:incident triage|breach containment|containment and eradication)\b",
         r"\b(?:post[ -]incident|incident responder|compromise assessment)\b",
     ),
-    "open source intelligence": (
+    "open-source-intelligence": (
         r"\bOSINT\b",
         r"\bopen[ -]source intelligence\b",
         r"\b(?:social media intelligence|SOCMINT)\b",
@@ -105,7 +105,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:OSINT|recon|reconnaissance) (?:tool|technique|workflow|on|of|for)\b",
         r"\b(?:public|open) data (?:collection|research|investigation)\b",
     ),
-    "penetration testing": (
+    "penetration-testing": (
         r"\bpenetration test(?:ing|er|ers)?\b",
         r"\bpen[ -]?test(?:ing|er|ers)?\b",
         r"\bsecurity assessment\b",
@@ -118,7 +118,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:fingerprinting|enumeration) (?:a |the )?(?:network|host|service|target|system)\b",
         r"\b(?:attack|security) surface mapping\b",
     ),
-    "red teaming": (
+    "red-teaming": (
         r"\bred team(?:ing|er|ers)?\b",
         r"\badversary emulation\b",
         r"\battack simulation\b",
@@ -133,7 +133,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:social engineering|spear[ -]?phishing|vishing|pretexting)\b",
         r"\b(?:physical intrusion|physical red team|badge cloning)\b",
     ),
-    "reverse engineering": (
+    "reverse-engineering": (
         r"\breverse engineer(?:ing|ed)?\b",
         r"\bbinary analysis\b",
         r"\b(?:disassembl|decompil)(?:e|er|ing|ation)\w*\b",
@@ -148,7 +148,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:de[ -]?obfuscat|unpack)(?:e|ion|ing)\w*\b",
         r"\b(?:packer|packed binary|executable image|bootloader internals)\b",
     ),
-    "vulnerability research": (
+    "vulnerability-research": (
         r"\bvulnerabilit(?:y|ies)\b",
         r"\bCVE-\d{4}-\d+\b",
         r"\b(?:zero[ -]?day|0day|0-day)\b",

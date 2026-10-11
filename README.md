@@ -93,7 +93,7 @@ are copied from `data/assessors/def-con.json`:
   "evidence-links": [],
   "evidence": false,
   "year": 2026,
-  "domains": ["penetration testing", "vulnerability research"]
+  "domains": ["penetration-testing", "vulnerability-research"]
 }
 ```
 
@@ -102,17 +102,17 @@ are copied from `data/assessors/def-con.json`:
 Every endorsement record must contain a non-empty `domains` array. The core
 library detects zero, one, or several values from this fixed taxonomy:
 
-- `cloud security`
-- `cyber defense`
+- `cloud-security`
+- `cyber-defense`
 - `devsecops`
-- `digital forensics`
-- `GRC`
-- `incident response`
-- `open source intelligence`
-- `penetration testing`
-- `red teaming`
-- `reverse engineering`
-- `vulnerability research`
+- `digital-forensics`
+- `grc`
+- `incident-response`
+- `open-source-intelligence`
+- `penetration-testing`
+- `red-teaming`
+- `reverse-engineering`
+- `vulnerability-research`
 
 When no rule matches, the array is `["unknown"]`. Standard `Endorsement`
 objects are mapped automatically from their type, label, person, description,
@@ -231,7 +231,7 @@ Example record:
   "evidence-links": [],
   "evidence": false,
   "year": 2026,
-  "domains": ["vulnerability research"]
+  "domains": ["vulnerability-research"]
 }
 ```
 
@@ -263,6 +263,12 @@ to `data/individuals`, for example `data/individuals/alice-example.json`:
   "last-updated": "2026-01-01T00:00:00Z",
   "biography": "",
   "contact": [],
+  "stats": {
+    "endorsements": 0,
+    "with-evidence": 0,
+    "without-evidence": 0,
+    "by-domain": {}
+  },
   "endorsements": []
 }
 ```
@@ -274,6 +280,10 @@ keeps source-specific profile extraction separate from the canonical
 endorsement records. The temporary endorsement and profile directories are
 emptied after every merger run, including failed runs; pass `--keep-tmp` when
 you need to inspect them.
+
+Each individual also includes deterministic `stats`: total endorsements,
+counts with and without evidence, and an endorsement count for every cyber
+domain (including `unknown`).
 
 Existing individual files are replaced on rerun so the result cannot accumulate
 duplicates. The merger compares the content before writing: unchanged records

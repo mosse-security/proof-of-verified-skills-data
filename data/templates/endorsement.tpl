@@ -20,7 +20,7 @@
   "year": "Year of the record",
   
   "domains": [
-    "penetration testing",
-    "vulnerability research"
+    "penetration-testing",
+    "vulnerability-research"
   ]
 }

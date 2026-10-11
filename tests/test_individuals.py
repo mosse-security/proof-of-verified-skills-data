@@ -69,6 +69,9 @@ class IndividualMergeTests(unittest.TestCase):
             self.assertEqual([item["year"] for item in document["endorsements"]], [2025, 2026])
             self.assertEqual(document["biography"], "")
             self.assertEqual(document["contact"], [])
+            self.assertEqual(document["stats"]["endorsements"], 2)
+            self.assertEqual(document["stats"]["without-evidence"], 2)
+            self.assertEqual(document["stats"]["by-domain"]["unknown"], 2)
 
     def test_rerun_overwrites_without_appending_duplicates(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

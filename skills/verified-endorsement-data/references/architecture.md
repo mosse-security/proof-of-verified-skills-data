@@ -75,6 +75,8 @@ avoid scraping navigation links such as “Return to Top”.
 The merger matches names case-insensitively and tolerates whitespace changes.
 It removes exact duplicate endorsement objects and unions contacts. It does
 not infer aliases beyond parser-side matching or invent missing profile data.
+It derives each profile's `stats` object from the final deduplicated
+endorsement array, including evidence and per-domain counts.
 Individual records include a `last-updated` UTC timestamp. The merger compares
 all other fields with the existing file and preserves that timestamp for an
 unchanged record; any content change receives a fresh timestamp.

@@ -15,11 +15,11 @@ class DomainMappingTests(unittest.TestCase):
         self.assertEqual(
             domains,
             (
-                "cloud security",
-                "digital forensics",
-                "incident response",
-                "red teaming",
-                "vulnerability research",
+                "cloud-security",
+                "digital-forensics",
+                "incident-response",
+                "red-teaming",
+                "vulnerability-research",
             ),
         )
 
@@ -32,7 +32,7 @@ class DomainMappingTests(unittest.TestCase):
                 "A multi-stage exploit chain with authentication bypass, "
                 "sandbox escape, full RCE, and proof-of-concept release"
             ),
-            ("vulnerability research",),
+            ("vulnerability-research",),
         )
 
     def test_supply_chain_backdoor_maps_to_devsecops_and_vulnerability_research(self) -> None:
@@ -41,7 +41,7 @@ class DomainMappingTests(unittest.TestCase):
                 "An open-source project was compromised through an upstream "
                 "library backdoor"
             ),
-            ("devsecops", "vulnerability research"),
+            ("devsecops", "vulnerability-research"),
         )
 
     def test_endorsement_always_has_mapped_domains(self) -> None:
@@ -67,18 +67,18 @@ class DomainMappingTests(unittest.TestCase):
         self.assertEqual(
             record["domains"],
             [
-                "cloud security",
-                "cyber defense",
-                "incident response",
-                "penetration testing",
+                "cloud-security",
+                "cyber-defense",
+                "incident-response",
+                "penetration-testing",
             ],
         )
         validate_record_domains(record)
 
     def test_explicit_domains_are_normalized_and_invalid_values_fail(self) -> None:
         self.assertEqual(
-            normalize_domains(["GRC", "cloud security", "GRC"]),
-            ("cloud security", "GRC"),
+            normalize_domains(["grc", "cloud-security", "grc"]),
+            ("cloud-security", "grc"),
         )
         with self.assertRaises(DomainMappingError):
             normalize_domains(["application security"])

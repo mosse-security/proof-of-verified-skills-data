@@ -38,7 +38,7 @@ class EndorsementSchemaTests(unittest.TestCase):
             subtitle="Example Conference 2026",
             url="https://example.test/talk",
             year=2026,
-            domains=("vulnerability research",),
+            domains=("vulnerability-research",),
             evidence_links=({"title": "Recording", "url": "https://example.test/video"},),
         )
 
