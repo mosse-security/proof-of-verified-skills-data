@@ -1,0 +1,66 @@
+{
+  "name": "Yong Wang",
+  "last-updated": "2026-10-11T06:07:13Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 2
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Yong Wang",
+      "label": "Two bugs with one PoC: Rooting Pixel 6 from Android 12 to Android 13",
+      "description": "In this talk, I will first review an old and public vulnerability exploited in the wild, and detail how to create the PoC step by step. Even without Variable Analysis, you can find another similar issue and create a new PoC in less than 1 minute. And the same PoC implicitly triggers another Use-After-Free vulnerability without the kernel panic. Before diving into how to exploit those two bugs, I will briefly discuss the changes and challenges for rooting Android 12/13 devices. Then, I will respectively detail how to exploit those two vulnerabilities, bypass the general mitigations(KASLR, UAO, PAN, etc), and root Pixel 6 from Android 12 to Android 13 with a 100% success rate.",
+      "type": "presentation",
+      "assessor": "CanSecWest",
+      "assessor-id": "cansecwest",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "CanSecWest 2023",
+      "url": "https://www.secwest.net/cansecwest2023-presentations/two-bugs-with-one-poc-rooting-pixel-6-from-android-12-to-android-13",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Yong Wang",
+      "label": "Rooting Android Devices in One Shot: Simple Bug, Complex Exploit (incl. Memory Tagging Extension)",
+      "description": "In the past few years, the kernel attack surfaces that can be accessed by untrusted applications have been significantly reduced. And nowadays it becomes more and more difficult to hunt the bugs of high quality. With more and more hardware and software mitigations, it's common to label bugs of low quality as unexploitable bugs. From my own perspective, advanced exploitation techniques can significantly improve the exploitability of low-quality bugs. In this talk, I will first analyze a low-quality bug fixed last year. Back in 2015, there's no doubt that it's exploitable. But now the mitigations can hinder the exploitation directly. To exploit the bug, I will detail the idea of partially bypassing the KASLR mitigation and introduce a practical method to predict the addresses of attacker-controlled kernel objects. Then, I will detail how to gain the arbitrary physical memory Read/Write ability in one shot. Last but not least, since the affected devices are shipped with custom mitigations, I will also detail how to bypass them and gain the root privilege. During the presentation, I will give the exploit demos of rooting the affected Android devices.",
+      "type": "presentation",
+      "assessor": "CanSecWest",
+      "assessor-id": "cansecwest",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "CanSecWest 2024",
+      "url": "https://www.secwest.net/presentations-2024/a-simple-bug-but-not-easy-exploit-rooting-android-devices-in-one-shot",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2024,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

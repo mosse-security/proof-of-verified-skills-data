@@ -1,0 +1,47 @@
+{
+  "name": "Theo DeRaadt",
+  "last-updated": "2026-10-11T06:07:13Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Theo DeRaadt",
+      "label": "Synthetic Memory Protections - Beyond R, W, and X",
+      "description": "The attack method described in \"Smash the Stack For Fun and Profit\" (1996) depended upon the stack being executable. Within a few years, most processors came with MMU capabilities allowing the stack to be marked non-executable. This capability was extended to apply to all memory and named the W^X policy. Attackers then switched to ROP methods instead, which utilize the stack to point at fragments of code (\"gadgets\") which must remain executable. In response, Address Space Randomization to hide the location of the gadgets became commonplace over the next decade. Sadly, other software bugs can produce info-leaks which reveal the gadget locations, so the principle of \"Never Reuse An Address Space\" was introduced (meaning, always fork+execve), but adoption is still slowgoing. A variety of Control-Flow-Integrity mechanisms (such as RETGUARD) were also invented to reduce primary \"function-tail\" gadgets, but X86-style polymorphic gadgets remain a problem. OpenBSD was first to market with each of these responses. This talk will summarize the situation briefly, and then describe new mechanisms being explored in OpenBSD to make ROP exploitation more difficult.",
+      "type": "presentation",
+      "assessor": "CanSecWest",
+      "assessor-id": "cansecwest",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "CanSecWest 2023",
+      "url": "https://www.secwest.net/cansecwest2023-presentations/synthetic-memory-protections-beyond-r-w-x",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "unknown"
+      ]
+    }
+  ]
+}

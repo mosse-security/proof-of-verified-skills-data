@@ -1,13 +1,13 @@
 {
   "name": "Qidan He",
-  "last-updated": "2026-10-11T05:47:43Z",
+  "last-updated": "2026-10-11T06:08:11Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
+    "endorsements": 2,
+    "assessors": 2,
     "with-evidence": 0,
-    "without-evidence": 1,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,7 +20,7 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 2
     }
   },
   "endorsements": [
@@ -39,6 +39,25 @@
       "evidence-links": [],
       "evidence": false,
       "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Qidan He",
+      "label": "BadResolve: Bypassing Android's Intent Checks to Resurrect LaunchAnyWhere Privilege Escalations",
+      "description": "The LaunchAnywhere vulnerability in Android has been a significant security concern, enabling unprivileged applications to escalate privileges and invoke arbitrary protected or privileged activities. Despite extensive mitigation efforts by Google, such as introducing destination component checks via the resolveActivity API, these defenses have proven insufficient. In this talk, we introduce BadResolve , a novel exploitation technique that bypasses these checks using TOCTOU (Time of Check to Time of Use) race conditions . By controlling previously unforeseen parameters, BadResolve allows attackers to exploit Android's Intent resolution process, reintroducing LaunchAnywhere vulnerabilities. We demonstrate how BadResolve works in practice, providing instructions for exploiting race conditions with 100% reliability , allowing unprivileged apps to invoke privileged activities. Our research also uncovers new CVEs that affect all Android versions, highlighting ongoing risks such as silent app installations, unauthorized phone calls, and modifications to critical system settings. Additionally, we present a novel approach combining Large Language Models (LLMs) with traditional static analysis techniques to efficiently identify such kind of vulnerabilities in Android and OEM’s opensource and closed-source codebases.",
+      "type": "presentation",
+      "assessor": "CanSecWest",
+      "assessor-id": "cansecwest",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "CanSecWest 2025",
+      "url": "https://www.secwest.net/presentations-2025/badresolve-bypassing-androids-intent-checks-to-resurrect-launchanywhere-privilege-escalations",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2025,
       "domains": [
         "unknown"
       ]

@@ -1,13 +1,13 @@
 {
   "name": "Jonas Zaddach",
-  "last-updated": "2026-10-11T05:47:41Z",
+  "last-updated": "2026-10-11T06:08:10Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
+    "endorsements": 3,
+    "assessors": 2,
     "with-evidence": 0,
-    "without-evidence": 2,
+    "without-evidence": 3,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,7 +20,7 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 2
+      "unknown": 3
     }
   },
   "endorsements": [
@@ -58,6 +58,25 @@
       "evidence-links": [],
       "evidence": false,
       "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jonas Zaddach",
+      "label": "Sandboxing ClamAV",
+      "description": "ClamAV is a popular open-source antivirus scanner with a daily updated signature set from Cisco's Talos team.  It is very easy to integrate the ClamAV library into your application for customized scanning - but this adds a piece of code that parses malicious data from unknown sources, a huge increase in attack surface. We set out to explore if we could do better - by moving the scanner into a separate, sandboxed process. Our goal was: To make the sandboxing completely transparent, maintaining the current library interface Sandbox on all major platforms, that is Windows, Linux, MacOS, and FreeBSD Restrict the sandboxed process further regarding FS access, network access, ... Develop in Rust, a much safer programming language than C In this presentation we'll tell you how we achieved all of this - giving you the pain points in the migration, the performance impact and an attack-surface assessment pre- and post-sandboxing. We hope that our experience will serve as a blueprint for migrating your own library handling potentially malicious data to a sandbox with very little effort and minimal performance impact.",
+      "type": "presentation",
+      "assessor": "CanSecWest",
+      "assessor-id": "cansecwest",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "CanSecWest 2023",
+      "url": "https://www.secwest.net/cansecwest2023-presentations/sandboxing-clamav",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
       "domains": [
         "unknown"
       ]

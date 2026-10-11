@@ -131,6 +131,19 @@ python -m endorsement_scraper --assessor black-hat --overwrite
 The same local-first ZIP, coverage test, merger, and temporary-output cleanup
 rules apply to every future assessor.
 
+## CanSecWest presentation archive
+
+CanSecWest is inventoried in `data/assessors/cansecwest.json`. The official
+archive currently exposes 2020, 2021, 2022, 2023, 2024, and 2025 pages; the
+legacy `cansecwest.com` links are retained as research notes where the old
+URLs now return 404. Source pages are cached in
+`data/archives/html/cansecwest.zip` and parsed by the discovered
+`cansecwest-presentations` collection scraper:
+
+```powershell
+python -m endorsement_scraper --assessor cansecwest --overwrite
+```
+
 ## Cyber-domain mapping
 
 Every endorsement record must contain a non-empty `domains` array. The core
