@@ -13,10 +13,11 @@ from .domains import ALLOWED_DOMAINS
 from .runner import RunReport
 
 
-def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None, evidence_counts: tuple[int, int] = (0, 0), domain_counts: dict[str, int] | None = None) -> dict[str, Any]:
+def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None, evidence_counts: tuple[int, int] = (0, 0), domain_counts: dict[str, int] | None = None, individual_count: int = 0) -> dict[str, Any]:
     finished_at = finished_at or datetime.now(timezone.utc)
     totals = report.totals()
     totals["by-domain"] = {domain: int((domain_counts or {}).get(domain, 0)) for domain in ALLOWED_DOMAINS}
+    totals["individuals"] = int(individual_count)
     scrapers = []
     for item in report.scrapers:
         scrapers.append({
@@ -94,6 +95,22 @@ def count_domains(output_directory: Path) -> dict[str, int]:
     return counts
 
 
+def count_individuals(output_directory: Path) -> int:
+    """Count unique people represented by the current endorsement output."""
+
+    names: set[str] = set()
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if isinstance(record, dict) and isinstance(record.get("name"), str):
+                names.add(" ".join(record["name"].split()).casefold())
+    return len(names)
+
+
 def validate_run_stats(stats: dict[str, Any]) -> None:
     if not isinstance(stats, dict):
         raise ValueError("stats must be an object")
@@ -114,6 +131,8 @@ def validate_run_stats(stats: dict[str, Any]) -> None:
     by_domain = totals.get("by-domain") if isinstance(totals, dict) else None
     if not isinstance(by_domain, dict) or any(not isinstance(by_domain.get(domain), int) for domain in ALLOWED_DOMAINS):
         raise ValueError("stats.totals.by-domain must contain integer counts for every domain")
+    if not isinstance(totals.get("individuals") if isinstance(totals, dict) else None, int):
+        raise ValueError("stats.totals.individuals must be an integer")
 
 
 def write_run_stats(path: Path, stats: dict[str, Any]) -> None:

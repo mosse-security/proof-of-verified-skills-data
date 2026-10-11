@@ -16,6 +16,7 @@ class RunStatsTests(unittest.TestCase):
         self.assertEqual(stats["status"], "ok")
         self.assertEqual(stats["evidence"]["with-links"], 4000)
         self.assertEqual(stats["totals"]["by-domain"]["unknown"], 0)
+        self.assertEqual(stats["totals"]["individuals"], 0)
 
     def test_zero_defcon_endorsements_are_marked_failed(self) -> None:
         report = RunReport([ScraperReport("def-con-speakers", "def-con", pages=34, endorsements=0)])
