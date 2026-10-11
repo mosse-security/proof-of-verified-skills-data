@@ -1,6 +1,6 @@
 {
   "name": "Joe FitzPatrick",
-  "last-updated": "2026-10-11T09:38:39Z",
+  "last-updated": "2026-10-11T09:55:40Z",
   "biography": "",
   "contact": [
     {
@@ -9,9 +9,9 @@
     }
   ],
   "stats": {
-    "endorsements": 3,
-    "assessors": 1,
-    "with-evidence": 2,
+    "endorsements": 5,
+    "assessors": 2,
+    "with-evidence": 4,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -25,7 +25,7 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 3,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
@@ -79,6 +79,30 @@
     },
     {
       "name": "Joe FitzPatrick",
+      "label": "The Tao of Hardware the Te of Implants",
+      "description": "Embedded, IOT, and ICS devices tend to be things we can pick up, see, and touch. They're designed for nontechnical users who think of them as immutable hardware devices. Even software security experts, at some point, consider hardware attacks out of scope. Thankfully, even though a handful of hardware manufacturers are making some basic efforts to harden devices, there's still plenty of cheap and easy ways to subvert hardware. The leaked ANT catalog validated that these cheap hardware attacks are worthwhile. The projects of the NSA Playset have explored what's possible in terms of cheap and easy DIY hardware implants, so I've continued to apply those same techniques to more embedded devices and industrial control systems. I'll show off a handful of simple hardware implants that can 1) Blindly escalate privilege using JTAG 2) Patch kernels via direct memory access on an embedded device without JTAG 3) Enable wireless control of the inputs and outputs of an off-the-shelf PLC 4) Hot-plug a malicious expansion module onto another PLC without even taking the system offline and 5) Subvert a system via a malicious display adapter. Some of these are new applications of previously published implants - others are brand new. I'll conclude with some potential design decisions that could reduce vulnerability to implants, as well as ways of protecting existing hardware systems from tampering.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "The Tao of Hardware the Te of Implants",
+          "url": "https://www.youtube.com/watch?v=UpaX6_Z3joU"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Joe FitzPatrick",
       "label": "Secure Tokin' and Doobiekeys: How to roll your own counterfeit hardware security devices",
       "description": "Saturday at 11:00 in Track 2 45 minutes | Demo, Tool Joe FitzPatrick SecuringHardware.com Michael Leibowitz Senior Trouble Maker Let's face it, software security is still in pretty bad shape. We could tell ourselves that everything is fine, but in our hearts, we know the world is on fire. Even as hackers, it's incredibly hard to know whether your computer, phone, or secure messaging app is pwned. Of course, there's a Solution(tm) - hardware security devices. We carry authentication tokens not only to secure our banking and corporate VPN connections, but also to access everything from cloud services to social networking. While we've isolated these 'trusted' hardware components from our potentially pwnd systems so that they might be more reliable, we will present scenarios against two popular hardware tokens where their trust can be easily undermined. After building our modified and counterfeit devices, we can use them to circumvent intended security assumptions made by their designers and users. In addition to covering technical details about our modifications and counterfeit designs, we'll explore a few attack scenarios for each. Sharing is Caring, so after showing off a few demonstration, we'll walk you through the process of rolling your own Secure Tokin' and Doobiekey that you can pass around the circle at your next cryptoparty.",
       "type": "presentation",
@@ -94,6 +118,30 @@
       "year": 2017,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Joe FitzPatrick",
+      "label": "A Measured Response to a Grain of Rice",
+      "description": "A Measured Response to a Grain of Rice",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2018",
+      "url": "https://blackhat.com/archive/europe/2018/briefings/schedule/",
+      "evidence-links": [
+        {
+          "title": "A Measured Response to a Grain of Rice",
+          "url": "https://www.youtube.com/watch?v=xU7Y5CiabE0"
+        }
+      ],
+      "evidence": true,
+      "year": 2018,
+      "domains": [
+        "unknown"
       ]
     }
   ]

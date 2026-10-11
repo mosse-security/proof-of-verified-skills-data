@@ -1,12 +1,12 @@
 {
   "name": "Maxim Goryachy",
-  "last-updated": "2026-10-11T08:59:44Z",
+  "last-updated": "2026-10-11T09:55:44Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,34 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Maxim Goryachy",
+      "label": "How to Hack a Turned-Off Computer or Running Unsigned Code in Intel Management Engine",
+      "description": "Intel Management Engine is a proprietary technology that consists of a microcontroller integrated into the Platform Controller Hub (PCH) microchip with a set of built-in peripherals. The PCH carries almost all communication between the processor and external devices; therefore Intel ME has access to almost all data on the computer, and the ability to execute third-party code allows compromising the platform completely. Researchers have been long interested in such \"God mode\" capabilities, but recently we have seen a surge of interest in Intel ME. One of the reasons is the transition of this subsystem to a new hardware (x86) and software (modified MINIX as an operating system) architecture. The x86 platform allows researchers to bring to bear all the power of binary code analysis tools. Unfortunately, this changing did not go without errors. In a subsystem change that will be detailed in the talk of Intel ME version 11+, a vulnerability was found. It allows an attacker of the machine to run unsigned code in PCH on any motherboard via Skylake+. The main system can remain functional, so the user may not even suspect that his or her computer now has malware resistant to reinstalling of the OS and updating BIOS. Running your own code on ME gives unlimited possibilities for researchers, because it allows exploring the system in dynamics. In our presentation, we will tell how we detected and exploited the vulnerability, and bypassed built-in protection mechanisms.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2017",
+      "url": "https://blackhat.com/archive/europe/2017/briefings.html",
+      "evidence-links": [
+        {
+          "title": "How to Hack a Turned-Off Computer, or Running Unsigned Code in Intel Management Engine",
+          "url": "https://www.youtube.com/watch?v=9fhNokIgBMU"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Maxim Goryachy",
       "label": "Chip Red Pill: How we Achieved the Arbitrary [micro]Code Execution inside Intel Atom CPUs",

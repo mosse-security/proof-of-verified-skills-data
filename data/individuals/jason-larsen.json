@@ -1,12 +1,12 @@
 {
   "name": "Jason Larsen",
-  "last-updated": "2026-10-11T09:38:39Z",
+  "last-updated": "2026-10-11T09:55:40Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,58 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Jason Larsen",
+      "label": "Miniaturization",
+      "description": "Too often researchers ignore the hard parts of SCADA hacking.  Too many presentations could be described as \"I got past the SCADA firewall so I win!!!\"  Little information is available on what to do after the attacker gains control of the process.  As a challenge, consider the scenario where  I just gave you control of a paint factory.  Now what?  The answer to that question is often specific to the process, but there are a number of generic techniques that can be discussed.  Often, designing an attack leads to interesting hacking and computer science challenges. Miniaturization is one of those problems.  Suppose an attacker wanted to hide in a PLC.  Suppose he wanted to hide all the way down in a pressure sensor.  Is such a thing possible?  The attack must be miniaturized to fit within the constraints of the embedded device and may need to be miniaturized into just a few kilobytes of memory. This is an interesting problem. The sensor has only a few kilobytes of memory and the attacker has a number of tasks to perform. During the attack he must spoof the original process to keep the operator happy.  He must estimate the state of the physical process by extracting artifacts from noisy sensor signals. He must also process those artifacts to extract the necessary constants to perform an attack. In order to keep the presentation real and understandable, it will walk through setting up an optimal pressure transient in a chemical piping system. (Commonly referred to as a water hammer). A set of novel algorithms will be describe that would allow someone to pull off such an attack.  A variant of \"runs analysis\" taken from statistics will be used to produce nearly perfect sensor noise without previous look at the sensor.  An algorithm derived from 3D graphics will be used to extract artifacts from noisy sensor data.  Finally scale-free geometry matching techniques will be used to process the artifacts into the time constants needed to pull off an attack.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "Miniaturization",
+          "url": "https://www.youtube.com/watch?v=bv_k3PEYpK0"
+        }
+      ],
+      "evidence": true,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jason Larsen",
+      "label": "Remote Physical Damage 101 - Bread and Butter Attacks",
+      "description": "It is possible to physically damage equipment through purely cyber means. Most of the time the attacker takes advantage of something specific to the CyberPhysical System (CPS) thats being targeted. As an example mixing in a cleaning agent during a production cycle can cause an unwanted chemical reaction. Attacking software has been described as \"unexpected computation\". Attacking a process is all about \"unexpected physics.\" Finding and exploiting process-specific flaws generally takes subject matter expertise in the victim process. However, there are some generic attacks that can be applied in a wide range of scenarios. I call these bread and butter attacks. They take advantage of common configurations of valves, pumps, pipe, etc. to achieve damage to the process. These scenarios can be used as a basis for a first look in a process audit. During a full audit, a subject matter expert will still need to be consulted. Nearly the entire budget for security processes from cyber attack is spent attempting to keep an attacker from gaining code execution in the process control network. This is roughly equivalent to the early 2000s where the industry attempted to find every possible buffer overflow in code. In 2015 were still finding them regularly. It wasn't until ALSR and DEP were introduced that defenders started making attacker work harder. In process control networks, defending the network is still key, but adding a few physical controls can greatly reduce the effectiveness of an attacker. It is hoped that this presentation can help stimulate discussion on how attacker can be mitigated after code execution is already achieved.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Remote Physical Damage 101 - Bread And Butter Attacks",
+          "url": "https://www.youtube.com/watch?v=Z592ygoJxSk"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Jason Larsen",
       "label": "Rocking the Pocket Book: Hacking Chemical Plant for Competition and Extortion",

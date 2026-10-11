@@ -1,12 +1,12 @@
 {
   "name": "Andy Davis",
-  "last-updated": "2026-10-11T09:38:35Z",
+  "last-updated": "2026-10-11T09:55:33Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 4,
+    "assessors": 2,
+    "with-evidence": 4,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,58 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 3
     }
   },
   "endorsements": [
+    {
+      "name": "Andy Davis",
+      "label": "Revealing Embedded Fingerprints: Deriving intelligence from USB stack interactions",
+      "description": "Embedded systems are everywhere, from TVs to aircraft, printers to weapons control systems. As a security researcher when you are faced with one of these “black boxes” to test, sometime in-situ, it is difficult to know where to start. However, if there is a USB port on the device there is useful information that can be gained. This talk is about using techniques to analyze USB stack interactions to provide information such as the OS running on the embedded device, the USB drivers installed and devices supported. The talk will also cover some of the more significant challenges faced by researchers attempting to exploit USB vulnerabilities using a Windows 8 USB bug recently discovered by the presenter (MS13-027) as an example.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - Revealing Embedded Fingerprints: Deriving intelligence - USB stack interactions",
+          "url": "https://www.youtube.com/watch?v=fzArDcRWOPE"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Andy Davis",
+      "label": "To dock or not to dock, that is the question: Using laptop docking stations as hardware-based attack platforms",
+      "description": "Laptop docking stations are widely used in the corporate world, often in hot-desking environments. They provide a neat connectivity solution for workers who are semi-mobile and therefore use laptops rather than desktop PCs. However, laptop docks are an attractive target for an attacker. They have access to the network, to all the ports on a laptop (and often some that aren't) and they are permanently connected to a power supply. But most importantly, they are considered to be trusted, \"dumb\" devices - they just connect all the ports on your laptop to the ports in the dock right? The IT department is more concerned about someone stealing your laptop, so they'll ask you to secure your laptop with a Kensington lock (but not necessarily to secure the dock). This talk is about how attackers can exploit the privileged position that laptop docking stations have within the corporate environment. It will also describe the construction (and show a demo) of a remotely controllable, covert hardware implant within a commonly used laptop docking station, but most importantly it will discuss some of the techniques that can be employed to detect such devices and mitigate the risks that they pose.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2013",
+      "url": "https://blackhat.com/archive/europe/2013/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat EU 2013 - To dock or not to dock: Using laptop docking stations as attack platforms",
+          "url": "https://www.youtube.com/watch?v=hLIyd-PU9o8"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Andy Davis",
       "label": "Revealing Embedded Fingerprints: Deriving intelligence from USB stack interactions",
@@ -46,6 +94,30 @@
       "year": 2013,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Andy Davis",
+      "label": "Broadcasting Your Attack: Security Testing DAB Radio in Cars",
+      "description": "Digital Audio Broadcasting (DAB) radio receivers can be found in many new cars and are in most cases integrated into an IVI (In-Vehicle Infotainment) system, which is connected to other vehicle modules via the CAN bus. Therefore, any vulnerabilities discovered in the DAB radio stack code could potentially result in an attacker exploiting the IVI system and pivoting their attacks toward more cyber-physical modules such as those concerned with steering or braking. This talk will discuss the complex protocol capabilities of DAB and DAB+ and describe the potential areas where security vulnerabilities in different implementations may exist. I will discuss the use of Software Defined Radio in conjunction with open source DAB transmission software to develop our security testing tool (DABble). Finally, I will talk about some of our findings, the implications of exploiting DAB-based vulnerabilities via a broadcast radio medium, and what this could mean for the automotive world.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Broadcasting Your Attack: Security Testing DAB Radio In Cars",
+          "url": "https://www.youtube.com/watch?v=ryNtz1nxmO4"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
       ]
     }
   ]

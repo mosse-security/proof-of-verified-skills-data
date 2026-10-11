@@ -1,12 +1,12 @@
 {
   "name": "Hyrum Anderson",
-  "last-updated": "2026-10-11T09:38:39Z",
+  "last-updated": "2026-10-11T09:55:39Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,34 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Hyrum Anderson",
+      "label": "Bot vs. Bot for Evading Machine Learning Malware Detection",
+      "description": "Machine learning offers opportunities to improve malware detection because of its ability to generalize to never-before-seen malware families and polymorphic strains.  This has resulted in its practical use for either primary detection engines or supplementary heuristic detections by AV vendors.  However, machine learning is also especially susceptible to evasion attacks by, ironically but unsurprisingly, other machine learning methods. We demonstrate how to evade machine learning malware detection by setting up an AI agent to compete against the malware detector that proactively probes it for blind spots that can be exploited. We focus on static Windows PE malware evasion, but the framework is generic and could be extended to other domains. Reinforcement learning has produced models that top human performance in a myriad of games. Using similar techniques, our PE malware evasion technique can be framed as a competitive game between our agent and the machine learning model detector.  Our agent inspects a PE file and selects a sequence of functionality-preserving mutations to the PE file which best evade the malware detection model.  The agent learns through the experience of thousands of \"games\" against the detector, which sequence of actions is most likely to result in an evasive variant.  Then, given any new PE malware that the agent has never before seen, the agent deploys a policy that results in a functionally-equivalent malware variant that has a good chance of evading the opposing machine learning detector. We conclude with key defender takeaways.  Teaching the machine learning detector about its blind spots is a simple and powerful idea.  However, correct implementation is as much art as it is science. Finally, we caution attendees that without an adversarially-minded approach, machine learning offers early successes, but can quickly become a porous defense in the face of sophisticated adversaries.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Bot vs. Bot for Evading Machine Learning Malware Detection",
+          "url": "https://www.youtube.com/watch?v=KTfrbvxKQwo"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Hyrum Anderson",
       "label": "Evading next-gen AV using artificial intelligence",

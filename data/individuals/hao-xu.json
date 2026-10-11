@@ -1,12 +1,12 @@
 {
-  "name": "Hao Xu",
-  "last-updated": "2026-10-11T08:59:44Z",
+  "name": "HAO XU",
+  "last-updated": "2026-10-11T09:55:38Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,58 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 3
     }
   },
   "endorsements": [
+    {
+      "name": "HAO XU",
+      "label": "Review and Exploit Neglected Attack Surfaces in iOS 8",
+      "description": "The security design of iOS significantly reduces the attack surfaces for iOS. Since iOS has gained increasing attention due to its rising popularity, most major attack surfaces in iOS such as mobile safari and IOKit kernel extensions have been well studied and tested. This talk will first review some previously known attacks against these surfaces, and then focus on analyzing and pointing out those neglected attack surfaces. Furthermore, this talk will explore how to apply fuzzing testing and whitebox code auditing to the neglected attack surfaces and share interesting findings. In particular, this talk will disclose POCs for a number of crashes and memory corruption errors in system daemons, which are even triggerable through XPC (a lightweight inter-process communication mechanism) by any app running in the container sandbox, and analyze and share the POC for an out-of-boundary memory access 0day in the latest iOS kernel.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Review And Exploit Neglected Attack Surfaces In iOS 8",
+          "url": "https://www.youtube.com/watch?v=E-1k3n0KjNI"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Hao Xu",
+      "label": "Pangu 9 Internals",
+      "description": "Pangu 9, the first (and only) untethered jailbreak tool for iOS 9, exploited a sequence of vulnerabilities in the iOS userland to achieve final arbitrary code execution in the kernel and persistent code signing bypass. Although these vulnerabilities were fixed in iOS 9.2, there are no details disclosed. This talk will reveal the internals of Pangu 9. Specifically, this talk will first present a logical error in a system service that is exploitable by any container app through XPC communication to gain arbitrary file read/write as mobile. Next, this talk will explain how Pangu 9 gains arbitrary code execution outside the sandbox through the system debugging feature. This talk will then elaborate a vulnerability in the process of loading the dyld_shared_cache file that enables Pangu 9 to achieve persistent code signing bypass. Finally, this talk will present a vulnerability in the backup-restore process that allows apps signed by a revoked enterprise certificate to execute without the need of the user's explicit approval of the certificate.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Pangu 9 Internals",
+          "url": "https://www.youtube.com/watch?v=vCLf7tdjabY"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Hao Xu",
       "label": "– Changing and Unchanged Things in Vulnerability Research",

@@ -1,9 +1,49 @@
 {
-  "last-run": "2026-10-11T09:45:21.709083Z",
-  "started-at": "2026-10-11T09:45:17.463742Z",
-  "duration-seconds": 4.245,
+  "last-run": "2026-10-11T09:58:34.857952Z",
+  "started-at": "2026-10-11T09:56:39.006878Z",
+  "duration-seconds": 115.851,
   "status": "ok",
   "scrapers": [
+    {
+      "scraper-id": "black-hat-briefings",
+      "assessor-id": "black-hat",
+      "pages": 15,
+      "endorsements": 1845,
+      "created": 15,
+      "skipped": 0,
+      "overwritten": 0,
+      "error": null
+    },
+    {
+      "scraper-id": "bluehat-sessions",
+      "assessor-id": "bluehat",
+      "pages": 6,
+      "endorsements": 145,
+      "created": 6,
+      "skipped": 0,
+      "overwritten": 0,
+      "error": null
+    },
+    {
+      "scraper-id": "cansecwest-presentations",
+      "assessor-id": "cansecwest",
+      "pages": 4,
+      "endorsements": 81,
+      "created": 4,
+      "skipped": 0,
+      "overwritten": 0,
+      "error": null
+    },
+    {
+      "scraper-id": "def-con-speakers",
+      "assessor-id": "def-con",
+      "pages": 34,
+      "endorsements": 4143,
+      "created": 34,
+      "skipped": 0,
+      "overwritten": 0,
+      "error": null
+    },
     {
       "scraper-id": "insomnihack-talks",
       "assessor-id": "insomnihack",
@@ -13,18 +53,35 @@
       "skipped": 0,
       "overwritten": 0,
       "error": null
+    },
+    {
+      "scraper-id": "offensivecon-talks",
+      "assessor-id": "offensivecon",
+      "pages": 8,
+      "endorsements": 177,
+      "created": 8,
+      "skipped": 0,
+      "overwritten": 0,
+      "error": null
     }
   ],
   "totals": {
-    "pages": 13,
-    "endorsements": 433,
-    "created": 13,
+    "pages": 80,
+    "endorsements": 6824,
+    "created": 80,
     "skipped": 0,
     "overwritten": 0
   },
   "evidence": {
-    "with-links": 222,
-    "without-links": 211
+    "with-links": 5087,
+    "without-links": 1737
   },
-  "validations": []
+  "validations": [
+    {
+      "name": "def-con-endorsements-nonzero",
+      "passed": true,
+      "actual": 4143,
+      "minimum": 1
+    }
+  ]
 }

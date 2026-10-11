@@ -1,12 +1,12 @@
 {
   "name": "Yolan Romailler",
-  "last-updated": "2026-10-11T09:38:48Z",
+  "last-updated": "2026-10-11T09:55:51Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,34 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 1
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Yolan Romailler",
+      "label": "Automated Testing of Crypto Software Using Differential Fuzzing",
+      "description": "We present a new and efficient approach to systematic testing of cryptographic software: differential fuzzing. Unlike general purpose software fuzzing such as afl, differential fuzzing doesn't aim to find memory corruption bugs (although they might come as a by-product), but to find logic bugs. Compared to test vectors, differential fuzzing provides greater code coverage. Compared to formal verification, differential fuzzing is easier to apply, both for testers and developers. We'll release CDF, a tool that implements differential fuzzing for most common cryptographic APIs: RSA encryption and signatures, elliptic-curve cryptography, or any symmetric-key schemes through a unified interface. CDF combines differential fuzzing with a number of unit tests to detect vulnerabilities specific to the cryptographic functions tested. It can also detect timing leaks, thanks to state-of-the-art leakage detection techniques. CDF is coded in Go, and is trivially portable to various CPU architectures. Unlike other tools, CDF runs its tests in a totally black-box fashion: no source code is needed, you only need an executable file such as a binary program, Python script, or shell script calling a remote service. We ran CDF on high-profile, widely used crypto software components. CDF discovered issues in a number of libraries including Go's crypto package, OpenSSL, and mbedTLS.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Automated Testing of Crypto Software Using Differential Fuzzing",
+          "url": "https://www.youtube.com/watch?v=04Rzu7peZU4"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Yolan Romailler",
       "label": "Reaping and breaking keys at scale: when crypto meets big data",

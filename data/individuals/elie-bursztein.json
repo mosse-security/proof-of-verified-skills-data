@@ -1,6 +1,6 @@
 {
   "name": "Elie Bursztein",
-  "last-updated": "2026-10-11T09:38:37Z",
+  "last-updated": "2026-10-11T09:55:37Z",
   "biography": "",
   "contact": [
     {
@@ -9,9 +9,9 @@
     }
   ],
   "stats": {
-    "endorsements": 7,
-    "assessors": 1,
-    "with-evidence": 7,
+    "endorsements": 11,
+    "assessors": 2,
+    "with-evidence": 11,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -25,7 +25,7 @@
       "red-teaming": 0,
       "reverse-engineering": 1,
       "vulnerability-research": 6,
-      "unknown": 1
+      "unknown": 5
     }
   },
   "endorsements": [
@@ -123,6 +123,102 @@
       ],
       "evidence": true,
       "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "Does Dropping USB Drives in Parking Lots and Other Places Really Work?",
+      "description": "At every Black Hat you will inevitably hear hackers boasting that they can break into any company by dropping a malicious USB drive in the company's parking lot. This anecdote has even entered mainstream culture and was prominently featured in the Mr. Robot TV series. However despite its popularity, there has been no rigorous study of whether the attack works or is merely an urban legend. To answer this burning question and assess the actual threat posed by malicious USB drives, we dropped nearly 300 USB sticks on the University of Illinois Urbana-Champaign campus and measured who plugged in the drives. And oh boy how effective that was! Of the drives we dropped, 98% were picked up and for 48% of the drives, someone not only plugged in the drive but also clicked on files. Join us for this talk if you are interested in physical security and want to learn more about the effectiveness of arguably the most well known anecdote of our community. We will provide an in-depth analysis of which factors influence users to pick up a drive, why users plug them in, and demo a new tool that can help mitigate USB attacks.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Does Dropping USB Drives in Parking Lots and Other Places Really Work?",
+          "url": "https://www.youtube.com/watch?v=XJCQBqTmGUU"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "Attacking Encrypted USB Keys the Hard(ware) Way",
+      "description": "Ever wondered if your new shiny AES hardware-encrypted USB device really encrypts your data - or is just a fluke? If you have, come to our talk to find out if those products live up to the hype and hear about the results of the audit we conducted on multiples USB keys and hard drives that claim to securely encrypt data. In this talk, we will present our methodology to assess \"secure\" USB devices both from the software and the hardware perspectives. We will demonstrate how this methodology works in practice via a set of case-studies. We will demonstrate some of the practical attacks we found during our audit so you will learn what type of vulnerability to look for and how to exploit them. Armed with this knowledge and our tools, you will be able to evaluate the security of the USB device of your choice.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Attacking Encrypted USB Keys the Hard(ware) Way",
+          "url": "https://www.youtube.com/watch?v=jVKl3GuazEs"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "How We Created the First SHA-1 Collision and What it Means for Hash Security",
+      "description": "In February 2017, we announced the first SHA-1 collision. This collision combined with a clever use of the PDF format allows attackers to forge PDF pairs that have identical SHA-1 hashes and yet display different content. This attack is the result of over two years of intense research. It took 6500 CPU years and 110 GPU years of computations which is still 100,000 times faster than a brute-force attack. In this talk, we recount how we found the first SHA-1 collision. We delve into the challenges we faced from developing a meaningful payload, to scaling the computation to that massive scale, to solving unexpected cryptanalytic challenges that occurred during this endeavor. We discuss the aftermath of the release including the positive changes it brought and its unforeseen consequences. For example it was discovered that SVN is vulnerable to SHA-1 collision attacks only after the WebKit SVN repository was brought down by the commit of a unit-test aimed at verifying that Webkit is immune to collision attacks. Building on the Github and Gmail examples we explain how to use counter-cryptanalysis to mitigate the risk of a collision attacks against software that has yet to move away from SHA-1. Finally, we look at the next generation of hash functions and what the future of hash security holds.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "How We Created the First SHA-1 Collision and What it Means for Hash Security",
+          "url": "https://www.youtube.com/watch?v=Zl1TZJGfvPo"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "Tracking Ransomware End to End",
+      "description": "A niche term just two years ago, ransomware has rapidly risen to fame in the last year, infecting hundreds of thousands of users, locking their documents, and demanding hefty ransoms to get them back. In doing so, it has become one of the largest cybercrime revenue sources, with heavy reliance on Bitcoins and Tor to confound the money trail. In this talk, we demonstrate a method to track the ransomware ecosystem at scale, from distribution sites to the cash-out points. By processing 100k+ samples, we shed light on the economics and infrastructure of the largest families, and we provide insight on their revenue and conversion rates. With a deep dive in the two largest groups, we show the details of their operation. Finally, we uncover the cash-out points, tracking how the money exits the bitcoin network, enabling the authorities to pick up the money trail using conventional financial tracing means.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Tracking Ransomware End to End",
+          "url": "https://www.youtube.com/watch?v=RV2tcc6e168"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
       "domains": [
         "unknown"
       ]

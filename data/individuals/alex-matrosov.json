@@ -1,6 +1,6 @@
 {
   "name": "Alex Matrosov",
-  "last-updated": "2026-10-11T09:38:35Z",
+  "last-updated": "2026-10-11T09:55:32Z",
   "biography": "",
   "contact": [
     {
@@ -13,10 +13,10 @@
     }
   ],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 0,
+    "endorsements": 6,
+    "assessors": 4,
+    "with-evidence": 5,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 1,
@@ -29,10 +29,77 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 5
     }
   },
   "endorsements": [
+    {
+      "name": "Alex Matrosov",
+      "label": "Betraying the BIOS: Where the Guardians of the BIOS are Failing",
+      "description": "For UEFI firmware, the barbarians are at the gate -- and the gate is open. On the one hand, well-intentioned researchers are increasingly active in the UEFI security space; on the other hand, so are attackers. Information about UEFI implants -- by HackingTeam and state-sponsored actors alike -- hints at the magnitude of the problem, but are these isolated incidents, or are they indicative of a more dire lapse in security? Just how breachable is the BIOS? In this presentation, I'll explain UEFI security from the competing perspectives of attacker and defender. I'll cover topics including how hardware vendors have left SMM and SPI flash memory wide open to rootkits; how UEFI rootkits work, how technologies such as Intel Boot Guard and BIOS Guard (and the separate Authenticated Code Module CPU) aim to kill them; and weaknesses in these protective technologies. There are few public details; most of this information has been extracted by reverse engineering.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Betraying the BIOS: Where the Guardians of the BIOS are Failing",
+          "url": "https://www.youtube.com/watch?v=Dfl2JI2eLc8"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Alex Matrosov",
+      "label": "Betraying the BIOS: Where the Guardians of the BIOS are Failing",
+      "description": "Betraying the BIOS: Where the Guardians of the BIOS are Failing",
+      "type": "presentation",
+      "assessor": "Microsoft BlueHat",
+      "assessor-id": "bluehat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "BlueHat 2017",
+      "url": "https://www.microsoft.com/en-us/msrc/blog/2017/09/announcing-the-bluehat-v17-schedule",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Alex Matrosov",
+      "label": "Betraying the BIOS: Going Deeper into BIOS Guard Implementations",
+      "description": "Betraying the BIOS: Going Deeper into BIOS Guard Implementations",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2018",
+      "url": "https://www.offensivecon.org/agenda/speakers/2018/alex-matrosov.html",
+      "evidence-links": [
+        {
+          "title": "OffensiveCon18 - Alex Matrosov - Betraying the BIOS: Going Deeper into BIOS Guard Implementations",
+          "url": "https://www.youtube.com/watch?v=kSQVGFbTfqE"
+        }
+      ],
+      "evidence": true,
+      "year": 2018,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Alex Matrosov",
       "label": "Glitching RISC-V chips: MTVEC corruption for hardening ISA",
@@ -56,6 +123,54 @@
       "domains": [
         "cyber-defense",
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Alex Matrosov",
+      "label": "UEFI Firmware Vulnerabilities: Past, Present and Future",
+      "description": "UEFI Firmware Vulnerabilities: Past, Present and Future",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2022",
+      "url": "https://www.offensivecon.org/agenda/2022.html",
+      "evidence-links": [
+        {
+          "title": "OffensiveCon24 - Solar Designer - Keynote - Password Cracking: Past, Present, Future",
+          "url": "https://www.youtube.com/watch?v=cNrMnveW9SA"
+        }
+      ],
+      "evidence": true,
+      "year": 2022,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Alex Matrosov",
+      "label": "A Dark Side of UEFI: Cross-Silicon Exploitation",
+      "description": "A Dark Side of UEFI: Cross-Silicon Exploitation",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2023",
+      "url": "https://www.offensivecon.org/agenda/2023.html",
+      "evidence-links": [
+        {
+          "title": "OffensiveCon23 -  Alex Matrosov & Alex Ermolov - A Dark Side of UEFI: Cross-Silicon Exploitation",
+          "url": "https://www.youtube.com/watch?v=9dfISRD6hwk"
+        }
+      ],
+      "evidence": true,
+      "year": 2023,
+      "domains": [
+        "unknown"
       ]
     }
   ]

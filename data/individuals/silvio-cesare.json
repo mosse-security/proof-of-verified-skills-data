@@ -1,12 +1,12 @@
 {
   "name": "Silvio Cesare",
-  "last-updated": "2026-10-11T09:38:45Z",
+  "last-updated": "2026-10-11T09:55:48Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 4,
+    "assessors": 2,
+    "with-evidence": 4,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,7 +20,7 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 3
     }
   },
   "endorsements": [
@@ -47,6 +47,86 @@
       "domains": [
         "grc",
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Silvio Cesare",
+      "label": "Clonewise - Automated Package Clone Detection",
+      "description": "Developers sometimes statically link libraries from other projects, maintain an internal copy of other software or fork development of an existing project. This practice can lead to software vulnerabilities  when the embedded code is not kept up to date with upstream sources. As a result, manual techniques have been applied by Linux vendors to track embedded code and identify vulnerabilities. We propose an automated solution to identify embedded packages, which we call package clones, without any prior knowledge of these relationships. Our approach identifies similar source files based on file names and content to identify elationships between packages. We extract these and other features to perform statistical classification using machine learning. We evaluated our automated system named Clonewise against Debian's manually created database.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2012",
+      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2012 - Clonewise: Automated Package Clone Detection",
+          "url": "https://www.youtube.com/watch?v=hE4TOal3jnY"
+        }
+      ],
+      "evidence": true,
+      "year": 2012,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Silvio Cesare",
+      "label": "Bugalyze.com - Detecting Bugs Using Decompilation and Data Flow Analysis",
+      "description": "Bugwise is a free online web service at www.bugalyze.com to perform static analysis of binary executables to detect software bugs and vulnerabilities. It detects bugs using a combination of decompilation to recover high level information, and data flow analysis to discover issues such as use-after-frees and double frees. Bugwise has been developed over the past several years and is implemented as a series of modules in a greater system that performs other binary analysis tasks such as malware detection. This entire system consists of more than 100,000 lines of C++ code and a scalable load balanced multi-node Amazon EC2 cluster. In this talk, I will explain how Bugwise works. The system is still in the development stage but has successfully found a number of real bugs and vulnerabilities in Debian Linux. This includes double free, use-after-free, and over 50 getenv(,strcpy) bugs statically found from scanning the entire Debian repository.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - Bugalyze.com - Detecting Bugs Using Decompilation and Data Flow Analysis",
+          "url": "https://www.youtube.com/watch?v=jgKwNzxm8q4"
+        },
+        {
+          "title": "Black Hat EU 2003 -  Data Flow Analysis",
+          "url": "https://www.youtube.com/watch?v=llJwWZ0p4F4"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Silvio Cesare",
+      "label": "Breaking the Security of Physical Devices",
+      "description": "In this talk, I look at a number of household or common devices and things, including a popular model car and physical security measures such as home alarm systems. I then proceed to break the security of those devices. The keyless entry of a 2004/2005 popular make and widely used car is shown to be breakable with predictable rolling codes. The actual analysis involved not only mathematics and software defined radio, but the building of a button pushing robot to press the keyless entry to capture data sets that enable the mathematical analysis. Software defined radio is not only used in the kelyess entry attack, but in simple eavesdropping attacks against 40mhz analog baby monitors. But that's an easy attack. A more concering set of attacks are against home alarm systems. Practically all home alarm systems that had an RF remote to enable and disable the system were shown to used fixed codes. This meant that a replay attack could disable the alarm. I built an Arduino and Raspberry Pi based device for less than $50 dollars that could be trained to capture and replay those codes to defeat the alarms. I also show that by physically tampering with a home alarm system by connecting a device programmer, the eeprom data off the alarm's microcontroller can be read. This means that an attacker can read the secret passcode that disables or enables the alarm. In summary, these attacks are simple but effective in physical devices that are common in today's world. I will talk about ways of mitigating these attacks, which essentially comes down to avoiding the bad and buying the good. But how do you know what's the difference? Come to this talk to find out.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - Let's get physical: Breaking home security systems & bypassing controls",
+          "url": "https://www.youtube.com/watch?v=O4ya3z-PCQs"
+        },
+        {
+          "title": "Breaking the Security of Physical Devices by Silvio Cesare",
+          "url": "https://www.youtube.com/watch?v=TMpHB-pWseM"
+        }
+      ],
+      "evidence": true,
+      "year": 2014,
+      "domains": [
+        "unknown"
       ]
     }
   ]

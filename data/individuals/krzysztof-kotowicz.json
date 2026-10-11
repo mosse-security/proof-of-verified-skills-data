@@ -1,13 +1,13 @@
 {
   "name": "Krzysztof Kotowicz",
-  "last-updated": "2026-10-11T09:26:27Z",
+  "last-updated": "2026-10-11T09:55:42Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 1,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,10 +20,29 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 3
     }
   },
   "endorsements": [
+    {
+      "name": "Krzysztof Kotowicz",
+      "label": "Advanced Chrome Extension Exploitation - Leveraging API Powers for the Better Evil",
+      "description": "Browser exploitation can seem to be a nearly unachievable task these days. ASLR, DEP, segregated processes and sandboxes have proven to be effective in abating exploits by attackers. Our expectation of browser security is so high, that in addition to bug bounty programs, competitions such as Pwn2Own and Pwnium have been formed around the core concept of weeding out dangerous bugs.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2012",
+      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2012,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Krzysztof Kotowicz",
       "label": "Sébastien Bombal",
@@ -39,6 +58,30 @@
       "evidence-links": [],
       "evidence": false,
       "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Krzysztof Kotowicz",
+      "label": "Don't Trust the DOM: Bypassing XSS Mitigations via Script Gadgets",
+      "description": "Cross-Site Scripting is a constant problem of the Web platform. Over the years many techniques have been introduced to prevent or mitigate XSS. Most of these techniques, thereby, focus on script tags and event handlers. HTML sanitizers, for example, aim at removing potentially dangerous tags and attributes. Another example is the Content Security Policy, which forbids inline event handlers and aims at white listing of legitimate scripts. In this talk, we present a novel Web hacking technique that enables an attacker to circumvent most XSS mitigations. In order to do so, the attacker abuses so-called script gadgets. A script gadget Is a legitimate piece of JavaScript in a page that reads elements from the DOM via selectors and processes them in a way that results in script execution. To abuse a script gadget, the attacker injects a benign looking element into the page that matches the gadget's selector. Subsequently, the gadget selects the benign-looking element and executes attacker-controlled scripts. As the initially injected element is benign it passes HTML sanitizers and security policies. The XSS only surfaces when the gadget mistakenly elevates the privileges of the element. In this talk, we will demonstrate that these gadgets are present in almost all modern JavaScript libraries, APIs and applications. We will present several case studies and real-world examples that demonstrate that many mitigation techniques are not suited for modern applications. As a result, we argue that the Web should start focusing more on preventive mechanisms instead of mitigations.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Breaking XSS Mitigations Via Script Gadgets",
+          "url": "https://www.youtube.com/watch?v=i6Ug8O23DMU"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
       "domains": [
         "unknown"
       ]

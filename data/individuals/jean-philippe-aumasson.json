@@ -1,12 +1,12 @@
 {
   "name": "Jean-Philippe Aumasson",
-  "last-updated": "2026-10-11T09:42:25Z",
+  "last-updated": "2026-10-11T09:55:40Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 6,
+    "assessors": 3,
+    "with-evidence": 5,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,134 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 6
     }
   },
   "endorsements": [
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "Password Hashing: the Future is Now",
+      "description": "Passwords are hashed everywhere: operating systems, smartphones, web services, disk encryption tools, SSH private keys, etc. Hashing passwords mitigates the impact of a compromised database by forcing attackers to bruteforce passwords. Bruteforce is easier when the hash function is not \"salted\", fast to evaluate, and easy to implement as multiple parallel instances on GPUs or multi-core systems. However existing solutions are not satisfactory, and the huge majority of systems rely on weak hashes (eg. leaks from Sony, LinkedIn, or more recently Evernote).",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - Password Hashing: the Future is Now",
+          "url": "https://www.youtube.com/watch?v=fhJN44Wmiq0"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "Quantum Computers vs. Computers Security",
+      "description": "We've heard about hypothetical quantum computers breaking most of the public-key crypto in use—RSA, elliptic curves, etc.—and we've heard about \"post-quantum\" systems that resist quantum computers. We also heard about quantum computers' potential to solve other problems considerably faster than classical computers, such as discrete optimization, machine learning, or code verification problems. And we heard about a commercial quantum computer, and we heard vendors of quantum key distribution or quantum random number generators promise us security as solid as the laws of physics. Still, most of us are clueless regarding: How quantum computers work and why they could solve certain problems faster than classical computers? What are the actual facts and what is FUD, hype, or journalistic exaggeration? Could quantum computers help in defending classical computers and networks against intrusions? Is it worth spending money in post-quantum systems, quantum key distribution, or in purchasing or developing of a quantum computer? Will usable quantum computers be built in the foreseeable future? This talk gives honest answers to those questions, based on the latest research, on analyses of the researchers' and vendors' claims, and on a cost-benefit-risk analyses. We'll expose the fundamental principles of quantum computing in a way comprehensible by anyone, and we'll skip the technical details that require math and physics knowledge. Yet after this talk you'll best be able to assess the risk of quantum computers, to debunk misleading claims, and to ask the right questions.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Aumasson",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 -  Jean Philippe Aumasson - Quantum Computers vs Computers Security",
+          "url": "https://www.youtube.com/watch?v=kIWcpSzW4xY"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "SGX Secure Enclaves in Practice: Security and Crypto Review",
+      "description": "Software Guard Extensions (SGX) is a technology available in Intel(R) CPUs released in autumn 2015. SGX allows a remote server to process a client's secret data within a software enclave that hides the secrets from the operating system, hypervisor, and even BIOS or chipset manager, while giving cryptographic evidence to the client that the code has been executed correctly the very definition of secure remote computation. This talk is the first public assessment of SGX based on real SGX-enabled hardware and on Intel's software development environment. While researchers already scrutinized Intel's partial public documentation, many properties can only be verified and documented by working with the real thing: What's really in the development environment? Which components are implemented in microcode and which are in software? How can developers create secure enclaves that won't leak secrets? Can the development environment be trusted? How to debug and analyze SGX software? What crypto schemes are used in SGX critical components? How reliable are they? How safe are their implementations? Based on these newly documented aspects, we'll assess the attack surface and real risk for SGX users. We'll then present and demo proofs-of-concept of cryptographic functionalities leveraging SGX: secure remote storage and delegation (what fully homomorphic encryption promises, but is too slow to put in practice), and reencryption. We'll see how basic architectures can deliver powerful crypto functionalities with a wide range of applications. We'll release code as well as a tool to extract and verify an enclave's metadata.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "SGX Secure Enclaves in Practice: Security and Crypto Review",
+          "url": "https://www.youtube.com/watch?v=0ZVFy4Qsryc"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "Automated Testing of Crypto Software Using Differential Fuzzing",
+      "description": "We present a new and efficient approach to systematic testing of cryptographic software: differential fuzzing. Unlike general purpose software fuzzing such as afl, differential fuzzing doesn't aim to find memory corruption bugs (although they might come as a by-product), but to find logic bugs. Compared to test vectors, differential fuzzing provides greater code coverage. Compared to formal verification, differential fuzzing is easier to apply, both for testers and developers. We'll release CDF, a tool that implements differential fuzzing for most common cryptographic APIs: RSA encryption and signatures, elliptic-curve cryptography, or any symmetric-key schemes through a unified interface. CDF combines differential fuzzing with a number of unit tests to detect vulnerabilities specific to the cryptographic functions tested. It can also detect timing leaks, thanks to state-of-the-art leakage detection techniques. CDF is coded in Go, and is trivially portable to various CPU architectures. Unlike other tools, CDF runs its tests in a totally black-box fashion: no source code is needed, you only need an executable file such as a binary program, Python script, or shell script calling a remote service. We ran CDF on high-profile, widely used crypto software components. CDF discovered issues in a number of libraries including Go's crypto package, OpenSSL, and mbedTLS.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Automated Testing of Crypto Software Using Differential Fuzzing",
+          "url": "https://www.youtube.com/watch?v=04Rzu7peZU4"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Jean-Philippe Aumasson",
+      "label": "Attacking and Defending Blockchains: From Horror Stories to Secure Wallets",
+      "description": "Attacking and Defending Blockchains: From Horror Stories to Secure Wallets",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2018",
+      "url": "https://blackhat.com/archive/europe/2018/briefings/schedule/",
+      "evidence-links": [
+        {
+          "title": "Attacking and Defending Blockchains: From Horror Stories to Secure Wallets",
+          "url": "https://www.youtube.com/watch?v=HfzhGo2KKJM"
+        },
+        {
+          "title": "Attacking and Defending Blockchains: From Horror Stories to Secure Wallets",
+          "url": "https://www.youtube.com/watch?v=OBzJVGkebI4"
+        }
+      ],
+      "evidence": true,
+      "year": 2018,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Jean-Philippe Aumasson",
       "label": "Too much crypto",

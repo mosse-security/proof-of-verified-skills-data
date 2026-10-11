@@ -1,12 +1,12 @@
 {
   "name": "Paul Vixie",
-  "last-updated": "2026-10-11T09:38:43Z",
+  "last-updated": "2026-10-11T09:55:46Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 6,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 3,
     "by-domain": {
       "cloud-security": 0,
@@ -20,7 +20,7 @@
       "red-teaming": 0,
       "reverse-engineering": 1,
       "vulnerability-research": 1,
-      "unknown": 2
+      "unknown": 5
     }
   },
   "endorsements": [
@@ -78,6 +78,78 @@
       "evidence-links": [],
       "evidence": false,
       "year": 2012,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Paul Vixie",
+      "label": "Abuse of CPE Devices and Recommended Fixes",
+      "description": "Consumer Premise Equipment (CPE) has become common, nearly ubiquitous, home and small office attire. Many homes have a router/modem device that mediates access between home devices and the ISP. Abuse of these devices is particularly problematic both because the owner has difficulty interfacing with (and fixing) the device and because the static code provided by the vendor is generally rotted (and vulnerable) by the time the consumer unpacks the device. The poor management of CPE has created an Internet-scale problem and potential for abuse. For example, the plurality of open DNS resolvers accessible on the Internet are on medium-speed DSL connections, the sorts of connections leased to home and small-business users. These devices are available for abuse in reflected and amplified DDoS attacks. The vulnerable devices themselves can also be leveraged against the consumer in middleperson attacks. In this presentation, we quantify this problem and provide recommendations for how the Internet community can address this public-health-like problem.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "Abuse of CPE Devices and Recommended Fixes",
+          "url": "https://www.youtube.com/watch?v=ZZZzgT79Bn8"
+        }
+      ],
+      "evidence": true,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Paul Vixie",
+      "label": "New (and Newly-Changed) Fully Qualified Domain Names:  A View of Worldwide Changes to the Internets DNS",
+      "description": "The Domain Name System (DNS) is highly dynamic, and changes to it are continually taking place. For example, new base domain names get registered and used for the first time, new resource records (and new resource record types such as MX, PTR, AAAA) get created within those base domains, and resource records get set to new values. A single domain can have up to 100 resource records returned at once. Historically, all of those changes were largely overlooked in the flood of DNS traffic available to security analysts and DNS researchers from DNS-data sharing sites until now. In this presentation, Dr. Paul Vixie will discuss a ground-breaking approach that tames this information fire hose - the creation of two winnowed, real-time data streams, one consisting of newly-observed fully-qualified domain names, and another of DNS changes. These new streams make it easy to identify numerous security-relevant DNS changes. For example, if a prominent web server is subject to a DNS poisoning attack or its name servers are changed without authorization at the registrar, that hijacked web server will show up in these streams as having experienced a \"DNS change.\" Spam sites that formerly used DNS wildcarding in an attempt to \"fly under the radar\" are now easily identified, since each of their new pseudo-random Fully Qualified Domain Names (FQDN)s gets tagged as being new. Similarly, operators of fast flux or double fast flux networks can no longer hide. Dr. Vixie will provide practical examples of how this innovative new approach will allow for more timely and effective approaches to combating malicious Internet behavior, including significantly improving brand protection and anti-phishing controls, and increasing situational awareness. He will also discuss limitations associated with this approach, including filtering choices, and limitations to the paradigm and his talk will include a demo with Q&A.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2015",
+      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
+      "evidence-links": [
+        {
+          "title": "New (And Newly - Changed) Fully Qualified Doman Names: A View of Worldwide Changes to DNS",
+          "url": "https://www.youtube.com/watch?v=onvpji8fZBU"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Paul Vixie",
+      "label": "Targeted Takedowns:  Minimizing Collateral Damage Using Passive DNS",
+      "description": "When civil investigators and law enforcement officers aggressively pursue and takedown cyber criminal enterprises, that undertaking should be subject to an important limitation: their online operations must be narrowly and precisely targeted so as to avoid harming innocent third parties. For example, when evaluating an abused domain name for seizure, investigators need to ensure that innocent third parties are not also using that domain. In his presentation, I will provide an overview of Passive DNS and how it can help investigators to reduce or eliminate collateral damage during takedowns, thereby avoiding negative publicity and potentially costly settlements.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Targeted Takedowns: Minimizing Collateral Damage Using Passive DNS",
+          "url": "https://www.youtube.com/watch?v=yLeS2br3zY8"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
       "domains": [
         "unknown"
       ]

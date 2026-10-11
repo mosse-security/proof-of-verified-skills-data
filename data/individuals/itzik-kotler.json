@@ -1,12 +1,12 @@
 {
   "name": "Itzik Kotler",
-  "last-updated": "2026-10-11T09:38:39Z",
+  "last-updated": "2026-10-11T09:55:39Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 5,
-    "assessors": 1,
-    "with-evidence": 4,
+    "endorsements": 7,
+    "assessors": 2,
+    "with-evidence": 6,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -20,7 +20,7 @@
       "red-teaming": 1,
       "reverse-engineering": 0,
       "vulnerability-research": 4,
-      "unknown": 1
+      "unknown": 3
     }
   },
   "endorsements": [
@@ -90,6 +90,54 @@
       "domains": [
         "red-teaming",
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Itzik Kotler",
+      "label": "Crippling HTTPS with Unholy PAC",
+      "description": "You're in a potentially malicious network (free WiFi, guest network, or maybe your own corporate LAN). You're a security conscious netizen so you restrict yourself to HTTPS (browsing to HSTS sites and/or using a \"Force TLS/SSL\" browser extension). All your traffic is protected from the first byte. Or is it? We will demonstrate that, by forcing your browser/system to use a malicious PAC (Proxy AutoConfiguration) resource, it is possible to leak HTTPS URLs. We will explain how this affects the privacy of the user and how credentials/sessions can be stolen. We will present the concept of \"PAC Malware\" (a malware which is implemented only as Javascript logic in a PAC resource) that features: a 2-way communication channel between the PAC malware and an external server, contextual phishing via messages, denial-of-service options, and sensitive data extraction from URI's. We present a comprehensive browser PAC feature matrix and elaborate more about this cross-platform (Linux, Windows, Mac) and cross-browser (IE, Chrome, Safari) threat.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Crippling HTTPs With Unholy PAC",
+          "url": "https://www.youtube.com/watch?v=7q40RLilXKw"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Itzik Kotler",
+      "label": "The Adventures of AV and the Leaky Sandbox",
+      "description": "Everyone loves cloud-AV. It incorporates up-to-date intelligence from multiple global sources (\"wisdom of the clouds\"), and (in theory) it has small footprint. There's simply no downside in moving to cloud-AV, right? Consider a high-security enterprise with strict egress filtering, that is - endpoints have no direct Internet connection, or the endpoints' connection to the Internet is restricted to hosts used by their legitimately installed software. Let's say there's malware running on one of the endpoints with all the privileges it needs. This is bad of course, but thankfully, the last line of defense is there - the malware can't really exfiltrate data to the Internet, due to the strict Internet connection policy enforcement. Now, let's also assume that this enterprise has cloud-enhanced anti-virus (AV) agents installed on its endpoints. You'd think that this can only improve the security of the enterprise. You'd argue that if malware is already running on the endpoint with full privileges, then an AV agent can't degrade the security of the endpoint. And you'd be completely wrong. In this presentation, we describe and demonstrate a novel technique for exfiltrating data from highly secure enterprises whose endpoints have no direct Internet connection, or whose endpoints' connection to the Internet is restricted to hosts used by their legitimately installed software. Assuming the endpoint has a cloud-enhanced antivirus product installed, we show that if the anti-virus product employs an Internet-connected sandbox in its cloud, it in fact facilitates such exfiltration. We release the tool we developed to implement the exfiltration technique, and we provide real-world results from several prominent AV products. We also provide data and insights on those AV in-the-cloud sandboxes. Finally, we address the issues of how to further enhance the attack, and how can cloud-based AV vendors mitigate it.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "The Adventures of AV and the Leaky Sandbox",
+          "url": "https://www.youtube.com/watch?v=hVIP_LF1UXU"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
       ]
     },
     {

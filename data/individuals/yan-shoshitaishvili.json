@@ -1,13 +1,13 @@
 {
   "name": "Yan Shoshitaishvili",
-  "last-updated": "2026-10-11T09:38:48Z",
+  "last-updated": "2026-10-11T09:55:51Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
-    "without-evidence": 0,
+    "endorsements": 4,
+    "assessors": 2,
+    "with-evidence": 3,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,10 +20,34 @@
       "red-teaming": 1,
       "reverse-engineering": 1,
       "vulnerability-research": 2,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Yan Shoshitaishvili",
+      "label": "Using Static Binary Analysis to Find Vulnerabilities and Backdoors in Firmware",
+      "description": "Over the last few years, as the world has moved closer to realizing the idea of the Internet of Things, an increasing amount of the things with which we interact every day have been replaced with embedded devices. These include previously non-electronic devices, such as locks, light switches, and utility meters (such as electric meters and water meters), as well as increasingly more complex and ubiquitous devices, such as network routers and printers. Other devices are becoming increasingly intelligent as well. Modern printers and cameras include complex social media functionality, smart televisions are increasingly including Internet-based entertainment options, and even previously-simple devices, such as watches and glasses are being augmented with complex embedded components. The increasingly-complex systems that drive these devices have one thing in common: they must all communicate to carry out their intended functionality. Smart TVs communicate with (and accept communication from) online media services, smart locks allow themselves to be unlocked by phones or keypads, digital cameras contact social media services, and smart meters communicate with the users utility company. Such communication, along with other functionalities of the device, is handled by software (termed firmware) embedded in the device. Because these devices often receive privacy-sensitive information from their sensors (such as what a user is watching, or how much electricity they are using), or carry out a safety-critical function (such as actuators that lock the front door), errors in the devices firmware, whether present due to an accidental mistake or purposeful malice, can have serious and varying implications in both the digital and physical world. Firmware, like any piece of software, is susceptible to a wide range of software errors. These include memory corruption flaws, command injection vulnerabilities and application logic flaws. Another common error seen in firmware is a logic flaw called an authentication bypass or less formally, a backdoor. An authentication bypass occurs when an error in the authentication routine of a device allows a user to perform actions for which they would otherwise need to know a set of credentials. In other cases, backdoors are deliberately inserted by the manufacturer to get access to deployed devices for maintenance and upgrade. Detecting vulnerabilities and backdoors in firmware is challenging for several reasons. To begin with, the devices in question are usually proprietary, and therefore the source code of the firmware is not available. While this is a problem common to analyzing binary software in general, firmware takes it one step further: firmware often takes the form of a single binary image that runs directly on the hardware of the device, without an underlying operating system. Because of this, OS and library abstractions do not exist in some cases, and are non-standard or undocumented in others, and it is frequently unknown how to properly initialize the runtime environment of the firmware sample (or even, at what offset to load the binary and at what address to begin execution). We term such firmware as binary blob firmware. These blobs can be very large, and therefore any analysis tool must be able to handle such complex firmware. Additionally, embedded devices frequently require their firmware to be cryptographically signed by the manufacturer, making modification of the firmware on the device for analysis purposes infeasible. In this presentation, we will talk about the challenges of performing automated vulnerability analysis and backdoor finding in firmware. Then, we report on a binary static analysis system, called Angr, that automates most of the process of searching firmware binaries for the presence of flaws. To the best of our knowledge, Angr is the first firmware analysis system working at the binary level, in a scalable manner, and with no requirement to instrument code on the original device. To this end, Angr utilizes advanced program analysis techniques to analyze binary code in complex firmware of diverse hardware platforms, and it automates much of the process of identifying occurrences of buffer overflow and authentication bypass vulnerabilities. The tool uses novel techniques to improve the scalability of the analysis, which we will explain during the presentation. This includes a combination of more traditional static program analysis, value set analysis (VSA), and symbolic execution. The presentation will conclude with a few examples of vulnerabilities that our tool has discovered in firmware samples. We also plan to run a live demo that highlights the capabilities of our system.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Using Static Binary Analysis To Find Vulnerabilities And Backdoors In Firmware",
+          "url": "https://www.youtube.com/watch?v=Fi_S2F7ud_g"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Yan Shoshitaishvili",
       "label": "Angry Hacking - the next generation of binary analysis",
@@ -76,6 +100,25 @@
       "year": 2015,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Yan Shoshitaishvili",
+      "label": "DIFUZZing Android Kernel Drivers",
+      "description": "As the rest of the Android security infrastructure improves, the Android/Linux kernel is well on its way to becoming the \"weakest link,\" being responsible for a higher and higher fraction of vulnerabilities [1]. Most of these vulnerabilities are in kernel driver code, as this driver code is often maintained by third parties and gets less scrutiny than the kernel itself. Specifically, most of these bugs are in driver ioctl functions [2]. Despite significant advances in automatic analysis of kernel code, current state-of-the-art tools like Syzkaller [3] and trinity [4] fail to find these bugs. This is because ioctls do not have a standard interface, and each ioctl for each driver expects different commands and data structures. The amount of manual effort required to bridge this \"interface gap\" for Syzkaller and trinity has hampered effort to find, pwn, and fix these issues. The problem needed to be fixed, and so we created DIFUZE, a lightweight (yet powerful), python based interface-aware fuzzing framework for driver ioctls. DIFUZE uses a novel combination of static analysis techniques (using LLVM) to extract the structure of argument data of the ioctls from the GPL-mandated headers of kernel drivers, and uses this information to effectively fuzz drivers on the target device. We will publish the scientific details behind DIFUZE at the ACM Conference on Computer and Communication Security (CCS), one of the premier venues in the scientific security community. DIFUZE works. We found 32 zero-days in seven modern android phones including the Google Pixel XL. We are certain that more bugs are lurking in more phones, so we are open-sourcing the end-to-end automated tool for the public good. DIFUZE is completely automated -- just give it kernel.tar.gz, wait, and collect the 0days. Happy hunting. [1] https://source.android.com/security/bulletin/; [2] Jeffrey Vander Stoep. 2016. Android: protecting the kernel. In Linux Security Summit. Linux Foundation; [3] Google. 2017. syzkaller - linux syscall fuzzer. (2017). https://github . com/google/syzkaller; [4] Dave Jones. 2011. Trinity: A system call fuzzer. In Proceedings of the 13th Ottawa Linux Symposium, pages.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2017",
+      "url": "https://blackhat.com/archive/europe/2017/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2017,
+      "domains": [
+        "unknown"
       ]
     }
   ]

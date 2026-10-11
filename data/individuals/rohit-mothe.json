@@ -1,13 +1,13 @@
 {
   "name": "Rohit Mothe",
-  "last-updated": "2026-10-11T09:38:44Z",
+  "last-updated": "2026-10-11T09:55:47Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 1,
+    "endorsements": 4,
+    "assessors": 3,
+    "with-evidence": 2,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,10 +20,77 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 0
+      "unknown": 3
     }
   },
   "endorsements": [
+    {
+      "name": "Rohit Mothe",
+      "label": "DPTrace:  Dual Purpose Trace for Exploitability Analysis of Program Crashes",
+      "description": "This research focuses on determining the practical exploitability of software issues by means of crash analysis. The target was not to automatically generate exploits, and not even to fully automate the entire process of crash analysis; but to provide a holistic feedback-oriented approach that augments a researcher's efforts in triaging the exploitability and impact of a program crash (or fault). The result is a semi-automated crash analysis framework that can speed-up the work of an exploit writer (analyst). Fuzzing, a powerful method for vulnerability discovery keeps getting more popular in all segments across the industry - from developers to bug hunters. With fuzzing frameworks becoming more sophisticated (and intelligent), the task of product security teams and exploit analysts to triage the constant influx of bug reports and associated crashes received from external researchers has increased dramatically. Exploit writers are also facing new challenges: with the advance of modern protection mechanisms, bug bounties and high-prices in vulnerabilities, their time to analyze a potential issue found and write a working exploits is shrinking. Given the need to improve the existing tools and methodologies in the field of program crash analysis, our research speeds-up dealing with a vast corpus of crashes. We discuss existing problems, ideas and present our approach that is in essence a combination of backward and forward taint propagation systems. The idea here is to leverage both these approaches and to integrate them into one single framework that provides, at the moment of a crash, the mapping of the input areas that influence the crash situation and from the crash on, an analysis of the potential capabilities for achieving code execution. We discuss the concepts and the implementation of two functional tools developed by the authors (one of which was previously released) and go about the benefits of integrating them. Finally, we demonstrate the use of the integrated tool (DPTrace to be released as open-source at Black Hat) with public vulnerabilities (zero-days at the time of the released in the past), including a few that the authors themselves discovered, analyzed/exploited and reported.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "DPTrace: Dual Purpose Trace for Exploitability Analysis of Program Crashes",
+          "url": "https://www.youtube.com/watch?v=nRryGVqiQ0o"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Rohit Mothe",
+      "label": "Exploring a New Class of Kernel Exploit Primitive",
+      "description": "Exploring a New Class of Kernel Exploit Primitive",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2022",
+      "url": "https://blackhat.com/archive/europe/2022/briefings/schedule/",
+      "evidence-links": [
+        {
+          "title": "Exploring a New Class of Kernel Exploit Primitive",
+          "url": "https://www.youtube.com/watch?v=uqWiZXMh8TI"
+        }
+      ],
+      "evidence": true,
+      "year": 2022,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Rohit Mothe",
+      "label": "An Insider's Perspective on Integer Overflow Vulnerabilities",
+      "description": "Challenges and Solutions from Identification to Mitigation at Microsoft This talk will delve deep into one of the most prevalent memory safety issues on Windows: Integer Overflows.  Over the past few years, MSRC has seen hundreds of Integer Overflow vulnerabilities, ranging from size overflows, integer truncations, overflows in checks, and reference counting overflows. We will cover the differences between these categories and investigate common pitfalls about the vulnerability root causes and their fixes.",
+      "type": "presentation",
+      "assessor": "CanSecWest",
+      "assessor-id": "cansecwest",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "CanSecWest 2023",
+      "url": "https://www.secwest.net/cansecwest2023-presentations/an-insiders-perspective-on-integer-overflow-vulnerabilities-challenges-and-solutions-from-identification-to-mitigation-at-microsoft",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Rohit Mothe",
       "label": "What is Dead May Never Die: The Ghost of Internet Explorer in Windows: MapUrlToZone",

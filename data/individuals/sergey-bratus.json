@@ -1,6 +1,6 @@
 {
   "name": "Sergey Bratus",
-  "last-updated": "2026-10-11T09:38:45Z",
+  "last-updated": "2026-10-11T09:55:48Z",
   "biography": "",
   "contact": [
     {
@@ -9,10 +9,10 @@
     }
   ],
   "stats": {
-    "endorsements": 3,
-    "assessors": 1,
-    "with-evidence": 3,
-    "without-evidence": 0,
+    "endorsements": 5,
+    "assessors": 3,
+    "with-evidence": 4,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -25,7 +25,7 @@
       "red-teaming": 0,
       "reverse-engineering": 1,
       "vulnerability-research": 2,
-      "unknown": 1
+      "unknown": 3
     }
   },
   "endorsements": [
@@ -100,6 +100,49 @@
       "year": 2012,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Sergey Bratus",
+      "label": "Defining and Enforcing Intent Semantics at ABI level Dominant OS security policy designs treat a process as an opaque entity that has a “bag” of permissions to access some OS resources at any time, in any order. Now that the sensitive data that we most want to protect may never touch the filesystem or even cross a process boundary, these designs fail at their purpose. We introduce a design that has a much higher granularity of protection, yet is compatible with existing ABI, standard build chains, and binary utilities.",
+      "description": "Defining and Enforcing Intent Semantics at ABI level Dominant OS security policy designs treat a process as an opaque entity that has a “bag” of permissions to access some OS resources at any time, in any order. Now that the sensitive data that we most want to protect may never touch the filesystem or even cross a process boundary, these designs fail at their purpose. We introduce a design that has a much higher granularity of protection, yet is compatible with existing ABI, standard build chains, and binary utilities.",
+      "type": "presentation",
+      "assessor": "Microsoft BlueHat",
+      "assessor-id": "bluehat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "BlueHat 2014",
+      "url": "https://www.microsoft.com/en-us/msrc/blog/2014/10/bluehat-v14-is-almost-here",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Sergey Bratus",
+      "label": "Intra-Process Memory Protection for Applications on ARM and x86: Leveraging the ELF ABI",
+      "description": "Today's software needs to isolate not only processes but the many components *within* a process from each other. Process-level isolation via jails, sandboxes, VMs, or hypervisors is finally becoming mainstream, but it misses an important point about modern software: its growing number of libraries that are all loaded into the same address space, and may all interact with complex inputs by way of vulnerable parsers. A process, even isolated, is as weak as the weakest of its components, but is as valuable as the most sensitive data it holds. Heartbleed was a perfect example of this: a faulty parser in a library could read absolutely everything in memory; there are many others less famous but no better. The biggest challenge of making intra-process memory protection practical is that it cannot require major changes to how software is written. A practical granular memory protection scheme must work for the existing C/C++ build chains, nor should it change the ABI. Further, it cannot rely on concepts that aren't already intuitively clear to C/C++ programmers. Many academic proposals for more granular memory access control stopped short of this. They disregard the glue what keeps the development process and runtime together: the ABI. We demonstrate ELFbac, a system that uses the Linux ELF ABI to express access control policies between a program's components, such as libraries, and requires no changes to the GNU build chain. It enforces these policies by using a modified Linux loader and the Linux virtual memory system. ELFbac policies operate on the level of ELF object file sections. Custom data and code units can be created with existing GCC C/C++ attributes with a one-line annotation per unit; they are no more complex than C's static scoping. We have developed prototypes for ARM and x86. We used our ARM prototype to protect a validating proxy firewall for DNP3, a popular ICS protocol, and our x86 one to write a basic policy for Nginx. We will also demonstrate a policy for protecting OpenSSH.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Intra-Process Memory Protection for Applications on ARM and X86: Leveraging the ELF ABI",
+          "url": "https://www.youtube.com/watch?v=YXh2aIc9u64"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
       ]
     }
   ]

@@ -1,12 +1,12 @@
 {
   "name": "Michael Ossmann",
-  "last-updated": "2026-10-11T09:38:42Z",
+  "last-updated": "2026-10-11T09:55:45Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 1,
-    "with-evidence": 3,
+    "endorsements": 8,
+    "assessors": 2,
+    "with-evidence": 8,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,7 +20,7 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 2,
-      "unknown": 1
+      "unknown": 6
     }
   },
   "endorsements": [
@@ -50,6 +50,54 @@
     },
     {
       "name": "Michael Ossmann",
+      "label": "Multiplexed Wired Attack Surfaces",
+      "description": "Manufacturers of mobile devices often multiplex several wired interfaces onto a single connector. Some of these interfaces, probably intended for test and development, are still enabled when the devices ship. We'll show you how you can get a shell on a popular mobile phone via its USB port without using a USB connection and we will release an open source tool for exploring multiplexed wired interfaces.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - Multiplexed Wired Attack Surfaces",
+          "url": "https://www.youtube.com/watch?v=jYa6-R-piZ4"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Michael Ossmann",
+      "label": "What's on the Wire?  Physical Layer Tapping with Project Daisho",
+      "description": "We believe that flaws in network protocols will not be discovered unless physical layer communication tapping solutions are made available to security researchers. In order to have confidence in our communication media we need the ability to monitor and modify the packets transferred on the wire. 802.11 network monitoring allowed the flaws in WEP and WPA to be exposed, Bluetooth Low Energy monitoring has shown problems in the key exchange protocol, but we are often more trusting of wired connections. Project Daisho is an attempt to fix that trust by allowing researchers to investigate wired protocols using existing software tools wherever possible. Daisho is an open source, extensible, modular network tap for wired communication media such as gigabit Ethernet, HDMI connections, and USB 3.0 connections. All aspects of the project are open source, including the hardware designs, software and FPGA cores. The project is producing the first open source USB 3.0 FPGA core.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - What's on the Wire? Physical Layer Tapping with Project Daisho",
+          "url": "https://www.youtube.com/watch?v=b2DsU1O6Lhg"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Michael Ossmann",
       "label": "The NSA Playset: RF Retroreflectors",
       "description": "Of all the technologies revealed in the NSA ANT catalog, perhaps the most exotic is the use of RF retroreflectors for over-the-air surveillance. These tiny implants, without any power supply, transmit information intercepted from digital or analog communications when irradiated by radio signals from an outside source. This modern class of radar eavesdropping technology has never been demonstrated in public before today. I've constructed and tested my own RF retroreflectors, and I'll show you how they work and how easy they are to build with modest soldering skills. I'll even bring along some fully assembled units to give away. Now you can add RF retroreflectors to your own NSA Playset and play along with the NSA!",
       "type": "presentation",
@@ -70,6 +118,78 @@
       "year": 2014,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Michael Ossmann",
+      "label": "The NSA Playset: A Year of Toys and Tools",
+      "description": "Inspired by the contents of the leaked NSA ANT catalog, the NSA Playset project has produced an array of gadgets with capabilities similar to those employed by the spooks. I will review the entire collection since the start of the project. This includes new tools for USB, PCI Express, I2C, GSM, Bluetooth, and a family of RF retroreflectors for eavesdropping on a wide variety of electronic devices. Now you can play along with the NSA!",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "The NSA Playset: A Year Of Toys And Tools",
+          "url": "https://www.youtube.com/watch?v=AdeMX6l9qNc"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Michael Ossmann",
+      "label": "GreatFET: Making GoodFET Great Again",
+      "description": "My evil plot began by making small but seemingly helpful contributions to the GoodFET project, a line of code here, a simple add-on board there.  Soon I was answering the occasional question on IRC or the mailing list, and I was in: commit rights! I had chosen my prey carefully.  GoodFET, the preferred open source tool of discriminating hardware hackers around the world, consisted of too many disparate hardware designs.  It was full of terrific ideas and PoCs, but it was becoming unmaintainable.  The Facedancer variant alone had at least three different and incompatible code bases!  The hardware designs were easy to build one at a time but needlessly costly for volume manufacturing.  The project was ripe for a takeover. I struck when Travis Goodspeed was most vulnerable, his faculties diminished by the hordes of Las Vegas.  He accepted my $5.  GoodFET was mine! With GoodFET in my control I moved quickly to replace the entire project with something superior, something greater!  Today I unleash GreatFET!",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "GreatFET: Making GoodFET Great Again",
+          "url": "https://www.youtube.com/watch?v=4NIoAnsuFOQ"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Michael Ossmann",
+      "label": "What's on the Wireless? Automating RF Signal Identification",
+      "description": "Most organisations want to monitor wireless devices within their environment, but, with a growing number of disparate low cost wireless technologies appearing on the market, the scale of this task can be unmanageable. Even identifying the presence of rogue signals can be difficult, let alone identifying an offending device. Software defined radio receivers allow us to receive arbitrary RF signals and are therefore the perfect platform on which to build automated spectrum monitoring tools. Now, we can take this concept further by combining rapid spectrum monitoring with automated signal identification and analysis, allowing organisations to seek out rogue RF devices in their environment. We have developed open source tools to monitor the RF spectrum at a high level and then drill down to individual signals, supporting both reverse engineering and signals intelligence. By automatically combining the results with OSINT data from regulatory bodies around the world, we are able to build up a picture of devices transmitting in an environment.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "What's on the Wireless? Automating RF Signal Identification",
+          "url": "https://www.youtube.com/watch?v=XNcGhnY_0oI"
+        }
+      ],
+      "evidence": true,
+      "year": 2017,
+      "domains": [
+        "unknown"
       ]
     },
     {

@@ -1,12 +1,12 @@
 {
   "name": "Fatih Ozavci",
-  "last-updated": "2026-10-11T09:38:38Z",
+  "last-updated": "2026-10-11T09:55:37Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
+    "endorsements": 5,
+    "assessors": 2,
+    "with-evidence": 5,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,7 +20,7 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 2,
-      "unknown": 0
+      "unknown": 3
     }
   },
   "endorsements": [
@@ -51,6 +51,30 @@
     {
       "name": "Fatih Ozavci",
       "label": "VoIP Wars: Attack of the Cisco Phones",
+      "description": "Many hosted VoIP service providers are using Cisco hosted collaboration suite and Cisco VoIP solutions. These Cisco hosted VoIP implementations are very similar; they have Cisco Unified Communication services, SIP protocol for IP Phones of tenants, common conference solutions, Skinny protocol for compliance, generic RTP implementation, VOSS Solutions product family for management services for tenants. Tenants use desktop and mobile clients to connect these services. Cisco hosted VoIP implementations and VoIP clients are vulnerable to many attacks, including: - VLAN attacks, - SIP trust hacking, - Skinny based signaling attacks, - Bypassing authentication and authorization, - Call spoofing, - Eavesdropping, - Desktop/mobile client compromising - Attacks against IP Phone management services; and, - Web based vulnerabilities of the products The presentation covers Skinny and SIP signaling attacks, 0day bypass technique for call spoofing and billing bypass, LAN attacks against supportive services for IP Phones, desktop and mobile phones, practical 0-day attacks against IP Phone management and tenant services. These attacks are available for desktop and mobile clients too, such as caller ID spoofing and fake messaging to compromise clients, fuzzing VoIP call signaling, MITM attacks and crashing mobile clients. Attacking Cisco VoIP services requires limited knowledge today with the Viproy Penetration Testing Kit (written by the presenter). It has a dozen modules to test trust hacking issues, signaling attacks against SIP services and Skinny services, gaining unauthorized access, call spoofing, brute-forcing VoIP accounts and debugging services using as MITM. Furthermore, Viproy provides these attack modules in a penetration testing environment and full integration. The presentation contains live demonstration of practical VoIP attacks and usage of new Viproy modules.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "VoIP Wars: Attack of the Cisco Phones",
+          "url": "https://www.youtube.com/watch?v=qyXgX6VELHc"
+        }
+      ],
+      "evidence": true,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Fatih Ozavci",
+      "label": "VoIP Wars: Attack of the Cisco Phones",
       "description": "Many hosted VoIP service providers are using Cisco hosted collaboration suite and Cisco VoIP solutions. These Cisco hosted VoIP implementations are very similar; they have Cisco Unified Communication services, SIP protocol for IP Phones of tenants, common conference solutions, Skinny protocol for compliance, generic RTP implementation, VOSS Solutions product family for management services for tenants. Cisco hosted VoIP implementations are vulnerable to many attacks, including: VLAN attacks SIP trust hacking Skinny based signalling attacks Bypassing authentication and authorisation Call spoofing Eavesdropping Attacks against IP Phone management services Web based vulnerabilities of the products The presentation covers Skinny and SIP signalling attacks, 0day bypass technique for call spoofing and billing bypass, LAN attacks against supportive services for IP Phones, practical 0day attacks against IP Phone management and tenant services. Attacking Cisco VoIP services requires limited knowledge today with the Viproy Penetration Testing Kit (written by the presenter). It has a dozen modules to test trust hacking issues, signalling attacks against SIP services and Skinny services, gaining unauthorised access, call spoofing, brute-forcing VoIP accounts and debugging services using as MITM. Furthermore, Viproy provides these attack modules in a penetration testing environment and full integration. The presentation contains live demonstration of practical VoIP attacks and usage of new Viproy modules.",
       "type": "presentation",
       "assessor": "DEF CON",
@@ -71,6 +95,54 @@
       "domains": [
         "penetration-testing",
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Fatih Ozavci",
+      "label": "VoIP Wars: Destroying Jar Jar Lync",
+      "description": "Enterprise companies are increasingly using Microsoft Lync 2010/2013 (a.k.a Skype for Business 2015) services as call centre, internal communication, cloud communication, and video conference platform. These services are based on the VoIP and instant messaging protocols, and support multiple client types such as Microsoft Office 365, Microsoft Lync, Skype for Business, IP phones, and teleconference devices. Also, the official clients are available for mobile devices (e.g. Windows phone, Android and iOS), desktops (Mac, Linux and Windows), and web applications developed with .NET framework. Although the Microsoft Lync platform has been developed along with the new technologies, it still suffers from old VoIP teleconference and platform issues. Modern VoIP attacks can be used to attack Microsoft Lync environments to obtain unauthorised access to the infrastructure. Open MS Lync front-end and edge servers, insecure federation security design, lack of encryption, insufficient defence for VoIP attacks, and insecure compatibility options may allow attackers to hijack enterprise communications. The enterprise users and employees are also the next generation targets for these attackers. They can attack client soft phones and handsets using the broken communication, invalid protocol options, and malicious messaging content to compromise sensitive business assets. These attacks may lead to privacy violations, legal issues, call/toll fraud, and intelligence collection. Attack vectors and practical threats against the Microsoft Lync ecosystem will be presented with newly published vulnerabilities and Microsoft Lync testing modules of the Viproy VoIP kit developed by the speaker. This will be accompanied by live demonstrations against a test environment. A brief introduction to Microsoft Lync ecosystem Security requirements, design vulnerabilities and priorities Modern threats against commercial Microsoft Lync services Demonstration of new attack vectors against target test platform.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2015",
+      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
+      "evidence-links": [
+        {
+          "title": "VOIP Wars: Destroying Jar Jar Lync",
+          "url": "https://www.youtube.com/watch?v=TMdiXYzY8qY"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Fatih Ozavci",
+      "label": "VOIP WARS: The Phreakers Awaken",
+      "description": "Larger organisations are using VoIP within their commercial services and corporate communications and the take up of cloud based Unified Communications (UC) solutions is rising every day. However, response teams and security testers have limited knowledge of VoIP attack surfaces and threats in the wild. Due to this lack of understanding of modern UC security requirements, numerous service providers, larger organisations and subscribers are leaving themselves susceptible to attack. Current threat actors are repurposing this exposed infrastructure for botnets, toll fraud etc. The talk aims to arm response and security testing teams with knowledge of cutting-edge attacks, tools and vulnerabilities for VoIP networks. Some of the headlines are: attacking cloud based VoIP solutions to jailbreak tenant environments; discovering critical security vulnerabilities with the VoIP products of major vendors; exploiting harder to fix VoIP protocol and service vulnerabilities; testing the security of IP Multimedia Subsystem (IMS) services; and understanding the toolset developed by the author to discover previously unknown vulnerabilities and to develop custom attacks. In addition, the business impact of these attacks will be explained for various implementations, such as cloud UC services, commercial services, service provider networks and corporate communication. Through the demonstrations, the audience will understand how can they secure and test their communication infrastructure and services. The talk will also be accompanied by the newer versions of Viproy and Viproxy developed by the author to operate the attack demonstrations.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "VoIP Wars: the Phreakers Awaken",
+          "url": "https://www.youtube.com/watch?v=rl_kp5UZKlw"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
       ]
     }
   ]
