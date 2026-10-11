@@ -35,6 +35,9 @@ cyber domains are introduced.
    `data/individuals`, and clears the temporary output directories even when
    merging fails. Use `--keep-tmp` only when debugging.
 7. Run tests, compile checks, and schema validation before reporting completion.
+8. Run enrichers before endorsement generation when external datasets are
+   needed. Enrichers are discovered recursively under `enrichers/` and write
+   one dataset archive per enricher under `data/enrichments/`.
 
 ## Non-negotiable contracts
 
@@ -43,6 +46,9 @@ cyber domains are introduced.
   is required and must be non-empty: prefer the source abstract or detailed
   evidence, with a deterministic fallback only when the source has no such
   text.
+- Every endorsement must contain an `additional-links` array. Each item has
+  exactly a non-empty `title` and absolute HTTP(S) `url`; an empty array is
+  valid when no enricher matches.
 - Assessor metadata comes from the assessor JSON: name, ID, category,
   `peerReview.rigorLevel`, and `peerReview.reviewType`.
 - Every endorsement has a non-empty `domains` array. Use the canonical taxonomy

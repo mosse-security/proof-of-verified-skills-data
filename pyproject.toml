@@ -7,13 +7,14 @@ name = "verified-endorsement-scraper"
 version = "0.1.0"
 description = "Extensible scrapers for collecting assessor endorsements"
 requires-python = ">=3.11"
-dependencies = ["beautifulsoup4>=4.12"]
+dependencies = ["beautifulsoup4>=4.12", "yt-dlp>=2024.12"]
 
 [project.scripts]
 scrape-endorsements = "endorsement_scraper.cli:main"
 scrape-def-con = "scrapers.def_con:main"
 merge-individuals = "endorsement_scraper.individuals:main"
+enrich-endorsements = "endorsement_scraper.enrichment_cli:main"
 
 [tool.setuptools.packages.find]
-include = ["endorsement_scraper*", "scrapers*"]
+include = ["endorsement_scraper*", "scrapers*", "enrichers*"]
 

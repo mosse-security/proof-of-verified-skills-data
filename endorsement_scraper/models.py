@@ -73,7 +73,8 @@ class Endorsement:
 
     ``recipient`` becomes the template's person ``name``; ``title`` becomes
     ``label``; ``description`` stores the source abstract or detailed
-    evidence; ``kind`` becomes ``type``; and ``source_url`` becomes ``url``.
+    evidence; ``additional_links`` stores enrichment links; ``kind`` becomes
+    ``type``; and ``source_url`` becomes ``url``.
     A four-digit ``year`` (or a date/details value containing one) is required.
     ``external_id`` should be set when the source exposes a stable identifier
     such as a CVE ID. Otherwise a deterministic ID is derived from all of the
@@ -86,6 +87,7 @@ class Endorsement:
     title: str
     source_url: str
     description: str = ""
+    additional_links: tuple[dict[str, str], ...] = ()
     recipient: str | None = None
     date: str | None = None
     year: int | None = None
@@ -159,6 +161,7 @@ class Endorsement:
             assessor=assessor,
             subtitle=subtitle,
             url=self.source_url,
+            additional_links=self.additional_links,
             year=year,
             domains=self.domains,
         )

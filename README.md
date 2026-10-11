@@ -90,6 +90,7 @@ are copied from `data/assessors/def-con.json`:
   "reviewType": "community_review",
   "subtitle": "DEF CON 34",
   "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_42",
+  "additional-links": [],
   "year": 2026,
   "domains": ["penetration testing", "vulnerability research"]
 }
@@ -226,12 +227,14 @@ Example record:
   "assessor-category": "vulnerability_database",
   "reviewType": "triage_review",
   "url": "https://example.test/CVE-2026-1234",
+  "additional-links": [],
   "year": 2026,
   "domains": ["vulnerability research"]
 }
 ```
 
-`subtitle` is the only optional template field. The core rejects missing,
+`subtitle` is the only optional template field; `additional-links` is required
+but may be empty. The core rejects missing,
 extra, malformed, or assessor-mismatched fields before accepting scraper
 output. The deterministic hash remains in the filename rather than the JSON
 record.
@@ -274,6 +277,23 @@ duplicates. The merger compares the content before writing: unchanged records
 retain their existing `last-updated` UTC timestamp, while changed records get a
 new timestamp suitable for ascending or descending database sorting. Use
 `--no-overwrite` to preserve existing profile files.
+
+## Enrichers
+
+Enrichers are independently discovered from `enrichers/` and collect external
+datasets for later endorsement enrichment. Run all enrichers, or select one:
+
+```powershell
+python -m endorsement_scraper.enrichment_cli --overwrite
+python -m endorsement_scraper.enrichment_cli --enricher def-con-youtube-recordings --overwrite
+```
+
+The DEF CON YouTube enricher reads `links.youtubeUrl` from the assessor JSON,
+uses `yt-dlp`, and stores its JSON video index in
+`data/enrichments/def-con-youtube-recordings/data.zip`. Matching videos appear
+in endorsement records as `additional-links` entries containing a title and
+URL. Future enrichers should write a JSON array as `data.json` in their own
+`<enricher-id>/data.zip` archive.
 
 ## HTML snapshots
 

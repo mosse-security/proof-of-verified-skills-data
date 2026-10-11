@@ -21,6 +21,7 @@ REQUIRED_ENDORSEMENT_FIELDS = (
     "assessor-rigor-level",
     "reviewType",
     "url",
+    "additional-links",
     "year",
     "domains",
 )
@@ -117,6 +118,7 @@ def build_endorsement_record(
     url: str,
     year: int,
     domains: Iterable[str],
+    additional_links: Iterable[Mapping[str, str]] = (),
     subtitle: str | None = None,
 ) -> dict[str, Any]:
     """Build and validate one record matching data/templates/endorsement.tpl."""
@@ -137,6 +139,7 @@ def build_endorsement_record(
     record.update(
         {
             "url": url,
+            "additional-links": [dict(link) for link in additional_links],
             "year": year,
             "domains": list(normalize_domains(domains)),
         }
@@ -195,6 +198,28 @@ def validate_endorsement_record(
     parsed_url = urlsplit(record["url"])
     if parsed_url.scheme not in {"http", "https"} or not parsed_url.netloc:
         raise EndorsementSchemaError(f"{source}.url must be an absolute HTTP(S) URL")
+
+    links = record["additional-links"]
+    if not isinstance(links, list):
+        raise EndorsementSchemaError(f"{source}.additional-links must be an array")
+    for index, link in enumerate(links):
+        if not isinstance(link, dict) or set(link) != {"title", "url"}:
+            raise EndorsementSchemaError(
+                f"{source}.additional-links[{index}] must contain title and url"
+            )
+        if not isinstance(link["title"], str) or not link["title"].strip():
+            raise EndorsementSchemaError(
+                f"{source}.additional-links[{index}].title must be non-empty"
+            )
+        if not isinstance(link["url"], str) or not link["url"].strip():
+            raise EndorsementSchemaError(
+                f"{source}.additional-links[{index}].url must be non-empty"
+            )
+        link_url = urlsplit(link["url"])
+        if link_url.scheme not in {"http", "https"} or not link_url.netloc:
+            raise EndorsementSchemaError(
+                f"{source}.additional-links[{index}].url must be an absolute HTTP(S) URL"
+            )
 
     validate_record_domains(record, source=source)
 

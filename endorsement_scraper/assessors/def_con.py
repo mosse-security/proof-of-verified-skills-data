@@ -15,6 +15,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 from ..archives import ArchiveStore
 from ..domains import detect_domains
+from ..enrichment import EnrichmentCatalog
 from ..http import HttpClient
 from ..models import Request
 from ..schema import AssessorMetadata, build_endorsement_record
@@ -39,6 +40,7 @@ class DefConEndorsement:
     url: str
     year: int
     domains: tuple[str, ...]
+    additional_links: tuple[dict[str, str], ...] = ()
     biography: str = ""
     contact: tuple[dict[str, str], ...] = ()
 
@@ -60,6 +62,7 @@ class DefConEndorsement:
             url=self.url,
             year=self.year,
             domains=self.domains,
+            additional_links=self.additional_links,
         )
 
 
@@ -93,6 +96,7 @@ class DefConScraper:
         backoff: float = 0.5,
         delay: float = 0,
         user_agent: str = "verified-endorsement-scraper/0.1",
+        enrichment_directory: Path = Path("data/enrichments"),
     ) -> None:
         self.assessor_file = assessor_file
         self.assessor = AssessorMetadata.from_file(assessor_file)
@@ -118,6 +122,7 @@ class DefConScraper:
             )
             fetch = client.fetch
         self.fetch = fetch
+        self.enrichment_catalog = EnrichmentCatalog.from_directory(enrichment_directory)
 
     def conference_urls(self) -> list[tuple[int, str]]:
         document = json.loads(self.assessor_file.read_text(encoding="utf-8"))
@@ -167,7 +172,7 @@ class DefConScraper:
             archive.write(cache_member, body)
             cache_status = "fetched"
 
-        endorsements = parse_def_con_page(year, body, source_url)
+        endorsements = parse_def_con_page(year, body, source_url, self.enrichment_catalog)
         if not endorsements:
             raise DefConParseError(
                 f"DEF CON {year} produced no endorsements from "
@@ -217,7 +222,8 @@ class DefConScraper:
 
 
 def parse_def_con_page(
-    year: int, html: bytes | str, source_url: str
+    year: int, html: bytes | str, source_url: str,
+    enrichment_catalog: EnrichmentCatalog | None = None,
 ) -> list[DefConEndorsement]:
     soup = BeautifulSoup(html, "html.parser")
     if year == 30:
@@ -269,6 +275,13 @@ def parse_def_con_page(
                 year=calendar_year,
                 domains=detect_domains(name, talk, evidence, conference),
                 contact=tuple(profiles.get(_person_key(name), {}).get("contact", ())),
+                additional_links=(
+                    enrichment_catalog.links_for(
+                        assessor_id="def-con", label=talk, subtitle=conference
+                    )
+                    if enrichment_catalog
+                    else ()
+                ),
             )
             unique.setdefault((name.casefold(), talk.casefold(), link), item)
     return list(unique.values())

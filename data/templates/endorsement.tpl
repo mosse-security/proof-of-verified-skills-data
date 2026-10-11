@@ -10,6 +10,12 @@
   "reviewType": "reviewType of the assessor in the data folder",
   "subtitle": "Optional field to specify additional information like conference year",
   "url": "URL to verify the record",
+  "additional-links": [
+    {
+      "title": "Related recording",
+      "url": "https://example.com/recording"
+    }
+  ],
   "year": "Year of the record",
   
   "domains": [

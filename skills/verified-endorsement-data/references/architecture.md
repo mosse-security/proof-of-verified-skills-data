@@ -56,6 +56,7 @@ The internal `Endorsement` fields map to the template as follows:
 | assessor `peerReview.reviewType` | `reviewType` |
 | `subtitle` | `subtitle` |
 | `source_url` | `url` |
+| enricher matches | `additional-links` |
 | `year`/date/details year | `year` |
 | classifier result | `domains` |
 
@@ -77,6 +78,15 @@ not infer aliases beyond parser-side matching or invent missing profile data.
 Individual records include a `last-updated` UTC timestamp. The merger compares
 all other fields with the existing file and preserves that timestamp for an
 unchanged record; any content change receives a fresh timestamp.
+
+## Enrichers
+
+Enrichers are plugins discovered recursively below `enrichers/`, independent of
+the endorsement scrapers. Each has a stable `enricher_id` and writes a JSON
+array as `data.json` inside `data/enrichments/<enricher-id>/data.zip`.
+`EnrichmentCatalog` loads all such datasets and adapters pass matching records
+into `additional-links`, keeping collection, storage, matching, and rendering
+separate as the number of enrichers grows.
 
 ## DEF CON lessons
 
