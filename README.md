@@ -131,6 +131,18 @@ python -m endorsement_scraper --assessor black-hat --overwrite
 The same local-first ZIP, coverage test, merger, and temporary-output cleanup
 rules apply to every future assessor.
 
+## Microsoft BlueHat archive
+
+Microsoft BlueHat is inventoried in `data/assessors/bluehat.json`, including
+the official MSRC schedule posts from v9 through v18, BlueHat Seattle 2019,
+BlueHat 2023, and BlueHat 2024. The adapter handles both legacy HTML schedule
+tables and newer session-heading posts. Pages are cached in
+`data/archives/html/bluehat.zip` and parsed with:
+
+```powershell
+python -m endorsement_scraper --assessor bluehat --overwrite
+```
+
 ## CanSecWest presentation archive
 
 CanSecWest is inventoried in `data/assessors/cansecwest.json`. The official
