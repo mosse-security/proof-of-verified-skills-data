@@ -9,12 +9,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .domains import ALLOWED_DOMAINS
 from .runner import RunReport
 
 
-def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None, evidence_counts: tuple[int, int] = (0, 0)) -> dict[str, Any]:
+def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None, evidence_counts: tuple[int, int] = (0, 0), domain_counts: dict[str, int] | None = None) -> dict[str, Any]:
     finished_at = finished_at or datetime.now(timezone.utc)
     totals = report.totals()
+    totals["by-domain"] = {domain: int((domain_counts or {}).get(domain, 0)) for domain in ALLOWED_DOMAINS}
     scrapers = []
     for item in report.scrapers:
         scrapers.append({
@@ -71,6 +73,27 @@ def count_evidence(output_directory: Path) -> tuple[int, int]:
     return with_links, without_links
 
 
+def count_domains(output_directory: Path) -> dict[str, int]:
+    """Count endorsement records by their normalized cyber domains."""
+
+    counts = {domain: 0 for domain in ALLOWED_DOMAINS}
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            domains = record.get("domains", [])
+            if isinstance(domains, list):
+                for domain in domains:
+                    if domain in counts:
+                        counts[domain] += 1
+    return counts
+
+
 def validate_run_stats(stats: dict[str, Any]) -> None:
     if not isinstance(stats, dict):
         raise ValueError("stats must be an object")
@@ -87,6 +110,10 @@ def validate_run_stats(stats: dict[str, Any]) -> None:
     evidence = stats.get("evidence")
     if not isinstance(evidence, dict) or not all(isinstance(evidence.get(key), int) for key in ("with-links", "without-links")):
         raise ValueError("stats.evidence must contain with-links and without-links counts")
+    totals = stats.get("totals")
+    by_domain = totals.get("by-domain") if isinstance(totals, dict) else None
+    if not isinstance(by_domain, dict) or any(not isinstance(by_domain.get(domain), int) for domain in ALLOWED_DOMAINS):
+        raise ValueError("stats.totals.by-domain must contain integer counts for every domain")
 
 
 def write_run_stats(path: Path, stats: dict[str, Any]) -> None:

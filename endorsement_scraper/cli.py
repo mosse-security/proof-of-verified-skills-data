@@ -12,7 +12,7 @@ from .discovery import DiscoveryError, discover_all_scrapers
 from .http import HttpClient
 from .runner import CollectionScraperRunner, RunReport, ScraperRunner
 from .storage import EndorsementStore, ProfileStore
-from .stats import build_run_stats, count_evidence, write_run_stats
+from .stats import build_run_stats, count_domains, count_evidence, write_run_stats
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -181,6 +181,7 @@ def main(argv: list[str] | None = None) -> int:
         report,
         started_at=started_at,
         evidence_counts=count_evidence(args.output_dir),
+        domain_counts=count_domains(args.output_dir),
     )
     write_run_stats(args.stats_file, stats)
     print(f"Stats: {args.stats_file} status={stats['status']} last-run={stats['last-run']}")
