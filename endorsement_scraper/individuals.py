@@ -184,13 +184,18 @@ def _validate_individual(document: dict[str, Any], *, source: str) -> None:
 def _individual_stats(records: list[dict[str, Any]]) -> dict[str, Any]:
     by_domain = {domain: 0 for domain in ALLOWED_DOMAINS}
     with_evidence = 0
+    assessors: set[str] = set()
     for record in records:
+        assessor_id = record.get("assessor-id")
+        if isinstance(assessor_id, str) and assessor_id:
+            assessors.add(assessor_id)
         if record.get("evidence") is True:
             with_evidence += 1
         for domain in record["domains"]:
             by_domain[domain] += 1
     return {
         "endorsements": len(records),
+        "assessors": len(assessors),
         "with-evidence": with_evidence,
         "without-evidence": len(records) - with_evidence,
         "by-domain": by_domain,
@@ -228,8 +233,9 @@ def _upgrade_existing_timestamp(path: Path) -> None:
     if "last-updated" not in existing:
         existing["last-updated"] = _utc_timestamp()
         changed = True
-    if "stats" not in existing:
-        existing["stats"] = _individual_stats(existing.get("endorsements", []))
+    expected_stats = _individual_stats(existing.get("endorsements", []))
+    if existing.get("stats") != expected_stats:
+        existing["stats"] = expected_stats
         changed = True
     if not changed:
         return

@@ -25,6 +25,8 @@ python -m endorsement_scraper --list
 python -m endorsement_scraper --workers 8
 python -m endorsement_scraper --assessor black-hat --save-html
 python -m endorsement_scraper --overwrite
+python -m unittest tests.test_archive_coverage -v
+python -m endorsement_scraper.individuals --overwrite
 ```
 
 Running `python -m endorsement_scraper` with no filters discovers and runs all
@@ -43,6 +45,10 @@ The generic `--list` command shows dynamically discovered `BaseScraper` and
 that does not begin with `_`, then fill in its parser and IDs. Collection
 scrapers are useful when an assessor needs grouped output or controls its
 own local cache.
+
+Assessors are not enumerated in code. Add an assessor JSON file and a
+discovered scraper module; the runner and merger accept any number of assessors
+and run independent adapters concurrently.
 
 ## DEF CON speaker archive
 
@@ -85,6 +91,10 @@ The check compares every assessor `links.processUrls` entry with the members
 of `data/archives/html/<assessor-id>.zip` and prints each missing URL. This
 makes manually downloaded pages easy to identify and add before a scrape run.
 
+If a source blocks automated retrieval, save the complete main HTML page into
+`tmp/` and insert it into the matching ZIP member with `ArchiveStore`; asset-only
+`*_files` directories are not source pages. Remove `tmp/` after processing.
+
 Each array item follows `data/templates/endorsement.tpl`. Assessor fields
 are copied from `data/assessors/def-con.json`:
 
@@ -106,6 +116,20 @@ are copied from `data/assessors/def-con.json`:
   "domains": ["penetration-testing", "vulnerability-research"]
 }
 ```
+
+## Black Hat briefing archive
+
+The Black Hat collection scraper reads USA, Europe, Abu Dhabi, and MEA URLs
+from `data/assessors/black-hat.json`. It handles legacy briefing pages and
+modern schedule pages, writing one JSON array per event under
+`data/tmp/endorsements/black-hat/`:
+
+```powershell
+python -m endorsement_scraper --assessor black-hat --overwrite
+```
+
+The same local-first ZIP, coverage test, merger, and temporary-output cleanup
+rules apply to every future assessor.
 
 ## Cyber-domain mapping
 
@@ -275,6 +299,7 @@ to `data/individuals`, for example `data/individuals/alice-example.json`:
   "contact": [],
   "stats": {
     "endorsements": 0,
+    "assessors": 0,
     "with-evidence": 0,
     "without-evidence": 0,
     "by-domain": {}
@@ -292,8 +317,8 @@ emptied after every merger run, including failed runs; pass `--keep-tmp` when
 you need to inspect them.
 
 Each individual also includes deterministic `stats`: total endorsements,
-counts with and without evidence, and an endorsement count for every cyber
-domain (including `unknown`).
+the number of unique assessors represented, counts with and without evidence,
+and an endorsement count for every cyber domain (including `unknown`).
 
 Existing individual files are replaced on rerun so the result cannot accumulate
 duplicates. The merger compares the content before writing: unchanged records

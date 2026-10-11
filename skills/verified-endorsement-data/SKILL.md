@@ -17,7 +17,9 @@ cyber domains are introduced.
    Keep assessor metadata in the assessor file; never duplicate or
    edit unrelated fields such as `peerReview.processUrl` while changing links.
 3. Put reusable framework behavior in `endorsement_scraper/`. Put discovered
-   site adapters in `scrapers/`, normally one adapter per assessor. Use a
+   site adapters in `scrapers/`, normally one adapter per assessor. There is no
+   fixed assessor list: discovery recursively loads any number of adapters and
+   the merger recursively consumes any assessor directory. Use a
    `BaseCollectionScraper` when one site controls grouped output or local cache
    layout.
 4. Prefer cached HTML under `data/archives/html/<assessor>/` or the matching
@@ -60,7 +62,8 @@ cyber domains are introduced.
   Update the central classifier and tests when expanding the taxonomy.
 - Every individual record has exactly `name`, `last-updated`, `biography`,
   `contact`, `stats`, and `endorsements`. `stats` is derived from endorsements
-  and includes total, evidence-backed, non-evidence, and per-domain counts.
+  and includes total, unique assessor, evidence-backed, non-evidence, and
+  per-domain counts.
   `last-updated` is an ISO-8601 UTC timestamp:
   unchanged merges preserve it, while content changes refresh it. Contact
   entries use the template's label plus URL or email.
@@ -78,6 +81,10 @@ python -m endorsement_scraper
 
 # Run one assessor and refresh its grouped output
 python -m endorsement_scraper --assessor def-con --overwrite
+python -m endorsement_scraper --assessor black-hat --overwrite
+
+# Confirm every configured source URL has a local archive member
+python -m unittest tests.test_archive_coverage -v
 
 # Merge all endorsements and profiles into individual records
 python -m endorsement_scraper.individuals --overwrite

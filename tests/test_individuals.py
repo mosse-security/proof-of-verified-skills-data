@@ -70,6 +70,7 @@ class IndividualMergeTests(unittest.TestCase):
             self.assertEqual(document["biography"], "")
             self.assertEqual(document["contact"], [])
             self.assertEqual(document["stats"]["endorsements"], 2)
+            self.assertEqual(document["stats"]["assessors"], 1)
             self.assertEqual(document["stats"]["without-evidence"], 2)
             self.assertEqual(document["stats"]["by-domain"]["unknown"], 2)
 
@@ -92,6 +93,7 @@ class IndividualMergeTests(unittest.TestCase):
             self.assertEqual(result.endorsements, 2)
             document = json.loads((root / "individuals" / "shared-person.json").read_text())
             self.assertEqual({item["assessor-id"] for item in document["endorsements"]}, {"one", "two"})
+            self.assertEqual(document["stats"]["assessors"], 2)
 
     def test_rerun_overwrites_without_appending_duplicates(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

@@ -18,6 +18,8 @@ Do not call a conference onboarded until all of these are true:
   `peerReview.rigorLevel`, `peerReview.reviewType`, and historical source URLs.
 - Source pages are cached under `data/archives/html/<id>/` or an equivalent
   archive ZIP. Prefer local archives on reruns.
+- Archive coverage passes for every configured `links.processUrls` entry, or
+  missing pages are manually downloaded and inserted before parsing.
 - A discovered adapter exists below `scrapers/` (or the collection adapter
   equivalent) and produces one validated endorsement per person.
 - Every endorsement has a detailed non-empty `description`, canonical
@@ -27,8 +29,8 @@ Do not call a conference onboarded until all of these are true:
   `data/enrichments/<enricher-id>/data.zip` dataset and matching logic.
 - `data/stats.json` reports a non-zero capture and evidence counts are known.
 - The individual merger succeeds, profile biographies remain empty, profile
-  stats match the final deduplicated endorsements, and temporary directories
-  are cleaned.
+  stats match the final deduplicated endorsements (including unique assessor
+  counts), and temporary directories are cleaned.
 
 ## Workflow
 
@@ -63,26 +65,35 @@ responses and preserve a deterministic member path such as
 `ArchiveStore`; keep the source layer byte-oriented so future CSV/XLSX readers
 can be added without changing the scraper contract.
 
+Run `python -m unittest tests.test_archive_coverage -v` before parsing. If a
+site blocks automation, download the complete main HTML document into `tmp/`,
+insert it into the assessor ZIP with `ArchiveStore`, rerun coverage, and then
+remove `tmp/`. Asset-only `_files` folders and blank `saved_resource.html`
+files are not source pages.
+
 ### 3. Implement the adapter
 
 1. Add a module under `scrapers/`, splitting layout-specific parsing into
    focused functions. Use `BaseCollectionScraper` when one conference emits
    grouped per-year JSON; use page scrapers when pagination is naturally
    request-driven.
-2. Parse every speaker/talk pair. If one talk has multiple speakers, emit one
+2. Keep historical, regional, and paginated URLs in the assessor JSON rather
+   than hard-coding them in the parser. This keeps the adapter reusable as the
+   number of assessors grows without limit.
+3. Parse every speaker/talk pair. If one talk has multiple speakers, emit one
    endorsement per speaker and never copy one speaker's profile data to
    another.
-3. Set `label` to the talk or recognition title, `subtitle` to the conference
+4. Set `label` to the talk or recognition title, `subtitle` to the conference
    and year, `url` to the canonical source page, and `year` to a four-digit
    calendar year. Store the abstract or detailed source evidence in
    `description`; use a deterministic fallback only when the source has no
    abstract.
-4. Pass description and relevant source text to domain detection. Outputs must
+5. Pass description and relevant source text to domain detection. Outputs must
    use only these canonical values:
    `cloud-security`, `cyber-defense`, `devsecops`, `digital-forensics`, `grc`,
    `incident-response`, `open-source-intelligence`, `penetration-testing`,
    `red-teaming`, `reverse-engineering`, `vulnerability-research`, `unknown`.
-5. Emit `PersonProfile` fragments only for contact information. Keep
+6. Emit `PersonProfile` fragments only for contact information. Keep
    biographies empty; do not scrape or invent biographies.
 
 ### 4. Add enrichers
@@ -123,6 +134,7 @@ enrichment match, and one individual profile. Verify profile `stats` contains:
 - `endorsements`
 - `with-evidence`
 - `without-evidence`
+- `assessors` (distinct assessor IDs represented)
 - `by-domain` counts for every canonical domain, including `unknown`
 
 Run tests and compilation checks before reporting completion:

@@ -25,6 +25,7 @@
 
   "stats": {
     "endorsements": 0,
+    "assessors": 0,
     "with-evidence": 0,
     "without-evidence": 0,
     "by-domain": {}

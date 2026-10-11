@@ -14,7 +14,9 @@
   `{name, biography, contact}`. Standard scrapers use `PersonProfile` and
   `ProfileStore`; collection scrapers may write grouped fragments directly.
 - `data/individuals/<slug>.json`: final merged records shaped as
-  `{name, biography, contact, endorsements}`.
+  `{name, last-updated, biography, contact, stats, endorsements}`. `stats`
+  contains endorsement total, unique assessor count, evidence counts, and
+  counts for every canonical domain.
 - The individual merger clears `data/tmp/endorsements` and
   `data/tmp/profiles` after a successful run; use `--keep-tmp` for debugging.
 - `data/templates/`: current user-facing contracts. Update validators and tests
@@ -38,6 +40,8 @@
 - `individuals.py`: profile/endorsement aggregation and deterministic filenames.
 - `discovery.py`: recursive dynamic discovery of scraper plugins under
   `scrapers/` (underscore-prefixed files are ignored).
+- `archive_coverage.py`: maps every configured `links.processUrls` entry to an
+  archive member and reports missing source pages across all assessors.
 
 ## Endorsement mapping
 
@@ -80,6 +84,9 @@ endorsement array, including evidence and per-domain counts.
 Individual records include a `last-updated` UTC timestamp. The merger compares
 all other fields with the existing file and preserves that timestamp for an
 unchanged record; any content change receives a fresh timestamp.
+The `stats.assessors` value counts distinct endorsement `assessor-id` values
+after deduplication, so a person represented by multiple assessors remains one
+individual with a cross-assessor count.
 
 ## Enrichers
 
@@ -98,7 +105,7 @@ totals, evidence-link counts, errors, and validations such as the DEF CON
 non-zero endorsement check.
 Tests can call `validate_run_stats` against the file or synthetic reports.
 
-## DEF CON lessons
+## Conference adapter lessons
 
 `endorsement_scraper/assessors/def_con.py` supports multiple historical
 HTML layouts. Modern pages use `.talk`, `.speaker`, `.speaker-bio`/
@@ -110,6 +117,19 @@ isolated and add a fixture test when changing it.
 DEF CON output uses `type: presentation`, subtitle `DEF CON N`, and calendar
 year `1992 + N` (DEF CON Safe Mode is conference 28). The source URL should
 include the talk fragment when one exists.
+
+Black Hat demonstrates a second scalable pattern: one collection adapter can
+parse both legacy `h2` briefing blocks and modern `.data-container` schedule
+records, while regional and historical URLs remain data in the assessor JSON.
+Pages with no published sessions are cached but do not produce empty output
+files. Keep layout-specific parsing functions isolated and add fixtures when a
+new regional or historical layout appears.
+
+Before parsing an assessor, run `python -m unittest tests.test_archive_coverage
+-v`. If a page was downloaded manually, place the complete main HTML document
+in `tmp/`, map it to the URL-derived ZIP member with `ArchiveStore`, rerun
+coverage, then remove `tmp/` after processing. Asset-only `_files` folders and
+blank browser `saved_resource.html` files are not source pages.
 
 ## Regeneration checklist
 
