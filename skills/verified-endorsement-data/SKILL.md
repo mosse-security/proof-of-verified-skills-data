@@ -48,9 +48,11 @@ cyber domains are introduced.
   is required and must be non-empty: prefer the source abstract or detailed
   evidence, with a deterministic fallback only when the source has no such
   text.
-- Every endorsement must contain an `additional-links` array. Each item has
+- Every endorsement must contain an `evidence-links` array and an `evidence`
+  boolean. Each evidence-link item has
   exactly a non-empty `title` and absolute HTTP(S) `url`; an empty array is
-  valid when no enricher matches.
+  valid when no enricher matches, and `evidence` must mirror whether it is
+  empty.
 - Assessor metadata comes from the assessor JSON: name, ID, category,
   `peerReview.rigorLevel`, and `peerReview.reviewType`.
 - Every endorsement has a non-empty `domains` array. Use the canonical taxonomy

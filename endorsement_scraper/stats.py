@@ -12,7 +12,7 @@ from typing import Any
 from .runner import RunReport
 
 
-def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None) -> dict[str, Any]:
+def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None, evidence_counts: tuple[int, int] = (0, 0)) -> dict[str, Any]:
     finished_at = finished_at or datetime.now(timezone.utc)
     totals = report.totals()
     scrapers = []
@@ -43,8 +43,32 @@ def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: dat
         "status": "ok" if not report.failed and all(item["passed"] for item in validations) else "failed",
         "scrapers": scrapers,
         "totals": totals,
+        "evidence": {
+            "with-links": evidence_counts[0],
+            "without-links": evidence_counts[1],
+        },
         "validations": validations,
     }
+
+
+def count_evidence(output_directory: Path) -> tuple[int, int]:
+    """Count endorsement records with and without independently verifiable links."""
+
+    with_links = without_links = 0
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            if record.get("evidence") is True:
+                with_links += 1
+            elif record.get("evidence") is False:
+                without_links += 1
+    return with_links, without_links
 
 
 def validate_run_stats(stats: dict[str, Any]) -> None:
@@ -60,6 +84,9 @@ def validate_run_stats(stats: dict[str, Any]) -> None:
     for item in scrapers:
         if not isinstance(item, dict) or not isinstance(item.get("endorsements"), int):
             raise ValueError("each scraper stat must include an endorsement count")
+    evidence = stats.get("evidence")
+    if not isinstance(evidence, dict) or not all(isinstance(evidence.get(key), int) for key in ("with-links", "without-links")):
+        raise ValueError("stats.evidence must contain with-links and without-links counts")
 
 
 def write_run_stats(path: Path, stats: dict[str, Any]) -> None:

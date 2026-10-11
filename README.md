@@ -90,7 +90,8 @@ are copied from `data/assessors/def-con.json`:
   "reviewType": "community_review",
   "subtitle": "DEF CON 34",
   "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_42",
-  "additional-links": [],
+  "evidence-links": [],
+  "evidence": false,
   "year": 2026,
   "domains": ["penetration testing", "vulnerability research"]
 }
@@ -227,14 +228,16 @@ Example record:
   "assessor-category": "vulnerability_database",
   "reviewType": "triage_review",
   "url": "https://example.test/CVE-2026-1234",
-  "additional-links": [],
+  "evidence-links": [],
+  "evidence": false,
   "year": 2026,
   "domains": ["vulnerability research"]
 }
 ```
 
-`subtitle` is the only optional template field; `additional-links` is required
-but may be empty. The core rejects missing,
+`subtitle` is the only optional template field; `evidence-links` and `evidence`
+are required. `evidence` must be true exactly when `evidence-links` is non-empty.
+The core rejects missing,
 extra, malformed, or assessor-mismatched fields before accepting scraper
 output. The deterministic hash remains in the filename rather than the JSON
 record.
@@ -291,14 +294,16 @@ python -m endorsement_scraper.enrichment_cli --enricher def-con-youtube-recordin
 The DEF CON YouTube enricher reads `links.youtubeUrl` from the assessor JSON,
 uses `yt-dlp`, and stores its JSON video index in
 `data/enrichments/def-con-youtube-recordings/data.zip`. Matching videos appear
-in endorsement records as `additional-links` entries containing a title and
-URL. Future enrichers should write a JSON array as `data.json` in their own
+in endorsement records as `evidence-links` entries containing a title and URL;
+the companion `evidence` flag is set automatically. Future enrichers should write a JSON array as `data.json` in their own
 `<enricher-id>/data.zip` archive.
 
 ## Run statistics
 
 Every scraper run writes `data/stats.json` with the UTC run timestamp, duration,
 per-scraper page and endorsement counts, totals, errors, and sanity checks.
+It also reports how many endorsements have evidence links versus no evidence
+links.
 Use `--stats-file` to choose another location. The DEF CON sanity check marks a
 run failed when zero endorsements are produced, making accidental empty crawls
 visible to operators and automated tests.

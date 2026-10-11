@@ -108,7 +108,8 @@ class GroupedScraper(BaseCollectionScraper):
                     "assessor-rigor-level": "medium",
                     "reviewType": "community_review",
                     "url": f"https://example.test/{index}",
-                    "additional-links": [],
+                    "evidence-links": [],
+                    "evidence": False,
                     "year": 2026,
                     "domains": ["unknown"],
                 }

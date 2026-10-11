@@ -56,7 +56,7 @@ The internal `Endorsement` fields map to the template as follows:
 | assessor `peerReview.reviewType` | `reviewType` |
 | `subtitle` | `subtitle` |
 | `source_url` | `url` |
-| enricher matches | `additional-links` |
+| enricher matches | `evidence-links` and `evidence` |
 | `year`/date/details year | `year` |
 | classifier result | `domains` |
 
@@ -85,14 +85,15 @@ Enrichers are plugins discovered recursively below `enrichers/`, independent of
 the endorsement scrapers. Each has a stable `enricher_id` and writes a JSON
 array as `data.json` inside `data/enrichments/<enricher-id>/data.zip`.
 `EnrichmentCatalog` loads all such datasets and adapters pass matching records
-into `additional-links`, keeping collection, storage, matching, and rendering
+into `evidence-links`, keeping collection, storage, matching, and rendering
 separate as the number of enrichers grows.
 
 ## Run statistics
 
 `endorsement_scraper.stats` writes an atomic `data/stats.json` after the main
 scraper CLI completes. It records UTC timestamps, duration, per-scraper counts,
-totals, errors, and validations such as the DEF CON non-zero endorsement check.
+totals, evidence-link counts, errors, and validations such as the DEF CON
+non-zero endorsement check.
 Tests can call `validate_run_stats` against the file or synthetic reports.
 
 ## DEF CON lessons

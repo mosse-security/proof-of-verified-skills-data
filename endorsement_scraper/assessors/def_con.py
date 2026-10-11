@@ -40,7 +40,7 @@ class DefConEndorsement:
     url: str
     year: int
     domains: tuple[str, ...]
-    additional_links: tuple[dict[str, str], ...] = ()
+    evidence_links: tuple[dict[str, str], ...] = ()
     biography: str = ""
     contact: tuple[dict[str, str], ...] = ()
 
@@ -62,7 +62,7 @@ class DefConEndorsement:
             url=self.url,
             year=self.year,
             domains=self.domains,
-            additional_links=self.additional_links,
+            evidence_links=self.evidence_links,
         )
 
 
@@ -275,7 +275,7 @@ def parse_def_con_page(
                 year=calendar_year,
                 domains=detect_domains(name, talk, evidence, conference),
                 contact=tuple(profiles.get(_person_key(name), {}).get("contact", ())),
-                additional_links=(
+                evidence_links=(
                     enrichment_catalog.links_for(
                         assessor_id="def-con", label=talk, subtitle=conference
                     )

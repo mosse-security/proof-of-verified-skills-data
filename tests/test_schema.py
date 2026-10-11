@@ -39,7 +39,7 @@ class EndorsementSchemaTests(unittest.TestCase):
             url="https://example.test/talk",
             year=2026,
             domains=("vulnerability research",),
-            additional_links=({"title": "Recording", "url": "https://example.test/video"},),
+            evidence_links=({"title": "Recording", "url": "https://example.test/video"},),
         )
 
         self.assertEqual(set(record), set(ENDORSEMENT_FIELDS))

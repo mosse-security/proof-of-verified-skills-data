@@ -89,7 +89,7 @@ def run_enrichers(classes: list[type[BaseEnricher]], context: EnricherContext, w
 
 
 class EnrichmentCatalog:
-    """Read all JSON datasets and expose normalized additional-link matches."""
+    """Read all JSON datasets and expose normalized evidence-link matches."""
 
     def __init__(self, records: list[dict[str, Any]]) -> None:
         self.records = records

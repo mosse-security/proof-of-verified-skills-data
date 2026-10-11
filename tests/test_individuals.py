@@ -22,7 +22,8 @@ def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
         "reviewType": "community_review",
         "subtitle": "Example 2026",
         "url": f"https://example.test/{label.replace(' ', '-')}",
-        "additional-links": [],
+        "evidence-links": [],
+        "evidence": False,
         "year": year,
         "domains": ["unknown"],
     }

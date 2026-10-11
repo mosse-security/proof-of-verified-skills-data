@@ -21,7 +21,8 @@ REQUIRED_ENDORSEMENT_FIELDS = (
     "assessor-rigor-level",
     "reviewType",
     "url",
-    "additional-links",
+    "evidence-links",
+    "evidence",
     "year",
     "domains",
 )
@@ -118,11 +119,12 @@ def build_endorsement_record(
     url: str,
     year: int,
     domains: Iterable[str],
-    additional_links: Iterable[Mapping[str, str]] = (),
+    evidence_links: Iterable[Mapping[str, str]] = (),
     subtitle: str | None = None,
 ) -> dict[str, Any]:
     """Build and validate one record matching data/templates/endorsement.tpl."""
 
+    normalized_evidence_links = [dict(link) for link in evidence_links]
     record: dict[str, Any] = {
         "name": name,
         "label": label,
@@ -139,7 +141,8 @@ def build_endorsement_record(
     record.update(
         {
             "url": url,
-            "additional-links": [dict(link) for link in additional_links],
+            "evidence-links": normalized_evidence_links,
+            "evidence": bool(normalized_evidence_links),
             "year": year,
             "domains": list(normalize_domains(domains)),
         }
@@ -199,27 +202,33 @@ def validate_endorsement_record(
     if parsed_url.scheme not in {"http", "https"} or not parsed_url.netloc:
         raise EndorsementSchemaError(f"{source}.url must be an absolute HTTP(S) URL")
 
-    links = record["additional-links"]
+    links = record["evidence-links"]
     if not isinstance(links, list):
-        raise EndorsementSchemaError(f"{source}.additional-links must be an array")
+        raise EndorsementSchemaError(f"{source}.evidence-links must be an array")
     for index, link in enumerate(links):
         if not isinstance(link, dict) or set(link) != {"title", "url"}:
             raise EndorsementSchemaError(
-                f"{source}.additional-links[{index}] must contain title and url"
+                f"{source}.evidence-links[{index}] must contain title and url"
             )
         if not isinstance(link["title"], str) or not link["title"].strip():
             raise EndorsementSchemaError(
-                f"{source}.additional-links[{index}].title must be non-empty"
+                f"{source}.evidence-links[{index}].title must be non-empty"
             )
         if not isinstance(link["url"], str) or not link["url"].strip():
             raise EndorsementSchemaError(
-                f"{source}.additional-links[{index}].url must be non-empty"
+                f"{source}.evidence-links[{index}].url must be non-empty"
             )
         link_url = urlsplit(link["url"])
         if link_url.scheme not in {"http", "https"} or not link_url.netloc:
             raise EndorsementSchemaError(
-                f"{source}.additional-links[{index}].url must be an absolute HTTP(S) URL"
+                f"{source}.evidence-links[{index}].url must be an absolute HTTP(S) URL"
             )
+    if not isinstance(record["evidence"], bool):
+        raise EndorsementSchemaError(f"{source}.evidence must be a boolean")
+    if record["evidence"] != bool(links):
+        raise EndorsementSchemaError(
+            f"{source}.evidence must be true exactly when evidence-links is non-empty"
+        )
 
     validate_record_domains(record, source=source)
 
