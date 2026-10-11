@@ -212,8 +212,9 @@ layouts, including multi-speaker sessions and abstracts.
 
 ## Cyber-domain mapping
 
-Every endorsement record must contain a non-empty `domains` array. The core
-library detects zero, one, or several values from this fixed taxonomy:
+Every endorsement record must contain a non-empty `domains` array and a
+`subspecialties` object keyed exactly by those domains. The core library
+detects zero, one, or several values from this taxonomy:
 
 - `cloud-security`
 - `cyber-defense`
@@ -226,16 +227,30 @@ library detects zero, one, or several values from this fixed taxonomy:
 - `red-teaming`
 - `reverse-engineering`
 - `vulnerability-research`
+- `identity-and-access-management`
+- `iot-security`
+- `operational-technology-security`
+- `threat-hunting`
 
-When no rule matches, the array is `["unknown"]`. Standard `Endorsement`
+When no rule matches, the array is `["unknown"]` and its subspecialties array
+is empty. Specialty identifiers are lowercase and hyphenated, for example:
+
+```json
+"domains": ["penetration-testing"],
+"subspecialties": {
+  "penetration-testing": ["web-application-penetration-testing"]
+}
+```
+
+Standard `Endorsement`
 objects are mapped automatically from their type, label, person, description,
 and details. Every endorsement must include a non-empty `description`, which
 should contain the source abstract or other detailed evidence. Site parsers
 should also pass that text to `detect_domains` so classification can use it.
 A scraper may pass explicit domains, but unsupported values fail
 validation. Collection scrapers report every generated JSON file to the core
-runner, which validates every record and fails that scraper if `domains` is
-missing, empty, unsupported, duplicated, or out of canonical order.
+runner, which validates every record and fails that scraper if domains or
+subspecialties are missing, unsupported, duplicated, or out of canonical order.
 
 The taxonomy, detection rules, normalization, and validators live in
 `endorsement_scraper/domains.py` so site scrapers cannot silently introduce
@@ -427,7 +442,9 @@ the companion `evidence` flag is set automatically. Future enrichers should writ
 Every scraper run writes `data/stats.json` with the UTC run timestamp, duration,
 per-scraper page and endorsement counts, totals, errors, and sanity checks.
 It also reports how many endorsements have evidence links versus no evidence
-links.
+links, plus endorsement counts grouped by every canonical cyber domain and by
+each detected subspecialty within that domain (`totals.by-domain` and
+`totals.by-subspecialty`).
 Use `--stats-file` to choose another location. The DEF CON sanity check marks a
 run failed when zero endorsements are produced, making accidental empty crawls
 visible to operators and automated tests.

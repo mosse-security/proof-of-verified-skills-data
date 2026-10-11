@@ -132,7 +132,7 @@ class DefConTests(unittest.TestCase):
                 {
                     "name", "label", "description", "type", "assessor", "assessor-id",
                     "assessor-category", "assessor-rigor-level", "reviewType", "subtitle", "url",
-                    "year", "evidence-links", "evidence", "domains",
+                    "year", "evidence-links", "evidence", "domains", "subspecialties",
                 },
             )
             self.assertEqual(payload[0]["type"], "presentation")

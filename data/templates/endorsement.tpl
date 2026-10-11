@@ -22,5 +22,14 @@
   "domains": [
     "penetration-testing",
     "vulnerability-research"
-  ]
+  ],
+  "subspecialties": {
+    "penetration-testing": [
+      "web-application-penetration-testing",
+      "api-penetration-testing"
+    ],
+    "vulnerability-research": [
+      "vulnerability-discovery"
+    ]
+  }
 }

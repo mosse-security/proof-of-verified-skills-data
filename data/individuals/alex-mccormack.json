@@ -1,6 +1,6 @@
 {
   "name": "Alex McCormack",
-  "last-updated": "2026-10-11T07:42:10Z",
+  "last-updated": "2026-10-11T23:29:03Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -9,18 +9,22 @@
     "with-evidence": 1,
     "without-evidence": 0,
     "by-domain": {
-      "cloud-security": 0,
-      "cyber-defense": 0,
+      "cloud-security": 1,
+      "cyber-defense": 1,
       "devsecops": 0,
-      "digital-forensics": 0,
+      "digital-forensics": 1,
       "grc": 0,
-      "incident-response": 0,
+      "incident-response": 1,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
-      "unknown": 1
+      "vulnerability-research": 1,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "unknown": 0
     }
   },
   "endorsements": [
@@ -49,8 +53,31 @@
       "evidence": true,
       "year": 2016,
       "domains": [
-        "unknown"
-      ]
+        "cloud-security",
+        "cyber-defense",
+        "digital-forensics",
+        "incident-response",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "cloud-security": [
+          "cloud-workload-and-virtual-machine-security"
+        ],
+        "cyber-defense": [],
+        "digital-forensics": [
+          "disk-and-filesystem-forensics"
+        ],
+        "incident-response": [
+          "incident-handling-and-triage"
+        ],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ],
+        "identity-and-access-management": [
+          "single-sign-on-and-federation"
+        ]
+      }
     }
   ]
 }

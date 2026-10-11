@@ -57,8 +57,11 @@ cyber domains are introduced.
   empty.
 - Assessor metadata comes from the assessor JSON: name, ID, category,
   `peerReview.rigorLevel`, and `peerReview.reviewType`.
-- Every endorsement has a non-empty `domains` array. Use the canonical taxonomy
-  in `endorsement_scraper/domains.py`; use `unknown` only when no rule matches.
+- Every endorsement has a non-empty `domains` array and a `subspecialties`
+  object keyed exactly by those domains. Use the canonical taxonomy in
+  `endorsement_scraper/domains.py`; use `unknown` only when no rule matches.
+  Specialty identifiers are lowercase and hyphenated, and must remain under
+  their parent domain.
   Update the central classifier and tests when expanding the taxonomy.
 - Every individual record has exactly `name`, `last-updated`, `biography`,
   `contact`, `stats`, and `endorsements`. `stats` is derived from endorsements

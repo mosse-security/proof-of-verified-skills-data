@@ -144,6 +144,7 @@ enrichment match, and one individual profile. Verify profile `stats` contains:
 - `without-evidence`
 - `assessors` (distinct assessor IDs represented)
 - `by-domain` counts for every canonical domain, including `unknown`
+- `by-subspecialty` counts grouped beneath each canonical domain
 
 Run tests and compilation checks before reporting completion:
 

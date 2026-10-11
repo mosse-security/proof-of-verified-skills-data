@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
 
-from .domains import normalize_domains, validate_record_domains
+from .domains import detect_domains, detect_subspecialties, normalize_domains, normalize_subspecialties, validate_record_domains
 
 
 REQUIRED_ENDORSEMENT_FIELDS = (
@@ -26,7 +26,7 @@ REQUIRED_ENDORSEMENT_FIELDS = (
     "year",
     "domains",
 )
-OPTIONAL_ENDORSEMENT_FIELDS = ("subtitle",)
+OPTIONAL_ENDORSEMENT_FIELDS = ("subtitle", "subspecialties")
 ENDORSEMENT_FIELDS = (*REQUIRED_ENDORSEMENT_FIELDS, *OPTIONAL_ENDORSEMENT_FIELDS)
 
 
@@ -120,6 +120,7 @@ def build_endorsement_record(
     year: int,
     domains: Iterable[str],
     evidence_links: Iterable[Mapping[str, str]] = (),
+    subspecialties: Mapping[str, Iterable[str]] | None = None,
     subtitle: str | None = None,
 ) -> dict[str, Any]:
     """Build and validate one record matching data/templates/endorsement.tpl."""
@@ -138,13 +139,21 @@ def build_endorsement_record(
     }
     if subtitle is not None:
         record["subtitle"] = subtitle
+    domain_values = tuple(domains)
+    detected_domains = normalize_domains(domain_values)
+    if not domain_values or detected_domains == ("unknown",):
+        detected_domains = detect_domains(name, label, description, subtitle)
+    specialty_values = subspecialties
+    if specialty_values is None:
+        specialty_values = detect_subspecialties(name, label, description, subtitle, domains=detected_domains)
     record.update(
         {
             "url": url,
             "evidence-links": normalized_evidence_links,
             "evidence": bool(normalized_evidence_links),
             "year": year,
-            "domains": list(normalize_domains(domains)),
+            "domains": list(detected_domains),
+            "subspecialties": {domain: list(names) for domain, names in normalize_subspecialties(specialty_values, domains=detected_domains).items()},
         }
     )
     validate_endorsement_record(record, assessor=assessor)

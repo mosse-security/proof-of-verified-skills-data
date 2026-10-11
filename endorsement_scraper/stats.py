@@ -13,10 +13,14 @@ from .domains import ALLOWED_DOMAINS
 from .runner import RunReport
 
 
-def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None, evidence_counts: tuple[int, int] = (0, 0), domain_counts: dict[str, int] | None = None, individual_count: int = 0) -> dict[str, Any]:
+def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None, evidence_counts: tuple[int, int] = (0, 0), domain_counts: dict[str, int] | None = None, subspecialty_counts: dict[str, dict[str, int]] | None = None, individual_count: int = 0) -> dict[str, Any]:
     finished_at = finished_at or datetime.now(timezone.utc)
     totals = report.totals()
     totals["by-domain"] = {domain: int((domain_counts or {}).get(domain, 0)) for domain in ALLOWED_DOMAINS}
+    totals["by-subspecialty"] = {
+        domain: {specialty: int(count) for specialty, count in (subspecialty_counts or {}).get(domain, {}).items()}
+        for domain in ALLOWED_DOMAINS
+    }
     totals["individuals"] = int(individual_count)
     scrapers = []
     for item in report.scrapers:
@@ -111,6 +115,29 @@ def count_individuals(output_directory: Path) -> int:
     return len(names)
 
 
+def count_subspecialties(output_directory: Path) -> dict[str, dict[str, int]]:
+    """Count each normalized subspecialty under its parent domain."""
+
+    counts: dict[str, dict[str, int]] = {}
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if not isinstance(record, dict) or not isinstance(record.get("subspecialties"), dict):
+                continue
+            for domain, specialties in record["subspecialties"].items():
+                if not isinstance(specialties, list):
+                    continue
+                domain_counts = counts.setdefault(domain, {})
+                for specialty in specialties:
+                    if isinstance(specialty, str):
+                        domain_counts[specialty] = domain_counts.get(specialty, 0) + 1
+    return counts
+
+
 def validate_run_stats(stats: dict[str, Any]) -> None:
     if not isinstance(stats, dict):
         raise ValueError("stats must be an object")
@@ -133,6 +160,18 @@ def validate_run_stats(stats: dict[str, Any]) -> None:
         raise ValueError("stats.totals.by-domain must contain integer counts for every domain")
     if not isinstance(totals.get("individuals") if isinstance(totals, dict) else None, int):
         raise ValueError("stats.totals.individuals must be an integer")
+    by_subspecialty = totals.get("by-subspecialty") if isinstance(totals, dict) else None
+    if (
+        not isinstance(by_subspecialty, dict)
+        or any(not isinstance(by_subspecialty.get(domain), dict) for domain in ALLOWED_DOMAINS)
+        or any(
+            not isinstance(count, int)
+            for domain_counts in by_subspecialty.values()
+            if isinstance(domain_counts, dict)
+            for count in domain_counts.values()
+        )
+    ):
+        raise ValueError("stats.totals.by-subspecialty must be a domain-keyed object")
 
 
 def write_run_stats(path: Path, stats: dict[str, Any]) -> None:
