@@ -1,13 +1,18 @@
 {
   "name": "Brian Gorenc",
-  "last-updated": "2026-10-11T07:28:34Z",
+  "last-updated": "2026-10-11T07:42:12Z",
   "biography": "",
-  "contact": [],
+  "contact": [
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/maliciousinput"
+    }
+  ],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 1,
+    "endorsements": 7,
+    "assessors": 3,
+    "with-evidence": 7,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,11 +24,155 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
-      "unknown": 1
+      "vulnerability-research": 3,
+      "unknown": 4
     }
   },
   "endorsements": [
+    {
+      "name": "Brian Gorenc",
+      "label": "Java Every-Days: Exploiting Software Running on 3 Billion Devices",
+      "description": "Over the last three years, Oracle Java has become the exploit author's best friend, and why not? Java has a rich attack surface, broad install base, and runs on multiple platforms allowing attackers to maximize their return-on-investment. The increased focus on uncovering weaknesses in the Java Runtime Environment (JRE) shifted research beyond classic memory corruption issues into abuses of the reflection API that allow for remote code execution. This talk focuses on the vulnerability trends in Java over the last three years and intersects public vulnerability data with Java vulnerabilities submitted to the Zero Day Initiative (ZDI) program. We begin by reviewing Java's architecture and patch statistics to identify a set of vulnerable Java components. We then highlight the top five vulnerability types seen in ZDI researcher submissions that impact these JRE components and emphasize their recent historical significance. The presentation continues with an in-depth look at specific weaknesses in several Java sub-components, including vulnerability details and examples of how the vulnerabilities manifest and what vulnerability researchers should look for when auditing the component. Finally, we discuss how attackers typically leverage weaknesses in Java. We focus on specific vulnerability types attackers and exploit kits authors are using and what they are doing beyond the vulnerability itself to compromise machines. We conclude with details on the vulnerabilities that were used in this year's Pwn2Own competition and review steps Oracle has taken to address recent issues uncovered in Java.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - Java Every-Days: Exploiting Software Running on 3 Billion Devices",
+          "url": "https://www.youtube.com/watch?v=HO0CkhndCQQ"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Brian Gorenc",
+      "label": "Java Every-Days: Exploiting Software Running on 3 Billion Devices",
+      "description": "Over the last three years, Oracle Java has become the exploit author's best friend. And why not? Java has a rich attack surface, broad install base, and runs on multiple platforms allowing attackers to maximize their return-on-investment. The increased focus on uncovering weaknesses in the Java Runtime Environment (JRE) shifted research beyond classic memory corruption issues into abuses of the reflection API that allow for remote code execution. This talk focuses on the vulnerability trends in Java over the last three years and intersects public vulnerability data with Java vulnerabilities submitted to the Zero Day Initiative (ZDI) program. We begin by reviewing Java's architecture and patch statistics to identify a set of vulnerable Java components. We then highlight the top five vulnerability types seen in ZDI researcher submissions that impact these JRE components and emphasize their recent historical significance. The presentation continues with an in-depth look at specific weaknesses in several Java sub-components, including vulnerability details and examples of how the vulnerabilities manifest and what vulnerability researchers should look for when auditing the component. Finally, we discuss how attackers typically leverage weaknesses in Java. We focus on specific vulnerability types attackers and exploit kits authors are using and what they are doing beyond the vulnerability itself to compromise machines. We conclude with details on the vulnerabilities that were used in this year's Pwn2Own competition and review steps Oracle has taken to address recent issues uncovered in Java.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 21 -  Brian Gorenc and Jasiel Spelman -  Java Every Days",
+          "url": "https://www.youtube.com/watch?v=noNcfyxnTh0"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Brian Gorenc",
+      "label": "Thinking Outside the Sandbox - Violating Trust Boundaries in Uncommon Ways",
+      "description": "Attacking the modern browser and its plugins is becoming harder. Vendors are employing numerous mitigation technologies to increase the cost of exploit development. An attacker is now forced to uncover multiple vulnerabilities to gain privileged-level code execution on his targets. First, an attacker needs to find a vulnerability, leak an address to get around ASLR, and bypass DEP to gain code execution within the renderer process. The attacker then needs to bypass the application sandbox to elevate his privileges, which will allow him to do something interesting. Our journey begins at the sandbox and investigates some of the more obscure techniques used to violate this trust boundary. What should you focus on when you are auditing a sandbox implementation? There are the traditional approaches: find a memory corruption vulnerability in IPC message handling, attack the kernel to get SYSTEM-level privilege escalation, or abuse shared memory regions. Sure, any of these will work but they may not be the easiest way. Our presentation will examine four bypass techniques successfully used in winning entries at this year's Pwn2Own contest. We will analyze the attack vector used, root causes, and possible fixes for each technique. These uncommon, yet highly effective, approaches have been used to bypass the most advanced application sandboxes in use today, and understanding them will provide a unique perspective for those working to find and verify such bypasses.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "Thinking Outside the Sandbox - Violating Trust Boundaries in Uncommon Ways",
+          "url": "https://www.youtube.com/watch?v=eeklS-lvDx4"
+        }
+      ],
+      "evidence": true,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Brian Gorenc",
+      "label": "Blowing up the Celly - Building Your Own SMS/MMS Fuzzer",
+      "description": "Every time you hand out your phone number you are giving adversaries access to an ever-increasing attack surface. Text messages and the protocols that support them offer attackers an unbelievable advantage. Mobile phones will typically process the data without user interaction, and (incorrectly) handle a large number of data types, including various picture, audio, and video formats. To make matters worse, you are relying on the carriers to be your front line of defense against these types of attacks. Honestly, the mobile device sounds like it was custom built for remote exploitation. The question you should be asking yourself is: How do I find weaknesses in this attack surface? This talk will focus on the \"do-it-yourself\" aspect of building your own SMS/MMS fuzzer. We will take an in-depth look at exercising this attack surface virtually, using emulators, and on the physical devices using OpenBTS and a USRP. To help ease your entry into researching mobile platforms, we will examine the messaging specifications along with the file formats that are available for testing. The value of vulnerabilities in mobile platforms has never been higher. Our goal is to ensure you have all the details you need to quickly find and profit from them.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Gorenc",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Brian Gorenc and Matt Molinyawe - Building Your Own SMS/MMS Fuzzer",
+          "url": "https://www.youtube.com/watch?v=zn6D-iVcRwg"
+        }
+      ],
+      "evidence": true,
+      "year": 2014,
+      "domains": [
+        "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Brian Gorenc",
+      "label": "Abusing Silent Mitigations - Understanding Weaknesses Within Internet Explorers Isolated Heap and MemoryProtection",
+      "description": "In the Summer of 2014, Microsoft silently introduced two new exploit mitigations into Internet Explorer with the goal of disrupting the threat landscape. These mitigations increase the complexity of successfully exploiting a use-after-free vulnerability. June's patch (MS14-035) introduced a separate heap, called Isolated Heap, which handles most of the DOM and supporting objects. July's patch (MS14-037) introduced a new strategy called MemoryProtection for freeing memory on the heap. This talk covers the evolution of the Isolated Heap and MemoryProtection mitigations, examines how they operate, and studies their weaknesses. It outlines techniques and steps an attacker must take to attack these mitigations to gain code execution on use-after-free vulnerabilities where possible. It describes how an attacker can use MemoryProtection as an oracle to determine the address at which a module will be loaded to bypass ASLR. Finally, additional recommended defenses are laid out to further harden Internet Explorer from these new attack vectors.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Abusing Silent Mitigations - Understanding Weaknesses Within Internet Explorer",
+          "url": "https://www.youtube.com/watch?v=P_WSNVm-4ho"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Brian Gorenc",
+      "label": "Abusing Adobe Reader’s JavaScript APIs",
+      "description": "Adobe Reader’s JavaScript APIs offer a rich set of functionality for document authors. These APIs allow for processing forms, controlling multimedia events, and communicating with databases, all of which provide end-users the ability to create complex documents. This complexity provides a perfect avenue for attackers to take advantage of weaknesses that exist in Reader’s JavaScript APIs. In this talk, we will provide insight into both the documented and undocumented APIs available in Adobe Reader. Several code auditing techniques will be shared to aid in vulnerability discovery, along with numerous proofs-of-concept which highlight real-world examples. We’ll detail out how to chain several unique issues to obtain execution in a privileged context. Finally, we’ll describe how to construct an exploit that achieves remote code execution without the need for memory corruption.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Gorenc",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Panel - Abusing Adobe Readers JavaScript APIs",
+          "url": "https://www.youtube.com/watch?v=JUt9PiMyRsA"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "vulnerability-research"
+      ]
+    },
     {
       "name": "Brian Gorenc",
       "label": "Modern Day Entomology – Examining the Inner Workings of the Bug Bazaar",
@@ -36,8 +185,13 @@
       "reviewType": "community_review",
       "subtitle": "BlueHat 2018",
       "url": "https://www.microsoft.com/en-us/msrc/blog/2018/08/announcing-the-bluehat-v18-schedule",
-      "evidence-links": [],
-      "evidence": false,
+      "evidence-links": [
+        {
+          "title": "BlueHat v18 || Modern day entomology - examining the inner workings of the bug bazaar",
+          "url": "https://www.youtube.com/watch?v=4TmxyMzcOBY"
+        }
+      ],
+      "evidence": true,
       "year": 2018,
       "domains": [
         "unknown"

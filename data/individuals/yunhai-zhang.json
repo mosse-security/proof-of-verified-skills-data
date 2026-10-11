@@ -1,13 +1,13 @@
 {
   "name": "Yunhai Zhang",
-  "last-updated": "2026-10-11T07:28:34Z",
+  "last-updated": "2026-10-11T07:42:30Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,10 +20,46 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Yunhai Zhang",
+      "label": "Bypass Control Flow Guard Comprehensively",
+      "description": "Control Flow Guard (CFG) is an exploit mitigation technique that Microsoft enabled in Windows 8.1 Update 3 and Windows 10 technical preview. CFG checks the target of indirect call and raises an exception if the target is invalid, thus preventing a vital step of many exploit techniques. This talk analyses the weak-point of CFG and presents a new technique that can be used to bypass CFG comprehensively and make the prevented exploit techniques exploitable again. Furthermore, this technique is based on a generic capability, thus more exploit techniques can be developed from that capability.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Back To The Epilogue: How to Evade Windows' Control Flow Guard with Less than 16 Bytes",
+          "url": "https://www.youtube.com/watch?v=HrQVaUIDpY8"
+        },
+        {
+          "title": "Bypass Control Flow Guard Comprehensively",
+          "url": "https://www.youtube.com/watch?v=K929gLPwlUs"
+        },
+        {
+          "title": "Exploiting Adobe Flash Player In The Era Of Control Flow Guard",
+          "url": "https://www.youtube.com/watch?v=OAaIpZXSoYQ"
+        },
+        {
+          "title": "Never Let Your Guard Down: Finding Unguarded Gates to Bypass Control Flow Guard with Big Data",
+          "url": "https://www.youtube.com/watch?v=oD0rKvJcGbs"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Yunhai Zhang",
       "label": "Mitigation Bypass: The Past, Present, and Future",
@@ -36,8 +72,13 @@
       "reviewType": "community_review",
       "subtitle": "BlueHat 2018",
       "url": "https://www.microsoft.com/en-us/msrc/blog/2018/08/announcing-the-bluehat-v18-schedule",
-      "evidence-links": [],
-      "evidence": false,
+      "evidence-links": [
+        {
+          "title": "BlueHat v18 || Mitigation Bypass: The Past, Present, and Future",
+          "url": "https://www.youtube.com/watch?v=WsoFmN3oDw8"
+        }
+      ],
+      "evidence": true,
       "year": 2018,
       "domains": [
         "unknown"

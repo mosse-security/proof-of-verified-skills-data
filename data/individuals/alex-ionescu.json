@@ -1,12 +1,12 @@
 {
   "name": "Alex Ionescu",
-  "last-updated": "2026-10-11T07:28:34Z",
+  "last-updated": "2026-10-11T07:42:10Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 5,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,82 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 2
+      "unknown": 5
     }
   },
   "endorsements": [
+    {
+      "name": "Alex Ionescu",
+      "label": "Hacking like in the Movies: Visualizing Page Tables for Local Exploitation",
+      "description": "A shiny and sparkling way to break user-space ASLR, kernel ASLR and even find driver bugs! Understanding how a specific Operating System organizes its Page Tables allow you to find your own ASLR bypasses and even driver vulnerabilities. We will drop one 0day Android ASLR bypass as an example; you can then break all your other expensive toys yourself. Page Tables are the data structures that map between the virtual address space your programs see to the actual physical addresses identifying locations on your physical RAM chips. We will visualize these data structures for:",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - Hacking like in the Movies: Visualizing Page Tables for Local Exploitation",
+          "url": "https://www.youtube.com/watch?v=Of6DemoMLaA"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Alex Ionescu",
+      "label": "Battle of the SKM and IUM: How Windows 10 Rewrites OS Architecture",
+      "description": "In Windows 10, Microsoft is introducing a radical new concept to the underlying OS architecture, and likely the biggest change to the NT design since the decision to move the GUI in kernel-mode. In this new model, the Viridian Hypervisor Kernel now becomes a core part of the operating system and implements Virtual Secure Machines (VSMs) by loading a true microkernel - a compact (200kb) NT look-alike with its own drivers called the Secure Kernel Mode (SKM) environment, which then uses the Hypervisor to hook and intercept execution of the true NT kernel. This creates a new paradigm where the NT Kernel, executing in Ring 0, now runs below the Secure Kernel, at Ring ~0 (called Virtual Trust Level 1). But it doesn't stop there - as the Ring 0 NT kernel now has the ability to not only create standard Ring 3 user-mode applications, but also Ring ~3 applications (or Virtual Trust Level 0) that run in Isolated User Mode (IUM). Because VTLs are all more privileged than Ring 0, this now creates a model where a user-mode application running inside a VSM now has data and rights that even the kernel itself cannot modify. Why go through all this trouble? Because it seems like the hottest thing these days is Pass-the-Hash, and attacks must seemingly be mitigated at all costs. And even in Windows 8.1, an attacker with the permissions to load a kernel driver can bypass the existing mitigations (and Mimikatz is signed!). With VTLs, now even the most privileged attacker is only as privileged as the hypervisor will allow it - never able to truly read the hash date that is stored in the secure partition. How \"secure\" is this new model really? And what prevents a malicious application from running in such a secure mode to begin with?",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Battle Of The SKM And IUM: How Windows 10 Rewrites OS Architecture",
+          "url": "https://www.youtube.com/watch?v=LqaWIn4y26E"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Alex Ionescu",
+      "label": "The Linux Kernel Hidden Inside Windows 10",
+      "description": "Initially known as \"Project Astoria\" and delivered in beta builds of Windows 10 Threshold 2 for Mobile, Microsoft implemented a full blown Linux 3.4 kernel in the core of the Windows operating system, including full support for VFS, BSD Sockets, ptrace, and a bonafide ELF loader. After a short cancellation, it's back and improved in Windows 10 Anniversary Update (\"Redstone\"), under the guise of Bash Shell interoperability. This new kernel and related components can run 100% native, unmodified Linux binaries, meaning that NT can now execute Linux system calls, schedule thread groups, fork processes, and access the VDSO! As it's implemented using a full-blown, built-in, loaded-by-default, Ring 0 driver with kernel privileges, this not a mere wrapper library or user-mode system call converter like the POSIX subsystem of yore. The very thought of an alternate virtual file system layer, networking stack, memory and process management logic, and complicated ELF parser and loader in the kernel should tantalize exploit writers - why choose from the attack surface of a single kernel, when there's now two? But it's not just about the attack surface - what effects does this have on security software? Do these frankenLinux processes show up in Procmon or other security drivers? Do they have PEBs and TEBs? Is there even an EPROCESS? And can a Windows machine, and the kernel, now be attacked by Linux/Android malware? How are Linux system calls implemented and intercepted? As usual, we'll take a look at the internals of this entirely new paradigm shift in the Windows OS, and touch the boundaries of the undocumented and unsupported to discover interesting design flaws and abusable assumptions, which lead to a wealth of new security challenges on Windows 10 Anniversary Update (\"Redstone\") machines.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "The Linux Kernel Hidden Inside Windows 10",
+          "url": "https://www.youtube.com/watch?v=36Ykla27FIo"
+        }
+      ],
+      "evidence": true,
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Alex Ionescu",
       "label": "Gaining Visibility into Linux Binaries on Windows - How to defend and understand WSL",

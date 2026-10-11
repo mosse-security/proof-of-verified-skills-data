@@ -13,6 +13,7 @@ from ..archives import ArchiveStore
 from ..http import HttpClient
 from ..models import Request
 from ..schema import AssessorMetadata, build_endorsement_record
+from ..enrichment import EnrichmentCatalog
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,8 +31,10 @@ class BlueHatEndorsement:
     url: str
     year: int
 
-    def to_record(self, assessor):
-        return build_endorsement_record(name=self.name, label=self.title, description=self.description or self.title, endorsement_type="presentation", assessor=assessor, subtitle=f"BlueHat {self.year}" if self.year else "Microsoft BlueHat", url=self.url, year=self.year, domains=())
+    def to_record(self, assessor, enrichment_catalog=None):
+        subtitle = f"BlueHat {self.year}" if self.year else "Microsoft BlueHat"
+        links = enrichment_catalog.links_for(assessor_id=assessor.id, label=self.title, subtitle=subtitle) if enrichment_catalog else ()
+        return build_endorsement_record(name=self.name, label=self.title, description=self.description or self.title, endorsement_type="presentation", assessor=assessor, subtitle=subtitle, url=self.url, year=self.year, domains=(), evidence_links=links)
 
 
 class BlueHatScraper:
@@ -41,6 +44,7 @@ class BlueHatScraper:
     def __init__(self, *, assessor_file=Path("data/assessors/bluehat.json"), html_directory=Path("data/archives/html/bluehat.zip"), output_directory=Path("data/tmp/endorsements/bluehat"), profile_directory=Path("data/tmp/profiles/bluehat"), overwrite=True, timeout=30, retries=2):
         self.assessor_file = Path(assessor_file)
         self.assessor = AssessorMetadata.from_file(self.assessor_file)
+        self.enrichment_catalog = EnrichmentCatalog.from_directory(Path("data/enrichments"))
         document = json.loads(self.assessor_file.read_text(encoding="utf-8"))
         self.sources = document.get("links", {}).get("processUrls", [])
         self.archive = ArchiveStore(Path(html_directory))
@@ -64,7 +68,7 @@ class BlueHatScraper:
             output = self.output_directory / f"{slug}.json"
             output.parent.mkdir(parents=True, exist_ok=True)
             if self.overwrite or not output.exists():
-                output.write_text(json.dumps([r.to_record(self.assessor) for r in rows], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                output.write_text(json.dumps([r.to_record(self.assessor, self.enrichment_catalog) for r in rows], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             profiles = {r.name: {"name": r.name, "biography": "", "contact": []} for r in rows}
             self.profile_directory.mkdir(parents=True, exist_ok=True)
             (self.profile_directory / f"{slug}.json").write_text(json.dumps(list(profiles.values()), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

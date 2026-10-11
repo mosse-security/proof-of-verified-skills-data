@@ -1,12 +1,12 @@
 {
   "name": "Alban Diquet",
-  "last-updated": "2026-10-11T07:28:34Z",
+  "last-updated": "2026-10-11T07:42:10Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 4,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -20,10 +20,82 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 4
     }
   },
   "endorsements": [
+    {
+      "name": "Alban Diquet",
+      "label": "When security gets in the way: PenTesting mobile apps that use certificate pinning",
+      "description": "More and more mobile applications such as the Chrome, Twitter and card.io apps have started relying on SSL certificate pinning to further improve the security of the application's network communications. Certificate pinning allows the application to authenticate the application's servers without relying on the device trust store. Instead, a white-list of certificates known to be used by the servers is directly stored in the application, effectively restricting the set of certificates the application will accept when connecting to those servers.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2012",
+      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2012 - When Security Gets in the Way: Pen Testing Apps that use Certificate Pinning",
+          "url": "https://www.youtube.com/watch?v=Q9RXfCWv1jc"
+        }
+      ],
+      "evidence": true,
+      "year": 2012,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Alban Diquet",
+      "label": "It Just (Net)works: The Truth About iOS 7's Multipeer Connectivity Framework",
+      "description": "With the release of iOS 7, Apple has quietly introduced a nifty feature called Multipeer Connectivity. Using a surprisingly small and simple set of APIs, developers can create applications that have the ability to discover and directly communicate with nearby iOS devices over Bluetooth or WiFi, without the need for an Internet connection. While the Multipeer Connectivity Framework brings the promise of peer-to-peer and mesh networking apps significantly closer to reality, little is known regarding how it actually works behind the scenes and what the risks are for applications leveraging this functionality. This talk will first present an analysis of what happens at the network level when two devices start communicating with each other over WiFi, including a description of the protocols and encryption algorithms used. From this analysis, we'll derive a security model for Multipeer Connectivity and describe the threats and underlying assumptions that developers should be aware of when building applications. The impact of the various pairing options, data transmission modes, and encryption settings exposed by the Framework will also be explained. Lastly, we'll study the implementation of a real-world app that uses the Framework and describe issues and potential weaknesses; at the end of the presentation, a tool that was used to find some of these issues will be released.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "It Just (Net)works: The Truth About iOS 7's Multipeer Connectivity Framework",
+          "url": "https://www.youtube.com/watch?v=5NDmDtgpCEw"
+        }
+      ],
+      "evidence": true,
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Alban Diquet",
+      "label": "TrustKit: Code Injection on iOS 8 for the Greater Good",
+      "description": "With the release of iOS 8, Apple has relaxed the rules regarding how code can be packaged within an iOS App when submitting to the App Store. While in the pre-iOS 8 world, all code had to be statically linked into the Apps binary, Apple is now allowing third-party frameworks and libraries to be embedded in an Apps package and be dynamically loaded at runtime, as needed by the App. We will describe what has changed exactly and why, and the new opportunities it provides to mobile and security engineers. While doing so, we will also provide a quick overview of the library loading mechanism on iOS as well as how to perform function hooking in a non-jailbroken environment, and how developers can take advantage of this functionality. We will then present a new open-source library for iOS that leverages these mechanisms: TrustKit. TrustKit provides universal SSL public key pinning (NSURLSession, NSURLConnection, UIWebView, Cordova, etc.) and can be deployed within an App in a matter of minutes, without having to modify the Apps source code. This work is a collaboration between Data Theorem and Yahoo's mobile engineers, and offers a novel and easy-to-use implementation; we call it drag & drop SSL pinning. Throughout the presentation, attendees will have the opportunity to understand how the rules regarding dynamic linking have changed in iOS 8 and how this change can be leveraged to solve security issues in a novel way. Additionally, as TrustKit will be released as an open-source library, attendees will also be able to discover and deploy this library in their own iOS Apps.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "TrustKit: Code Injection on iOS 8 for the Greater Good",
+          "url": "https://www.youtube.com/watch?v=jc81KrICVC4"
+        }
+      ],
+      "evidence": true,
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ]
+    },
     {
       "name": "Alban Diquet",
       "label": "Where, how, and why is SSL traffic on mobile getting intercepted? A look at three million real-world SSL incidents",

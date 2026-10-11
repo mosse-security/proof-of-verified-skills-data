@@ -27,6 +27,9 @@ Do not call a conference onboarded until all of these are true:
   `evidence` that is true exactly when links exist.
 - Any useful external dataset has an enricher below `enrichers/`, with its own
   `data/enrichments/<enricher-id>/data.zip` dataset and matching logic.
+- Every assessor with a YouTube channel or playlist has a corresponding
+  non-empty `*-youtube-recordings` archive; `tests.test_video_enrichment_coverage`
+  passes.
 - `data/stats.json` reports a non-zero capture and evidence counts are known.
 - The individual merger succeeds, profile biographies remain empty, profile
   stats match the final deduplicated endorsements (including unique assessor
@@ -113,6 +116,11 @@ IDs, titles, URLs, conference/year hints, and any metadata needed for matching.
 Implement matching that tolerates conference prefixes, speaker-name prefixes,
 punctuation, subtitles, and meaningful title variants. Add a regression test
 for every discovered mismatch.
+
+When an assessor advertises `youtubeUrl`, `youtubePlaylistUrl`, or
+`youtubePlaylistUrls`, add and run its YouTube enricher before parsing
+endorsements. The coverage test must verify that the corresponding archive is
+present and contains at least one record.
 
 ### 5. Validate and generate
 

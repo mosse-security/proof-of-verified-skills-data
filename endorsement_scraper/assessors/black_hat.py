@@ -13,6 +13,7 @@ from ..archives import ArchiveStore
 from ..http import HttpClient
 from ..models import Request
 from ..schema import AssessorMetadata, build_endorsement_record
+from ..enrichment import EnrichmentCatalog
 
 
 @dataclass(frozen=True, slots=True)
@@ -45,6 +46,7 @@ class BlackHatScraper:
     ) -> None:
         self.assessor_file = assessor_file
         self.assessor = AssessorMetadata.from_file(assessor_file)
+        self.enrichment_catalog = EnrichmentCatalog.from_directory(Path("data/enrichments"))
         self.html_directory = html_directory
         self.output_directory = output_directory
         self.profile_directory = profile_directory
@@ -99,7 +101,7 @@ class BlackHatScraper:
                 # Some current landing/schedule pages legitimately contain no
                 # published sessions yet; leave them cached for a later run.
                 continue
-            records = [row.to_record(self.assessor) for row in rows]
+            records = [row.to_record(self.assessor, self.enrichment_catalog) for row in rows]
             output = self.output_directory / f"blackhat-{region}-{year}.json"
             if self.overwrite or not output.exists():
                 output.parent.mkdir(parents=True, exist_ok=True)
@@ -126,7 +128,7 @@ class BlackHatEndorsement:
     subtitle: str
     evidence_links: tuple[dict[str, str], ...] = ()
 
-    def to_record(self, assessor: AssessorMetadata) -> dict[str, object]:
+    def to_record(self, assessor: AssessorMetadata, enrichment_catalog: EnrichmentCatalog | None = None) -> dict[str, object]:
         return build_endorsement_record(
             name=self.name,
             label=self.title,
@@ -137,7 +139,7 @@ class BlackHatEndorsement:
             url=self.url,
             year=self.year,
             domains=(),
-            evidence_links=self.evidence_links,
+            evidence_links=self.evidence_links or (enrichment_catalog.links_for(assessor_id=assessor.id, label=self.title, subtitle=self.subtitle) if enrichment_catalog else ()),
         )
 
 

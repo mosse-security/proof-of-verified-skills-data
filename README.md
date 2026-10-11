@@ -25,7 +25,9 @@ python -m endorsement_scraper --list
 python -m endorsement_scraper --workers 8
 python -m endorsement_scraper --assessor black-hat --save-html
 python -m endorsement_scraper --overwrite
+python -m endorsement_scraper.enrichment_cli --overwrite
 python -m unittest tests.test_archive_coverage -v
+python -m unittest tests.test_video_enrichment_coverage -v
 python -m endorsement_scraper.individuals --overwrite
 ```
 
@@ -130,6 +132,25 @@ python -m endorsement_scraper --assessor black-hat --overwrite
 
 The same local-first ZIP, coverage test, merger, and temporary-output cleanup
 rules apply to every future assessor.
+
+### Video enrichments
+
+Independent video sources are collected by discovered enrichers and stored as
+local ZIP datasets under `data/enrichments/<enricher-id>/data.zip`. YouTube
+channels and playlists are configured in each assessor's `links` object using
+`youtubeUrl`, `youtubePlaylistUrl`, or `youtubePlaylistUrls`; BlueHat, for
+example, uses multiple playlists. Run all enrichers, or one selected enricher:
+
+```powershell
+python -m endorsement_scraper.enrichment_cli --list
+python -m endorsement_scraper.enrichment_cli --overwrite
+python -m endorsement_scraper.enrichment_cli --enricher bluehat-youtube-recordings --overwrite
+```
+
+The endorsement builders load these datasets and add matched recordings to
+`evidence-links`. The video-enrichment coverage test fails when an assessor
+declares a video source without a non-empty matching archive, preventing a
+conference from silently missing its recordings.
 
 ## Microsoft BlueHat archive
 
