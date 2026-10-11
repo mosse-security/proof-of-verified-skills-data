@@ -1,6 +1,6 @@
 {
   "name": "Daniel Gruss",
-  "last-updated": "2026-10-11T07:42:14Z",
+  "last-updated": "2026-10-11T09:23:05Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -26,24 +26,24 @@
   "endorsements": [
     {
       "name": "Daniel Gruss",
-      "label": "Using Undocumented CPU Behavior to See into Kernel Mode and Break KASLR in the Process",
-      "description": "Typically, hackers focus on software bugs to find vulnerabilities in the trust model of computers. In this talk, however, we'll focus on, how the micro architectural design of computers and how they enable an attacker to breach trust boundaries. Specifically, we'll focus on how an attacker with no special privileges can gain insights into the kernel and how these insights can enable further breaches of security. We will focus on the x86-64 architecture, but round up with comments on how our research touches on ARM processors. Unlike software bugs, micro architectural design issues have applications across operating systems and are independent of easily fixable software bugs. In modern operating systems the security model is enforced by the kernel. The kernel itself runs in a processor supported and protected state often called supervisor or kernel mode. Thus the kernel itself is protected from introspection and attack by hardware. We will present a method that'll allow for fast and reliable introspection into the memory hierarchy in the kernel based on undocumented CPU behavior and show how attackers could make use of this information to mount attacks on the kernel and consequently of the entire security model of modern computers. Making a map of memory and breaking KASLR Modern operating systems use a number of methods to prevent an attacker from running unauthorized code in kernel mode. They range from requiring user-privileges to load drivers, over driver signing to hardware enabled features preventing execution in memory marked as data such as DEP (Data Execution Prevention) or more resonantly SMEP that prevents execution of user allocated code with kernel level privileges. Often used bypasses modify either page tables or use so called code reuse attacks. Either way an attacker needs to know where the code or page tables are located. To further complicate an attack modern operating system is equipped with \"Kernel Address Space Randomized Layout\" (KASLR) that randomizes the location of important system memory. We'll present a fast and reliable method to map where the kernel has mapped pages in the kernel mode area. Further, we'll present a method for locating specific kernel modules thus by passing KASLR and paving the way for classic privileged elevation attacks. Neither method requires any special privileges and they even run from a sandboxed environment. Also relevant is that our methods are more flexible than traditional software information leaks, since they leak information on the entire memory hierarchy. The core idea of the work is that the prefetch instructions leaks information about the caches that are related to translating a virtual address into a physical address. Also significant is that the prefetch instruction is unprivileged and does not cause exceptions nor does it have any privilege verification. Thus it can be used on any address in the address space. Physical to virtual address conversion A number of micro-architectural attacks is possible on modern computers. The Row hammer is probably the most famous of these attacks. But attacks methodologies such as cache side channel attacks have proven to be able to exfiltrate private data, such as private keys, across trust boundaries. These two attack methodologies have in common that they require information about how virtual memory is mapped to physical memory. Both methodologies have thus far either used the \"/proc/PID/pagemap\" which is now accessible only with administrator privileges or by using approximations. We will discuss a method where an unprivileged user is able to reconstruct this mapping. This goes a long way towards making the row hammer attack a practical attack vector and can be a valuable assistance in doing cache side channel attacks. Again we use the prefetch's instructions lack of privilege checking, but instead of using the timing that it leaks we now use the instructions ability to load CPU caches and that timing of memory access instructions depend heavily on the cache state. Bonus material We will shortly discuss the attack vectors relevance on ARM platforms and its potential impact on hypervisor environments. Finally, we will shortly outline a possible defense.",
+      "label": "Microarchitectural Attacks and the Case of Meltdown and Spectre",
+      "description": "When asked how to crack a safe open, most people will have a picture in mind, where a thief uses a stethoscope to listen to the inadvertent clicking noises of the lock. Despite usually not being clicking noises, the security of modern computers suffers similar problems. Adversaries can use inadvertent side effects of caching to crack our digital safes open. We will discuss memory timing and cache attacks. After building a first cache attack we will directly continue with Meltdown and Spectre. The talk will provide a detailed explanation of how these attacks fundamentally work. We will discuss countermeasures and which consequences arise from this recent development.",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
+      "assessor": "Insomni'hack",
+      "assessor-id": "insomnihack",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2016",
-      "url": "https://blackhat.com/us-16/briefings.html",
+      "reviewType": "committee_review",
+      "subtitle": "Insomni'hack 2018",
+      "url": "https://insomnihack.ch/edition-2018/talks/",
       "evidence-links": [
         {
-          "title": "Using Undocumented CPU Behavior to See Into Kernel Mode and Break KASLR in the Process",
-          "url": "https://www.youtube.com/watch?v=Pwq0vv4X7m4"
+          "title": "Microarchitectural Attacks and the Case of Meltdown and Spectre - Daniel Gruss",
+          "url": "https://www.youtube.com/watch?v=UTHkYa3YQjA"
         }
       ],
       "evidence": true,
-      "year": 2016,
+      "year": 2018,
       "domains": [
         "unknown"
       ]

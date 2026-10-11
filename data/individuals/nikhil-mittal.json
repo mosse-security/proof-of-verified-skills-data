@@ -1,13 +1,13 @@
 {
   "name": "Nikhil Mittal",
-  "last-updated": "2026-10-11T07:42:23Z",
+  "last-updated": "2026-10-11T09:38:42Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 6,
-    "assessors": 2,
-    "with-evidence": 5,
-    "without-evidence": 1,
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,29 +20,10 @@
       "red-teaming": 2,
       "reverse-engineering": 0,
       "vulnerability-research": 2,
-      "unknown": 4
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Nikhil Mittal",
-      "label": "PowerShell for Penetration Testers",
-      "description": "From a long time, we as hackers and penetration testers have been using “third party” stuff for post exploitation. You 0wn a box and then you start looking for option which may not be detected by Anti Virus, which could be easily used and have minimum footprint. What if you can use features of the Operating System itself for your purpose? What if there is a shell already available on the target which is one of the most powerful shells around? It would be a pen tester’s delight, it is PowerShell.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2013",
-      "url": "https://blackhat.com/archive/europe/2013/archives.html",
-      "evidence-links": [],
-      "evidence": false,
-      "year": 2013,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Nikhil Mittal",
       "label": "PowerPreter: Post Exploitation Like a Boss",
@@ -67,78 +48,6 @@
         "penetration-testing",
         "red-teaming",
         "vulnerability-research"
-      ]
-    },
-    {
-      "name": "Nikhil Mittal",
-      "label": "Continuous Intrusion: Why CI tools are an Attackers Best Friends",
-      "description": "Continuous Integration (CI) tools provide an excellent attack surface due to the no/poor security controls, distributed build management capability, and level of access/privileges in an enterprise. This talk looks at the CI tools from an attacker's perspective and to use them as portals for getting a foothold and lateral movement. We will see how to execute attacks like command and script execution, credentials stealing, privilege escalation to not only compromise the build process but the underlying operating system and even entire Windows domains. No memory corruption bugs will be exploited and only the features of the CI tools will be used. Popular CI tools, open source as well as proprietary will be the targets. The talk will be full of live demonstrations.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2015",
-      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Continuous Intrusion: Why CI Tools Are An Attacker's Best Friends",
-          "url": "https://www.youtube.com/watch?v=0H6jd5yG7_A"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Nikhil Mittal",
-      "label": "AMSI: How Windows 10 Plans to Stop Script-Based Attacks and How Well It Does It",
-      "description": "In Windows 10, Microsoft introduced the AntiMalware Scan Interface (AMSI) which is designed to target script-based attacks and malware. Script-based attacks have been lethal for enterprise security and with advent of PowerShell, such attacks have become increasingly common. AMSI targets malicious scripts written in PowerShell, VBScript, JScript etc. and drastically improves detection and blocking rate of malicious scripts. When a piece of code is submitted for execution to the scripting host, AMSI steps in and the code is scanned for malicious content. What makes AMSI effective is, no matter how obfuscated the code is, it needs to be presented to the script host in clear text and unobfuscated. Moreover, since the code is submitted to AMSI just before execution, it doesn't matter if the code came from disk, memory or was entered interactively. AMSI is an open interface and MS says any application will be able to call its APIs. Currently, Windows Defender uses it on Windows 10. Has Microsoft finally killed script-based attacks? What are the ways out? The talk will be full of live demonstrations.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2016",
-      "url": "https://blackhat.com/us-16/briefings.html",
-      "evidence-links": [
-        {
-          "title": "AMSI: How Windows 10 Plans to Stop Script-Based Attacks and How Well It Does It",
-          "url": "https://www.youtube.com/watch?v=7A_rgu3kbvw"
-        }
-      ],
-      "evidence": true,
-      "year": 2016,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Nikhil Mittal",
-      "label": "Evading Microsoft ATA for Active Directory Domination",
-      "description": "Microsoft Advanced Threat Analytics (ATA) is a defense platform which reads information from multiple sources like traffic for certain protocols to the Domain Controller, Windows Event Logs and SIEM events. The information thus collected is used to detect Reconnaissance, Credentials replay, Lateral movement, Persistence attacks etc. Well known attacks like Pass-the-Hash, Pass-the-Ticket, Overpass-the-Hash, Golden Ticket, Directory services replication, Brute-force, Skeleton key etc. can be detected using ATA. Whenever communication to a Domain Controller is done using protocols like Kerberos, NTLM, RPC, DNS, LDAP etc., ATA will parse that traffic for gathering information about not only possible attacks but user behavior as well. It slowly builds an organizational graph and can detect deviations from normal behavior. Is it possible to evade this solid detection mechanism? What are the threats which ATA misses by design? How do Red Teamers and Penetration Testers can modify their attack chain and methodology to bypass ATA? Can we still have domain dominance? The talk will be full of live demonstrations.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2017",
-      "url": "https://blackhat.com/us-17/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Evading Microsoft ATA for Active Directory Domination",
-          "url": "https://www.youtube.com/watch?v=bHkv63-1GBY"
-        }
-      ],
-      "evidence": true,
-      "year": 2017,
-      "domains": [
-        "unknown"
       ]
     },
     {

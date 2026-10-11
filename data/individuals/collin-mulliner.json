@@ -1,12 +1,12 @@
 {
   "name": "Collin Mulliner",
-  "last-updated": "2026-10-11T07:42:13Z",
+  "last-updated": "2026-10-11T09:38:36Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 5,
-    "assessors": 2,
-    "with-evidence": 5,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,7 +20,7 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 4
+      "unknown": 0
     }
   },
   "endorsements": [
@@ -46,102 +46,6 @@
       "year": 2006,
       "domains": [
         "vulnerability-research"
-      ]
-    },
-    {
-      "name": "Collin Mulliner",
-      "label": "Probing Mobile Operator Networks",
-      "description": "Cellular networks do not only host mobile and smart phones but a wide variety of other devices. We investigated what kind of devices currently sit on cellular networks. In this talk we provide a walk through on how to probe cellular networks from start to end. Finally we show some of our results from our effort and discuss the security implications of our findings.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2012",
-      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
-      "evidence-links": [
-        {
-          "title": "Black Hat USA 2012 - Probing Mobile Operator Networks",
-          "url": "https://www.youtube.com/watch?v=gnSK8AotyyM"
-        }
-      ],
-      "evidence": true,
-      "year": 2012,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Collin Mulliner",
-      "label": "Finding and Exploiting Access Control Vulnerabilities in Graphical User Interfaces",
-      "description": "Graphical user interfaces (GUIs) contain a number of common visual elements or widgets such as labels, text fields, buttons, and lists. GUIs typically provide the ability to set attributes on these widgets to control their visibility, enabled status, and whether they are writable. While these attributes are extremely useful to provide visual cues to users to guide them through an application's GUI, they can also be misused for purposes they were not intended. In particular, in the context of GUI-based applications that include multiple privilege levels within the application, GUI element attributes are often misused as a mechanism for enforcing access control policies. In this session, we introduce GEMs, or instances of GUI element misuse, as a novel class of access control vulnerabilities in GUI-based applications. We present a classification of different GEMs that can arise through misuse of widget attributes, and describe a general algorithm for identifying and confirming the presence of GEMs in vulnerable applications. We then present GEM Miner, an implementation of our GEM analysis for the Windows platform. We evaluate GEM Miner using real-world GUI-based applications that target the small business and enterprise markets, and demonstrate the efficacy of our analysis by finding numerous previously unknown access control vulnerabilities in these applications.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2014",
-      "url": "https://blackhat.com/us-14/archives.html",
-      "evidence-links": [
-        {
-          "title": "Finding and Exploiting Access Control Vulnerabilities in Graphical User Interfaces",
-          "url": "https://www.youtube.com/watch?v=Gy45h-mnHfI"
-        }
-      ],
-      "evidence": true,
-      "year": 2014,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Collin Mulliner",
-      "label": "Breaking Payloads with Runtime Code Stripping and Image Freezing",
-      "description": "Fighting off attacks based on memory corruption vulnerabilities is hard and a lot of research was and is conducted in this area. In our recent work we take a different approach and looked into breaking the payload of an attack. Current attacks assume that they have access to every piece of code and the entire platform API. In this talk, we present a novel defensive strategy that targets this assumption. We built a system that removes unused code from an application process to prevent attacks from using code and APIs that would otherwise be present in the process memory but normally are not used by the actual application. Our system is only active during process creation time, and, therefore, incurs no runtime overhead and thus no performance degradation. Our system does not modify any executable files or shared libraries as all actions are executed in memory only. We implemented our system for Windows 8.1 and tested it on real world applications. Besides presenting our system we also show the results of our investigation into code overhead present in current applications.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2015",
-      "url": "https://blackhat.com/us-15/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Breaking Payloads With Runtime Code Stripping And Image Freezing",
-          "url": "https://www.youtube.com/watch?v=sKCEtbMCVNM"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Collin Mulliner",
-      "label": "Inside Android's SafetyNet Attestation",
-      "description": "Many app developers often have questions like the following: \"Is the device my app runs on reliable and trustworthy?\" \"Could it be, god forbid, 'rooted'?\" It turns out that answering these questions is quite difficult. In an area traditionally dominated by \"root detection\" products and DIY techniques, Google attempts to respond to this request: \"OK Google, what do you think about the device I'm running in?\" SafetyNet is the primary security platform used by Google to keep the Android ecosystem in check. SafetyNet Attestation is a service offered by the SafetyNet system to all Android application developers, who can use it to gain some insight into what Google believes is the state of tampering of the operating system and the device. Unfortunately, SafetyNet Attestation is not well documented by Google. How does it work? What checks does it do? Does it really help? How can you implement it in your app without it being trivially bypassable? Taking a perspective useful to both developers and penetration testers, this presentation covers multiple aspects of the system. Part one of this presentation will quickly recap the basics of root detection and tamper detection on Android applications. Part two takes a deep dive into the internals of the SafetyNet system and Attestation specifically, what checks it does and how it is designed, detailing how it different to traditional detection techniques. Part three discusses the different ways the system can be implemented in real world applications and how each method may achieve different level of risk reduction. This is based on the lessons learned from implementing SafetyNet Attestation for several apps with large install bases and will show how an organization's maturity may impact security checks. Finally, part four presents various attacks and bypasses against SafetyNet Attestation which target not only SafetyNet but other similar approaches.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2017",
-      "url": "https://blackhat.com/archive/europe/2017/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Inside Android's SafetyNet Attestation",
-          "url": "https://www.youtube.com/watch?v=acuRIZ0I774"
-        }
-      ],
-      "evidence": true,
-      "year": 2017,
-      "domains": [
-        "unknown"
       ]
     }
   ]

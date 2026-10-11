@@ -1,13 +1,13 @@
 {
   "name": "Ang Cui",
-  "last-updated": "2026-10-11T07:42:11Z",
+  "last-updated": "2026-10-11T09:38:35Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 6,
-    "assessors": 2,
-    "with-evidence": 3,
-    "without-evidence": 3,
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,29 +20,10 @@
       "red-teaming": 0,
       "reverse-engineering": 2,
       "vulnerability-research": 3,
-      "unknown": 3
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Ang Cui",
-      "label": "Embedded Device Firmware Vulnerability Hunting Using FRAK",
-      "description": "We present FRAK**, the firmware reverse analysis konsole. FRAK is a framework for unpacking, analyzing, modifying and repacking the firmware images of proprietary embedded devices. The FRAK framework provides a programmatic environment for the analysis of arbitrary embedded device firmware as well as an interactive environment for the disassembly, manipulation and re-assembly of such binary images. \nWe demonstrate the automated analysis of Cisco IOS, Cisco IP phone and HP LaserJet printer firmware images. We show how FRAK can integrate with existing vulnerability analysis tools to automate bug hunting for embedded devices. We also demonstrate how FRAK can be used to inject experimental host-based defenses into proprietary devices like Cisco routers and HP printers.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2012",
-      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
-      "evidence-links": [],
-      "evidence": false,
-      "year": 2012,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Ang Cui",
       "label": "Embedded Device Firmware Vulnerability Hunting Using FRAK, the Firmware Reverse Analysis Konsole",
@@ -70,30 +51,6 @@
     },
     {
       "name": "Ang Cui",
-      "label": "Stepping P3wns: Adventures in full-spectrum embedded exploitation (and defense!)",
-      "description": "Our presentation focuses on two live demonstrations of exploitation and defense of a wide array of ubiquitous networked embedded devices like printers, phones and routers.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2013",
-      "url": "https://blackhat.com/us-13/archives.html",
-      "evidence-links": [
-        {
-          "title": "Black Hat USA 2013 - Stepping P3wns: Adventures in full-spectrum embedded exploitation (& defense!)",
-          "url": "https://www.youtube.com/watch?v=8Q4JKMZN9LQ"
-        }
-      ],
-      "evidence": true,
-      "year": 2013,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Ang Cui",
       "label": "Stepping P3wns: Adventures in full spectrum embedded exploitation (and defense!)",
       "description": "Our presentation focuses on two live demonstrations of exploitation and defense of a wide array of ubiquitous networked embedded devices like printers, phones and routers. The first demonstration will feature a proof-of-concept embedded worm capable of stealthy, autonomous polyspecies propagation. This PoC worm will feature at least one 0-day vulnerability on Cisco IP phones as well as several embedded device vulnerabilities previously disclosed by the authors. We will demonstrate how an attacker can gain stealthy and persistent access to the victim network via multiple remote initial attack vectors against routers and printers. Once inside, we will show how the attacker can use other embedded devices as stepping stones to compromise significant portions of the victim network without ever needing to compromise the general purpose computers residing on the network. Our PoC worm is capable of network reconnaissance, manual full-mesh propagation between IP phones, network printers and common networking equipment. Finally, we will demonstrate fully autonomous reconnaissance and exploitation of all embedded devices on the demo network. The second demonstration showcases host-based embedded defense techniques, called Symbiotes, developed by the authors at Columbia University under support from DARPA's Cyber Fast Track and CRASH programs, as well as IARPA's STONESOUP and DHS's S&T Research programs. The Symbiote is an OS and vendor agnostic host-based defense designed specifically for proprietary embedded systems. We will demonstrate the automated injection of Software Symbiotes into each vulnerable embedded device presented during the first demonstration. We then repeat all attack scenarios presented in the first demo against Symbiote defended devices to demonstrate real-time detection, alerting and mitigation of all malicious embedded implants used by our PoC worm. Lastly, we demonstrate the scalability and integration of Symbiote detection and alerting mechanisms into existing enterprise endpoint protection systems like Symantec End Point.",
       "type": "presentation",
@@ -110,30 +67,6 @@
       "domains": [
         "penetration-testing",
         "vulnerability-research"
-      ]
-    },
-    {
-      "name": "Ang Cui",
-      "label": "Emanate Like a Boss: Generalized Covert Data Exfiltration with Funtenna",
-      "description": "Funtenna is a software-only technique which causes intentional compromising emanation in a wide spectrum of modern computing hardware for the purpose of covert, reliable data exfiltration through secured and air-gapped networks. We present a generalized Funtenna technique that reliably encodes and emanates arbitrary data across wide portions of the electromagnetic spectrum, ranging from the sub-acoustic to RF and beyond. The Funtenna technique is hardware agnostic, can operate within nearly all modern computer systems and embedded devices, and is specifically intended to operate within hardware not designed to to act as RF transmitters. We believe that Funtenna is an advancement of current state-of-the-art covert wireless exfiltration technologies. Specifically, Funtenna offers comparable exfiltration capabilities to RF-based retro-reflectors, but can be realized without the need for physical implantation and illumination. We first present a brief survey of the history of compromising emanation research, followed by a discussion of the theoretical mechanisms of Funtenna and intentionally induced compromising emanation in general. Lastly, we demonstrate implementations of Funtenna as small software implants within several ubiquitous embedded devices, such as VoIP phones and printers, and in common computer peripherals, such as hard disks, console ports, network interface cards and more.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2015",
-      "url": "https://blackhat.com/us-15/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Emanate Like A Boss: Generalized Covert Data Exfiltration With Funtenna",
-          "url": "https://www.youtube.com/watch?v=-YXkgN2-JD4"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
       ]
     },
     {

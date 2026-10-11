@@ -1,12 +1,12 @@
 {
   "name": "Ian Haken",
-  "last-updated": "2026-10-11T07:42:17Z",
+  "last-updated": "2026-10-11T09:38:39Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,34 +20,10 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 1
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Ian Haken",
-      "label": "Bypassing Local Windows Authentication to Defeat Full Disk Encryption",
-      "description": "In 2007, starting with Windows Vista, Microsoft began shipping a full disk encryption feature named BitLocker with professional and enterprise versions of Windows. Full disk encryption helps protect users from threats that include physical access. This can, for example, prevent the exposure of proprietary information and account credentials if a company laptop is lost, stolen, or even left temporarily accessible to an attacker. Under the hood, BitLocker utilizes a system's Trusted Platform Module (TPM) to store the secret key used for full disk encryption, and is able to use the features of the TPM to safely provide transparent, passwordless decryption of the disk on boot. Because BitLocker can work transparentlywithout any extra passwords or prompts on bootmany enterprises have opted to enable this form of full disk encryption as a part of their data loss prevention strategy. However, in this presentation, I will demonstrate how one can abuse physical access in order to bypass Windows authenticationthus accessing all of a user's dataeven when the disk is fully encrypted by BitLocker. This platform-independent attack effectively bypasses all of the protection offered by BitLocker, reliably and quickly allowing an attacker to retrieve all of the sensitive data on the machine, all without having to perform any cryptographic brute-forcing or hardware manipulation.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2015",
-      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Bypassing Local Windows Authentication To Defeat Full Disk Encryption",
-          "url": "https://www.youtube.com/watch?v=eRuca6eAdFM"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Ian Haken",
       "label": "Automated Discovery of Deserialization Gadget Chains",

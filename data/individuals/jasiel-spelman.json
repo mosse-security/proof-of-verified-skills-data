@@ -1,13 +1,22 @@
 {
   "name": "Jasiel Spelman",
-  "last-updated": "2026-10-11T08:59:44Z",
+  "last-updated": "2026-10-11T09:38:39Z",
   "biography": "",
-  "contact": [],
+  "contact": [
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/thezdi"
+    },
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/wanderingglitch"
+    }
+  ],
   "stats": {
     "endorsements": 2,
     "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,52 +28,57 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
-      "unknown": 2
+      "vulnerability-research": 2,
+      "unknown": 0
     }
   },
   "endorsements": [
     {
       "name": "Jasiel Spelman",
-      "label": "L'art de l'évasion: Modern VMWare Exploitation Techniques",
-      "description": "L'art de l'évasion: Modern VMWare Exploitation Techniques",
+      "label": "Java Every-Days: Exploiting Software Running on 3 Billion Devices",
+      "description": "Over the last three years, Oracle Java has become the exploit author's best friend. And why not? Java has a rich attack surface, broad install base, and runs on multiple platforms allowing attackers to maximize their return-on-investment. The increased focus on uncovering weaknesses in the Java Runtime Environment (JRE) shifted research beyond classic memory corruption issues into abuses of the reflection API that allow for remote code execution. This talk focuses on the vulnerability trends in Java over the last three years and intersects public vulnerability data with Java vulnerabilities submitted to the Zero Day Initiative (ZDI) program. We begin by reviewing Java's architecture and patch statistics to identify a set of vulnerable Java components. We then highlight the top five vulnerability types seen in ZDI researcher submissions that impact these JRE components and emphasize their recent historical significance. The presentation continues with an in-depth look at specific weaknesses in several Java sub-components, including vulnerability details and examples of how the vulnerabilities manifest and what vulnerability researchers should look for when auditing the component. Finally, we discuss how attackers typically leverage weaknesses in Java. We focus on specific vulnerability types attackers and exploit kits authors are using and what they are doing beyond the vulnerability itself to compromise machines. We conclude with details on the vulnerabilities that were used in this year's Pwn2Own competition and review steps Oracle has taken to address recent issues uncovered in Java.",
       "type": "presentation",
-      "assessor": "OffensiveCon",
-      "assessor-id": "offensivecon",
-      "assessor-category": "conference_industry",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
-      "reviewType": "committee_review",
-      "subtitle": "OffensiveCon 2018",
-      "url": "https://www.offensivecon.org/agenda/speakers/2018/zdi-team.html",
-      "evidence-links": [],
-      "evidence": false,
-      "year": 2018,
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 21 -  Brian Gorenc and Jasiel Spelman -  Java Every Days",
+          "url": "https://www.youtube.com/watch?v=noNcfyxnTh0"
+        }
+      ],
+      "evidence": true,
+      "year": 2013,
       "domains": [
-        "unknown"
+        "vulnerability-research"
       ]
     },
     {
       "name": "Jasiel Spelman",
-      "label": "Bugs so Nice they Patched them Twice! A (Continuing)? Story About Failed Patches",
-      "description": "Bugs so Nice they Patched them Twice! A (Continuing)? Story About Failed Patches",
+      "label": "Abusing Adobe Reader’s JavaScript APIs",
+      "description": "Adobe Reader’s JavaScript APIs offer a rich set of functionality for document authors. These APIs allow for processing forms, controlling multimedia events, and communicating with databases, all of which provide end-users the ability to create complex documents. This complexity provides a perfect avenue for attackers to take advantage of weaknesses that exist in Reader’s JavaScript APIs. In this talk, we will provide insight into both the documented and undocumented APIs available in Adobe Reader. Several code auditing techniques will be shared to aid in vulnerability discovery, along with numerous proofs-of-concept which highlight real-world examples. We’ll detail out how to chain several unique issues to obtain execution in a privileged context. Finally, we’ll describe how to construct an exploit that achieves remote code execution without the need for memory corruption.",
       "type": "presentation",
-      "assessor": "OffensiveCon",
-      "assessor-id": "offensivecon",
-      "assessor-category": "conference_industry",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
-      "reviewType": "committee_review",
-      "subtitle": "OffensiveCon 2019",
-      "url": "https://www.offensivecon.org/agenda/speakers/2019/jasiel-spelman-mishap-abdul-aziz-hariri.html",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Gorenc",
       "evidence-links": [
         {
-          "title": "OffensiveCon19 - Spelman, Gorenc, Hariri - Bugs so Nice they Patched them Twice!",
-          "url": "https://www.youtube.com/watch?v=IXKlMYeVVe4"
+          "title": "DEF CON 23 - Panel - Abusing Adobe Readers JavaScript APIs",
+          "url": "https://www.youtube.com/watch?v=JUt9PiMyRsA"
         }
       ],
       "evidence": true,
-      "year": 2019,
+      "year": 2015,
       "domains": [
-        "unknown"
+        "vulnerability-research"
       ]
     }
   ]

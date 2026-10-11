@@ -1,12 +1,12 @@
 {
   "name": "Oleksandr Mirosh",
-  "last-updated": "2026-10-11T07:42:23Z",
+  "last-updated": "2026-10-11T09:38:43Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 6,
-    "assessors": 2,
-    "with-evidence": 5,
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 3,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -20,62 +20,10 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 4,
-      "unknown": 2
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Oleksandr Mirosh",
-      "label": "A Journey from JNDI/LDAP Manipulation to Remote Code Execution Dream Land",
-      "description": "JNDI (Java Naming and Directory Interface) is a Java API that allows clients to discover and look up data and objects via a name. These objects can be stored in different naming or directory services such as RMI, CORBA, LDAP, or DNS. This talk will present a new type of vulnerability named \"JNDI Reference Injection\" found on malware samples attacking Java Applets (CVE-2015-4902). The same principles can be applied to attack web applications running JNDI lookups on names controlled by attackers. As we will demo during the talk, attackers will be able to use different techniques to run arbitrary code on the server performing JNDI lookups. The talk will first present the basics of this new vulnerability including the underlying technology, and will then explain in depth the different ways an attacker can exploit it using different vectors and services. We will focus on exploiting RMI, LDAP and CORBA services as these are present in almost every Enterprise application. LDAP offers an alternative attack vector where attackers not able to influence the address of an LDAP lookup operation may still be able to modify the LDAP directory in order to store objects that will execute arbitrary code upon retrieval by the application lookup operation. This may be exploited through LDAP manipulation or simply by modifying LDAP entries as some Enterprise directories allow.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2016",
-      "url": "https://blackhat.com/us-16/briefings.html",
-      "evidence-links": [
-        {
-          "title": "A Journey From JNDI/LDAP Manipulation to Remote Code Execution Dream Land",
-          "url": "https://www.youtube.com/watch?v=Y8a5nB-vy78"
-        },
-        {
-          "title": "Reversing a Japanese Wireless SD Card - From Zero to Code Execution",
-          "url": "https://www.youtube.com/watch?v=tA7GW9XkXBU"
-        }
-      ],
-      "evidence": true,
-      "year": 2016,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Oleksandr Mirosh",
-      "label": "Friday the 13th: JSON Attacks",
-      "description": "2016 was the year of Java deserialization apocalypse. Although Java Deserialization attacks were known for years, the publication of the Apache Commons Collection Remote Code Execution (RCE from now on) gadget finally brought this forgotten vulnerability to the spotlight and motivated the community to start finding and fixing these issues. One of the most suggested solutions for avoiding Java deserialization issues was to move away from Java Deserialization altogether and use safer formats such as JSON. In this talk, we will analyze the most popular JSON parsers in both .NET and Java for potential RCE vectors. We will demonstrate that RCE is also possible in these libraries and present details about the ones that are vulnerable to RCE by default. We will also discuss common configurations that make other libraries vulnerable. In addition to focusing on JSON format, we will generalize the attack techniques to other serialization formats. In particular, we will pay close attention to several serialization formats in .NET. These formats have also been known to be vulnerable since 2012 but the lack of known RCE gadgets led some software vendors to not take this issue seriously. We hope this talk will change this. With the intention of bringing the due attention to this vulnerability class in .NET, we will review the known vulnerable formats, present other formats which we found to be vulnerable, and conclude with presenting several gadgets from system libraries that may be used to achieve RCE in a stable way: no memory corruption -- just simple process invocation. Finally, we will provide recommendations on how to determine if your code is vulnerable, provide remediation advice, and discuss alternative approaches.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2017",
-      "url": "https://blackhat.com/us-17/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Friday the 13th: JSON Attacks",
-          "url": "https://www.youtube.com/watch?v=oUAeWhW5b8c"
-        }
-      ],
-      "evidence": true,
-      "year": 2017,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Oleksandr Mirosh",
       "label": "Friday the 13th: JSON attacks!",

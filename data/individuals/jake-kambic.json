@@ -1,12 +1,12 @@
 {
   "name": "Jake Kambic",
-  "last-updated": "2026-10-11T07:42:17Z",
+  "last-updated": "2026-10-11T09:38:39Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,34 +20,10 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 1
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Jake Kambic",
-      "label": "Cunning with CNG: Soliciting Secrets from Schannel",
-      "description": "Secure Channel (Schannel) is Microsoft's standard SSL/TLS Library underpinning services like RDP, Outlook, Internet Explorer, Windows Update, SQL Server, LDAPS, Skype and many third party applications. Schannel has been the subject of scrutiny in the past several years from an external perspective due to reported vulnerabilities, including an RCE. What about the internals? How does Schannel guard its secrets? This talk looks at how Schannel leverages Microsoft's CryptoAPI-NG (CNG) to cache the master keys, session keys, private and ephemeral keys, and session tickets used in TLS/SSL connections. It discusses the underlying data structures, and how to extract both the keys and other useful information that provides forensic context about connection. This information is then leveraged to decrypt a session that uses ephemeral key exchanges. Information in the cache lives for at least 10 hours by default on modern configurations, storing up to 20,000 entries for client and server each. This makes it forensically relevant in cases where other evidence of the connection may have dissipated.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2016",
-      "url": "https://blackhat.com/us-16/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Cunning With CNG: Soliciting Secrets From Schannel",
-          "url": "https://www.youtube.com/watch?v=uY8pVxZpy_k"
-        }
-      ],
-      "evidence": true,
-      "year": 2016,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Jake Kambic",
       "label": "Cunning with CNG: Soliciting Secrets from Schannel",

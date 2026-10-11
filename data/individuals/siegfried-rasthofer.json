@@ -1,12 +1,12 @@
 {
   "name": "Siegfried Rasthofer",
-  "last-updated": "2026-10-11T07:42:27Z",
+  "last-updated": "2026-10-11T09:38:45Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 1,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -20,34 +20,10 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 1
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Siegfried Rasthofer",
-      "label": "(In-)Security of Backend-As-A-Service",
-      "description": "Smartphone applications frequently need to store data remotely. From a developer's point of view, setting up and maintaining back-ends, however, is time-consuming and error-prone. Therefore, commercial cloud-based data storage solutions from Backend-As-A-Service (BaaS) providers such as the ones from Amazon, Google, and Facebook have become omnipresent. They provide simple APIs for common tasks such as managing database records or files. Adding a few library classes and writing three or four lines of code is sufficient to make an interaction between the cloud and the app, and, e.g., store credit card data. While this model is convenient, one might wonder whether it's really secure in practice (spoiler: it's not). In this study, we will show that many BaaS solutions are completely insecure and attackers have no difficulties in breaking into the developer's backend. We investigated about two million Android apps and the results were quite shocking. We were able to access more than 56 million sensitive user records stored in the cloud by heavily misconfigured BaaS solutions. These records contained all sorts of sensitive data processed by Android apps: medical information, credit card data, photos, voice-, audio- and video-records, money transaction records, etc. Some apps even contained credentials that gave us full control over the remote storage. Adversaries could hijack Amazon S3-Buckets which gives them the ability to modify sensitive customer databases, add malicious code to well-known websites or directly run malware on the cloud at the app developer's expense. In order to find and verify these insecure BaaS solutions in Android applications, we developed an automatic exploit generator that extracts credentials from the app, even if they are obfuscated, and provides access to the respective BaaS backend.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2015",
-      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
-      "evidence-links": [
-        {
-          "title": "(In-)Security of Backend-As-A-Service",
-          "url": "https://www.youtube.com/watch?v=CMKvsBYkFgI"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Siegfried Rasthofer",
       "label": "Bypassing Android Password Manager Apps Without Root",

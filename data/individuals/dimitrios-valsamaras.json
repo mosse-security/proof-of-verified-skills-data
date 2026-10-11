@@ -1,13 +1,13 @@
 {
   "name": "Dimitrios Valsamaras",
-  "last-updated": "2026-10-11T07:42:15Z",
+  "last-updated": "2026-10-11T09:23:05Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 2,
     "assessors": 1,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,29 +20,48 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 2
     }
   },
   "endorsements": [
     {
       "name": "Dimitrios Valsamaras",
-      "label": "My other ClassLoader is your ClassLoader: Creating evil twin instances of a class",
-      "description": "My other ClassLoader is your ClassLoader: Creating evil twin instances of a class",
+      "label": "Permissionless Android Universal Overlays",
+      "description": "In this paper we present a novel GUI attack that leverages the fact that an Android activity maintains its graphical state and can receive touches, while it’s in the top of the back stack of the device home screen. Whilst most of the techniques that have been introduced so far require the SYSTEM_ALERT_WINDOW permission, the one we present is permissionless and makes use only of the FLAG_NOT_TOUCH_MODAL flag. By using this technique, we were able to create overlapping views over system dialogues, luring the user to unintentionally approve dangerous permissions and access to system services. Third party applications are also at risk, as it is possible to garble their UI by projecting fraudulent views that ostensibly belong to the targeted application’s context. For the latter to be successful, the PACKAGE_USAGE_STATS permission must be obtained in order to identify the application that is currently in the foreground. Google addressed a similar issue ( CVE-2020-0416 ) for Android versions 8.0, 8.1, 9, 10 and 11 by enabling the filterTouchesWhenObscured attribute on all SwitchPreferences, for pages that control special application permission access. Our technique ( CVE-2021-39617 ) was not affected by this fix, and it was proven to additionally impact system dialogues that control dangerous permissions.",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
+      "assessor": "Insomni'hack",
+      "assessor-id": "insomnihack",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2024",
-      "url": "https://blackhat.com/archive/europe/2024/briefings/schedule/",
+      "reviewType": "committee_review",
+      "subtitle": "Insomni'hack 2023",
+      "url": "https://insomnihack.ch/edition-2023/talks/",
       "evidence-links": [
         {
-          "title": "My other ClassLoader is your ClassLoader: Creating evil twin instances of a class",
-          "url": "https://www.youtube.com/watch?v=9D-hLsrY-uE"
+          "title": "Permissionless Android Universal Overlays by Dimitrios Valsamaras",
+          "url": "https://www.youtube.com/watch?v=Jdhg1Tx8CjQ"
         }
       ],
       "evidence": true,
+      "year": 2023,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Dimitrios Valsamaras",
+      "label": "When Malware Becomes Creative: A Survey of Advanced Android Detection Evasion Tactics",
+      "description": "When Malware Becomes Creative: A Survey of Advanced Android Detection Evasion Tactics",
+      "type": "presentation",
+      "assessor": "Insomni'hack",
+      "assessor-id": "insomnihack",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "Insomni'hack 2024",
+      "url": "https://insomnihack.ch/edition-2024/talks/",
+      "evidence-links": [],
+      "evidence": false,
       "year": 2024,
       "domains": [
         "unknown"

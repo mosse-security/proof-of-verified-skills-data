@@ -1,13 +1,13 @@
 {
   "name": "Mathias Payer",
-  "last-updated": "2026-10-11T07:42:21Z",
+  "last-updated": "2026-10-11T09:35:44Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
+    "endorsements": 2,
     "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 0,
+    "with-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -20,30 +20,44 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 0,
-      "unknown": 1
+      "unknown": 2
     }
   },
   "endorsements": [
     {
       "name": "Mathias Payer",
-      "label": "Silently Breaking ASLR in the Cloud",
-      "description": "To reduce the memory footprint and to increase the cost-effectiveness of virtual machines (VMs) running on the same host, cloud providers use memory deduplication. Memory deduplication searches for memory pages with the same contents and merges them into one, read-only memory page. Writing to these pages is expensive due to page faults caused by the memory protection, and this cost can be used by an attacker as a side-channel to detect whether a page has been shared. Leveraging this memory side-channel, we craft an attack that leaks the randomized base addresses of libraries and executables mapped in processes of neighboring VMs, and hence, defeats ASLR. Our proof-of-concept exploit, CAIN (Cross-VM ASL INtrospection), defeats ASLR of a 64-bit Windows Server 2012 victim VM running on a default KVM configuration in less than five hours. In this session, we will discuss the underlying concepts of the attack and we will present the CAIN PoC exploit.",
+      "label": "SMoTherSpectre: Exploiting speculative execution through port contention",
+      "description": "SMoTherSpectre: Exploiting speculative execution through port contention",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
+      "assessor": "Insomni'hack",
+      "assessor-id": "insomnihack",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2015",
-      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Silently Breaking ASLR In The Cloud",
-          "url": "https://www.youtube.com/watch?v=lxXQxYFHTbA"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
+      "reviewType": "committee_review",
+      "subtitle": "Insomni'hack 2020",
+      "url": "https://insomnihack.ch/edition-2020/talks/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2020,
+      "domains": [
+        "unknown"
+      ]
+    },
+    {
+      "name": "Mathias Payer",
+      "label": "(KEYNOTE) Advanced Android Archaeology: Baffled By Bloated Complexity",
+      "description": "(KEYNOTE) Advanced Android Archaeology: Baffled By Bloated Complexity",
+      "type": "presentation",
+      "assessor": "Insomni'hack",
+      "assessor-id": "insomnihack",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "Insomni'hack 2025",
+      "url": "https://insomnihack.ch/edition-2025/talks/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2025,
       "domains": [
         "unknown"
       ]

@@ -167,3 +167,9 @@ pages expose row-level speaker names without detail links, while newer speaker
 index pages expose abstracts and linked detail pages. Keep both parsing paths
 and allow unavailable detail pages to fall back to the agenda's descriptive
 title without blocking the complete run.
+
+Insomni'hack is a second archive pattern: the historical URLs can remain in
+the assessor inventory even when the live site later redirects them. Never
+cache the redirected current homepage as historical source data. Remove such
+invalid cache entries, let `test_archive_coverage` identify the missing URLs,
+and require manually saved historical HTML before generating endorsements.

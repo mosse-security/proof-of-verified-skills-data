@@ -1,12 +1,12 @@
 {
   "name": "Thomas Mathew",
-  "last-updated": "2026-10-11T07:42:28Z",
+  "last-updated": "2026-10-11T09:38:47Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 1,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -20,34 +20,10 @@
       "red-teaming": 0,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 1
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Thomas Mathew",
-      "label": "Towards a Holistic Approach in Building Intelligence to Fight Crimeware",
-      "description": "To defeat your adversaries, it is crucial to understand how they operate and to develop a comprehensive view of their playing field. In this talk, we describe a holistic and scalable approach to investigating and combating cybercrime. Our strategy focuses on two perspectives: the network attack surface and the actors. The network attack surface exploited by malware manifests itself through various aspects such as hosting IP space, DNS traffic, open ports, BGP announcements, ASN peerings, and SSL certificates. The actors' view tracks trends, motivations, and TTPs of cyber criminals by infiltrating and maintaining access to closed underground forums where threat actors collaborate to plan cyber attacks. Crimeware campaigns nowadays rely heavily on bulletproof hosting for scalable deployment. We distinguish two types of such hosting infrastructures: the first consists of a large number of infected residential hosts scattered geographically that are leveraged to build a fast flux proxy network. This network is a hosting-as-a service platform for various malware and ransomware C2, phishing, carding, and botnet panels. The second type exists in dedicated servers acquired from rogue hosting companies or large abused hosting providers with the purpose of hosting exploit kits, phishing, malware C2, and other gray content. We start by using DNS traffic analysis and passive DNS mining algorithms to massively detect malware domains. After we identify the hosting IPs of these domains, we will demonstrate novel methods using DNS PTR data to further map out the entire IP space of bulletproof hosters serving these attacks. In the case of fast flux proxy networks, we leverage SSL data to map out larger sets of compromised hosts. Concurrently, we investigate underground forums for emerging signals about bulletproof hosters just about to be employed for malware campaigns. The talk describes how to proactively bridge the gap between the actors and network views by identifying the IP space of the mentioned hosters given very few initial indicators and predictively block it. This is made possible thanks to the deployment at large scale of DNS PTR, SSL, and HTTP data provided by Project Sonar datasets and our own scanning of certain IP regions. It is undoubtedly a serious challenge facing security researchers to devise means to quickly index and search through vast quantities of security related log data. Therefore, we will also describe the backend architecture, based on HBase and ElasticSearch, that we use to index global Internet metadata so it is easily searchable and retrievable. Join us in this talk to learn about effective methods to investigate malware from both network and actors' perspectives and hear about our experience on how to deploy and mine large scale Internet data to support threat research.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2016",
-      "url": "https://blackhat.com/us-16/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Towards a Holistic Approach in Building Intelligence to Fight Crimeware",
-          "url": "https://www.youtube.com/watch?v=hBzGM3d7c1Y"
-        }
-      ],
-      "evidence": true,
-      "year": 2016,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Thomas Mathew",
       "label": "Malicious CDNs: Identifying Zbot Domains en Masse via SSL Certificates and Bipartite Graphs",

@@ -191,6 +191,25 @@ python -m endorsement_scraper.enrichment_cli --enricher offensivecon-youtube-rec
 python -m endorsement_scraper --assessor offensivecon --overwrite
 ```
 
+## Insomni'hack archive
+
+Insomni'hack is inventoried for published talk pages from 2013–2020 and
+2022–2026. The live site currently redirects those historical paths to its
+2027 site, so the archive must be populated from manually saved historical
+HTML (the coverage test reports every missing URL) before parsing. Once pages
+are inserted into `data/archives/html/insomnihack.zip`, run:
+
+```powershell
+python -m unittest tests.test_archive_coverage -v
+python -m endorsement_scraper --assessor insomnihack --overwrite
+python -m endorsement_scraper.enrichment_cli --enricher insomnihack-youtube-recordings --overwrite
+```
+
+The Insomni'hack YouTube enrichment archive is ready at
+`data/enrichments/insomnihack-youtube-recordings/data.zip` and contains 215
+recordings. The parser supports the historical schedule/table and talk-section
+layouts, including multi-speaker sessions and abstracts.
+
 ## Cyber-domain mapping
 
 Every endorsement record must contain a non-empty `domains` array. The core

@@ -837,6 +837,7 @@ def _is_noise_name(name: str) -> bool:
     return (
         len(name) < 2
         or len(name) > 100
+        or bool(re.match(r"^\d{1,2}:\d{2}\b", name))
         or any(
             phrase in lowered
             for phrase in (

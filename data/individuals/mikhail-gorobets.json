@@ -1,12 +1,12 @@
 {
   "name": "Mikhail Gorobets",
-  "last-updated": "2026-10-11T07:42:22Z",
+  "last-updated": "2026-10-11T09:38:42Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
-    "with-evidence": 3,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -20,38 +20,10 @@
       "red-teaming": 1,
       "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "unknown": 2
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Mikhail Gorobets",
-      "label": "Attacking Hypervisors Using Firmware and Hardware",
-      "description": "In this presentation, we explore the attack surface of modern hypervisors from the perspective of vulnerabilities in system firmware, such as BIOS and in hardware emulation. We will demonstrate a number of new attacks on hypervisors based on system firmware vulnerabilities with impacts ranging from VMM DoS to hypervisor privilege escalation to SMM privilege escalation from within the virtual machines. We will also show how a firmware rootkit based on these vulnerabilities could expose secrets within virtual machines and explain how firmware issues can be used for analysis of hypervisor-protected content such as VMCS structures, EPT tables, host physical addresses (HPA) map, IOMMU page tables etc. To enable further hypervisor security testing, we will also be releasing new modules in the open source CHIPSEC framework to test issues in hypervisors when virtualizing hardware.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2015",
-      "url": "https://blackhat.com/us-15/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Attacking Hardware Systems Using Resonance and the Laws of Physics",
-          "url": "https://www.youtube.com/watch?v=D6W9ykPtlA4"
-        },
-        {
-          "title": "Attacking Hypervisors Using Firmware And Hardware",
-          "url": "https://www.youtube.com/watch?v=nyW3eTobXAI"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Mikhail Gorobets",
       "label": "Attacking Hypervisors Using Firmware and Hardware",
@@ -75,30 +47,6 @@
       "domains": [
         "red-teaming",
         "vulnerability-research"
-      ]
-    },
-    {
-      "name": "Mikhail Gorobets",
-      "label": "Fractured Backbone: Breaking Modern OS Defenses with Firmware Attacks",
-      "description": "In this work we analyzed two recent trends. The first trend is the growing threat of firmware attacks which include recent disclosures of Vault7 Mac EFI implants. We will detail vulnerabilities and attacks we discovered recently in system firmware including UEFI, Mac EFI and Coreboot which could lead to stealth and persistent firmware implants. We have also developed multiple techniques that can be used to detect that something wrong is going on with the firmware using open source CHIPSEC framework. The second trend is modern operating systems started adopting stronger software defenses based on virtualization technology. Windows 10 introduced Virtualization Based Security (VBS) to provide hypervisor-based isolated execution environment to critical OS components and to protect sensitive data such as domain credentials. Previously, we discovered multiple ways adversaries could leverage firmware in attacks against hypervisors. We also demonstrated the first proof-of-concept attack on Windows 10 VBS exposing domain credentials protected by Credential Guard technology. We will apply this knowledge to analyze the security of modern hypervisor based OS defenses from the perspective of firmware and hardware attacks. We will detail firmware assisted attack vectors which can be used to compromise Windows 10 VBS. We will also describe changes done by platform vendors and Windows to improve mitigation against these attacks.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2017",
-      "url": "https://blackhat.com/us-17/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Fractured Backbone: Breaking Modern OS Defenses with Firmware Attacks",
-          "url": "https://www.youtube.com/watch?v=ryKy9LvmSIs"
-        }
-      ],
-      "evidence": true,
-      "year": 2017,
-      "domains": [
-        "unknown"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
   "name": "Sean Metcalf",
-  "last-updated": "2026-10-11T07:42:26Z",
+  "last-updated": "2026-10-11T09:38:45Z",
   "biography": "",
   "contact": [
     {
@@ -13,10 +13,10 @@
     }
   ],
   "stats": {
-    "endorsements": 8,
-    "assessors": 3,
-    "with-evidence": 6,
-    "without-evidence": 2,
+    "endorsements": 5,
+    "assessors": 1,
+    "with-evidence": 4,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 2,
       "cyber-defense": 2,
@@ -29,34 +29,10 @@
       "red-teaming": 3,
       "reverse-engineering": 0,
       "vulnerability-research": 2,
-      "unknown": 3
+      "unknown": 0
     }
   },
   "endorsements": [
-    {
-      "name": "Sean Metcalf",
-      "label": "Red vs Blue: Modern Active Directory Attacks Detection and Protection",
-      "description": "Kerberos \"Golden Tickets\" were unveiled by Alva \"Skip\" Duckwall & Benjamin Delpy in 2014 during their Black Hat USA presentation. Around this time, Active Directory (AD) admins all over the world felt a great disturbance in the Force. Golden Tickets are the ultimate method for persistent, forever AD admin rights to a network since they are valid Kerberos tickets and can't be detected, right? The news is filled with reports of breached companies and government agencies with little detail on the attack vectors and mitigation. This briefing discusses in detail the latest attack methods for gaining and maintaining administrative access in Active Directory. Also covered are traditional defensive security measures that work (and ones that don't) as well as the mitigation strategies that can keep your company's name off the front page. Prepare to go beyond \"Pass-the-Hash\" and down the rabbit hole. This talk explores the latest Active Directory attack vectors and describes how Golden Ticket usage can be detected. When forged Kerberos tickets are used in AD, there are some interesting artifacts that can be identified. Yes, despite what you may have read on the internet, there are ways to detect Golden & Silver Ticket usage! Some of the topics covered: How attackers go from zero to (Domain) Admin MS14-068: the vulnerability, the exploit, and the danger. \"SPN Scanning\" with PowerShell to identify potential targets without network scans (SQL, Exchange, FIM, webservers, etc.). Exploiting weak service account passwords as a regular AD user. Mimikatz, the attacker's multi-tool. Using Silver Tickets for stealthy persistence that won't be detected (until now). Identifying forged Kerberos tickets (Golden & Silver Tickets) on your network. Detecting offensive PowerShell tools like Invoke-Mimikatz. PowerShell v5 security enhancements Active Directory attack mitigation. Kerberos expertise is not required since the presentation covers how Active Directory leverages Kerberos for authentication identifying the areas useful for attack. Information presented is useful for both Red Team & Blue Team members.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2015",
-      "url": "https://blackhat.com/us-15/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Red Vs. Blue: Modern Active Directory Attacks, Detection, And Protection",
-          "url": "https://www.youtube.com/watch?v=b6GUXerE9Ac"
-        }
-      ],
-      "evidence": true,
-      "year": 2015,
-      "domains": [
-        "unknown"
-      ]
-    },
     {
       "name": "Sean Metcalf",
       "label": "Red vs. Blue: Modern Active Directory Attacks & Defense",
@@ -85,34 +61,6 @@
     },
     {
       "name": "Sean Metcalf",
-      "label": "Beyond the MCSE: Active Directory for the Security Professional",
-      "description": "Active Directory (AD) is leveraged by 95% of the Fortune 1000 companies for its directory, authentication, and management capabilities. This means that both Red and Blue teams need to have a better understanding of Active Directory, it's security, how it's attacked, and how best to align defenses. This presentation covers key Active Directory components which are critical for security professionals to know in order to defend AD. Properly securing the enterprise means identifying and leveraging appropriate defensive technologies. The provided information is immediately useful and actionable in order to help organizations better secure their enterprise resources against attackers. Highlighted are areas attackers go after including some recently patched vulnerabilities and the exploited weaknesses. This includes the critical Kerberos vulnerability (MS14-068), Group Policy Man-in-the-Middle (MS15-011 & MS15-014) and how they take advantages of AD communication. Some of the content covered:",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2016",
-      "url": "https://blackhat.com/us-16/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Beyond the Mcse: Active Directory for the Security Professional",
-          "url": "https://www.youtube.com/watch?v=2w1cesS7pGY"
-        },
-        {
-          "title": "Active Directory Security in the Cloud Age",
-          "url": "https://www.youtube.com/watch?v=UykTFvKPXpU"
-        }
-      ],
-      "evidence": true,
-      "year": 2016,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Sean Metcalf",
       "label": "Beyond the MCSE: Red Teaming Active Directory",
       "description": "Active Directory (AD) is leveraged by 95% of the Fortune 1000 companies for its directory, authentication, and management capabilities, so why do red teams barely scratch the surface when it comes to leveraging the data it contains? This talk skips over the standard intro to Active Directory fluff and dives right into the compelling offensive information useful to a Red Teamer, such as quickly identifying target systems and accounts. AD can yield a wealth of information if you know the right questions to ask. This presentation ventures into areas many didn't know existed and leverages capability to quietly identify interesting accounts & systems, identify organizations the target company does business with regularly, build target lists without making a sound, abuse misconfigurations/existing trusts, and quickly discover the most interesting shares and their location. PowerShell examples and AD defense evasion techniques are provided throughout the talk. Let's go beyond the MCSE and take a different perspective on the standard AD recon and attack tactics.",
       "type": "presentation",
@@ -128,25 +76,6 @@
       "year": 2016,
       "domains": [
         "red-teaming"
-      ]
-    },
-    {
-      "name": "Sean Metcalf",
-      "label": "Active Directory Security: The Journey",
-      "description": "Active Directory Security: The Journey",
-      "type": "presentation",
-      "assessor": "Microsoft BlueHat",
-      "assessor-id": "bluehat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "BlueHat 2017",
-      "url": "https://www.microsoft.com/en-us/msrc/blog/2017/09/announcing-the-bluehat-v17-schedule",
-      "evidence-links": [],
-      "evidence": false,
-      "year": 2017,
-      "domains": [
-        "unknown"
       ]
     },
     {

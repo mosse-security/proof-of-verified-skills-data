@@ -1,6 +1,6 @@
 {
   "name": "Alvaro Muñoz",
-  "last-updated": "2026-10-11T07:42:10Z",
+  "last-updated": "2026-10-11T09:38:35Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -26,30 +26,6 @@
   "endorsements": [
     {
       "name": "Alvaro Muñoz",
-      "label": "Friday the 13th: JSON Attacks",
-      "description": "2016 was the year of Java deserialization apocalypse. Although Java Deserialization attacks were known for years, the publication of the Apache Commons Collection Remote Code Execution (RCE from now on) gadget finally brought this forgotten vulnerability to the spotlight and motivated the community to start finding and fixing these issues. One of the most suggested solutions for avoiding Java deserialization issues was to move away from Java Deserialization altogether and use safer formats such as JSON. In this talk, we will analyze the most popular JSON parsers in both .NET and Java for potential RCE vectors. We will demonstrate that RCE is also possible in these libraries and present details about the ones that are vulnerable to RCE by default. We will also discuss common configurations that make other libraries vulnerable. In addition to focusing on JSON format, we will generalize the attack techniques to other serialization formats. In particular, we will pay close attention to several serialization formats in .NET. These formats have also been known to be vulnerable since 2012 but the lack of known RCE gadgets led some software vendors to not take this issue seriously. We hope this talk will change this. With the intention of bringing the due attention to this vulnerability class in .NET, we will review the known vulnerable formats, present other formats which we found to be vulnerable, and conclude with presenting several gadgets from system libraries that may be used to achieve RCE in a stable way: no memory corruption -- just simple process invocation. Finally, we will provide recommendations on how to determine if your code is vulnerable, provide remediation advice, and discuss alternative approaches.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2017",
-      "url": "https://blackhat.com/us-17/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Friday the 13th: JSON Attacks",
-          "url": "https://www.youtube.com/watch?v=oUAeWhW5b8c"
-        }
-      ],
-      "evidence": true,
-      "year": 2017,
-      "domains": [
-        "unknown"
-      ]
-    },
-    {
-      "name": "Alvaro Muñoz",
       "label": "Friday the 13th: JSON attacks!",
       "description": "Sunday at 14:00 in Track 4 45 minutes | Demo, Exploit Alvaro Muñoz Principal Security Researcher,Hewlett Packard Enterprise Oleksandr Mirosh Senior Security QA Engineer, Hewlett Packard Enterprise 2016 was the year of Java deserialization apocalypse. Although Java Deserialization attacks were known for years, the publication of the Apache Commons Collection Remote Code Execution (RCE from now on) gadget finally brought this forgotten vulnerability to the spotlight and motivated the community to start finding and fixing these issues. One of the most suggested solutions for avoiding Java deserialization issues was to move away from Java Deserialization altogether and use safer formats such as JSON. In this talk, we will analyze the most popular JSON parsers in both .NET and Java for potential RCE vectors. We will demonstrate that RCE is also possible in these libraries and present details about the ones that are vulnerable to RCE by default. We will also discuss common configurations that make other libraries vulnerable. In addition to focusing on JSON format, we will generalize the attack techniques to other serialization formats. In particular, we will pay close attention to several serialization formats in .NET. These formats have also been known to be vulnerable since 2012 but the lack of known RCE gadgets led some software vendors to not take this issue seriously. We hope this talk will change this. With the intention of bringing the due attention to this vulnerability class in .NET, we will review the known vulnerable formats, present other formats which we found to be vulnerable as well and conclude presenting several gadgets from system libraries that may be used to achieve RCE in a stable way: no memory corruption — just simple process invocation. Finally, we will provide recommendations on how to determine if your code is vulnerable, provide remediation advice, and discuss alternative approaches.",
       "type": "presentation",
@@ -70,6 +46,30 @@
       "year": 2017,
       "domains": [
         "vulnerability-research"
+      ]
+    },
+    {
+      "name": "Alvaro Muñoz",
+      "label": "Attacking .NET deserialization",
+      "description": "2016 was the year of Java deserialization apocalypse. Although Java Deserialization attacks were known for years, the publication of the Apache Commons Collection Remote Code Execution gadget (RCE from now on) finally brought this forgotten vulnerability to the spotlight and motivated the community to start finding and fixing these issues. .NET is next in line; formatters such as BinaryFormatter and NetDataContractSerializer are known to share similar mechanics which make them potentially vulnerable to similar RCE attacks. However, as we saw with Java before, the lack of RCE gadgets led some software vendors to not take this issue seriously. In this talk, we will analyze .NET serializers including third party JSON parsers for potential RCE vectors. We will provide real-world examples of vulnerable code and more importantly, we will review how these vulnerabilities were detected and fixed in each case.",
+      "type": "presentation",
+      "assessor": "Insomni'hack",
+      "assessor-id": "insomnihack",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "Insomni'hack 2018",
+      "url": "https://insomnihack.ch/edition-2018/talks/",
+      "evidence-links": [
+        {
+          "title": "Attacking .NET deserialization - Alvaro Muñoz",
+          "url": "https://www.youtube.com/watch?v=eDfGpu3iE4Q"
+        }
+      ],
+      "evidence": true,
+      "year": 2018,
+      "domains": [
+        "unknown"
       ]
     },
     {
