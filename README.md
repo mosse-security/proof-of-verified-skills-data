@@ -177,6 +177,26 @@ URLs now return 404. Source pages are cached in
 python -m endorsement_scraper --assessor cansecwest --overwrite
 ```
 
+## Blue Team Con archive
+
+Blue Team Con is inventoried for its official 2021–2025 historical talks
+pages in `data/assessors/blue-team-con.json`. The five pages are cached in
+`data/archives/html/blue-team-con.zip` and parsed by the discovered
+`blue-team-con-talks` collection scraper. Each presented speaker becomes an
+endorsement; the linked talk page is retained as evidence and the parser is
+safe to rerun:
+
+```powershell
+python -m endorsement_scraper --assessor blue-team-con --overwrite
+```
+
+Archive coverage tests also enumerate every `/directory/` talk link exposed by
+those indexes and fail until each linked detail page has been cached:
+
+```powershell
+python -m unittest tests.test_archive_coverage -v
+```
+
 ## OffensiveCon archive
 
 OffensiveCon is inventoried from the official 2018, 2019, 2020, 2022, 2023,

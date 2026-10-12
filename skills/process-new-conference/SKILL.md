@@ -74,6 +74,12 @@ insert it into the assessor ZIP with `ArchiveStore`, rerun coverage, and then
 remove `tmp/`. Asset-only `_files` folders and blank `saved_resource.html`
 files are not source pages.
 
+For Blue Team Con, the official historical inventory is the 2021–2025 set of
+`btc-history/talks-blue-team-con-YYYY/` pages. Their ZIP members intentionally
+match the URL paths exactly, which keeps archive coverage validation generic.
+The pages expose talk titles and “Presented by” speaker names; linked detail
+pages should be archived later when abstracts are required.
+
 ### 3. Implement the adapter
 
 1. Add a module under `scrapers/`, splitting layout-specific parsing into
