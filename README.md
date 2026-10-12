@@ -28,7 +28,10 @@ python -m endorsement_scraper --overwrite
 python -m endorsement_scraper.enrichment_cli --overwrite
 python -m unittest tests.test_archive_coverage -v
 python -m unittest tests.test_video_enrichment_coverage -v
-python -m endorsement_scraper.individuals --overwrite
+# Rebuild every assessor before merging individuals
+python -m endorsement_scraper --overwrite --workers 1
+python -m endorsement_scraper.individuals --overwrite --keep-tmp
+python -m unittest tests.test_individuals_coverage -v
 ```
 
 Running `python -m endorsement_scraper` with no filters discovers and runs all
@@ -88,6 +91,11 @@ Run the archive coverage check before parsing:
 ```powershell
 python -m unittest tests.test_archive_coverage -v
 ```
+
+The complete Blue Team Con retrieval includes 168 linked detail pages. When a
+browser is needed, retrieve them conservatively: one bounded Edge process at a
+time, wait for it to exit, and record failures for retry. Do not run parallel
+Edge processes for this workload.
 
 The check compares every assessor `links.processUrls` entry with the members
 of `data/archives/html/<assessor-id>.zip` and prints each missing URL. This

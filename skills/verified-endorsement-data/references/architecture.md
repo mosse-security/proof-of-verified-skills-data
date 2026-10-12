@@ -19,6 +19,9 @@
   for every canonical domain, and nested per-domain subspecialty counts.
 - The individual merger clears `data/tmp/endorsements` and
   `data/tmp/profiles` after a successful run; use `--keep-tmp` for debugging.
+- The merger does not automatically delete every legacy profile-only file.
+  After a full regeneration, run `tests.test_individuals_coverage` and move
+  reported zero-endorsement files out of `data/individuals` before publishing.
 - `data/templates/`: current user-facing contracts. Update validators and tests
   whenever these change.
 
@@ -137,9 +140,13 @@ After parser/schema changes:
 
 1. Run `python -m compileall -q endorsement_scraper scrapers tests`.
 2. Run `python -m unittest discover -s tests -q`.
-3. Run the affected scraper with `--overwrite` and inspect counts/errors.
-4. Run `python -m endorsement_scraper.individuals --overwrite`.
-5. Validate all generated individual files through
+3. Run all configured scrapers with `--overwrite` when rebuilding the dataset;
+   running only one assessor produces incomplete per-person histories. Use
+   `--workers 1` for browser-backed retrieval.
+4. Run `python -m endorsement_scraper.individuals --overwrite --keep-tmp`.
+5. Run `python -m unittest tests.test_individuals_coverage -v` and remove or
+   quarantine stale profile-only files it identifies.
+6. Validate all generated individual files through
    `endorsement_scraper.individuals._validate_individual` or the public schema
    helpers, and report record/profile counts.
 

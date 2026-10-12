@@ -78,7 +78,9 @@ For Blue Team Con, the official historical inventory is the 2021–2025 set of
 `btc-history/talks-blue-team-con-YYYY/` pages. Their ZIP members intentionally
 match the URL paths exactly, which keeps archive coverage validation generic.
 The pages expose talk titles and “Presented by” speaker names; linked detail
-pages should be archived later when abstracts are required.
+pages must also be archived before declaring the inventory complete. When Edge
+is required, retrieve the queue sequentially: one bounded process, wait for
+exit, then the next URL.
 
 ### 3. Implement the adapter
 
@@ -130,11 +132,12 @@ present and contains at least one record.
 
 ### 5. Validate and generate
 
-Run the selected scraper with overwrite enabled, then merge profiles:
+Run the complete scraper set with overwrite enabled, then merge profiles:
 
 ```powershell
-python -m endorsement_scraper --assessor <id> --overwrite
-python -m endorsement_scraper.individuals --overwrite
+python -m endorsement_scraper --overwrite --workers 1
+python -m endorsement_scraper.individuals --overwrite --keep-tmp
+python -m unittest tests.test_individuals_coverage -v
 ```
 
 Inspect `data/stats.json`. Confirm pages and endorsements are non-zero, no
@@ -151,6 +154,11 @@ enrichment match, and one individual profile. Verify profile `stats` contains:
 - `assessors` (distinct assessor IDs represented)
 - `by-domain` counts for every canonical domain, including `unknown`
 - `by-subspecialty` counts grouped beneath each canonical domain
+
+Never merge one assessor's temporary output into the final individuals
+directory when multiple assessors are configured: that replaces complete
+histories with partial histories. The zero-endorsement test also catches stale
+profile-only files left by older runs.
 
 Run tests and compilation checks before reporting completion:
 

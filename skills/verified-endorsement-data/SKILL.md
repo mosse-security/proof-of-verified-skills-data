@@ -25,18 +25,25 @@ cyber domains are introduced.
 4. Prefer cached HTML under `data/archives/html/<assessor>/` or the matching
    `<assessor>.zip`. Fetch only missing pages, save successful responses, and
    support pagination, multiple years, retries, timeouts, and bounded
-   concurrency.
+   concurrency. For browser-only retrieval, use one bounded Edge process at a
+   time and wait for it to exit before starting the next URL.
 5. Emit one endorsement per person when one source item names multiple people.
    Emit a `PersonProfile` alongside it when contact information is present.
    Keep the required biography field empty; biographies are generated later
    from the complete endorsement set. Store profile fragments under
    `data/tmp/profiles`; do not add profile fields to the endorsement contract.
-6. Run the merger after scraping. It reads all endorsement arrays and profile
+6. Run every configured scraper before the merger, not only the assessor being
+   debugged. A partial scrape can replace a person's complete history with a
+   smaller set of endorsements.
+7. Run the merger after scraping. It reads all endorsement arrays and profile
    fragments, groups names case-insensitively, removes duplicate endorsements,
    combines contact data, writes one `individual.tpl` record per person under
    `data/individuals`, and clears the temporary output directories even when
    merging fails. Use `--keep-tmp` only when debugging.
-7. Run tests, compile checks, and schema validation before reporting completion.
+8. Run `tests.test_individuals_coverage` after merging. Every active
+   individual must have at least one endorsement; stale profile-only files
+   must be removed from `data/individuals` before publishing.
+9. Run tests, compile checks, and schema validation before reporting completion.
 8. Run enrichers before endorsement generation when external datasets are
    needed. Enrichers are discovered recursively under `enrichers/` and write
    one dataset archive per enricher under `data/enrichments/`.
@@ -88,11 +95,17 @@ python -m endorsement_scraper
 python -m endorsement_scraper --assessor def-con --overwrite
 python -m endorsement_scraper --assessor black-hat --overwrite
 
+# Rebuild all assessors before merging individuals
+python -m endorsement_scraper --overwrite --workers 1
+
 # Confirm every configured source URL has a local archive member
 python -m unittest tests.test_archive_coverage -v
 
 # Merge all endorsements and profiles into individual records
 python -m endorsement_scraper.individuals --overwrite
+
+# Detect stale/profile-only individual files
+python -m unittest tests.test_individuals_coverage -v
 
 # Preserve temporary outputs for inspection
 python -m endorsement_scraper.individuals --overwrite --keep-tmp
