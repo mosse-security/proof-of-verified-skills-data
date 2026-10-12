@@ -23,6 +23,7 @@ CYBER_DOMAINS = (
     "iot-security",
     "operational-technology-security",
     "threat-hunting",
+    "cybercrime-and-fraud",
 )
 UNKNOWN_DOMAIN = "unknown"
 ALLOWED_DOMAINS = (*CYBER_DOMAINS, UNKNOWN_DOMAIN)
@@ -55,6 +56,11 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:cyber|network|endpoint|host|system) defen[cs]e\b",
         r"\b(?:malware|threat|intrusion|anomaly) detect(?:ion|ing)\b",
         r"\b(?:intrusion management|intrusion system|network monitoring)\b",
+        r"\b(?:AI|ML|machine learning|large language model|LLM|genAI)\s+(?:security|safety|defense|defence|monitoring)\b",
+        r"\b(?:adversarial machine learning|prompt injection|model poisoning|AI agent security)\b",
+        r"\b(?:AI|artificial intelligence|machine learning|deep learning|LLM|genAI)\b",
+        r"\b(?:telecommunications?|telecom|cellular|GSM|LTE|5G)\s+(?:security|network|testing)\b",
+        r"\b(?:wireless|Wi[ -]?Fi|Bluetooth|radio|RF)\s+(?:security|network security|penetration testing|testing)\b",
     ),
     "devsecops": (
         r"\bDevSecOps\b",
@@ -68,6 +74,7 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:dependency confusion|malicious package|package registry attack)\b",
         r"\b(?:build system security|secure build|pipeline security)\b",
         r"\b(?:upstream|open[ -]source) (?:project|package|library).{0,80}\b(?:backdoor|compromis)(?:e|ed|es|ing)?\b",
+        r"\b(?:secure coding|secure software|application security|software security)\s+(?:practice|training|development|engineering)\b",
     ),
     "digital-forensics": (
         r"\bdigital forensics?\b",
@@ -90,6 +97,8 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\b(?:GDPR|HIPAA|FedRAMP|CIS Controls)\b",
         r"\b(?:cybersecurity|cyber security|privacy) polic(?:y|ies)\b",
         r"\b(?:cyber law|computer crime law|security regulation)\b",
+        r"\b(?:privacy engineering|surveillance|digital rights|civil liberties|civil rights)\b",
+        r"\b(?:privacy|data protection)\s+(?:regulation|impact|governance|by design)\b",
     ),
     "incident-response": (
         r"\bincident response\b",
@@ -189,6 +198,8 @@ _RULES: dict[str, tuple[str, ...]] = {
         r"\bhacking .{0,40}\b(?:authentication|authorization|access control|secure enclave)\b",
         r"\bsecurity of (?:a |an |the )?\w+\b",
         r"\b(?:hardware|embedded|device|firmware) hacking\b",
+        r"\b(?:Android|iOS|iPhone|mobile)\s+(?:security|malware|rootkit|hacking|vulnerability|exploitation)\b",
+        r"\b(?:CAN bus|vehicle network|automotive|connected vehicle|telematics|ECU)\s+(?:security|hacking|testing|attack|vulnerability)?\b",
     ),
 }
 
@@ -202,6 +213,7 @@ _RULES.update({
     "iot-security": (
         r"\b(?:IoT|Internet of Things|smart home|connected device|embedded device)\b",
         r"\b(?:device security|IoT security|MQTT|Zigbee|Z-Wave)\b",
+        r"\b(?:automotive|vehicle|connected vehicle|telematics|ECU|CAN bus)\s+(?:security|network|hacking|testing)?\b",
     ),
     "operational-technology-security": (
         r"\b(?:OT security|operational technology|ICS|SCADA|PLC|industrial control)\b",
@@ -210,6 +222,12 @@ _RULES.update({
     "threat-hunting": (
         r"\b(?:threat hunting|proactive hunting|hypothesis-driven hunting)\b",
         r"\b(?:hunt(?:ing)? for adversar(?:y|ies)|hunt(?:ing)? malicious activity)\b",
+    ),
+    "cybercrime-and-fraud": (
+        r"\b(?:cybercrime|cyber criminal|cybercriminal|online fraud|financial cybercrime)\b",
+        r"\b(?:ransomware|fraud|scammer|criminal)\s+(?:economics?|operation|investigation|market|forum|campaign)\b",
+        r"\b(?:cybercrime|criminal)\s+(?:forum|marketplace|investigation|intelligence)\b",
+        r"\b(?:law enforcement|takedown|underground market|dark web)\b.{0,80}\b(?:crime|criminal|fraud|ransomware|scammer)\b",
     ),
 })
 
@@ -237,6 +255,9 @@ _SUBSPECIALTY_RULES: dict[str, dict[str, tuple[str, ...]]] = {
         "deception-and-honeypots": (r"honeypot", r"honeynet", r"deception"),
         "security-monitoring-and-alert-triage": (r"security monitoring", r"alert triage", r"SIEM"),
         "defensive-architecture": (r"defensive architecture", r"defense architecture"),
+        "ai-for-security-operations": (r"AI for security", r"machine learning", r"deep learning", r"large language model", r"\bLLM\b", r"\bgenAI\b", r"AI changin"),
+        "telecommunications-and-radio-security": (r"telecommunications? security", r"telecom security", r"cellular security", r"GSM security", r"LTE security", r"wireless security", r"radio security"),
+        "network-protocol-security": (r"network protocol security", r"protocol security", r"protocol attack", r"protocol vulnerability"),
     },
     "devsecops": {
         "secure-software-development-lifecycle": (r"secure SDLC", r"secure software development"),
@@ -249,6 +270,9 @@ _SUBSPECIALTY_RULES: dict[str, dict[str, tuple[str, ...]]] = {
         "secrets-management-in-development": (r"secrets scanning", r"development secrets"),
         "secure-containers-and-build-systems": (r"secure build", r"build system security", r"container security"),
         "security-testing-integration": (r"SAST", r"DAST", r"security testing integration"),
+        "secure-coding-and-application-security": (r"secure coding", r"application security", r"secure software development", r"secure software engineering"),
+        "ai-application-security": (r"AI application security", r"LLM application security", r"AI-assisted coding security"),
+        "llm-and-generative-ai-security": (r"large language model", r"\bLLM\b", r"generative AI", r"GenAI"),
     },
     "digital-forensics": {
         "disk-and-filesystem-forensics": (r"disk forensics", r"filesystem forensics", r"disk image"),
@@ -273,6 +297,9 @@ _SUBSPECIALTY_RULES: dict[str, dict[str, tuple[str, ...]]] = {
         "third-party-and-supplier-risk": (r"third-party risk", r"supplier risk"),
         "business-continuity-and-resilience-planning": (r"business continuity", r"resilience planning"),
         "security-awareness-and-human-risk": (r"security awareness", r"human risk"),
+        "privacy-engineering": (r"privacy engineering", r"privacy by design", r"privacy-preserving design"),
+        "surveillance-and-tracking": (r"surveillance", r"web tracking", r"tracking privacy", r"mobile surveillance"),
+        "digital-rights-and-civil-liberties": (r"digital rights", r"civil liberties", r"civil rights", r"freedom of speech"),
     },
     "incident-response": {
         "incident-handling-and-triage": (r"incident handling", r"incident triage"),
@@ -346,6 +373,13 @@ _SUBSPECIALTY_RULES: dict[str, dict[str, tuple[str, ...]]] = {
         "cryptographic-attacks": (r"cryptographic attack", r"crypto attack", r"side-channel", r"fault injection"),
         "exploit-mitigation-and-hardening": (r"exploit mitigation", r"hardening", r"security mitigation"),
         "bug-bounty-research": (r"bug bounty", r"bug-bounty"),
+        "mobile-platform-security": (r"Android security", r"iOS security", r"mobile security", r"mobile malware", r"smartphone security"),
+        "adversarial-machine-learning": (r"adversarial machine learning", r"subverting machine learning", r"machine learning.*attack"),
+        "ai-agent-security": (r"AI agent", r"LLM agent", r"prompt injection", r"promptware"),
+        "model-integrity-and-data-poisoning": (r"model poisoning", r"training data poisoning", r"model integrity"),
+        "model-privacy-and-data-leakage": (r"model privacy", r"AI data leakage", r"LLM.*leakage", r"code leakage.*LLM"),
+        "automotive-security": (r"automotive security", r"vehicle security", r"connected vehicle", r"vehicle network", r"CAN bus", r"ECU security", r"Pwn2Own Automotive"),
+        "automotive-penetration-testing": (r"testing vehicles", r"automotive penetration", r"vehicle hacking", r"car hacking", r"CANToolz"),
     },
     "identity-and-access-management": {
         "authentication": (r"authentication", r"login security"),
@@ -364,6 +398,12 @@ _SUBSPECIALTY_RULES: dict[str, dict[str, tuple[str, ...]]] = {
         "device-onboarding-and-identity": (r"device onboarding", r"device identity"),
         "iot-protocols": (r"MQTT", r"Zigbee", r"Z-Wave", r"IoT protocol"),
         "iot-fleet-security": (r"IoT fleet", r"device fleet"),
+        "medical-device-security": (r"medical device", r"connected medical device", r"implantable device", r"healthcare security"),
+        "drone-and-uav-security": (r"drone security", r"UAV security", r"drone hacking", r"aerial hacking"),
+        "automotive-security": (r"automotive security", r"vehicle security", r"connected vehicle", r"vehicle network", r"CAN bus", r"ECU", r"telematics"),
+        "can-bus-and-vehicle-networks": (r"CAN bus", r"vehicle network", r"automotive network"),
+        "connected-vehicle-and-telematics-security": (r"connected vehicle", r"telematics", r"vehicle tracking"),
+        "electric-vehicle-and-charging-security": (r"electric vehicle", r"EV charging", r"charging security"),
     },
     "operational-technology-security": {
         "industrial-control-systems": (r"industrial control", r"\bICS\b"),
@@ -372,6 +412,8 @@ _SUBSPECIALTY_RULES: dict[str, dict[str, tuple[str, ...]]] = {
         "industrial-protocols": (r"Modbus", r"DNP3", r"industrial protocol"),
         "safety-systems": (r"safety system", r"safety instrumented"),
         "critical-infrastructure-resilience": (r"critical infrastructure", r"OT resilience"),
+        "automotive-security": (r"automotive security", r"vehicle security", r"vehicle network", r"CAN bus", r"ECU"),
+        "ecu-and-automotive-embedded-systems": (r"ECU", r"automotive embedded", r"vehicle control unit"),
     },
     "threat-hunting": {
         "proactive-threat-hunting": (r"threat hunting", r"proactive hunting"),
@@ -380,6 +422,14 @@ _SUBSPECIALTY_RULES: dict[str, dict[str, tuple[str, ...]]] = {
         "network-threat-hunting": (r"network threat hunting", r"network hunting"),
         "cloud-threat-hunting": (r"cloud threat hunting", r"cloud hunting"),
         "identity-threat-hunting": (r"identity threat hunting", r"identity hunting"),
+    },
+    "cybercrime-and-fraud": {
+        "cybercrime-investigations": (r"cybercrime investigation", r"fighting cybercrime", r"cyber criminal investigation"),
+        "online-fraud-and-financial-crime": (r"online fraud", r"financial fraud", r"financial crime", r"fraudulent financial", r"scammer"),
+        "cybercrime-forums-and-marketplaces": (r"cybercrime forum", r"cybercrime marketplace", r"criminal marketplace", r"underground market"),
+        "ransomware-economics-and-operations": (r"ransomware", r"ransomware economics", r"ransomware operation"),
+        "law-enforcement-takedowns": (r"law enforcement", r"takedown", r"takedowns", r"criminal infrastructure disruption"),
+        "cybercrime-intelligence": (r"cybercrime intelligence", r"criminal intelligence", r"tracking.*criminal", r"dark web intelligence"),
     },
 }
 

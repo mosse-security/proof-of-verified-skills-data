@@ -15,8 +15,8 @@
   `ProfileStore`; collection scrapers may write grouped fragments directly.
 - `data/individuals/<slug>.json`: final merged records shaped as
   `{name, last-updated, biography, contact, stats, endorsements}`. `stats`
-  contains endorsement total, unique assessor count, evidence counts, and
-  counts for every canonical domain.
+  contains endorsement total, unique assessor count, evidence counts, counts
+  for every canonical domain, and nested per-domain subspecialty counts.
 - The individual merger clears `data/tmp/endorsements` and
   `data/tmp/profiles` after a successful run; use `--keep-tmp` for debugging.
 - `data/templates/`: current user-facing contracts. Update validators and tests

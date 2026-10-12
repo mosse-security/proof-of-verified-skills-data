@@ -14,7 +14,12 @@ from .base import (
 )
 from .http import HttpClient
 from .models import Endorsement, PageResult, PersonProfile, Request
-from .schema import AssessorMetadata, validate_endorsement_output_files
+from .schema import (
+    AssessorMetadata,
+    filter_non_endorsement_output_files,
+    is_non_endorsement_session,
+    validate_endorsement_output_files,
+)
 from .storage import EndorsementStore, ProfileStore
 
 
@@ -132,6 +137,13 @@ class ScraperRunner:
                     )
 
                 for endorsement in result.endorsements:
+                    if endorsement.domains == ("unknown",) and is_non_endorsement_session(
+                        endorsement.title,
+                        endorsement.description,
+                        endorsement.subtitle or "",
+                    ):
+                        report.skipped += 1
+                        continue
                     self._save_endorsement(scraper, endorsement, report)
                 if self.profile_store is not None:
                     for profile in result.profiles:
@@ -236,15 +248,19 @@ class CollectionScraperRunner:
                 self.context.assessors_directory
                 / f"{scraper.assessor_id}.json"
             )
+            output_files, removed = filter_non_endorsement_output_files(
+                result.output_files
+            )
+            expected_records = result.endorsements - removed
             validate_endorsement_output_files(
-                result.output_files,
-                expected_records=result.endorsements,
+                output_files,
+                expected_records=expected_records,
                 assessor=assessor,
             )
             report.pages = result.pages
-            report.endorsements = result.endorsements
+            report.endorsements = expected_records
             report.created = result.created
-            report.skipped = result.skipped
+            report.skipped = result.skipped + removed
             report.overwritten = result.overwritten
         except Exception as exc:
             report.error = f"{type(exc).__name__}: {exc}"

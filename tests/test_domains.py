@@ -3,6 +3,7 @@ from __future__ import annotations
 import unittest
 
 from endorsement_scraper import Endorsement, AssessorMetadata, detect_domains, normalize_domains
+from endorsement_scraper.domains import detect_subspecialties
 from endorsement_scraper.domains import DomainMappingError, validate_record_domains
 
 
@@ -74,6 +75,16 @@ class DomainMappingTests(unittest.TestCase):
             ],
         )
         validate_record_domains(record)
+
+    def test_new_cybercrime_domain_and_specialties_are_detected(self) -> None:
+        domains = detect_domains("Cybercrime forum investigation tracking ransomware operations")
+        self.assertIn("cybercrime-and-fraud", domains)
+        specialties = detect_subspecialties(
+            "Cybercrime forum investigation tracking ransomware operations",
+            domains=domains,
+        )
+        self.assertIn("cybercrime-forums-and-marketplaces", specialties["cybercrime-and-fraud"])
+        self.assertIn("ransomware-economics-and-operations", specialties["cybercrime-and-fraud"])
 
     def test_explicit_domains_are_normalized_and_invalid_values_fail(self) -> None:
         self.assertEqual(

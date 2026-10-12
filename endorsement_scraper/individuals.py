@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .schema import validate_endorsement_record
+from .schema import is_non_endorsement_session, validate_endorsement_record
 from .domains import ALLOWED_DOMAINS
 
 
@@ -148,6 +148,7 @@ def merge_endorsements(
         for existing_path in output_directory.glob("*.json"):
             if existing_path not in files:
                 _upgrade_existing_timestamp(existing_path)
+        _remove_stale_non_endorsement_sessions(output_directory)
 
     return IndividualMergeResult(
         people=len(grouped),
@@ -244,6 +245,45 @@ def _upgrade_existing_timestamp(path: Path) -> None:
         path,
         (json.dumps(existing, ensure_ascii=False, indent=2) + "\n").encode("utf-8"),
     )
+
+
+def _remove_stale_non_endorsement_sessions(output_directory: Path) -> int:
+    """Purge event sessions left by older runs from final individual files."""
+
+    removed = 0
+    for path in output_directory.glob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(document, dict) or not isinstance(document.get("endorsements"), list):
+            continue
+        records = document["endorsements"]
+        kept = [
+            record
+            for record in records
+            if not (
+                isinstance(record, dict)
+                and record.get("domains") == ["unknown"]
+                and is_non_endorsement_session(
+                    str(record.get("label", "")),
+                    str(record.get("description", "")),
+                    str(record.get("subtitle", "")),
+                )
+            )
+        ]
+        if len(kept) == len(records):
+            continue
+        removed += len(records) - len(kept)
+        if not kept:
+            path.unlink(missing_ok=True)
+            continue
+        document["endorsements"] = kept
+        document["stats"] = _individual_stats(kept)
+        document["last-updated"] = _utc_timestamp()
+        _validate_individual(document, source=str(path))
+        _atomic_write(path, (json.dumps(document, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+    return removed
 
 
 def _utc_timestamp() -> str:

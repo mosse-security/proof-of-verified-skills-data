@@ -1,16 +1,16 @@
 {
-  "last-run": "2026-10-11T23:34:32.688342Z",
-  "started-at": "2026-10-11T23:32:51.789602Z",
-  "duration-seconds": 100.899,
+  "last-run": "2026-10-12T00:11:35.383907Z",
+  "started-at": "2026-10-12T00:08:14.827701Z",
+  "duration-seconds": 200.556,
   "status": "ok",
   "scrapers": [
     {
       "scraper-id": "black-hat-briefings",
       "assessor-id": "black-hat",
       "pages": 15,
-      "endorsements": 1845,
+      "endorsements": 1788,
       "created": 15,
-      "skipped": 0,
+      "skipped": 57,
       "overwritten": 0,
       "error": null
     },
@@ -18,9 +18,9 @@
       "scraper-id": "bluehat-sessions",
       "assessor-id": "bluehat",
       "pages": 6,
-      "endorsements": 145,
+      "endorsements": 141,
       "created": 6,
-      "skipped": 0,
+      "skipped": 4,
       "overwritten": 0,
       "error": null
     },
@@ -28,9 +28,9 @@
       "scraper-id": "cansecwest-presentations",
       "assessor-id": "cansecwest",
       "pages": 4,
-      "endorsements": 81,
+      "endorsements": 78,
       "created": 4,
-      "skipped": 0,
+      "skipped": 3,
       "overwritten": 0,
       "error": null
     },
@@ -38,19 +38,19 @@
       "scraper-id": "def-con-speakers",
       "assessor-id": "def-con",
       "pages": 34,
-      "endorsements": 4143,
-      "created": 34,
-      "skipped": 0,
-      "overwritten": 0,
+      "endorsements": 3818,
+      "created": 0,
+      "skipped": 325,
+      "overwritten": 34,
       "error": null
     },
     {
       "scraper-id": "insomnihack-talks",
       "assessor-id": "insomnihack",
       "pages": 13,
-      "endorsements": 433,
+      "endorsements": 416,
       "created": 13,
-      "skipped": 0,
+      "skipped": 17,
       "overwritten": 0,
       "error": null
     },
@@ -58,36 +58,37 @@
       "scraper-id": "offensivecon-talks",
       "assessor-id": "offensivecon",
       "pages": 8,
-      "endorsements": 177,
+      "endorsements": 175,
       "created": 8,
-      "skipped": 0,
+      "skipped": 2,
       "overwritten": 0,
       "error": null
     }
   ],
   "totals": {
     "pages": 80,
-    "endorsements": 6824,
-    "created": 80,
-    "skipped": 0,
-    "overwritten": 0,
+    "endorsements": 6416,
+    "created": 46,
+    "skipped": 408,
+    "overwritten": 34,
     "by-domain": {
       "cloud-security": 123,
-      "cyber-defense": 587,
-      "devsecops": 53,
+      "cyber-defense": 866,
+      "devsecops": 57,
       "digital-forensics": 211,
-      "grc": 78,
+      "grc": 355,
       "incident-response": 62,
       "open-source-intelligence": 77,
       "penetration-testing": 394,
       "red-teaming": 443,
       "reverse-engineering": 457,
-      "vulnerability-research": 3620,
+      "vulnerability-research": 3654,
       "identity-and-access-management": 122,
-      "iot-security": 226,
+      "iot-security": 309,
       "operational-technology-security": 186,
       "threat-hunting": 9,
-      "unknown": 2477
+      "cybercrime-and-fraud": 80,
+      "unknown": 1764
     },
     "by-subspecialty": {
       "cloud-security": {
@@ -99,19 +100,23 @@
         "cloud-secrets-and-key-management": 1
       },
       "cyber-defense": {
-        "deception-and-honeypots": 51,
+        "deception-and-honeypots": 53,
+        "telecommunications-and-radio-security": 23,
         "network-defense-and-monitoring": 27,
+        "ai-for-security-operations": 149,
         "security-operations-and-soc-practice": 62,
         "security-monitoring-and-alert-triage": 19,
         "threat-intelligence-operations": 59,
-        "endpoint-and-host-defense": 31,
+        "endpoint-and-host-defense": 35,
         "ddos-defense-and-availability-protection": 15,
         "detection-engineering": 12,
         "cyber-resilience-and-critical-infrastructure-defense": 3
       },
       "devsecops": {
+        "secure-coding-and-application-security": 6,
         "ci-cd-and-pipeline-security": 11,
         "software-supply-chain-security": 4,
+        "secure-software-development-lifecycle": 3,
         "security-testing-integration": 1,
         "application-security-automation": 1,
         "dependency-and-package-security": 1
@@ -124,12 +129,15 @@
         "forensic-tooling-and-laboratory-practice": 8
       },
       "grc": {
-        "privacy-and-data-protection": 20,
-        "compliance-and-audit": 19,
-        "cyber-law-and-regulation": 9,
+        "surveillance-and-tracking": 222,
+        "privacy-and-data-protection": 177,
+        "compliance-and-audit": 23,
+        "cyber-law-and-regulation": 21,
         "security-policy-and-standards": 30,
         "security-awareness-and-human-risk": 1,
-        "risk-management": 13
+        "risk-management": 14,
+        "digital-rights-and-civil-liberties": 136,
+        "risk-quantification": 2
       },
       "incident-response": {
         "incident-handling-and-triage": 2,
@@ -169,16 +177,22 @@
       },
       "vulnerability-research": {
         "exploit-mitigation-and-hardening": 115,
-        "zero-day-and-0-day-research": 236,
+        "zero-day-and-0-day-research": 238,
         "vulnerability-discovery": 64,
         "cryptographic-attacks": 90,
         "fuzzing-and-automated-testing": 165,
+        "mobile-platform-security": 57,
         "mobile-vulnerabilities": 7,
+        "automotive-security": 43,
+        "automotive-penetration-testing": 7,
         "kernel-and-operating-system-vulnerabilities": 7,
         "cve-analysis-and-vulnerability-disclosure": 126,
         "exploit-development": 27,
+        "ai-agent-security": 25,
         "bug-bounty-research": 42,
         "hardware-and-firmware-vulnerabilities": 5,
+        "adversarial-machine-learning": 15,
+        "model-integrity-and-data-poisoning": 3,
         "protocol-and-network-vulnerabilities": 3,
         "application-and-api-vulnerabilities": 2,
         "browser-and-web-platform-vulnerabilities": 1
@@ -193,14 +207,21 @@
         "identity-lifecycle": 1
       },
       "iot-security": {
+        "medical-device-security": 10,
+        "automotive-security": 214,
         "iot-protocols": 26,
+        "can-bus-and-vehicle-networks": 30,
         "consumer-iot-security": 61,
+        "connected-vehicle-and-telematics-security": 4,
         "embedded-devices": 24,
         "smart-home-security": 28,
+        "electric-vehicle-and-charging-security": 3,
         "device-onboarding-and-identity": 1
       },
       "operational-technology-security": {
         "scada-security": 58,
+        "automotive-security": 125,
+        "ecu-and-automotive-embedded-systems": 125,
         "industrial-control-systems": 73,
         "plc-security": 30,
         "industrial-protocols": 10,
@@ -210,19 +231,26 @@
       "threat-hunting": {
         "proactive-threat-hunting": 9
       },
+      "cybercrime-and-fraud": {
+        "ransomware-economics-and-operations": 23,
+        "online-fraud-and-financial-crime": 3,
+        "cybercrime-forums-and-marketplaces": 7,
+        "cybercrime-investigations": 3,
+        "law-enforcement-takedowns": 22
+      },
       "unknown": {}
     },
-    "individuals": 4554
+    "individuals": 4372
   },
   "evidence": {
-    "with-links": 5087,
-    "without-links": 1737
+    "with-links": 4783,
+    "without-links": 1633
   },
   "validations": [
     {
       "name": "def-con-endorsements-nonzero",
       "passed": true,
-      "actual": 4143,
+      "actual": 3818,
       "minimum": 1
     }
   ]

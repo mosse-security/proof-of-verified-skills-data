@@ -1,6 +1,6 @@
 {
   "name": "Roger Dingledine",
-  "last-updated": "2026-10-11T23:29:25Z",
+  "last-updated": "2026-10-12T00:11:50Z",
   "biography": "",
   "contact": [
     {
@@ -9,16 +9,16 @@
     }
   ],
   "stats": {
-    "endorsements": 9,
+    "endorsements": 8,
     "assessors": 1,
-    "with-evidence": 7,
+    "with-evidence": 6,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
-      "grc": 0,
+      "grc": 3,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
@@ -29,7 +29,8 @@
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
-      "unknown": 6
+      "cybercrime-and-fraud": 0,
+      "unknown": 4
     }
   },
   "endorsements": [
@@ -106,33 +107,6 @@
     },
     {
       "name": "Roger Dingledine",
-      "label": "Why Tor is Slow, and What We're Doing About It",
-      "description": "Many of you have probably tried Tor, and then stopped because you found it too slow. Now that Tor has several hundred thousand users, our original design decisions are showing their age. We need to figure out and deploy some major changes if we want the Tor network to scale up to the million-user mark. Problem #1 is that Tor's congestion control does not work well. We need to come up with ways to let \"quiet\" streams like web browsing co-exist better with \"loud\" streams like bulk transfer. Problem #2 is that some Tor users simply put too much traffic onto the network relative to the amount they contribute, so we need to work on ways to limit the effects of those users and/or provide priority to the other users. Problem #3 is that the Tor network simply doesn't have enough capacity to handle all the users that want privacy on the Internet. We need to develop strategies for increasing the overall community of relays, and consider introducing incentives to make the network more self-sustaining. In this talk I'll walk through these problems and more: why we think these are the right problems to solve, and how we're solving them.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 17",
-      "url": "https://defcon.org/html/defcon-17/dc-17-speakers.html",
-      "evidence-links": [
-        {
-          "title": "DEF CON 17 - Roger Dingledine - Why Tor is Slow and What We Are Doing About It",
-          "url": "https://www.youtube.com/watch?v=001VMHpsYlw"
-        }
-      ],
-      "evidence": true,
-      "year": 2009,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "Roger Dingledine",
       "label": "Next-Generation Tor Onion Services",
       "description": "Friday at 13:00 in Track 4 45 minutes | 0025 Roger Dingledine The Tor Project Millions of people around the world use Tor every day to protect themselves from surveillance and censorship. While most people use Tor to reach ordinary websites more safely, a tiny fraction of Tor traffic makes up what overhyped journalists like to call the \"dark web\". Tor onion services (formerly known as Tor hidden services) let people run Internet services such as websites in a way where both the service and the people reaching it can get stronger security and privacy. I wrote the original onion service code as a toy example in 2004, and it sure is showing its age. In particular, mistakes in the original protocol are now being actively exploited by fear-mongering \"threat intelligence\" companies to build lists of onion services even when the service operators thought they would stay under the radar. These design flaws are a problem because people rely on onion services for many cool use cases, like metadata-free chat and file sharing, safe interaction between journalists and their sources, safe software updates, and more secure ways to reach popular websites like Facebook. In this talk I'll present our new and improved onion service design, which provides stronger security and better scalability. I'll also publish a new release of the Tor software that lets people use the new design.",
       "type": "presentation",
@@ -152,11 +126,16 @@
       "evidence": true,
       "year": 2017,
       "domains": [
-        "cyber-defense"
+        "cyber-defense",
+        "grc"
       ],
       "subspecialties": {
         "cyber-defense": [
           "threat-intelligence-operations"
+        ],
+        "grc": [
+          "privacy-and-data-protection",
+          "surveillance-and-tracking"
         ]
       }
     },
@@ -235,9 +214,14 @@
       "evidence": true,
       "year": 2023,
       "domains": [
+        "grc",
         "vulnerability-research"
       ],
       "subspecialties": {
+        "grc": [
+          "cyber-law-and-regulation",
+          "surveillance-and-tracking"
+        ],
         "vulnerability-research": []
       }
     },
@@ -262,10 +246,12 @@
       "evidence": true,
       "year": 2024,
       "domains": [
-        "unknown"
+        "grc"
       ],
       "subspecialties": {
-        "unknown": []
+        "grc": [
+          "surveillance-and-tracking"
+        ]
       }
     }
   ]

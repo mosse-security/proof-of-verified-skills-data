@@ -75,6 +75,8 @@ cyber domains are introduced.
   generated files may be protected.
 - Validate generated output centrally. A scraper must not silently introduce
   unsupported fields, domains, assessor metadata, or duplicate records.
+- The core runner removes clearly non-endorsement event sessions that would
+  otherwise be `unknown`; missing-abstract records remain for later enrichment.
 
 ## Commands
 

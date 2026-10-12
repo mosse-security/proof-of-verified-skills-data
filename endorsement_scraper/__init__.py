@@ -22,6 +22,7 @@ from .schema import (
     EndorsementSchemaError,
     AssessorMetadata,
     build_endorsement_record,
+    is_non_endorsement_session,
     validate_endorsement_record,
     validate_profile_record,
 )
@@ -48,6 +49,7 @@ __all__ = [
     "EndorsementSchemaError",
     "AssessorMetadata",
     "build_endorsement_record",
+    "is_non_endorsement_session",
     "validate_endorsement_record",
     "validate_profile_record",
 ]

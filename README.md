@@ -231,6 +231,7 @@ detects zero, one, or several values from this taxonomy:
 - `iot-security`
 - `operational-technology-security`
 - `threat-hunting`
+- `cybercrime-and-fraud`
 
 When no rule matches, the array is `["unknown"]` and its subspecialties array
 is empty. Specialty identifiers are lowercase and hyphenated, for example:
@@ -255,6 +256,20 @@ subspecialties are missing, unsupported, duplicated, or out of canonical order.
 The taxonomy, detection rules, normalization, and validators live in
 `endorsement_scraper/domains.py` so site scrapers cannot silently introduce
 their own incompatible domain names.
+
+Clearly non-endorsement conference sessions (such as long-form panels,
+orientation sessions, ceremonies, comedy, career, and community events) are
+filtered centrally by the runners when they would otherwise be classified only
+as `unknown`. Short or missing abstracts are retained as `unknown` because the
+source does not provide enough evidence to decide whether the session should
+be removed.
+
+The taxonomy includes cross-cutting specialty families for AI security,
+automotive security, privacy engineering, telecommunications and radio
+security, mobile platform security, medical-device and drone security, and
+cybercrime/fraud investigations. `cybercrime-and-fraud` is the only newly added
+top-level domain; AI and automotive remain specialties that can map to more
+than one operational domain.
 
 ## Adding scrapers
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
 from pathlib import Path
@@ -32,6 +33,32 @@ ENDORSEMENT_FIELDS = (*REQUIRED_ENDORSEMENT_FIELDS, *OPTIONAL_ENDORSEMENT_FIELDS
 
 class EndorsementSchemaError(ValueError):
     pass
+
+
+_NON_ENDORSEMENT_SESSION_RE = re.compile(
+    r"\bpanel\b|\bkeynote\b|locknote|comedy|awards?|ceremon(?:y|ies)|"
+    r"movie night|closing|DEF CON 101|DC101|meet (?:the )?(?:feds|EFF)|"
+    r"hackerspaces?|career|entrepreneur|startup|diversity|community",
+    re.IGNORECASE,
+)
+
+
+def is_non_endorsement_session(
+    label: str, description: str = "", subtitle: str = ""
+) -> bool:
+    """Identify clearly non-endorsement event sessions.
+
+    We only exclude sessions with enough source text to classify them as an
+    event. A short or missing abstract remains in the dataset as ``unknown``
+    rather than being silently discarded by this filter.
+    """
+
+    text = " ".join(value for value in (label, description, subtitle) if value)
+    if len(text.strip()) < 100 or re.search(
+        r"no abstract|abstract coming soon", text, re.IGNORECASE
+    ):
+        return False
+    return bool(_NON_ENDORSEMENT_SESSION_RE.search(text))
 
 
 def validate_profile_record(record: Mapping[str, Any], *, source: str = "profile") -> None:
@@ -296,5 +323,41 @@ def validate_endorsement_output_files(
             f"output files contain {count} records"
         )
     return count
+
+
+def filter_non_endorsement_output_files(
+    paths: Iterable[Path],
+) -> tuple[tuple[Path, ...], int]:
+    """Remove clearly non-endorsement event sessions from grouped outputs."""
+
+    kept_paths: list[Path] = []
+    removed = 0
+    for path in tuple(dict.fromkeys(Path(path) for path in paths)):
+        document = json.loads(path.read_text(encoding="utf-8"))
+        is_array = isinstance(document, list)
+        records = document if is_array else [document]
+        if not all(isinstance(record, dict) for record in records):
+            kept_paths.append(path)
+            continue
+        kept = []
+        for record in records:
+            if record.get("domains") == ["unknown"] and is_non_endorsement_session(
+                str(record.get("label", "")),
+                str(record.get("description", "")),
+                str(record.get("subtitle", "")),
+            ):
+                removed += 1
+            else:
+                kept.append(record)
+        if not kept:
+            path.unlink(missing_ok=True)
+            continue
+        path.write_text(
+            json.dumps(kept if is_array else kept[0], ensure_ascii=False, indent=2)
+            + "\n",
+            encoding="utf-8",
+        )
+        kept_paths.append(path)
+    return tuple(kept_paths), removed
 
 

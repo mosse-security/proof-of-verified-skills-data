@@ -9,6 +9,7 @@ from endorsement_scraper import (
     EndorsementSchemaError,
     AssessorMetadata,
     build_endorsement_record,
+    is_non_endorsement_session,
     validate_endorsement_record,
 )
 
@@ -66,6 +67,16 @@ class EndorsementSchemaTests(unittest.TestCase):
                 year=2026,
                 domains=("unknown",),
             )
+
+    def test_non_endorsement_filter_requires_classifiable_event_text(self) -> None:
+        self.assertTrue(
+            is_non_endorsement_session(
+                "DEF CON 101",
+                "A long orientation panel covering the conference community and program "
+                "for new attendees. " * 2,
+            )
+        )
+        self.assertFalse(is_non_endorsement_session("Panel: Meet the Feds", "No abstract provided."))
 
 
 if __name__ == "__main__":
