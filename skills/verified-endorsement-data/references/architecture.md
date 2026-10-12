@@ -100,6 +100,19 @@ array as `data.json` inside `data/enrichments/<enricher-id>/data.zip`.
 into `evidence-links`, keeping collection, storage, matching, and rendering
 separate as the number of enrichers grows.
 
+### YouTube evidence gate
+
+An assessor with `links.youtubeUrl`, `links.youtubePlaylistUrl`,
+`links.youtubePlaylistUrls`, or `archiveInventory.youtubeYears` must have a
+corresponding `<assessor>-youtube-recordings/data.zip` before onboarding is
+complete. Run video collection serially (`--workers 1`). The archive is the
+complete source catalog; only title-matched videos become endorsement evidence.
+Normalize conference/year/session prefixes, speaker suffixes, punctuation,
+subtitles, and meaningful title variants. Report catalog size, matched-link
+count, and unmatched count; a large unmatched remainder requires
+assessor-specific matching logic rather than silently treating videos as
+irrelevant. `tests.test_video_enrichment_coverage` verifies non-empty catalogs.
+
 ## Run statistics
 
 `endorsement_scraper.stats` writes an atomic `data/stats.json` after the main

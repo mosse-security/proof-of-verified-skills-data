@@ -128,7 +128,11 @@ for every discovered mismatch.
 When an assessor advertises `youtubeUrl`, `youtubePlaylistUrl`, or
 `youtubePlaylistUrls`, add and run its YouTube enricher before parsing
 endorsements. The coverage test must verify that the corresponding archive is
-present and contains at least one record.
+present and contains at least one record. Treat `archiveInventory.youtubeYears`
+as a video source too. Run one video enricher at a time (`--workers 1`), record
+the total catalog size and matched evidence-link count, and investigate a
+large unmatched remainder with assessor-specific title normalization before
+declaring onboarding complete.
 
 ### 5. Validate and generate
 

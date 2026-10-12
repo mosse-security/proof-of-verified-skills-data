@@ -44,10 +44,15 @@ cyber domains are introduced.
    individual must have at least one endorsement; stale profile-only files
    must be removed from `data/individuals` before publishing.
 9. Run tests, compile checks, and schema validation before reporting completion.
-8. Run enrichers before endorsement generation when external datasets are
+10. Run enrichers before endorsement generation when external datasets are
    needed. Enrichers are discovered recursively under `enrichers/` and write
    one dataset archive per enricher under `data/enrichments/`.
-9. Inspect `data/stats.json` after each scraper run. It is the operator and
+11. For every assessor JSON that advertises a YouTube URL or playlist,
+    including `archiveInventory.youtubeYears`, collect videos before
+    regenerating endorsements. Run video enrichers with `--workers 1`, verify
+    non-empty catalogs, and report both catalog size and matched evidence-link
+    count. A large unmatched remainder requires better matching logic.
+12. Inspect `data/stats.json` after each scraper run. It is the operator and
    test contract for timestamps, counts, errors, and capture sanity checks.
 
 ## Non-negotiable contracts

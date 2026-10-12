@@ -21,6 +21,9 @@ def _video_sources(document: dict) -> bool:
             return True
         if isinstance(value, list) and any(isinstance(item, str) and item.strip() for item in value):
             return True
+    inventory = document.get("archiveInventory", {}).get("youtubeYears", {})
+    if isinstance(inventory, dict) and any(isinstance(item, str) and item.strip() for item in inventory.values()):
+        return True
     return False
 
 
