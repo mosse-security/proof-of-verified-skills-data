@@ -79,8 +79,10 @@ class HitbScraper:
                     endorsement_type="presentation", assessor=self.assessor,
                     subtitle=subtitle, url=url, year=year,
                     domains=detect_domains(title, description),
-                    evidence_links=self.catalog.links_for(assessor_id=self.assessor.id,
-                                                         label=title, subtitle=subtitle),
+                    evidence_links=_merge_links(
+                        self.catalog.links_for(assessor_id=self.assessor.id, label=title, subtitle=subtitle),
+                        _hitb_video_links(self.catalog, title, year),
+                    ),
                 ))
                 names[name] = {"name": name, "biography": "", "contact": []}
             member_parts = Path(main_member).parts
@@ -141,3 +143,40 @@ def parse_hitb_session(html: bytes | str, source_url: str) -> list[tuple[str, st
     if not description:
         description = title
     return [(title, speaker, description, source_url) for speaker in speakers]
+
+
+def _hitb_video_links(catalog: EnrichmentCatalog, title: str, year: int) -> tuple[dict[str, str], ...]:
+    """Match HITB videos whose titles include schedule prefixes or speaker suffixes."""
+    target = _title_words(title)
+    if not target:
+        return ()
+    matches: dict[str, dict[str, str]] = {}
+    for record in catalog.records:
+        if record.get("assessor-id") != "hitb":
+            continue
+        video_title = str(record.get("title", ""))
+        if year and record.get("conference") and str(record["conference"]) != str(year):
+            continue
+        candidate = _title_words(video_title)
+        overlap = target & candidate
+        if len(overlap) < 2:
+            continue
+        coverage = len(overlap) / max(1, min(len(target), len(candidate)))
+        if coverage < 0.55 and len(overlap) < 4:
+            continue
+        url = record.get("url")
+        if isinstance(url, str) and url.startswith(("http://", "https://")):
+            matches[url] = {"title": video_title.strip(), "url": url}
+    return tuple(matches[key] for key in sorted(matches))
+
+
+def _merge_links(*groups: tuple[dict[str, str], ...]) -> tuple[dict[str, str], ...]:
+    merged = {link["url"]: link for group in groups for link in group if link.get("url")}
+    return tuple(merged[key] for key in sorted(merged))
+
+
+def _title_words(value: str) -> set[str]:
+    value = re.sub(r"^\s*#?HITB[^:–—-]*(?:[:–—-])?\s*", "", value, flags=re.I)
+    value = re.sub(r"\s+-\s+[^-]{2,80}$", "", value)
+    value = re.sub(r"[^a-z0-9]+", " ", value.casefold())
+    return {word for word in value.split() if len(word) >= 4 and word not in {"with", "from", "into", "that", "this", "your", "about"}}

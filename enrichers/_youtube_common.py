@@ -16,6 +16,9 @@ def collect_youtube(context: EnricherContext, *, assessor_id: str, enricher_id: 
             urls.append(_video_source_url(links[key]))
     if isinstance(links.get("youtubePlaylistUrls"), list):
         urls.extend(_video_source_url(url) for url in links["youtubePlaylistUrls"] if isinstance(url, str))
+    archive_playlists = document.get("archiveInventory", {}).get("youtubeYears", {})
+    if isinstance(archive_playlists, dict):
+        urls.extend(_video_source_url(url) for url in archive_playlists.values() if isinstance(url, str))
     if not urls:
         raise ValueError(f"{assessor_id} must define a YouTube URL or playlist URL")
     try:
