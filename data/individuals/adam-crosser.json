@@ -1,0 +1,60 @@
+{
+  "name": "Adam Crosser",
+  "last-updated": "2026-10-12T09:18:13Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Adam Crosser",
+      "label": "Leveraging Request Smuggling For Authentication Bypass and Remote Code Execution",
+      "description": "After our review of the three critical risk HRS 0-days we discovered, we will present key takeaways for reviewing application architecture for HRS. In our experience, nearly every security web penetration tester knows where and how to look for SQLi and XSS. But when we first started evaluating applications we had only a limited idea of what HRS was and a vague concept of when to look for it. We want everyone watching to take away the main idea from our talk: just like when you see a login screen you might think to try ‘or 1=1 to exploit SQLi, when you see two different parts of an application processing HTTP requests, each responsible for different parts of the security model, think “http request smuggling”. We will conclude with thoughts on how to approach looking for request smuggling vulnerabilities and recommendations on fixing request smuggling. HRS, which emerged in 2005, has recently been repopularized by PortSwigger’s research. We will discuss today’s application world and describe a few different architecture types that are particularly vulnerable to request smuggling. Existing posts on the topic provide theoretical examples, but they fail to progress past the contrived sample scenarios. In contrast, we will touch on these categories briefly to help explain what HRS actually is, but plan to do the bulk of our explaining once we move on to the real world scenarios. We will primarily focus on three critical-risk HRS vulnerabilities we recently responsibly disclosed: CVE-2023-41265, CVE-2023-48365, and CVE-2023-46747. Offensive cybersecurity practitioners are familiar with the abbreviations XSS, CSRF, and SQLi, but how many people really recognize HRS (HTTP Request Smuggling)? Even though the original HRS paper came out nearly 20 years ago, we think request smuggling remains underappreciated in today’s security world. In this presentation, we discuss three HTTP request smuggling vulnerabilities we identified in F5 BIG-IP and Qlik Sense Enterprise that lead to widespread unauthenticated remote code execution impacting roughly ten percent of the global Fortune 500 with instances of these applications exposed to the Internet. We have released three blog posts detailing the HTTP request smuggling vulnerabilities we identified on the issues we have dubbed ZeroQlik, DoubleQlik, and Refresh.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2024",
+      "url": "https://conference.hitb.org/hitbsecconf2024bkk/session/leveraging-request-smuggling-for-authentication-bypass-and-remote-code-execution/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2024,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research",
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

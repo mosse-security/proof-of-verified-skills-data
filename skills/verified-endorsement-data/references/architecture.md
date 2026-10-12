@@ -128,6 +128,13 @@ Pages with no published sessions are cached but do not produce empty output
 files. Keep layout-specific parsing functions isolated and add fixtures when a
 new regional or historical layout appears.
 
+HITB uses a two-level archive: conference agenda pages link to session-detail
+pages, and the detail pages contain the authoritative title, speaker links, and
+abstract text. Cache both levels before parsing. Do not use agenda speaker-only
+headings as endorsements, and deduplicate sessions that appear in both the main
+2022 agenda and its CommSec track. HITB OpenGraph descriptions are often
+truncated; parse the full abstract paragraphs from the detail page.
+
 Before parsing an assessor, run `python -m unittest tests.test_archive_coverage
 -v`. If a page was downloaded manually, place the complete main HTML document
 in `tmp/`, map it to the URL-derived ZIP member with `ArchiveStore`, rerun

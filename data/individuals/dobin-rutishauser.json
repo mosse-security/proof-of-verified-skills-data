@@ -1,0 +1,91 @@
+{
+  "name": "Dobin Rutishauser",
+  "last-updated": "2026-10-12T09:18:15Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 2,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 2,
+      "red-teaming": 1,
+      "reverse-engineering": 1,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Dobin Rutishauser",
+      "label": "Cracking the Shield: Analyzing and Reverse Engineering Antivirus Signatures",
+      "description": "Dobin was a penetration tester for many years, and then switched to be a SOC analyst. Currently he is leading the RedTeam at Raiffeisen Schweiz I will give an overview of the ideas and architecture of the software. For this we will also also dive deep into the file format of the most common initial attack vectors, and the challenges they provided. At the end we will discuss the results of analyzing a large amount of signatures from Microsoft Defender to judge its effectiveness , common problems with signatures, and how to do better in the future. By reverse engineering antivirus signatures, we gain valuable insight into the workings of these systems and can develop more effective methods to evade detection. It allows RedTeamers to pinpoint weak parts of signatures so to make their tools undetectable by applying the minimal amount of effort. Antivirus software are a black-box that are still used in every company as part of their defense infrastructure. We’ve created a tool to analyze and reverse engineer antivirus signatures. The motivation behind it is to better understand how antivirus software works and how it can be circumvented.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2023",
+      "url": "https://conference.hitb.org/hitbsecconf2023hkt/session/cracking-the-shield-analyzing-and-reverse-engineering-antivirus-signatures/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "cyber-defense",
+        "penetration-testing",
+        "reverse-engineering"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "security-operations-and-soc-practice"
+        ],
+        "penetration-testing": [],
+        "reverse-engineering": []
+      }
+    },
+    {
+      "name": "Dobin Rutishauser",
+      "label": "COMMSEC: My First and Last Shellcode Loader",
+      "description": "To provide a comprehensive understanding, I will begin with a brief overview of typical EDR architectures and their detection methodologies, particularly focusing on how they identify shellcode loaders. Key topics will include the AV, AV emulation, user-mode- and kernel-mode telemetry, and memory scanning. Instead of highlighting the latest anti-EDR implementations, the session will emphasize making practical design decisions to bypass detection mechanisms. We will critically analyze the current anti-EDR approaches, concluding that many of these efforts, while innovative, are often more “cool” than practically useful. RedTeamers often leverage shellcode loaders for initial access to deploy their C2 beacons. In this presentation, I will introduce my SuperMega shellcode loader laboratory, featuring a novel file injection technique called Cordyceps. Cordyceps reuses the Import Address Table (IAT) and data sections to deeply integrate into target executables, enabling it to operate under the radar. This technique allows for the deployment of unmodified Metasploit payloads on EDR-enabled endpoints without triggering alarms.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2024",
+      "url": "https://conference.hitb.org/hitbsecconf2024bkk/session/commsec-my-first-and-last-shellcode-loader/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2024,
+      "domains": [
+        "cyber-defense",
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "endpoint-and-host-defense"
+        ],
+        "penetration-testing": [],
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

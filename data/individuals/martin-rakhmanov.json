@@ -1,13 +1,13 @@
 {
   "name": "Martin Rakhmanov",
-  "last-updated": "2026-10-11T23:48:33Z",
+  "last-updated": "2026-10-12T09:09:50Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
+    "endorsements": 2,
+    "assessors": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 1,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,31 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Martin Rakhmanov",
+      "label": "How MySQL Servers Can Attack YOU",
+      "description": "Imagine a WordPress site is hacked again and now must be restored. WordPress compromises aren’t interesting and a backup is readily available, the only step required is to re-create the database. After logging in to the MySQL server, your screen goes black, and a bitcoin address appears with instructions to unlock. What was a simple wordpress restore is now a much bigger incident. A malicious attacker has achieved remote code execution on your laptop. How is this even possible? In a world where database access also means elevated privileges elsewhere, utilizing a WordPress site to move to a workstation (that has access to sensitive environments and secrets) is becoming a realistic CONOP. In this talk we’ll demonstrate a novel approach, using a compromised MySQL server to attack the MySQL client. A client in this case can be a web application using the MySQL client libraries (C/C++, Python, PHP, etc.), but more importantly it can also be an interactive tool such as the MySQL command line client or MySQL Workbench, running on YOUR laptop. This talk will cover a novel attack vector where the attacker compromises a MySQL server with the intention of targeting and gaining remote code execution to those users who have access to the database. Our team started by re-creating a security issue fixed in 2019, which Oracle MySQL never clearly acknowledged. (The closest CVEs possible are: CVE-2020-2570, CVE-2020-2574, CVE-2020-2575). Our team will demonstrate how unfixed old client libraries, such as MySQL C/C++ connectors and MySQL ODBC drivers – as well as command line and GUI tools like MySQL CLI and MySQL Workbench – allow an attacker to perform arbitrary code execution on the client machine. After reviewing the fix we have found another twist: we can use a multibyte charset to bypass the security patch in MySQL server code. That means a brand new zero-day vulnerability in MySQL server allows an attack against MySQL client libraries, command line and GUI tools. In summary, our team will show a novel attack vector where an attack is executed against MySQL database clients (applications using C API) and demo a full zero-day attack chain we found against MySQL client applications to gain remote code execution . Our team will also demonstrate how to use multi-byte character set encoding to target a non multi-byte safe or improperly written code.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2023",
+      "url": "https://conference.hitb.org/hitbsecconf2023ams/session/how-mysql-servers-can-attack-you/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "zero-day-and-0-day-research",
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Martin Rakhmanov",
       "label": "Atomic Honeypot: A MySQL Honeypot That Drops Shells",

@@ -1,25 +1,25 @@
 {
   "name": "Bramwell Brizendine",
-  "last-updated": "2026-10-11T23:48:08Z",
+  "last-updated": "2026-10-12T09:09:46Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
+    "endorsements": 3,
+    "assessors": 2,
     "with-evidence": 0,
-    "without-evidence": 2,
+    "without-evidence": 3,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
-      "red-teaming": 1,
-      "reverse-engineering": 1,
-      "vulnerability-research": 2,
+      "red-teaming": 2,
+      "reverse-engineering": 2,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,36 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Bramwell Brizendine",
+      "label": "Windows Syscalls in Shellcode: Advanced Techniques for Malicious Functionality",
+      "description": "Windows syscalls for many years had virtually never been used due to the portability problem associated with syscall system service numbers (SSNs), as they can change from one OS Build, to the next, and Windows 10 already has more than a dozen OS Builds . Thus, it was not practical to use Windows syscalls, when the OS Build may not be known, and thus the user may not know the correct SSN to use that corresponds to a particular syscall in a specific OS Build. Due to this portability problem, direct syscalls were all but unusable and irrelevant, as hardcoded SSNs had only a brief shelf life . However, recently Windows syscalls have gained explosive popularity in offensive security, widely used in red team software, as various ways have been found to overcome this portability problem. Yet, prior to our research, Windows syscalls largely have been completely ignored in the context of shellcode, aside from being used as Egghunters occasionally. In this talk, we will demonstrate ShellWasp , a tool to help bypass the portability problem associated with syscalls, allowing for direct syscalls to easily to be used in shellcode. While there have been many tools and techniques that grant users the ability to use Windows syscalls in higher-level languages, there has been virtually no discussion on how to do so in pure shellcode . In fact, as part of research to build a comprehensive shellcode analysis framework, SHAREM, we were shocked to find after extensive research that syscalls have virtually never been used in Windows shellcode . Aside from one lone example, an early proof of concept from the Windows XP era, which used hardcoded SSNs, ignoring the portability problem associated with syscalls, we could find no other publicly available examples , aside from Egghunters. These egghunters, however, used a single syscall, to search through process memory for a tag, that marked that starting location of a secondary shellcode fragment. Aside from the portability problem associated with Windows syscalls, there is a good reason why syscalls have largely not been used in shellcode, prior to the release of ShellWasp. After all, it is monumentally more difficult to use them in shellcode, than in higher-level languages, where you can easily provide necessary resources or create needed structures. But difficulty is irrelevant, and a more pertinent question is—can it be done, can syscalls reliably be used in a shellcode context? Yes, it absolutely can, with slightly greater discomfort. In this talk, we provide deep knowledge on how to use Windows syscalls in shellcode , providing a walkthrough and demos of shellcodes comprised of Windows syscalls. This will include a highly elaborate shellcode utilizing 10 syscalls. Prior to our research, syscalls had only rarely been used in shellcode, aside from Egghunters, so much of the practical knowledge needed to be successfully simply is not out there. Shellcode with Windows syscalls is drastically different from traditional shellcode with WinAPIs, with many nuances and gotchas. Furthermore, we will show how we can use ShellWasp to help us overcome the portability problem associated with shellcode . How we address the portability problem for syscalls is not the same as how we might do it in C++ or C#, and ShellWasp will take care of managing syscall usage for us, and doing so in a highly compact, minimalist fashion. ShellWasp additionally creates a shellcode template for us, with all syscalls and corresponding parameters labelled, ready for the user to customize with appropriate values. Additionally, we will provide a deep reverse engineering background to understand the mechanics of how syscalls work in modern Windows OSs, including Windows 7, 10 and 11. Furthermore, and perhaps most importantly, for the first time ever, we will unveil a highly unusual way of invoking Windows Syscalls in WoW64 . This is new method will add some additional stealth to our code, and it will be added to a special update for ShellWasp . Windows syscalls in shellcode is not for the faint-hearted, but at Hack in the Box Amsterdam we will learn how we can start to master this truly elite, state-of-the-art approach to shellcode. Even those who are masters of traditional Windows shellcode will come away feeling like they have learned a lot. Some Additional Background of Windows Syscalls Windows Syscalls used for offensive purposes was very seldom discussed, prior to an exhaustive 2018 report by Hod Gavriel, who reported on a sudden uptick for direct syscall usage in malware . His report on what was happening in the wild was inspirational, spawning the first tools, Dumpert, in June 2019, followed by SysWhispers in December 2019. These tools enabled users to use Windows syscalls offensively, and since that time Windows syscalls have become extremely trendy, with numerous tools and techniques. Many of them owe homage, directly or indirectly, to ElephantSe4l’s sorting by address technique , as popularized by SysWhispers2 and others, which can enable syscall system service numbers (SSNs) to be resolved dynamically. Windows syscalls have become very popular to use in Red Team offensive software, as they can help to avoid some EDR protection, if done correctly, which is immensely powerful, whereas traditional WinAPIs can be hooked and intercepted relatively easily. How these Windows syscall tools work is that they can extend what can be done in higher level languages, with projects written in languages like C++ or C# and compiled by Visual Studio or with MinGW and NASM. Thus, instead of using malicious WinAPIs known to be used in malware from the comfort of Visual Studio, you can replace them with direct Windows syscalls, thereby increasing the chances of evading detection. While this approach may be useful for those projects that use syscalls, it is very different from how we utilize syscalls in shellcode. As mentioned, many needed resources can easily be created in a higher-level language, whereas in shellcode, it can take much more effort to achieve the same.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2023",
+      "url": "https://conference.hitb.org/hitbsecconf2023ams/session/windows-syscalls-in-shellcode-advanced-techniques-for-malicious-functionality/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "endpoint-and-host-defense"
+        ],
+        "red-teaming": [],
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
     {
       "name": "Bramwell Brizendine",
       "label": "Techniques for Creating Process Injection Attacks with Advanced Return-Oriented Programming",

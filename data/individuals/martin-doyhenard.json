@@ -1,6 +1,6 @@
 {
   "name": "Martin Doyhenard",
-  "last-updated": "2026-10-11T23:48:33Z",
+  "last-updated": "2026-10-12T09:09:50Z",
   "biography": "",
   "contact": [
     {
@@ -9,13 +9,13 @@
     }
   ],
   "stats": {
-    "endorsements": 3,
-    "assessors": 1,
+    "endorsements": 4,
+    "assessors": 2,
     "with-evidence": 2,
-    "without-evidence": 1,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 2,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -24,7 +24,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -83,6 +83,34 @@
       ],
       "subspecialties": {
         "unknown": []
+      }
+    },
+    {
+      "name": "Martin Doyhenard",
+      "label": "Exploiting Inter-Process Communication with New Desynchronization Primitives",
+      "description": "Most organizations, including 90% of Fortune 500 companies, rely on SAP’s software to keep their business up and running. At the core of every SAP deployment, the Internet Communication Manager is the piece of software in charge of handling all HTTP requests and responses. This talk will demonstrate how to leverage two memory corruption vulnerabilities found in SAP’s proprietary HTTP Server, using high level protocol exploitation techniques. Both, CVE-2022-22536 (CVSS 10) and CVE-2022-22532, were remotely exploitable and could be used by unauthenticated attackers to completely compromise any SAP installation on the planet. First, this presentation will show how, by escalating an error in the HTTP request handling process, it was possible to Desynchronize data buffers and hijack every user’s credentials with advanced HTTP Smuggling . Furthermore, as the primitives of this vulnerability do not rely on parsing errors, a new technique will be introduced to take over systems even in an “impossible to exploit” scenario: without a proxy! This will include a demo of the first Desync botnet, using nothing more than javascript and Client-Side Desynchronization. Next, this talk will examine a Use After Free in the shared memory buffers used for Inter-Process Communication. By exploiting an incorrect deallocation, it was possible to tamper messages belonging to other TCP connections and take control of all responses using Cache Poisoning theory. A real demonstration of how to corrupt an HTTP backend server’s cache using Response Smuggling will be presented . And, as the affected buffers are also used to contain Out Of Bounds data, a method to corrupt address pointers and obtain Remote Code Execution will be explained. Finally, all these new exploitation techniques will be analyzed using other HTTP servers and reviewed from a defensive perspective, helping developers and web architects to stop attackers before it’s too late. Also, a detection tool for CVE-2022-22536 will be presented, which was designed to hide the technical details and avoid malicious actors to weaponize it. The results of the threat intelligence campaign conducted after the vulnerabilities were patched will be shown as well. The “ICMAD” vulnerabilities were addressed by the US Cybersecurity and Infrastructure Security Agency and CERTs from all over the world, and were added to the Known Exploited Vulnerabilities Catalog, proving the tremendous impact they had on enterprise security.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2023",
+      "url": "https://conference.hitb.org/hitbsecconf2023ams/session/exploiting-inter-process-communication-with-new-desynchronization-primitives/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "threat-intelligence-operations"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     },
     {

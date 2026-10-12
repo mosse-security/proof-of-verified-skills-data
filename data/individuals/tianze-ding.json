@@ -1,6 +1,6 @@
 {
   "name": "Tianze Ding",
-  "last-updated": "2026-10-11T23:48:50Z",
+  "last-updated": "2026-10-12T09:09:54Z",
   "biography": "",
   "contact": [
     {
@@ -9,12 +9,12 @@
     }
   ],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
+    "endorsements": 2,
+    "assessors": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
-      "cloud-security": 0,
+      "cloud-security": 1,
       "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
@@ -24,8 +24,8 @@
       "penetration-testing": 0,
       "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
-      "identity-and-access-management": 1,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 2,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
@@ -67,6 +67,36 @@
         ],
         "identity-and-access-management": [
           "authentication",
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Tianze Ding",
+      "label": "How NTLM Relay Ruins Your Exchange Servers",
+      "description": "Tianze Ding (@D1iv3), senior security researcher at Tencent Security Xuanwu Lab. His research focuses on Windows Active Directory Security, Cloud Security and Web Security. He has reported numerous vulnerabilities to Microsoft, Apple, Google, etc. and was awarded Microsoft MVR (Microsoft Most Valuable Security Researchers) in 2022. He has also spoken at DEFCON 29 and BlackHat Asia 2021. I’ll walk you through all these vulnerabilities in this talk, including their root causes, how to exploit them, patches, and patch bypasses, and what you can do to protect your Exchange Servers. In this talk, I will uncover a rarely known NTLM relay attack surface of Exchange Server. This attack surface is an architectural design issue in Exchange cluster environment, which affects about 60% of the Exchange frontend endpoints and 70% of the Exchange backend endpoints. By exploiting these vulnerabilities, attackers can take over any Exchange user’s mailbox and have the power to read emails, send emails, download attachments, and more. Some of these vulnerabilities can result in RCE on Exchange Server. What will happen when Exchange Server meets with NTLM Relay? NTLM Relay is a classic attack against Windows systems. Although proposed many years ago, it is still a hot topic among red teams, especially in Active Directory environments. Exchange Server, as the most widely used mail server in the world, has also attracted more and more attention from attackers, many Exchange 0days with great impact have been found and even exploited in the wild in recent years.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2023",
+      "url": "https://conference.hitb.org/hitbsecconf2023hkt/session/how-ntlm-relay-ruins-your-exchange-servers/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "cloud-security",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "cloud-security": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ],
+        "identity-and-access-management": [
           "directory-services"
         ]
       }

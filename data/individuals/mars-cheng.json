@@ -1,6 +1,6 @@
 {
   "name": "Mars Cheng",
-  "last-updated": "2026-10-11T23:48:33Z",
+  "last-updated": "2026-10-12T09:09:50Z",
   "biography": "",
   "contact": [
     {
@@ -9,13 +9,13 @@
     }
   ],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
+    "endorsements": 2,
+    "assessors": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -24,8 +24,8 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 1,
-      "vulnerability-research": 1,
-      "identity-and-access-management": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 1,
       "iot-security": 0,
       "operational-technology-security": 1,
       "threat-hunting": 0,
@@ -70,6 +70,34 @@
           "plc-security",
           "automotive-security",
           "ecu-and-automotive-embedded-systems"
+        ]
+      }
+    },
+    {
+      "name": "Mars Cheng",
+      "label": "Active Directory Abuse Primitives and Operation Security",
+      "description": "Active Directory (AD) is widely used by enterprises for centralized management of digital assets such as accounts, machines, and access rights. AD is always the primary target for adversaries since compromising AD also grants control over an entire enterprise’s network. Furthermore, AD attacks techniques are mostly in the form of leveraging the privilege, configuration settings, or designed mechanism, that are also commonly called the abuse primitive. In this talk, we will discuss how real-world adversaries abuse these attack techniques that are chained as attack paths to compromise Active Directory by demonstrating 4 attack paths . We will dive into these AD attack techniques abuse configuration settings and discuss the methodology such as enumeration, consideration, tactical goal, and how to evade blue team detection to make success operation. In addition, attack paths demonstrated includes new AD abuse primitives such as diamond ticket, U2U ticket, or Shadow Credential . We will discuss how an attack path is formed from the abuse primitives in the AD environment with the explanation of root cause, implementation methods, and operational guidance. All 4 attack paths shared will also be shared with video demonstration from an adversary’s perspective using a C2 not only for a realistic experience of offensive operation but to make the impact easier to understand.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2023",
+      "url": "https://conference.hitb.org/hitbsecconf2023ams/session/active-directory-abuse-primitives-and-operation-security/",
+      "evidence-links": [],
+      "evidence": false,
+      "year": 2023,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "directory-services"
         ]
       }
     }
