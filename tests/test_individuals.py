@@ -6,7 +6,11 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from endorsement_scraper.individuals import cleanup_generated_directory, merge_endorsements
+from endorsement_scraper.individuals import (
+    IndividualMergeError,
+    cleanup_generated_directory,
+    merge_endorsements,
+)
 
 
 def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
@@ -154,6 +158,19 @@ class IndividualMergeTests(unittest.TestCase):
                 merge_endorsements(source, output, profiles_directory=root / "profiles")
             document = json.loads((output / "dana-example.json").read_text())
             self.assertEqual(document["last-updated"], "2026-01-02T00:00:00Z")
+
+    def test_refuses_empty_existing_output_to_protect_timestamps(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "endorsements"
+            source.mkdir(parents=True)
+            (source / "one.json").write_text(
+                json.dumps([endorsement("Empty Output", "Talk")]), encoding="utf-8"
+            )
+            output = root / "individuals"
+            output.mkdir()
+            with self.assertRaises(IndividualMergeError):
+                merge_endorsements(source, output, profiles_directory=root / "profiles")
 
 
 if __name__ == "__main__":

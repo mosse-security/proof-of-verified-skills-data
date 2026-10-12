@@ -53,6 +53,7 @@ def merge_endorsements(
     *,
     overwrite: bool = True,
     profiles_directory: Path = Path("data/tmp/profiles"),
+    allow_empty_output: bool = False,
 ) -> IndividualMergeResult:
     """Merge all endorsement records into one template-shaped file per person."""
 
@@ -93,6 +94,20 @@ def merge_endorsements(
             person = grouped.setdefault(identity, {"name": name, "records": {}})
             person.setdefault("profiles", []).append(profile)
 
+    # An empty, pre-existing output directory usually means that a caller
+    # moved the old files away before rebuilding.  Continuing would recreate
+    # every timestamp and defeat _last_updated_for's preservation guarantee.
+    if (
+        overwrite
+        and not allow_empty_output
+        and output_directory.exists()
+        and not any(output_directory.glob("*.json"))
+        and grouped
+    ):
+        raise IndividualMergeError(
+            f"Refusing to rebuild into empty existing output directory {output_directory}; "
+            "restore the existing individual files or pass --allow-empty-output intentionally."
+        )
     output_directory.mkdir(parents=True, exist_ok=True)
     used_paths: dict[str, str] = {}
     files: list[Path] = []
@@ -390,6 +405,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--output-dir", type=Path, default=Path("data/individuals")
     )
     parser.add_argument(
+        "--allow-empty-output",
+        action="store_true",
+        help="Allow rebuilding into an existing empty output directory (timestamps cannot be preserved).",
+    )
+    parser.add_argument(
         "--keep-tmp",
         action="store_true",
         help="Keep temporary endorsements and profiles after merging.",
@@ -419,6 +439,7 @@ def main(argv: list[str] | None = None) -> int:
             args.output_dir,
             overwrite=args.overwrite,
             profiles_directory=args.profiles_dir,
+            allow_empty_output=args.allow_empty_output,
         )
     except (OSError, IndividualMergeError) as exc:
         print(f"Individual merge failed: {exc}")

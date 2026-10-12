@@ -463,6 +463,11 @@ retain their existing `last-updated` UTC timestamp, while changed records get a
 new timestamp suitable for ascending or descending database sorting. Use
 `--no-overwrite` to preserve existing profile files.
 
+As a safety check, the merger refuses to rebuild into an existing empty
+`data/individuals` directory, since that would make every record look new and
+reset its timestamp. Use `--allow-empty-output` only when a clean-room rebuild
+is intentional and timestamp preservation is not possible.
+
 ## Enrichers
 
 Enrichers are independently discovered from `enrichers/` and collect external

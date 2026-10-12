@@ -144,6 +144,13 @@ After parser/schema changes:
    running only one assessor produces incomplete per-person histories. Use
    `--workers 1` for browser-backed retrieval.
 4. Run `python -m endorsement_scraper.individuals --overwrite --keep-tmp`.
+   Keep the existing `data/individuals` directory in place during this step;
+   the merger can only preserve `last-updated` values when it can compare
+   against the existing files. If a clean-room rebuild is unavoidable, restore
+   timestamps from the previous snapshot for records whose content is
+   unchanged before committing.
+   The merger also refuses to write into an existing empty output directory;
+   use `--allow-empty-output` only for an intentional clean-room rebuild.
 5. Run `python -m unittest tests.test_individuals_coverage -v` and remove or
    quarantine stale profile-only files it identifies.
 6. Validate all generated individual files through
