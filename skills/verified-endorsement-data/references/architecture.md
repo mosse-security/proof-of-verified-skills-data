@@ -141,6 +141,20 @@ totals, evidence-link counts, errors, and validations such as the DEF CON
 non-zero endorsement check.
 Tests can call `validate_run_stats` against the file or synthetic reports.
 
+## Runtime logging
+
+CLI runs configure file logging under the ignored `logs/` directory:
+
+- `logs/general.log` contains useful messages at the selected log level.
+- `logs/warnings.log` contains warning-level conditions only.
+- `logs/errors.log` contains error and exception records that require action.
+
+Warnings are not promoted to errors. Scraper failures and uncaught exceptions
+use error-level logging so they are visible in the serious-error file.
+For conference assessors with YouTube catalogs, the scraper run also logs
+warning-level coverage gaps: catalog videos not matched to endorsements and
+captured conference endorsements without a matched YouTube video.
+
 ## Conference adapter lessons
 
 `endorsement_scraper/assessors/def_con.py` supports multiple historical

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import re
 import shutil
 import tempfile
@@ -11,6 +12,9 @@ from pathlib import Path
 from typing import Any
 
 from .archives import ArchiveStore
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def load_video_catalog(assessor_id: str, *, enrichments_directory: Path = Path("data/enrichments")) -> list[dict[str, Any]]:
@@ -34,6 +38,7 @@ def archive_transcripts(
 ) -> dict[str, int]:
     """Archive new or changed English transcripts without duplicating videos."""
     records = load_video_catalog(assessor_id, enrichments_directory=enrichments_directory)
+    LOGGER.info("Starting transcript archive for %s: catalog=%d", assessor_id, len(records))
     archive_path = archived_directory / f"{assessor_id}-transcripts.zip"
     store = ArchiveStore(archive_path)
     previous: dict[str, dict[str, Any]] = {}
@@ -64,10 +69,12 @@ def archive_transcripts(
         try:
             transcript = _download_transcript(str(record["url"]))
         except Exception:
+            LOGGER.exception("Transcript download failed for %s (%s)", video_id, record["url"])
             counters["failed"] += 1
             current.append({**fingerprint, "status": "failed"})
             continue
         if not transcript:
+            LOGGER.warning("No English subtitles available for %s (%s)", video_id, record["url"])
             counters["no_subtitles"] += 1
             current.append({**fingerprint, "status": "no_subtitles"})
             continue
@@ -76,6 +83,7 @@ def archive_transcripts(
         current.append({**fingerprint, "status": "archived"})
     manifest = {"assessor-id": assessor_id, "videos": current}
     store.write("manifest.json", (json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+    LOGGER.info("Finished transcript archive for %s: %s", assessor_id, counters)
     return counters
 
 

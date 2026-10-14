@@ -10,9 +10,11 @@ from pathlib import Path
 from .base import CollectionScraperContext
 from .discovery import DiscoveryError, discover_all_scrapers
 from .http import HttpClient
+from .logging_config import configure_logging
 from .runner import CollectionScraperRunner, RunReport, ScraperRunner
 from .storage import EndorsementStore, ProfileStore
 from .stats import build_run_stats, count_domains, count_evidence, count_individuals, count_subspecialties, write_run_stats
+from .video_audit import audit_conference_video_matching
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -88,10 +90,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     started_at = datetime.now(timezone.utc)
-    logging.basicConfig(
-        level=getattr(logging, args.log_level),
-        format="%(asctime)s %(levelname)s %(threadName)s %(message)s",
-    )
+    configure_logging(level=getattr(logging, args.log_level))
     try:
         discovered = discover_all_scrapers(args.scrapers_dir)
     except DiscoveryError as exc:
@@ -117,6 +116,10 @@ def main(argv: list[str] | None = None) -> int:
     if not selected_pages and not selected_collections:
         print("No scrapers matched. Add a scraper or adjust the filters.", file=sys.stderr)
         return 2
+    logging.getLogger(__name__).info(
+        "Selected scrapers: page=%d collection=%d workers=%d",
+        len(selected_pages), len(selected_collections), args.workers,
+    )
 
     def client_factory(assessor_id: str, scraper_id: str) -> HttpClient:
         return HttpClient(
@@ -161,6 +164,10 @@ def main(argv: list[str] | None = None) -> int:
         else RunReport()
     )
     report = RunReport([*page_report.scrapers, *collection_report.scrapers])
+    audit_conference_video_matching(
+        assessors_directory=args.assessors_dir,
+        output_directory=args.output_dir,
+    )
     for item in report.scrapers:
         state = "FAILED" if item.error else "OK"
         print(
@@ -187,6 +194,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     write_run_stats(args.stats_file, stats)
     print(f"Stats: {args.stats_file} status={stats['status']} last-run={stats['last-run']}")
+    logging.getLogger(__name__).info(
+        "Scrape totals: pages=%d endorsements=%d failed=%d evidence=%d",
+        totals["pages"], totals["endorsements"], len(report.failed),
+        sum(stats.get("evidence", {}).values()) if isinstance(stats.get("evidence"), dict) else 0,
+    )
     return 1 if report.failed else 0
 
 
