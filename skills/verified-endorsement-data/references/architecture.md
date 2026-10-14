@@ -120,6 +120,19 @@ count, and unmatched count; a large unmatched remainder requires
 assessor-specific matching logic rather than silently treating videos as
 irrelevant. `tests.test_video_enrichment_coverage` verifies non-empty catalogs.
 
+Transcript archives are separate from video metadata catalogs. Run
+`python -m endorsement_scraper.transcripts --assessor <id>` after collecting a
+catalog. It stores normalized English transcript text in
+`data/archives/yt-transcripts/<id>-transcripts.zip`, with a `manifest.json` keyed by video ID.
+Unchanged videos are skipped, while new or changed catalog entries are
+downloaded on the next run; repeated runs never add duplicate transcript
+members.
+
+`tests.test_transcript_coverage` cross-references every transcript archive
+against captured endorsement YouTube links and the corresponding video
+catalog. It rejects missing transcripts for captured talks, duplicate manifest
+IDs, and transcript members absent from the catalog.
+
 ## Run statistics
 
 `endorsement_scraper.stats` writes an atomic `data/stats.json` after the main

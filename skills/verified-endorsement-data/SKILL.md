@@ -52,7 +52,14 @@ cyber domains are introduced.
     regenerating endorsements. Run video enrichers with `--workers 1`, verify
     non-empty catalogs, and report both catalog size and matched evidence-link
     count. A large unmatched remainder requires better matching logic.
-12. Inspect `data/stats.json` after each scraper run. It is the operator and
+12. For every non-empty YouTube catalog, archive English transcripts with
+   `python -m endorsement_scraper.transcripts --assessor <id>`. This writes
+   one idempotent ZIP under `data/archives/yt-transcripts/` per assessor, skips unchanged video
+   IDs, and captures newly added or changed videos on later runs.
+13. Run `python -m unittest tests.test_transcript_coverage -v` whenever
+    transcript archives exist. This cross-references transcript members with
+    captured endorsement YouTube links and the source video catalog.
+14. Inspect `data/stats.json` after each scraper run. It is the operator and
    test contract for timestamps, counts, errors, and capture sanity checks.
 
 ## Non-negotiable contracts
