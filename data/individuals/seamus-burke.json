@@ -1,6 +1,6 @@
 {
   "name": "Seamus Burke",
-  "last-updated": "2026-10-11T23:48:46Z",
+  "last-updated": "2026-10-14T06:41:24Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Seamus Burke",
       "label": "A Journey Into Hexagon: Dissecting a Qualcomm Baseband",
-      "description": "Mobile phones are quite complicated and feature multiple embedded processors handling wifi, cellular connectivity, bluetooth, and other signal processing in addition to the application processor. Have you ever been curious about how your phone actually makes calls and texts on a low level? Or maybe you want to learn more about the internals of the baseband but have no clue where to start. We will dive into the internals of a qualcomm baseband, tracing it's evolution over the years until its current state. We will discuss the custom, in-house DSP architecture they now run on, and the proprietary RTOS running on it. We will also cover the architecture of the cellular stack, likely places vulnerabilities lie, and exploit mitigations in place. Finally we will cover debugging possibilities, and how to get started analyzing the baseband firmware—how to differentiate between RTOS and cellular functions, how to find C std library functions, and more.",
+      "description": "Mobile phones are quite complicated and feature multiple embedded processors handling wifi, cellular connectivity, bluetooth, and other signal processing in addition to the application processor. Have you ever been curious about how your phone actually makes calls and texts on a low level? Or maybe you want to learn more about the internals of the baseband but have no clue where to start. We will dive into the internals of a qualcomm baseband, tracing it's evolution over the years until its current state. We will discuss the custom, in-house DSP architecture they now run on, and the proprietary RTOS running on it. We will also cover the architecture of the cellular stack, likely places vulnerabilities lie, and exploit mitigations in place. Finally we will cover debugging possibilities, and how to get started analyzing the baseband firmwareâ€”how to differentiate between RTOS and cellular functions, how to find C std library functions, and more.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "vulnerability-research"

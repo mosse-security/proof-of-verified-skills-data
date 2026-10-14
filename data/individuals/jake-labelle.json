@@ -1,6 +1,6 @@
 {
   "name": "Jake Labelle",
-  "last-updated": "2026-10-11T23:48:23Z",
+  "last-updated": "2026-10-14T06:40:47Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Jake Labelle",
       "label": "Getting Shells on z/OS with Surrogat Chains",
-      "description": "z/OS allows a user to submit a job as another user without a password with the surrogat class. However, z/OS systems often have hundreds of thousands of users and have been running for decades. This means that it is very likely that from a low priv user there is a surrogat chain that will give you special (z/OS' root). RACF (z/OS' Security), does not allow users to view the security of resources to which they do not have access. This means that manually enumerating a chain required you to submit a reverse shell each time you wanted to move up the chain. This will take a long time with 200k users. Gator (my tool), submits a batch job that will call a REXX program which will output the user's privs and the current surrogat chain of that user. It will then list all of that user’s surrogat privs, and call the same batch job as before, but running as those users. Gator also provides a macro that will generate a CATSO (similar to a meterpreter shell), for any of the users in the surrogat chain. Gator can also be exported to a GraphVis python program, which will display the users information and chain as a network of nodes.",
+      "description": "z/OS allows a user to submit a job as another user without a password with the surrogat class. However, z/OS systems often have hundreds of thousands of users and have been running for decades. This means that it is very likely that from a low priv user there is a surrogat chain that will give you special (z/OS' root). RACF (z/OS' Security), does not allow users to view the security of resources to which they do not have access. This means that manually enumerating a chain required you to submit a reverse shell each time you wanted to move up the chain. This will take a long time with 200k users. Gator (my tool), submits a batch job that will call a REXX program which will output the user's privs and the current surrogat chain of that user. It will then list all of that userâ€™s surrogat privs, and call the same batch job as before, but running as those users. Gator also provides a macro that will generate a CATSO (similar to a meterpreter shell), for any of the users in the surrogat chain. Gator can also be exported to a GraphVis python program, which will display the users information and chain as a network of nodes.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -56,6 +56,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2020,
       "domains": [
         "vulnerability-research"
@@ -67,7 +77,7 @@
     {
       "name": "Jake Labelle",
       "label": "Doing the Impossible: How I Found Mainframe Buffer Overflows",
-      "description": "Track 4 Doing the Impossible: How I Found Mainframe Buffer Overflows Jake Labelle 45 minutes 💻 🛠 🪲",
+      "description": "Track 4 Doing the Impossible: How I Found Mainframe Buffer Overflows Jake Labelle 45 minutes ðŸ’» ðŸ›  ðŸª²",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -83,6 +93,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2022,
       "domains": [
         "unknown"

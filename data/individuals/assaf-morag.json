@@ -1,6 +1,6 @@
 {
   "name": "Assaf Morag",
-  "last-updated": "2026-10-11T23:48:07Z",
+  "last-updated": "2026-10-14T06:40:23Z",
   "biography": "",
   "contact": [
     {
@@ -41,7 +41,7 @@
     {
       "name": "Assaf Morag",
       "label": "Hacking the Hackers who Hack Hackers: Supply-Chain Backdoors in Underground VPN Infrastructure",
-      "description": "Underground VPN and tunneling ecosystems are widely used to monetize compromised servers and sell “free internet” access through SSH, SOCKS, and multi-protocol tunnels. These operations rely heavily on open-source infrastructure management tools deployed on rented or hacked Linux servers. But what happens when the tools themselves are weaponized? In this talk we dissect FirewallFalcon Manager, a VPN/SSH server management toolkit widely promoted in Telegram communities. While it presents itself as a legitimate open-source platform, our analysis reveals a multi-layered supply-chain attack targeting the very operators who deploy it. FirewallFalcon silently installs backdoors, injects a rogue TLS root certificate, hijacks DNS resolution, and redirects proxy traffic through attacker-controlled infrastructure to enable large-scale Man-in-the-Middle interception. Earlier versions also deployed a Telegram reconnaissance bot and a universal SSH backdoor granting root access to infected servers. Using reverse engineering, GitHub history analysis, DNS infrastructure mapping, and large-scale internet scanning, we uncovered hundreds of active servers inside this compromised ecosystem. This talk exposes a new class of supply-chain attacks: hackers hacking the infrastructure used by other hackers.",
+      "description": "Underground VPN and tunneling ecosystems are widely used to monetize compromised servers and sell â€œfree internetâ€ access through SSH, SOCKS, and multi-protocol tunnels. These operations rely heavily on open-source infrastructure management tools deployed on rented or hacked Linux servers. But what happens when the tools themselves are weaponized? In this talk we dissect FirewallFalcon Manager, a VPN/SSH server management toolkit widely promoted in Telegram communities. While it presents itself as a legitimate open-source platform, our analysis reveals a multi-layered supply-chain attack targeting the very operators who deploy it. FirewallFalcon silently installs backdoors, injects a rogue TLS root certificate, hijacks DNS resolution, and redirects proxy traffic through attacker-controlled infrastructure to enable large-scale Man-in-the-Middle interception. Earlier versions also deployed a Telegram reconnaissance bot and a universal SSH backdoor granting root access to infected servers. Using reverse engineering, GitHub history analysis, DNS infrastructure mapping, and large-scale internet scanning, we uncovered hundreds of active servers inside this compromised ecosystem. This talk exposes a new class of supply-chain attacks: hackers hacking the infrastructure used by other hackers.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -56,11 +56,21 @@
           "url": "https://www.youtube.com/watch?v=M-npHgEu5Gg"
         },
         {
-          "title": "DEF CON Safe Mode - Shlomi Oberman, Moshe Kol, Ariel Schön - Hacking the Supply Chain",
+          "title": "DEF CON Safe Mode - Shlomi Oberman, Moshe Kol, Ariel SchÃ¶n - Hacking the Supply Chain",
           "url": "https://www.youtube.com/watch?v=wHsjf2mAHIM"
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2026,
       "domains": [
         "devsecops",

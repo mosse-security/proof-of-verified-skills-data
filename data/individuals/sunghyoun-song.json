@@ -1,6 +1,6 @@
 {
   "name": "SungHyoun Song",
-  "last-updated": "2026-10-12T10:04:17Z",
+  "last-updated": "2026-10-14T06:41:28Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "SungHyoun Song",
       "label": "Take a Picture of Your App Code - Android MRI Interpreter",
-      "description": "SungHyoun Song is a principal security researcher at Financial Security Institute(FSI), in charge of Mobile Security for Financial Industry in Korea. He has experienced mobile security, reverse engineering, penetration test and authentication mechanism for ten Years. Currently focusing on Linux kernel exploitation and Android runtime. Also he has participated in several international security conferences such as ITU-T, Black Hat USA/Asia, Ekoparty, NullCon, CanSecWest, SEC-T, PacSec, HITCON, BlackAlps, beVX. Three functions were developed based on the Android Open Source Project (AOSP) in order to analyze and find vulnerabilities of apps in the Android 12 environment. In this new Interpreter, the Android app takes a picture of the dalvik instruction and register value at runtime when the target (data or function) is used, generating a Control Flow Graph (CFG) that traces the target’s forward and backward execution, providing an effective environment for analyzing the app and finding vulnerabilities. Furthermore, I will explain the vulnerabilities discovered in mobile apps using the developed OS. If it were possible to perform tomography on the app’s code through a simple procedure, such as taking a picture like an MRI without invasion the app’s process, and trace the flow of data used within the code, it would be an effective way to find vulnerabilities. This paper proposes a new OS (interpreter, runtime, kernel) that performs MRI functions based on Android 12. Magnetic Resonance Imaging (MRI), a medical device, allows tomographic imaging of human organs and measurement of blood flow. Using these features, modern doctors can easily detect diseases without having to perform open surgery as in the past.",
+      "description": "SungHyoun Song is a principal security researcher at Financial Security Institute(FSI), in charge of Mobile Security for Financial Industry in Korea. He has experienced mobile security, reverse engineering, penetration test and authentication mechanism for ten Years. Currently focusing on Linux kernel exploitation and Android runtime. Also he has participated in several international security conferences such as ITU-T, Black Hat USA/Asia, Ekoparty, NullCon, CanSecWest, SEC-T, PacSec, HITCON, BlackAlps, beVX. Three functions were developed based on the Android Open Source Project (AOSP) in order to analyze and find vulnerabilities of apps in the Android 12 environment. In this new Interpreter, the Android app takes a picture of the dalvik instruction and register value at runtime when the target (data or function) is used, generating a Control Flow Graph (CFG) that traces the targetâ€™s forward and backward execution, providing an effective environment for analyzing the app and finding vulnerabilities. Furthermore, I will explain the vulnerabilities discovered in mobile apps using the developed OS. If it were possible to perform tomography on the appâ€™s code through a simple procedure, such as taking a picture like an MRI without invasion the appâ€™s process, and trace the flow of data used within the code, it would be an effective way to find vulnerabilities. This paper proposes a new OS (interpreter, runtime, kernel) that performs MRI functions based on Android 12. Magnetic Resonance Imaging (MRI), a medical device, allows tomographic imaging of human organs and measurement of blood flow. Using these features, modern doctors can easily detect diseases without having to perform open surgery as in the past.",
       "type": "presentation",
       "assessor": "HITB (Hack In The Box Security Conference)",
       "assessor-id": "hitb",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "penetration-testing",

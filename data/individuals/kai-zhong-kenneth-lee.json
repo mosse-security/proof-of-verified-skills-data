@@ -1,6 +1,6 @@
 {
   "name": "Kai Zhong Kenneth Lee",
-  "last-updated": "2026-10-11T23:48:28Z",
+  "last-updated": "2026-10-14T06:40:56Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Kai Zhong Kenneth Lee",
       "label": "411: A framework for managing security alerts",
-      "description": "Modern web applications generate a ton of logs. Suites like ELK (Elasticsearch, Logstash, Kibana) exist to help manage these logs, and more people are turning to them for their log analysis needs. These logs contain a treasure trove of information regarding bad actors on your site, but surfacing that information in a timely manner can be difficult. When Etsy moved over from Splunk to ELK in mid-2014, we realized that ELK lacked necessary functionality for real-time alerting. We needed a solution that would provide a robust means of querying ELK and enrich the data with additional context. We ended up creating our own framework to give us this functionality. We’ve named this open-source framework 411. We designed 411 as a solution for detecting and alerting on interesting anomalies and security events. The Security team at Etsy was interested in using this functionality to detect everything from XSS to monitoring for potential account compromises. First, we’ll start off with a discussion of what you should be logging into Elasticsearch. This is important to help you create useful, actionable alerts in 411. We’ll note a number of configuration tips and tricks to help you get the most out of your ELK cluster. From there, we’ll dive into 411’s features and how it allows the Etsy security team to work effectively. We’ll conclude with two demos of 411 in action. This presentation will show you several examples of useful searches you can build in 411 and how this data can be manipulated to generate clear, actionable alerts. We’ll demonstrate the built-in workflow for responding to alerts and how 411 allows you to pull up additional context as you work on an alert. Additionally, while much of our discussion will be centered around ELK, 411 can in fact be used with a variety of data sources (Several of these sources are built into 411). Whether you’re a newbie looking to learn more or a security veteran with an established system, 411 will help change the way you handle security alerts.",
+      "description": "Modern web applications generate a ton of logs. Suites like ELK (Elasticsearch, Logstash, Kibana) exist to help manage these logs, and more people are turning to them for their log analysis needs. These logs contain a treasure trove of information regarding bad actors on your site, but surfacing that information in a timely manner can be difficult. When Etsy moved over from Splunk to ELK in mid-2014, we realized that ELK lacked necessary functionality for real-time alerting. We needed a solution that would provide a robust means of querying ELK and enrich the data with additional context. We ended up creating our own framework to give us this functionality. Weâ€™ve named this open-source framework 411. We designed 411 as a solution for detecting and alerting on interesting anomalies and security events. The Security team at Etsy was interested in using this functionality to detect everything from XSS to monitoring for potential account compromises. First, weâ€™ll start off with a discussion of what you should be logging into Elasticsearch. This is important to help you create useful, actionable alerts in 411. Weâ€™ll note a number of configuration tips and tricks to help you get the most out of your ELK cluster. From there, weâ€™ll dive into 411â€™s features and how it allows the Etsy security team to work effectively. Weâ€™ll conclude with two demos of 411 in action. This presentation will show you several examples of useful searches you can build in 411 and how this data can be manipulated to generate clear, actionable alerts. Weâ€™ll demonstrate the built-in workflow for responding to alerts and how 411 allows you to pull up additional context as you work on an alert. Additionally, while much of our discussion will be centered around ELK, 411 can in fact be used with a variety of data sources (Several of these sources are built into 411). Whether youâ€™re a newbie looking to learn more or a security veteran with an established system, 411 will help change the way you handle security alerts.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2016,
       "domains": [
         "vulnerability-research"

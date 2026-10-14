@@ -1,6 +1,6 @@
 {
   "name": "Li Qiang",
-  "last-updated": "2026-10-12T10:04:09Z",
+  "last-updated": "2026-10-14T06:40:59Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Li Qiang",
       "label": "gVisor: Modern Linux Sandboxing Technology",
-      "description": "Li Qiang is a senior security engineer in Ant Group. He focus virtualization/container/kernel/cloud-native security in Ant Group. Before joining Ant Group, he is a vulnerability researcher and found a lot of vulnerabilities in QEMU/Virtualbox/Linux kernel. He has spoke in a lot of security conference such as CanSecWest, Syscon, Ruxcon, HITB and so on. In this talk, we will cover some background of Linux sandboxes, look at some primitives such as ptrace, LD_PRELOAD and also some existing sandbox solutions such as nsjail and firejail. We will also introduce gVisor and some of the technologies behind it, behind it and how you can use it to build a process-level sandbox based on gVisor. I will include the design and implementation and also some of the issues we needed to resolve. I will walk through some examples of how to use this new sandbox solution in a variety of security areas. An ideal sandbox solution should be easy to use, security focused, and also offer “full observablity to the sandboxed process”. In order to meet our internal needs, we have created a sandbox solution based on gVisor which allows us to sandbox a process in a VM. Sandboxing is very important in information security and while the Linux world has a lot of sandbox solutions and also sandboxing primitives, there is no dominating sandbox solution, and every one has it’s own set of advantages and disadvantages.",
+      "description": "Li Qiang is a senior security engineer in Ant Group. He focus virtualization/container/kernel/cloud-native security in Ant Group. Before joining Ant Group, he is a vulnerability researcher and found a lot of vulnerabilities in QEMU/Virtualbox/Linux kernel. He has spoke in a lot of security conference such as CanSecWest, Syscon, Ruxcon, HITB and so on. In this talk, we will cover some background of Linux sandboxes, look at some primitives such as ptrace, LD_PRELOAD and also some existing sandbox solutions such as nsjail and firejail. We will also introduce gVisor and some of the technologies behind it, behind it and how you can use it to build a process-level sandbox based on gVisor. I will include the design and implementation and also some of the issues we needed to resolve. I will walk through some examples of how to use this new sandbox solution in a variety of security areas. An ideal sandbox solution should be easy to use, security focused, and also offer â€œfull observablity to the sandboxed processâ€. In order to meet our internal needs, we have created a sandbox solution based on gVisor which allows us to sandbox a process in a VM. Sandboxing is very important in information security and while the Linux world has a lot of sandbox solutions and also sandboxing primitives, there is no dominating sandbox solution, and every one has itâ€™s own set of advantages and disadvantages.",
       "type": "presentation",
       "assessor": "HITB (Hack In The Box Security Conference)",
       "assessor-id": "hitb",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "vulnerability-research"

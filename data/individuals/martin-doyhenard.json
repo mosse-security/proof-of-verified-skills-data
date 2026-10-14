@@ -1,6 +1,6 @@
 {
   "name": "Martin Doyhenard",
-  "last-updated": "2026-10-12T10:17:21Z",
+  "last-updated": "2026-10-14T06:41:03Z",
   "biography": "",
   "contact": [
     {
@@ -37,7 +37,7 @@
     {
       "name": "Martin Doyhenard",
       "label": "Response Smuggling: Pwning HTTP/1.1 Connections",
-      "description": "Over the past few years, we have seen some novel presentations re-introducing the concept of HTTP request smuggling, to reliably exploit complex landscapes and systems. With advanced techniques, researchers were able to bypass restrictions and breach the security of critical web applications. This presentation will take a new approach, focusing on the response pipeline desynchronization, a rather unexplored attack vector in HTTP Smuggling. First, I will introduce a Desync variant, using connection-tokens to hide arbitrary headers from the backend. This technique does not abuse discrepancy between HTTP parsers, but instead relies on a vulnerability in the protocol itself! The issue was found and reported under Google’s Vulnerability Reward Program for a nice bounty! Next, I will show how it is possible to inject multiple messages at the backend server, mixing the pipeline’s connection order, and hijack users sessions from login requests. Finally, using a novel technique known as Response Scripting, I will demonstrate how to create malicious outbound messages using static responses as the building blocks. This will be leveraged to write custom responses and take control of one of the most popular protocols in history! REFERENCES: RFC 2616: Hypertext Transfer Protocol -- HTTP/1.1 https://tools.ietf.org/html/rfc2616 RFC 7231: Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content https://tools.ietf.org/html/rfc7231 CHAIM LINHART, AMIT KLEIN, RONEN HELED, STEVE ORRIN: HTTP Request Smuggling https://www.cgisecurity.com/lib/HTTP-Request-Smuggling.pdf James Kettle: HTTP Desync Attacks: Request Smuggling Reborn https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn https://portswigger.net/research/http-desync-attacks-what-happened-next Emile Fugulin HTTP Desync Attacks with Python and AWS https://medium.com/@emilefugulin/http-desync-attacks-with-python-and-aws-1ba07d2c860f Amit Klein HTTP Request Smuggling in 2020 https://i.blackhat.com/USA-20/Wednesday/us-20-Klein-HTTP-Request-Smuggling-In-2020-New-Variants-New-Defenses-And-New-Challenges.pdf",
+      "description": "Over the past few years, we have seen some novel presentations re-introducing the concept of HTTP request smuggling, to reliably exploit complex landscapes and systems. With advanced techniques, researchers were able to bypass restrictions and breach the security of critical web applications. This presentation will take a new approach, focusing on the response pipeline desynchronization, a rather unexplored attack vector in HTTP Smuggling. First, I will introduce a Desync variant, using connection-tokens to hide arbitrary headers from the backend. This technique does not abuse discrepancy between HTTP parsers, but instead relies on a vulnerability in the protocol itself! The issue was found and reported under Googleâ€™s Vulnerability Reward Program for a nice bounty! Next, I will show how it is possible to inject multiple messages at the backend server, mixing the pipelineâ€™s connection order, and hijack users sessions from login requests. Finally, using a novel technique known as Response Scripting, I will demonstrate how to create malicious outbound messages using static responses as the building blocks. This will be leveraged to write custom responses and take control of one of the most popular protocols in history! REFERENCES: RFC 2616: Hypertext Transfer Protocol -- HTTP/1.1 https://tools.ietf.org/html/rfc2616 RFC 7231: Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content https://tools.ietf.org/html/rfc7231 CHAIM LINHART, AMIT KLEIN, RONEN HELED, STEVE ORRIN: HTTP Request Smuggling https://www.cgisecurity.com/lib/HTTP-Request-Smuggling.pdf James Kettle: HTTP Desync Attacks: Request Smuggling Reborn https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn https://portswigger.net/research/http-desync-attacks-what-happened-next Emile Fugulin HTTP Desync Attacks with Python and AWS https://medium.com/@emilefugulin/http-desync-attacks-with-python-and-aws-1ba07d2c860f Amit Klein HTTP Request Smuggling in 2020 https://i.blackhat.com/USA-20/Wednesday/us-20-Klein-HTTP-Request-Smuggling-In-2020-New-Variants-New-Defenses-And-New-Challenges.pdf",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -53,6 +53,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2021,
       "domains": [
         "cloud-security",
@@ -66,7 +76,7 @@
     {
       "name": "Martin Doyhenard",
       "label": "Internal Server Error: Exploiting Inter-Process Communication with new desynchronization primitives",
-      "description": "Track 3 Internal Server Error: Exploiting Inter-Process Communication with new desynchronization primitives Martin Doyhenard 45 minutes 💻 🛠 🪲",
+      "description": "Track 3 Internal Server Error: Exploiting Inter-Process Communication with new desynchronization primitives Martin Doyhenard 45 minutes ðŸ’» ðŸ›  ðŸª²",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -77,6 +87,16 @@
       "url": "https://forum.defcon.org/node/242287",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2022,
       "domains": [
         "unknown"
@@ -88,7 +108,7 @@
     {
       "name": "Martin Doyhenard",
       "label": "Exploiting Inter-Process Communication with New Desynchronization Primitives",
-      "description": "Most organizations, including 90% of Fortune 500 companies, rely on SAP’s software to keep their business up and running. At the core of every SAP deployment, the Internet Communication Manager is the piece of software in charge of handling all HTTP requests and responses. This talk will demonstrate how to leverage two memory corruption vulnerabilities found in SAP’s proprietary HTTP Server, using high level protocol exploitation techniques. Both, CVE-2022-22536 (CVSS 10) and CVE-2022-22532, were remotely exploitable and could be used by unauthenticated attackers to completely compromise any SAP installation on the planet. First, this presentation will show how, by escalating an error in the HTTP request handling process, it was possible to Desynchronize data buffers and hijack every user’s credentials with advanced HTTP Smuggling . Furthermore, as the primitives of this vulnerability do not rely on parsing errors, a new technique will be introduced to take over systems even in an “impossible to exploit” scenario: without a proxy! This will include a demo of the first Desync botnet, using nothing more than javascript and Client-Side Desynchronization. Next, this talk will examine a Use After Free in the shared memory buffers used for Inter-Process Communication. By exploiting an incorrect deallocation, it was possible to tamper messages belonging to other TCP connections and take control of all responses using Cache Poisoning theory. A real demonstration of how to corrupt an HTTP backend server’s cache using Response Smuggling will be presented . And, as the affected buffers are also used to contain Out Of Bounds data, a method to corrupt address pointers and obtain Remote Code Execution will be explained. Finally, all these new exploitation techniques will be analyzed using other HTTP servers and reviewed from a defensive perspective, helping developers and web architects to stop attackers before it’s too late. Also, a detection tool for CVE-2022-22536 will be presented, which was designed to hide the technical details and avoid malicious actors to weaponize it. The results of the threat intelligence campaign conducted after the vulnerabilities were patched will be shown as well. The “ICMAD” vulnerabilities were addressed by the US Cybersecurity and Infrastructure Security Agency and CERTs from all over the world, and were added to the Known Exploited Vulnerabilities Catalog, proving the tremendous impact they had on enterprise security.",
+      "description": "Most organizations, including 90% of Fortune 500 companies, rely on SAPâ€™s software to keep their business up and running. At the core of every SAP deployment, the Internet Communication Manager is the piece of software in charge of handling all HTTP requests and responses. This talk will demonstrate how to leverage two memory corruption vulnerabilities found in SAPâ€™s proprietary HTTP Server, using high level protocol exploitation techniques. Both, CVE-2022-22536 (CVSS 10) and CVE-2022-22532, were remotely exploitable and could be used by unauthenticated attackers to completely compromise any SAP installation on the planet. First, this presentation will show how, by escalating an error in the HTTP request handling process, it was possible to Desynchronize data buffers and hijack every userâ€™s credentials with advanced HTTP Smuggling . Furthermore, as the primitives of this vulnerability do not rely on parsing errors, a new technique will be introduced to take over systems even in an â€œimpossible to exploitâ€ scenario: without a proxy! This will include a demo of the first Desync botnet, using nothing more than javascript and Client-Side Desynchronization. Next, this talk will examine a Use After Free in the shared memory buffers used for Inter-Process Communication. By exploiting an incorrect deallocation, it was possible to tamper messages belonging to other TCP connections and take control of all responses using Cache Poisoning theory. A real demonstration of how to corrupt an HTTP backend serverâ€™s cache using Response Smuggling will be presented . And, as the affected buffers are also used to contain Out Of Bounds data, a method to corrupt address pointers and obtain Remote Code Execution will be explained. Finally, all these new exploitation techniques will be analyzed using other HTTP servers and reviewed from a defensive perspective, helping developers and web architects to stop attackers before itâ€™s too late. Also, a detection tool for CVE-2022-22536 will be presented, which was designed to hide the technical details and avoid malicious actors to weaponize it. The results of the threat intelligence campaign conducted after the vulnerabilities were patched will be shown as well. The â€œICMADâ€ vulnerabilities were addressed by the US Cybersecurity and Infrastructure Security Agency and CERTs from all over the world, and were added to the Known Exploited Vulnerabilities Catalog, proving the tremendous impact they had on enterprise security.",
       "type": "presentation",
       "assessor": "HITB (Hack In The Box Security Conference)",
       "assessor-id": "hitb",
@@ -104,6 +124,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "cyber-defense",
@@ -120,8 +150,8 @@
     },
     {
       "name": "Martin Doyhenard",
-      "label": "Gotta Cache ‘em all: bending the rules of web cache exploitation",
-      "description": "In recent years, web cache attacks have become a popular way to steal sensitive data, deface websites, and deliver exploits. We've also seen parser inconsistencies causing critical vulnerabilities like HTTP Request Smuggling. This raises the question: what happens if we attack web caches' URL-parsers? In this session, I'll introduce two powerful new techniques that exploit RFC ambiguities to bypass the limitations of web cache deception and poisoning attacks. First, I'll introduce Static Path Deception, a novel technique to completely compromise the confidentiality of an application. I’ll illustrate this with a case study showing how such a breach can be replicated in environments like Nginx behind Cloudflare. Next, I'll present Cache Key Confusion, and show how to exploit URL parsing inconsistencies in major platforms, including Microsoft Azure Cloud. I’ll then show how to achieve arbitrary cache poisoning and full denial of service. Finally, I'll reveal how to supercharge these vulnerabilities with a live demo that blends Cache Key Confusion with a “non-exploitable” open redirect to execute arbitrary JS code for complete site takeover. Attendees will depart armed with a set of innovative techniques, along with a definitive methodology to find and exploit these and other URL or HTTP discrepancies. Web Cache Deception Attack - Omer Gil link This is the first time Web Cache Deception attacks were introduced and worked as a starting point for my research. Web Cache Entanglement: Novel Pathways to Poisoning - James Kettle link This research worked as an inspiration to develop the cache poisoning techniques. I also used this paper to outline the state of the art in web cache exploitation and create a different approach using parser discrepancies. Cached and confused: Web cache deception in the wild - Seyed Ali Mirheidari, Sajjad Arshad, Kaan Onarlioglu, Bruno Crispo, Engin Kirda and William Robertson. link The web cache deception techniques using delimiters for path confusion were inspired by the 2020 USENIX presentation “Cached and confused: Web cache deception in the wild”. In that presentation, they briefly describe some variations of path confusion using four encoded characters. Although the objective of their paper was to show a large-scale study of web cache deception vulnerabilities in the wild, it also introduced the use of delimiters for path confusion. In my presentation I'll expand on this concept, providing a methodology to find all the delimiters used by a URL parser and explaining how to use them in new exploitation techniques. ChatGPT Account Takeover - Wildcard Web Cache Deception - Harel Security Research link Also, during the time this research was being conducted, a vulnerability using a single variation of one of the techniques (Static Path Confusion) was published as a write up.",
+      "label": "Gotta Cache â€˜em all: bending the rules of web cache exploitation",
+      "description": "In recent years, web cache attacks have become a popular way to steal sensitive data, deface websites, and deliver exploits. We've also seen parser inconsistencies causing critical vulnerabilities like HTTP Request Smuggling. This raises the question: what happens if we attack web caches' URL-parsers? In this session, I'll introduce two powerful new techniques that exploit RFC ambiguities to bypass the limitations of web cache deception and poisoning attacks. First, I'll introduce Static Path Deception, a novel technique to completely compromise the confidentiality of an application. Iâ€™ll illustrate this with a case study showing how such a breach can be replicated in environments like Nginx behind Cloudflare. Next, I'll present Cache Key Confusion, and show how to exploit URL parsing inconsistencies in major platforms, including Microsoft Azure Cloud. Iâ€™ll then show how to achieve arbitrary cache poisoning and full denial of service. Finally, I'll reveal how to supercharge these vulnerabilities with a live demo that blends Cache Key Confusion with a â€œnon-exploitableâ€ open redirect to execute arbitrary JS code for complete site takeover. Attendees will depart armed with a set of innovative techniques, along with a definitive methodology to find and exploit these and other URL or HTTP discrepancies. Web Cache Deception Attack - Omer Gil link This is the first time Web Cache Deception attacks were introduced and worked as a starting point for my research. Web Cache Entanglement: Novel Pathways to Poisoning - James Kettle link This research worked as an inspiration to develop the cache poisoning techniques. I also used this paper to outline the state of the art in web cache exploitation and create a different approach using parser discrepancies. Cached and confused: Web cache deception in the wild - Seyed Ali Mirheidari, Sajjad Arshad, Kaan Onarlioglu, Bruno Crispo, Engin Kirda and William Robertson. link The web cache deception techniques using delimiters for path confusion were inspired by the 2020 USENIX presentation â€œCached and confused: Web cache deception in the wildâ€. In that presentation, they briefly describe some variations of path confusion using four encoded characters. Although the objective of their paper was to show a large-scale study of web cache deception vulnerabilities in the wild, it also introduced the use of delimiters for path confusion. In my presentation I'll expand on this concept, providing a methodology to find all the delimiters used by a URL parser and explaining how to use them in new exploitation techniques. ChatGPT Account Takeover - Wildcard Web Cache Deception - Harel Security Research link Also, during the time this research was being conducted, a vulnerability using a single variation of one of the techniques (Static Path Confusion) was published as a write up.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -132,11 +162,21 @@
       "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54481",
       "evidence-links": [
         {
-          "title": "DEF CON 32 - Gotta Cache ‘em all  bending the rules of web cache exploitation - Martin Doyhenard",
+          "title": "DEF CON 32 - Gotta Cache â€˜em all  bending the rules of web cache exploitation - Martin Doyhenard",
           "url": "https://www.youtube.com/watch?v=70yyOMFylUA"
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2024,
       "domains": [
         "cloud-security",

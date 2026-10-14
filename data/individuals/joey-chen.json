@@ -1,6 +1,6 @@
 {
   "name": "Joey Chen",
-  "last-updated": "2026-10-12T10:04:07Z",
+  "last-updated": "2026-10-14T06:40:52Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Joey Chen",
       "label": "COMMSEC: CoralRaider Targets Victims Data and Social Media Accounts",
-      "description": "This research sheds light on the evolving tactics of CoralRaider and underscores the importance of continuous threat intelligence to combat emerging cyber threats effectively. Understanding the modus operandi of such threat actors is crucial for bolstering defenses and mitigating risks in today’s cybersecurity landscape. In a recent discovery made by Talos in February 2024, CoralRaider has initiated a new campaign distributing renowned infostealer malware, including Cryptbot, LummaC2, and Rhadamanthys. Employing innovative tactics, the threat actor embeds PowerShell command-line arguments within LNK files to evade antivirus detection and facilitate payload downloads onto victim hosts.Furthermore, the campaign utilizes Content Delivery Network (CDN) cache domains as download servers for hosting malicious HTA files and payloads, adding another layer of complexity to their operations. Talos assesses with moderate confidence that CoralRaider is behind this campaign, noting overlaps in tactics, techniques, and procedures (TTPs) observed in previous Rotbot campaigns. These include the utilization of Windows Shortcut files as initial attack vectors, intermediate PowerShell decryptors, and FoDHelper techniques to bypass User Access Controls (UAC) on victim machines. In recent findings, Cisco Talos has uncovered a new threat actor, dubbed “CoralRaider,” believed to originate from Vietnam and driven by financial motivations. Operating since at least 2023, CoralRaider has targeted victims primarily across Asian and Southeast Asian countries, focusing on the theft of credentials, financial data, and social media accounts, including business and advertisement profiles.The group employs sophisticated tactics, leveraging customized variants of known malware such as RotBot (a modified version of QuasarRAT) and the XClient stealer as primary payloads in their campaigns. Notably, CoralRaider utilizes the dead drop technique, utilizing legitimate services to host C2 configuration files and uncommon living-off-the-land binaries (LoLBins) like Windows Forfiles.exe and FoDHelper.exe.",
+      "description": "This research sheds light on the evolving tactics of CoralRaider and underscores the importance of continuous threat intelligence to combat emerging cyber threats effectively. Understanding the modus operandi of such threat actors is crucial for bolstering defenses and mitigating risks in todayâ€™s cybersecurity landscape. In a recent discovery made by Talos in February 2024, CoralRaider has initiated a new campaign distributing renowned infostealer malware, including Cryptbot, LummaC2, and Rhadamanthys. Employing innovative tactics, the threat actor embeds PowerShell command-line arguments within LNK files to evade antivirus detection and facilitate payload downloads onto victim hosts.Furthermore, the campaign utilizes Content Delivery Network (CDN) cache domains as download servers for hosting malicious HTA files and payloads, adding another layer of complexity to their operations. Talos assesses with moderate confidence that CoralRaider is behind this campaign, noting overlaps in tactics, techniques, and procedures (TTPs) observed in previous Rotbot campaigns. These include the utilization of Windows Shortcut files as initial attack vectors, intermediate PowerShell decryptors, and FoDHelper techniques to bypass User Access Controls (UAC) on victim machines. In recent findings, Cisco Talos has uncovered a new threat actor, dubbed â€œCoralRaider,â€ believed to originate from Vietnam and driven by financial motivations. Operating since at least 2023, CoralRaider has targeted victims primarily across Asian and Southeast Asian countries, focusing on the theft of credentials, financial data, and social media accounts, including business and advertisement profiles.The group employs sophisticated tactics, leveraging customized variants of known malware such as RotBot (a modified version of QuasarRAT) and the XClient stealer as primary payloads in their campaigns. Notably, CoralRaider utilizes the dead drop technique, utilizing legitimate services to host C2 configuration files and uncommon living-off-the-land binaries (LoLBins) like Windows Forfiles.exe and FoDHelper.exe.",
       "type": "presentation",
       "assessor": "HITB (Hack In The Box Security Conference)",
       "assessor-id": "hitb",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2024,
       "domains": [
         "cyber-defense",

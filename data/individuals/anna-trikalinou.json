@@ -1,6 +1,6 @@
 {
   "name": "Anna Trikalinou",
-  "last-updated": "2026-10-11T23:48:06Z",
+  "last-updated": "2026-10-14T06:40:21Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Anna Trikalinou",
       "label": "Taking DMA Attacks to the Next Level: How to do Arbitrary Memory Reads/Writes in a Live and Unmodified System Using a Rogue Memory Controller",
-      "description": "Physical DMA attacks on devices and the ability to read and modify memory contents can be a serious security threat, especially for mobile devices, which can be easily lost or stolen, and for government and remote enterprise data centers, where entry of an untrusted entity can be easily overlooked. In particular, the ability to read memory can expose secrets (i.e. disk encryption keys) that reside thereon, and the ability to actively modify memory can be used to bypass the platform's security policies/mechanisms. However, those types of attacks typically require a specific interface (e.g. Thunderbolt™) to operate and can also be mitigated by blocking associated drivers and ports. In our talk, we will present a novel, physical, DMA attack that is undetectable, doesn't require a particular port and takes advantage of an inherent vulnerability of standard DIMM slot hardware design. Using our custom PCB probe with an FPGA, we were able to connect to the exposed DDR4 pins of an off-the-shelf desktop system in a non-invasive manner and while the system was on (S3 sleep state). Masking ourselves as the system's benign memory controller, we are able to read or modify memory at any physical address, and the victim system accepts our modifications when exiting from sleep. We will focus on how we reverse engineered the memory controller and DIMM circuitry to inject our signals in the victim system's memory bus while the system was in S3 sleep state, the JEDEC standard DDR4 commands our memory controller issued to perform each operation, the timing constraints, mapping between physical addresses to DDR4 addresses, and finally the design of our PCB and FPGA.",
+      "description": "Physical DMA attacks on devices and the ability to read and modify memory contents can be a serious security threat, especially for mobile devices, which can be easily lost or stolen, and for government and remote enterprise data centers, where entry of an untrusted entity can be easily overlooked. In particular, the ability to read memory can expose secrets (i.e. disk encryption keys) that reside thereon, and the ability to actively modify memory can be used to bypass the platform's security policies/mechanisms. However, those types of attacks typically require a specific interface (e.g. Thunderboltâ„¢) to operate and can also be mitigated by blocking associated drivers and ports. In our talk, we will present a novel, physical, DMA attack that is undetectable, doesn't require a particular port and takes advantage of an inherent vulnerability of standard DIMM slot hardware design. Using our custom PCB probe with an FPGA, we were able to connect to the exposed DDR4 pins of an off-the-shelf desktop system in a non-invasive manner and while the system was on (S3 sleep state). Masking ourselves as the system's benign memory controller, we are able to read or modify memory at any physical address, and the victim system accepts our modifications when exiting from sleep. We will focus on how we reverse engineered the memory controller and DIMM circuitry to inject our signals in the victim system's memory bus while the system was in S3 sleep state, the JEDEC standard DDR4 commands our memory controller issued to perform each operation, the timing constraints, mapping between physical addresses to DDR4 addresses, and finally the design of our PCB and FPGA.",
       "type": "presentation",
       "assessor": "Black Hat",
       "assessor-id": "black-hat",
@@ -52,6 +52,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2017,
       "domains": [
         "grc",

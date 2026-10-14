@@ -1,6 +1,6 @@
 {
   "name": "Philipp Mao & Rokhaya Fall",
-  "last-updated": "2026-10-11T23:48:41Z",
+  "last-updated": "2026-10-14T06:41:16Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Philipp Mao & Rokhaya Fall",
       "label": "Exploiting Android Apps with Counterfeit Art",
-      "description": "Arbitrary file overwrite vulnerabilities are common in Android apps, but since Android 5, whether this can be turned into code execution or not has become highly app-dependent. We present a new, app-agnostic, persistent technique that reliably converts arbitrary file overwrites into code execution by targeting the runtime-generated app image .art file, which remains writable within an app’s sandbox. By replacing this file with a crafted malicious image, attackers persistently gain code execution when the app restarts. Read more",
+      "description": "Arbitrary file overwrite vulnerabilities are common in Android apps, but since Android 5, whether this can be turned into code execution or not has become highly app-dependent. We present a new, app-agnostic, persistent technique that reliably converts arbitrary file overwrites into code execution by targeting the runtime-generated app image .art file, which remains writable within an appâ€™s sandbox. By replacing this file with a crafted malicious image, attackers persistently gain code execution when the app restarts. Read more",
       "type": "presentation",
       "assessor": "OffensiveCon",
       "assessor-id": "offensivecon",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2026,
       "domains": [
         "vulnerability-research"

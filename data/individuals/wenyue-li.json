@@ -1,6 +1,6 @@
 {
   "name": "Wenyue Li",
-  "last-updated": "2026-10-12T10:17:30Z",
+  "last-updated": "2026-10-14T06:41:36Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -43,6 +43,16 @@
       "url": "https://www.secwest.net/cansecwest2023-presentations/desktop-windows-manager",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2023,
       "domains": [
         "vulnerability-research"
@@ -54,7 +64,7 @@
     {
       "name": "Wenyue Li",
       "label": "The Lost World of DirectComposition: Hunting Windows Desktop Window Manager Bugs",
-      "description": "In the past few years, Windows win32k privilege escalation vulnerabilities have emerged in an endless stream. Researchers discovered new attack surfaces such as win32k Callback, DirectX, DirectComposition, etc. Even so, it’s still difficult to discover new vulnerabilities inside win32k attack surface. Are there still other attack surfaces inside the windows graphics component? Desktop Window Manager (DWM.EXE) is the compositing window manager in Microsoft Windows since Windows Vista that enables the use of hardware acceleration to render the graphical user interface of Windows. We found that this process has high privileges, users with low privileges can interact with the DWM process, which create a very large attack surface. However, there’re not too much research on this attack surface. We found 10 bugs inside the dwm process, all of these bugs were reported to Microsoft and got acknowledgements. In this talk, we will first introduce the basic architecture of the Desktop Window Manager, and explain how low privileged users interact with the dwm process. We will also introduce some special features found in the DWM process through reverse engineering, such as restart recovery, exception handling, etc. We will disclose some vulnerabilities we found, and you will gain a better understanding of this attack surface. Finally, we’ll make a conclusion and share our opinions on this attack surface, and also the speculation on the future security of the Desktop Window Manager process. Vulnerabilities of DirectComposition UserSpace This part is the key content of our speech. We will use 5 vulnerability cases we found as an explanation. Our presentation will leave attendees with the following takeaways:",
+      "description": "In the past few years, Windows win32k privilege escalation vulnerabilities have emerged in an endless stream. Researchers discovered new attack surfaces such as win32k Callback, DirectX, DirectComposition, etc. Even so, itâ€™s still difficult to discover new vulnerabilities inside win32k attack surface. Are there still other attack surfaces inside the windows graphics component? Desktop Window Manager (DWM.EXE) is the compositing window manager in Microsoft Windows since Windows Vista that enables the use of hardware acceleration to render the graphical user interface of Windows. We found that this process has high privileges, users with low privileges can interact with the DWM process, which create a very large attack surface. However, thereâ€™re not too much research on this attack surface. We found 10 bugs inside the dwm process, all of these bugs were reported to Microsoft and got acknowledgements. In this talk, we will first introduce the basic architecture of the Desktop Window Manager, and explain how low privileged users interact with the dwm process. We will also introduce some special features found in the DWM process through reverse engineering, such as restart recovery, exception handling, etc. We will disclose some vulnerabilities we found, and you will gain a better understanding of this attack surface. Finally, weâ€™ll make a conclusion and share our opinions on this attack surface, and also the speculation on the future security of the Desktop Window Manager process. Vulnerabilities of DirectComposition UserSpace This part is the key content of our speech. We will use 5 vulnerability cases we found as an explanation. Our presentation will leave attendees with the following takeaways:",
       "type": "presentation",
       "assessor": "HITB (Hack In The Box Security Conference)",
       "assessor-id": "hitb",
@@ -70,6 +80,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "reverse-engineering",

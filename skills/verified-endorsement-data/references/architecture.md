@@ -64,11 +64,18 @@ The internal `Endorsement` fields map to the template as follows:
 | `subtitle` | `subtitle` |
 | `source_url` | `url` |
 | enricher matches | `evidence-links` and `evidence` |
+| evidence state and assessor conference status | `povs` |
 | `year`/date/details year | `year` |
 | classifier result | `domains` |
 
 The person name is required; do not substitute a talk title for a missing
 recipient. A four-digit year is required for standard records.
+
+`povs` is derived centrally from evidence state. A record without evidence has
+all four milestones false and level 0. An evidence-backed conference talk
+from an approved assessor has verifiable, defended, and recognized milestones
+true, trusted false, and level 2. The schema validator rejects mismatched
+milestones, levels, or explanations.
 
 ## Profile extraction
 

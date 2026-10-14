@@ -1,6 +1,6 @@
 {
   "name": "Wenlin Yang",
-  "last-updated": "2026-10-11T23:48:52Z",
+  "last-updated": "2026-10-14T06:41:36Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Wenlin Yang",
       "label": "Pwning \"the toughest target\": the exploit chain of winning the largest bug bounty in the history of ASR program",
-      "description": "In recent years, Google has made many great efforts in exploit mitigation and attack surface reduction to strengthen the security of android system. It is becoming more and more difficult to remotely compromise Android phones especially Google’s Pixel phone. The Pixel phone is protected by many layers of security. It was the only device that was not pwned in the 2017 Mobile Pwn2Own competition. But our team discovered a remote exploit chain—the first of its kind since the Android Security Rewards (ASR) program expansion, which could compromise The Pixel phone remotely. The exploit chain was reported to Android security team directly. They took it seriously and patched it quickly. Because of the severity and our detailed report, we were awarded the highest reward ($112,500) in the history of the ASR program. In this talk we will detail how we used the exploit chain to inject arbitrary code into system_server process and get system user permissions. The exploit chain includes two bugs, CVE-2017-5116 and CVE-2017-14904. CVE-2017-5116 is a V8 engine bug related with Webassembly and SharedArrayBuffer. It is used to get remote code execution in sandboxed Chrome render process. CVE-2017-14904 is a bug in Android's libgralloc module that is used to escape from the sandbox. The way we used for sandbox escaping is very interesting, rarely talked about before. All details of vulnerabilities and mitigation bypassing techniques will be given in this talk.",
+      "description": "In recent years, Google has made many great efforts in exploit mitigation and attack surface reduction to strengthen the security of android system. It is becoming more and more difficult to remotely compromise Android phones especially Googleâ€™s Pixel phone. The Pixel phone is protected by many layers of security. It was the only device that was not pwned in the 2017 Mobile Pwn2Own competition. But our team discovered a remote exploit chainâ€”the first of its kind since the Android Security Rewards (ASR) program expansion, which could compromise The Pixel phone remotely. The exploit chain was reported to Android security team directly. They took it seriously and patched it quickly. Because of the severity and our detailed report, we were awarded the highest reward ($112,500) in the history of the ASR program. In this talk we will detail how we used the exploit chain to inject arbitrary code into system_server process and get system user permissions. The exploit chain includes two bugs, CVE-2017-5116 and CVE-2017-14904. CVE-2017-5116 is a V8 engine bug related with Webassembly and SharedArrayBuffer. It is used to get remote code execution in sandboxed Chrome render process. CVE-2017-14904 is a bug in Android's libgralloc module that is used to escape from the sandbox. The way we used for sandbox escaping is very interesting, rarely talked about before. All details of vulnerabilities and mitigation bypassing techniques will be given in this talk.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "vulnerability-research"

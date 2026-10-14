@@ -1,6 +1,6 @@
 {
   "name": "Russ McRee",
-  "last-updated": "2026-10-11T23:48:44Z",
+  "last-updated": "2026-10-14T06:41:21Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Russ McRee",
       "label": "CSRF: Yeah, It Still Works",
-      "description": "Bad News: CSRF is nasty, it's everywhere, and you can't stop it on the client side. Good News: It can do neat things. CSRF is likely amongst the lamest security bugs available, as far as \"cool\" bugs go. In essence, the attack forces another user's browser to do something on your behalf. If that user is an authenticated user or an administrator on a website, the attack can be used to escalate privilege. We’ve identified an endless stream of applications, platforms, critical infrastructure devices, and even wormable hybrid attacks, many of which require little or no Javascript (XSS). The key takeaway is this: a vulnerability that is so easily prevented can lead to absolute mayhem, particularly when bundled with other attacks. Worse still, identifying the attacker is even more difficult as the attack occurs in the context of the authenticated user. The presentation will discuss a variety of attack scenarios, as well as suggested mitigation.",
+      "description": "Bad News: CSRF is nasty, it's everywhere, and you can't stop it on the client side. Good News: It can do neat things. CSRF is likely amongst the lamest security bugs available, as far as \"cool\" bugs go. In essence, the attack forces another user's browser to do something on your behalf. If that user is an authenticated user or an administrator on a website, the attack can be used to escalate privilege. Weâ€™ve identified an endless stream of applications, platforms, critical infrastructure devices, and even wormable hybrid attacks, many of which require little or no Javascript (XSS). The key takeaway is this: a vulnerability that is so easily prevented can lead to absolute mayhem, particularly when bundled with other attacks. Worse still, identifying the attacker is even more difficult as the attack occurs in the context of the authenticated user. The presentation will discuss a variety of attack scenarios, as well as suggested mitigation.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2009,
       "domains": [
         "vulnerability-research",

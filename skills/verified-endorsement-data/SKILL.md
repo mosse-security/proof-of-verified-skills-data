@@ -67,6 +67,14 @@ cyber domains are introduced.
   exactly a non-empty `title` and absolute HTTP(S) `url`; an empty array is
   valid when no enricher matches, and `evidence` must mirror whether it is
   empty.
+- Every endorsement must contain a `povs` object with `milestones`, `level`,
+  and `explanation`. Evidence-free records use four false milestones, level
+  `0`, and the exact explanation `No evidence discovered for this record
+  therefore it could not be verified`. Evidence-backed conference talks from
+  approved assessors use `verifiable=true`, `defended=true`,
+  `recognized=true`, `trusted=false`, level `2`, and explain that industry use
+  in situations of real consequence could not be verified. Build and validate this centrally; never hand-edit generated
+  POVS.
 - Assessor metadata comes from the assessor JSON: name, ID, category,
   `peerReview.rigorLevel`, and `peerReview.reviewType`.
 - Every endorsement has a non-empty `domains` array and a `subspecialties`

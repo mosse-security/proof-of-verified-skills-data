@@ -1,6 +1,6 @@
 {
   "name": "Josep Pi Rodriguez",
-  "last-updated": "2026-10-11T23:48:27Z",
+  "last-updated": "2026-10-14T06:40:54Z",
   "biography": "",
   "contact": [
     {
@@ -53,6 +53,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "red-teaming",
@@ -67,8 +77,8 @@
     },
     {
       "name": "Josep Pi Rodriguez",
-      "label": "Contactless Overflow: Code execution in payment terminals and ATM’s over NFC.",
-      "description": "We conducted a research to assess the current security of NFC payment readers that are present in most of the major ATM brands, portable point of sales, gas stations, vending machines, transportation and other kind of point of sales in the US, Europe and worldwide. In particular, we found code execution vulnerabilities exploitable through NFC when handling a special application protocol data unit (APDU) that affect most NFC payment vendors. The vulnerabilities affect baremetal firmware devices and Android/Linux devices as well. After waiting more than 1 year and a half once we disclosed it to all the affected vendors, we are ready to disclose all the technical details to the public. This research was covered in the media by wired.com but without the technical details that we can share now https://www.wired.com/story/atm-hack-nfc-bugs-point-of-sale/ Some of the affected vendors are: IDtech https://idtechproducts.com/ Ingenico https://www.ingenico.com/ Verifone https://www.verifone.com/ CPI https://www.cranepi.com/ BBPOS https://www.bbpos.com/ Wiseasy https://www.wiseasy.com/ Nexgo https://www.nexgoglobal.com/ In this presentation we will describe the vulnerabilities and also demo how the readers can be compromised, using a special Android app we created, by just tapping an Android phone to the reader. We will discuss the consequences such as financial impact in reader’s users/owners and card data stealing once the firmware is compromised. Also, we will show how to compromise the host that is connected to the reader through USB by manipulating the reader’s firmware, chaining stack buffer overflow vulnerabilities in the SDK provided by the vendor that is running in the host machine. Finally, since one of the affected vendors (IDtech) is present in most ATM brands in the world, the talk will cover different scenarios of how possible can be jackpotting ATMs just tapping a smartphone into the reader of the ATM. We have many years of experience jackpotting all brands of ATMs in multiple different ways and we will show how this is technically possible.",
+      "label": "Contactless Overflow: Code execution in payment terminals and ATMâ€™s over NFC.",
+      "description": "We conducted a research to assess the current security of NFC payment readers that are present in most of the major ATM brands, portable point of sales, gas stations, vending machines, transportation and other kind of point of sales in the US, Europe and worldwide. In particular, we found code execution vulnerabilities exploitable through NFC when handling a special application protocol data unit (APDU) that affect most NFC payment vendors. The vulnerabilities affect baremetal firmware devices and Android/Linux devices as well. After waiting more than 1 year and a half once we disclosed it to all the affected vendors, we are ready to disclose all the technical details to the public. This research was covered in the media by wired.com but without the technical details that we can share now https://www.wired.com/story/atm-hack-nfc-bugs-point-of-sale/ Some of the affected vendors are: IDtech https://idtechproducts.com/ Ingenico https://www.ingenico.com/ Verifone https://www.verifone.com/ CPI https://www.cranepi.com/ BBPOS https://www.bbpos.com/ Wiseasy https://www.wiseasy.com/ Nexgo https://www.nexgoglobal.com/ In this presentation we will describe the vulnerabilities and also demo how the readers can be compromised, using a special Android app we created, by just tapping an Android phone to the reader. We will discuss the consequences such as financial impact in readerâ€™s users/owners and card data stealing once the firmware is compromised. Also, we will show how to compromise the host that is connected to the reader through USB by manipulating the readerâ€™s firmware, chaining stack buffer overflow vulnerabilities in the SDK provided by the vendor that is running in the host machine. Finally, since one of the affected vendors (IDtech) is present in most ATM brands in the world, the talk will cover different scenarios of how possible can be jackpotting ATMs just tapping a smartphone into the reader of the ATM. We have many years of experience jackpotting all brands of ATMs in multiple different ways and we will show how this is technically possible.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -79,6 +89,16 @@
       "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#JPRodriguez",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2023,
       "domains": [
         "vulnerability-research"

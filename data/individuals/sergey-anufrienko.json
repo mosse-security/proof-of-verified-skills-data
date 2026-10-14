@@ -1,6 +1,6 @@
 {
   "name": "Sergey Anufrienko",
-  "last-updated": "2026-10-12T10:04:16Z",
+  "last-updated": "2026-10-14T06:41:24Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Sergey Anufrienko",
       "label": "One SMS to Root Them All: Exposing Critical Threats in Millions of Connected Devices",
-      "description": "Our research revealed several significant security flaws in Telit’s modems. This was the first time such a broad study of modems from this vendor had been carried out and constitutes a starting point for other researchers. In order to demonstrate the possibility of remotely compromising the modem we developed our own SMS-based File System, which we installed into the modem through the vulnerability discovered in the SUPL message handler. Using it we could remotely activate the Over The Air Provisioning to install an arbitrary MIDlet onto the modem, that was protected from removal using standard mechanisms provided by the manufacturer but required a full reflash of the modem firmware to wipe it. During the study of the modem firmware, a heap overflow vulnerability was discovered in the AT command and SUPL message handlers. The latter one allowed us to remotely execute arbitrary code on the modem by sending several SMS messages. This vulnerability also made it possible to unlock access to the OEM’s special AT commands to read and write to RAM and flash memory of the modem. We have found that it is possible to compromise confidentiality and integrity of user MIDlets while having physical access to the modem. The study revealed that it is possible to extract, substitute and bypass the digital signature of both user and manufacturer MIDlets and also elevate the execution privileges of any user MIDlet to the manufacturer level. In 2023, we have discovered several vulnerabilities, including RCE, in a family of cellular modems manufactured by Telit, which can lead to their complete compromise. We identified a number of security-related problems in user applications – MIDlets, and the OEM–developed firmware of these modems.",
+      "description": "Our research revealed several significant security flaws in Telitâ€™s modems. This was the first time such a broad study of modems from this vendor had been carried out and constitutes a starting point for other researchers. In order to demonstrate the possibility of remotely compromising the modem we developed our own SMS-based File System, which we installed into the modem through the vulnerability discovered in the SUPL message handler. Using it we could remotely activate the Over The Air Provisioning to install an arbitrary MIDlet onto the modem, that was protected from removal using standard mechanisms provided by the manufacturer but required a full reflash of the modem firmware to wipe it. During the study of the modem firmware, a heap overflow vulnerability was discovered in the AT command and SUPL message handlers. The latter one allowed us to remotely execute arbitrary code on the modem by sending several SMS messages. This vulnerability also made it possible to unlock access to the OEMâ€™s special AT commands to read and write to RAM and flash memory of the modem. We have found that it is possible to compromise confidentiality and integrity of user MIDlets while having physical access to the modem. The study revealed that it is possible to extract, substitute and bypass the digital signature of both user and manufacturer MIDlets and also elevate the execution privileges of any user MIDlet to the manufacturer level. In 2023, we have discovered several vulnerabilities, including RCE, in a family of cellular modems manufactured by Telit, which can lead to their complete compromise. We identified a number of security-related problems in user applications â€“ MIDlets, and the OEMâ€“developed firmware of these modems.",
       "type": "presentation",
       "assessor": "HITB (Hack In The Box Security Conference)",
       "assessor-id": "hitb",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2024,
       "domains": [
         "vulnerability-research"

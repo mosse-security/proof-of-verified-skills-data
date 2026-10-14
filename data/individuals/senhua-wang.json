@@ -1,6 +1,6 @@
 {
   "name": "Senhua Wang",
-  "last-updated": "2026-10-11T23:48:46Z",
+  "last-updated": "2026-10-14T06:41:24Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -31,7 +31,7 @@
   "endorsements": [
     {
       "name": "Senhua Wang",
-      "label": "You may have paid more than you imagine—Replay Attacks on Ethereum Smart Contracts",
+      "label": "You may have paid more than you imagineâ€”Replay Attacks on Ethereum Smart Contracts",
       "description": "In this paper, a new replay attack based on Ethereum smart contracts is presented. In the token transfer, the risk of replay attack cannot be completely avoided when the sender's signatures are abused, which can bring the loss to users. And the reason is that the applying scope of the signatures is not properly designed in the smart contracts. To test and verify this loophole, we selected two similar smart contracts for our experiment, at the same time, we used our own accounts in these two contracts to carry out the experiment. Because the same signatures of the two contracts were used in the experiment, we got a double income from sender successfully. The experiment verified that the replay attack is really exist. Besides, the replay attack may exist in multiple smart contracts. We calculated the number of smart contracts with this loophole, as well as the corresponding transaction activities, which find some Ethereum smart contracts are risked for this loophole. According to the vulnerability of the contract signature, the risk level is calibrated and depicted. Furthermore, the replay attack pattern is extended to within contract, cross contract and cross chain, which provide the pertinence and well reference for protection. Finally, the countermeasures are proposed to fix this vulnerability.",
       "type": "presentation",
       "assessor": "DEF CON",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "vulnerability-research"

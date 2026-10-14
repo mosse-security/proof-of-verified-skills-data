@@ -1,6 +1,6 @@
 {
   "name": "Andy Robbins (@_wald0), Rohan Vazarkar (@cptjesus) Will Schroeder (@harmj0y)",
-  "last-updated": "2026-10-11T23:48:06Z",
+  "last-updated": "2026-10-14T06:40:21Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Andy Robbins (@_wald0), Rohan Vazarkar (@cptjesus) Will Schroeder (@harmj0y)",
       "label": "Six Degrees of Domain Admin - Using Graph Theory to Accelerate Red Team Operations",
-      "description": "Active Directory domain privilege escalation is a critical component of most penetration tests and red team assessments, but standard methodology dictates a manual and often tedious process – gather credentials, analyze new systems we now have admin rights on, pivot, and repeat until we reach our objective. Then -- and only then -- we can look back and see the path we took in its entirety. But that may not be the only, nor shortest path we could have taken. By combining our concept of derivative admin (the chaining or linking of administrative rights), existing tools, and graph theory, we can reveal the hidden and unintended relationships in Active Directory domains. Bob is an admin on Steve’s system, and Steve is an admin on Mary’s system; therefore, Bob is effectively (and perhaps unintentionally) an admin on Mary’s system. While existing tools such as Nmap, PowerView, CrackMapExec, and others can gather much of the information needed to find these paths, graph theory is the missing link that gives us the power to find hidden relationships in this offensive data. The application of graph theory to an Active Directory domain offers several advantages to attackers and defenders. Otherwise invisible, high-level organizational relationships are exposed. All possible escalation paths can be efficiently and swiftly identified. Simplified data aggregation accelerates blue and red team analysis. Graph theory has the power and the potential to dramatically change the way you think about and approach Active Directory domain security.",
+      "description": "Active Directory domain privilege escalation is a critical component of most penetration tests and red team assessments, but standard methodology dictates a manual and often tedious process â€“ gather credentials, analyze new systems we now have admin rights on, pivot, and repeat until we reach our objective. Then -- and only then -- we can look back and see the path we took in its entirety. But that may not be the only, nor shortest path we could have taken. By combining our concept of derivative admin (the chaining or linking of administrative rights), existing tools, and graph theory, we can reveal the hidden and unintended relationships in Active Directory domains. Bob is an admin on Steveâ€™s system, and Steve is an admin on Maryâ€™s system; therefore, Bob is effectively (and perhaps unintentionally) an admin on Maryâ€™s system. While existing tools such as Nmap, PowerView, CrackMapExec, and others can gather much of the information needed to find these paths, graph theory is the missing link that gives us the power to find hidden relationships in this offensive data. The application of graph theory to an Active Directory domain offers several advantages to attackers and defenders. Otherwise invisible, high-level organizational relationships are exposed. All possible escalation paths can be efficiently and swiftly identified. Simplified data aggregation accelerates blue and red team analysis. Graph theory has the power and the potential to dramatically change the way you think about and approach Active Directory domain security.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2016,
       "domains": [
         "penetration-testing",

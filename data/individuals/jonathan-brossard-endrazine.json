@@ -1,6 +1,6 @@
 {
   "name": "Jonathan Brossard (endrazine)",
-  "last-updated": "2026-10-11T23:48:27Z",
+  "last-updated": "2026-10-14T06:40:53Z",
   "biography": "",
   "contact": [
     {
@@ -41,7 +41,7 @@
     {
       "name": "Jonathan Brossard (endrazine)",
       "label": "Introduction the Wichcraft Compiler Collection : Towards Universal Code Theft",
-      "description": "With this presentation, we take a new approach to reverse engineering. Instead of attempting to decompile code, we seek to undo the work of the linker and produce relocatable files, the typical output of a compiler. The main benefit of the later technique over the former being that it does work. Once achieved universal code ‘reuse’ by relinking those relocatable objects as arbitrary shared libraries, we'll create a form of binary reflection, add scripting capabilities and in memory debugging using a JIT compiler, to attain automated API prototyping and annotation, which, we will argue, constitutes a primary form of binary code self awareness. Finally, we'll see how abusing the dynamic linker internals shall elegantly solve a number of complex tasks for us, such as calling a given function within a binary without having to craft a valid input to reach it. The applications in terms of vulnerability exploitation, functional testing, static analysis validation and more generally computer wizardry being tremendous, we'll have fun demoing some new exploits in real life applications, and commit public program profanity, such as turing PEs into ELFs, functional scripting of sshd in memory, stealing crypto routines without even disassembling them, among other things that were never supposed to work. All the above techniques have been implemented into the Wichcraft Compiler Collection, to be released as proper open source software (MIT/BSD-2 licenses) exclusively at DEF CON 24.",
+      "description": "With this presentation, we take a new approach to reverse engineering. Instead of attempting to decompile code, we seek to undo the work of the linker and produce relocatable files, the typical output of a compiler. The main benefit of the later technique over the former being that it does work. Once achieved universal code â€˜reuseâ€™ by relinking those relocatable objects as arbitrary shared libraries, we'll create a form of binary reflection, add scripting capabilities and in memory debugging using a JIT compiler, to attain automated API prototyping and annotation, which, we will argue, constitutes a primary form of binary code self awareness. Finally, we'll see how abusing the dynamic linker internals shall elegantly solve a number of complex tasks for us, such as calling a given function within a binary without having to craft a valid input to reach it. The applications in terms of vulnerability exploitation, functional testing, static analysis validation and more generally computer wizardry being tremendous, we'll have fun demoing some new exploits in real life applications, and commit public program profanity, such as turing PEs into ELFs, functional scripting of sshd in memory, stealing crypto routines without even disassembling them, among other things that were never supposed to work. All the above techniques have been implemented into the Wichcraft Compiler Collection, to be released as proper open source software (MIT/BSD-2 licenses) exclusively at DEF CON 24.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -57,6 +57,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2016,
       "domains": [
         "reverse-engineering",

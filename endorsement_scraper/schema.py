@@ -24,6 +24,7 @@ REQUIRED_ENDORSEMENT_FIELDS = (
     "url",
     "evidence-links",
     "evidence",
+    "povs",
     "year",
     "domains",
 )
@@ -178,6 +179,7 @@ def build_endorsement_record(
             "url": url,
             "evidence-links": normalized_evidence_links,
             "evidence": bool(normalized_evidence_links),
+            "povs": _povs_for_evidence(bool(normalized_evidence_links)),
             "year": year,
             "domains": list(detected_domains),
             "subspecialties": {domain: list(names) for domain, names in normalize_subspecialties(specialty_values, domains=detected_domains).items()},
@@ -185,6 +187,62 @@ def build_endorsement_record(
     )
     validate_endorsement_record(record, assessor=assessor)
     return record
+
+
+POVS_NO_EVIDENCE_EXPLANATION = (
+    "No evidence discovered for this record therefore it could not be verified"
+)
+POVS_CONFERENCE_EXPLANATION = (
+    "The speaker’s proposal was accepted through the conference’s independent review "
+    "process. They publicly presented and defended the work at the event, providing "
+    "verifiable and recognized evidence of the endorsement. We could not verify "
+    "whether the work is used in industry in situations of real consequence."
+)
+
+
+def _povs_for_evidence(evidence: bool) -> dict[str, Any]:
+    if not evidence:
+        return {
+            "milestones": {
+                "verifiable": False,
+                "defended": False,
+                "recognized": False,
+                "trusted": False,
+            },
+            "level": 0,
+            "explanation": POVS_NO_EVIDENCE_EXPLANATION,
+        }
+    return {
+        "milestones": {
+            "verifiable": True,
+            "defended": True,
+            "recognized": True,
+            "trusted": False,
+        },
+        "level": 2,
+        "explanation": POVS_CONFERENCE_EXPLANATION,
+    }
+
+
+def _validate_povs(value: Any, *, evidence: bool, source: str) -> None:
+    if not isinstance(value, dict) or set(value) != {"milestones", "level", "explanation"}:
+        raise EndorsementSchemaError(
+            f"{source}.povs must contain exactly milestones, level, and explanation"
+        )
+    milestones = value["milestones"]
+    expected = _povs_for_evidence(evidence)
+    if not isinstance(milestones, dict) or set(milestones) != {"verifiable", "defended", "recognized", "trusted"}:
+        raise EndorsementSchemaError(f"{source}.povs.milestones has invalid fields")
+    if any(not isinstance(milestones[key], bool) for key in milestones):
+        raise EndorsementSchemaError(f"{source}.povs.milestones values must be booleans")
+    if isinstance(value["level"], bool) or not isinstance(value["level"], int):
+        raise EndorsementSchemaError(f"{source}.povs.level must be an integer")
+    if not isinstance(value["explanation"], str) or not value["explanation"].strip():
+        raise EndorsementSchemaError(f"{source}.povs.explanation must be non-empty")
+    if value != expected:
+        raise EndorsementSchemaError(
+            f"{source}.povs does not match the evidence state; expected {_povs_for_evidence(evidence)!r}"
+        )
 
 
 def validate_endorsement_record(
@@ -265,6 +323,8 @@ def validate_endorsement_record(
         raise EndorsementSchemaError(
             f"{source}.evidence must be true exactly when evidence-links is non-empty"
         )
+
+    _validate_povs(record["povs"], evidence=record["evidence"], source=source)
 
     validate_record_domains(record, source=source)
 

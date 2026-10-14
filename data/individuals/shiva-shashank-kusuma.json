@@ -1,6 +1,6 @@
 {
   "name": "Shiva Shashank Kusuma",
-  "last-updated": "2026-10-11T23:48:47Z",
+  "last-updated": "2026-10-14T06:41:25Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "vulnerability-research"
@@ -59,7 +69,7 @@
     {
       "name": "Shiva Shashank Kusuma",
       "label": "Techniques for Creating Process Injection Attacks with Advanced Return-Oriented Programming",
-      "description": "This talk showcases techniques for process injection using advanced return-oriented programming (ROP). Process injection via ROP introduces significant hurdles, requiring many WinAPIs to be chained together, each with complex parameters and return values. We give practical details on how to best manage this. One seemingly insurmountable challenge is in identifying the target binary, as string comparison can be extremely difficult in ROP, as needed ROP gadgets may be lacking. We unveil a unique, universal solution, giving a reliable means of string comparison via ROP, which works all the time, allowing a specific process to be pinpointed and injected into via ROP. We created numerous patterns for different WinAPIs, allowing for as many as a dozen ways of preparing a specific WinAPI via ROP, if using an approach centered around the PUSHAD instruction. With some WinAPIs, there are zero patterns for PUSHAD, forcing us to rely upon the much lauded “sniper” approach. We document all such variations of patterns for the WinAPIs in our demonstrated process injection. This research is not intended to demo a one-off example of process injection via ROP, but to provide a methodology that can be used time and time again, providing unique templates for others to use the same WinAPIs when attempting process injection via ROP. Anonymous.(2019.) Cobalt Strike’s Process Injection: The Details. link Hosseini, Ashkan. (2017). Ten Process Injection Techniques: A Technical Survey of Common and Trending Process Injection Techniques. link Klein, A., & Kotler, I. (2019). Windows process injection in 2019. Black Hat USA, 2019. Landau, Gabriel. (2021). What you need to know about Process Ghosting, a new executable image tampering attack. link Mundbrod, N., Grambow, G., Kolb, J., & Reichert, M. (2015). Context-aware process injection: enhancing process flexibility by late extension of process instances. In On the Move to Meaningful Internet Systems: OTM 2015 Conferences: Confederated International Conferences: CoopIS, ODBASE, and C&TC 2015, Rhodes, Greece, October 26-30, 2015. Proceedings (pp. 127-145). Springer International Publishing. Process Injection. MITRE ATT&CK. link Process Injection. link Unal, Ozan. (2020). Process Injection Techniques. link",
+      "description": "This talk showcases techniques for process injection using advanced return-oriented programming (ROP). Process injection via ROP introduces significant hurdles, requiring many WinAPIs to be chained together, each with complex parameters and return values. We give practical details on how to best manage this. One seemingly insurmountable challenge is in identifying the target binary, as string comparison can be extremely difficult in ROP, as needed ROP gadgets may be lacking. We unveil a unique, universal solution, giving a reliable means of string comparison via ROP, which works all the time, allowing a specific process to be pinpointed and injected into via ROP. We created numerous patterns for different WinAPIs, allowing for as many as a dozen ways of preparing a specific WinAPI via ROP, if using an approach centered around the PUSHAD instruction. With some WinAPIs, there are zero patterns for PUSHAD, forcing us to rely upon the much lauded â€œsniperâ€ approach. We document all such variations of patterns for the WinAPIs in our demonstrated process injection. This research is not intended to demo a one-off example of process injection via ROP, but to provide a methodology that can be used time and time again, providing unique templates for others to use the same WinAPIs when attempting process injection via ROP. Anonymous.(2019.) Cobalt Strikeâ€™s Process Injection: The Details. link Hosseini, Ashkan. (2017). Ten Process Injection Techniques: A Technical Survey of Common and Trending Process Injection Techniques. link Klein, A., & Kotler, I. (2019). Windows process injection in 2019. Black Hat USA, 2019. Landau, Gabriel. (2021). What you need to know about Process Ghosting, a new executable image tampering attack. link Mundbrod, N., Grambow, G., Kolb, J., & Reichert, M. (2015). Context-aware process injection: enhancing process flexibility by late extension of process instances. In On the Move to Meaningful Internet Systems: OTM 2015 Conferences: Confederated International Conferences: CoopIS, ODBASE, and C&TC 2015, Rhodes, Greece, October 26-30, 2015. Proceedings (pp. 127-145). Springer International Publishing. Process Injection. MITRE ATT&CK. link Process Injection. link Unal, Ozan. (2020). Process Injection Techniques. link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -70,6 +80,16 @@
       "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54514",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2024,
       "domains": [
         "red-teaming",

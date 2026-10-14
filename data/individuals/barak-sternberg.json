@@ -1,6 +1,6 @@
 {
   "name": "Barak Sternberg",
-  "last-updated": "2026-10-11T23:54:49Z",
+  "last-updated": "2026-10-14T06:40:23Z",
   "biography": "",
   "contact": [
     {
@@ -61,7 +61,7 @@
     {
       "name": "Barak Sternberg",
       "label": "Extension-Land: exploits and rootkits in your browser extensions",
-      "description": "Browser extensions are installed anywhere, they serve as an integral part of our day-to-day web routine, from AdBlockers to Auto-Translators. But - do we know what is running inside of them? Do we know what goes deep-down inside their communication routines? How do they use their internal API’s? And how do their different JS execution contexts work? In this session, I will explore these unique internal extension API’s, hidden attack-surfaces and show how these concepts can be broken & exploited using new ways! I start showing how an attacker can \"jump\" from one low-permissions chrome-app/extension to another, hence elevating its permissions. Then, I will show how to gain full \"browser-persistency\" inside extensions' background-scripts context. Chaining it all together, I show how attacker, starting from low permissions chrome-app, gains a fully-armed \"extension-rootkit\", a persistent JS-malware running inside of a “good” extension, along with C&C features, JS injection techniques to any tab/origin, obfuscation-techniques and more. Eventually, I will present a generic technique, targeting all chrome-users, for taking over any previously installed chrome extension and implant an \"extension-rootkit\" in it. REFERENCES: [1] Chrome Developers: Chrome extensions API Reference, https://developer.chrome.com/docs/extensions/reference/ [2] Chrome Developers: Chrome extensions Manfiest v2/v3 Security References, https://developer.chrome.com/docs/extensions/mv2/getstarted/ & https://developer.chrome.com/docs/extensions/mv3/security/ [3] \"Websites Can Exploit Browser Extensions to Steal User Data\", 2019 - https://www.securityweek.com/websites-can-exploit-browser-extensions-steal-user-data / https://www-sop.inria.fr/members/Doliere.Some/papers/empoweb.pdf [4] \"Web Browser Extension User-Script XSS Vulnerabilities\", 2020 - https://ieeexplore.ieee.org/document/9251185 [5] \"Detecting DOM-Sourced Cross-Site Scripting in Browser Extensions\", 2017 - https://ieeexplore.ieee.org/document/8094406 [6] \"Attacking browser extensions\", Nicolas Golubovic, 2016 - https://golubovic.net/thesis/master.pdf [7] \"A Combined Static and Dynamic Analysis Approach to Detect Malicious Browser Extensions\", 2018 - https://www.hindawi.com/journals/scn/2018/7087239/ [8] \"Chrome Extensions: Threat Analysis and Countermeasures\", 2012 - https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.374.8978&rep=rep1&type=pdf [9] \"Extension Breakdown: Security Analysis of Browsers Extension Resources Control Policies\", Usenix Security 2017 - https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-sanchez-rola.pdf [10] \"Protecting Browsers from Extension Vulnerabilities\", 2010 - https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/38394.pdf",
+      "description": "Browser extensions are installed anywhere, they serve as an integral part of our day-to-day web routine, from AdBlockers to Auto-Translators. But - do we know what is running inside of them? Do we know what goes deep-down inside their communication routines? How do they use their internal APIâ€™s? And how do their different JS execution contexts work? In this session, I will explore these unique internal extension APIâ€™s, hidden attack-surfaces and show how these concepts can be broken & exploited using new ways! I start showing how an attacker can \"jump\" from one low-permissions chrome-app/extension to another, hence elevating its permissions. Then, I will show how to gain full \"browser-persistency\" inside extensions' background-scripts context. Chaining it all together, I show how attacker, starting from low permissions chrome-app, gains a fully-armed \"extension-rootkit\", a persistent JS-malware running inside of a â€œgoodâ€ extension, along with C&C features, JS injection techniques to any tab/origin, obfuscation-techniques and more. Eventually, I will present a generic technique, targeting all chrome-users, for taking over any previously installed chrome extension and implant an \"extension-rootkit\" in it. REFERENCES: [1] Chrome Developers: Chrome extensions API Reference, https://developer.chrome.com/docs/extensions/reference/ [2] Chrome Developers: Chrome extensions Manfiest v2/v3 Security References, https://developer.chrome.com/docs/extensions/mv2/getstarted/ & https://developer.chrome.com/docs/extensions/mv3/security/ [3] \"Websites Can Exploit Browser Extensions to Steal User Data\", 2019 - https://www.securityweek.com/websites-can-exploit-browser-extensions-steal-user-data / https://www-sop.inria.fr/members/Doliere.Some/papers/empoweb.pdf [4] \"Web Browser Extension User-Script XSS Vulnerabilities\", 2020 - https://ieeexplore.ieee.org/document/9251185 [5] \"Detecting DOM-Sourced Cross-Site Scripting in Browser Extensions\", 2017 - https://ieeexplore.ieee.org/document/8094406 [6] \"Attacking browser extensions\", Nicolas Golubovic, 2016 - https://golubovic.net/thesis/master.pdf [7] \"A Combined Static and Dynamic Analysis Approach to Detect Malicious Browser Extensions\", 2018 - https://www.hindawi.com/journals/scn/2018/7087239/ [8] \"Chrome Extensions: Threat Analysis and Countermeasures\", 2012 - https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.374.8978&rep=rep1&type=pdf [9] \"Extension Breakdown: Security Analysis of Browsers Extension Resources Control Policies\", Usenix Security 2017 - https://www.usenix.org/system/files/conference/usenixsecurity17/sec17-sanchez-rola.pdf [10] \"Protecting Browsers from Extension Vulnerabilities\", 2010 - https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/38394.pdf",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -77,6 +77,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2021,
       "domains": [
         "red-teaming",
@@ -101,6 +111,16 @@
       "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66668",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2026,
       "domains": [
         "cyber-defense",

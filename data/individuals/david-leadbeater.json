@@ -1,6 +1,6 @@
 {
   "name": "David Leadbeater",
-  "last-updated": "2026-10-11T23:48:14Z",
+  "last-updated": "2026-10-14T06:40:34Z",
   "biography": "",
   "contact": [
     {
@@ -41,7 +41,7 @@
     {
       "name": "David Leadbeater",
       "label": "Houdini of the Terminal",
-      "description": "Text based terminals have used escape sequences in some form since at least the 1970s. Windows has for a long time had fairly limited support for them, using a different method to perform out of band messaging. As a result of the support added for Windows Subsystem for Linux (WSL), Windows gained support for common terminal escape sequences and now they are the preferred method for formatting and related functions. Just like XSS, if an escape sequence ends up being sent unsanitized to a terminal it can be used to do unexpected things. This can range from changing formatting outside of the area where the text should have been inserted or if the terminal has a vulnerability anything from a DoS to remote code execution. This risk has existed in Unix terminals for many years, for example 20 years ago it was discovered a terminal’s title can be read back and in some cases that can result in code execution. Terminals now disable this by default or do not implement it. We will explore over 20 years of terminal vulnerabilities, from attacks via Apache’s log files to attacking via Kubernetes. Our research found several severe bugs in common terminals and we have used them to perform a chained exploit from low privileges on a Kubernetes cluster to obtaining RCE on an administrator’s machine. This builds on the research done by CyberArk in early 2022, which found the original kubectl bug (CVE-2021-25743). Along the way we’ll discuss some other bugs we found in both Windows and Unix utilities and how to achieve some level of defense-in-depth against this kind of threat.",
+      "description": "Text based terminals have used escape sequences in some form since at least the 1970s. Windows has for a long time had fairly limited support for them, using a different method to perform out of band messaging. As a result of the support added for Windows Subsystem for Linux (WSL), Windows gained support for common terminal escape sequences and now they are the preferred method for formatting and related functions. Just like XSS, if an escape sequence ends up being sent unsanitized to a terminal it can be used to do unexpected things. This can range from changing formatting outside of the area where the text should have been inserted or if the terminal has a vulnerability anything from a DoS to remote code execution. This risk has existed in Unix terminals for many years, for example 20 years ago it was discovered a terminalâ€™s title can be read back and in some cases that can result in code execution. Terminals now disable this by default or do not implement it. We will explore over 20 years of terminal vulnerabilities, from attacks via Apacheâ€™s log files to attacking via Kubernetes. Our research found several severe bugs in common terminals and we have used them to perform a chained exploit from low privileges on a Kubernetes cluster to obtaining RCE on an administratorâ€™s machine. This builds on the research done by CyberArk in early 2022, which found the original kubectl bug (CVE-2021-25743). Along the way weâ€™ll discuss some other bugs we found in both Windows and Unix utilities and how to achieve some level of defense-in-depth against this kind of threat.",
       "type": "presentation",
       "assessor": "Microsoft BlueHat",
       "assessor-id": "bluehat",
@@ -52,6 +52,16 @@
       "url": "https://www.microsoft.com/en-us/msrc/blog/2023/02/bluehat-2023-connecting-the-security-research-community-with-microsoft",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2023,
       "domains": [
         "cloud-security",
@@ -85,6 +95,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "vulnerability-research"

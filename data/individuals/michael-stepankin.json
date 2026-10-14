@@ -1,6 +1,6 @@
 {
   "name": "Michael Stepankin",
-  "last-updated": "2026-10-11T23:48:36Z",
+  "last-updated": "2026-10-14T06:41:07Z",
   "biography": "",
   "contact": [
     {
@@ -41,7 +41,7 @@
     {
       "name": "Michael Stepankin",
       "label": "Apache Solr Injection",
-      "description": "Apache Solr is a search platform used by many enterprise companies to add a full text search functionality to their websites. Often hidden behind firewalls, it provides a rich API to search across large datasets. If this API is used by web applications in a wrong way, it may open a possibility for injection attacks to completely modify the query logic. In this talk we’ll shed some light on the new type of vulnerabilities for web applications - Solr parameter injection, and provide some useful ways how to achieve remote code execution through it. We also provide exploits for almost all known vulnerabilities for Apache Solr, including the two new RCEs we reported this year.",
+      "description": "Apache Solr is a search platform used by many enterprise companies to add a full text search functionality to their websites. Often hidden behind firewalls, it provides a rich API to search across large datasets. If this API is used by web applications in a wrong way, it may open a possibility for injection attacks to completely modify the query logic. In this talk weâ€™ll shed some light on the new type of vulnerabilities for web applications - Solr parameter injection, and provide some useful ways how to achieve remote code execution through it. We also provide exploits for almost all known vulnerabilities for Apache Solr, including the two new RCEs we reported this year.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -57,6 +57,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2019,
       "domains": [
         "vulnerability-research"
@@ -68,7 +78,7 @@
     {
       "name": "Michael Stepankin",
       "label": "mTLS: when certificate authentication done wrong",
-      "description": "Although x509 certificates have been here for a while, they have become more popular for client authentication in zero-trust networks in recent years. Mutual TLS, or authentication based on X509 certificates in general, brings advantages compared to passwords or tokens, but you get increased complexity in return. In this talk, we’ll deep dive into some novel attacks on mTLS authentication. We won’t bother you with heavy crypto stuff, but instead we’ll have a look at implementation vulnerabilities and how developers can make their mTLS systems vulnerable to user impersonation, privilege escalation and information leakages. We present some CVEs we found in popular open-source identity servers and ways to exploit them. Finally, we’ll explain how these vulnerabilities can be spotted in source code and how the safe code looks like.",
+      "description": "Although x509 certificates have been here for a while, they have become more popular for client authentication in zero-trust networks in recent years. Mutual TLS, or authentication based on X509 certificates in general, brings advantages compared to passwords or tokens, but you get increased complexity in return. In this talk, weâ€™ll deep dive into some novel attacks on mTLS authentication. We wonâ€™t bother you with heavy crypto stuff, but instead weâ€™ll have a look at implementation vulnerabilities and how developers can make their mTLS systems vulnerable to user impersonation, privilege escalation and information leakages. We present some CVEs we found in popular open-source identity servers and ways to exploit them. Finally, weâ€™ll explain how these vulnerabilities can be spotted in source code and how the safe code looks like.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -84,6 +94,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "vulnerability-research"

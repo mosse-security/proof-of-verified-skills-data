@@ -1,6 +1,6 @@
 {
   "name": "Yuwei Zheng",
-  "last-updated": "2026-10-11T23:48:54Z",
+  "last-updated": "2026-10-14T06:41:39Z",
   "biography": "",
   "contact": [
     {
@@ -37,7 +37,7 @@
     {
       "name": "Yuwei Zheng",
       "label": "Build a free cellular traffic capture tool with a vxworks based femoto",
-      "description": "In recent years, more and more products, are integrated with cellular modem, such as cars of BMW, Tesla, wearable devices, remote meters, i.e. Internet of things. Through this way, manufactories can offer remote service and develop a lot of attractive functions to make their product more valuable. However, many vulnerabilities have also been introduced into these systems. It puts new questions to black-box penetration testing engineer. How to capture the SMS command between the cellular modem and the remote server? How to intercept the data link? Some existing solutions, such as USRP based OpenBTS, commercial product nanoBTS can be used to build a fake base station and capture data traffic. However all of them cannot access the real operator's core network so that they cannot capture real SMS and voice traffic. With the inspiration from social engineering, we got a femto-cell base station from a telecom operator. After a series of hacking and modifications, we built it as a powerful SMS, voice and data link inception tool. Furthermore, not like a fake station, it’s a legal base station and authorized to access the operator’s core network. By this tool, we can conveniently explore vulnerabilities of cellular modem inside products.",
+      "description": "In recent years, more and more products, are integrated with cellular modem, such as cars of BMW, Tesla, wearable devices, remote meters, i.e. Internet of things. Through this way, manufactories can offer remote service and develop a lot of attractive functions to make their product more valuable. However, many vulnerabilities have also been introduced into these systems. It puts new questions to black-box penetration testing engineer. How to capture the SMS command between the cellular modem and the remote server? How to intercept the data link? Some existing solutions, such as USRP based OpenBTS, commercial product nanoBTS can be used to build a fake base station and capture data traffic. However all of them cannot access the real operator's core network so that they cannot capture real SMS and voice traffic. With the inspiration from social engineering, we got a femto-cell base station from a telecom operator. After a series of hacking and modifications, we built it as a powerful SMS, voice and data link inception tool. Furthermore, not like a fake station, itâ€™s a legal base station and authorized to access the operatorâ€™s core network. By this tool, we can conveniently explore vulnerabilities of cellular modem inside products.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -53,6 +53,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2015,
       "domains": [
         "penetration-testing",
@@ -90,6 +100,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2017,
       "domains": [
         "cyber-defense",
@@ -119,6 +139,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2017,
       "domains": [
         "cyber-defense",
@@ -131,7 +161,7 @@
     },
     {
       "name": "Yuwei Zheng",
-      "label": "You may have paid more than you imagine—Replay Attacks on Ethereum Smart Contracts",
+      "label": "You may have paid more than you imagineâ€”Replay Attacks on Ethereum Smart Contracts",
       "description": "In this paper, a new replay attack based on Ethereum smart contracts is presented. In the token transfer, the risk of replay attack cannot be completely avoided when the sender's signatures are abused, which can bring the loss to users. And the reason is that the applying scope of the signatures is not properly designed in the smart contracts. To test and verify this loophole, we selected two similar smart contracts for our experiment, at the same time, we used our own accounts in these two contracts to carry out the experiment. Because the same signatures of the two contracts were used in the experiment, we got a double income from sender successfully. The experiment verified that the replay attack is really exist. Besides, the replay attack may exist in multiple smart contracts. We calculated the number of smart contracts with this loophole, as well as the corresponding transaction activities, which find some Ethereum smart contracts are risked for this loophole. According to the vulnerability of the contract signature, the risk level is calibrated and depicted. Furthermore, the replay attack pattern is extended to within contract, cross contract and cross chain, which provide the pertinence and well reference for protection. Finally, the countermeasures are proposed to fix this vulnerability.",
       "type": "presentation",
       "assessor": "DEF CON",
@@ -148,6 +178,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "vulnerability-research"
@@ -158,7 +198,7 @@
     },
     {
       "name": "Yuwei Zheng",
-      "label": "Your Peripheral Has Planted Malware—An Exploit of NXP SOCs Vulnerability",
+      "label": "Your Peripheral Has Planted Malwareâ€”An Exploit of NXP SOCs Vulnerability",
       "description": "There are billions of ARM Cortex M based SOC being deployed in embedded systems. Most of these devices are Internet ready and definitely security is always the main concern. Vendors would always apply security measurements into the ARM Cortex M product for few major reasons: 1) People will not be able to copy and replicate the product; 2) License control for the hardware and software; 3) Prevent malicious code injection in to the firmware. Vendors normally rely on the security measurements built within the chip (unique ID number/signature) or security measurements built around the chip (secure boot). In this talk, we will share the ARM Cortex M SOC vulnerability that we discovered and it will be two parts: The first is security measurement build within the SOC and how we break it. We could gain control of changing the SOC unique ID and write the firmware or even turn the device into a trojan or bot. The second is security measure built around the SOC and how we break the Secure Boot elements and write into the firmware.",
       "type": "presentation",
       "assessor": "DEF CON",
@@ -175,6 +215,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "cyber-defense",

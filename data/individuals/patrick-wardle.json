@@ -1,6 +1,6 @@
 {
   "name": "Patrick Wardle",
-  "last-updated": "2026-10-11T23:48:40Z",
+  "last-updated": "2026-10-14T06:41:14Z",
   "biography": "",
   "contact": [
     {
@@ -57,7 +57,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Optical Surgery; Implanting a DropCam",
-      "description": "Video Monitoring solutions such as DropCam aim to provide remote monitoring, protection and security. But what if they could be maliciously subverted? This presentation details a reverse-engineering effort that resulted in the full compromise of a DropCam. Specifically, given physical access and some creative hardware and software hacks, any malicious software may be persistently installed upon the device. Implanting a wireless video monitoring solution presents some unique opportunities, such as intercepting the video stream, ‘hot-micing’, or even acting as persistent access/attack point within a network. This presentation will describe such an implant and well as revealing a method of infecting either Windows or OS X hosts that are used to configure a subverted DropCam.",
+      "description": "Video Monitoring solutions such as DropCam aim to provide remote monitoring, protection and security. But what if they could be maliciously subverted? This presentation details a reverse-engineering effort that resulted in the full compromise of a DropCam. Specifically, given physical access and some creative hardware and software hacks, any malicious software may be persistently installed upon the device. Implanting a wireless video monitoring solution presents some unique opportunities, such as intercepting the video stream, â€˜hot-micingâ€™, or even acting as persistent access/attack point within a network. This presentation will describe such an implant and well as revealing a method of infecting either Windows or OS X hosts that are used to configure a subverted DropCam.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -73,6 +73,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2014,
       "domains": [
         "vulnerability-research"
@@ -100,6 +110,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2015,
       "domains": [
         "cyber-defense",
@@ -115,7 +135,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Stick That In Your (root)Pipe & Smoke It",
-      "description": "You may ask; \"why would Apple add an XPC service that can create setuid files anywhere on the system - and then blindly allow any local user to leverage this service?\" Honestly, I have no idea! The undocumented 'writeconfig' XPC service was recently uncovered by Emil Kvarnhammar, who determined its lax controls could be abused to escalate one's privileges to root. Dubbed ‘rootpipe,' this bug was patched in OS X 10.10.3. End of story, right? Nope, instead things then got quite interesting. First, Apple decided to leave older versions of OS X un-patched. Then, an astute researcher discovered that the OSX/XSLCmd malware which pre-dated the disclosure, exploited this same vulnerability as a 0day! Finally, yours truly, found a simple way to side-step Apple's patch to re-exploit the core vulnerability on a fully-patched system. So come attend (but maybe leave your MacBooks at home), as we dive into the technical details XPC and the rootpipe vulnerability, explore how malware exploited this flaw, and then fully detail the process of completely bypassing Apple's patch. The talk will conclude by examining Apple’s response, a second patch, that appears to squash ‘rootpipe’…for now.",
+      "description": "You may ask; \"why would Apple add an XPC service that can create setuid files anywhere on the system - and then blindly allow any local user to leverage this service?\" Honestly, I have no idea! The undocumented 'writeconfig' XPC service was recently uncovered by Emil Kvarnhammar, who determined its lax controls could be abused to escalate one's privileges to root. Dubbed â€˜rootpipe,' this bug was patched in OS X 10.10.3. End of story, right? Nope, instead things then got quite interesting. First, Apple decided to leave older versions of OS X un-patched. Then, an astute researcher discovered that the OSX/XSLCmd malware which pre-dated the disclosure, exploited this same vulnerability as a 0day! Finally, yours truly, found a simple way to side-step Apple's patch to re-exploit the core vulnerability on a fully-patched system. So come attend (but maybe leave your MacBooks at home), as we dive into the technical details XPC and the rootpipe vulnerability, explore how malware exploited this flaw, and then fully detail the process of completely bypassing Apple's patch. The talk will conclude by examining Appleâ€™s response, a second patch, that appears to squash â€˜rootpipeâ€™â€¦for now.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -131,6 +151,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2015,
       "domains": [
         "vulnerability-research"
@@ -144,7 +174,7 @@
     {
       "name": "Patrick Wardle",
       "label": "I've got 99 Problems, but Little Snitch ain't one",
-      "description": "Security products should make our computers more secure, not less. Little Snitch is the de facto personal firewall for OS X that aims to secure a Mac by blocking unauthorized network traffic. Unfortunately bypassing this firewall's network monitoring mechanisms is trivial...and worse yet, the firewall's kernel core was found to contain an exploitable ring-0 heap-overflow. #fail Though briefly touching on generic firewall bypass techniques, this talk will largely focus on the kernel-mode vulnerability. Specifically, I’ll discuss bypassing OS X specific anti-debugging mechanisms employed by the product, reverse-engineering the firewall's I/O Kit kernel interfaces and 'authentication' mechanisms, and the discovery of the exploitable heap-overflow. Finally, methods of exploitation will be briefly discussed, including how an Apple kernel-fix made this previously un-exploitable bug, exploitable on OS X 10.11 So if you simply want to see yet another 'security' product fall, or more generically, learn methods of OS X kernel extension reversing in a practical manner, then this talk is for you :)",
+      "description": "Security products should make our computers more secure, not less. Little Snitch is the de facto personal firewall for OS X that aims to secure a Mac by blocking unauthorized network traffic. Unfortunately bypassing this firewall's network monitoring mechanisms is trivial...and worse yet, the firewall's kernel core was found to contain an exploitable ring-0 heap-overflow. #fail Though briefly touching on generic firewall bypass techniques, this talk will largely focus on the kernel-mode vulnerability. Specifically, Iâ€™ll discuss bypassing OS X specific anti-debugging mechanisms employed by the product, reverse-engineering the firewall's I/O Kit kernel interfaces and 'authentication' mechanisms, and the discovery of the exploitable heap-overflow. Finally, methods of exploitation will be briefly discussed, including how an Apple kernel-fix made this previously un-exploitable bug, exploitable on OS X 10.11 So if you simply want to see yet another 'security' product fall, or more generically, learn methods of OS X kernel extension reversing in a practical manner, then this talk is for you :)",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -160,6 +190,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2016,
       "domains": [
         "cyber-defense",
@@ -191,6 +231,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2017,
       "domains": [
         "red-teaming",
@@ -221,6 +271,16 @@
       "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Wardle2",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2017,
       "domains": [
         "cyber-defense",
@@ -257,6 +317,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2017,
       "domains": [
         "red-teaming",
@@ -276,7 +346,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Fire & Ice: Making and Breaking macOS Firewalls",
-      "description": "In the ever raging battle between malicious code and anti-malware tools, firewalls play an essential role. Many a malware has been generically thwarted thanks to the watchful eye of these products. However on macOS, firewalls are rather poorly understood. Apple's documentation surrounding it's network filter interfaces is rather lacking and all commercial macOS firewalls are closed source. This talk aims to take a peek behind the proverbial curtain revealing how to both create and 'destroy' macOS firewalls. In this talk, we'll first dive into what it takes to create an effective firewall for macOS. Yes we'll discuss core concepts such as kernel-level socket filtering—but also how to communicate with user-mode components, install privileged code in a secure manner, and simple ways to implement self-defense mechanisms (including protecting the UI from synthetic events). Of course any security tool, including firewalls, can be broken. After looking at various macOS malware specimens that proactively attempt to detect such firewalls, we'll don our 'gray' (black?) hats to discuss various attacks against these products. And while some attacks are well known, others are currently undisclosed and can generically bypass even today's most vigilant Mac firewalls. But all is not lost. By proactively discussing such attacks, combined with our newly-found understandings of firewall internals, we can improve the existing status quo, advancing firewall development. With a little luck, such advancements may foil, or at least complicate the lives of tomorrow's sophisticated Mac malware!",
+      "description": "In the ever raging battle between malicious code and anti-malware tools, firewalls play an essential role. Many a malware has been generically thwarted thanks to the watchful eye of these products. However on macOS, firewalls are rather poorly understood. Apple's documentation surrounding it's network filter interfaces is rather lacking and all commercial macOS firewalls are closed source. This talk aims to take a peek behind the proverbial curtain revealing how to both create and 'destroy' macOS firewalls. In this talk, we'll first dive into what it takes to create an effective firewall for macOS. Yes we'll discuss core concepts such as kernel-level socket filteringâ€”but also how to communicate with user-mode components, install privileged code in a secure manner, and simple ways to implement self-defense mechanisms (including protecting the UI from synthetic events). Of course any security tool, including firewalls, can be broken. After looking at various macOS malware specimens that proactively attempt to detect such firewalls, we'll don our 'gray' (black?) hats to discuss various attacks against these products. And while some attacks are well known, others are currently undisclosed and can generically bypass even today's most vigilant Mac firewalls. But all is not lost. By proactively discussing such attacks, combined with our newly-found understandings of firewall internals, we can improve the existing status quo, advancing firewall development. With a little luck, such advancements may foil, or at least complicate the lives of tomorrow's sophisticated Mac malware!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -292,6 +362,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "cyber-defense",
@@ -305,7 +385,7 @@
     {
       "name": "Patrick Wardle",
       "label": "The Mouse is Mightier than the Sword",
-      "description": "In today's digital world the mouse, not the pen is arguably mightier than the sword. Via a single click, countless security mechanisms may be completely bypassed. Run untrusted app? click ...allowed. Authorize keychain access? click ...allowed. Load 3rd-party kernel extension? click ...allowed. Authorize outgoing network connection? click ...allowed. Luckily security-conscious users will (hopefully) heed such warning dialogues—stopping malicious code in its tracks. But what if such clicks can be synthetically generated and interact with such prompts in a completely invisible way? Well, then everything pretty much goes to hell. Of course OS vendors such as Apple are keenly aware of this 'attack' vector, and thus strive to design their UI in a manner that is resistant against synthetic events. Unfortunately they failed. In this talk we'll discuss a vulnerability (CVE-2017-7150) found in all recent versions of macOS that allowed unprivileged code to interact with any UI component including 'protected' security dialogues. Armed with the bug, it was trivial to programmatically bypass Apple's touted 'User-Approved Kext' security feature, dump all passwords from the keychain, bypass 3rd-party security tools, and much more! And as Apple's patch was incomplete (surprise surprise) we'll drop an 0day that (still) allows unprivileged code to post synthetic events and bypass various security mechanisms on a fully patched macOS box! And while it may seem that such synthetic interactions with the UI will be visible to the user, we'll discuss an elegant way to ensure they happen completely invisibly!",
+      "description": "In today's digital world the mouse, not the pen is arguably mightier than the sword. Via a single click, countless security mechanisms may be completely bypassed. Run untrusted app? click ...allowed. Authorize keychain access? click ...allowed. Load 3rd-party kernel extension? click ...allowed. Authorize outgoing network connection? click ...allowed. Luckily security-conscious users will (hopefully) heed such warning dialoguesâ€”stopping malicious code in its tracks. But what if such clicks can be synthetically generated and interact with such prompts in a completely invisible way? Well, then everything pretty much goes to hell. Of course OS vendors such as Apple are keenly aware of this 'attack' vector, and thus strive to design their UI in a manner that is resistant against synthetic events. Unfortunately they failed. In this talk we'll discuss a vulnerability (CVE-2017-7150) found in all recent versions of macOS that allowed unprivileged code to interact with any UI component including 'protected' security dialogues. Armed with the bug, it was trivial to programmatically bypass Apple's touted 'User-Approved Kext' security feature, dump all passwords from the keychain, bypass 3rd-party security tools, and much more! And as Apple's patch was incomplete (surprise surprise) we'll drop an 0day that (still) allows unprivileged code to post synthetic events and bypass various security mechanisms on a fully patched macOS box! And while it may seem that such synthetic interactions with the UI will be visible to the user, we'll discuss an elegant way to ensure they happen completely invisibly!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -321,6 +401,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "vulnerability-research"
@@ -351,6 +441,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2019,
       "domains": [
         "vulnerability-research"
@@ -382,6 +482,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2020,
       "domains": [
         "vulnerability-research"
@@ -395,7 +505,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Bundles of Joy: Breaking macOS via Subverted Applications Bundles",
-      "description": "A recent vulnerability, CVE-2021-30657, neatly bypassed a myriad of foundational macOS security features such as File Quarantine, Gatekeeper, and Notarization. Armed with this capability attackers could (and were!) hacking macOS systems with a simple user (double)-click. Yikes! In this presentation we’ll dig deep into the bowels of macOS to uncover the root cause of the bug: a subtle logic flaw in the complex and undocumented policy subsystem. Moreover, we’ll highlight the discovery of malware exploiting this bug as an 0day, reversing Apple’s patch, and discuss novel methods of both detection and prevention. REFERENCES: “All Your Macs Are Belong To Us” https://objective-see.com/blog/blog_0x64.html “macOS Gatekeeper Bypass (2021 Edition)” https://cedowens.medium.com/macos-gatekeeper-bypass-2021-edition-5256a2955508 “Shlayer Malware Abusing Gatekeeper Bypass On Macos” https://www.jamf.com/blog/shlayer-malware-abusing-gatekeeper-bypass-on-macos/",
+      "description": "A recent vulnerability, CVE-2021-30657, neatly bypassed a myriad of foundational macOS security features such as File Quarantine, Gatekeeper, and Notarization. Armed with this capability attackers could (and were!) hacking macOS systems with a simple user (double)-click. Yikes! In this presentation weâ€™ll dig deep into the bowels of macOS to uncover the root cause of the bug: a subtle logic flaw in the complex and undocumented policy subsystem. Moreover, weâ€™ll highlight the discovery of malware exploiting this bug as an 0day, reversing Appleâ€™s patch, and discuss novel methods of both detection and prevention. REFERENCES: â€œAll Your Macs Are Belong To Usâ€ https://objective-see.com/blog/blog_0x64.html â€œmacOS Gatekeeper Bypass (2021 Edition)â€ https://cedowens.medium.com/macos-gatekeeper-bypass-2021-edition-5256a2955508 â€œShlayer Malware Abusing Gatekeeper Bypass On Macosâ€ https://www.jamf.com/blog/shlayer-malware-abusing-gatekeeper-bypass-on-macos/",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -411,6 +521,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2021,
       "domains": [
         "vulnerability-research"
@@ -424,8 +544,8 @@
     },
     {
       "name": "Patrick Wardle",
-      "label": "You’re Muted Rooted",
-      "description": "Track 4 You’re Muted Rooted Patrick Wardle 45 minutes 💻 🛠 🪲",
+      "label": "Youâ€™re Muted Rooted",
+      "description": "Track 4 Youâ€™re Muted Rooted Patrick Wardle 45 minutes ðŸ’» ðŸ›  ðŸª²",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -436,11 +556,21 @@
       "url": "https://forum.defcon.org/node/241830",
       "evidence-links": [
         {
-          "title": "DEF CON 30 - Patrick Wardle - You’re Muted Rooted Exploiting Zoom on macOS",
+          "title": "DEF CON 30 - Patrick Wardle - Youâ€™re Muted Rooted Exploiting Zoom on macOS",
           "url": "https://www.youtube.com/watch?v=jk1OMo8Gcsk"
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2022,
       "domains": [
         "unknown"
@@ -468,6 +598,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "digital-forensics",
@@ -494,6 +634,16 @@
       "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Wardle2",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2023,
       "domains": [
         "unknown"
@@ -516,6 +666,16 @@
       "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60332",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2025,
       "domains": [
         "reverse-engineering",
@@ -531,7 +691,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Mastering Apple's Endpoint Security for Advanced macOS Malware Detection",
-      "description": "Five years after Apple radically empowered third-party security developers on macOS with the introduction of Endpoint Security, most developers grasp its fundamentals, but subtle nuances remain, and advanced features are still underutilized. And as the framework continues to evolve, even experienced developers can struggle to keep pace with its rapidly expanding capabilities. This talk explores critical areas that frequently trip up developers, such as caching behaviors and authorization deadlines, before diving into Endpoint Security’s more advanced features like mute inversions. We'll also cover recently introduced capabilities—including the long-awaited TCC event monitoring which offer unprecedented visibility into permission-related activity often targeted by malware. Each topic will include practical code examples, demonstrated and validated against sophisticated macOS malware. Join us to move beyond the basics and unlock the full power of Apple's Endpoint Security framework. References: link \"The Art of Mac Malware, Volume 2: Detecting Malicious Software\" No Starch Press",
+      "description": "Five years after Apple radically empowered third-party security developers on macOS with the introduction of Endpoint Security, most developers grasp its fundamentals, but subtle nuances remain, and advanced features are still underutilized. And as the framework continues to evolve, even experienced developers can struggle to keep pace with its rapidly expanding capabilities. This talk explores critical areas that frequently trip up developers, such as caching behaviors and authorization deadlines, before diving into Endpoint Securityâ€™s more advanced features like mute inversions. We'll also cover recently introduced capabilitiesâ€”including the long-awaited TCC event monitoring which offer unprecedented visibility into permission-related activity often targeted by malware. Each topic will include practical code examples, demonstrated and validated against sophisticated macOS malware. Join us to move beyond the basics and unlock the full power of Apple's Endpoint Security framework. References: link \"The Art of Mac Malware, Volume 2: Detecting Malicious Software\" No Starch Press",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -542,6 +702,16 @@
       "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60319",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2025,
       "domains": [
         "cyber-defense"
@@ -553,7 +723,7 @@
     {
       "name": "Patrick Wardle",
       "label": "Dylib Hijacking on macOS: Dead or Alive?",
-      "description": "Over a decade ago, a much younger Patrick showed that macOS (then OS X) was vulnerable to what had long been considered a Windows-only attack: dynamic library hijacking. By planting malicious libraries in the right place, attackers could achieve stealthy persistence, inject code into trusted processes, and even bypass core Apple security mechanisms. Today, an older (and hopefully wiser) Patrick revisits that work to answer a simple question: is dylib hijacking truly dead on modern macOS, or has Apple’s decade of defenses, including Gatekeeper, App Translocation, Notarization, and the Hardened Runtime, simply made it harder? This talk revisits the technique in 2026, analyzing these mitigations and evaluating their real-world effectiveness. While the attack surface has been significantly reduced, we show dylib hijacking remains possible under the right conditions. Through real-world examples and live demos, we explore how modern applications can still be coerced into loading attacker-controlled libraries, enabling code execution within trusted processes and bypassing controls such as TCC. Finally, we present practical detection and defense strategies, including novel approaches leveraging Endpoint Security to detect (and block!) malicious library loads at runtime.",
+      "description": "Over a decade ago, a much younger Patrick showed that macOS (then OS X) was vulnerable to what had long been considered a Windows-only attack: dynamic library hijacking. By planting malicious libraries in the right place, attackers could achieve stealthy persistence, inject code into trusted processes, and even bypass core Apple security mechanisms. Today, an older (and hopefully wiser) Patrick revisits that work to answer a simple question: is dylib hijacking truly dead on modern macOS, or has Appleâ€™s decade of defenses, including Gatekeeper, App Translocation, Notarization, and the Hardened Runtime, simply made it harder? This talk revisits the technique in 2026, analyzing these mitigations and evaluating their real-world effectiveness. While the attack surface has been significantly reduced, we show dylib hijacking remains possible under the right conditions. Through real-world examples and live demos, we explore how modern applications can still be coerced into loading attacker-controlled libraries, enabling code execution within trusted processes and bypassing controls such as TCC. Finally, we present practical detection and defense strategies, including novel approaches leveraging Endpoint Security to detect (and block!) malicious library loads at runtime.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -564,6 +734,16 @@
       "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66629",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2026,
       "domains": [
         "red-teaming",

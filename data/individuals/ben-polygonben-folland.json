@@ -1,6 +1,6 @@
 {
   "name": "Ben \"polygonben\" Folland",
-  "last-updated": "2026-10-11T23:48:07Z",
+  "last-updated": "2026-10-14T06:40:24Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Ben \"polygonben\" Folland",
       "label": "Man-in-the-Malware: Intercepting Adversarial Communications",
-      "description": "In this talk, the speaker details how a threat actor’s OPSEC slip—testing their own keylogger and infostealer on their hacking machine—provided a real-time view into a cybercrime operation. By intercepting Telegram-based command-and-control (C2) communications, the speaker obtained hundreds of screenshots and keylogs of the threat actors desktop, revealing the entire cybercrime operation. The session also covers the creation of Telegram bot tokens, which were then embedded in malware to enable covert data exfiltration and remote control. Through automated analysis techniques, including VirusTotal and custom YARA rules, the speaker tracked samples communicating with Telegram’s API, extracted thousands of bot tokens that were used to forward stolen data, used these to intercept communications, and mapped backend infrastructure through screenshots of the threat actors desktop. This process led to the discovery of links to broader phishing and malware campaigns, underscoring how trusted platforms like Telegram can be abused by malicious actors. References: Analysis of the malware Analysis of the stolen C2 communications",
+      "description": "In this talk, the speaker details how a threat actorâ€™s OPSEC slipâ€”testing their own keylogger and infostealer on their hacking machineâ€”provided a real-time view into a cybercrime operation. By intercepting Telegram-based command-and-control (C2) communications, the speaker obtained hundreds of screenshots and keylogs of the threat actors desktop, revealing the entire cybercrime operation. The session also covers the creation of Telegram bot tokens, which were then embedded in malware to enable covert data exfiltration and remote control. Through automated analysis techniques, including VirusTotal and custom YARA rules, the speaker tracked samples communicating with Telegramâ€™s API, extracted thousands of bot tokens that were used to forward stolen data, used these to intercept communications, and mapped backend infrastructure through screenshots of the threat actors desktop. This process led to the discovery of links to broader phishing and malware campaigns, underscoring how trusted platforms like Telegram can be abused by malicious actors. References: Analysis of the malware Analysis of the stolen C2 communications",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2025,
       "domains": [
         "cyber-defense",

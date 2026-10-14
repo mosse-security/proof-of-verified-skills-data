@@ -1,6 +1,6 @@
 {
-  "name": "Zoltán Balázs",
-  "last-updated": "2026-10-11T23:48:55Z",
+  "name": "ZoltÃ¡n BalÃ¡zs",
+  "last-updated": "2026-10-14T06:41:40Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -30,9 +30,9 @@
   },
   "endorsements": [
     {
-      "name": "Zoltán Balázs",
+      "name": "ZoltÃ¡n BalÃ¡zs",
       "label": "Bypass firewalls, application white lists, secure remote desktops under 20 seconds",
-      "description": "In theory, post-exploitation after having remote access is easy. Also in theory, there is no difference between theory and practice. In practice, there is. Imagine a scenario, where you have deployed a malware on a user’s workstation, but the target information is on a secure server accessed via two-factor authentication, with screen access only (e.g. RDP, Citrix, etc.). On top of that, the server runs application white-listing, and only the inbound port to the screen server (e.g. 3389) is allowed through the hardware firewall. But you also need persistent interactive C&C communication (e.g. Netcat, Meterpreter, RAT) to this server through the user’s workstation. I developed (and will publish) two tools that help you in these situations. The first tool can drop malware to the server through the screen while the user is logged in. The second tool can help you to circumvent the hardware firewall after we can execute code on the server with admin privileges (using a signed kernel driver). My tools are generic meaning that they work against Windows server 2012 and Windows 8, and they work with RDP or other remote desktops. The number of problems you can solve with them are endless, e.g., communicating with bind-shell on webserver behind restricted DMZ. Beware, live demo and fun included!",
+      "description": "In theory, post-exploitation after having remote access is easy. Also in theory, there is no difference between theory and practice. In practice, there is. Imagine a scenario, where you have deployed a malware on a userâ€™s workstation, but the target information is on a secure server accessed via two-factor authentication, with screen access only (e.g. RDP, Citrix, etc.). On top of that, the server runs application white-listing, and only the inbound port to the screen server (e.g. 3389) is allowed through the hardware firewall. But you also need persistent interactive C&C communication (e.g. Netcat, Meterpreter, RAT) to this server through the userâ€™s workstation. I developed (and will publish) two tools that help you in these situations. The first tool can drop malware to the server through the screen while the user is logged in. The second tool can help you to circumvent the hardware firewall after we can execute code on the server with admin privileges (using a signed kernel driver). My tools are generic meaning that they work against Windows server 2012 and Windows 8, and they work with RDP or other remote desktops. The number of problems you can solve with them are endless, e.g., communicating with bind-shell on webserver behind restricted DMZ. Beware, live demo and fun included!",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -43,11 +43,21 @@
       "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Balazs",
       "evidence-links": [
         {
-          "title": "DEF CON 22 - Zoltán Balázs - Bypass firewalls, application white lists...",
+          "title": "DEF CON 22 - ZoltÃ¡n BalÃ¡zs - Bypass firewalls, application white lists...",
           "url": "https://www.youtube.com/watch?v=ssE_mwSEH9U"
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2014,
       "domains": [
         "cyber-defense",

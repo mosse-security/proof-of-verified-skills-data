@@ -1,6 +1,6 @@
 {
   "name": "PatH",
-  "last-updated": "2026-10-11T23:48:40Z",
+  "last-updated": "2026-10-14T06:41:13Z",
   "biography": "",
   "contact": [
     {
@@ -41,7 +41,7 @@
     {
       "name": "PatH",
       "label": "Warping Reality - creating and countering the next generation of Linux rootkits using eBPF",
-      "description": "With complete access to a system, Linux kernel rootkits are perfectly placed to hide malicious access and activity. However, running code in the kernel comes with the massive risk that any change to a kernel version or configuration can mean the difference between running successfully and crashing the entire system. This talk will cover how to use extended Berkley Packet Filters (eBPF) to create kernel rootkits that are safe, stable, stealthy, and portable. eBPF is one of the newest additions to the Linux kernel, designed to easily load safe, constrained, and portable programs into the kernel to observe and make decisions about network traffic, syscalls, and more. But that’s not it’s only use: by creating eBPF programs that target specific processes we can warp reality, presenting a version of a file to one program and a different version to another, all without altering the real file on disk. This enables techniques such as presenting a backdoor user to ssh while hiding from sysadmins, or smuggling data inside connections from legitimate programs. This talk will also cover how to use these same techniques in malware analysis to fool anti-sanbox checks. These ideas and more are explored in this talk alongside practical methods to detect and prevent this next generation of Linux rootkits. REFERENCES: - DEFCON 27 - Evil eBPF Practical Abuses of In-kernel Bytecode Runtime - A talk about abusing eBPF for exploitation and privilege escalation - eBPF Website - https://ebpf.io - A website by the eBPF community with documentation and links to existing projects - eBPF Slack - https://ebpf.io/slack - A Slack channel run by the eBPF community - Libbpf Bootstrap - https://github.com/libbpf/libbpf-bootstrap - A sample project designed to provide a template to creating eBPF programs with Libbpf ----------------------------",
+      "description": "With complete access to a system, Linux kernel rootkits are perfectly placed to hide malicious access and activity. However, running code in the kernel comes with the massive risk that any change to a kernel version or configuration can mean the difference between running successfully and crashing the entire system. This talk will cover how to use extended Berkley Packet Filters (eBPF) to create kernel rootkits that are safe, stable, stealthy, and portable. eBPF is one of the newest additions to the Linux kernel, designed to easily load safe, constrained, and portable programs into the kernel to observe and make decisions about network traffic, syscalls, and more. But thatâ€™s not itâ€™s only use: by creating eBPF programs that target specific processes we can warp reality, presenting a version of a file to one program and a different version to another, all without altering the real file on disk. This enables techniques such as presenting a backdoor user to ssh while hiding from sysadmins, or smuggling data inside connections from legitimate programs. This talk will also cover how to use these same techniques in malware analysis to fool anti-sanbox checks. These ideas and more are explored in this talk alongside practical methods to detect and prevent this next generation of Linux rootkits. REFERENCES: - DEFCON 27 - Evil eBPF Practical Abuses of In-kernel Bytecode Runtime - A talk about abusing eBPF for exploitation and privilege escalation - eBPF Website - https://ebpf.io - A website by the eBPF community with documentation and links to existing projects - eBPF Slack - https://ebpf.io/slack - A Slack channel run by the eBPF community - Libbpf Bootstrap - https://github.com/libbpf/libbpf-bootstrap - A sample project designed to provide a template to creating eBPF programs with Libbpf ----------------------------",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -57,6 +57,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2021,
       "domains": [
         "reverse-engineering",

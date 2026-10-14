@@ -1,6 +1,6 @@
 {
   "name": "Ying Zhu",
-  "last-updated": "2026-10-11T23:48:53Z",
+  "last-updated": "2026-10-14T06:41:38Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2024,
       "domains": [
         "unknown"
@@ -59,7 +69,7 @@
     {
       "name": "Ying Zhu",
       "label": "Client or Server? The Hidden Sword of Damocles in Kafka",
-      "description": "Apache Kafka is an open-source distributed event streaming platform. At the heart of Kafka lies the Broker, which acts as the central server node in a Kafka cluster. Brokers are responsible for storing streams of data and managing the flow of messages between producers and consumers. The Kafka Server we often refer to is essentially the Kafka Broker. While Kafka’s main system handles data streams well, its real strength comes from its growing ecosystem. The components in the ecosystem greatly expands its abilities: Confluent ksqlDB transforms raw streams into queryable tables for real-time analytics; Schema Registry standardizes data formats across microservices, and so on. However, behind the rich components lie hidden security threats. Prior research has revealed Remote Code Execution (RCE) vulnerabilities in Kafka Client, yet notably absent were any exploitable RCE vulnerabilities in the Kafka Server — until now. In this work, we present the first-ever RCE vulnerability affecting Kafka Server itself. At the same time, we also used similar techniques to attack other components in the Kafka ecosystem. And these vulnerabilities can also affect the cloud service providers themselves. What's more, Since Kafka users remain unaware of this risk, thousands of Kafka servers are now exposed to this RCE vulnerability.",
+      "description": "Apache Kafka is an open-source distributed event streaming platform. At the heart of Kafka lies the Broker, which acts as the central server node in a Kafka cluster. Brokers are responsible for storing streams of data and managing the flow of messages between producers and consumers. The Kafka Server we often refer to is essentially the Kafka Broker. While Kafkaâ€™s main system handles data streams well, its real strength comes from its growing ecosystem. The components in the ecosystem greatly expands its abilities: Confluent ksqlDB transforms raw streams into queryable tables for real-time analytics; Schema Registry standardizes data formats across microservices, and so on. However, behind the rich components lie hidden security threats. Prior research has revealed Remote Code Execution (RCE) vulnerabilities in Kafka Client, yet notably absent were any exploitable RCE vulnerabilities in the Kafka Server â€” until now. In this work, we present the first-ever RCE vulnerability affecting Kafka Server itself. At the same time, we also used similar techniques to attack other components in the Kafka ecosystem. And these vulnerabilities can also affect the cloud service providers themselves. What's more, Since Kafka users remain unaware of this risk, thousands of Kafka servers are now exposed to this RCE vulnerability.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -70,6 +80,16 @@
       "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60342",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2025,
       "domains": [
         "vulnerability-research"

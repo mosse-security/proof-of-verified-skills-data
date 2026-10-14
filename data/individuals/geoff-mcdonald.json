@@ -1,6 +1,6 @@
 {
   "name": "Geoff McDonald",
-  "last-updated": "2026-10-11T23:54:56Z",
+  "last-updated": "2026-10-14T06:40:42Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Geoff McDonald",
       "label": "Meddle: Framework for Piggy-back Fuzzing and Tool Development",
-      "description": "Towards simplifying the vulnerability fuzzing process, this presentation introduces a moddable framework called Meddle that can be used to piggy-back on existing application’s knowledge of protocol by performing piggy-back fuzzing. Meddle is an open source Windows x86 and x64 user-mode C# application that uses IronPython plugins to provide a familiar interface for fuzzing. Why bother spending time understanding the protocol just to try break it? Two vulnerability fuzzing attacks using Meddle will be demonstrated - one attacking the open source rdp server XRDP, and the other attacking general driver communications from user-mode processes. Several vulnerabilities found with the XRDP server will be briefly discussed, including two that may be exploited for RCE prior to authentication. These attacks are typically based on a piggy-back application (such as the Remote Desktop Connection Client, mstsc.exe), the piggy-back application performs a benchmarking operation, and then fuzzing begins through a parallel set of the piggy-back instances attacking each event sequentially. Although originally designed as a vulnerability fuzzing framework, Meddle is well-suited for developing reverse-engineering and malware analysis tools. Two simple tools will be presented based on Meddle, including: 1. A capture tool for communication between usermode processes and kernel mode drivers along with a parser to view the captures in Windows Message Analyzer. 2. Malware sandboxing environment proof-of-concept. In conclusion, the attendees should be able leave the session with a basic understanding of how to use the Meddle framework as well as their own ideas for tools to develop and targets to attack.",
+      "description": "Towards simplifying the vulnerability fuzzing process, this presentation introduces a moddable framework called Meddle that can be used to piggy-back on existing applicationâ€™s knowledge of protocol by performing piggy-back fuzzing. Meddle is an open source Windows x86 and x64 user-mode C# application that uses IronPython plugins to provide a familiar interface for fuzzing. Why bother spending time understanding the protocol just to try break it? Two vulnerability fuzzing attacks using Meddle will be demonstrated - one attacking the open source rdp server XRDP, and the other attacking general driver communications from user-mode processes. Several vulnerabilities found with the XRDP server will be briefly discussed, including two that may be exploited for RCE prior to authentication. These attacks are typically based on a piggy-back application (such as the Remote Desktop Connection Client, mstsc.exe), the piggy-back application performs a benchmarking operation, and then fuzzing begins through a parallel set of the piggy-back instances attacking each event sequentially. Although originally designed as a vulnerability fuzzing framework, Meddle is well-suited for developing reverse-engineering and malware analysis tools. Two simple tools will be presented based on Meddle, including: 1. A capture tool for communication between usermode processes and kernel mode drivers along with a parser to view the captures in Windows Message Analyzer. 2. Malware sandboxing environment proof-of-concept. In conclusion, the attendees should be able leave the session with a basic understanding of how to use the Meddle framework as well as their own ideas for tools to develop and targets to attack.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2014,
       "domains": [
         "reverse-engineering",
@@ -81,6 +91,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2018,
       "domains": [
         "cyber-defense"

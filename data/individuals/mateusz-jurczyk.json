@@ -1,6 +1,6 @@
 {
   "name": "Mateusz Jurczyk",
-  "last-updated": "2026-10-11T23:48:34Z",
+  "last-updated": "2026-10-14T06:41:03Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2013,
       "domains": [
         "vulnerability-research"
@@ -62,8 +72,8 @@
     },
     {
       "name": "Mateusz Jurczyk",
-      "label": "Effective File Format Fuzzing – Thoughts Techniques and Results",
-      "description": "Fuzzing, as a native software testing technique, is an extremely popular approach to vulnerability hunting in today's security field. The reasons are plenty: it is relatively easy to start with, features out-of-the-box tools which can be used with little to no development, only requires an initial time to set up, scales extremely well, and most importantly – often achieves good results against modern software. All of the qualities make fuzzing complementary to manual security reviews, if not replacing them altogether in some cases. However, fuzzing also follows Bushnell's law, as it is \"easy to learn, but hard to master.\" While it is trivial to flip bits in the input data and wait for programs to crash, it is similarly easy to forget that there is much more to it. The overall process consists of a number of stages, and the final outcome is a product of the effectiveness of all of them. In order to get the most out of fuzzing, it is necessary to answer many questions: How to generate or mutate the inputs? How to create an initial corpus of data? How to detect software failures? How to minimize the offending samples, and recognize unique bugs? How to deal with programs expecting user interaction, using data consistency checks, compression or encryption? The list goes on and on. The aim of the talk is to address each question as comprehensively as possible, sharing the methods, ideas, measurements and algorithms we have developed during many years spent on fuzzing both open and closed-source software. The information will be supported by our corresponding results of two years of fuzzing FreeType, Wireshark, Hex-Rays IDA Pro, Adobe Reader, Adobe Flash Player and the Windows kernel (among other software), for a total of over 130 vulnerabilities fixed in a wide range of commits and bulletins. We will demystify fuzzing as a black box technique that \"just works\" regardless of the technical details, and show how each of its parts can be taken apart and optimized for maximum performance, enabling us to find new waves of bugs in mature code bases which could have been previously thought of as fuzz-clean.",
+      "label": "Effective File Format Fuzzing â€“ Thoughts Techniques and Results",
+      "description": "Fuzzing, as a native software testing technique, is an extremely popular approach to vulnerability hunting in today's security field. The reasons are plenty: it is relatively easy to start with, features out-of-the-box tools which can be used with little to no development, only requires an initial time to set up, scales extremely well, and most importantly â€“ often achieves good results against modern software. All of the qualities make fuzzing complementary to manual security reviews, if not replacing them altogether in some cases. However, fuzzing also follows Bushnell's law, as it is \"easy to learn, but hard to master.\" While it is trivial to flip bits in the input data and wait for programs to crash, it is similarly easy to forget that there is much more to it. The overall process consists of a number of stages, and the final outcome is a product of the effectiveness of all of them. In order to get the most out of fuzzing, it is necessary to answer many questions: How to generate or mutate the inputs? How to create an initial corpus of data? How to detect software failures? How to minimize the offending samples, and recognize unique bugs? How to deal with programs expecting user interaction, using data consistency checks, compression or encryption? The list goes on and on. The aim of the talk is to address each question as comprehensively as possible, sharing the methods, ideas, measurements and algorithms we have developed during many years spent on fuzzing both open and closed-source software. The information will be supported by our corresponding results of two years of fuzzing FreeType, Wireshark, Hex-Rays IDA Pro, Adobe Reader, Adobe Flash Player and the Windows kernel (among other software), for a total of over 130 vulnerabilities fixed in a wide range of commits and bulletins. We will demystify fuzzing as a black box technique that \"just works\" regardless of the technical details, and show how each of its parts can be taken apart and optimized for maximum performance, enabling us to find new waves of bugs in mature code bases which could have been previously thought of as fuzz-clean.",
       "type": "presentation",
       "assessor": "Black Hat",
       "assessor-id": "black-hat",
@@ -78,11 +88,21 @@
           "url": "https://www.youtube.com/watch?v=GABsy25AaXY"
         },
         {
-          "title": "Effective File Format Fuzzing – Thoughts, Techniques and Results",
+          "title": "Effective File Format Fuzzing â€“ Thoughts, Techniques and Results",
           "url": "https://www.youtube.com/watch?v=qTTwqFRD1H8"
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2016,
       "domains": [
         "reverse-engineering",
@@ -98,7 +118,7 @@
     {
       "name": "Mateusz Jurczyk",
       "label": "Bochspwn Reloaded: Detecting Kernel Memory Disclosure with x86 Emulation and Taint Tracking",
-      "description": "In kernel-mode, buffer overflows and similar memory corruption issues in the internal logic are usually self-evident and can be detected with a number of static and dynamic approaches. On the contrary, flaws directly related to interactions with user-mode clients tend to be more subtle, and can survive unnoticed for many years, while still providing primitives similar to the classic bugs. One example of such flaws are so-called \"double fetches\" – repeated accesses to single user-mode memory units within the same semantic contexts, with the assumption that their values don't change in between the reads. These are race conditions which can be often exploited to achieve memory corruption, write-what-where conditions and other dangerous primitives; yet they never manifest themselves at runtime, unless being actively exploited. In 2013, Gynvael and I devised a project called \"Bochspwn\", which was used to discover at least 37 double fetches in the Windows kernel, by employing a custom full-system instrumentation built on top of the Bochs x86 emulator. This presentation will introduce another subtle class of kernel vulnerabilities – disclosure of uninitialized stack and heap memory to user-mode applications. Since information leaks of this kind leave hardly any footprint, they are rarely noticed and reported to system vendors. However, we have found that it is still a prevalent problem in current kernels (especially Windows), and can be abused to defeat certain exploit mitigations or steal sensitive data residing in ring-0. In order to address this matter, we have developed a new Bochspwn-style instrumentation based on rudimentary kernel memory taint tracking, which we then used to discover 30 memory disclosure issues in Windows alone. In this talk, we will discuss the kernel design problems behind the bugs, the design of our tool, and the exploitation process of some of the most interesting findings.",
+      "description": "In kernel-mode, buffer overflows and similar memory corruption issues in the internal logic are usually self-evident and can be detected with a number of static and dynamic approaches. On the contrary, flaws directly related to interactions with user-mode clients tend to be more subtle, and can survive unnoticed for many years, while still providing primitives similar to the classic bugs. One example of such flaws are so-called \"double fetches\" â€“ repeated accesses to single user-mode memory units within the same semantic contexts, with the assumption that their values don't change in between the reads. These are race conditions which can be often exploited to achieve memory corruption, write-what-where conditions and other dangerous primitives; yet they never manifest themselves at runtime, unless being actively exploited. In 2013, Gynvael and I devised a project called \"Bochspwn\", which was used to discover at least 37 double fetches in the Windows kernel, by employing a custom full-system instrumentation built on top of the Bochs x86 emulator. This presentation will introduce another subtle class of kernel vulnerabilities â€“ disclosure of uninitialized stack and heap memory to user-mode applications. Since information leaks of this kind leave hardly any footprint, they are rarely noticed and reported to system vendors. However, we have found that it is still a prevalent problem in current kernels (especially Windows), and can be abused to defeat certain exploit mitigations or steal sensitive data residing in ring-0. In order to address this matter, we have developed a new Bochspwn-style instrumentation based on rudimentary kernel memory taint tracking, which we then used to discover 30 memory disclosure issues in Windows alone. In this talk, we will discuss the kernel design problems behind the bugs, the design of our tool, and the exploitation process of some of the most interesting findings.",
       "type": "presentation",
       "assessor": "Black Hat",
       "assessor-id": "black-hat",
@@ -114,6 +134,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2017,
       "domains": [
         "vulnerability-research"
@@ -143,6 +173,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2024,
       "domains": [
         "vulnerability-research"

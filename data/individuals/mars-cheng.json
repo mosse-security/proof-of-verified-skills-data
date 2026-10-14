@@ -1,6 +1,6 @@
 {
   "name": "Mars Cheng",
-  "last-updated": "2026-10-12T10:17:21Z",
+  "last-updated": "2026-10-14T06:41:03Z",
   "biography": "",
   "contact": [
     {
@@ -37,7 +37,7 @@
     {
       "name": "Mars Cheng",
       "label": "Taking Apart and Taking Over ICS & SCADA Ecosystems: A Case Study of Mitsubishi Electric",
-      "description": "Diversified Industrial Control System (ICS) providers create a variety of ecosystems, which have come to operate silently in the background of our lives. Among these organizations, Mitsubishi Electric ranks among the most prolific. Because the operation of this ecosystem is so widely used in key manufacturing, natural gas supply, oil, water, aviation, railways, chemicals, food and beverages, and construction, it is closely-related to people's lives. For this reason, the security of this ecosystem is extraordinarily important. This research will enter the Mitsubishi ecosystem’s communication protocol, using it as a lens with which to deeply explore the differences between itself and other ecosystems. We will show how we successfully uncovered flaws in its identity authentication function, including how to take it over and show that such an attack can cause physical damage in different critical sectors. We’ll explain how we accomplished this by applying reverse engineering and communication analysis. This flaw allows attackers to take over any asset within the entire series of Mitsubishi PLCs, allowing command of the ecosystem and full control of the relevant sensors. A further complication is that making a fix to the various communication protocols in the ICS/SCADA is extremely difficult. We will also share the various problems we encountered while researching these findings and provide the most workable detection and mitigation strategies for those protocols. REFERENCES [1] https://ladderlogicworld.com/plc-manufacturers/ [2] https://www.mitsubishielectric.com/fa/products/cnt/plc/pmerit/case.html [3] https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5594 [4] https://www.mitsubishielectric.com/fa/products/cnt/plc/pmerit/index.html",
+      "description": "Diversified Industrial Control System (ICS) providers create a variety of ecosystems, which have come to operate silently in the background of our lives. Among these organizations, Mitsubishi Electric ranks among the most prolific. Because the operation of this ecosystem is so widely used in key manufacturing, natural gas supply, oil, water, aviation, railways, chemicals, food and beverages, and construction, it is closely-related to people's lives. For this reason, the security of this ecosystem is extraordinarily important. This research will enter the Mitsubishi ecosystemâ€™s communication protocol, using it as a lens with which to deeply explore the differences between itself and other ecosystems. We will show how we successfully uncovered flaws in its identity authentication function, including how to take it over and show that such an attack can cause physical damage in different critical sectors. Weâ€™ll explain how we accomplished this by applying reverse engineering and communication analysis. This flaw allows attackers to take over any asset within the entire series of Mitsubishi PLCs, allowing command of the ecosystem and full control of the relevant sensors. A further complication is that making a fix to the various communication protocols in the ICS/SCADA is extremely difficult. We will also share the various problems we encountered while researching these findings and provide the most workable detection and mitigation strategies for those protocols. REFERENCES [1] https://ladderlogicworld.com/plc-manufacturers/ [2] https://www.mitsubishielectric.com/fa/products/cnt/plc/pmerit/case.html [3] https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5594 [4] https://www.mitsubishielectric.com/fa/products/cnt/plc/pmerit/index.html",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -53,6 +53,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2021,
       "domains": [
         "reverse-engineering",
@@ -76,7 +86,7 @@
     {
       "name": "Mars Cheng",
       "label": "Active Directory Abuse Primitives and Operation Security",
-      "description": "Active Directory (AD) is widely used by enterprises for centralized management of digital assets such as accounts, machines, and access rights. AD is always the primary target for adversaries since compromising AD also grants control over an entire enterprise’s network. Furthermore, AD attacks techniques are mostly in the form of leveraging the privilege, configuration settings, or designed mechanism, that are also commonly called the abuse primitive. In this talk, we will discuss how real-world adversaries abuse these attack techniques that are chained as attack paths to compromise Active Directory by demonstrating 4 attack paths . We will dive into these AD attack techniques abuse configuration settings and discuss the methodology such as enumeration, consideration, tactical goal, and how to evade blue team detection to make success operation. In addition, attack paths demonstrated includes new AD abuse primitives such as diamond ticket, U2U ticket, or Shadow Credential . We will discuss how an attack path is formed from the abuse primitives in the AD environment with the explanation of root cause, implementation methods, and operational guidance. All 4 attack paths shared will also be shared with video demonstration from an adversary’s perspective using a C2 not only for a realistic experience of offensive operation but to make the impact easier to understand.",
+      "description": "Active Directory (AD) is widely used by enterprises for centralized management of digital assets such as accounts, machines, and access rights. AD is always the primary target for adversaries since compromising AD also grants control over an entire enterpriseâ€™s network. Furthermore, AD attacks techniques are mostly in the form of leveraging the privilege, configuration settings, or designed mechanism, that are also commonly called the abuse primitive. In this talk, we will discuss how real-world adversaries abuse these attack techniques that are chained as attack paths to compromise Active Directory by demonstrating 4 attack paths . We will dive into these AD attack techniques abuse configuration settings and discuss the methodology such as enumeration, consideration, tactical goal, and how to evade blue team detection to make success operation. In addition, attack paths demonstrated includes new AD abuse primitives such as diamond ticket, U2U ticket, or Shadow Credential . We will discuss how an attack path is formed from the abuse primitives in the AD environment with the explanation of root cause, implementation methods, and operational guidance. All 4 attack paths shared will also be shared with video demonstration from an adversaryâ€™s perspective using a C2 not only for a realistic experience of offensive operation but to make the impact easier to understand.",
       "type": "presentation",
       "assessor": "HITB (Hack In The Box Security Conference)",
       "assessor-id": "hitb",
@@ -100,6 +110,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2023,
       "domains": [
         "cyber-defense",

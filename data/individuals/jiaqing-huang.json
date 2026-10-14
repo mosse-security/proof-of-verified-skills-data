@@ -1,6 +1,6 @@
 {
   "name": "JiaQing Huang",
-  "last-updated": "2026-10-12T10:17:17Z",
+  "last-updated": "2026-10-14T06:40:51Z",
   "biography": "",
   "contact": [
     {
@@ -52,6 +52,16 @@
       "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54525",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2024,
       "domains": [
         "reverse-engineering",
@@ -67,7 +77,7 @@
     {
       "name": "JiaQing Huang",
       "label": "Dragon Slaying Guide: Bug Hunting In VMware Device Virtualization",
-      "description": "We will primarily discuss the similarities and differences in SCSI-related device emulation in the virtual disk system between VMware Workstation and ESXi. Additionally, we will cover design flaws related to disk device emulation that we discovered in VMKernel. We will address security issues in various parts of the USB system, including the host controller, VUsb middleware, and VUsb backend devices, based on the vulnerabilities we have unearthed. We will delve into the loading process of vmm, the implementation of data sharing between vmm and vmx, and VMware’s UserRPC, which facilitates communication between the Hypervisor and the Host. These mechanisms are crucial in virtual device emulation. About how we discover the attack surface of VMKernel and find 8 unknown vulnerabilities, we will progressively explain from three parts: During the analysis of this attack surface and reverse engineering of the VMware Hypervisor, we discovered 8 vulnerabilities related to device virtualization, 3 of them have been assigned CVE number (some vulnerabilities have even been successfully exploited in Tianfu Cup), and the remaining 5 of our vulnerabilities have been officially confirmed by VMware. In this presentation, we will unveil a new attack surface: Device Virtualization in VMKernel. This is an unknown territory that has not been explored by security researchers to date. Furthermore, this attack perspective has not been considered in VMware’s defense system, and its existing sandbox mechanisms are theoretically incapable of defending against attacks initiated from VMKernel. VMware Workstation/ESXi is one of the most popular commercial virtualization software on the market. Its complex virtualization system design and critical position in infrastructure have made it a top target for hackers over the long term. For security researchers, discovering virtualization escape vulnerabilities in the VMware hypervisor is as challenging as confronting a dragon in a role-playing game.",
+      "description": "We will primarily discuss the similarities and differences in SCSI-related device emulation in the virtual disk system between VMware Workstation and ESXi. Additionally, we will cover design flaws related to disk device emulation that we discovered in VMKernel. We will address security issues in various parts of the USB system, including the host controller, VUsb middleware, and VUsb backend devices, based on the vulnerabilities we have unearthed. We will delve into the loading process of vmm, the implementation of data sharing between vmm and vmx, and VMwareâ€™s UserRPC, which facilitates communication between the Hypervisor and the Host. These mechanisms are crucial in virtual device emulation. About how we discover the attack surface of VMKernel and find 8 unknown vulnerabilities, we will progressively explain from three parts: During the analysis of this attack surface and reverse engineering of the VMware Hypervisor, we discovered 8 vulnerabilities related to device virtualization, 3 of them have been assigned CVE number (some vulnerabilities have even been successfully exploited in Tianfu Cup), and the remaining 5 of our vulnerabilities have been officially confirmed by VMware. In this presentation, we will unveil a new attack surface: Device Virtualization in VMKernel. This is an unknown territory that has not been explored by security researchers to date. Furthermore, this attack perspective has not been considered in VMwareâ€™s defense system, and its existing sandbox mechanisms are theoretically incapable of defending against attacks initiated from VMKernel. VMware Workstation/ESXi is one of the most popular commercial virtualization software on the market. Its complex virtualization system design and critical position in infrastructure have made it a top target for hackers over the long term. For security researchers, discovering virtualization escape vulnerabilities in the VMware hypervisor is as challenging as confronting a dragon in a role-playing game.",
       "type": "presentation",
       "assessor": "HITB (Hack In The Box Security Conference)",
       "assessor-id": "hitb",
@@ -83,6 +93,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2024,
       "domains": [
         "cyber-defense",

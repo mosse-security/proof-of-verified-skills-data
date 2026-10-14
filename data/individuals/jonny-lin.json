@@ -1,6 +1,6 @@
 {
   "name": "Jonny Lin",
-  "last-updated": "2026-10-11T23:48:27Z",
+  "last-updated": "2026-10-14T06:40:53Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Jonny Lin",
       "label": "Passkeys Pwned: Turning WebAuthn Against Itself",
-      "description": "Over the past three years, passkeys have gained widespread adoption among major vendors like Apple, Google, and Microsoft, aiming to replace passwords with a more secure authentication method. However, passkeys haven't yet faced the extensive scrutiny that passwords have endured over decades. As they become central to enterprise identity, it's crucial to examine their resilience. This presentation demonstrates how attackers can proxy WebAuthn API calls to forge passkey registration and authentication responses. We'll showcase this using a browser extension as an example, but the same technique applies to any website vulnerable to client-side script injection, such as XSS or misconfigured widgets. The extension serves merely as a controlled means to proxy credential flows and manipulate the WebAuthn process. We'll delve into the underlying theory, present the exploit code, and provide a live demonstration of an attack that succeeds on sites relying on passkeys without enforcing attestation or metadata checks—a common scenario among vendors. If you’re relying on passkeys, this is the side of the flow you don’t usually get to see. References: Web Authentication API - mdn web docs - for API documentation link and link - for trying out the passkey flow easily Passwordless login with passkeys by Google Identity - link Passkey AAGUIDs list - link",
+      "description": "Over the past three years, passkeys have gained widespread adoption among major vendors like Apple, Google, and Microsoft, aiming to replace passwords with a more secure authentication method. However, passkeys haven't yet faced the extensive scrutiny that passwords have endured over decades. As they become central to enterprise identity, it's crucial to examine their resilience. This presentation demonstrates how attackers can proxy WebAuthn API calls to forge passkey registration and authentication responses. We'll showcase this using a browser extension as an example, but the same technique applies to any website vulnerable to client-side script injection, such as XSS or misconfigured widgets. The extension serves merely as a controlled means to proxy credential flows and manipulate the WebAuthn process. We'll delve into the underlying theory, present the exploit code, and provide a live demonstration of an attack that succeeds on sites relying on passkeys without enforcing attestation or metadata checksâ€”a common scenario among vendors. If youâ€™re relying on passkeys, this is the side of the flow you donâ€™t usually get to see. References: Web Authentication API - mdn web docs - for API documentation link and link - for trying out the passkey flow easily Passwordless login with passkeys by Google Identity - link Passkey AAGUIDs list - link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -48,6 +48,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2025,
       "domains": [
         "vulnerability-research"

@@ -1,6 +1,6 @@
 {
   "name": "Guanxing Wen",
-  "last-updated": "2026-10-11T23:48:21Z",
+  "last-updated": "2026-10-14T06:40:43Z",
   "biography": "",
   "contact": [
     {
@@ -53,6 +53,16 @@
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2016,
       "domains": [
         "vulnerability-research"
@@ -67,7 +77,7 @@
     {
       "name": "Guanxing Wen",
       "label": "Breaking the Ethereum Phone: From BootROM to Wallet Signing Keys",
-      "description": "Crypto phones promise the convenience of a mobile OS with hardware-backed key management. We tested that claim on dGEN1, the Ethereum phone marketed for digital-asset custody, and present a full compromise from bootrom to wallet key recovery. Starting from a bootrom-level misconfiguration, we reverse the modern MediaTek bootchain and introduce a Loader-of-the-Loader technique for patching later boot stages entirely in memory, yielding EL3 code execution without modifying physical flash. From that foothold, we trace how boot-level compromise propagates into the device’s lock-screen verification path, enabling offline brute-forcing of the user PIN and recovery of the wallet’s primary ERC-4337 signing key. We further show that a separate identity flaw in the asset-claim workflow allows pre-activation theft using identifiers printed on a sealed retail box.",
+      "description": "Crypto phones promise the convenience of a mobile OS with hardware-backed key management. We tested that claim on dGEN1, the Ethereum phone marketed for digital-asset custody, and present a full compromise from bootrom to wallet key recovery. Starting from a bootrom-level misconfiguration, we reverse the modern MediaTek bootchain and introduce a Loader-of-the-Loader technique for patching later boot stages entirely in memory, yielding EL3 code execution without modifying physical flash. From that foothold, we trace how boot-level compromise propagates into the deviceâ€™s lock-screen verification path, enabling offline brute-forcing of the user PIN and recovery of the walletâ€™s primary ERC-4337 signing key. We further show that a separate identity flaw in the asset-claim workflow allows pre-activation theft using identifiers printed on a sealed retail box.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",
@@ -78,6 +88,16 @@
       "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66571",
       "evidence-links": [],
       "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
       "year": 2026,
       "domains": [
         "reverse-engineering",

@@ -1,6 +1,6 @@
 {
   "name": "Phuong Cao",
-  "last-updated": "2026-10-11T23:48:41Z",
+  "last-updated": "2026-10-14T06:41:16Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -31,7 +31,7 @@
   "endorsements": [
     {
       "name": "Phuong Cao",
-      "label": "Self-Verifying Authentication – A Framework for Safer Integrations of Single-Sign-On Services",
+      "label": "Self-Verifying Authentication â€“ A Framework for Safer Integrations of Single-Sign-On Services",
       "description": "SSO (single-sign-on) services, such as those provided by Facebook, Google and Microsoft Azure, are integrated into tens of millions of apps, websites and cloud services, just like the front door lock for every home. However, the integration practice is very ad-hoc: on one hand, protocol documentation and usage guides of SSO libraries are written by experts, who are like experienced \"locksmiths\"; one the other hand, most app/website programmers are not \"locksmiths\", and inevitably fall into many pitfalls due to misunderstandings of such informal documentation. Security bugs in SSO integrations are continuously discovered in the field, which leave the front door of the cloud wide-open for attackers. SSO bugs are the primary example when the Cloud Security Alliance ranked API integration bugs as the No. 4 top security threat. They have become a familiar theme in major security conferences, including BlackHat USA 2016 and BlackHat Europe 2016. We are working on an open-source project, called SVAuth, to provide every website with a safer SSO integration, supported by formal program verification. SVAuth is ready for real-world adoption: (1) it is language independent, so it works with web apps in any language, such as PHP, ASP.NET, Python; (2) the default solution requires only a drop-in installation of an executable, without any library integration effort; (3) a programmer can customize the default solution for his/her special requirement. The customized solution will enjoy the same correctness assurance as the default one; (4) the SVAuth framework can accommodate all SSO services. The main innovation underlying SVAuth is a program verification technology called SVX (or Self-Verifying Execution). It turns every SSO-protocol execution into a process of proving its own logic correctness: every time when a \"lock\" is being opened (i.e., a user is signing in), a \"locksmith\" (i.e., a program verifier) is always watching to assert whether it is a logically-sound normal procedure or a lock-picking attempt. In other words, executing protocol code becomes inseparable from verifying it. SVX has two other attributes which are magical: (1) the runtime overhead for verification is near zero; (2) the self-verifying capability only needs to be built once into abstract classes of a protocol, and all concrete implementations derived from the protocol will automatically inherit the capability. Thus, the one-time verification effort in the protocol level is scaled up to all concrete implementations. In this talk, we will first show and explain a number of SSO bugs that we discovered. They pinpoint the natural gaps between the perspectives of a protocol designer, an SDK provider and a regular website programmer. None of them can be called a \"stupid bug\". Then, we explain how SVX performs code verification, as well as the architecture of the SVAuth code. Finally, we give demos about real-world web apps using SVAuth. The talk is based on two published papers, but contains many new contents reflecting our latest development. [1] Securing Multiparty Online Services via Certification of Symbolic Transactions. In IEEE Symposium on Security and Privacy (S&P) 2015. https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/CST.pdf [2] Self-Verifying Execution. In IEEE Cybersecurity Development Conference (SecDev) 2016. https://www.microsoft.com/en-us/research/wp-content/uploads/2016/09/Self-Verifying-Execution.pdf",
       "type": "presentation",
       "assessor": "Black Hat",
@@ -43,11 +43,21 @@
       "url": "https://blackhat.com/archive/europe/2017/briefings.html",
       "evidence-links": [
         {
-          "title": "Self-Verifying Authentication – A Framework For Safer Integrations of Single-Sign-On Services",
+          "title": "Self-Verifying Authentication â€“ A Framework For Safer Integrations of Single-Sign-On Services",
           "url": "https://www.youtube.com/watch?v=DTc_z1k0uWc"
         }
       ],
       "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
       "year": 2017,
       "domains": [
         "cloud-security",
