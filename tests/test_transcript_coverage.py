@@ -33,6 +33,30 @@ def _endorsement_video_ids(assessor_id: str) -> set[str]:
 
 
 class TranscriptCoverageTests(unittest.TestCase):
+    def test_black_hat_missing_transcripts_are_reported_with_urls(self) -> None:
+        """Keep the Black Hat gap report actionable while its archive is built."""
+        assessor_id = "black-hat"
+        archive_path = TRANSCRIPTS / f"{assessor_id}-transcripts.zip"
+        enrichment_path = ENRICHMENTS / f"{assessor_id}-youtube-recordings" / "data.zip"
+        if not archive_path.is_file() or not enrichment_path.is_file():
+            self.skipTest("Black Hat transcript or video archive is not present yet")
+        with zipfile.ZipFile(archive_path) as archive:
+            transcript_ids = {
+                Path(member).stem
+                for member in archive.namelist()
+                if member.startswith("transcripts/") and member.endswith(".txt")
+            }
+        with zipfile.ZipFile(enrichment_path) as enrichment:
+            catalog = json.loads(enrichment.read("data.json"))
+        catalog_urls = {
+            str(item.get("video-id")): str(item.get("url", ""))
+            for item in catalog
+            if item.get("video-id") and item.get("url")
+        }
+        missing = sorted(_endorsement_video_ids(assessor_id) - transcript_ids)
+        details = ", ".join(f"{video_id} ({catalog_urls.get(video_id, 'URL unavailable')})" for video_id in missing)
+        self.assertFalse(missing, f"Black Hat videos missing transcripts: {details}")
+
     def test_transcript_archives_cover_every_captured_talk_video(self) -> None:
         for archive_path in sorted(TRANSCRIPTS.glob("*-transcripts.zip")):
             assessor_id = archive_path.name.removesuffix("-transcripts.zip")
