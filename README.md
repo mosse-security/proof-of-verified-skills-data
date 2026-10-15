@@ -470,7 +470,7 @@ is intentional and timestamp preservation is not possible.
 
 ## Enrichers
 
-Enrichers are independently discovered from `enrichers/` and collect external
+Enrichers are independently discovered recursively from `enrichers/` and collect external
 datasets for later endorsement enrichment. Run all enrichers, or select one:
 
 ```powershell
@@ -484,6 +484,9 @@ uses `yt-dlp`, and stores its JSON video index in
 in endorsement records as `evidence-links` entries containing a title and URL;
 the companion `evidence` flag is set automatically. Future enrichers should write a JSON array as `data.json` in their own
 `<enricher-id>/data.zip` archive.
+
+Conference-specific enricher modules live under `enrichers/conferences/`.
+Recursive discovery keeps their stable enricher IDs and CLI commands unchanged.
 
 ## Run statistics
 

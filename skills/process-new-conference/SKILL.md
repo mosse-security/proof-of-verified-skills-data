@@ -110,7 +110,9 @@ exit, then the next URL.
 ### 4. Add enrichers
 
 For every independent evidence source, create one stable enricher under
-`enrichers/`. Enrichers must be independently discoverable and runnable:
+`enrichers/`; conference-specific modules belong in `enrichers/conferences/`.
+Discovery is recursive, so moving a module must not change its stable
+`enricher_id`. Enrichers must be independently discoverable and runnable:
 
 ```powershell
 python -m endorsement_scraper.enrichment_cli --list
