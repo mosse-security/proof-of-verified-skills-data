@@ -134,6 +134,22 @@ the total catalog size and matched evidence-link count, and investigate a
 large unmatched remainder with assessor-specific title normalization before
 declaring onboarding complete.
 
+After the video catalog and endorsement evidence links exist, archive English
+transcripts for matched videos:
+
+```powershell
+python -m endorsement_scraper.transcripts --assessor <id> --matched-only
+```
+
+Run one conference process at a time. The command reuses one yt-dlp client,
+checkpoints every ten records, preserves the complete manifest across reruns,
+and writes `data/archives/yt-transcripts/<id>-transcripts.zip`. Use repeated
+`--video-id <id>` options to retry only gaps reported by
+`tests.test_transcript_coverage`. Failed and no-subtitle entries stay in the
+manifest and must not be counted as captured. Interrupted checkpoints clean up
+their temporary files. Transcript runs initialize the standard file logger;
+inspect ignored `logs/general.log`, `logs/warnings.log`, and `logs/errors.log`.
+
 ### 5. Validate and generate
 
 Run the complete scraper set with overwrite enabled, then merge profiles:
@@ -169,6 +185,12 @@ Run tests and compilation checks before reporting completion:
 ```powershell
 python -m unittest discover -s tests -p 'test_*.py' -q
 python -m compileall -q endorsement_scraper scrapers enrichers tests
+```
+
+For transcript-enabled assessors, also run:
+
+```powershell
+python -m unittest tests.test_transcript_coverage tests.test_transcripts -v
 ```
 
 ### 6. Add failure guards

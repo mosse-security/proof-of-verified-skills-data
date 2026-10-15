@@ -13,6 +13,8 @@ import time
 from pathlib import Path
 from typing import Any
 
+from .logging_config import configure_logging
+
 LOGGER = logging.getLogger(__name__)
 
 
@@ -89,6 +91,7 @@ def archive_transcripts(
                 _write_checkpoint(archive_path, pending, assessor_id, current)
                 existing_members.update(pending)
                 pending.clear()
+                LOGGER.info("Checkpoint for %s: processed=%d downloaded=%d skipped=%d no_subtitles=%d failed=%d", assessor_id, len(current), counters["downloaded"], counters["skipped"], counters["no_subtitles"], counters["failed"])
     _write_checkpoint(archive_path, pending, assessor_id, current)
     LOGGER.info("Finished transcript archive for %s: %s", assessor_id, counters)
     return counters
@@ -133,26 +136,34 @@ def _read_archive_state(path: Path) -> tuple[set[str], dict[str, dict[str, Any]]
 def _write_checkpoint(path: Path, pending: dict[str, bytes], assessor_id: str, videos: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
-    with zipfile.ZipFile(temporary, "w", zipfile.ZIP_DEFLATED) as target:
-        if path.is_file():
-            with zipfile.ZipFile(path) as source:
-                for info in source.infolist():
-                    if info.filename not in pending and info.filename != "manifest.json":
-                        target.writestr(info, source.read(info.filename))
-        for member, content in pending.items():
-            target.writestr(member, content)
-    manifest = {"assessor-id": assessor_id, "videos": videos}
-    target_manifest = (json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
-    with zipfile.ZipFile(temporary, "a", zipfile.ZIP_DEFLATED) as target:
-        target.writestr("manifest.json", target_manifest)
-    for attempt in range(10):
-        try:
-            os.replace(temporary, path)
-            break
-        except PermissionError:
-            if attempt == 9:
-                raise
-            time.sleep(0.5 * (attempt + 1))
+    try:
+        historical: dict[str, dict[str, Any]] = {}
+        with zipfile.ZipFile(temporary, "w", zipfile.ZIP_DEFLATED) as target:
+            if path.is_file():
+                with zipfile.ZipFile(path) as source:
+                    if "manifest.json" in source.namelist():
+                        old_manifest = json.loads(source.read("manifest.json"))
+                        historical = {str(item.get("video-id")): item for item in old_manifest.get("videos", []) if item.get("video-id")}
+                    for info in source.infolist():
+                        if info.filename not in pending and info.filename != "manifest.json":
+                            target.writestr(info, source.read(info.filename))
+            for member, content in pending.items():
+                target.writestr(member, content)
+        historical.update({str(item["video-id"]): item for item in videos if item.get("video-id")})
+        manifest = {"assessor-id": assessor_id, "videos": sorted(historical.values(), key=lambda item: str(item.get("video-id", "")))}
+        target_manifest = (json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+        with zipfile.ZipFile(temporary, "a", zipfile.ZIP_DEFLATED) as target:
+            target.writestr("manifest.json", target_manifest)
+        for attempt in range(10):
+            try:
+                os.replace(temporary, path)
+                break
+            except PermissionError:
+                if attempt == 9:
+                    raise
+                time.sleep(0.5 * (attempt + 1))
+    finally:
+        Path(temporary).unlink(missing_ok=True)
 
 
 def _clean_vtt(text: str) -> str:
@@ -191,6 +202,7 @@ def _captured_video_ids(assessor_id: str) -> set[str]:
 
 
 def main(argv: list[str] | None = None) -> int:
+    configure_logging()
     parser = argparse.ArgumentParser(prog="archive-transcripts")
     parser.add_argument("--assessor", required=True)
     parser.add_argument("--overwrite", action="store_true")

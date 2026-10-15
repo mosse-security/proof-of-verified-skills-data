@@ -538,3 +538,28 @@ snapshot location with `--html-dir` when those responses should live elsewhere.
 - `python -m unittest discover -s tests -v` runs the framework tests without
   accessing the network.
 
+## YouTube transcript archives
+
+For conferences with a YouTube enrichment archive, capture English subtitles
+for videos that are actually linked from endorsements:
+
+```powershell
+python -m endorsement_scraper.transcripts --assessor def-con --matched-only
+```
+
+Archives are written to `data/archives/yt-transcripts/<assessor>-transcripts.zip`.
+Each archive contains `transcripts/<video-id>.txt` and a `manifest.json` with
+the catalog URL, title, and capture status. Runs are resumable and idempotent:
+existing video IDs are skipped, checkpoints are written every ten records, and
+the manifest is merged rather than replaced on later runs. Use repeated
+`--video-id` options to retry a small set of gaps without scanning the full
+catalog. Run one conference at a time to avoid YouTube throttling and archive
+file contention.
+
+The transcript coverage tests cross-reference endorsement evidence-link video
+IDs with transcript members and report missing IDs. Failed or unavailable
+subtitle records remain in the manifest and are not treated as successful
+captures. Runtime logs are written to ignored `logs/general.log`,
+`logs/warnings.log`, and `logs/errors.log`; warnings include missing subtitles
+and unmatched conference videos.
+
