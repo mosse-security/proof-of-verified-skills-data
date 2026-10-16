@@ -1,24 +1,24 @@
 {
   "name": "Waylon Grange",
-  "last-updated": "2026-10-14T06:41:36Z",
+  "last-updated": "2026-10-16T20:49:58Z",
   "biography": "",
   "contact": [],
   "stats": {
     "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 0,
+    "with-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
       "devsecops": 0,
-      "digital-forensics": 0,
+      "digital-forensics": 1,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 1,
-      "reverse-engineering": 0,
+      "reverse-engineering": 1,
       "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
@@ -32,41 +32,40 @@
     {
       "name": "Waylon Grange",
       "label": "Digital Vengeance: Exploiting the Most Notorious C&C Toolkits",
-      "description": "Every year thousands of organizations are compromised by targeted attacks. In many cases the attacks are labeled as advanced and persistent which suggests a high level of sophistication in the attack and tools used. Many times, this title is leveraged as an excuse that the events were inevitable or irresistible, as if the assailants' skill set is well beyond what defenders are capable of. To the contrary, often these assailants are not as untouchable as many would believe. If one looks at the many APT reports that have been released over the years, some clear patterns start to emerge. A small number of Remote Administration Tools (RATs) are preferred by actors and reused across multiple campaigns. Frequently sited tools include Gh0st RAT, Korplug/Plug-X, and XtremeRAT among others. Upon examination, the command and control components of these notorious RATs are riddled with vulnerabilities. Vulnerabilities that can be exploited to turn the tables from hunter to hunted. Although the material in this talk will provide tools for launching an offensive against attackers, this talk is not intended to be an instructional for hacking back. The ethics and legality of counter attacks will be touched on only briefly as that is a discussion beyond the scope of this talk. The presentation will disclose several exploits that could allow remote execution or remote information disclosure on computers running these well-known C&C components. It should serve as a warning to those actors who utilize such toolsets. That is to say, such actors live in glass houses and should stop throwing stones.",
+      "description": "\"Every year thousands of organizations are compromised by targeted attacks. In many cases the attacks are labeled as advanced and persistent which suggests a high level of sophistication in the attack and tools used. Many times, this title is leveraged as an excuse that the events were inevitable or irresistible, as if the assailants’ skill set is well beyond what defenders are capable of. To the contrary, often these assailants are not as untouchable as many would believe. If one looks at the many APT reports that have been released over the years some clear patterns start to emerge. A small number of Remote Administration Tools are preferred by actors and reused across multiple campaigns. Frequently sited tools include Gh0st RAT, Plug-X, and XtremeRAT among others. Upon examination, the command and control components of these notorious RATs are riddled with vulnerabilities. Vulnerabilities that can be exploited to turn the tables from hunter to hunted. The presentation will present several exploits that could allow remote execution or remote information disclosure on computers running these well-known C&C components. It should serve as a warning to those actors who utilize such toolsets. That is to say, such actors live in glass houses and should stop throwing stones.\" Waylon Grange is an experienced reverse engineer, developer, and digital forensics examiner. He holds a graduate degree in Information Security from Johns Hopkins University, and has worked numerous computer incident investigations spanning the globe. He currently works as a Senior Threat Researcher for Symantec and previously worked for the Department of Defense performing vulnerability research, software development, and Computer Network Operations. @professor__plum",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
+      "assessor": "DerbyCon",
+      "assessor-id": "derbycon",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2017",
-      "url": "https://blackhat.com/us-17/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Digital Vengeance: Exploiting the Most Notorious C&C Toolkits",
-          "url": "https://www.youtube.com/watch?v=4wwSOD6orcY"
-        }
-      ],
-      "evidence": true,
+      "reviewType": "committee_review",
+      "subtitle": "DerbyCon 2017",
+      "url": "https://web.archive.org/web/20170829160902/https://www.derbycon.com/friday-schedule/",
+      "evidence-links": [],
+      "evidence": false,
       "povs": {
         "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
           "trusted": false
         },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
       "year": 2017,
       "domains": [
+        "digital-forensics",
         "red-teaming",
+        "reverse-engineering",
         "vulnerability-research"
       ],
       "subspecialties": {
+        "digital-forensics": [],
         "red-teaming": [
           "command-and-control-operations"
         ],
+        "reverse-engineering": [],
         "vulnerability-research": []
       }
     }

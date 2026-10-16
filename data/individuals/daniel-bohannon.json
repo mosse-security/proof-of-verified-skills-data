@@ -1,25 +1,12 @@
 {
   "name": "Daniel Bohannon",
-  "last-updated": "2026-10-16T05:18:13Z",
+  "last-updated": "2026-10-16T20:49:55Z",
   "biography": "",
-  "contact": [
-    {
-      "label": "linkedin",
-      "url": "https://www.linkedin.com/in/danielhbohannon/"
-    },
-    {
-      "label": "twitter",
-      "url": "https://twitter.com/danielhbohannon"
-    },
-    {
-      "label": "website",
-      "url": "https://danielbohannon.com"
-    }
-  ],
+  "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 1,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -27,13 +14,13 @@
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
-      "incident-response": 0,
+      "incident-response": 1,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
-      "reverse-engineering": 1,
+      "reverse-engineering": 0,
       "vulnerability-research": 1,
-      "identity-and-access-management": 1,
+      "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
@@ -44,57 +31,16 @@
   "endorsements": [
     {
       "name": "Daniel Bohannon",
-      "label": "Revoke-Obfuscation: PowerShell Obfuscation Detection (And Evasion) Using Science",
-      "description": "Attackers, administrators and many legitimate products rely on PowerShell for their core functionality. However, being a Windows-signed binary native on Windows 7 and later that enables reflective injection of binaries and DLLs and memory-resident execution of remotely hosted scripts, has made it increasingly attractive for attackers and commodity malware authors alike. In environments where PowerShell is heavily used, filtering out legitimate activity to detect malicious PowerShell usage is not trivial. A/V signatures applied to command line arguments work sometimes. AMSI-based (Anti-malware Scanning Interface) detections available in Windows 10 and PowerShell 5.0 perform significantly better, but obfuscation and evasion techniques can bypass both detection approaches. Six months after the release of Invoke-Obfuscation, these obfuscation techniques continue to bypass A/V signatures and many content matching detections. In addition, the recent release of Invoke-CradleCrafter has made detecting remote download cradle syntaxes much more difficult. The excellent logging available in PowerShell 5.0 (not to mention the many security features baked into PowerShell 5.0) is the key to detecting existing and future obfuscation techniques. However, PowerShell 5.0 logging produces a substantial amount of logs, which is great for SIEM salespeople but not ideal for your security budget. Revoke-Obfuscation is a PowerShell framework to help detect obfuscated PowerShell commands and scripts by applying a suite of unique statistical analysis, character distribution and command invocation checks against any arbitrary PowerShell command or script. It works with PowerShell .evtx files, command lines, scripts, ScriptBlock logs, Module logs, and allows for the easy addition of new custom indicators. Approaches for evading these detection techniques will be discussed and demonstrated. Revoke-Obfuscation has been used in numerous Mandiant investigations to successfully identify obfuscated and non-obfuscated malicious PowerShell scripts and commands. It also detects all obfuscation techniques in Invoke-Obfuscation, including two new techniques being released with this presentation.",
+      "label": "Invoke-CradleCrafter: Moar PowerShell obFUsk8tion & Detection (@('Tech','niques') -Join'')",
+      "description": "\"Attackers, administrators and many legitimate products rely on PowerShell for their core functionality. However, its power has made it increasingly attractive for attackers and commodity malware authors alike. How do you separate the good from the bad? A/V signatures applied to command line arguments work sometimes. AMSI-based (Anti-malware Scan Interface) detection performs significantly better. But obfuscation and evasion techniques like Invoke-Obfuscation can and do bypass both approaches. Revoke-Obfuscation is a framework that transforms evasion into a treacherous deceit. By applying a suite of unique statistical analysis techniques against PowerShell scripts and their structures, what was once a cloak of invisibility is now a spotlight. It works with .evtx files, command lines, scripts, ScriptBlock logs, Module logs, and is easy to extend. Approaches for evading these detection techniques will be discussed and demonstrated. Revoke-Obfuscation has been used in numerous Mandiant investigations to successfully identify obfuscated and non-obfuscated malicious PowerShell scripts and commands. It also detects all obfuscation techniques in Invoke-Obfuscation, including two new techniques being released with this presentation.\" Daniel Bohannon is a Senior Incident Response Consultant at MANDIANT with over seven years of operations and information security experience. His particular areas of expertise include enterprise-wide incident response investigations, host-based security monitoring, data aggregation and anomaly detection, and PowerShell-based attack research and detection techniques. He is the author of Invoke-Obfuscation, Invoke-CradleCrafter and Revoke-Obfuscation PowerShell frameworks. @danielhbohannon",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
+      "assessor": "DerbyCon",
+      "assessor-id": "derbycon",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2017",
-      "url": "https://blackhat.com/us-17/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Revoke-Obfuscation: PowerShell Obfuscation Detection (And Evasion) Using Science",
-          "url": "https://www.youtube.com/watch?v=x97ejtv56xw"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2017,
-      "domains": [
-        "cyber-defense",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "cyber-defense": [
-          "security-monitoring-and-alert-triage"
-        ],
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Daniel Bohannon",
-      "label": "(|(MaLDAPtive:¯\\_(LDAP)_/¯=ObFUsc8t10n) (De-Obfuscation &:=De*te)(!c=tion))",
-      "description": "LDAP is no stranger to the security spotlight. While LDAP is a protocol (Lightweight Directory Access Protocol) and Active Directory is the most popular directory services system that supports a subset of LDAP, the terms “LDAP” and “AD” are tightly coupled when discussing the execution, detection and prevention of attacks targeting directory services data. In the last decade the widespread offensive value of querying AD data via LDAP was cemented with the release of open-source tools such as BloodHound and PingCastle. However, proper visibility of LDAP queries mostly remains a privileged asset for those organizations with deep pockets, and the commercial security tools providing this visibility are often woefully fixated on simple signature-based detections. MaLDAPtive is the 2,000-hour (and counting) quest of offensive and defensive LDAP exploration and tool-building. This research includes mind-bending depths of obfuscation across all elements of LDAP queries (many undocumented and most never seen in the wild), all baked into an obfuscation/de-obfuscation/detection framework built upon our ground-up custom LDAP search filter tokenizer and syntax tree parser. Come witness the release of our MaLDAPtive research and open-source framework: transforming LDAP from “lightweight” to “heavyweight.” General LDAP information: link link LDAP-Related RFCs: link link link Official Documentation for Active Directory LDAP Attributes: link Blogs Highlighting Offensive LDAP Usage: link link link link Open-Source Tooling Using LDAP: link link link link",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 32",
-      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54524",
+      "reviewType": "committee_review",
+      "subtitle": "DerbyCon 2017",
+      "url": "https://web.archive.org/web/20170829160902/https://www.derbycon.com/friday-schedule/",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -107,16 +53,18 @@
         "level": 0,
         "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
-      "year": 2024,
+      "year": 2017,
       "domains": [
-        "reverse-engineering",
-        "identity-and-access-management"
+        "cyber-defense",
+        "incident-response",
+        "vulnerability-research"
       ],
       "subspecialties": {
-        "reverse-engineering": [],
-        "identity-and-access-management": [
-          "directory-services"
-        ]
+        "cyber-defense": [
+          "security-monitoring-and-alert-triage"
+        ],
+        "incident-response": [],
+        "vulnerability-research": []
       }
     }
   ]

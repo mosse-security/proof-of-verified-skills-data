@@ -1,13 +1,13 @@
 {
   "name": "Kevin Johnson",
-  "last-updated": "2026-10-16T05:18:18Z",
+  "last-updated": "2026-10-16T20:49:56Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 6,
-    "assessors": 2,
-    "with-evidence": 1,
-    "without-evidence": 5,
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -16,142 +16,31 @@
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 2,
-      "red-teaming": 1,
+      "penetration-testing": 0,
+      "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 3,
+      "vulnerability-research": 0,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 3
+      "unknown": 2
     }
   },
   "endorsements": [
     {
       "name": "Kevin Johnson",
-      "label": "Injectable Exploits: Two New Tools for Pwning Web Apps and Browsers",
-      "description": "Injectable exploits focus on the exploitation of major web flaws during penetration tests. Two new tools will be released that expand the foothold penetration testers can obtain through SQL injection and XSS flaws. These tools provide greater insight into the network hosting the web application and the networks in which the users are located. We will also discuss the live CD environment that includes both tools. Yokoso! is an infrastructure fingerprinting system delivered via XSS attack. This project contains two different parts; the fingerprints and modules for the various browser exploit frameworks. The fingerprints identify web applications deployed in the user's network, applications such as web administration interfaces to different IT manage systems. The modules portion contains code to perform two basic attacks. The first is history browsing which determines if the user has visited the sites of interest. This reveals if the user is an administrator or power user. The second attack module within Yokoso! Initiates requests to map the infrastructure of the user's network. Laudanum is a collection of injectable files that are prebuilt to perform various attacks within a network. These files are injected via SQL injection attacks. The individual files are placed into scheduled jobs or the web root of database servers. This is accomplished by exploiting SQL injection flaws within the web application. Laudanum includes various attacks such as shells, proxy capabilities and data collection tools. A major feature of both tools is their scope limiting capabilities. Many similar tools lack the capability to identify target hosts before performing exploits. Both of these tools allow a penetration tester to specify target restrictions based on external IP, internal IP, and hostname. The final portion of the talk will cover SamuraiWTF. SamuraiWTF is a live CD environment focused on web penetration tests. It was released during DEF CON 16 and has had four new releases since that time. Both Yokoso! and Laudanum will be included on a new version of SamuraiWTF released at DEF CON this year.",
+      "label": "TMI: How to attack SharePoint servers and tools to make it easier",
+      "description": "TMI: How to attack SharePoint servers and tools to make it easier",
       "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 17",
-      "url": "https://defcon.org/html/defcon-17/dc-17-speakers.html",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2009,
-      "domains": [
-        "penetration-testing",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "penetration-testing": [
-          "web-application-penetration-testing"
-        ],
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Kevin Johnson",
-      "label": "Social Zombies: Your Friends Want to Eat Your Brains",
-      "description": "In Social Zombies: Your Friends want to eat Your Brains, Tom Eston and Kevin Johnson explore the various concerns related to malware delivery through social network sites. Ignoring the FUD and confusion being sowed today, this presentation will examine the risks and then present tools that can be used to exploit these issues. This presentation begins by discussing how social networks work and the various privacy and security concerns that are caused by the trust mass that is social networks. We use this privacy confusion to exploit members and their companies during our penetration tests. The presentation then discusses typical botnets and bot programs. Both the delivery of this malware through social networks and the use of these social networks as command and control channels will be examined. Tom and Kevin next explore the use of browser-based bots and their delivery through custom social network applications and content. This research expands upon previous work by researchers such as Wade Alcorn and GNUCitizen and takes it into new C&C directions. Finally, the information available through the social network APIs is explored using the bot delivery applications. This allows for complete coverage of the targets and their information.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 17",
-      "url": "https://defcon.org/html/defcon-17/dc-17-speakers.html",
-      "evidence-links": [
-        {
-          "title": "DEF CON 17 - Tom Eston and Kevin Johnson - Social Zombies Your Friends want to Eat Your Brains",
-          "url": "https://www.youtube.com/watch?v=FDYR14l7LUw"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2009,
-      "domains": [
-        "red-teaming",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "red-teaming": [
-          "command-and-control-operations"
-        ],
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Kevin Johnson",
-      "label": "Don't Drop the SOAP: Real World Web Service Testing for Web Hackers",
-      "description": "Over the years web services have become an integral part of web and mobile applications. From critical business applications like SAP to mobile applications used by millions, web services are becoming more of an attack vector than ever before. Unfortunately, penetration testers haven't kept up with the popularity of web services, recent advancements in web service technology, testing methodologies and tools. In fact, most of the methodologies and tools currently available either don't work properly, are poorly designed or don't fully test for real world web service vulnerabilities. In addition, environments for testing web service tools and attack techniques have been limited to home grown solutions or worse yet, production environments. In this presentation Tom, Josh and Kevin will discuss the new security issues with web services and release an updated web service testing methodology that will be integrated into the OWASP testing guide, new Metasploit modules and exploits for attacking web services and a open source vulnerable web service for the Samurai-WTF (Web Testing Framework) that can be used by penetration testers to test web service attack tools and techniques. Twitter: @agent0x0 Twitter: @jabra",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 19",
-      "url": "https://defcon.org/html/defcon-19/dc-19-speakers.html",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2011,
-      "domains": [
-        "penetration-testing",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "penetration-testing": [],
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Kevin Johnson",
-      "label": "WTF?!?!: Why do we keep doing this stuff and how do we get better",
-      "description": "As a security consultant, Kevin Johnson of Secure Ideas is often asked “why” he does what he does. In response, Kevin likes to quote Simon Sinek’s book “Start With Why”: “People don’t buy what you do, they buy why you do it.” While it doesn’t sound like the correct answer to the question, it is. In this presentation, Kevin will discuss the why AND the how of running a consulting business. He will explore how Secure Ideas is focused on its “why” in everything they do. This focus on purpose drives the entire organization and affects the work they do every day. By being clear on your “why,” your organization will be able to serve its clients better and create lasting value. This talk will explore how security organizations, internal and external, can better focus, moving us from the “paranoids” to functioning and recognizably helpful parts of our organizations and companies.",
-      "type": "presentation",
-      "assessor": "GrrCON",
-      "assessor-id": "grrcon",
+      "assessor": "DerbyCon",
+      "assessor-id": "derbycon",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "committee_review",
-      "subtitle": "GrrCON 2022",
-      "url": "https://grrcon.com/presentations2022/",
+      "subtitle": "DerbyCon 2014",
+      "url": "https://web.archive.org/web/20140808013650/http://www.derbycon.com/schedule-and-abstracts-2013/",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -164,7 +53,7 @@
         "level": 0,
         "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
-      "year": 2022,
+      "year": 2014,
       "domains": [
         "unknown"
       ],
@@ -174,16 +63,16 @@
     },
     {
       "name": "Kevin Johnson",
-      "label": "Forging in Fire: Application Injection Payloads and Norse Mythology",
-      "description": "Forging in Fire: Application Injection Payloads and Norse Mythology",
+      "label": "Ethical Control: Ethics and Privacy in a Target-Rich Environment",
+      "description": "Ethical Control: Ethics and Privacy in a Target-Rich Environment",
       "type": "presentation",
-      "assessor": "GrrCON",
-      "assessor-id": "grrcon",
+      "assessor": "DerbyCon",
+      "assessor-id": "derbycon",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "committee_review",
-      "subtitle": "GrrCON 2024",
-      "url": "https://grrcon.com/presentations24/",
+      "subtitle": "DerbyCon 2015",
+      "url": "https://web.archive.org/web/20151003213758/https://www.derbycon.com/schedule_2014/",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -196,39 +85,7 @@
         "level": 0,
         "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
-      "year": 2024,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "Kevin Johnson",
-      "label": "Stomping on Buildings: Stop acting like Godzilla and start acting like Godzilla",
-      "description": "Stomping on Buildings: Stop acting like Godzilla and start acting like Godzilla",
-      "type": "presentation",
-      "assessor": "GrrCON",
-      "assessor-id": "grrcon",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "committee_review",
-      "subtitle": "GrrCON 2025",
-      "url": "https://grrcon.com/presentations2025/",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2025,
+      "year": 2015,
       "domains": [
         "unknown"
       ],

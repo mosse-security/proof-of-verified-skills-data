@@ -6,6 +6,7 @@ import json
 import re
 import zipfile
 from pathlib import Path
+from pathlib import PurePosixPath
 from urllib.parse import urlsplit
 
 
@@ -23,7 +24,8 @@ def archive_member(assessor_id: str, url: str) -> str:
             return f"defcon-{match.group(1)}/speakers.html"
         if "defcon-safemode" in path.casefold():
             return "defcon-safemode/speakers.html"
-    return path
+    # Match ArchiveStore, which normalizes members through PurePosixPath.
+    return PurePosixPath(path).as_posix()
 
 
 def missing_archive_urls(
