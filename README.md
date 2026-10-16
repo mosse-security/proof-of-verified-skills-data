@@ -541,6 +541,14 @@ snapshot location with `--html-dir` when those responses should live elsewhere.
 - `python -m unittest discover -s tests -v` runs the framework tests without
   accessing the network.
 
+### Assessor scope
+
+Conference recommendations and next-target decisions must use only the
+shortlisted assessor inventory under `data/assessors/*.json`. Do not propose a
+conference found outside that local list, including one discovered through web
+search or general research. A new conference becomes eligible only after its
+assessor JSON is deliberately added to the inventory.
+
 ## YouTube transcript archives
 
 For conferences with a YouTube enrichment archive, capture English subtitles

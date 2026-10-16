@@ -142,6 +142,10 @@ extension examples, read [references/architecture.md](references/architecture.md
 - Add or update tests with every parser, schema, domain, or merge behavior.
 - Regenerate affected output after parser changes; do not hand-edit generated
   endorsement or individual JSON.
+- When choosing the next conference to process, use only the shortlisted
+  assessor inventory in `data/assessors/*.json`. Never recommend an external
+  conference that is absent from that local list; add and review its assessor
+  definition first if expanding scope is intended.
 - Keep source evidence available to domain detection and store it in the
   endorsement `description` field.
 - When a source has several page layouts, add a focused parser function and a
