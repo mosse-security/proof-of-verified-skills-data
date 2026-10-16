@@ -1,18 +1,13 @@
 {
   "name": "Jeff Dileo",
-  "last-updated": "2026-10-14T06:40:49Z",
+  "last-updated": "2026-10-16T07:42:24Z",
   "biography": "",
-  "contact": [
-    {
-      "label": "twitter",
-      "url": "https://twitter.com/chaosdatumz"
-    }
-  ],
+  "contact": [],
   "stats": {
-    "endorsements": 2,
+    "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 2,
-    "without-evidence": 0,
+    "with-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -23,93 +18,47 @@
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
-      "reverse-engineering": 1,
-      "vulnerability-research": 2,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
     {
       "name": "Jeff Dileo",
-      "label": "Evil eBPF In-Depth: Practical Abuses of an In-Kernel Bytecode Runtime",
-      "description": "eBPF (or \"extended\" Berkeley Packet Filter) is a bytecode instruction set and virtual machine used as a safe computing environment within the Linux kernel to perform arbitrary programmatic actions. It is a redesign of Linux's original in-kernel BPF bytecode VM used to power features like tcpdump filters. eBPF has an entirely different set of capabilities and instructions, with its primary goal being to serve as a JIT-able virtual machine instruction set that can be targeted by compilers of a memory-safe \"restricted C\" language. In the Linux kernel, it is actively being applied to anything and everything to provide performant programmatic capabilities to userland that extend traditionally kernel-based functionality. In this exploit development focused talk, we will first introduce eBPF and discuss several nefarious techniques enabled by the technology. As we do so, we will cover the respective sets of APIs, file descriptor types, and other eBPF machinery that enable such techniques, building up from various forms of hidden IPC channels to full-fledged rootkits. Within this talk, we will walk through the implementations of the techniques we discuss so that attendees will walk away with the knowledge of how to implement their own variants. Along the way we will discuss novel container breakout techniques and interesting \"dual-purpose\" eBPF features that enable the development of mutative syscall hooks that work for processes that work for processes already attached by a debugger. Finally, we will provide insight on how defenders should begin to attempt to detect and recover from such abuses, when possible at all. This presentation significantly extends on work we first presented at 35C3, which focused more heavily on the underlying aspects of general eBPF-based kernel tracing. In contrast, this talk will demo new techniques and include substantially improved versions of techniques presented previously as proofs-of-concept.",
+      "label": "Kernel Tracing With eBPF",
+      "description": "Kernel Tracing With eBPF",
       "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "DEF CON 27",
-      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Dileo",
-      "evidence-links": [
-        {
-          "title": "Jeff Dileo - Evil eBPF Practical Abuses of In-Kernel Bytecode Runtime- DEF CON 27 Conference",
-          "url": "https://www.youtube.com/watch?v=yrrxFZfyEsw"
-        }
-      ],
-      "evidence": true,
+      "subtitle": "35C3",
+      "url": "https://media.ccc.de/v/35c3-9532-kernel_tracing_with_ebpf",
+      "evidence-links": [],
+      "evidence": false,
       "povs": {
         "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
           "trusted": false
         },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
-      "year": 2019,
+      "year": 2018,
       "domains": [
-        "reverse-engineering",
-        "vulnerability-research"
+        "unknown"
       ],
       "subspecialties": {
-        "reverse-engineering": [],
-        "vulnerability-research": [
-          "exploit-development"
-        ]
-      }
-    },
-    {
-      "name": "Jeff Dileo",
-      "label": "Instrument and Find Out: Writing Parasitic Tracers for High(-Level) Languages",
-      "description": "Modern programming languages are, more and more, being designed not just around performance, ease-of-use, and (sometimes) security, but also performance monitoring and introspectability. But what about the languages that never adopted such concepts from their peers? Or worse, what about the languages that tacked on half-hearted implementations as an afterthought? The answer is simple, you write your own and instrument them into the language dynamically. In this talk, we will discuss the process for developing generalized parasitic tracers targeting specific programming languages and runtimes using Ruby as our case study. We will show how feasible it is to write external tracers targeting a language and its runtime, and discuss best practices for supporting different versions over time. REFERENCES: * https://github.com/ruby/ruby * https://frida.re/docs/javascript-api/",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 29",
-      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#dileo",
-      "evidence-links": [
-        {
-          "title": "DEF CON 29 - Jeff Dileo - Instrument and Find Out:  Parasitic Tracers for High Level Languages",
-          "url": "https://www.youtube.com/watch?v=Iy1BNywebpY"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2021,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": []
+        "unknown": []
       }
     }
   ]

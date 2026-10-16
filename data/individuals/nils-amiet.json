@@ -1,21 +1,16 @@
 {
   "name": "Nils Amiet",
-  "last-updated": "2026-10-16T05:18:20Z",
+  "last-updated": "2026-10-16T07:42:28Z",
   "biography": "",
-  "contact": [
-    {
-      "label": "twitter",
-      "url": "https://twitter.com/tmlxs"
-    }
-  ],
+  "contact": [],
   "stats": {
-    "endorsements": 2,
+    "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 2,
-    "without-evidence": 0,
+    "with-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -24,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -36,75 +31,35 @@
   "endorsements": [
     {
       "name": "Nils Amiet",
-      "label": "Reaping and breaking keys at scale: when crypto meets big data",
-      "description": "Public keys are everywhere, after all, they are public. These keys are waiting to be reaped by those who know their real value. Hidden behind this public face lurks some potentially dangerous issues which could lead to a compromise of data and privacy. Leveraging hundreds of minion devices, we built a public key reaping machine (which we are open sourcing) and operated it on a global scale. Collected keys are tested for vulnerabilities such as the recent ROCA vulnerability or factorization using batch-GCD. We've collected over 300 million keys so far and built a database 4 to 10 times bigger than previous public works. Performing the initial computation on over 300 million keys took about 10 days on a 280 vCPU cluster. Many optimizations allow our tool to incrementally test new RSA keys for common prime factors against the whole dataset in just a few minutes. As a result of our research, we could have impersonated hundreds of people by breaking their PGP keys, mimicked thousands of servers thanks to their factored SSH keys and performed MitM attacks on over 200k websites relying on vulnerable X509 certificates. In the end, we were able to do this in an entirely passive way. Going further is possible, but it would lead us to the dark side. Would big brother hesitate to go there?",
+      "label": "AI Meets Git: Unmasking Security Flaws in Qodo Merge",
+      "description": "AI Meets Git: Unmasking Security Flaws in Qodo Merge",
       "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "DEF CON 26",
-      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Romailler",
-      "evidence-links": [
-        {
-          "title": "DEF CON 26 - Romailler and Amiet - Reaping and Breaking Keys at Scale When Crypto Meets Big Data",
-          "url": "https://www.youtube.com/watch?v=Z7cLRE6t1Q8"
-        }
-      ],
-      "evidence": true,
+      "subtitle": "38C3",
+      "url": "https://media.ccc.de/v/38c3-ai-meets-git-unmasking-security-flaws-in-qodo-merge",
+      "evidence-links": [],
+      "evidence": false,
       "povs": {
         "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
           "trusted": false
         },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
-      "year": 2018,
+      "year": 2024,
       "domains": [
+        "cyber-defense",
         "vulnerability-research"
       ],
       "subspecialties": {
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Nils Amiet",
-      "label": "Polynonce: An ECDSA Attack and Polynomial Dance",
-      "description": "ECDSA is a widely used digital signature algorithm. ECDSA signatures can be found everywhere since they are public. In this talk, we tell a tale of how we discovered a novel attack against ECDSA and how we applied it to datasets we found in the wild, including the Bitcoin and Ethereum networks. Although we didn't recover Satoshi's private key (we’d be throwing a party on our private yacht instead of writing this abstract), we could see evidence that someone had previously attacked vulnerable wallets with a different exploit and drained them. We cover our journey, findings, and the rabbit holes we explored. We also provide an academic paper with the details of the attack and open-source code implementing it, so people building software and products using ECDSA can identify and avoid this vulnerability in their systems. We've only scratched the surface, there's still plenty of room for exploration.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 31",
-      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Amiet",
-      "evidence-links": [
-        {
-          "title": "DEF CON 31 - Polynonce - An ECDSA Attack and Polynomial Dance - Nils Amiet, Marco Macchetti",
-          "url": "https://www.youtube.com/watch?v=lyBiCdEGjoA"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2023,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
+        "cyber-defense": [],
         "vulnerability-research": []
       }
     }

@@ -1,25 +1,12 @@
 {
   "name": "Martin Vigo",
-  "last-updated": "2026-10-16T05:18:19Z",
+  "last-updated": "2026-10-16T07:42:27Z",
   "biography": "",
-  "contact": [
-    {
-      "label": "linkedin",
-      "url": "https://www.linkedin.com/in/martinvigo"
-    },
-    {
-      "label": "website",
-      "url": "https://www.martinvigo.com"
-    },
-    {
-      "label": "youtube",
-      "url": "https://www.youtube.com/martinvigo"
-    }
-  ],
+  "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -28,11 +15,11 @@
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
-      "open-source-intelligence": 1,
-      "penetration-testing": 1,
-      "red-teaming": 1,
-      "reverse-engineering": 1,
-      "vulnerability-research": 3,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -44,92 +31,16 @@
   "endorsements": [
     {
       "name": "Martin Vigo",
-      "label": "Even the LastPass Will be Stolen Deal with It!",
-      "description": "Password managers have become very popular as a solution to avoid reusing passwords. With that in mind, password managers are a prized target for pentesters and attackers. If a password manager is compromised, the consequences are catastrophic as all the victim's secrets reside in the vault. One breach to get it all. LastPass is arguably one of the most popular password managers in the market. Over 10,000 corporate customers ranging in various sizes including Fortune 500's rely on LastPass to protect all their data. Research has been done on how to attack password managers but it has all focused on leaking specific credentials from the vault. LastPass not only stores credentials, but also bank accounts, ssh keys, personal records, etc. Therefore, we focused our research on finding the silver bullet to gain full access to the vault and steal all the secrets. By reversing LastPass plugins, we found several ways to do so. We will demonstrate how it is possible to steal and decrypt the master password. We also found how it is possible to abuse account recovery to ultimately obtain the encryption key for the vault. In addition, we discovered ways to bypass 2 factor authentication. We wrote a Metasploit module that takes care of all of this. The module is able to search for all LastPass data in the machine comprising all accounts present. It will find and decrypt the master password, it will derive the encryption key for the vault, it will find the 2FA trust token and it will steal the vault so it can be decrypted. All secrets in the vault will be printed out for the pen-tester's satisfaction.",
-      "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "Black Hat Europe 2015",
-      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Even The Lastpass Will Be Stolen, Deal With It!",
-          "url": "https://www.youtube.com/watch?v=MlmEiT5bhxg"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2015,
-      "domains": [
-        "penetration-testing",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "penetration-testing": [],
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Martin Vigo",
       "label": "Compromising online accounts by cracking voicemail systems",
-      "description": "Voicemail systems have been with us since the 80s. They played a big role in the earlier hacking scene and re-reading those e-zines, articles and tutorials paints an interesting picture. Not much has changed. Not in the technology nor in the attack vectors. Can we leverage the last 30 years innovations to further compromise voicemail systems? And what is the real impact today of pwning these? In this talk I will cover voicemail systems, it's security and how we can use oldskool techniques and new ones on top of current technology to compromise them. I will discuss the broader impact of gaining unauthorized access to voicemail systems today and introduce a new tool that automates the process.",
+      "description": "Compromising online accounts by cracking voicemail systems",
       "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "DEF CON 26",
-      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Vigo",
-      "evidence-links": [
-        {
-          "title": "DEF CON 26  - Martin Vigo - Compromising Online Accounts by Cracking Voicemail Systems",
-          "url": "https://www.youtube.com/watch?v=ZpZbTPYB3cU"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2018,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Martin Vigo",
-      "label": "Breaking into Amazon lockers by any means necessary",
-      "description": "Amazon Lockers are everywhere, handling millions of packages every day. At the same time, thousands of packages get stolen from home porches every year, which made me wonder if the same thing could happen with Amazon Lockers. This talk is my journey trying to break into them. I started where it made the most sense, BLE. What looked straightforward quickly turned into a series of unexpected turns, with different angles, different ideas, and a lot of time spent chasing paths that didn’t go where I thought they would. This talk walks through that process, the dead ends, the pivots, and the techniques used along the way showing how attacking a system from different angles can expose weaknesses that aren’t obvious at first. From protocol reverse engineering and hardware hacking to mobile app security, OSINT, and physical attacks, in the end it’s about persistence, understanding how things really work, and not stopping until something gives. By any means necessary.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 34",
-      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66589",
+      "subtitle": "35C3",
+      "url": "https://media.ccc.de/v/35c3-9383-compromising_online_accounts_by_cracking_voicemail_systems",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -142,19 +53,11 @@
         "level": 0,
         "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
-      "year": 2026,
+      "year": 2018,
       "domains": [
-        "open-source-intelligence",
-        "red-teaming",
-        "reverse-engineering",
         "vulnerability-research"
       ],
       "subspecialties": {
-        "open-source-intelligence": [],
-        "red-teaming": [],
-        "reverse-engineering": [
-          "protocol-reverse-engineering"
-        ],
         "vulnerability-research": []
       }
     }

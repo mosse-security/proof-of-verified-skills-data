@@ -1,13 +1,13 @@
 {
   "name": "bughardy",
-  "last-updated": "2026-10-14T06:40:27Z",
+  "last-updated": "2026-10-16T07:42:20Z",
   "biography": "",
   "contact": [],
   "stats": {
     "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 0,
+    "with-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,51 +19,46 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 0,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
     {
       "name": "bughardy",
-      "label": "OTP, It won't save you from free rides!",
-      "description": "RFID technologies are becoming more and more prevalent in our lives. This motivated us to study them, and in particular to study the MIFARE ULTRALIGHT chips, which are widely used in public/mass transport systems. We focused on multiple-ride tickets, and were surprised that MIFARE ULTRALIGHT chips do not seem to use any type of encryption. We were excited at the idea of simply cloning a new, unused ticket onto older ones to \"refill\" them. Our excitement was cut short by a security feature called OTP. OTP, in the context of MIFARE chips, is a sector of the data that can be edited (initialized) only one time. In this way, the ticket can store how many rides you still have, and this value cannot be changed back. After much tinkering, we were able to completely bypass this security feature, by (ab)using a separate security feature, the so-called \"lockbyte sector\". Join us in this session to learn how we found out how to use security features of the chip against each other, and obtain endless free rides with a 5-ride ticket.",
+      "label": "Building a safe NFC ticketing system",
+      "description": "Building a safe NFC ticketing system",
       "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "DEF CON 21",
-      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
-      "evidence-links": [
-        {
-          "title": "DEF CON 21 -  Bughardy and Eagle1753 -  OTP It wont save you from free rides",
-          "url": "https://www.youtube.com/watch?v=dQ5cV2Nnpnk"
-        }
-      ],
-      "evidence": true,
+      "subtitle": "30C3",
+      "url": "https://media.ccc.de/v/30C3_-_5479_-_en_-_saal_6_-_201312291215_-_building_a_safe_nfc_ticketing_system_-_bughardy_-_eagle1753",
+      "evidence-links": [],
+      "evidence": false,
       "povs": {
         "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
           "trusted": false
         },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
       "year": 2013,
       "domains": [
-        "vulnerability-research"
+        "unknown"
       ],
       "subspecialties": {
-        "vulnerability-research": []
+        "unknown": []
       }
     }
   ]

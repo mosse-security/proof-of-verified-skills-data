@@ -1,13 +1,13 @@
 {
   "name": "Eireann Leverett",
-  "last-updated": "2026-10-14T06:40:38Z",
+  "last-updated": "2026-10-16T07:42:21Z",
   "biography": "",
   "contact": [],
   "stats": {
     "endorsements": 2,
     "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -15,32 +15,32 @@
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
-      "open-source-intelligence": 1,
+      "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 0,
       "identity-and-access-management": 0,
       "iot-security": 0,
-      "operational-technology-security": 1,
+      "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
     {
       "name": "Eireann Leverett",
-      "label": "The last gasp of the industrial air-gap...",
-      "description": "Industrial Systems are widely believed to be air-gapped. At previous Black Hat conferences, people have demonstrated individual utilities control systems directly connected to the internet. However, this is not an isolated incident of failure, but rather a disturbing trend. By visualising results from SHODAN over a 2 1/2 year period, we can see that there are thousands of exposed systems around the world. By using some goelocation, and vulnerability pattern matching to service banners we can see their rough physical location and the numbers of standard vulnerabilities they are exposed to.",
+      "label": "Switches Get Stitches",
+      "description": "Switches Get Stitches",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2012",
-      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
+      "subtitle": "31C3",
+      "url": "https://media.ccc.de/v/31c3_-_6196_-_en_-_saal_1_-_201412281130_-_switches_get_stitches_-_eireann_leverett",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -53,56 +53,44 @@
         "level": 0,
         "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
-      "year": 2012,
+      "year": 2014,
       "domains": [
-        "open-source-intelligence",
-        "vulnerability-research"
+        "unknown"
       ],
       "subspecialties": {
-        "open-source-intelligence": [],
-        "vulnerability-research": []
+        "unknown": []
       }
     },
     {
       "name": "Eireann Leverett",
-      "label": "Switches Get Stitches",
-      "description": "This talk will introduce you to Industrial Ethernet Switches and their vulnerabilities. These are switches used in industrial environments, like substations, factories, refineries, ports, or other homes of industrial automation. In other words: DCS, PCS, ICS & SCADA switches. The researchers focus on attacking the management plane of these switches, because we all know that industrial system protocols lack authentication or cryptographic integrity. Thus, compromising any switch allows the creation of malicious firmwares for further MITM manipulation of a live process. Such MITM manipulation can lead to the plant or process shutting down (think: nuclear reactor SCRAM) or getting into a unknown and hazardous state (think: damaging a blast furnace at a steel mill). Not only will vulnerabilities be disclosed for the first time (exclusively at Black Hat), but the methods of finding those vulnerabilities will be shared. All vulnerabilities disclosed will be in the default configuration state of the devices. While these vulnerabilities have been responsibly disclosed to the vendors, SCADA/ICS patching in live environments tends to take 1-3 years. Because of this patching lag, the researchers will also be providing live mitigations that owner/operators can use immediately to protect themselves. At least four vendors switches will be examined: Siemens, GE, Garrettcom, and Opengear.",
+      "label": "Unpatchable",
+      "description": "Unpatchable",
       "type": "presentation",
-      "assessor": "Black Hat",
-      "assessor-id": "black-hat",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "Black Hat Usa 2015",
-      "url": "https://blackhat.com/us-15/briefings.html",
-      "evidence-links": [
-        {
-          "title": "Switches Get Stitches",
-          "url": "https://www.youtube.com/watch?v=urjKkQaspHQ"
-        }
-      ],
-      "evidence": true,
+      "subtitle": "32C3",
+      "url": "https://media.ccc.de/v/32c3-7273-unpatchable",
+      "evidence-links": [],
+      "evidence": false,
       "povs": {
         "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
           "trusted": false
         },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
       "year": 2015,
       "domains": [
-        "vulnerability-research",
-        "operational-technology-security"
+        "unknown"
       ],
       "subspecialties": {
-        "vulnerability-research": [],
-        "operational-technology-security": [
-          "industrial-control-systems",
-          "scada-security"
-        ]
+        "unknown": []
       }
     }
   ]
