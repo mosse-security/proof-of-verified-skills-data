@@ -1,6 +1,6 @@
 {
   "name": "Lukas Maar",
-  "last-updated": "2026-10-16T05:50:36Z",
+  "last-updated": "2026-10-16T06:55:53Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -10,7 +10,7 @@
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 1,
+      "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -19,16 +19,48 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 0,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 1
+      "unknown": 2
     }
   },
   "endorsements": [
+    {
+      "name": "Lukas Maar",
+      "label": "LeakyTree: Cross-VM Bit-by-Bit Deduplicated Page Leakage via Linux Kernel Samepage Merging Internals",
+      "description": "LeakyTree: Cross-VM Bit-by-Bit Deduplicated Page Leakage via Linux Kernel Samepage Merging Internals",
+      "type": "presentation",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
     {
       "name": "Lukas Maar",
       "label": "Eviction Notice: Reviving and Advancing Page Cache Attacks",
@@ -59,42 +91,6 @@
       ],
       "subspecialties": {
         "unknown": []
-      }
-    },
-    {
-      "name": "Lukas Maar",
-      "label": "Fence2Pwn: KFENCE-Enabled Kernel Exploitation Bypassing Slab Hardening and Memory Tagging",
-      "description": "While the Linux kernel remains a prime target due to its privileged execution model, exploitation has become substantially more difficult in recent years. Kernel hardening efforts have increasingly focused on the slab allocator, aiming to mitigate entire vulnerability classes (e.g., via memory tagging) or disrupt exploit techniques (e.g., via heap object segregation). However, it remains unclear whether these protections are consistently enforced across all allocation paths. In this paper, we find that one allocation path is excluded from all state-of-the-art slab defenses: the path used for KFENCE allocations. KFENCE is designed as a low-overhead sampling-based memory-safety error detector for production kernels. It is enabled by default and active in billions of systems including on Android, Red Hat Enterprise Linux, and most Linux distributions. We show that it unintentionally enables a new exploit technique, Fence2Pwn. Concretely, Fence2Pwn leverages several KFENCE-specific behaviors. Three are particularly notable: (i) using a timing side channel, we detect when the kernel falls back to KFENCE allocations; (ii) KFENCE allocations are served by KFENCE-managed caches rather than size- and type-segregated slab caches, enabling bypass of heap segregation; and (iii) KFENCE allocations are untagged, enabling bypass of memory tagging. We evaluate Fence2Pwn by profiling our timing side channel, KFENCE's object slot dynamics as well as different environments and noise floors. Finally, we demonstrate that Fence2Pwn exploits this slab-defense gap: Fence2Pwn uses KFENCE to exploit an existing UAF-based memory-reuse vulnerability, which allows it to overlay security-relevant objects of different types and sizes.",
-      "type": "presentation",
-      "assessor": "USENIX Security Symposium",
-      "assessor-id": "usenix-security",
-      "assessor-category": "conference_academic",
-      "assessor-rigor-level": "very_high",
-      "reviewType": "double_blind",
-      "subtitle": "USENIX Security '26",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/garcia",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2026,
-      "domains": [
-        "cyber-defense",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "cyber-defense": [],
-        "vulnerability-research": [
-          "exploit-mitigation-and-hardening"
-        ]
       }
     }
   ]

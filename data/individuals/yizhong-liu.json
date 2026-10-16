@@ -1,15 +1,15 @@
 {
   "name": "Yizhong Liu",
-  "last-updated": "2026-10-16T06:37:26Z",
+  "last-updated": "2026-10-16T06:56:05Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
+    "endorsements": 4,
     "assessors": 2,
     "with-evidence": 0,
-    "without-evidence": 3,
+    "without-evidence": 4,
     "by-domain": {
-      "cloud-security": 1,
+      "cloud-security": 0,
       "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
@@ -25,22 +25,22 @@
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 2
+      "unknown": 4
     }
   },
   "endorsements": [
     {
       "name": "Yizhong Liu",
-      "label": "GoSSamer: Lightweight and Linear-Communication Asynchronous (Dynamic Proactive) Secret Sharing and the Applications",
-      "description": "GoSSamer: Lightweight and Linear-Communication Asynchronous (Dynamic Proactive) Secret Sharing and the Applications",
+      "label": "Areopagus: Asynchronous Sharding Blockchain Tolerating Corrupted Shards with Optimized Overhead",
+      "description": "Areopagus: Asynchronous Sharding Blockchain Tolerating Corrupted Shards with Optimized Overhead",
       "type": "presentation",
-      "assessor": "IEEE Symposium on Security and Privacy (S&P)",
-      "assessor-id": "ieee-sp",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
       "assessor-category": "conference_academic",
       "assessor-rigor-level": "very_high",
       "reviewType": "double_blind",
-      "subtitle": "IEEE S&P 2026",
-      "url": "https://sp2026.ieee-security.org/accepted-papers.html",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -63,16 +63,16 @@
     },
     {
       "name": "Yizhong Liu",
-      "label": "Logos: Robust Sharding Blockchain With Fast Processing and Optimal Cross-Shard Overhead",
-      "description": "Sharding blockchains improve scalability significantly by partitioning the network into shards. Due to the substantial fraction of cross-shard transactions (CSTXs) related to multiple shards, cross-shard transaction processing (CSTP) is critical to the system security and performance. However, existing CSTP methods suffer from limited robustness caused by invalid CSTXs flooding by malicious nodes and impose high overhead, especially in asynchronous networks. We present Logos, a robust sharding blockchain with fast CSTP and optimal cross-shard overhead. Logos adopts a novel robust broadcast-transmission-agreement pattern. Each input shard only invokes a new designed broadcast primitive to generate input availability states. After the states are delivered to involved shards by an innovative parallel single-tosingle transmission mechanism, valid CSTXs are committed via an agreement protocol while invalid ones are discarded. Logos is proven to achieve an optimal intra-shard overhead for valid CSTP and lower overhead for invalid CSTP. Besides, Logos achieves reliable transmission with optimal cross-shard overhead. Experiments conducted on 1000 AWS-EC2 nodes across 4 regions demonstrate that Logos realizes 50% latency compared to the baseline (Kronos, NDSS'25) and a peak throughput of 132.8 ktx/sec. Besides, the cross-shard network usage of Logos impressively remains only 1/210 of Kronos. Under malicious flooding attacks, Logos maintains 2.86× the throughput of Kronos, demonstrating strong robustness.",
+      "label": "Kairos: Efficient High-Threshold Asynchronous Distributed Key Generation from Lightweight Cryptography",
+      "description": "Kairos: Efficient High-Threshold Asynchronous Distributed Key Generation from Lightweight Cryptography",
       "type": "presentation",
-      "assessor": "USENIX Security Symposium",
-      "assessor-id": "usenix-security",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
       "assessor-category": "conference_academic",
       "assessor-rigor-level": "very_high",
       "reviewType": "double_blind",
-      "subtitle": "USENIX Security '26",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/liu-yizhong",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -87,26 +87,56 @@
       },
       "year": 2026,
       "domains": [
-        "cloud-security"
+        "unknown"
       ],
       "subspecialties": {
-        "cloud-security": [
-          "cloud-workload-and-virtual-machine-security"
-        ]
+        "unknown": []
       }
     },
     {
       "name": "Yizhong Liu",
-      "label": "SPIRIT: Batch Hintless Single-Server PIR via Stateful Ciphertext Conversion",
-      "description": "This work proposes a single-server private information retrieval (PIR) protocol for the efficient evaluation of batched queries without offline hints. It has recently been shown that hintless PIR can be established through the cross-scheme ciphertext conversion technique. However, we point out that such a conversion introduces a considerable amount of computational and communication overheads in the batch PIR setting. To tackle the performance challenge, we propose SPIRIT, a batch, hintless, and single-server PIR protocol that leverages stateful ciphertext conversion to simultaneously achieve high-throughput query execution and low communication cost. To enhance computational efficiency, we develop a novel stateful key expansion procedure that amortizes the conversion cost across multiple queries, significantly accelerating the query evaluation speed. To reduce the communication overhead, we derive a new response compression strategy based on a shared intermediate representation, such that a batch of PIR responses can be packed into a single ciphertext efficiently. In experiments, we show that SPIRIT can achieve up to by 3.1×−5.1× speedup in query execution and reduce the communication bandwidth by 2.3×−3.6× compared to state-of-the-art batch PIR protocols.",
+      "label": "Poros: Secure and Highly Parallel Sharding Blockchain with Optimized Cross-Shard Transaction Processing",
+      "description": "Poros: Secure and Highly Parallel Sharding Blockchain with Optimized Cross-Shard Transaction Processing",
       "type": "presentation",
-      "assessor": "USENIX Security Symposium",
-      "assessor-id": "usenix-security",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
       "assessor-category": "conference_academic",
       "assessor-rigor-level": "very_high",
       "reviewType": "double_blind",
-      "subtitle": "USENIX Security '26",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-zhou",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Yizhong Liu",
+      "label": "GoSSamer: Lightweight and Linear-Communication Asynchronous (Dynamic Proactive) Secret Sharing and the Applications",
+      "description": "GoSSamer: Lightweight and Linear-Communication Asynchronous (Dynamic Proactive) Secret Sharing and the Applications",
+      "type": "presentation",
+      "assessor": "IEEE Symposium on Security and Privacy (S&P)",
+      "assessor-id": "ieee-sp",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "IEEE S&P 2026",
+      "url": "https://sp2026.ieee-security.org/accepted-papers.html",
       "evidence-links": [],
       "evidence": false,
       "povs": {

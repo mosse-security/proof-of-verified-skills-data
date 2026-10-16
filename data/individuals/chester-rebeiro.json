@@ -1,6 +1,6 @@
 {
   "name": "Chester Rebeiro",
-  "last-updated": "2026-10-16T05:18:12Z",
+  "last-updated": "2026-10-16T06:55:42Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -10,7 +10,7 @@
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 1,
+      "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -31,16 +31,16 @@
   "endorsements": [
     {
       "name": "Chester Rebeiro",
-      "label": "Anchors that Don't Lift: Understanding Supply Chain Driven Kernel Lock-In and Governance-Mediated Mitigation Strategies in SOHO Devices",
-      "description": "Small Office/Home Office (SOHO) devices are widely popular, yet often attacked due to security vulnerabilities in their firmware, affecting tens of thousands of devices at a time. These security vulnerabilities often stem from outdated Linux kernel versions included in SOHO device firmware. Naturally, prior work audited the extent and impact of this issue by simple Linux version extraction and version number based vulnerability mapping. However, it is unclear how many of these anticipated vulnerabilities actually exist in the heavily customized SOHO kernels and if there are any barriers towards updating Linux kernels in SOHO firmwares. To address this gap, we uncover actual kernel-related vulnerabilities found in 306 SOHO devices using a high-precision template-based CVE detection mechanism on GPL source releases of more than 900 firmwares from these devices (multiple versions per device). Next, as a first, we traced the supply chain of these vulnerable SOHO devices at scale and identify kernel lock-in as a significant security issue---SOHO vendors are effectively locked to specific (often older) kernel versions due to the system-on-chip (SoC) SDKs they use. This kernel lock-in produces a vulnerability debt that is inherited along the supply chain from SoC vendor to firmware creators (ODM/OEM) to router/IP-camera vendor and ultimately borne by end users. All five SoC vendors in our dataset have used SDKs with Linux kernels that had reached End of Life (EoL) more than a year before their usage in a SOHO device. Finally, we explore the mitigation-potential of individual, regulatory and community governance by analyzing social media posts, regulations and community efforts. Our results show that regulation compliance is insufficient and only SoC vendors who engage with communities for kernel upgradation offered a viable path towards mitigation. We conclude by discussing broader implications of our work for improving holistic security of the supply chain for SOHO devices.",
+      "label": "KingsGuard: Enclave Data Protection Under Real-World TEE Vulnerabilities",
+      "description": "KingsGuard: Enclave Data Protection Under Real-World TEE Vulnerabilities",
       "type": "presentation",
-      "assessor": "USENIX Security Symposium",
-      "assessor-id": "usenix-security",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
       "assessor-category": "conference_academic",
       "assessor-rigor-level": "very_high",
       "reviewType": "double_blind",
-      "subtitle": "USENIX Security '26",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/badola",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -55,13 +55,9 @@
       },
       "year": 2026,
       "domains": [
-        "cyber-defense",
         "vulnerability-research"
       ],
       "subspecialties": {
-        "cyber-defense": [
-          "security-operations-and-soc-practice"
-        ],
         "vulnerability-research": []
       }
     }

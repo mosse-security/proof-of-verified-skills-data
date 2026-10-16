@@ -1,6 +1,6 @@
 {
   "name": "Mijung Kim",
-  "last-updated": "2026-10-16T05:18:20Z",
+  "last-updated": "2026-10-16T06:55:55Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -13,7 +13,7 @@
       "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
-      "grc": 1,
+      "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
@@ -31,16 +31,16 @@
   "endorsements": [
     {
       "name": "Mijung Kim",
-      "label": "BUIzz: Finding Policy Enforcement Bugs via Interaction Simulation on the Browser User Interface",
-      "description": "Modern web ecosystems rely on security policy headers, such as Content Security Policy (CSP) and the SameSite cookie attribute, for client-side defenses. Because browsers enforce these headers, browser bugs in policy enforcement directly undermine these defenses. While recent studies have attempted to find such bugs, they largely overlook bugs triggered by user interactions on the browser user interface (BUI). In this paper, we propose BUIZZ, the first testing framework that identifies policy enforcement bugs triggered by BUI-level user interactions. BUIZZ first collects a comprehensive set of interactions by referencing browser manuals, right-click context menus, and known browser bugs. It then executes each interaction and their combinations on the test pages via OS-level simulation. Instead of cross-browser differential testing, BUIZZ leverages a pre/post-interaction oracle that checks for enforcement inconsistencies before and after applying interactions, enabling bug detection within a single browser. We demonstrate the efficacy of BUIZZ by finding 35 security bugs and three functional bugs across six browsers, including Chrome and Firefox. Our reports have led to fixes for 14 security bugs, resulting in seven CVEs and $14,700 in bug bounties.",
+      "label": "RustGo: Fairly Directed Greybox Fuzzing for Enforcing Rust Memory Safety",
+      "description": "RustGo: Fairly Directed Greybox Fuzzing for Enforcing Rust Memory Safety",
       "type": "presentation",
-      "assessor": "USENIX Security Symposium",
-      "assessor-id": "usenix-security",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
       "assessor-category": "conference_academic",
       "assessor-rigor-level": "very_high",
       "reviewType": "double_blind",
-      "subtitle": "USENIX Security '26",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/jung",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -55,14 +55,12 @@
       },
       "year": 2026,
       "domains": [
-        "grc",
         "vulnerability-research"
       ],
       "subspecialties": {
-        "grc": [
-          "security-policy-and-standards"
-        ],
-        "vulnerability-research": []
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
       }
     }
   ]

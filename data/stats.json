@@ -1,9 +1,19 @@
 {
-  "last-run": "2026-10-16T06:36:44.986480Z",
-  "started-at": "2026-10-16T06:30:10.829129Z",
-  "duration-seconds": 394.157,
+  "last-run": "2026-10-16T06:55:51.740461Z",
+  "started-at": "2026-10-16T06:50:14.642195Z",
+  "duration-seconds": 337.098,
   "status": "ok",
   "scrapers": [
+    {
+      "scraper-id": "acm-ccs-accepted-papers",
+      "assessor-id": "acm-ccs",
+      "pages": 1,
+      "endorsements": 2532,
+      "created": 1,
+      "skipped": 0,
+      "overwritten": 0,
+      "error": null
+    },
     {
       "scraper-id": "black-hat-briefings",
       "assessor-id": "black-hat",
@@ -136,29 +146,29 @@
     }
   ],
   "totals": {
-    "pages": 106,
-    "endorsements": 11619,
-    "created": 106,
+    "pages": 107,
+    "endorsements": 14151,
+    "created": 107,
     "skipped": 432,
     "overwritten": 0,
     "by-domain": {
       "cloud-security": 234,
-      "cyber-defense": 2168,
-      "devsecops": 111,
-      "digital-forensics": 257,
-      "grc": 427,
+      "cyber-defense": 2432,
+      "devsecops": 127,
+      "digital-forensics": 264,
+      "grc": 448,
       "incident-response": 101,
-      "open-source-intelligence": 102,
-      "penetration-testing": 437,
-      "red-teaming": 548,
-      "reverse-engineering": 628,
-      "vulnerability-research": 5663,
-      "identity-and-access-management": 147,
-      "iot-security": 454,
+      "open-source-intelligence": 106,
+      "penetration-testing": 441,
+      "red-teaming": 556,
+      "reverse-engineering": 644,
+      "vulnerability-research": 6182,
+      "identity-and-access-management": 164,
+      "iot-security": 490,
       "operational-technology-security": 229,
       "threat-hunting": 22,
       "cybercrime-and-fraud": 108,
-      "unknown": 4009
+      "unknown": 5723
     },
     "by-subspecialty": {
       "cloud-security": {
@@ -172,10 +182,10 @@
         "cloud-detection-and-incident-response": 1
       },
       "cyber-defense": {
-        "deception-and-honeypots": 73,
-        "telecommunications-and-radio-security": 26,
+        "ai-for-security-operations": 1043,
+        "telecommunications-and-radio-security": 30,
+        "deception-and-honeypots": 74,
         "network-defense-and-monitoring": 33,
-        "ai-for-security-operations": 878,
         "security-operations-and-soc-practice": 108,
         "security-monitoring-and-alert-triage": 40,
         "threat-intelligence-operations": 85,
@@ -186,11 +196,11 @@
         "network-protocol-security": 10
       },
       "devsecops": {
+        "software-supply-chain-security": 18,
+        "security-testing-integration": 11,
         "secure-coding-and-application-security": 8,
         "ci-cd-and-pipeline-security": 17,
-        "software-supply-chain-security": 12,
         "secure-software-development-lifecycle": 3,
-        "security-testing-integration": 5,
         "application-security-automation": 1,
         "dependency-and-package-security": 1,
         "secure-containers-and-build-systems": 3,
@@ -204,9 +214,9 @@
         "forensic-tooling-and-laboratory-practice": 8
       },
       "grc": {
+        "privacy-and-data-protection": 227,
+        "compliance-and-audit": 46,
         "surveillance-and-tracking": 245,
-        "privacy-and-data-protection": 213,
-        "compliance-and-audit": 43,
         "cyber-law-and-regulation": 21,
         "security-policy-and-standards": 36,
         "security-awareness-and-human-risk": 1,
@@ -221,8 +231,8 @@
         "response-playbooks-and-tabletop-exercises": 1
       },
       "open-source-intelligence": {
+        "geospatial-and-imagery-intelligence": 26,
         "attribution-and-identity-research": 6,
-        "geospatial-and-imagery-intelligence": 22,
         "dark-web-intelligence": 2,
         "social-media-intelligence": 1
       },
@@ -234,19 +244,19 @@
         "api-penetration-testing": 2
       },
       "red-teaming": {
+        "phishing-and-spear-phishing": 52,
         "command-and-control-operations": 51,
         "adversary-simulation": 6,
         "social-engineering": 80,
-        "phishing-and-spear-phishing": 44,
         "purple-teaming": 10,
         "breach-and-attack-simulation": 2,
         "operational-security-and-tradecraft": 2,
         "physical-red-teaming": 1
       },
       "reverse-engineering": {
-        "decompilation-and-disassembly": 116,
+        "unpacking-and-obfuscation-analysis": 49,
+        "decompilation-and-disassembly": 119,
         "malware-analysis": 53,
-        "unpacking-and-obfuscation-analysis": 37,
         "hardware-reverse-engineering": 9,
         "binary-and-application-reverse-engineering": 38,
         "firmware-reverse-engineering": 11,
@@ -254,19 +264,19 @@
         "operating-system-internals": 1
       },
       "vulnerability-research": {
+        "fuzzing-and-automated-testing": 524,
+        "ai-agent-security": 156,
+        "cve-analysis-and-vulnerability-disclosure": 173,
+        "cryptographic-attacks": 285,
+        "zero-day-and-0-day-research": 289,
+        "automotive-security": 71,
         "exploit-mitigation-and-hardening": 177,
-        "zero-day-and-0-day-research": 281,
         "vulnerability-discovery": 118,
-        "cryptographic-attacks": 235,
-        "fuzzing-and-automated-testing": 439,
         "mobile-platform-security": 69,
         "mobile-vulnerabilities": 15,
-        "automotive-security": 60,
         "automotive-penetration-testing": 7,
         "kernel-and-operating-system-vulnerabilities": 7,
-        "cve-analysis-and-vulnerability-disclosure": 158,
         "exploit-development": 36,
-        "ai-agent-security": 139,
         "bug-bounty-research": 59,
         "hardware-and-firmware-vulnerabilities": 13,
         "adversarial-machine-learning": 31,
@@ -277,18 +287,18 @@
         "model-privacy-and-data-leakage": 16
       },
       "identity-and-access-management": {
-        "authentication": 65,
+        "authentication": 72,
+        "oauth-oidc-and-saml": 44,
+        "single-sign-on-and-federation": 44,
         "authorization-and-access-control": 30,
-        "single-sign-on-and-federation": 34,
-        "oauth-oidc-and-saml": 37,
         "directory-services": 59,
         "privileged-access-management": 2,
         "credential-security": 7,
         "identity-lifecycle": 1
       },
       "iot-security": {
+        "automotive-security": 346,
         "medical-device-security": 12,
-        "automotive-security": 329,
         "iot-protocols": 31,
         "can-bus-and-vehicle-networks": 30,
         "consumer-iot-security": 68,
@@ -323,11 +333,11 @@
       },
       "unknown": {}
     },
-    "individuals": 8284
+    "individuals": 9821
   },
   "evidence": {
     "with-links": 4934,
-    "without-links": 6685
+    "without-links": 9217
   },
   "validations": [
     {

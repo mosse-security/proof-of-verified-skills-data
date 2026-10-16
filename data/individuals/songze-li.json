@@ -1,16 +1,16 @@
 {
   "name": "Songze Li",
-  "last-updated": "2026-10-16T05:50:42Z",
+  "last-updated": "2026-10-16T06:56:00Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
+    "endorsements": 1,
+    "assessors": 1,
     "with-evidence": 0,
-    "without-evidence": 2,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 2,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -41,42 +41,6 @@
       "reviewType": "double_blind",
       "subtitle": "NDSS 2026",
       "url": "https://www.ndss-symposium.org/ndss-paper/odysseus-jailbreaking-commercial-multimodal-llm-integrated-systems-via-dual-steganography/",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2026,
-      "domains": [
-        "cyber-defense",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "cyber-defense": [
-          "ai-for-security-operations"
-        ],
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Songze Li",
-      "label": "When the Aggregator Cheats: Data-Free Backdoors in Federated LLM-based QA Systems",
-      "description": "Large Language Model (LLM)-based question-answering (QA) systems are increasingly deployed in sensitive domains such as healthcare, mental health counseling, and legal consultation. Federated learning (FL) enables collaborative training without sharing raw client data, for which locally trained models are aggregated at a central server (i.e., a cloud service provider) to obtain a global model. In this paper, we explore the potential vulnerability where a malicious aggregator, who may collude with a third-party vendor, stealthily implants advertisement-type backdoors into federated QA models, without ever accessing client data. The attacker's goals are twofold: (1) preserve clean QA fidelity (i.e., the poisoned model behaves like a clean model on non-triggered queries); and (2) generate highly natural, contextually relevant responses with target advertisements when a trigger appears. Achieving these two goals simultaneously is highly challenging, as naive backdoor injection without knowledge about private data may degrade model's clean performance or fail to inject the target. Motivated by this, we propose to leverage clients' uploaded gradients during training, and develop a two-stage framework for data-free and stealthy poisoning: (1) recover representative training samples from client gradients, and (2) construct poisoning datasets utilizing recovered samples and trigger phrases to inject backdoors into the global model. Experiments across representative QA datasets and LLM families under full fine-tuning and LoRA settings demonstrate that, our method achieves nearly 100% Attack Success Rate (ASR) while incurring negligible degradation on clean tasks. Crucially, reconstructing only 5–20% of gradients suffices to mount a reliable attack, exposing a practical blind spot in the pipeline of federated training of QA LLMs.",
-      "type": "presentation",
-      "assessor": "USENIX Security Symposium",
-      "assessor-id": "usenix-security",
-      "assessor-category": "conference_academic",
-      "assessor-rigor-level": "very_high",
-      "reviewType": "double_blind",
-      "subtitle": "USENIX Security '26",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/zhu-chenqing",
       "evidence-links": [],
       "evidence": false,
       "povs": {

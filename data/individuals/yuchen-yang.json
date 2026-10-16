@@ -1,6 +1,6 @@
 {
   "name": "Yuchen Yang",
-  "last-updated": "2026-10-16T06:37:26Z",
+  "last-updated": "2026-10-16T06:56:06Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -10,7 +10,7 @@
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 0,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,40 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Yuchen Yang",
+      "label": "SkillCODER: Towards Auditing and Attribution of Copyright Infringement in LLM Agent Skills",
+      "description": "SkillCODER: Towards Auditing and Attribution of Copyright Infringement in LLM Agent Skills",
+      "type": "presentation",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ]
+      }
+    },
     {
       "name": "Yuchen Yang",
       "label": "PromptCOS: Towards Content-only System Prompt Copyright Auditing for LLMs",
@@ -59,38 +93,6 @@
       ],
       "subspecialties": {
         "unknown": []
-      }
-    },
-    {
-      "name": "Yuchen Yang",
-      "label": "HijackKV: New Threat in Position-Independent KV Cache Reuse",
-      "description": "Key-Value (KV) cache reduces inference latency in large language models (LLMs). Traditional prefix-based reuse has low cache hit rates across inference requests because it requires exact token and position matches. To improve efficiency, recent system optimizations introduce position-independent KV reuse, allowing KV cache to be reused whenever identical text chunks appear, regardless of their position in the sequence. We show this design introduces a new threat, KV Cache Hijacking. Since KV caches are retrieved by token match but encode the context in which they were originally computed, the KV tied to a benign-looking token chunk may encode an attacker-controlled prefix. When later reused in a victim query, this contaminated KV silently hijacks the model's behavior, even if no attacker-controlled text appears in the input. We introduce HIJACKKV, the first attack framework that systematically exploits this vulnerability, demonstrating its severity and practicality. HIJACKKV optimizes an attacker-controlled prefix, so that the KV computed for a subsequent common benign text encodes the attacker's goal, while the text remains unchanged for future cache hits. HIJACKKV achieves an average 94% success rate in a single attempt, remains effective under realistic constraints including low hit rates (10%) and frequent recomputation (50%), persists over multi-turn interactions, and transfers across models in black-box settings. We further provide design insights for building secure KV reuse systems.",
-      "type": "presentation",
-      "assessor": "USENIX Security Symposium",
-      "assessor-id": "usenix-security",
-      "assessor-category": "conference_academic",
-      "assessor-rigor-level": "very_high",
-      "reviewType": "double_blind",
-      "subtitle": "USENIX Security '26",
-      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-yichi",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2026,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": []
       }
     }
   ]
