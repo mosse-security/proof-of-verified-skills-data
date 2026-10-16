@@ -1,7 +1,7 @@
 {
-  "last-run": "2026-10-16T05:49:59.490946Z",
-  "started-at": "2026-10-16T05:46:33.402403Z",
-  "duration-seconds": 206.089,
+  "last-run": "2026-10-16T06:36:44.986480Z",
+  "started-at": "2026-10-16T06:30:10.829129Z",
+  "duration-seconds": 394.157,
   "status": "ok",
   "scrapers": [
     {
@@ -75,6 +75,16 @@
       "error": null
     },
     {
+      "scraper-id": "ieee-sp-accepted-papers",
+      "assessor-id": "ieee-sp",
+      "pages": 1,
+      "endorsements": 1294,
+      "created": 1,
+      "skipped": 5,
+      "overwritten": 0,
+      "error": null
+    },
+    {
       "scraper-id": "insomnihack-talks",
       "assessor-id": "insomnihack",
       "pages": 13,
@@ -126,29 +136,29 @@
     }
   ],
   "totals": {
-    "pages": 105,
-    "endorsements": 10325,
-    "created": 105,
-    "skipped": 427,
+    "pages": 106,
+    "endorsements": 11619,
+    "created": 106,
+    "skipped": 432,
     "overwritten": 0,
     "by-domain": {
-      "cloud-security": 228,
-      "cyber-defense": 2023,
-      "devsecops": 103,
-      "digital-forensics": 251,
-      "grc": 410,
+      "cloud-security": 234,
+      "cyber-defense": 2168,
+      "devsecops": 111,
+      "digital-forensics": 257,
+      "grc": 427,
       "incident-response": 101,
       "open-source-intelligence": 102,
       "penetration-testing": 437,
-      "red-teaming": 532,
-      "reverse-engineering": 610,
-      "vulnerability-research": 5357,
-      "identity-and-access-management": 143,
-      "iot-security": 440,
-      "operational-technology-security": 223,
+      "red-teaming": 548,
+      "reverse-engineering": 628,
+      "vulnerability-research": 5663,
+      "identity-and-access-management": 147,
+      "iot-security": 454,
+      "operational-technology-security": 229,
       "threat-hunting": 22,
       "cybercrime-and-fraud": 108,
-      "unknown": 3176
+      "unknown": 4009
     },
     "by-subspecialty": {
       "cloud-security": {
@@ -156,7 +166,7 @@
         "serverless-security": 20,
         "container-and-kubernetes-security": 24,
         "cloud-architecture-and-security-design": 1,
-        "cloud-identity-and-access": 20,
+        "cloud-identity-and-access": 26,
         "cloud-network-security": 8,
         "cloud-secrets-and-key-management": 1,
         "cloud-detection-and-incident-response": 1
@@ -165,8 +175,8 @@
         "deception-and-honeypots": 73,
         "telecommunications-and-radio-security": 26,
         "network-defense-and-monitoring": 33,
-        "ai-for-security-operations": 786,
-        "security-operations-and-soc-practice": 101,
+        "ai-for-security-operations": 878,
+        "security-operations-and-soc-practice": 108,
         "security-monitoring-and-alert-triage": 40,
         "threat-intelligence-operations": 85,
         "endpoint-and-host-defense": 57,
@@ -190,13 +200,13 @@
         "timeline-and-artifact-analysis": 16,
         "network-forensics": 3,
         "disk-and-filesystem-forensics": 4,
-        "memory-forensics": 15,
+        "memory-forensics": 21,
         "forensic-tooling-and-laboratory-practice": 8
       },
       "grc": {
         "surveillance-and-tracking": 245,
-        "privacy-and-data-protection": 196,
-        "compliance-and-audit": 34,
+        "privacy-and-data-protection": 213,
+        "compliance-and-audit": 43,
         "cyber-law-and-regulation": 21,
         "security-policy-and-standards": 36,
         "security-awareness-and-human-risk": 1,
@@ -234,7 +244,7 @@
         "physical-red-teaming": 1
       },
       "reverse-engineering": {
-        "decompilation-and-disassembly": 104,
+        "decompilation-and-disassembly": 116,
         "malware-analysis": 53,
         "unpacking-and-obfuscation-analysis": 37,
         "hardware-reverse-engineering": 9,
@@ -244,25 +254,25 @@
         "operating-system-internals": 1
       },
       "vulnerability-research": {
-        "exploit-mitigation-and-hardening": 173,
+        "exploit-mitigation-and-hardening": 177,
         "zero-day-and-0-day-research": 281,
-        "vulnerability-discovery": 112,
-        "cryptographic-attacks": 210,
-        "fuzzing-and-automated-testing": 368,
+        "vulnerability-discovery": 118,
+        "cryptographic-attacks": 235,
+        "fuzzing-and-automated-testing": 439,
         "mobile-platform-security": 69,
         "mobile-vulnerabilities": 15,
-        "automotive-security": 52,
+        "automotive-security": 60,
         "automotive-penetration-testing": 7,
         "kernel-and-operating-system-vulnerabilities": 7,
         "cve-analysis-and-vulnerability-disclosure": 158,
         "exploit-development": 36,
-        "ai-agent-security": 119,
+        "ai-agent-security": 139,
         "bug-bounty-research": 59,
         "hardware-and-firmware-vulnerabilities": 13,
         "adversarial-machine-learning": 31,
         "model-integrity-and-data-poisoning": 7,
         "protocol-and-network-vulnerabilities": 3,
-        "application-and-api-vulnerabilities": 2,
+        "application-and-api-vulnerabilities": 4,
         "browser-and-web-platform-vulnerabilities": 2,
         "model-privacy-and-data-leakage": 16
       },
@@ -270,7 +280,7 @@
         "authentication": 65,
         "authorization-and-access-control": 30,
         "single-sign-on-and-federation": 34,
-        "oauth-oidc-and-saml": 33,
+        "oauth-oidc-and-saml": 37,
         "directory-services": 59,
         "privileged-access-management": 2,
         "credential-security": 7,
@@ -284,7 +294,7 @@
         "consumer-iot-security": 68,
         "connected-vehicle-and-telematics-security": 11,
         "embedded-devices": 26,
-        "smart-home-security": 37,
+        "smart-home-security": 44,
         "electric-vehicle-and-charging-security": 4,
         "device-onboarding-and-identity": 1
       },
@@ -292,7 +302,7 @@
         "scada-security": 61,
         "automotive-security": 149,
         "ecu-and-automotive-embedded-systems": 149,
-        "industrial-control-systems": 79,
+        "industrial-control-systems": 85,
         "plc-security": 40,
         "industrial-protocols": 10,
         "critical-infrastructure-resilience": 105,
@@ -313,11 +323,11 @@
       },
       "unknown": {}
     },
-    "individuals": 7427
+    "individuals": 8284
   },
   "evidence": {
     "with-links": 4934,
-    "without-links": 5391
+    "without-links": 6685
   },
   "validations": [
     {
