@@ -1,0 +1,65 @@
+{
+  "name": "Alessandro Corsi and Paul Rösler",
+  "last-updated": "2026-10-16T05:18:10Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Alessandro Corsi and Paul Rösler",
+      "label": "Anamorphic Messaging: Analyzing the Double Ratchet, Triple Ratchet, PQ3, and MLS",
+      "description": "Anamorphic cryptography targets the scenario in which a dictator does not forbid the use of cryptography but requires all users to reveal their secret keys to them. Thus, the dictator can decrypt all honestly generated ciphertexts. The approach for bypassing this is to identify spots, such as random nonces, in existing cryptographic protocols in which secret messages can be hidden using an additional secret double key. So far, the literature mostly focused on identifying such spots in simple primitives like public-key encryption or signatures; only recently, an initial work identified limited spots in Signal's Double Ratchet Algorithm. We are the first to leverage the statefulness of cryptographic communication protocols to employ continuously updated double states and, thereby, achieve Forward Security: Even if the adversary (i) observes all traffic, (ii) knows all users' regular secret key material at any stage of the protocol execution, and (iii) at some point learns the secret double state, the entire protocol execution looks benign although covert messages were previously hidden in the traffic anamorphically. We formalize this notion and also cover robustness and authenticity, which appear to be particularly relevant in the messaging context. In this new model, we study four of the most relevant messaging protocols and identify hiding spots therein: Signal's Double Ratchet, Signal's Triple Ratchet, Apple's PQ3, and the two-party core of the Messaging Layer Security Standard. We focus on the cryptographic parts of these protocols and, despite their complexity, identify surprisingly few anamorphic hiding spots. We prove that all these protocols offer forward secure, authenticated anamorphic channels and we evaluate their bandwidths: While 16 bits can be embedded in every epoch of the Double Ratchet, Triple Ratchet and PQ3 provide 176 bits, respectively 256 bits, of bandwidth per post-quantum epoch, and MLS provides 688 bits per epoch.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/chu",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

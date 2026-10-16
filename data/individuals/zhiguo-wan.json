@@ -1,0 +1,65 @@
+{
+  "name": "Zhiguo Wan",
+  "last-updated": "2026-10-16T05:18:26Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Zhiguo Wan",
+      "label": "Distributed Vector Commitments and Their Applications",
+      "description": "Vector commitment (VC) schemes enable a prover to commit to a vector and later open any position with a short proof. However, existing VC schemes are designed for centralized settings, and cannot work in decentralized systems, where the input vector is distributed across multiple machines. Similarly, traditional VC schemes cannot leverage distributed parallel computation across multiple machines for acceleration. To tackle this issue, we introduce a new notion—distributed VC (DVC), which allows multiple machines, each holding only a subvector of the input vector, to collectively commit to the entire vector and generate position proofs in a distributed manner. To the best of our knowledge, there is no prior work on DVCs and no existing work can trivially derive an efficient DVC scheme. The key challenge is that both commitments and proofs depend on the entire vector, while no single machine holds the complete vector in distributed settings. We propose the first DVC scheme, HLE-DVC, which leverages M machines to process the distributed vector v of length N inparallel, with each machine holding a subvector of length N/M . HLE-DVC achieves compact proof size-O(logM) and allows each machine to generate all its position proofs in a single communication round,with communication cost O(logM) and computation cost O(NlogN/M). Moreover, HLE-DVC supports batch proving, proof aggregation, and efficient updates. W econduct the experiments and open-source the code. Using 256 machines to generate all proofs for a committed vector of length 230 takes 17,515 seconds. This achieves a 256× parallel speedup over HLE-DVC on a single machine, and is 142× faster than Hyperproofs (a famous single machine VC scheme). The communication cost per machine is 0.768 KB.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/gao-rui",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

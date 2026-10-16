@@ -1,0 +1,65 @@
+{
+  "name": "and Xibin Zhao",
+  "last-updated": "2026-10-16T05:18:11Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "and Xibin Zhao",
+      "label": "Kintsugi: Empowering LLMs to Mitigate Web Vulnerabilities via Runtime Policy Injection",
+      "description": "The \"response gap\" between vulnerability detection and patching leaves web applications exposed to high-impact exploits such as remote code execution, command injection, and server-side request forgery. Current mitigations are flawed: code fixes often break functionality, while global runtime policies produce excessive false positives. We propose Kintsugi, an automated runtime containment system that provides temporary protection for exploits that manifest as diverging syscall behaviors at the OS level. Kintsugi uses a three-stage pipeline: First, by performing differential syscall analysis on normal and malicious requests, it locates a few vulnerability-related functions. Subsequently, leveraging LLMs, it precisely delineates the boundaries of the specific code snippets causing the malicious behavior within these functions and establishes policy trigger points. Finally, by analyzing the execution profiles from normal requests, it derives a deterministic, least-privilege syscall whitelist to serve as the runtime policy. This policy is enforced at the kernel level via eBPF and cgroups and is dynamically activated only when the request's execution flow enters the protected code snippet. Evaluation on 27 real-world CVEs across PHP, Python, and Java shows that Kintsugi effectively neutralizes diverse exploits and their variants while preserving original application functionality. Kintsugi achieves an average response time of 7.6 minutes. While the enforcement of surgical policies introduces a modest average latency overhead of 9.2% on targeted APIs, the impact on concurrent non-vulnerable traffic remains minimal, with an average throughput (RPS) drop of only 2.21%.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/peng-yihao",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

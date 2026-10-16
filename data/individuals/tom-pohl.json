@@ -1,6 +1,6 @@
 {
   "name": "Tom Pohl",
-  "last-updated": "2026-10-14T06:41:33Z",
+  "last-updated": "2026-10-16T05:18:24Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -32,7 +32,7 @@
     {
       "name": "Tom Pohl",
       "label": "Private Keys in Public Places",
-      "description": "Firmware and software binaries are littered with private keys, legitimate CA-blessed certificates, and encryption keysâ€”but hardly anyone notices. These secrets are often obfuscated or otherwise hidden in ways that werenâ€™t intended to be found. Iâ€™ll show three real-world examples from popular manufacturers (Netgear, Fortinet and Dell), and demonstrate techniques for uncovering them. In the most extreme example, an adversary can use an obfuscated key to gain access to any customerâ€™s vCenter environment. Iâ€™ll start with a straightforward look at Netgear firmware and show methods for discovering private keys in PEM-encoded text files. Weâ€™ll dig into the Fortinet firmware, which contained custom obfuscated archive files, and show how to extract Apple and Google issued certificates and I will also show that 3 year awaited â€œfixâ€ did not adequately solve the issue. Finally, Iâ€™ll dig into the worst case: a static AES encryption key within Dell software used to connect to vCenter. I'll demonstrate how retrieve, decompile and use a static AES key which will decrypt vCenter credentials. The key is the same for EVERY customer. This has not been talked about anywhere publicly. Iâ€™ll conclude by discussing the importance of developer training, proper key management, and (above all), identifying and eliminating this systemic practice.",
+      "description": "Firmware and software binaries are littered with private keys, legitimate CA-blessed certificates, and encryption keys—but hardly anyone notices. These secrets are often obfuscated or otherwise hidden in ways that weren’t intended to be found. I’ll show three real-world examples from popular manufacturers (Netgear, Fortinet and Dell), and demonstrate techniques for uncovering them. In the most extreme example, an adversary can use an obfuscated key to gain access to any customer’s vCenter environment. I’ll start with a straightforward look at Netgear firmware and show methods for discovering private keys in PEM-encoded text files. We’ll dig into the Fortinet firmware, which contained custom obfuscated archive files, and show how to extract Apple and Google issued certificates and I will also show that 3 year awaited “fix” did not adequately solve the issue. Finally, I’ll dig into the worst case: a static AES encryption key within Dell software used to connect to vCenter. I'll demonstrate how retrieve, decompile and use a static AES key which will decrypt vCenter credentials. The key is the same for EVERY customer. This has not been talked about anywhere publicly. I’ll conclude by discussing the importance of developer training, proper key management, and (above all), identifying and eliminating this systemic practice.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

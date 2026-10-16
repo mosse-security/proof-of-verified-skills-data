@@ -1,6 +1,6 @@
 {
   "name": "Zhiniang Peng",
-  "last-updated": "2026-10-14T06:41:40Z",
+  "last-updated": "2026-10-16T05:18:26Z",
   "biography": "",
   "contact": [
     {
@@ -9,10 +9,10 @@
     }
   ],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
+    "endorsements": 4,
+    "assessors": 3,
     "with-evidence": 3,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -23,8 +23,8 @@
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
-      "reverse-engineering": 0,
-      "vulnerability-research": 3,
+      "reverse-engineering": 1,
+      "vulnerability-research": 4,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -148,6 +148,45 @@
       "subspecialties": {
         "vulnerability-research": [
           "vulnerability-discovery"
+        ]
+      }
+    },
+    {
+      "name": "Zhiniang Peng",
+      "label": "Death by a Thousand Drips: Uncovering Critical Resource Leaks in the Windows Ecosystem",
+      "description": "Windows remote services are a critical attack surface due to their privileged execution and widespread deployment. Under the shared service-host model (svchost.exe), a single resource-exhaustion bug can trigger fate-sharing failures across co-resident services. Yet most vulnerability discovery remains crash-centric and is thus blind to silent, long-horizon resource leaks (e.g., memory/handle exhaustion) that do not cause immediate exceptions, while the closed-source Windows ecosystem limits the applicability of source-level sanitizers. We present REDOSPECTOR, a fuzzing framework for discovering resource-oriented Denial-of-Service (DoS) vulnerabilities in opaque Windows binaries. REDOSPECTOR combines (1) lightweight in-process hook-based telemetry by intercepting native ntdll heap routines, (2) an amplification-based oracle that identifies persistent leaks via repeated execution and growth-trend analysis, and (3) a hybrid seed-generation pipeline that leverages static binary analysis and Large Language Models (LLMs) to reach deep protocol states. Evaluated on the latest builds of Windows 11 (24H2) and Windows Server Preview, REDOSPECTOR uncovers 19 vulnerabilities in core services (including MSMQ, Remote Desktop Gateway, and CDP), leading to 12 assigned CVEs. Microsoft confirmed seven pre-authentication DoS issues in CDP and performed architectural adjustments, demonstrating that REDOSPECTOR can expose resource-mismanagement flaws that evade conventional fuzzing.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/dong-feng",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "binary-and-application-reverse-engineering"
+        ],
+        "vulnerability-research": [
+          "vulnerability-discovery",
+          "fuzzing-and-automated-testing"
         ]
       }
     }

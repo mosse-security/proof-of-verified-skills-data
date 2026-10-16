@@ -1,0 +1,65 @@
+{
+  "name": "Min Suk Kang",
+  "last-updated": "2026-10-16T05:18:20Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Min Suk Kang",
+      "label": "iROV: Breaking the Silence of RPKI with Interactive Validation",
+      "description": "While Route Origin Validation (ROV) effectively mitigates prefix hijacking, it drops BGP updates that are inconsistent with currently published ROAs without consulting the prefix owner. This silent-drop behavior creates a serious agility gap: when a resource owner must urgently redirect traffic during DDoS mitigation, the temporary route may deviate from the currently published ROAs and be dropped before a ROA update propagates. We propose iROV (interactive ROV), a lightweight extension to ROV, to address the agility gap by transforming validation from a static local decision into an interactive, owner-involved process. iROV enables routers to query prefix owners for \"Just-in-Time\" authorization of invalid routes. This interactivity also allows prefix owners to receive real-time visibility feedback on ROV-invalidation events, which helps them detect remote prefix-hijacking attempts or quickly discover their own benign misconfigurations. To mitigate availability threats introduced by this interactivity, iROV employs validity stapling to suppress redundant queries, and probabilistic querying to bound owner-side query load. Large-scale simulations and a prototype implementation demonstrate that iROV restores reachability for urgent route changes from 23% to up to nearly 90%, and delivers rapid feedback on anomalies with granular impact estimation, while incurring negligible overhead.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/kim-younsoo",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "Alon Leviev",
-  "last-updated": "2026-10-14T06:40:19Z",
+  "last-updated": "2026-10-16T05:18:10Z",
   "biography": "",
   "contact": [
     {
@@ -73,7 +73,7 @@
     {
       "name": "Alon Leviev",
       "label": "Windows Downdate: Downgrade Attacks Using Windows Updates",
-      "description": "Downgrade attacks force software to revert to an older, vulnerable version. In 2023, BlackLotus emerged, downgrading the boot manager to bypass Secure Boot. Microsoft addressed the threat, but was Secure Boot the only component vulnerable to downgrades? By examining Windows Updates, we found a flaw enabling us to take full control over it and craft downgrading updates, bypassing all verification steps. We then managed to downgrade DLLs, drivers, and even the kernel. Afterwards, the OS reported itâ€™s fully updated, unable to install future updates, with recovery tools unable to detect issues. We aimed higher and found that the virtualization stack is at risk too. We successfully downgraded Hyper-Vâ€™s hypervisor, Secure Kernel, and Credential Guard to expose privilege escalations. We also discovered several ways to disable VBS, including its Credential Guard and HVCI features, despite its enforced UEFI locks. This is the first known bypass of VBS's UEFI locks. Lastly, we found another vulnerability in a Windows Update restoration scenario, making the findings accessible to unprivileged attackers! In this talk, weâ€™ll introduce \"Windows Downdate\", a tool that takes over Windows Updates to craft downgrades and expose dozens of vulnerabilities. It makes the term â€œfully patchedâ€ meaningless across any Windows machine worldwide.",
+      "description": "Downgrade attacks force software to revert to an older, vulnerable version. In 2023, BlackLotus emerged, downgrading the boot manager to bypass Secure Boot. Microsoft addressed the threat, but was Secure Boot the only component vulnerable to downgrades? By examining Windows Updates, we found a flaw enabling us to take full control over it and craft downgrading updates, bypassing all verification steps. We then managed to downgrade DLLs, drivers, and even the kernel. Afterwards, the OS reported it’s fully updated, unable to install future updates, with recovery tools unable to detect issues. We aimed higher and found that the virtualization stack is at risk too. We successfully downgraded Hyper-V’s hypervisor, Secure Kernel, and Credential Guard to expose privilege escalations. We also discovered several ways to disable VBS, including its Credential Guard and HVCI features, despite its enforced UEFI locks. This is the first known bypass of VBS's UEFI locks. Lastly, we found another vulnerability in a Windows Update restoration scenario, making the findings accessible to unprivileged attackers! In this talk, we’ll introduce \"Windows Downdate\", a tool that takes over Windows Updates to craft downgrades and expose dozens of vulnerabilities. It makes the term “fully patched” meaningless across any Windows machine worldwide.",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

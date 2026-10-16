@@ -1,6 +1,6 @@
 {
   "name": "Or Yair",
-  "last-updated": "2026-10-14T06:41:13Z",
+  "last-updated": "2026-10-16T05:18:21Z",
   "biography": "",
   "contact": [
     {
@@ -84,7 +84,7 @@
     {
       "name": "Or Yair",
       "label": "QuickShell: Sharing is caring about an RCE attack chain on Quick Share",
-      "description": "Quick Share (formerly Nearby Share) has enabled file sharing on Android for 4 years and expanded to Windows a year ago. Google's promotion of Quick Share for preinstallation on Windows, alongside the limited recent research, ignited our curiosity about its safety, leading to an investigation that uncovered more than we had imagined. We studied its Protobuf-based protocol using hooks, built tools to communicate with Quick Share devices, and a fuzzer that found non-exploitable crashes in the Windows app. We then diverted to search for logical vulnerabilities, and boy oh boy, we regretted we hadnâ€™t done it sooner. We found 10 vulnerabilities both in Windows & Android allowing us to remotely write files into devices without approval, force the Windows app to crash in additional ways, redirect its traffic to our WiFi AP, traverse paths to the userâ€™s folder, and more. However, we desired the holy grail, an RCE. Thus, we returned to the drawing board, where we realized that the RCE is already in our possession in a form of a complex chain. In this talk, weâ€™ll introduce QuickShell - An RCE attack chain on Windows combining 5 out of 10 vulnerabilities in Quick Share. Weâ€™ll provide an overview about Quick Shareâ€™s protocol, present our fuzzer, the found vulnerabilities, a new HTTPS MITM technique, and finally the RCE chain. Reference link",
+      "description": "Quick Share (formerly Nearby Share) has enabled file sharing on Android for 4 years and expanded to Windows a year ago. Google's promotion of Quick Share for preinstallation on Windows, alongside the limited recent research, ignited our curiosity about its safety, leading to an investigation that uncovered more than we had imagined. We studied its Protobuf-based protocol using hooks, built tools to communicate with Quick Share devices, and a fuzzer that found non-exploitable crashes in the Windows app. We then diverted to search for logical vulnerabilities, and boy oh boy, we regretted we hadn’t done it sooner. We found 10 vulnerabilities both in Windows & Android allowing us to remotely write files into devices without approval, force the Windows app to crash in additional ways, redirect its traffic to our WiFi AP, traverse paths to the user’s folder, and more. However, we desired the holy grail, an RCE. Thus, we returned to the drawing board, where we realized that the RCE is already in our possession in a form of a complex chain. In this talk, we’ll introduce QuickShell - An RCE attack chain on Windows combining 5 out of 10 vulnerabilities in Quick Share. We’ll provide an overview about Quick Share’s protocol, present our fuzzer, the found vulnerabilities, a new HTTPS MITM technique, and finally the RCE chain. Reference link",
       "type": "presentation",
       "assessor": "DEF CON",
       "assessor-id": "def-con",

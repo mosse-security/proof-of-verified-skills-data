@@ -1,6 +1,6 @@
 {
   "name": "Morten Schenk",
-  "last-updated": "2026-10-14T06:41:09Z",
+  "last-updated": "2026-10-16T05:18:20Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -31,7 +31,7 @@
   "endorsements": [
     {
       "name": "Morten Schenk",
-      "label": "Taking Windows 10 Kernel Exploitation to the Next Level â€“ Leveraging Write-What-Where Vulnerabilities in Creators Update",
+      "label": "Taking Windows 10 Kernel Exploitation to the Next Level – Leveraging Write-What-Where Vulnerabilities in Creators Update",
       "description": "Since the release of Windows 10, and especially in the Anniversary Edition released in August of 2016 and the upcoming Creators Update, Microsoft has continued introducing exploit mitigations to the Windows kernel. These include full scale KASLR, fixing kernel pointer leaks, and even Hypervisor assisted mitigations of assembly instructions like SIDT (Store Interrupt Descriptor Table Register). This presentation picks up the mantle and reviews a number of powerful read and write kernel primitives that can still be leveraged despite the most recent hardening mitigations. The presented techniques include abusing the kernel-mode Window and Bitmap objects, which Microsoft has attempted to lock down several times. Doing so will present a generic approach to leveraging write-what-where vulnerabilities. A stable and precise kernel exploit has to be able to overcome KASLR, most often using kernel driver leaks. Although Microsoft has mitigated all publicly known leak sources, I will disclose two previously unknown KASLR bypasses in Windows 10 Creators Update. Obtaining kernel-mode code execution on Windows has become more difficult with the hardening of SMEP and the randomization of Page Table entries. I will show how a generic de-randomization of the Page Table entries can be performed through dynamic reverse engineering. This technique does not depend on the underlying hardware and can also be applied to virtual machines. Additionally, I will present an entirely different method which makes the usage of Page Table entries obsolete. This method allocates an arbitrary size piece of executable kernel pool memory and transfers code execution to it through hijacked system calls. It is important to note that this method will work even when VBS blocks the misuse of Page Table entries. Overall, this presentation gives a complete overhaul of Windows kernel exploitation, exposing multiple generic methods which can be leveraged by future kernel driver vulnerabilities.",
       "type": "presentation",
       "assessor": "Black Hat",

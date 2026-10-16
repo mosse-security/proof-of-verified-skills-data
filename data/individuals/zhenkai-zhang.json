@@ -1,0 +1,173 @@
+{
+  "name": "Zhenkai Zhang",
+  "last-updated": "2026-10-16T05:18:26Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 4,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 2,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 4,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Zhenkai Zhang",
+      "label": "Behind Bars: A Side-Channel Attack on NVIDIA MIG Cache Partitioning Using Memory Barriers",
+      "description": "NVIDIA Multi-Instance GPU (MIG) is a feature designed to enable isolation and secure multi-tenancy on large data center GPUs. MIG partitions a single GPU into multiple instances, each with dedicated hardware resources such as L2 cache slices. MIG is also documented to form the foundation of NVIDIA's confidential computing stack by providing hardware-isolated trusted execution environments. However, the security claims of MIG deserve closer investigation, especially given the complexity of the GPU memory system and its many (sparsely documented) memory instructions. In this work, we empirically examine the behavior of GPU L2 cache with MIG enabled. We find that despite the partitioning design, cross-instance L2 cache interference still occurs. Specifically, memory barriers (membars) generated in one MIG instance have side effects that propagate across L2 partitions and affect the timing of certain load operations in other instances. We also find that these membars can be triggered by specific GPU activities, such as kernel launches. Building on these observations, we develop a new timing-based side-channel attack in which an attacker in one MIG instance can infer the kernel launch patterns of a victim in another instance. We show that this attack compromises the confidentiality of widely used GPU applications, such as large language model inference, because kernel launch patterns in these applications are correlated with sensitive information.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/gu-cheng",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    },
+    {
+      "name": "Zhenkai Zhang",
+      "label": "CuSafe: Capturing Memory Corruption on NVIDIA GPUs",
+      "description": "Modern GPU applications, particularly in machine learning and scientific computing, are increasingly affected by memory corruption bugs due to their reliance on memory-unsafe languages like C/C++. However, existing solutions either depend on hardware/software that is not available on commodity GPUs, or incur prohibitive performance overheads, rendering them impractical for real-world deployment. We present CuSafe, a novel GPU sanitizer that is readily deployable on commodity NVIDIA GPUs. CuSafe employs a hybrid metadata scheme combining pointer tagging with in-band buffer bounds to enable accurate and efficient memory safety validation. CuSafe also introduces mechanisms such as stack epoch tracking and virtual address randomization to mitigate metadata confusion caused by temporal corruption. Our security evaluation on 33 programs demonstrates that CuSafe uniquely achieves the best coverages of both spatial and temporal bugs among existing GPU sanitizers. Moreover, our performance benchmarks on 44 programs, including large-language models like LLaMA2-7B and LLaMA3-8B, show that CuSafe incurs an average slowdown of 13% and a negligible memory overhead of 0.3%.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/lu-hongyi",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Zhenkai Zhang",
+      "label": "Toward Understanding the Security Implications in Python Configuration Files",
+      "description": "Security incidents targeting open-source software have increased substantially in recent years, yet existing defenses primarily focus on analyzing source code while largely overlooking configuration files that define how software is built, installed, and executed. In this paper, we present an in-depth study of security risks in Python configuration files, analyzing five widely used formats across the project lifecycle. We focus on risks that exploit configuration files to silently redirect dependency resolution to attacker-controlled infrastructure or hijack benign commands. We design an automated framework and identify 39 configuration fields that can be exploited under realistic usage scenarios. We further demonstrate that existing malware detection tools fail to detect most of these risks. As mitigation, we develop ConfigScoper, which not only examines security-relevant fields but also employs multiple vulnerability detectors to identify potential malicious behaviors. We apply ConfigScoper in a measurement study analyzing millions of open-source Python projects on GitHub, and our empirical results show that exploitable risks already exist in real-world projects. Finally, we have responsibly disclosed the identified vulnerabilities to relevant stakeholders.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/yu-xinwei",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Zhenkai Zhang",
+      "label": "UncoreBleed: AEX-Free, High-Resolution, and Low-Noise Side-Channel Attacks on SGX Enclaved Execution",
+      "description": "Trusted execution environments such as Intel SGX provide strong confidentiality and integrity guarantees by isolating enclaves from the OS and hypervisor. Prior works claim that SGX disables PMCs to mitigate side-channel attacks. In this paper, we show that modern processors feature uncore PMCs whose behavior under SGX has not been fully evaluated. Leveraging this observation, we investigate the state of PMCs in production-mode SGX enclaves and overturn the long-held belief that performance monitoring is suppressed: uncore PMCs record events correlated with enclaved execution. We further identify a critical event in the mesh-to-memory uncore subsystem that allows address-based monitoring at 64 B granularity. Through reverse engineering, we uncover its filtering mechanism, programmability, availability, and address mapping across SGX-capable Xeon processors. Building on the event, we present UncoreBleed, the first PMC-based, AEX-free, high-resolution, and low-noise sidechannel attack against SGX. UncoreBleed can reconstruct pictures from enclaved Libjpeg and extract RSA private keys from a single decryption, in the presence of TLBlur with AEX-Notify, the most state-of-the-art software defense on off-the-shelf SGX platforms. Our findings demonstrate that active uncore PMCs pose a previously underestimated threat to enclave confidentiality, highlighting the need to reconsider SGX's security assumptions of performance monitoring.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/chen-decheng",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    }
+  ]
+}

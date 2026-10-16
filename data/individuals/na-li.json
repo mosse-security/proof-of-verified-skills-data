@@ -1,0 +1,69 @@
+{
+  "name": "Na Li",
+  "last-updated": "2026-10-16T05:18:20Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Na Li",
+      "label": "CompLeak: Deep Learning Model Compression Exacerbates Privacy Leakage",
+      "description": "Model compression is crucial for minimizing memory storage and accelerating inference in deep learning (DL) models. Users can access different compressed model versions according to their resources and budget. However, while existing compression operations primarily focus on optimizing the trade-off between resource efficiency and model performance, the privacy risks introduced by compression remain overlooked and insufficiently understood. In this work that focuses on typical classification tasks, through the lens of membership inference attack (MIA), we propose CompLeak, the first privacy risk evaluation framework examining three widely used compression configurations that are pruning, quantization, and weight clustering all supported by the commercial model compression framework of Google's TensorFlow-Lite (TF-Lite), and first two supported by Facebook's PyTorch Mobile and the open-source toolkit of Microsoft NNI. CompLeak has three variants, given access to the available number of compressed models and/or the original model. CompLeak NR starts by adopting existing MIA methods to attack each individual compressed model, and identifies that different compressed models influence members and non-members differently. When the original model and one compressed model are available, CompLeak SR leverages the compressed model as a reference to the original model and uncovers more privacy by combining meta information (e.g., confidence vector) from both models. When multiple compressed models are available with/without accessing the original model, CompLeak MR innovatively exploits privacy leakage info from multiple compressed versions to substantially signify the overall privacy leakage. We conduct extensive experiments on six diverse model architectures (from ResNet to BERT and GPT-2), and five image and textual benchmark datasets. Our experimental results show that CompLeak MR achieves the best MIA performance on all evaluation metrics, including TPR @ 0.1% FPR, proving that model compression exacerbates privacy leakage.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/li-na",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

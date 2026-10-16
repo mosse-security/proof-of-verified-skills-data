@@ -1,6 +1,6 @@
 {
   "name": "Qidan He",
-  "last-updated": "2026-10-14T06:41:17Z",
+  "last-updated": "2026-10-16T05:18:21Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -71,7 +71,7 @@
     {
       "name": "Qidan He",
       "label": "BadResolve: Bypassing Android's Intent Checks to Resurrect LaunchAnyWhere Privilege Escalations",
-      "description": "The LaunchAnywhere vulnerability in Android has been a significant security concern, enabling unprivileged applications to escalate privileges and invoke arbitrary protected or privileged activities. Despite extensive mitigation efforts by Google, such as introducing destination component checks via the resolveActivity API, these defenses have proven insufficient. In this talk, we introduce BadResolve , a novel exploitation technique that bypasses these checks using TOCTOU (Time of Check to Time of Use) race conditions . By controlling previously unforeseen parameters, BadResolve allows attackers to exploit Android's Intent resolution process, reintroducing LaunchAnywhere vulnerabilities. We demonstrate how BadResolve works in practice, providing instructions for exploiting race conditions with 100% reliability , allowing unprivileged apps to invoke privileged activities. Our research also uncovers new CVEs that affect all Android versions, highlighting ongoing risks such as silent app installations, unauthorized phone calls, and modifications to critical system settings. Additionally, we present a novel approach combining Large Language Models (LLMs) with traditional static analysis techniques to efficiently identify such kind of vulnerabilities in Android and OEMâ€™s opensource and closed-source codebases.",
+      "description": "The LaunchAnywhere vulnerability in Android has been a significant security concern, enabling unprivileged applications to escalate privileges and invoke arbitrary protected or privileged activities. Despite extensive mitigation efforts by Google, such as introducing destination component checks via the resolveActivity API, these defenses have proven insufficient. In this talk, we introduce BadResolve , a novel exploitation technique that bypasses these checks using TOCTOU (Time of Check to Time of Use) race conditions . By controlling previously unforeseen parameters, BadResolve allows attackers to exploit Android's Intent resolution process, reintroducing LaunchAnywhere vulnerabilities. We demonstrate how BadResolve works in practice, providing instructions for exploiting race conditions with 100% reliability , allowing unprivileged apps to invoke privileged activities. Our research also uncovers new CVEs that affect all Android versions, highlighting ongoing risks such as silent app installations, unauthorized phone calls, and modifications to critical system settings. Additionally, we present a novel approach combining Large Language Models (LLMs) with traditional static analysis techniques to efficiently identify such kind of vulnerabilities in Android and OEM’s opensource and closed-source codebases.",
       "type": "presentation",
       "assessor": "CanSecWest",
       "assessor-id": "cansecwest",
