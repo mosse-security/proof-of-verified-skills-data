@@ -1,25 +1,25 @@
 {
   "name": "Aaron Grattafiori",
-  "last-updated": "2026-10-17T05:50:52Z",
+  "last-updated": "2026-10-17T08:51:36Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 0,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 2,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 2,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
-      "red-teaming": 0,
+      "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -64,6 +64,87 @@
       ],
       "subspecialties": {
         "unknown": []
+      }
+    },
+    {
+      "name": "Aaron Grattafiori",
+      "label": "Linux Containers: Future or Fantasy?",
+      "description": "Containers, a pinnacle of fast and secure deployment or a panacea of false security? In recent years Linux containers have developed from an insecure and loose collection of Linux kernel namespaces to a production-ready OS virtualization stack. In this talk, the audience will first learn the basics of how containers function, understanding namespaces, capabilities and cgroups in order to see how Linux containers and the supporting kernel features can offer an effective application and system sandboxing solution yet to be widely deployed or adopted. Understanding LXC or Docker use, weaknesses and security for PaaS and application sandboxing is only the beginning. Leveraging container technologies is rapidly becoming popular within the modern PaaS and devops world but little has been publicly discussed in terms of actual security risks or guarantees. Understanding prior container vulnerabilities or escapes, and current risks or pitfalls in major public platforms will be explored in this talk. I'll cover methods to harden containers against future attacks and common mistakes to avoid when using systems such as LXC and Docker. This will also include an analysis and discussion of techniques such as Linux kernel hardening, reduced capabilities, Mandatory Access Controls (MAC), the User kernel namespace and seccomp-bpf (syscall filtering); all of which help actually contain containers. The talk will end on some methods for creating minimal, highly-secure containers and end on where containers are going and why they might show up where you least expect them.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Grattafiori",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Aaron Grattafiori - Linux Containers: Future or Fantasy? - 101 Track",
+          "url": "https://www.youtube.com/watch?v=iN6QbszB1R8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ]
+      }
+    },
+    {
+      "name": "Aaron Grattafiori",
+      "label": "Taming the Beast: Inside the Llama 3 Red Team Process",
+      "description": "In this presentation, the core AI Red Team at Meta will take you on a journey through the story of Red Teaming the Llama 3 Large Language Model. This talk is perfect for anyone eager to delve into the complexity of advanced model Red Teaming and safety, as well as how to perform their own research to find new attacks should attend this talk. We’ll begin by exploring what AI Red Teaming is truly about, before exploring Meta’s process and approaches on the topic. The team will detail our methodology for discovering new risks within complex AI capabilities, how emergent capabilities may breed emergent risks, what types of attacks we’re looking to perform across different model capabilities and how or why the attacks even work. Moreover, we’ll explore insights into which lessons from decades of security expertise can – and cannot – be applied as we venture into a new era of AI trust and safety. The team will then move on to how we used automation to scale attacks up, our novel approach to multi-turn adversarial AI agents and the systems we built to benchmark safety across a set of different high-risk areas. We also plan to discuss advanced cyber-attacks (both human and automated), Meta’s open benchmark CyberSecEvals and touch on Red Teaming for national security threats presented by state-of-the-art models. For each of these areas we’ll touch on various assessment and measurement challenges, ending on where we see the AI Red Teaming industry gaps, as well as where AI Safety is heading at a rapid pace.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54464",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2024,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ],
+        "red-teaming": [],
+        "vulnerability-research": [
+          "ai-agent-security"
+        ]
       }
     }
   ]

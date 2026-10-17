@@ -1,12 +1,12 @@
 {
   "name": "Fatih Ozavci",
-  "last-updated": "2026-10-17T05:50:54Z",
+  "last-updated": "2026-10-17T08:51:40Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 1,
-    "with-evidence": 3,
+    "endorsements": 5,
+    "assessors": 2,
+    "with-evidence": 5,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -16,10 +16,10 @@
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 1,
+      "penetration-testing": 2,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 3,
+      "vulnerability-research": 5,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,45 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Fatih Ozavci",
+      "label": "VoIP Wars: Return of the SIP",
+      "description": "NGN (Next Generation Network) is modern TDM/PSTN system for communication infrastructure. SIP (Session Initiation Protocol) Servers are center of NGN services, they provide signaling services. SIP based communication is insecure, because of protocol implementation. Based on this fact, NGN is not actually Next Generation. It can be hacked with old stuff, but a few new attack types will be demonstrated in this presentation. This presentation includes that basic attack types for NGN infrastructure, old school techniques for SIP analysis, a new hacking tool to analysis of SIP services and SIP Trust Hacking technique. Also a few fuzzing techniques will be explained in this presentation. SIP networks provide its services based on Trust Infrastructure. SIP Soft Switches trust each other and accept calls from trusted SIP servers. A new technique will be demonstrated in this presentation, Hacking Trust Relationships Between SIP Gateways. SIP trust will be detected and hacked with a sip trust analyzer tool. For explaining basic attack types, a few tools will be demonstrated such as footprinting, register, enumerator, bruteforcer, call analyzer and SIP proxy. Another dangerous thing is outdated software in NGN infrastructure. VoIP devices have responsibilities to serve signaling such as MSAN, MGW and Soft Switches. They support SIP protocol with vulnerable software which should be analyzed. New fuzzing techniques such as Response based fuzzing, MITM fuzzing and proxy tool usage will be explained. Viproy Security LinkedIn Packetstorm Security Exploit-db GitHub Blog",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 21 - Fatih Ozavci - VoIP Wars Return of the SIP",
+          "url": "https://www.youtube.com/watch?v=d6cGlTB6qKw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2013,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    },
     {
       "name": "Fatih Ozavci",
       "label": "VoIP Wars: Attack of the Cisco Phones",
@@ -67,6 +106,47 @@
         "penetration-testing": [],
         "vulnerability-research": [
           "fuzzing-and-automated-testing",
+          "zero-day-and-0-day-research"
+        ]
+      }
+    },
+    {
+      "name": "Fatih Ozavci",
+      "label": "VoIP Wars: Attack of the Cisco Phones",
+      "description": "Many hosted VoIP service providers are using Cisco hosted collaboration suite and Cisco VoIP solutions. These Cisco hosted VoIP implementations are very similar; they have Cisco Unified Communication services, SIP protocol for IP Phones of tenants, common conference solutions, Skinny protocol for compliance, generic RTP implementation, VOSS Solutions product family for management services for tenants. Cisco hosted VoIP implementations are vulnerable to many attacks, including: VLAN attacks SIP trust hacking Skinny based signalling attacks Bypassing authentication and authorisation Call spoofing Eavesdropping Attacks against IP Phone management services Web based vulnerabilities of the products The presentation covers Skinny and SIP signalling attacks, 0day bypass technique for call spoofing and billing bypass, LAN attacks against supportive services for IP Phones, practical 0day attacks against IP Phone management and tenant services. Attacking Cisco VoIP services requires limited knowledge today with the Viproy Penetration Testing Kit (written by the presenter). It has a dozen modules to test trust hacking issues, signalling attacks against SIP services and Skinny services, gaining unauthorised access, call spoofing, brute-forcing VoIP accounts and debugging services using as MITM. Furthermore, Viproy provides these attack modules in a penetration testing environment and full integration. The presentation contains live demonstration of practical VoIP attacks and usage of new Viproy modules.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Ozavci",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Fatih Ozavci - VoIP Wars: Attack of the Cisco Phones",
+          "url": "https://www.youtube.com/watch?v=vcWwtH05f7E"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [
           "zero-day-and-0-day-research"
         ]
       }

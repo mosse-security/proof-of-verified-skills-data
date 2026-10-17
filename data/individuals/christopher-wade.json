@@ -1,0 +1,189 @@
+{
+  "name": "Christopher Wade",
+  "last-updated": "2026-10-17T08:51:38Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 4,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 2,
+      "vulnerability-research": 4,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Christopher Wade",
+      "label": "Tag-side attacks against NFC",
+      "description": "This talk covers tag-side attacks against NFC communication protocols, including cracking of Mifare encryption keys and performing targeted attacks against NFC readers. In addition, it will cover the design and creation of devices capable of emulating NFC tags down to the raw protocol using standard components and tools, with no abstraction to dedicated hardware, covering and expanding on the capabilities of available products. This talk will contain how 13.56MHz NFC works at a raw level, how tools can be built for analysing it, how the protocol can be implemented in full on standard Microcontrollers, and the security weaknesses present in its design.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Wade",
+      "evidence-links": [
+        {
+          "title": "Tag Side Attacks Against NFC - Christopher Wade - DEF CON China 1",
+          "url": "https://www.youtube.com/watch?v=JblWre93BJ0"
+        },
+        {
+          "title": "Christopher Wade - Tag side attacks against NFC - DEF CON 27 Conference",
+          "url": "https://www.youtube.com/watch?v=OQVz7y2EyHM"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Christopher Wade",
+      "label": "Beyond Root: Custom Firmware for Embedded Mobile Chipsets",
+      "description": "Rooting a smartphone is often considered the ultimate method to allow a user to take complete control of their device. Despite this, many smartphones contain hardware which is closed off to any modification. This talk aims to show how this hardware can be reverse engineered in order to bypass its protections and further expand its functionality. Using proprietary NFC Controllers as an example, we will cover analysis of the protocols used by the chips, how the firmware protections could be broken, and how custom firmware could be developed and deployed to the phone with no hardware modifications. This will include methodologies for analyzing weaknesses in firmware update protocols, leveraging the Unicorn CPU Emulator to bypass debugging restrictions, and techniques for reverse engineering the hardware capabilities of an unknown chip in order to implement custom features. This will end with demonstration of a smartphone with passive NFC sniffing capabilities and expanded tag emulation functionality.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 28",
+      "url": "https://defcon.org/html/defcon-safemode/dc-safemode-speakers.html#Wade",
+      "evidence-links": [
+        {
+          "title": "DEF CON Safe Mode - Christopher Wade  - Beyond Root Custom Firmware For Embedded Mobile Chipsets Q&A",
+          "url": "https://www.youtube.com/watch?v=npY5XLaRMlA"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2020,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Christopher Wade",
+      "label": "Breaking Secure Bootloaders",
+      "description": "Bootloaders often use signature verification mechanisms in order to protect a device from executing malicious software. This talk aims to outline actionable weaknesses in modern bootloaders which allow attackers to deploy unsigned code, despite these protection mechanisms. In the first phase of this talk, we will discuss exploitation of the bootloaders in modern Android smartphones, demonstrating weaknesses which allow for bypassing bootloader unlocking restrictions, decryption of protected user data, and deployment of malicious software to devices using full disk encryption. In the second phase, we will discuss bootloader weaknesses in the secondary hardware used by smartphones. Using an embedded RF chip as a target, we will demonstrate reverse engineering techniques which identified weaknesses in the signature verification mechanisms of the firmware update protocols used by the bootloader, allowing for deployment of custom firmware to the chip. REFERENCES: Travis Goodspeed - Great Ideas in Reversing the Tytera MD380: https://nullcon.net/website/archives/ppt/goa-16/Great-Ideas-in-Reversing-the-Tytera-MD380-by-Travis-Goodspeed.pdf Roee Hay - fastboot oem vuln: Android Bootloader Vulnerabilities in Vendor Customizations: https://www.usenix.org/system/files/conference/woot17/woot17-paper-hay.pdf",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 29",
+      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#wade",
+      "evidence-links": [
+        {
+          "title": "DEF CON 29 - Christopher Wade - Breaking Secure Bootloaders",
+          "url": "https://www.youtube.com/watch?v=z4gIxdFfJDg"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2021,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Christopher Wade",
+      "label": "Physical Attacks Against Smartphones",
+      "description": "Android devices are constantly improving their security to protect against attackers with physical access, with new protection techniques being added year-by-year. This talk aims to demonstrate vulnerabilities in modern Android smartphones that are still viable, despite the mitigations in place. In the first phase of this talk, we will discuss analysis and exploitation of vendor-customised versions of Android's Recovery mode, demonstrating weaknesses that allow for privilege escalation to root, and traversal from Recovery to Android, without Bootloader access, using nothing but a Micro SD card. In the second phase, we will discuss weaknesses in the Secondary Bootloader of devices produced by a popular smartphone manufacturer. We will demonstrate how, using a vulnerability in the core USB stack, code execution can be achieved, and a modified Android image can be booted, without compromising the functionality of the device.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Wade",
+      "evidence-links": [
+        {
+          "title": "DEF CON 31 - Physical Attacks Against Smartphones - Christopher Wade",
+          "url": "https://www.youtube.com/watch?v=31xrNuH1RV4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

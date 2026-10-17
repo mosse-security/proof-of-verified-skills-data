@@ -1,25 +1,25 @@
 {
   "name": "Jake Kambic",
-  "last-updated": "2026-10-17T05:50:55Z",
+  "last-updated": "2026-10-17T08:51:40Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
       "devsecops": 0,
-      "digital-forensics": 1,
+      "digital-forensics": 2,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -45,6 +45,45 @@
         {
           "title": "Cunning With CNG: Soliciting Secrets From Schannel",
           "url": "https://www.youtube.com/watch?v=uY8pVxZpy_k"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "digital-forensics",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "digital-forensics": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Jake Kambic",
+      "label": "Cunning with CNG: Soliciting Secrets from Schannel",
+      "description": "Secure Channel (Schannel) is Microsoft's standard SSL/TLS Library underpinning services like RDP, Outlook, Internet Explorer, Windows Update, SQL Server, LDAPS, Skype and many third party applications. Schannel has been the subject of scrutiny in the past several years from an external perspective due to reported vulnerabilities, including a RCE. What about the internals? How does Schannel guard its secrets? This talk looks at how Schannel leverages Microsoft's CryptoAPI-NG (CNG) to cache the master keys, session keys, private and ephemeral keys, and session tickets used in TLS/SSL connections. It discusses the underlying data structures, and how to extract both the keys and other useful information that provides forensic context about connection. This information is then leveraged to decrypt session that use ephemeral cipher suites, which don't rely on the private key for decryption. Information in the cache lives for at least 10 hours by default on modern configurations, storing up to 20,000 entries for client and server each. This makes it forensically relevant in cases where other evidence of connection may have dissipated.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 24",
+      "url": "https://defcon.org/html/defcon-24/dc-24-speakers.html#Kambic",
+      "evidence-links": [
+        {
+          "title": "DEF CON 24 - Jake Kambic - Cunning with CNG: Soliciting Secrets from Schannel",
+          "url": "https://www.youtube.com/watch?v=KGmJMHyHJjE"
         }
       ],
       "evidence": true,

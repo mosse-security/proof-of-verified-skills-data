@@ -1,17 +1,17 @@
 {
   "name": "Matt Burch",
-  "last-updated": "2026-10-17T05:50:56Z",
+  "last-updated": "2026-10-17T08:51:43Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 1,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
-      "devsecops": 0,
+      "cyber-defense": 1,
+      "devsecops": 1,
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,47 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Matt Burch",
+      "label": "Where’s the Money: Defeating ATM Disk Encryption",
+      "description": "Holding upwards of $400,000, ATMs continue to be a target of opportunity and have seen over a 600% increase in crime in just the last few years. During this time, I led security research with another colleague into the enterprise ATM industry resulting in the discovery of 6 zero-day vulnerabilities affecting Diebold Nixdorf’s Vynamic Security Suite (VSS), the most prolific ATM security solution in the market. 10 minutes or less is all that a malicious actor would need to gain full control of any system running VSS via offline code injection and decryption of the primary Windows OS. Diebold Nixdorf is one of three major North American enterprise class ATM manufacturers with a global presence in the financial, casino/gaming, and point-of-sale markets. Similar attack surfaces are currently being used in the wild and impact millions of systems across the globe. Furthermore, VSS is known to be present throughout the US gaming industry, including most of the ATM/cash-out systems across Vegas. In this session, I will publicly disclose this research, review the discovery process, and dive into the technical intricacies of each vulnerability. The Full Disk Encryption module of VSS conducts a complex integrity validation process to ensure a trusted system state, performed as a layered approach during system initialization. Examination of the workflow will highlight various deficiencies that I will demonstrate through PoC exploitation. Each vulnerability presented in this session has been observed to have a recursive impact across all major versions of VSS and represents a systemic ongoing risk. We will explore the root-cause, vendor remediation steps, and short-comings thereof – perpetuating the attack narrative. In conclusion, proper mitigation techniques and procedures will be covered, providing valuable insights into defending against potential compromise. Vynamic Security Suite - Vynamic Security Hard Disk Encryption Secure Sensitive Consumer Data: link SEC Consult - Manipulation of pre-boot authentication in CryptWare CryptoPro Secure Disk for Bitlocker: link Diebold Nixdorf - EULA for Vynamic Security Suite 3.0: link Diebold Nixdorf - Product Legal Terms Website: link CryptWare Website: link Secure Disk for BitLocker Website: link CPSD Website: link O'Reilly - Essential System Administration, 3rd Edition by Æleen Frisch: link Flowblok's Blog - Shell Startup Scripts: link Red Hat Customer Portal - Enhancing Security with the Kernel Integrity Subsystem: link OpenSUSE Wiki - SDB:Ima evm: link ATMIA - ATM Operator Training: link 3SI Systems - Stop Criminals from Cashing in at the ATM: link Diebold Nixdorf - Vynamic Security Intrusion Protection Product Card: link Diebold Nixdorf - DN Product Card - Vynamic Security Hard Disk Encryption: link Everi - Everi to Showcase \"Digital Neighborhood\" Connecting Guest Loyalty, Cash Access Experiences, and Casino Solutions Made Possible by Industry-Leading Financial Technology Portfolio at 2019 Global Gaming Expo: link GlobeNewswire - NRT Accelerates Growth through Acquisition of Casino ATM Portfolio: link Northox - How does the TPM perform integrity measurements on a system?: link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54437",
+      "evidence-links": [
+        {
+          "title": "DEF CON 32 - Where’s the Money-Defeating ATM Disk Encryption - Matt Burch",
+          "url": "https://www.youtube.com/watch?v=lF8NEsl3-kQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2024,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ]
+      }
+    },
     {
       "name": "Matt Burch",
       "label": "Where’s the Money: Defeating ATM Disk Encryption",
@@ -59,6 +100,42 @@
       ],
       "subspecialties": {
         "unknown": []
+      }
+    },
+    {
+      "name": "Matt Burch",
+      "label": "Compounding Interest: Exploiting the ATM Supply Chain",
+      "description": "ATMs are the ultimate high-stakes target, often holding upwards of $400,000 in a single enclosure. While the global financial industry relies on a narrow pool of manufacturers, the software supply chain securing these \"vaults\" remains an underexamined attack surface. Following my disclosure of 6 code execution vulnerabilities affecting Diebold Nixdorf's Vynamic Security Suite (VSS) at DefCon32, this research dives deeper into the foundational security layer: CryptWare CryptoPro Secure Disk for BitLocker. CryptoPro acts as a proprietary security wrapper, adding pre-boot authorization, custom TPM protections, and an obfuscated encryption layer to the standard BitLocker architecture. I will be disclosing 9 new CVEs that allow an unauthenticated adversary to dismantle the CryptoPro stack. Join me as I share my journey of locating secrets buried in unallocated disk space, abusing TPM sealing logic, and deconstruct CryptoPro's custom AES256 logic to recover the BitLocker keys. This presentation will highlight how a trusted security component became a critical backdoor. In addition to the technical walk through, I will be releasing ragavan, a custom exploitation toolkit designed to automate secret extraction, decryption, TPM unsealing, and compromise of a CryptoPro-protected platform.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66627",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "devsecops",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "devsecops": [
+          "software-supply-chain-security"
+        ],
+        "vulnerability-research": []
       }
     }
   ]

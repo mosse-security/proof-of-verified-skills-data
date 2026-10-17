@@ -1,0 +1,308 @@
+{
+  "name": "Dennis Giese",
+  "last-updated": "2026-10-17T08:51:39Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 7,
+    "assessors": 2,
+    "with-evidence": 3,
+    "without-evidence": 4,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 2,
+      "vulnerability-research": 6,
+      "identity-and-access-management": 0,
+      "iot-security": 3,
+      "operational-technology-security": 1,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 1,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Dennis Giese",
+      "label": "Unleash your smart-home devices: Vacuum Cleaning Robot Hacking",
+      "description": "Unleash your smart-home devices: Vacuum Cleaning Robot Hacking",
+      "type": "presentation",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "34C3",
+      "url": "https://media.ccc.de/v/34c3-9147-unleash_your_smart-home_devices_vacuum_cleaning_robot_hacking",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Dennis Giese",
+      "label": "Having fun with IoT: Reverse Engineering and Hacking of Xiaomi IoT Devices",
+      "description": "While most IoT accessory manufacturers have a narrow area of focus, Xiaomi, an Asian based vendor, controls a vast IoT ecosystem, including smart lightbulbs, sensors, cameras, vacuum cleaners, network speakers, electric scooters and even washing machines. In addition, Xiaomi also manufactures smartphones. Their products are sold not only in Asia, but also in Europe and North America. The company claims to have the biggest IoT platform worldwide. In my talk, I will give a brief overview of the most common, Wi-Fi based, Xiaomi IoT devices. Their devices may have a deep integration in the daily life (like vacuum cleaners, smart toilet seats, cameras, sensors, lights). I will focus on the features, computational power, sensors, security and ability to root the devices. Let’s explore how you can have fun with the devices or use them for something useful, like mapping Wi-Fi signal strength while vacuuming your house. I will also cover some interesting things I discovered while reverse engineering Xiaomi's devices and discuss which protections were deployed by the developers (and which not). Be prepared to see the guts of many of these devices. We will exploit them and use them to exploit other devices.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Giese",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 -  Nirenberg and Buchwald - Reverse Engineering Hacking Documentary Series",
+          "url": "https://www.youtube.com/watch?v=6FzGGKnzO20"
+        },
+        {
+          "title": "DEF CON Safe Mode IoT Village - Barak Sternberg  - Hacking smart devices for fun and profit",
+          "url": "https://www.youtube.com/watch?v=l18wjygqrKM"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": [],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Dennis Giese",
+      "label": "Robots with lasers and cameras (but no security): Liberating your vacuum from the cloud",
+      "description": "Vacuum robots are becoming increasingly popular and affordable as their technology grows ever more advanced, including sensors like lasers and cameras. It is easy to imagine interesting new projects to exploit these capabilities. However, all of them rely on sending data to the cloud. Do you trust the companies promise that no video streams are uploaded to the cloud and that your personal data is safe? Why not collect the dust with open-source software? I previously showed ways to root robots such as Roborock and Xiaomi, which enabled owners to use their devices safely with open-source home automation. In response, vendors began locking down their devices with technologies like Secure Boot, SELinux, LUKS encrypted partitions and custom crypto that prevents gaining control over our own devices. This talk will update my newest methods for rooting these devices. The market of vacuum robots expanded in the past 2 years. In particular, the Dreame company has recently released many models with interesting hardware, like ToF cameras and line lasers. This can be a nice alternative for rooting. I will show easy ways to get root access on these devices and bypass all security. I will also discuss backdoors and security issues I discovered from analysis. You will be surprised what the developers left in the firmware. REFERENCES: Unleash your smart-home devices: Vacuum Cleaning Robot Hacking (34C3) https://dontvacuum.me/talks/34c3-2017/34c3.html Having fun with IoT: Reverse Engineering and Hacking of Xiaomi IoT Devices https://dontvacuum.me/talks/DEFCON26/DEFCON26-Having_fun_with_IoT-Xiaomi.html https://linux-sunxi.org/Main_Page",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 29",
+      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#giese",
+      "evidence-links": [
+        {
+          "title": "DEF CON 29-  Dennis Giese - Robots with lasers and cameras but no security   Liberating your vacuum",
+          "url": "https://www.youtube.com/watch?v=EWqFxQpRbv8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2021,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": [],
+        "iot-security": [
+          "smart-home-security",
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Dennis Giese",
+      "label": "Sucking dust and cutting grass: reversing robots and bypassing security",
+      "description": "Sucking dust and cutting grass: reversing robots and bypassing security",
+      "type": "presentation",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "37C3",
+      "url": "https://media.ccc.de/v/37c3-11943-sucking_dust_and_cutting_grass_reversing_robots_and_bypassing_security",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Dennis Giese",
+      "label": "Vacuum robot security and privacy - prevent your robot from sucking your data",
+      "description": "Exactly 5 years ago we were presenting ways to hack and root vacuum robots. Since then, many things have changed. Back then we were looking into ways to use the robots' \"dumb\" sensors to spy on the user (e.g. by using the ultrasonic sensor). But all our predictions were exceeded by the reality: today's robots bring multiple cameras and microphones with them. AI is used to detect objects and rooms. But can it be trusted? Where will pictures of your cat end up? In this talk we will look at the security and privacy of current devices. We will show that their flaws pose a huge privacy risk and that certification of devices cannot be trusted. Not to worry, though - we will also show you how to protect yourself (and your data) from your robot friends. You will learn on how you can get root access to current flagship models of 4 different vendors. Come with us on a journey of having fun hacking interesting devices while preventing them from breaching your privacy. We will also discuss the risks of used devices, for both old and new users. Finally, we will talk about the challenges of documenting vacuum robots and developing custom software for them. While our Primary goal is to disconnect the robots from the cloud, it is also for users to repair their devices - pwning to own in a wholesome way.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Giese",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Dennis Giese",
+      "label": "Bricked & Abandoned: How To Keep The IoT From Becoming An Internet of Trash",
+      "description": "In a world where technology and software are intertwined with our daily lives more than ever, a silent threat grows in the shadows. End-of-life devices—abandoned by manufacturers - power our homes, hospitals, businesses and critical infrastructure. From the depths of the cyber underground, malicious software from cybercriminal and nation-state actors is seizing these forgotten devices and conscripting them into botnets and other malicious infrastructure. For example, Black Lotus Labs revealed a chilling trend: 40,000 small office home office (SOHO) routers compromised and enrolled in the sinister 'Faceless' botnet - now powered by devices you own and thought were safe. And it's not just routers. Critical medical devices, essential security hardware—smart home appliances. No gadget is safe. And, with the Internet of Things set to double in the next decade, billions of vulnerable devices marketed and sold to connect us risk robbing, dividing and defeating us in the years to come: a process one expert has termed “enshittification.” After years of warnings from the cybersecurity community, alarms are finally sounding in the halls of power. But more is needed: a clarion call to reset, to redefine ownership and security in an age of smart, connected devices before it's too late. In this panel you’ll be enlisted to join the fight. You’ll hear from experts working at the forefront of a fight to challenge the status quo and seek solutions to safeguard our digital futures.Are you ready to stand up for your right to a secure, connected world? The battle for control, for transparency- for a sustainable and resilient digital future begins now!",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54471",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research",
+        "iot-security",
+        "operational-technology-security",
+        "cybercrime-and-fraud"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [],
+        "iot-security": [
+          "smart-home-security",
+          "consumer-iot-security",
+          "medical-device-security",
+          "automotive-security"
+        ],
+        "operational-technology-security": [
+          "critical-infrastructure-resilience",
+          "automotive-security",
+          "ecu-and-automotive-embedded-systems"
+        ],
+        "cybercrime-and-fraud": []
+      }
+    },
+    {
+      "name": "Dennis Giese",
+      "label": "Open sesame - or how vulnerable is your stuff in electronic lockers",
+      "description": "Physical security is often overlooked in many organizational threat models. An increasing amount of physical security devices with smart components are being introduced to the market with widespread adoption. This creates an enticing attack surface for physical red teams. Lockers and cabinets equipped with electronic smart locks can be found in many places such as offices, factories, hospitals, labs, and gyms. With remote and hybrid work increasing in popularity, shared use office setups becoming the default. Co-working spaces in offices are now commonplace with lockers being installed for employee device storage. People generally trust that their belongings will be secure in these lockers and entrust the locks with sensitive information, like their personal PIN. Is there a more stealthy way to get into lockers that don't involve using a crowbar? In this talk we will analyze the vulnerabilities affecting locks manufactured by the \"global leader in keyless lock solutions,\" Digilock and Schulte-Schlagbaum AG (SAG). Both companies have been in the physical security industry for many decades. What went wrong in the development of these devices and how can these vulnerabilities be fixed? We will also discuss several other vendors operating in this space and compare findings. We will demonstrate practical physical and side-channel attacks targeting locks that accept a standard PIN and RFID. Learn why it is poor practice to reuse the same secret PIN for lockers and safes and devices such as mobile phones and laptops (especially if they are stored inside the lockers).",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54441",
+      "evidence-links": [
+        {
+          "title": "DEF CON 32 - Open Sesame: how vulnerable is your stuff in electronic lockers -Dennis Giese, braelynn",
+          "url": "https://www.youtube.com/watch?v=GPODCSvZMyM"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    }
+  ]
+}

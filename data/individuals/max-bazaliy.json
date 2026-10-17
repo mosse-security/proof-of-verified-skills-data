@@ -1,13 +1,13 @@
 {
   "name": "Max Bazaliy",
-  "last-updated": "2026-10-17T05:50:56Z",
+  "last-updated": "2026-10-17T08:51:43Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
-    "without-evidence": 0,
+    "endorsements": 6,
+    "assessors": 4,
+    "with-evidence": 4,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,13 +19,13 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 4,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 2
     }
   },
   "endorsements": [
@@ -70,6 +70,78 @@
     },
     {
       "name": "Max Bazaliy",
+      "label": "Pegasus internals",
+      "description": "Pegasus internals",
+      "type": "presentation",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "33C3",
+      "url": "https://media.ccc.de/v/33c3-7901-pegasus_internals",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Max Bazaliy",
+      "label": "A Journey Through Exploit Mitigation Techniques in iOS",
+      "description": "Over the past year, Apple has consistently added features to prevent exploitation of the iOS kernel. These features, while largely misunderstood, provide a path for understanding of the iOS security model going forward. This talk will examine the history of iOS’s exploit mitigations from iOS 8 to iOS 9.3 in order to teach important features of the architecture. This talk will cover various enhancements that stop attackers from dynamically modifying the functionality of system services, but also resulted in the defeat of all known exploitation through function hooking. Additionally, we will explore how the ability to use PLT interception and the use of direct memory overwrite are no longer options for exploit writers because of recent changes. Finally, we will cover the code-signing mechanism in depth, userland and kernel implementations and possible ways to bypass code-sign enforcement.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 24",
+      "url": "https://defcon.org/html/defcon-24/dc-24-speakers.html#Bazaliy",
+      "evidence-links": [
+        {
+          "title": "DEF CON 24 - Max Bazaliy - A Journey Through Exploit Mitigation Techniques in iOS",
+          "url": "https://www.youtube.com/watch?v=Gu4UJR9nZqM"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening",
+          "mobile-platform-security"
+        ]
+      }
+    },
+    {
+      "name": "Max Bazaliy",
       "label": "Jailbreaking Apple Watch",
       "description": "On April 24, 2015, Apple launched themselves into the wearables category with the introduction of Apple Watch. This June, at Apple's Worldwide Developer Conference, Apple announced that their watch is not only the #1 selling smartwatch worldwide by far, but also announced the introduction of new capabilities that will come with the release of watchOS 4. Like other devices, Apple Watch can contain user data such as email and text messages, contacts, GPS and more, and like other devices and operating systems, has become a target for malicious activity. In the Apple ecosystem, in order to explore the internals and security aspects of an Apple iOS based device it's necessary to use a jailbreak. However, a jailbreak does not exist publicly for watchOS so we had to create the first ever public Apple Watch jailbreak. This talk will take us inside the mind of a researcher, showcasing the unique set of skills, determination and rationalization needed from someone in order to piece this jailbreak together from scratch. We will provide an overview of Apple Watch and watchOS security mechanisms including codesign enforcement, sandboxing, memory protections and more. This will ultimately lead to a demonstration and explanation of the jailbreak and what we were able to learn about its general structure and ability to access iPhone-synced data.",
       "type": "presentation",
@@ -103,6 +175,75 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Max Bazaliy",
+      "label": "Jailbreaking Apple Watch",
+      "description": "Thursday at 12:00 in 101 Track 2 45 minutes | Demo Max Bazaliy Security Researcher, Lookout On April 24, 2015, Apple launched themselves into the wearables category with the introduction of Apple Watch. This June, at Apple's Worldwide Developer Conference, Apple announced that their watch is not only the #1 selling smartwatch worldwide by far, but also announced the introduction of new capabilities that will come with the release of watchOS 4. Like other devices, Apple Watch contains highly sensitive user data such as email and text messages, contacts, GPS and more, and like other devices and operating systems, has become a target for malicious activity. This talk will provide an overview of Apple Watch and watchOS security mechanisms including codesign enforcement, sandboxing, memory protections and more. We will cover vulnerabilities and exploitation details and dive into the techniques used in creating an Apple Watch jailbreak. This will ultimately lead to a demonstration and explanation of jailbreaking an Apple Watch, showcasing how it can access important user data and applications.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Bazaliy",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 - Max Bazaliy - Jailbreaking Apple Watch",
+          "url": "https://www.youtube.com/watch?v=eJpbi-Qz6Jc"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Max Bazaliy",
+      "label": "iOS Dual Booting Demystified",
+      "description": "iOS Dual Booting Demystified",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2019",
+      "url": "https://www.offensivecon.org/agenda/speakers/2019/max-bazaliy.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2019,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
       }
     }
   ]

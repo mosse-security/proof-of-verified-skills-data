@@ -1,0 +1,101 @@
+{
+  "name": "Jerry Yu",
+  "last-updated": "2026-10-17T08:51:41Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Jerry Yu",
+      "label": "BLE Theft Auto: How a Dealer-Installed Anti-Theft System Exposes Over a Million Cars to Theft",
+      "description": "Car dealers predominantly in the Southwestern U.S. have been pre-installing \"KARR,\" an aftermarket anti-theft alarm system, in every car they sell. They offer these systems as an upgrade when you purchase your car, giving you smartphone-based control over your car locks and immobilizer; if you decline the offer, the dealer says they will deactivate the system. What they don't tell you: this security system is authenticated by a global shared key, so anyone who recovers that key can remotely control nearby KARR units with a smartphone. KARR is installed in an estimated 1.4 million cars, and every vulnerable unit shipped with the same authentication key, allowing an attacker with a smartphone to unlock the doors, disable the alarm and immobilizer, and trigger the horn and lights of any KARR-equipped vehicle. The core impact is unauthorized access, which can enable burglary, OBD-II access, and escalation including the key-programmer workflow we will demonstrate; every owner with KARR installed needs to update, including those who declined the upsell or inherited it used. We'll walk through how we discovered KARR, how KARR ends up in millions of cars, how the attack works end-to-end, and what owners can do to fix it today. We'll also show that the same recipe revealed vulnerabilities in other aftermarket BLE systems.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66664",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Jerry Yu",
+      "label": "BLE Theft Auto: Evaluating the Security of Aftermarket BLE-based Automotive Remote Control Systems",
+      "description": "Vehicles are increasingly remotely controllable from smartphone apps that function like keyfobs: unlocking a vehicle's doors and even starting its engine. These systems use Bluetooth Low Energy (BLE) for ofﬂine remote control. However, they do not use BLE's built-in security; instead they use proprietary application-layer protocols, introducing a new attack surface. This is especially concerning for aftermarket BLE remote control systems, because they have not received scrutiny by security researchers. In this paper, we evaluate feasible BLE-based attacks on aftermarket vehicle remote control systems. We discovered six aftermarket BLE remote control systems in use today, and analyzed their application-layer BLE security. We found critical vulnerabilities in three systems, exposing what we estimate to be 1.4 million aftermarket BLE control systems to attack. We show that targeted BLE remote attacks are practical: an attacker can use crowdsourced Bluetooth scanning databases to target speciﬁc vehicles with vulnerable systems installed. Our disclosures lead all vendors to patch improved app-layer BLE security into their systems, affecting many vehicle owners that did not even know they had a BLE remote control system installed.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/yu-jerry",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    }
+  ]
+}

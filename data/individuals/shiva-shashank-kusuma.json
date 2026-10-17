@@ -1,0 +1,106 @@
+{
+  "name": "Shiva Shashank Kusuma",
+  "last-updated": "2026-10-17T08:51:46Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 1,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Shiva Shashank Kusuma",
+      "label": "Advanced ROP Framework: Pushing ROP to Its Limits",
+      "description": "This research provides innovative contributions to return-oriented programming (ROP), not seen before. We introduce ROP ROCKET, a cutting-edge ROP framework, to be released at DEF CON. With ROCKET, when attacking 32-bit applications, we can switch between x86 and x64 at will, by invoking a special ROP Heaven's Gate technique, thereby expanding the attack surface. We will discuss the ramifications of this novel approach. Bypassing DEP via ROP is typically straightforward, using WinAPIs such as VirualProtect and VirtualAlloc. We demonstrate an alternative: using Windows syscalls. In fact, ROCKET provides automatic ROP chain construction to bypass ROP using Windows syscalls. While extremely trendy, Windows syscalls are only very rarely used in ROP. One problem with automatic chain construction is bad chars or bad bytes. We demonstrate how ROCKET allows us to use virtulally any gadget whose address contains bad bytes. With this approach, automatic ROP chain construction is far less likely to fail. Thus, we overcome one of the major obstacles when creating a ROP chain: bad bytes, which reduces the attack surface needlessly. In fact, if one wanted, they could use ROCKET to \"obfuscate\" any gadget, obscuring what is being done. This presentation will do the seemingly impossible - and surprise even veteran users of ROP.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Brizendine",
+      "evidence-links": [
+        {
+          "title": "DEF CON 31 - Advanced ROP Framework  Pushing ROP to Its Limits - Brizendine, Kusuma",
+          "url": "https://www.youtube.com/watch?v=x_iUABsCH1w"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Shiva Shashank Kusuma",
+      "label": "Techniques for Creating Process Injection Attacks with Advanced Return-Oriented Programming",
+      "description": "This talk showcases techniques for process injection using advanced return-oriented programming (ROP). Process injection via ROP introduces significant hurdles, requiring many WinAPIs to be chained together, each with complex parameters and return values. We give practical details on how to best manage this. One seemingly insurmountable challenge is in identifying the target binary, as string comparison can be extremely difficult in ROP, as needed ROP gadgets may be lacking. We unveil a unique, universal solution, giving a reliable means of string comparison via ROP, which works all the time, allowing a specific process to be pinpointed and injected into via ROP. We created numerous patterns for different WinAPIs, allowing for as many as a dozen ways of preparing a specific WinAPI via ROP, if using an approach centered around the PUSHAD instruction. With some WinAPIs, there are zero patterns for PUSHAD, forcing us to rely upon the much lauded “sniper” approach. We document all such variations of patterns for the WinAPIs in our demonstrated process injection. This research is not intended to demo a one-off example of process injection via ROP, but to provide a methodology that can be used time and time again, providing unique templates for others to use the same WinAPIs when attempting process injection via ROP. Anonymous.(2019.) Cobalt Strike’s Process Injection: The Details. link Hosseini, Ashkan. (2017). Ten Process Injection Techniques: A Technical Survey of Common and Trending Process Injection Techniques. link Klein, A., & Kotler, I. (2019). Windows process injection in 2019. Black Hat USA, 2019. Landau, Gabriel. (2021). What you need to know about Process Ghosting, a new executable image tampering attack. link Mundbrod, N., Grambow, G., Kolb, J., & Reichert, M. (2015). Context-aware process injection: enhancing process flexibility by late extension of process instances. In On the Move to Meaningful Internet Systems: OTM 2015 Conferences: Confederated International Conferences: CoopIS, ODBASE, and C&TC 2015, Rhodes, Greece, October 26-30, 2015. Proceedings (pp. 127-145). Springer International Publishing. Process Injection. MITRE ATT&CK. link Process Injection. link Unal, Ozan. (2020). Process Injection Techniques. link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54514",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2024,
+      "domains": [
+        "red-teaming",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

@@ -1,25 +1,25 @@
 {
   "name": "Andree Toonk",
-  "last-updated": "2026-10-17T05:50:52Z",
+  "last-updated": "2026-10-17T08:51:37Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 1,
+      "cyber-defense": 2,
       "devsecops": 0,
-      "digital-forensics": 1,
+      "digital-forensics": 2,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -45,6 +45,49 @@
         {
           "title": "Catching Malware En Masse: DNS and IP Style",
           "url": "https://www.youtube.com/watch?v=cHuyqnVhT4g"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "cyber-defense",
+        "digital-forensics",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "threat-intelligence-operations"
+        ],
+        "digital-forensics": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Andree Toonk",
+      "label": "Catching Malware En Masse: DNS and IP Style",
+      "description": "The Internet is constantly growing, providing a myriad of new services both legitimate and malicious. Criminals take advantage of the scalable, distributed, and rather easily accessible naming, hosting and routing infrastructures of the Internet. As a result, the battle against malware is raging on multiple fronts: the endpoint, the network perimeter, and the application layer. The need for innovative measures to gain ground against the enemy has never been greater. In this talk, we will present a novel and effective multi-pronged strategy to catch malware at the DNS and IP level, as well as our unique 3D visualization engine. We will describe the detection systems we built, and share several successful war stories about hunting down malware domains and associated rogue IP space. At the DNS level, we will describe original methods for tracking botnets, both fast flux and DGA-based. We use a combination of fast, light-weight graph clustering and DNS traffic analysis techniques and threat intelligence feeds to rapidly detect botnet domain families, identify new live CnC domains and IPs, and mitigate them. At the IP level, classical reputation methods assign “maliciousness” scores to IPs, BGP prefixes, or ASNs by merely counting domains and IPs. Our system takes an unconventional approach that combines two opposite, yet complementary views and leads to more effective predictive detections. (1) On one hand, we abstract away from the ASN view. We build the AS graph and investigate its topology to uncover hotspots of malicious or suspicious activities and then scan our DNS database for new domains hosted on these malicious IP ranges. To confirm certain common patterns in the AS graph and isolate suspicious address space, we will demonstrate novel forensics and investigative methods based on the monitoring of BGP prefix announcements. (2) On the other hand, we drill down to a granularity finer than the BGP prefix. For this, we zero in on re-assigned IP ranges reserved by bad customers within large prefixes to host Exploit kit domains, browlock, and other attack types. We will present various techniques we devised to efficiently discover suspicious smaller ranges and sweep en masse for candidate suspicious IPs. Our system provides actionable intelligence and preemptively detects and blocks malicious IP infrastructures prior to, or immediately after some of them are used to wage malware campaigns, therefore decisively closing the detection gap. During this presentation, we will publicly share some of the tools we built to gather this predictive intelligence. The discussion of these detection engines and “war stories” wouldn’t be complete without a visualization engine that adequately displays the use cases and offers a graph navigation and investigation tool. Therefore, in this presentation, we will present and publicly release for the first time our own 3D visualization engine, demonstrating the full process which transforms raw data into stunning 3D visuals. We will also present different techniques used to build and render large graph datasets: Force Directed algorithms accelerated on the GPU using OpenCL, 3D rendering and navigation using OpenGL ES, and GLSL Shaders. Finally, we will present a few scripts and methods used to explore our large networks. Every concept is intended to detect and highlight precise features and will be presented with its corresponding visual representation related to malware detection use cases.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Mahjoub",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Mahjoub, Reuille, and Toonk - Catching Malware En Masse: DNS and IP Style",
+          "url": "https://www.youtube.com/watch?v=KFx4lhxMi-M"
         }
       ],
       "evidence": true,

@@ -1,0 +1,74 @@
+{
+  "name": "Ron Bobrov",
+  "last-updated": "2026-10-17T08:51:45Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ron Bobrov",
+      "label": "Your WAF Blocked Us, That Was The Exploit - Remote Agent Takeover via Cloudflare, Sentry and Claude Zero-Day for data exfil",
+      "description": "What happens when getting blocked by your WAF is exactly how the attacker gets in? We built two new remote exploit chains that hijack AI agents through Cloudflare and Sentry - two of the most trusted tools on the internet. No malware. No binary exploits. The attacker never touches the victim or their agent. Just text in public logs, waiting to be read. Chain 1: We send requests Cloudflare blocks with 403 - and that is the attack. Our payloads land in WAF logs. When a dev asks their agent to debug Cloudflare, injections activate via cloudflare queries. Using only Cloudflare's own MCP tools, we hijack DNS and reroute customer traffic. Chain 2: We inject stacktraces into Sentry's public API, no auth needed. Sentry's \"Seer\" agent reads them, gets compromised, and its poisoned recommendations flow into a developer's Cursor which executes our commands. One agent infecting another. First demo of agent-to-agent lateral movement and \"Self-Exploiting Agent\" technique. Then we go deeper: a zero-day in Claude bypasses its network sandbox for full data exfiltration. For persistence, we show how \"agentic rootkits\" work by memory injection and config poisoning, invisible to EDRs. est 15,000+ organizations exposed via Cloudflare MCP alone. 27% of them are Fortune 1000. Responsibly disclosed. We're now showing everything.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66668",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "endpoint-and-host-defense"
+        ],
+        "red-teaming": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research",
+          "ai-agent-security"
+        ]
+      }
+    }
+  ]
+}

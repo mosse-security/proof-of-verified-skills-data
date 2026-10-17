@@ -1,25 +1,25 @@
 {
   "name": "Michael Leibowitz",
-  "last-updated": "2026-10-17T05:50:57Z",
+  "last-updated": "2026-10-17T08:51:43Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 0,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 2,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
-      "red-teaming": 1,
+      "red-teaming": 2,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -64,6 +64,81 @@
         "vulnerability-research"
       ],
       "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Michael Leibowitz",
+      "label": "Secure Tokin' and Doobiekeys: How to roll your own counterfeit hardware security devices",
+      "description": "Saturday at 11:00 in Track 2 45 minutes | Demo, Tool Joe FitzPatrick SecuringHardware.com Michael Leibowitz Senior Trouble Maker Let's face it, software security is still in pretty bad shape. We could tell ourselves that everything is fine, but in our hearts, we know the world is on fire. Even as hackers, it's incredibly hard to know whether your computer, phone, or secure messaging app is pwned. Of course, there's a Solution(tm) - hardware security devices. We carry authentication tokens not only to secure our banking and corporate VPN connections, but also to access everything from cloud services to social networking. While we've isolated these 'trusted' hardware components from our potentially pwnd systems so that they might be more reliable, we will present scenarios against two popular hardware tokens where their trust can be easily undermined. After building our modified and counterfeit devices, we can use them to circumvent intended security assumptions made by their designers and users. In addition to covering technical details about our modifications and counterfeit designs, we'll explore a few attack scenarios for each. Sharing is Caring, so after showing off a few demonstration, we'll walk you through the process of rolling your own Secure Tokin' and Doobiekey that you can pass around the circle at your next cryptoparty.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#FitzPatrick",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Michael Leibowitz",
+      "label": "EDR Is Coming; Hide Yo Sh!t",
+      "description": "There’s a new, largely unaddressed threat in the security industry today, Endpoint Detection and Response (EDR), which aims to stop threat actors in their tracks. The scenario plays out like this... At first your campaign is going well and your attacker objectives are being met. Then, your lovingly crafted payloads become analyst samples, you’re evicted from the environment and you lose your persistence. You and the analyst are now having a bad time. You may feel this is just fear mongering, but we assure you, the risk is real.Fortunately, we have a few new tricks up our sleeves to keep this nightmare scenario at bay. While many would have you believe that we live in a measured and signed boot Utopia on modern systems, we will show you the seedy underbelly of this Brave New World. By abusing early boot mechanisms and UEFI platform firmware, we are able to evade common detection. By showing up early to the fight, we sucker punch EDR, leaving it in a daze unable to see our malicious activities. We put a new twist on old code injection techniques and maintain persistence in UEFI firmware, making an effective invisibility cloak. By leveraging these two techniques, you and the analyst can have a happy and relaxing evening. From that point on - the good ol’ days are back again! Plunder away!",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Leibowitz",
+      "evidence-links": [
+        {
+          "title": "Michael Leibowitz - EDR is Coming Hide Yo Sh!t - DEF CON 27 Conference",
+          "url": "https://www.youtube.com/watch?v=q2KUufrjoRo"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "endpoint-and-host-defense"
+        ],
         "red-teaming": [],
         "vulnerability-research": []
       }

@@ -1,13 +1,13 @@
 {
   "name": "Douglas McKee",
-  "last-updated": "2026-10-17T05:50:54Z",
+  "last-updated": "2026-10-17T08:51:39Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
+    "endorsements": 3,
+    "assessors": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,75 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Douglas McKee",
+      "label": "80 to 0 in under 5 seconds: Falsifying a medical patient's vitals",
+      "description": "It seems each day that passes brings new technology and an increasing dependence upon it. The medical field is no exception; medical professionals rely upon technology to provide them with accurate information and base life-changing decisions on this data. In recent years there has been more attention paid to the security of medical devices; however, there has been little research done on the unique protocols used by these devices. In large, health care systems medical personnel take advantage of to make decisions on patient treatment and other critical care, use central monitoring stations. This information is gathered from many devices on the network using uncommon networking protocols. What if this information wasn't accurate when a doctor prescribed medication? What if a patient was thought to be peacefully resting, when in fact they are under cardiac arrest? McAfee's Advanced Threat Research team has discovered a weakness in the RWHAT protocol, one of the networking protocols used by medical devices to monitor a patient's condition. This protocol is utilized in some of the most critical systems used in hospitals. This weakness allows the data to be modified by an attacker in real-time to provide false information to medical personnel. Lack of authentication also allows rogue devices to be placed onto the network and mimic patient monitors. This presentation will include a technical dissection of the security issues inherent in this relatively unknown protocol. It will describe real-world attack scenarios and demonstrate the ability to modify the communications in-transit to directly influence the receiving devices. We will also explore the general lack of security mitigations in the medical devices field, the risks they pose, and techniques to address them. The talk will conclude with a demonstration using actual medical device hardware and a live modification of a patient's critical data.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#McKee",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ]
+      }
+    },
+    {
+      "name": "Douglas McKee",
+      "label": "HVACking: Understand the Difference Between Security and Reality!",
+      "description": "Like most modern devices, building controllers have increasingly become network connected, exposing them to a wider range of threats. If malicious actors could manipulate access control systems, boiler rooms, or temperature control for critical industrial systems, the potential for catastrophic damage is extreme. McAfee's ATR team has discovered a 0-day vulnerability in a major building controller. This controller is a fully programmable native BACnet™ device designed to manage a wide range of building systems. By modifying BACnet broadcast traffic, a buffer overflow can be leveraged into a write-what-where (WWW) condition. This WWW leads to execution control, providing the attacker with a root shell and complete control over the device remotely. Because this attack vector is through BACnet broadcast traffic, there is no authentication mechanism for the target device, allowing anyone on the same network to communicate with it directly and exploit the vulnerability without authentication. Currently, there are over 500 of these devices connected to the internet running in BACnet/IP Broadcast Management Device (BBMD) mode. Utilizing this mode, broadcast traffic can travel over the internet, increasing the potentially devastating impact of this vulnerability. This presentation will include a deep technical analysis of the vulnerability discovery process and demos illustrating an attack in a critical scenario. Finally, we will discuss the steps taken by the vendor to patch this vulnerability and demonstrate its effectiveness.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#McKee",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "vulnerability-discovery",
+          "zero-day-and-0-day-research"
+        ]
+      }
+    },
     {
       "name": "Douglas McKee",
       "label": "Fail Harder: Finding Critical 0-Days in Spite of Ourselves",

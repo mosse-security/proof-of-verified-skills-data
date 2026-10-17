@@ -1,12 +1,12 @@
 {
   "name": "Justin Engler",
-  "last-updated": "2026-10-17T05:50:56Z",
+  "last-updated": "2026-10-17T08:51:42Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 4,
+    "assessors": 2,
+    "with-evidence": 4,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,16 +19,55 @@
       "penetration-testing": 1,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Justin Engler",
+      "label": "Smartfuzzing The Web: Carpe Vestra Foramina",
+      "description": "It can be scary to think about how little of the modern attack surface many tools cover. There is no one best tool for the job and on top of that some tools don't do a great job at anything. Often in the hands of general users the capabilities and limitations are not even thought of during testing. Point, click, done. The attack surface of modern web environments as well as their protection mechanisms have become more complicated and yet many tools have not adapted. Hey, Y2K called and it wants some applications tested. There is certainly no shortage of vulnerabilities in modern web environments but we should be looking beyond low hanging fruit at this point. In between fully automated scanners and manual testing lies a sweet spot for the identification of vulnerabilities. Some of the juiciest pieces of information are not found by vulnerability scanners but are found by humans creating custom tests. This is why semi-automated testing space is so important. All of this complicated blending of protection mechanisms, services, and RIA technologies means that moving in to the area of semi-automated testing can be fraught with failure. We detail how these failures can be avoided as well as provide a tool that solves some of these problems as well as provides analysis for your own tools and scripts. Your web applications have moved on, don't you think it's time your tools to do the same?",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 19",
+      "url": "https://defcon.org/html/defcon-19/dc-19-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 19 - Panel - Smartfuzzing The Web: Carpe Vestra Foramina",
+          "url": "https://www.youtube.com/watch?v=K69UZjDzbLg"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2011,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    },
     {
       "name": "Justin Engler",
       "label": "iOS Application Security Assessment and Automation: Introducing SIRA",
@@ -64,6 +103,80 @@
       ],
       "subspecialties": {
         "penetration-testing": []
+      }
+    },
+    {
+      "name": "Justin Engler",
+      "label": "Electromechanical PIN Cracking with Robotic Reconfigurable Button Basher (and C3BO)",
+      "description": "Password and PIN systems are often encountered on mobile devices. A software approach to cracking these systems is often the simplest, but in some cases there may be no better option than to start pushing buttons. This talk will cover automated PIN cracking techniques using two new tools and discuss the practicality of these attacks against various PIN-secured systems. Robotic Reconfigurable Button Basher (R2B2) is a ~$200 robot designed to manually brute force PINs or other passwords via manual entry. R2B2 can operate on touch screens or physical buttons. R2B2 can also handle more esoteric lockscreen types such as pattern tracing. Capacitive Cartesian Coordinate Bruteforceing Overlay (C3BO) is a combination of electronics designed to electrically simulate touches on a capacitive touch screen device. C3BO has no moving parts and can work faster than R2B2 in some circumstances. Both tools are built with open source software. Parts lists, detailed build instructions, and STL files for 3d printed parts will be available for download. A lucky volunteer will get to have their PIN cracked live on stage!.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 21 - Justin Engler and Paul Vines - Electromechanical PIN Cracking",
+          "url": "https://www.youtube.com/watch?v=3E8lQO9rmn8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2013,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Justin Engler",
+      "label": "Secure Messaging for Normal People",
+      "description": "\"Secure\" messaging programs and protocols continue to proliferate, and crypto experts can debate their minutiae, but there is very little information available to help the rest of the world differentiate between the different programs and their features. This talk will discuss the types of attacks various secure messaging features can defend against so those who are tech-savvy but not crypto-experts can make informed decisions on which crypto applications to use. This talk is intended for people with no preexisting cryptography knowledge. There will be no math or programming knowledge required. The goal is to explain secure messaging concepts such as PKI, PFS, and key validation without diving into heavier crypto, math, or programming content.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Engler",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Justin Engler - Secure Messaging for Normal People",
+          "url": "https://www.youtube.com/watch?v=S_YRo0iPjYc"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
       }
     }
   ]

@@ -1,12 +1,12 @@
 {
   "name": "Christopher Campbell",
-  "last-updated": "2026-10-17T05:50:53Z",
+  "last-updated": "2026-10-17T08:51:38Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -16,11 +16,11 @@
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 0,
+      "penetration-testing": 1,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
-      "identity-and-access-management": 1,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 2,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
@@ -67,6 +67,86 @@
         "vulnerability-research": [],
         "identity-and-access-management": [
           "authentication"
+        ]
+      }
+    },
+    {
+      "name": "Christopher Campbell",
+      "label": "The $env:PATH less Traveled is Full of Easy Privilege Escalation Vulns",
+      "description": "15 years after APT was released for Linux, Microsoft is finally going to ship Windows with a package manager! Windows PowerShell OneGet is the easiest and fastest way to install applications and will be a fundamental part of how Microsoft wants you to administer your enterprise. In this talk we will go over OneGet, Nuget and Chocolatey and observe some of the security problems that will have to be overcome before widespread adoption. We will go over the hundreds of privilege escalation vulnerabilities that were found in the over 1800 unique packages that are already available on the repository server. We will also demo vulnerabilities against one of the package managers and PowerShell itself. Come see how to find third-party privilege escalation bugs at scale with the newest addition to PowerSploit.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Campbell2",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Christopher Campbell - The $env:PATH less Traveled",
+          "url": "https://www.youtube.com/watch?v=-SqAlpANtIs"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Christopher Campbell",
+      "label": "The Secret Life of Krbtgt",
+      "description": "A tale of peril and woe, Krbtgt is the domain account that you just can't quit. Quiet and harmless, it has been with your enterprise since you first installed Active Directory. Although disabled, it has witnessed years of poor configurations, remote code execution vulnerabilities and bad administrator passwords. Come hear Krbtgt's story and see why its days should be numbered. If you don't laugh, you'll cry. This talk is targeted at Windows administrators, penetration testers and incident handlers and will explore why Microsoft's implementation of Kerberos is not the answer to its many credential problems.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Campbell",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Christopher Campbell - The Secret Life of Krbtgt",
+          "url": "https://www.youtube.com/watch?v=7HdcEQGQZDU"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "directory-services"
         ]
       }
     }

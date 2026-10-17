@@ -1,0 +1,75 @@
+{
+  "name": "Eric Labrador",
+  "last-updated": "2026-10-17T08:51:39Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Eric Labrador",
+      "label": "Certified Re-Pwned: escalating all the way up",
+      "description": "Four years after KB5014754 and one year after CVE-2024-49019, every hardening guide says Active Directory Certificate Services is a closed book. This talk reopens it. We present five new primitives — proposed as ESC18 through ESC22, extending the public ESC1–ESC17 numbering — each validated end-to-end on a fully-patched Windows Server 2025 Enterprise CA with every Microsoft-recommended mitigation applied. Every primitive starts from a Domain Users account with no ACL, GPO, or template edges, and ends at krbtgt extraction. Each primitive targets a different component of the post-2022 defence: the CA's CSR processor, the CA's Security-Extension writer, the KDC's PKINIT binder, the CA's Enroll-On-Behalf-Of path, and the registry-level enforcement layer everyone thinks is already hardened. Together they argue that Microsoft's 2022 and 2024 fixes patched specific instances of the underlying bug classes, not the classes themselves — and that at least one control has an undocumented fallback path its own documentation does not mention. A Certipy research fork will be released at the time of the talk to check and exploit the new techniques.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66602",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure",
+          "exploit-mitigation-and-hardening"
+        ],
+        "identity-and-access-management": [
+          "directory-services",
+          "single-sign-on-and-federation"
+        ]
+      }
+    }
+  ]
+}

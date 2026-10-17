@@ -1,0 +1,71 @@
+{
+  "name": "Steven Flores",
+  "last-updated": "2026-10-17T08:51:47Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Steven Flores",
+      "label": "A Provider for the MOFia - Distributed Post-Ex Capabilities",
+      "description": "From time to time I take another pass at WMI to see if there's anything left in it that hasn't been picked over. For most of the last decade, offensive WMI has meant Win32_Process Create and event subscription persistence. Defenders built their detections around those two primitives, EDR vendors optimized for them, and the rest of WMI mostly got ignored. The provider architecture is one of the parts that got ignored. This talk is about turning it into a distributed post-exploitation framework. The core technique is remote installation of custom WMI providers without dropping anything over SMB or WinRM. To get there, I had to reimplement the parts of mofcomp.exe that handle MOF parsing and provider registration, and push the resulting object instances over the wire using the MS-WMIO binary protocol. Getting the DLL onto the target needed its own primitive, so along the way I found that there are existing WMI classes on every supported Windows version that can be abused for arbitrary file upload and download. As far as I can tell that hasn't been published before. Once a provider is installed, it runs inside WMIPrvSE.exe, which is a very different execution context from spawning cmd.exe through Win32_Process. The provider library I'm releasing covers a series of post exploitation primitives.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66579",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "endpoint-and-host-defense"
+        ],
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

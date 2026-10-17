@@ -1,0 +1,120 @@
+{
+  "name": "Ben Gardiner",
+  "last-updated": "2026-10-17T08:51:37Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 2,
+      "operational-technology-security": 1,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ben Gardiner",
+      "label": "Blind Trailer Shouting",
+      "description": "Tanker trailers? Turns out those aren't just big, dumb hunks of metal. They have a powerline network, PLC4TRUCKS, which is unintentionally accessible wirelessly (CVEs 2020-14514 and 2022-26131). We found new trailer brake controllers using diagnostic protocol KWP2000, secured with access control by seed-key (a challenge-response protocol). We'll show how to use Wireshark to analyze the diag. traffic. We'll discuss why randomness is critical for any challenge-response protocol. We'll cover two ways to bypass this access control: using a SMT solver to crack the routine from a few request-response pairs (automated with AHK), and a classic reset attack that makes seeds entirely predictable. This second way allows for a blind, wireless attack, a finding now recognized as CVE-2024-12054. We'll detail how we ran timing search 'campaigns' with a custom sigrok decoder to PoC it. The trailer brake controller is also at risk from trailer-installed telematics devices too. We'll show how to use Scapy Automotive's UDS scanner on a faked CAN bus for PLC4TRUCKS (plus modify that for a known seed-key routine) so we can get a picture of that attack surface. This and the previous CVEs are a result of the heavy vehicle testing we do. We'll share some details of how we do onsite truck tests and how we do bench tests.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60369",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure",
+          "automotive-security"
+        ],
+        "iot-security": [
+          "automotive-security",
+          "can-bus-and-vehicle-networks",
+          "connected-vehicle-and-telematics-security"
+        ]
+      }
+    },
+    {
+      "name": "Ben Gardiner",
+      "label": "Reversing a Recall: From ‘Noise Triggered’ to RCE",
+      "description": "Heavy-duty trucks move the majority of freight in North America, making them a critical component of our infrastructure. When a major supplier issued a recall to address a seemingly harmless noise issue, the explanation didn't quite add up. This talk follows the reverse engineering journey that began with a simple question and led to a much larger discovery. By tearing apart firmware, analyzing the update protocols, and tracing ECU behavior, we uncovered evidence that the recall was not just remediating noise triggered flaws. Hidden within the recall's firmware update was a security mitigation addressing undisclosed vulnerabilities affecting a critical vehicle system. Attendees will see how modern tractor ECUs can be analyzed using professional and public tools and techniques (IDA Pro, idapython, qbindiff), the challenges of working with the safety-critical microcontrollers in heavy-vehicles (S12XE), and the evidence that revealed security impacts of the patch. Along the way, we'll discuss the growing cybersecurity risks facing commercial vehicles. Whether you're interested in automotive hacking, embedded systems, reverse engineering, or critical infrastructure security, this session offers a look inside the cybersecurity reality of the machines that keep the supply chain moving.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66660",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research",
+        "iot-security",
+        "operational-technology-security"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ],
+        "operational-technology-security": [
+          "critical-infrastructure-resilience",
+          "automotive-security",
+          "ecu-and-automotive-embedded-systems"
+        ]
+      }
+    }
+  ]
+}

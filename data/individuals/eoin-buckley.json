@@ -1,0 +1,70 @@
+{
+  "name": "Eoin Buckley",
+  "last-updated": "2026-10-17T08:51:39Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Eoin Buckley",
+      "label": "GSM: We Can Hear Everyone Now!",
+      "description": "The presentation demonstrates that the security of the A5/1 and A5/3 ciphers used to protect cellular calls are vulnerable to compromise leading to full decryption of GSM communications, using freely available open source solutions along with our tools we developed for this task. The flaw being exploited lies in the heart of the design of GSM. In all implementations the standard requires GSM messages to first be error control encoded using a convolutional code and then encrypted. In the vast majority of implementations used today, encryption is performed using the A5/1 or A5/3 cipher. The convolutional code adds redundancy to the transmitted message, which can act like a fingerprint to identify the key used to encrypt the GSM message. To exploit the vulnerability an attacker simply needs to capture a transmission and identify the GSM channel used. The standard defines the convolutional code and therefore how the redundancy may be interpreted to recover the encryption key. This presentation considers passively capturing GSM traffic using A5/3 encryption and demonstrates a novel solution to cracking the key used without interacting with the mobile or network.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Murray",
+      "evidence-links": [
+        {
+          "title": "Campbell Murray - GSM We Can Hear Everyone Now - DEF CON 27 Conference",
+          "url": "https://www.youtube.com/watch?v=YlqJCPk2OvQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

@@ -1,34 +1,243 @@
 {
   "name": "Wesley McGrew",
-  "last-updated": "2026-10-17T05:50:59Z",
+  "last-updated": "2026-10-17T08:51:48Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
-    "without-evidence": 0,
+    "endorsements": 12,
+    "assessors": 2,
+    "with-evidence": 7,
+    "without-evidence": 5,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
       "devsecops": 0,
-      "digital-forensics": 0,
+      "digital-forensics": 3,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 2,
-      "red-teaming": 0,
-      "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "penetration-testing": 8,
+      "red-teaming": 3,
+      "reverse-engineering": 3,
+      "vulnerability-research": 10,
       "identity-and-access-management": 0,
       "iot-security": 0,
-      "operational-technology-security": 0,
+      "operational-technology-security": 1,
       "threat-hunting": 0,
-      "cybercrime-and-fraud": 0,
+      "cybercrime-and-fraud": 1,
       "unknown": 0
     }
   },
   "endorsements": [
+    {
+      "name": "Wesley McGrew",
+      "label": "Covert Post-Exploitation Forensics With Metasploit",
+      "description": "In digital forensics, most examinations take place after the hardware has been physically seized (in most law enforcement scenarios) or a preinstalled agent allows access (in the case of enterprise forensics packages). These scenarios imply that the \"subject' (the one in possession of the media) is aware of the fact that their data has been seized or subject to remote access. While penetration testing tools allow for surface-level access to the target filesystem, there is a lot of potential data that is being missed in unallocated space that could be accessed by file system forensic tools such The Sleuth Kit. In this presentation, Wesley will present a new set of tools that will allow forensic examiners and pentesters alike to image remote filesystems of compromised systems, or perform examinations directly on remote filesystem with forensic tools on the attacking machine by mapping remote drives to local block devices. This is the integration of Metasploit with a large body of existing digital forensic tools.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 19",
+      "url": "https://defcon.org/html/defcon-19/dc-19-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 19 - Wesley McGrew - Covert Post-Exploitation Forensics With Metasploit",
+          "url": "https://www.youtube.com/watch?v=807mHR2Gd1M"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2011,
+      "domains": [
+        "digital-forensics",
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "digital-forensics": [
+          "forensic-tooling-and-laboratory-practice"
+        ],
+        "penetration-testing": [],
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "SCADA HMI and Microsoft Bob: Modern Authentication Flaws With a 90's Flavor",
+      "description": "SCADA HMI software provides a \"control panel\" interface to SCADA/ICS systems, allowing system operators and engineers the capability to visually monitor and make changes to parameters in the system. Many HMI packages provide the ability to authenticate users, to allow access to dangerous or sensitive controls and data to specific users, while restricting other users to observation or less sensitive areas of the system. Microsoft Bob was a failed Microsoft project from 1995: an attempt to make computers easy for end-users by providing a non-technical captive interface of \"rooms\" that users could move around, use the launch programs, and store files. Cartoon guides helped users with every step of the way. Thanks to an overly-helpful cartoon dog that would offer to change your password for you if you forgot it, it's frequently used as an example of bad security design choices. In this presentation, Wesley will point out the similarities and differences between Microsoft Bob and SCADA HMI software, and demonstrate previously unpublished vulnerabilities in the HMI systems that are very reminiscent of the problems with Microsoft Bob (which will also be demonstrated!). For penetration testers, the techniques used to quickly identify these vulnerabilities will be discussed, as well as mitigations for those who have to defend such systems.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 20",
+      "url": "https://defcon.org/html/defcon-20/dc-20-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 20 - Wesley McGrew - SCADA HMI and Microsoft Bob",
+          "url": "https://www.youtube.com/watch?v=iV4Mt0DLLDw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2012,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research",
+        "operational-technology-security"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [],
+        "operational-technology-security": [
+          "industrial-control-systems",
+          "scada-security",
+          "automotive-security",
+          "ecu-and-automotive-embedded-systems"
+        ]
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "Pwn The Pwn Plug: Analyzing and Counter-Attacking Attacker-Implanted Devices",
+      "description": "Malicious attackers and penetration testers alike are drawn to the ease and convenience of small, disguise-able attacker-controlled devices that can be implanted physically in a target organization. When such devices are discovered in an organization, that organization may wish to perform a forensic analysis of the device in order to determine what systems it has compromised, what information has been gathered, and any information that can help identify the attacker. Also, attacker-implanted penetration testing software and hardware may also be the target of counter-attack. Malicious attackers may compromise penetration testers' devices in order to surreptitiously gather information across multiple targets and pentests. The very tools we rely on to test security may provide an attractive attack surface for third parties. In this talk, procedures for forensic examination and zero-day vulnerabilities that lead to remote compromise of the Pwn Plug will be discussed and demonstrated as a case study. Possible attack scenarios will be discussed.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2013,
+      "domains": [
+        "digital-forensics",
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "digital-forensics": [],
+        "penetration-testing": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ]
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "Instrumenting Point-of-Sale Malware: A Case Study in Communicating Malware Analysis More Effectively",
+      "description": "The purpose of this talk is to promote the adoption of better practices in the publication and demonstration of malware analyses. For various reasons, many popular analyses of malware do not contain information required for a peer analyst to replicate the research and verify results. This hurts analysts that wish to continue to work more in-depth on a sample, and reduces the value of such analyses to those who would otherwise be able to use them to learn reverse engineering and improve themselves personally. This paper and talk proposes that we borrow the concept of “executable research” by supplementing our written analysis with material designed to illustrate our analysis using the malware itself. Taking a step beyond traditional sandboxes to implement bespoke virtual environments and scripted instrumentation with commentary can supplement written reports in a way that makes the analysis of malware more sound and useful to others. As a case-study of this concept, an analysis of the recent high-profile point-of-sale malware, JackPOS is presented with enough information to replicate the analysis on the provided sample. A captured command-and-control server is included and Python-based harnesses are developed and presented that illustrate points of interest from the analysis by instrumenting the execution of the malware itself.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#McGrew",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Wesley McGrew- Instrumenting Point-of-Sale Malware",
+          "url": "https://www.youtube.com/watch?v=IFNb3ciJZkQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "red-teaming",
+        "reverse-engineering"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "reverse-engineering": [
+          "malware-analysis"
+        ]
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "I Hunt Penetration Testers: More Weaknesses in Tools and Procedures",
+      "description": "When we lack the capability to understand our tools, we operate at the mercy of those that do. Penetration testers make excellent targets for bad actors, as the average tester’s awareness and understanding of the potential risks and vulnerabilities in their tools and processes is low, and the value of the information they gather and gain access to among their client base is very high. As demonstrated by Wesley’s DEF CON 21 talk on vulnerabilities in penetration testing devices, and last year’s compromise of WiFi Pineapple devices, the tools of offensive security professionals often represent a soft target. In this talk, operational security issues facing penetration testers will be discussed, including communication and data security (not just “bugs”), which impact both testers and clients. A classification system for illustrating the risks of various tools is presented, and vulnerabilities in specific hardware and software use cases are presented. Recommendations are made for improving penetration testing practices and training. This talk is intended to be valuable to penetration testers wanting to protect themselves and their clients, and for those who are interesting in profiling weaknesses of opposing forces that may use similar tools and techniques.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#McGrew",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Wesley McGrew - I Hunt Penetration Testers: More Weaknesses in Tools and Procedures",
+          "url": "https://www.youtube.com/watch?v=pSGAu4PZ7bw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": []
+      }
+    },
     {
       "name": "Wesley McGrew",
       "label": "Secure Penetration Testing Operations: Demonstrated Weaknesses in Learning Material and Tools",
@@ -57,6 +266,40 @@
         },
         "level": 2,
         "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "Secure Penetration Testing Operations: Demonstrated Weaknesses in Learning Material and Tools",
+      "description": "Following previous presentations on the dangers penetration testers face in using current off-the-shelf tools and practices (Pwn the Pwn Plug and I Hunt Penetration Testers), this third presentation explores how widely available learning materials used to train penetration testers lead to inadequate protection of client data and penetration testing operations. With widely available books and other training resources targeting the smallest set of prerequisites, in order to attract the largest audience, many penetration testers adopt the techniques used in simplified examples to real world tests, where the network environment can be much more dangerous. Malicious threat actors are incentivized to attack and compromise penetration testers, and given current practices, can do so easily and with dramatic impact. This presentation will include a live demonstration of techniques for hijacking a penetration tester's normal practices, as well as guidance for examining and securing your current testing procedures. Tools shown in this demonstration will be released along with the talk.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 24",
+      "url": "https://defcon.org/html/defcon-24/dc-24-speakers.html#McGrew",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
       "year": 2016,
       "domains": [
@@ -105,6 +348,159 @@
       "subspecialties": {
         "penetration-testing": [],
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "An Attacker Looks at Docker: Approaching Multi-Container Applications",
+      "description": "Containerization, such as that provided by Docker, is becoming very popular among developers of large-scale applications. The good news: this is likely to make your life easier as an attacker. While exploitation and manipulation of traditional monolithic applications might require specialized experience and training in the target languages and execution environment, applications made up of services distributed among multiple containers can be effectively explored and exploited \"from within\" using many of the system- and network-level techniques that attackers, such as penetration testers, already know. The goal of this talk is to provide a hacker experienced in exploitation and post-exploitation of networks and systems with an exposure to containerization and the implications it has on offensive operations. Docker is used as a concrete example for the case study. A hacker can expect to leave this presentation with a practical exposure to multi-container application post-exploitation.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#McGrew",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 - Wesley McGrew - An Attacker Looks at Docker Approaching Multi Container Applications",
+          "url": "https://www.youtube.com/watch?v=-Ug2vmRiI8g"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "Retro Exploitation: Using Vintage Computing Plaforms as a Vulnerability Research Playground and Learning Environment",
+      "description": "It can be very difficult for those new to hacking to learn about vulnerability discovery and exploit development on modern operating systems and software. The complexity of a modern computing environment, developer awareness of security risks, and the iterative development of exploit mitigations over the past three decades has put up an intimidating wall in front of those who would be interested in learning about vulnerability research. Vintage computing environments can provide an interesting and fun playground environment for learning and experimenting with reverse engineering, vulnerability discovery, and exploit development. In this talk, Wesley will discuss the setup of a complete environment for hacking software for the Commodore Amiga line of computers, a 16/32 bit computing platform of the late 80s and early 90s (not to mention a dedicated following of users and software today). He will describe the hardware environment, OS architecture, and the practically endless library of software that can be used as interesting targets of research. On-system development and debugging software will be described, as well as using the modern Ghidra disassembler. A case study of identifying and exploiting a vulnerability in a 1994 vintage FTP client will be discussed in technical detail.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#WMcGrew",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "decompilation-and-disassembly"
+        ],
+        "vulnerability-research": [
+          "vulnerability-discovery",
+          "exploit-development",
+          "exploit-mitigation-and-hardening"
+        ]
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "Reverse Engineering MicroPython Frozen Modules: Data Structures, Reconstruction, and Reading Bytecode",
+      "description": "MicroPython is a firmware environment for quickly developing and deploying software onto microcontroller systems. It is used in a variety of industrial and scientific applications, as well as (most importantly) in some DEF CON #badgelife projects. It's easy to learn and use for rapid prototyping. For hackers interested in reverse engineering compiled or obfuscated MicroPython code, there are some obstacles. MicroPython is an implementation of CPython, not a port, so it has its own compiled bytecode language that existing reverse engineering tools aren't designed to parse. Also, modules can be \"frozen\", compiled directly into the microcontroller firmware, and may be difficult to locate and parse when microcontroller firmware is extracted and analyzed. In this talk, Wesley will walk the audience through the process of identifying \"frozen\"/compiled modules in a firmware image without debug symbols using the Ghidra disassembler. The relevant module, string, object, and raw code data structures will be detailed, so that everything required to rebuild a non-frozen module can recovered. Once a compiled module is reconstructed, Wesley will present a detailed example of reading and understanding MicroPython compiled bytecode, for the purpose of reverse engineering the purpose and implementation of the module. Micropython source code Official documentation, including: .mpy files: link Micropython internals: link \"Securing a MicroPython System\" link The collected Raspberry Pi Pico documentation for my test environment link Andrew Leech - \"Profiling Pathogens with (micro) Python\" link Kevin McAleer - \"Securing Passwords with MicroPython\" link C. Spindler - \"MicroPython used in industrial applications\" link \"MicroPython and the European Space Agency\" link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54479",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2024,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "decompilation-and-disassembly"
+        ],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Wesley McGrew",
+      "label": "Amber64: Mining Hacker History from Over Half a Million Commodore 64 Disks",
+      "description": "The Commodore 64 home computer, which sold at least 12.5 million units from 1982 to 1994, was widely used during a formative early decade in the subcultures of hacking, phreaking, piracy, and cybercrime. Like ancient insects trapped in amber, discovered and studied millions of years later, ephemera of hacker history has been fortuitously preserved in the file system structures of C64 floppy disks from the 1980s and 90s. Enthusiasts and researchers have created byte-for-byte copies of disks in order to preserve games, applications, and demos of the time period. What is less obvious, however, is that users of the time tended to reuse disks, deleting old files to make space for new programs. This and other use patterns have resulted in interesting data being retained in unallocated sectors alongside the overtly-accessible programs and data. Often, this data can be recovered and includes logs of online sessions, hacker text files, and more. In this talk, Dr. McGrew describes software and workflow he developed to perform forensic processing and full-text indexing of over 650,000 unique C64 floppy disk images from publicly-accessible online archives. He will also present interesting findings from searches and analysis that illustrate, for the modern audience, day-to-day hacker communications and tools of the past. References: Guiness Book of World Records - Most Computer Sales - link Jason Scott, Textfiles.com - link Wolfgang Moser, D64 (Electronic form of a physical 1541 disk), D64.TXT, Nov 7 2008, link Schepers, Forster, Disk File Layout (D64, D71, D81), DISK.TXT, Mar 11, 2004, link Immers, Neufeld, Inside Commodore DOS, 1985 The Cutting Room Floor - link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60368",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2025,
+      "domains": [
+        "digital-forensics",
+        "cybercrime-and-fraud"
+      ],
+      "subspecialties": {
+        "digital-forensics": [
+          "disk-and-filesystem-forensics"
+        ],
+        "cybercrime-and-fraud": []
       }
     }
   ]

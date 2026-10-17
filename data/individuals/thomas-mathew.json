@@ -1,13 +1,13 @@
 {
   "name": "Thomas Mathew",
-  "last-updated": "2026-10-17T05:50:59Z",
+  "last-updated": "2026-10-17T08:51:47Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
+    "endorsements": 2,
+    "assessors": 2,
     "with-evidence": 1,
-    "without-evidence": 0,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 1,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -70,6 +70,38 @@
         "cybercrime-and-fraud": [
           "ransomware-economics-and-operations"
         ]
+      }
+    },
+    {
+      "name": "Thomas Mathew",
+      "label": "Malicious CDNs: Identifying Zbot Domains en Masse via SSL Certificates and Bipartite Graphs",
+      "description": "Sunday at 13:00 in Track 3 45 minutes | Art of Defense Thomas Mathew OpenDNS (Cisco) Dhia Mahjoub Head of Security Research, Cisco Umbrella (OpenDNS) Prior research detailing the relationship between malware, bulletproof hosting, and SSL gave researchers methods to investigate SSL data only if given a set of seed domains. We present a novel statistical technique that allow us to discover botnet and bulletproof hosting IP space by examining SSL distribution patterns from open source data while working with limited or no seed information. This work can be accomplished using open source datasets and data tools. SSL data obtained from scanning the entire IPv4 namespace can be represented as a series of 4 million node bipartite graphs where a common name is connected to either an IP/CIDR/ASN via an edge. We use the concept of relative entropy to create a pairwise distance metric between any two common names and any two ASNs. The metric allows us to generalize the concept of regular and anomalous SSL distribution patterns. Relative entropy is useful in identifying domains that have anomalous network structures. The domains we found in this case were related to the Zbot proxy network. The Zbot proxy network contains a structure similar to popular CDNs like Akamai, Google, etc but instead rely on compromised devices to relay their data. Through layering these SSL signals with passive DNS data we create a pipeline that can extract Zbot domains with high accuracy.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Mathew",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
       }
     }
   ]

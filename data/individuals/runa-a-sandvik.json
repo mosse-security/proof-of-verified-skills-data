@@ -1,16 +1,16 @@
 {
   "name": "Runa A. Sandvik",
-  "last-updated": "2026-10-17T05:50:58Z",
+  "last-updated": "2026-10-17T08:51:45Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -18,10 +18,10 @@
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
-      "reverse-engineering": 1,
-      "vulnerability-research": 1,
+      "reverse-engineering": 2,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
-      "iot-security": 1,
+      "iot-security": 2,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
@@ -29,6 +29,45 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Runa A. Sandvik",
+      "label": "Safety of the Tor network: a look at network diversity, relay operators, and malicious relays",
+      "description": "Rumor has it that the Tor network is a CIA honeypot, that all relays are malicious, and that only bad people use Tor to do bad things online. How much of this is true? How much can we say about the safety of the network? The safety of the Tor network has been a much discussed topic ever since the onion routing network was deployed in September 2002. This talk aims to answer the following questions: (1) How much diversity does the network really have?, (2) Who runs the relays in the Tor network?, and (3) What is being done about malicious relays?",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 21 - Runa A Sandvik - Safety of the Tor network",
+          "url": "https://www.youtube.com/watch?v=qWr5D2RoXoo"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2013,
+      "domains": [
+        "cyber-defense"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "deception-and-honeypots"
+        ]
+      }
+    },
     {
       "name": "Runa A. Sandvik",
       "label": "When IoT Attacks: Hacking a Linux-Powered Rifle",
@@ -45,6 +84,49 @@
         {
           "title": "When IoT Attacks: Hacking A Linux-Powered Rifle",
           "url": "https://www.youtube.com/watch?v=ZcukSF7ruZY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": [],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Runa A. Sandvik",
+      "label": "When IoT attacks: hacking a Linux-powered rifle",
+      "description": "TrackingPoint is an Austin startup known for making precision-guided firearms. These firearms ship with a tightly integrated system coupling a rifle, an ARM-powered scope running a modified version of Linux, and a linked trigger mechanism. The scope can follow targets, calculate ballistics and drastically increase its user's first shot accuracy. The scope can also record video and audio, as well as stream video to other devices using its own wireless network and mobile applications. In this talk, we will demonstrate how the TrackingPoint long range tactical rifle works. We will discuss how we reverse engineered the scope, the firmware, and three of TrackingPoint's mobile applications. We will discuss different use cases and attack surfaces. We will also discuss the security and privacy implications of network-connected firearms.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Sandvik",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Runa Sandvik, Michael Auger - Hacking a Linux-Powered Rifle",
+          "url": "https://www.youtube.com/watch?v=PEpuEprQ5VU"
         }
       ],
       "evidence": true,

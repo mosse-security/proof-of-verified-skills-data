@@ -1,0 +1,193 @@
+{
+  "name": "Allan Cecil",
+  "last-updated": "2026-10-17T08:51:36Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 4,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Allan Cecil",
+      "label": "Robot Hacks Video Games: How TASBot Exploits Consoles with Custom Controllers",
+      "description": "TASBot is an augmented Nintendo R.O.B. robot that can play video games without any of the button mashing limitations us humans have. By pretending to be a controller connected to a game console, TASBot triggers glitches and exploits weaknesses to execute arbitrary opcodes and rewrite games. This talk will cover how these exploits were found and will explore the idea that breaking video games using Tool-Assisted emulators can be a fun way to learn the basics of discovering security vulnerabilities. After a brief overview of video game emulators and the tools they offer, I'll show a live demo of how the high accuracy of these emulators makes it possible to create a frame-by-frame sequence of button presses accurate enough to produce the same results even on real hardware. After demonstrating beating a game quickly I'll show how the same tools can be used to find exploitable weaknesses in a game's code that can be used to trigger an Arbitrary Code Execution, ultimately treating the combination of buttons being pressed as opcodes. Using this ability, I'll execute a payload that will connect a console directly to the internet and will allow the audience to interact with it. An overview of some of the details that will be described in the talk can be found in an article I coauthored for the PoC||GTFO journal (Pokemon Plays Twitch, page 6 ).",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 24",
+      "url": "https://defcon.org/html/defcon-24/dc-24-speakers.html#Cecil",
+      "evidence-links": [
+        {
+          "title": "DEF CON 24 - Allan Cecil - Robot Hacks: TASBot Exploits Consoles with Custom Controllers",
+          "url": "https://www.youtube.com/watch?v=9ZrNWiBzqUE"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Allan Cecil",
+      "label": "You're Doing IoT RNG",
+      "description": "Think of a random number between '0' and infinity. Was your number '0'? Seriously? Crap. Well unfortunately, the hardware random number generators (RNG) used by your favorite IoT devices to create encryption keys may not work much better than you when it comes to randomness. In this talk, we'll delve into murky design specs, opaque software libraries, and lots of empirical results. We wrote code for many popular IoT SoC platforms to extract gigabytes of data from their hardware RNGs and analyze them. What we found was a systemic minefield of vulnerabilities in almost every platform that could undermine IoT security. Something needs to change in how the Internet of Things does RNG. The vulnerabilities are widespread and the attacks are practical. RNG is bad out there - \"IoT Crypto-pocalypse\" bad.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 29",
+      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#petro",
+      "evidence-links": [
+        {
+          "title": "DEF CON 29 - Dan Petro - You're Doing IoT RNG",
+          "url": "https://www.youtube.com/watch?v=Zuqw0-jZh9Y"
+        },
+        {
+          "title": "DEFCON 29 IoT Village - Petro and Cecil - You're Doing IoT RNG",
+          "url": "https://www.youtube.com/watch?v=dzS1Zf-1Uzo"
+        },
+        {
+          "title": "DEF CON 29 - Dan Petro, Alan Cecil - You're Doing IOT RNG - LIVE",
+          "url": "https://www.youtube.com/watch?v=jXJ9f9DBaVk"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2021,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "security-operations-and-soc-practice"
+        ],
+        "vulnerability-research": [],
+        "iot-security": [
+          "consumer-iot-security",
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Allan Cecil",
+      "label": "Legend of Zelda: Use After Free (TASBot glitches OoT)",
+      "description": "How can a Use After Free exploit in Ocarina of Time lead to a cute robot taking over an entire N64 to put the future (and the Triforce) in the game using only button presses? This talk dives into the technical details of how a Use After Free exploit, Arbitrary Code Execution, and multiple bootstrap stages allowed TASBot to take full control of an original, unmodified cart and console in front of a live audience during SGDQ 2022 with the help of Sauraen and Savestate, helping raise more than $228k for charity. This talk uses engaging explainer graphics courtesy of RGME to dig into how a Use After Free vulnerability can be exploited as well as a live demo showing the significant social impact of the exploit Here Together, in the past year and into the future.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Cecil",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Allan Cecil",
+      "label": "Troll Trapping Through TAS Tools - Exposing Speedrunning Cheaters",
+      "description": "Trolls cheating in video games by passing Tool-Assisted Speedruns off as human effort break leaderboards and stifle speedrunners. Why do they do it when they could make a cool game hack or TAS to show off their work, and how do you trap these trolls? The answer is to use their own tools against them, often with popcorn bucket worthy results like taking down Guinness World Records. From a TASVideos member taking on 1980's Dragster cheat Todd Rogers, a passing mention of Billy Mitchell, and the TASBot team investigating Super Mario Maker shenanigans, this talk covers several notable cheating incidents and concludes with a systematic takedown of a troll that chilled the Diablo speedrunning community for more than a decade. This talk includes several investigations I have been a part of in some capacity and will ultimately include additional references in the coming months; I've broken the references out by game, presented in Markdown format like the rest of this document: Dragster Submission #5517: Omnigamer's A2600 Dragster in 00:08.49 A2600 Dragster by Omnigamer in 00:08.49 Submission #5876: MrWint & Omnigamer's A2600 Dragster in 00:08.39 A2600 Dragster by MrWint, Omnigamer in 00:08.39 Omnigamer's Dragster simulator model Dragster optimal sequence project by esnard Investigation into optimal Dragster play by MrWint TASBot beats Dragster in 5.57 (console verification of Omnigamer's TAS) Super Mario Maker Inside TASBot’s semi-secret, probably legal effort to control the Nintendo Switch The Super Mario Maker community faces its final boss Super Mario Maker ’s “final boss” was a fraud all along How to cheat at Super Mario Maker and get away with it for years Trimming the Herbs TAS attempts Trimming the Herbs has been Beaten Diablo Speed Demos Archive Diablo page Groobo's 2009 Diablo speedrun submission video Speed Demos Archive Diablo run review Guinness World Records Diablo entry Devilution Diablo decompiliation DevilutionX Diablo decompiliation Diablo MapGen",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54501",
+      "evidence-links": [
+        {
+          "title": "DEF CON 32 - Troll Trapping Through TAS Tools  Exposing Speedrunning Cheaters - Allan Cecil",
+          "url": "https://www.youtube.com/watch?v=jALLbBisg_8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

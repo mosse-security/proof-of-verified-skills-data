@@ -1,13 +1,13 @@
 {
   "name": "Corey Kallenberg",
-  "last-updated": "2026-10-17T05:50:53Z",
+  "last-updated": "2026-10-17T08:51:38Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 4,
-    "assessors": 1,
-    "with-evidence": 4,
-    "without-evidence": 0,
+    "endorsements": 8,
+    "assessors": 3,
+    "with-evidence": 6,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,16 +19,50 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 1,
-      "vulnerability-research": 3,
+      "vulnerability-research": 6,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Corey Kallenberg",
+      "label": "No More Hooks: Detection of Code Integrity Attacks",
+      "description": "Hooking is the act of redirecting program control flow somewhere other than it would go by default. For instance code can be \"inlined hooked\" by rewriting instructions to unconditionally transfer to other code. Or code can be hooked by manipulating control flow data like function pointers (IAT, IDT, SSDT, return addresses on the stack, callback addresses in dynamically allocated objects, etc). Hooking as a technique is neutral, but it is often used by malicious software to monitor or hide information on a system. Memory integrity verification requires the ability to detect unexpected hooks which could be causing software to lie or be blinded to the true state of the system. But we don't want to make the same mistake that most security software makes, assuming that they can rely on some built in access control to keep malice at arms length. The history of exploits is the history of bypassing access control. We want to have a technique which can detect if we ourselves are being manipulated to lie even when the attacker is assumed to be at the same high privilege level as our software. We believe that such a goal can be achieved with the help of an academic technique known as software-based, or timing-based, remote attestation. This is a technique which does not require a hardware root of trust like a TPM in order to bootstrap an ephemeral dynamic root of trust for measurement. It does this by computing a randomized checksum over its own memory and other system state, to detect code or control flow integrity attacks. The self-checking software can still be forced to lie and report an unmodified system, but thanks to a special looping construction, code which causes it to lie will require extra instructions per loop. The extra instructions will be multiplied by the number of loops, causing a macroscopic, remotely-detectable, increase in the runtime vs. what's expected. So basically, an attacker can force our software to lie, but because there's a timing side-channel built into the computation, he can still be caught by taking too long to generate a convincing lie. We have independently implemented and confirmed the claims of past work, and furthermore showed that the timing discrepancy in the presence of a checksum-forging attacker is detectable not just for machines on the same ethernet segment, but over 10 links of our production LAN. Because of the results of other work in timing side-channel detection over internet-scale distances, we think this technique can be extended even further. But for now for longer distances, we use this same timing-based technique in concert with TPM as a trustworthy timer, so that network jitter is not an issue.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 20",
+      "url": "https://defcon.org/html/defcon-20/dc-20-speakers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2012,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    },
     {
       "name": "Corey Kallenberg",
       "label": "BIOS Security",
@@ -144,6 +178,75 @@
     },
     {
       "name": "Corey Kallenberg",
+      "label": "Attacks on UEFI security, inspired by Darth Venamis's misery and Speed Racer",
+      "description": "Attacks on UEFI security, inspired by Darth Venamis's misery and Speed Racer",
+      "type": "presentation",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "31C3",
+      "url": "https://media.ccc.de/v/31c3_-_6129_-_en_-_saal_2_-_201412282030_-_attacks_on_uefi_security_inspired_by_darth_venamis_s_misery_and_speed_racer_-_rafal_wojtczuk_-_corey_kallenberg",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Corey Kallenberg",
+      "label": "Extreme Privilege Escalation On Windows 8/UEFI Systems",
+      "description": "It has come to light that state actors install implants in the BIOS. Let no one ever again question whether BIOS malware is practical or present in the wild. However, in practice attackers can install such implants without ever having physical access to the box. Exploits against the BIOS can allow an attacker to inject arbitrary code into the platform firmware. This talk will describe two such exploits we developed against the latest UEFI firmware. The UEFI specification has more tightly coupled the bonds of the operating system and the platform firmware by providing the well-defined \"runtime services\" interface between the OS and the firmware. This interface is more expansive than the interface that existed in the days of conventional BIOS, which has inadvertently increased the attack surface against the platform firmware. Furthermore, Windows 8 has introduced APIs that allow accessing this UEFI interface from a userland process. Vulnerabilities in this interface can potentially allow a userland process to escalate its privileges from \"ring 3\" all the way up to that of the platform firmware, which includes permanently attaining control of the very-powerful System Management Mode (SMM). This talk will disclose two vulnerabilities that were discovered in the Intel provided UEFI reference implementation, and detail the unusual techniques needed to successfully exploit them.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Kallenberg",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Kallenberg and Kovah - Extreme Privilege Escalation On Windows 8/UEFI Systems",
+          "url": "https://www.youtube.com/watch?v=d6VCri6sPnY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Corey Kallenberg",
       "label": "ThunderStrike 2: Sith Strike",
       "description": "The number of vulnerabilities in firmware disclosed as affecting Wintel PC vendors has been rising over the past few years. Although several attacks have been presented against Mac firmware, unlike their PC counterparts, all of them required physical presence to perform. Interestingly, when contacted with the details of previously disclosed PC firmware attacks, Apple systematically declared themselves not vulnerable. This talk will provide conclusive evidence that Mac's are in fact vulnerable to many of the software only firmware attacks that also affect PC systems. In addition, to emphasize the consequences of successful exploitation of these attack vectors, we will demonstrate the power of the dark side by showing what Mac firmware malware is capable of.",
       "type": "presentation",
@@ -158,6 +261,43 @@
         {
           "title": "ThunderStrike 2: Sith Strike",
           "url": "https://www.youtube.com/watch?v=CtEdfMP6rJo"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Corey Kallenberg",
+      "label": "ThunderStrike 2: Sith Strike",
+      "description": "The number of vulnerabilities in firmware disclosed as affecting Wintel PC vendors has been rising over the past few years. Although several attacks have been presented against Mac firmware, unlike their PC counterparts, all of them required physical presence to perform. Interestingly, when contacted with the details of previously disclosed PC firmware attacks, Apple systematically declared themselves not vulnerable. This talk will provide conclusive evidence that Mac's are in fact vulnerable to many of the software only firmware attacks that also affect PC systems. In addition, to emphasize the consequences of successful exploitation of these attack vectors, we will demonstrate the power of the dark side by showing what Mac firmware malware is capable of.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Kovah",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Panel - ThunderStrike 2:  Sith Strike",
+          "url": "https://www.youtube.com/watch?v=LNvYeUxwmTw"
         }
       ],
       "evidence": true,

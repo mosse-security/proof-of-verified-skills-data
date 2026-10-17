@@ -1,12 +1,12 @@
 {
   "name": "Lucas Morris",
-  "last-updated": "2026-10-17T05:50:56Z",
+  "last-updated": "2026-10-17T08:51:42Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 1,
@@ -25,10 +25,47 @@
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Lucas Morris",
+      "label": "ShareEnum: We Wrapped Samba So You Don’t Have To",
+      "description": "CIFS shares can tell you a lot about a network, including file access, local administrator access, password reuse, etc.. Until now most people have relied on add-ons to scanning tools to implement Microsoft’s complicated network APIs. Some tools wrap existing clients, such as smbclient, or use RPC calls; however, this is inefficient. What we need is a scanner that utilizes the closest thing we can get to Microsoft’s SMB libraries to scan network shares efficiently and quietly. ShareEnum uses the underlying Samba client libraries to list shares, permissions, and even recurse down file trees gathering information including what is stored in each directory.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Morris",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Lucas Morris and Michael McAtee - ShareEnum: We Wrapped Samba So You Don’t Have To",
+          "url": "https://www.youtube.com/watch?v=qiN6ogNWJEg"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
     {
       "name": "Lucas Morris",
       "label": "CrackLord: Maximizing Password Cracking Boxes",

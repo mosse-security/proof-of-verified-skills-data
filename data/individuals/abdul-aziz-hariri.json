@@ -1,13 +1,13 @@
 {
   "name": "Abdul-Aziz Hariri",
-  "last-updated": "2026-10-17T05:50:52Z",
+  "last-updated": "2026-10-17T08:51:36Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
-    "without-evidence": 0,
+    "endorsements": 5,
+    "assessors": 3,
+    "with-evidence": 4,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,13 +19,13 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 4,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
@@ -70,6 +70,45 @@
     },
     {
       "name": "Abdul-Aziz Hariri",
+      "label": "Abusing Adobe Reader’s JavaScript APIs",
+      "description": "Adobe Reader’s JavaScript APIs offer a rich set of functionality for document authors. These APIs allow for processing forms, controlling multimedia events, and communicating with databases, all of which provide end-users the ability to create complex documents. This complexity provides a perfect avenue for attackers to take advantage of weaknesses that exist in Reader’s JavaScript APIs. In this talk, we will provide insight into both the documented and undocumented APIs available in Adobe Reader. Several code auditing techniques will be shared to aid in vulnerability discovery, along with numerous proofs-of-concept which highlight real-world examples. We’ll detail out how to chain several unique issues to obtain execution in a privileged context. Finally, we’ll describe how to construct an exploit that achieves remote code execution without the need for memory corruption.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Gorenc",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Panel - Abusing Adobe Readers JavaScript APIs",
+          "url": "https://www.youtube.com/watch?v=JUt9PiMyRsA"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "vulnerability-discovery"
+        ]
+      }
+    },
+    {
+      "name": "Abdul-Aziz Hariri",
       "label": "$hell on Earth: From Browser to System Compromise",
       "description": "The winning submissions to Pwn2Own 2016 provided unprecedented insight into the state of the art in software exploitation. Every successful submission provided remote code execution as the super user (SYSTEM/root) via the browser or a default browser plugin. In most cases, these privileges were attained by exploiting the Microsoft Windows or Apple OS X kernel. Kernel exploitation using the browser as an initial vector was a rare sight in previous contests. This presentation will detail the eight winning browser to super user exploitation chains (21 total vulnerabilities) demonstrated at this year's Pwn2Own contest. We will cover topics such as modern browser exploitation, the complexity of kernel Use-After-Free exploitation, and the simplicity of exploiting logic errors and directory traversals in the kernel. We will analyze all attack vectors, root causes, exploitation techniques, and possible remediations for the vulnerabilities presented. Reducing attack surfaces with application sandboxing is a step in the right direction, but the attack surface remains expansive and sandboxes are clearly still just a speed bump on the road to complete compromise. Kernel exploitation is clearly a problem which has not disappeared and is possibly on the rise. If you're like us, you can't get enough of it; it's shell on earth.",
       "type": "presentation",
@@ -103,6 +142,75 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Abdul-Aziz Hariri",
+      "label": "L'art de l'évasion: Modern VMWare Exploitation Techniques",
+      "description": "L'art de l'évasion: Modern VMWare Exploitation Techniques",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2018",
+      "url": "https://www.offensivecon.org/agenda/speakers/2018/zdi-team.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Abdul-Aziz Hariri",
+      "label": "Bugs so Nice they Patched them Twice! A (Continuing)? Story About Failed Patches",
+      "description": "Bugs so Nice they Patched them Twice! A (Continuing)? Story About Failed Patches",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2019",
+      "url": "https://www.offensivecon.org/agenda/speakers/2019/jasiel-spelman-mishap-abdul-aziz-hariri.html",
+      "evidence-links": [
+        {
+          "title": "OffensiveCon19 - Spelman, Gorenc, Hariri - Bugs so Nice they Patched them Twice!",
+          "url": "https://www.youtube.com/watch?v=IXKlMYeVVe4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
       }
     }
   ]

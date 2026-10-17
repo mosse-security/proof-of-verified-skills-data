@@ -1,12 +1,12 @@
 {
   "name": "Tianze Ding",
-  "last-updated": "2026-10-17T05:50:59Z",
+  "last-updated": "2026-10-17T08:51:47Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 1,
@@ -17,10 +17,10 @@
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
-      "red-teaming": 0,
+      "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
-      "identity-and-access-management": 1,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 2,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
@@ -29,6 +29,53 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Tianze Ding",
+      "label": "Vulnerability Exchange: One Domain Account For More Than Exchange Server RCE",
+      "description": "Microsoft Exchange Server is one of the most famous mail servers in the world. It not only stores a large amount of sensitive corporate information, but also plays an important role in Microsoft Active Directory, so it has become a high-value target for both APT groups and red teams. In the past few months, some high-risk vulnerabilities in Exchange Server have been exposed, which mainly target vulnerable ASP.NET code. But the architecture of Exchange Server is complicated, and its attack surface is not limited to ASP.NET, this talk will analyze and attack Exchange Server from a different perspective. I will share the following two new vulnerabilities I found, as well as the new attack surfaces and how I chained several techniques to successfully exploit them in detail. 1. One of them can result in arbitrary mailbox takeover, attackers can read emails, download attachments, send emails, etc. as any Exchange user. 2. The other can lead to remote code execution on Exchange Server, attackers can gain local administrator privileges and execute arbitrary commands. Furthermore, there is an interesting point, even if you have applied the latest Exchange Server patches, your Exchange Server may still be compromised by this type of attack. For red teams, Exchange Server RCE is only the beginning. Usually, there are some high-privileged domain users and groups on Exchange Server, I will also introduce a new method in depth to help you perform lateral movement and even privilege escalation to Domain Admin after achieving Exchange Server RCE. These vulnerabilities have been reported to MSRC and the exploit tools will be released after the talk. References: [1] https://www.zerodayinitiative.com/blog/2018/12/19/an-insincere-form-of-flattery-impersonating-users-on-microsoft-exchange [2] https://www.slideshare.net/harmj0y/derbycon-the-unintended-risks-of-trusting-active-directory [3] https://docs.microsoft.com/en-us/exchange/client-developer/web-service-reference/ews-operations-in-exchange [4] https://github.com/quickbreach/ExchangeRelayX [5] https://blog.compass-security.com/2020/05/relaying-ntlm-authentication-over-rpc/ [6] https://www.crowdstrike.com/blog/cve-2021-1678-printer-spooler-relay-security-advisory/ [7] https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rpce/425a7c53-c33a-4868-8e5b-2a850d40dc73 [8] https://enigma0x3.net/2017/01/05/lateral-movement-using-the-mmc20-application-com-object/ [9] https://github.com/SecureAuthCorp/impacket [10] https://github.com/gdedrouas/Exchange-AD-Privesc [11] https://labs.f-secure.com/tools/sharpgpoabuse/",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 29",
+      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#ding",
+      "evidence-links": [
+        {
+          "title": "DEF CON 29 - Tianze Ding - Vulnerability Exchange: One Domain Account For More Than Exchange Server",
+          "url": "https://www.youtube.com/watch?v=7h38rI8KT30"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2021,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research",
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "authentication",
+          "directory-services"
+        ]
+      }
+    },
     {
       "name": "Tianze Ding",
       "label": "How NTLM Relay Ruins Your Exchange Servers",

@@ -1,15 +1,15 @@
 {
   "name": "Jeff Jarmoc",
-  "last-updated": "2026-10-17T05:50:55Z",
+  "last-updated": "2026-10-17T08:51:41Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
-      "cloud-security": 0,
+      "cloud-security": 1,
       "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 1,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,47 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Jeff Jarmoc",
+      "label": "\"Get Off of My Cloud\": Cloud Credential Compromise and Exposure",
+      "description": "An Amazon Machine Image (AMI) is a virtual appliance container used to create virtual machines (VMs) within the Amazon Elastic Compute Cloud (EC2). EC2 instances typically interact with a variety of Amazon Web Services (AWS), and as such require access to AWS credentials and private key materials. In this presentation we will explore how AWS credentials and keys may end up being persisted within an AMI. If persisted within a public or shared AMI, these credentials and key materials may be unintentionally shared with 3rd parties. We will discuss the different types of AWS credentials and key materials, how they are used to access different Cloud services, and the risks and potential impacts of compromise of this sensitive information. A new tool, \"AMIexposed\" will be released that can check an AMI for the most common ways AWS credentials and keys are persisted within an AMI. The results of research using AMIexposed against public AMIs will be presented, helping to quantify the scope and prevalence of AWS credentials and keys exposed within public AMIs. We'll also discuss the risks inherent in trusting public AMIs to be free of backdoors, trojans, and other malicious hitchhikers. Results of an experiment demonstrating these risks will be presented. Finally, the talk will propose best practices for utilizing AMIs. These will include specific steps for ensuring you organization's AWS credentials and key materials are not unintentionally persisted within public or shared AMIs, and recommendations regarding usage of 3rd party public AMIs.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 19",
+      "url": "https://defcon.org/html/defcon-19/dc-19-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 19 - Ben Feinstein, Jeff Jarmoc - \"Get Off of My Cloud\"",
+          "url": "https://www.youtube.com/watch?v=HfEgvlx-G7U"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2011,
+      "domains": [
+        "cloud-security",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cloud-security": [
+          "cloud-workload-and-virtual-machine-security"
+        ],
+        "vulnerability-research": []
+      }
+    },
     {
       "name": "Jeff Jarmoc",
       "label": "Going AUTH the Rails on a Crazy Train",

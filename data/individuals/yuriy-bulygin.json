@@ -1,25 +1,25 @@
 {
   "name": "Yuriy Bulygin",
-  "last-updated": "2026-10-17T05:51:00Z",
+  "last-updated": "2026-10-17T08:51:48Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 5,
-    "assessors": 2,
-    "with-evidence": 4,
+    "endorsements": 7,
+    "assessors": 3,
+    "with-evidence": 6,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
       "devsecops": 0,
-      "digital-forensics": 0,
+      "digital-forensics": 1,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 0,
-      "red-teaming": 2,
+      "penetration-testing": 1,
+      "red-teaming": 3,
       "reverse-engineering": 0,
-      "vulnerability-research": 5,
+      "vulnerability-research": 7,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -100,6 +100,47 @@
     },
     {
       "name": "Yuriy Bulygin",
+      "label": "Summary of Attacks Against BIOS and Secure Boot",
+      "description": "A variety of attacks targeting platform firmware have been discussed publicly, drawing attention to the pre-boot and firmware components of the platform such as secure boot, OS loaders, and SMM. Windows 8 Secure Boot provides an important protection against bootkits by enforcing a signature check on each boot component. This talk will detail and organize some of the attacks and how they work. We will demonstrate a full software bypass of secure boot. In addition, we will describe underlying vulnerabilities and how to assess systems for these issues using chipsec (https://github.com/chipsec/chipsec), an open source framework for platform security assessment. We will cover BIOS write protection, forensics on platform firmware, attacks against SMM, attacks against secure boot, and various other issues. After watching, you should understand how these attacks work, how they are mitigated, and how to test a system for the vulnerability.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Bulygin",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Panel - Summary of Attacks Against BIOS and Secure Boot",
+          "url": "https://www.youtube.com/watch?v=QDSlWa9xQuA"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "digital-forensics",
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "digital-forensics": [],
+        "penetration-testing": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Yuriy Bulygin",
       "label": "Attacking Hypervisors Using Firmware and Hardware",
       "description": "In this presentation, we explore the attack surface of modern hypervisors from the perspective of vulnerabilities in system firmware, such as BIOS and in hardware emulation. We will demonstrate a number of new attacks on hypervisors based on system firmware vulnerabilities with impacts ranging from VMM DoS to hypervisor privilege escalation to SMM privilege escalation from within the virtual machines. We will also show how a firmware rootkit based on these vulnerabilities could expose secrets within virtual machines and explain how firmware issues can be used for analysis of hypervisor-protected content such as VMCS structures, EPT tables, host physical addresses (HPA) map, IOMMU page tables etc. To enable further hypervisor security testing, we will also be releasing new modules in the open source CHIPSEC framework to test issues in hypervisors when virtualizing hardware.",
       "type": "presentation",
@@ -118,6 +159,45 @@
         {
           "title": "Attacking Hypervisors Using Firmware And Hardware",
           "url": "https://www.youtube.com/watch?v=nyW3eTobXAI"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Yuriy Bulygin",
+      "label": "Attacking Hypervisors Using Firmware and Hardware",
+      "description": "In this presentation, we explore the attack surface of modern hypervisors from the perspective of vulnerabilities in system firmware such as BIOS and in hardware emulation. We will demonstrate a number of new attacks on hypervisors based on system firmware vulnerabilities with impacts ranging from VMM DoS to hypervisor privilege escalation to SMM privilege escalation from within the virtual machines. We will also show how a firmware rootkit based on these vulnerabilities could expose secrets within virtual machines and explain how firmware issues can be used for analysis of hypervisor-protected content such as VMCS structures, EPT tables, host physical addresses (HPA) map, IOMMU page tables etc. To enable further hypervisor security testing, we will also be releasing new modules in the open source CHIPSEC framework to test issues in hypervisors when virtualizing hardware.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Bulygin",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Yuriy Bulygin - Attacking Hypervisors Using Firmware and Hardware",
+          "url": "https://www.youtube.com/watch?v=XGAGfXSbOh0"
         }
       ],
       "evidence": true,

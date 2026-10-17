@@ -1,0 +1,106 @@
+{
+  "name": "Josep Pi Rodriguez",
+  "last-updated": "2026-10-17T08:51:41Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 1,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Josep Pi Rodriguez",
+      "label": "Breaking Extreme Networks WingOS: How to own millions of devices running on Aircrafts, Government, Smart cities and more.",
+      "description": "Extreme network's embedded WingOS (Originally created by Motorola) is an operating system used in several wireless devices such as access points and controllers. This OS is being used in Motorola devices, Zebra devices and Extreme network's devices. This research started focusing in an access point widely used in many Aircrafts by several worldwide airlines but ended up in something bigger in terms of devices affected as this embedded operating system is not only used in AP's for Aircrafts but also in Healthcare, Government, Transportation, Smart cities, small to big enterprises... and more. Based on public information, we will see how vulnerable devices are actively used (outdoors) in big cities around the world. But also in Universities, Hotels,Casinos, Big companies, Mines, Hospitals and provides the Wi-Fi access for places such as the New york City Subway. In this presentation we will show with technical details how several critical vulnerabilities were found in this embedded OS. First we will introduce some internals and details about the OS and then we will show the techniques used to reverse engineering the mipsN32 ABI code for the Cavium Octeon processor. It will be discussed how some code was emulated to detect how a dynamic password is generated with a cryptographic algorithm for a root shell backdoor. Besides, it will be shown how some protocols used by some services were reverse engineered to find unauthenticated heap and stack overflow vulnerabilities that could be exploitable trough Wireless or Ethernet connection. This OS also uses a proprietary layer 2/3 protocol called MiNT. This protocol is used for communication between WingOS devices through VLAN or IP. This protocol was also reverse engineered and remote heap/stack overflow vulnerabilities were found on services using this protocol and will be shown. As a live demonstration, 2 devices will be used to exploit a remote stack overflow chaining several vulnerabilities as the attacker could do inside an aircraft (or other scenarios) through the Wi-Fi. As there are not public shellcodes for mipsN32 ABI, the particularities of creating a Shellcode for mipsN32 ABI will be also discussed.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Rodriguez",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 - Josep Pi Rodriguez - WingOS: How to Own Millions of Devices .",
+          "url": "https://www.youtube.com/watch?v=fo88O1i-Z3M"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "red-teaming",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Josep Pi Rodriguez",
+      "label": "Contactless Overflow: Code execution in payment terminals and ATM’s over NFC.",
+      "description": "We conducted a research to assess the current security of NFC payment readers that are present in most of the major ATM brands, portable point of sales, gas stations, vending machines, transportation and other kind of point of sales in the US, Europe and worldwide. In particular, we found code execution vulnerabilities exploitable through NFC when handling a special application protocol data unit (APDU) that affect most NFC payment vendors. The vulnerabilities affect baremetal firmware devices and Android/Linux devices as well. After waiting more than 1 year and a half once we disclosed it to all the affected vendors, we are ready to disclose all the technical details to the public. This research was covered in the media by wired.com but without the technical details that we can share now https://www.wired.com/story/atm-hack-nfc-bugs-point-of-sale/ Some of the affected vendors are: IDtech https://idtechproducts.com/ Ingenico https://www.ingenico.com/ Verifone https://www.verifone.com/ CPI https://www.cranepi.com/ BBPOS https://www.bbpos.com/ Wiseasy https://www.wiseasy.com/ Nexgo https://www.nexgoglobal.com/ In this presentation we will describe the vulnerabilities and also demo how the readers can be compromised, using a special Android app we created, by just tapping an Android phone to the reader. We will discuss the consequences such as financial impact in reader’s users/owners and card data stealing once the firmware is compromised. Also, we will show how to compromise the host that is connected to the reader through USB by manipulating the reader’s firmware, chaining stack buffer overflow vulnerabilities in the SDK provided by the vendor that is running in the host machine. Finally, since one of the affected vendors (IDtech) is present in most ATM brands in the world, the talk will cover different scenarios of how possible can be jackpotting ATMs just tapping a smartphone into the reader of the ATM. We have many years of experience jackpotting all brands of ATMs in multiple different ways and we will show how this is technically possible.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#JPRodriguez",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

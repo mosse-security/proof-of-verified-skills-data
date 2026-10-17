@@ -1,26 +1,26 @@
 {
   "name": "Will Schroeder",
-  "last-updated": "2026-10-17T05:50:59Z",
+  "last-updated": "2026-10-17T08:51:48Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 0,
+    "endorsements": 5,
+    "assessors": 3,
+    "with-evidence": 3,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
       "devsecops": 0,
-      "digital-forensics": 1,
+      "digital-forensics": 2,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 0,
-      "red-teaming": 1,
+      "penetration-testing": 2,
+      "red-teaming": 5,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
-      "identity-and-access-management": 1,
+      "vulnerability-research": 4,
+      "identity-and-access-management": 4,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
@@ -29,6 +29,47 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Will Schroeder",
+      "label": "Veil-Pillage: Post-exploitation 2.0",
+      "description": "The Veil-Framework is a project that aims to bridge the gap between pentesting and red team toolsets. It began with Veil-Evasion, a tool to generate AV-evading payload executables, expanded into payload delivery with the release of Veil-Catapult, and branched into powershell functionality with the release of Veil-PowerView for domain situational awareness. This talk will unveil the newest additional to the Veil-Framework, Veil-Pillage, a fully-fledged, open-source post-exploitation framework that integrates tightly with the existing framework codebase. We’ll start with a quick survey of the post-exploitation landscape, highlighting the advantages and disadvantages of existing tools. We will cover current toolset gap areas, and how the lack of a single solution with all the options and techniques desired drove the development of Veil-Pillage. Major features of the framework will be quickly detailed, and the underlying primitives that modules build on will be explained. Veil-Pillage, released immediately following this presentation, makes it easy to implement the wealth of existing post-exploitation techniques out there, public or privately developed. Currently developed modules support a breadth of post-exploitation techniques, including enumeration methods, system management, persistence tricks, and more. The integration of various powershell post-exploitation components, assorted methods of hashdumping, and various ways to grab plaintext credentials demonstrate the operational usefulness of Veil-Pillage. The framework utilizes a number of triggering mechanisms with a preference toward stealth, contains complete command line flags for third-party integration, and has comprehensive logging and cleanup script capabilities. Welcome to Veil-Pillage: Post-Exploitation 2.0.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Schroeder",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Will Schroeder - Veil-Pillage: Post-exploitation 2.",
+          "url": "https://www.youtube.com/watch?v=KYYIluNXgMw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
     {
       "name": "Will Schroeder",
       "label": "An ACE Up the Sleeve: Designing Active Directory DACL Backdoors",
@@ -72,6 +113,134 @@
         "identity-and-access-management": [
           "authorization-and-access-control",
           "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Will Schroeder",
+      "label": "An ACE Up the Sleeve: Designing Active Directory DACL Backdoors",
+      "description": "Friday at 16:00 in Track 3 45 minutes | Demo Andy Robbins Red Team Lead Will Schroeder Offensive Engineer Active Directory (AD) object discretionary access control lists (DACLs) are an untapped offensive landscape, often overlooked by attackers and defenders alike. The control relationships between AD objects align perfectly with the \"attackers think in graphs\" philosophy and expose an entire class of previously unseen control edges, dramatically expanding the number of paths to complete domain compromise. While DACL misconfigurations can provide numerous paths that facilitate elevation of domain rights, they also present a unique chance to covertly deploy Active Directory persistence. It's often difficult to determine whether a specific AD DACL misconfiguration was set intentionally or implemented by accident. This makes Active Directory DACL backdoors an excellent persistence opportunity: minimal forensic footprint, and maximum plausible deniability. This talk will cover Active Directory DACLs in depth, our \"misconfiguration taxonomy\", and enumeration/analysis with BloodHound's newly released feature set. We will cover the abuse of AD DACL misconfigurations for the purpose of domain rights elevation, including common misconfigurations encountered in the wild. We will then cover methods to design AD DACL backdoors, including ways to evade current detections, and will conclude with defensive mitigation/detection techniques for everything described.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Robbins",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 - Andy Robbins, Will Schroeder - Designing Active Directory DACL Backdoors",
+          "url": "https://www.youtube.com/watch?v=_nGpZ1ydzS8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "digital-forensics",
+        "red-teaming",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "digital-forensics": [],
+        "red-teaming": [],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "authorization-and-access-control",
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Will Schroeder",
+      "label": "An ACE in the Hole: Stealthy Host Persistence via Security Descriptors",
+      "description": "\"Attackers and information security professionals are increasingly looking at security descriptors and their ACLs, but most previous work has focused on escalation opportunities based on ACL implementation flaws and misconfigurations. However, the nefarious use of security descriptors as a persistence mechanism is rarely mentioned. Just like with Active Directory ACLs, it's often difficult to determine whether a specific security descriptor was set intentionally by an IT administrator, intentionally set by an attacker, or inadvertently set by an IT administrator via a third-party installation program. This uncertainty decreases the likelihood of attackers being discovered, granting attackers a great opportunity to persist on a host and in a network. We’ll dive deep into ACLs/DACLs/SACLs/ACEs/Security Descriptors and more, giving you the background to grasp the capabilities we’re talking about. Then we’ll describe dive into several case studies that demonstrate how attackers can use securable object takeover primitives to maliciously backdoor host-based security descriptors for the purposes of persistence, including, “gold image” backdooring, subverting DCOM application permissions, and more. We’ll conclude with an exhaustive overview of the deployment and detections of host-based security descriptor backdoors. All along the way we’ll be releasing new tooling to enumerate, exploit, and analyze host-based security descriptors. \" Lee Christensen (@tifkin_) is a red team operator, threat hunter, and capability engineer for SpecterOps. Lee has performed red team and hunt engagements against Fortune 500 companies for 5 years, and has trained information security professionals about offensive/defensive tactics at events throughout the world, including Black Hat USA/Europe/Asia. Lee is the author of several offensive tools and techniques, including UnmanagedPowerShell (derivatives now incorporated into the Metasploit, Empire, and Cobalt Strike toolsets) and is a co-author of KeeThief. Matt Nelson (@enigma0x3) is a red teamer and security researcher for SpecterOps. Matt has a passion for offensive PowerShell, is an active developer on the PowerShell Empire project, and helps build offensive toolsets to facilitate red team engagements. He has published research on a number of novel UAC bypasses and holds CVEs for his Device Guard bypass research. Will Schroeder (@harmj0y) is an offensive engineer and red teamer for SpecterOps. He is a co-founder of Empire/Empyre, BloodHound, KeeThief, and the Veil-Framework, developed PowerView and PowerUp, is an active developer on the PowerSploit project, and is a Microsoft PowerShell MVP. He has presented at a number of conferences, including DEF CON, Black Hat, DerbyCon, Troopers, BlueHat Israel, and various Security BSides. Lee - @tifkin_ Matt - @enigma0x3 Will - @harmj0y",
+      "type": "presentation",
+      "assessor": "DerbyCon",
+      "assessor-id": "derbycon",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "DerbyCon 2017",
+      "url": "https://web.archive.org/web/20170829160902/https://www.derbycon.com/friday-schedule/",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2017,
+      "domains": [
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "red-teaming": [
+          "offensive-tooling"
+        ],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Will Schroeder",
+      "label": "Here Be Dragons: The Unexplored Land of Active Directory ACLs",
+      "description": "\"During internal penetration tests and red team assessments, Active Directory remains a key arena for gaining initial access, performing lateral movement, escalating rights, and accessing/exfiltrating sensitive data. Over the years, a completely untapped landscape has existed just below the surface in the form of Active Directory object control relationships. Organizational staff come and go, applications deploy and alter Access Control Entries (ACEs), eventually creating an entire ecosystem of policy exceptions and forgotten privileges. Historically, Access Control Lists (ACLs) have been notoriously difficult and frustrating to analyze both defensively and offensively, something we hope to change. In this talk, we will clearly define the Active Directory ACL attack taxonomy, demonstrate analysis using BloodHound, and explain how to abuse misconfigured ACEs with several new PowerView cmdlets. We will cover real world examples of ACL-only attack paths we have identified on real assessments, discuss opsec considerations associated with these attacks, and provide statistics regarding the immense number of attack paths that open up once you introduce object control relations in the BloodHound attack graph (spoiler alert: it's a LOT). We hope you will leave this talk inspired and ready to add ACL-based attacks to your arsenal, and to defensively audit ACLs at scale in your AD domain.\" Andrew Robbins (@_wald0) is the Adversary Resilience lead at Specter Ops. Andy is an active Red Teamer and co-author of BloodHound, a tool designed to reveal the hidden and unintended permission relationships in Active Directory domains. He has performed numerous offensive engagements against banks, credit unions, health- care providers, defense companies, and other Fortune 500 companies across the world. He has presented at BlackHat, DEF CON, BSides Las Vegas, DerbyCon, ekoparty, and actively researches Active Directory security. He is also a veteran Black Hat trainer. Will Schroeder (@harmj0y) is an offensive engineer and red teamer for Specter Ops. He is a co-founder of Empire/Empyre, BloodHound, and the Veil-Framework, developed PowerView and PowerUp, is an active developer on the PowerSploit project, and is a Microsoft PowerShell MVP. He has spoken at a number of security conferences including ShmooCon, DerbyCon, Troopers, DEF CON, BlueHat Israel, and more on topics ranging from domain trust abuse to advanced offensive tradecraft with PowerShell. Rohan Vazarkar (@CptJesus) is a senior operator and developer for Specter Ops. He has spoken at numerous security conferences including DEF CON, BlackHat, SANS Hackfest, and more. Rohan has lead and supported operations against Fortune 500 companies, federal agencies and clients in the financial, defense, and health-care sectors. He is the co-author of the BloodHound analysis platform and has contributed to other open source projects such as Empire and EyeWitness. Andy - @_wald0 Will - @harmj0y Rohan - @CptJesus",
+      "type": "presentation",
+      "assessor": "DerbyCon",
+      "assessor-id": "derbycon",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "DerbyCon 2017",
+      "url": "https://web.archive.org/web/20170829160902/https://www.derbycon.com/friday-schedule/",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2017,
+      "domains": [
+        "red-teaming",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "red-teaming": [
+          "operational-security-and-tradecraft"
+        ],
+        "identity-and-access-management": [
+          "authorization-and-access-control",
+          "directory-services",
+          "single-sign-on-and-federation"
         ]
       }
     }

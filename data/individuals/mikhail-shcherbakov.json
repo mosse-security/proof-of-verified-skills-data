@@ -1,0 +1,108 @@
+{
+  "name": "Mikhail Shcherbakov",
+  "last-updated": "2026-10-17T08:51:44Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 1,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Mikhail Shcherbakov",
+      "label": "Silent Spring: Prototype Pollution Leads to Remote Code Execution in Node.js",
+      "description": "Many have heard about Prototype Pollution vulnerabilities in JavaScript applications. This kind of vulnerability allows an attacker to inject properties into an object's root prototype that may lead to flow control alteration and unexpected program behavior. Every time a successful exploit looks like magic or is limited to a denial of service (DoS). Would you be surprised if I told you that every application has a chain of methods that can be triggered by Prototype Pollution and leads to arbitrary code execution? Such gadgets populated Node.js core code and popular NPM packages. Keep calm. Not every app can be exploited! However, this fact increases the risk of exploitation many times over. In our research, we studied Prototype Pollution beyond DoS and analyzed Node.js source code against the gadgets. We then analyzed 15 popular Node.js apps from GitHub and got 8 RCEs. Through this talk, I will elaborate on the detected gadgets and vulnerabilities. We will also take a look at how the recent changes in Node.js mitigate these issues.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Shcherbakov",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Mikhail Shcherbakov",
+      "label": "Exploiting the Unexploitable: Insights from the Kibana Bug Bounty",
+      "description": "aWe explore case studies of exploiting vulnerabilities in modern JavaScript and TypeScript applications, drawing on experiences from participating in the Kibana Bug Bounty Program. It's not uncommon to encounter a vulnerability that appears unexploitable at first glance, or to be told by a triage team that the behavior is \"by design.\" So, what options does a security researcher have in such situations? And what primitives can be utilized to construct an exploitation chain with significant impact? Our study involves breaking out of properly isolated containers in scenarios where there is RCE-by-design. We will examine several Prototype Pollutions that crash an application in less than one second after exploitation and explore how these vulnerabilities can ultimately lead to critical RCEs. Furthermore, we introduce new primitives and gadgets that enable the achievement of RCE from Prototype Pollutions previously deemed unexploitable beyond DoS attacks. By highlighting these methods, the talk aims to equip attendees with advanced techniques for exploiting complex vulnerability chains in JavaScript applications, as well as recommendations for proper defense and mitigations against them. Mikhail Shcherbakov, Musard Balliu and Cristian-Alexandru Staicu \"Silent Spring: Prototype Pollution Leads to Remote Code Execution in Node.js\" \"Collection of Server-Side Prototype Pollution gadgets\" link Olivier Arteau \"JavaScript prototype pollution attack in NodeJS\" Nir Chako \"Attacking Kubernetes Clusters Through Your Network Plumbing\" link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54503",
+      "evidence-links": [
+        {
+          "title": "DEF CON 32 - Exploiting the Unexploitable Insights from the Kibana Bug Bounty -  Mikhail Shcherbakov",
+          "url": "https://www.youtube.com/watch?v=H-bhmSwnRdY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2024,
+      "domains": [
+        "cloud-security",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cloud-security": [
+          "container-and-kubernetes-security"
+        ],
+        "vulnerability-research": [
+          "bug-bounty-research"
+        ]
+      }
+    }
+  ]
+}

@@ -1,31 +1,31 @@
 {
   "name": "Vasilios Mavroudis",
-  "last-updated": "2026-10-17T05:50:59Z",
+  "last-updated": "2026-10-17T08:51:47Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
-    "without-evidence": 0,
+    "endorsements": 5,
+    "assessors": 4,
+    "with-evidence": 3,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 1,
-      "devsecops": 0,
-      "digital-forensics": 0,
-      "grc": 0,
+      "cyber-defense": 2,
+      "devsecops": 1,
+      "digital-forensics": 1,
+      "grc": 1,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 0,
+      "penetration-testing": 1,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
@@ -70,6 +70,38 @@
     },
     {
       "name": "Vasilios Mavroudis",
+      "label": "Talking Behind Your Back",
+      "description": "Talking Behind Your Back",
+      "type": "presentation",
+      "assessor": "Chaos Communication Congress (CCC)",
+      "assessor-id": "ccc",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "33C3",
+      "url": "https://media.ccc.de/v/33c3-8336-talking_behind_your_back",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2016,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Vasilios Mavroudis",
       "label": "OpenCrypto: Unchaining the JavaCard Ecosystem",
       "description": "JavaCard is a subset of Java that allows applets to run securely on smartcards and has been deployed to over 15 billion devices. Its main advantage compared to competing technologies is \"applet interoperability.\" Unfortunately, over the years, several glitches in the ecosystem became apparent, and hindered its evolution. For instance, in practice, most applets are tailored for a specific card model, while there is at least a three-year gap between the time a JavaCard specification is released, and the time features appear in products. We argue that these inconsistencies between the JavaCard vision and practice are due to the control card vendors have over the ecosystem. Specifically, since JavaCard relies on vendors to implement the specification, this enables them to impose barriers to protect their market share. For instance, the cryptographic coprocessor is accessible only for high-level operations (e.g., ECDSA signing method), while low-level methods (e.g., ECPoint Addition) are available only in vendor-specific, proprietary APIs. Moreover, vendors often release new features of the specification in their own APIs. In this session, we present the OpenCrypto library that enables programmers to utilize all the capabilities of JavaCards (e.g., the cryptographic coprocessor) without being bound to a specific vendor. The library realizes classes for: 1) mutable Integers, 2) Elliptic Curve Points and 3) EC Curves. Currently, these classes are either not supported at all (even though they may be listed in the JC specification, e.g., Integers), or are available only through vendor-specific APIs (e.g., ECPoint). To overcome the vendor barriers, we use a combination of low-level byte manipulation tricks and mathematical properties to reconstruct low-level arithmetic operations (e.g., integer multiplication, ECPoint Addition) from high-level crypto methods (e.g., RSA encryption). Our final library supports all the methods found in the proprietary APIs, performs almost as fast, and eliminates vendor-specific dependencies from the ecosystem.",
       "type": "presentation",
@@ -103,6 +135,87 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Vasilios Mavroudis",
+      "label": "Trojan-tolerant Hardware & Supply Chain Security in Practice",
+      "description": "Saturday at 14:00 in Track 2 45 minutes | Art of Defense, Demo, Tool Vasilios Mavroudis Doctoral Researcher, University College London Dan Cvrcek Co-founder, Enigma Bridge Ltd The current consensus within the security industry is that high-assurance systems cannot tolerate the presence of compromised hardware components. In this talk, we challenge this perception and demonstrate how trusted, high-assurance hardware can be built from untrusted and potentially malicious components. The majority of IC vendors outsource the fabrication of their designs to facilities overseas, and rely on post-fabrication tests to weed out deficient chips. However, such tests are not effective against: 1) subtle unintentional errors (e.g., malfunctioning RNGs) and 2) malicious circuitry (e.g., stealthy Hardware Trojans). Such errors are very hard to detect and require constant upgrades of expensive forensics equipment, which contradicts the motives of fabrication outsourcing. In this session, we introduce a high-level architecture that can tolerate multiple, malicious hardware components, and outline a new approach in hardware compromises risk management. We first demo our backdoor-tolerant Hardware Security Module built from low-cost commercial off-the-shelf components, benchmark its performance, and delve into its internals. We then explain the importance of \"component diversification\" and \"non-overlapping supply chains\", and finally discuss how \"mutual distrust\" can be exploited to further reduce the capabilities of the adversaries.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Mavroudis",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 - Vasilios Mavroudis, Dan Cvrcek - Trojan tolerant Hardware & Supply Chain Security",
+          "url": "https://www.youtube.com/watch?v=OOyhfylJXhM"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "devsecops",
+        "digital-forensics",
+        "grc",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "devsecops": [],
+        "digital-forensics": [],
+        "grc": [
+          "risk-management"
+        ],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Vasilios Mavroudis",
+      "label": "SoK: The Pitfalls of Deep Reinforcement Learning for Cybersecurity",
+      "description": "Deep Reinforcement Learning (DRL) has achieved remarkable success in domains requiring sequential decision-making, motivating its application to cybersecurity problems. However, transitioning DRL from laboratory simulations to bespoke cyber environments can introduce numerous issues. This is further exacerbated by the often adversarial, non-stationary, and partially-observable nature of most cybersecurity tasks. In this paper, we identify and systematize 11 methodological pitfalls that frequently occur in DRL for cybersecurity (DRL4Sec) literature across the stages of environment modeling, agent training, performance evaluation, and system deployment. By analyzing 66 significant DRL4Sec papers (2018-2025), we quantify the prevalence of each pitfall and find an average of over five pitfalls per paper. We demonstrate the practical impact of these pitfalls using controlled experiments in (i) autonomous cyber defense, (ii) adversarial malware creation, and (iii) web security testing environments. Finally, we provide actionable recommendations for each pitfall to support the development of more rigorous and deployable DRL-based security systems.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/mcfadden",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "penetration-testing"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "penetration-testing": [
+          "web-application-penetration-testing"
+        ]
       }
     }
   ]

@@ -1,0 +1,76 @@
+{
+  "name": "Seth Kintigh",
+  "last-updated": "2026-10-17T08:51:46Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Seth Kintigh",
+      "label": "Over-the-air remote code execution on the DEF CON 27 badge via Near Field Magnetic Inductance or World’s first NFMI exploitation, sorta or OTARCEDC27NFMIOMGWTFBBQ",
+      "description": "The DEF CON 27 badge employed an obscure form of wireless communication: Near Field Magnetic Inductance (NFMI). The badges were part of a contest and while poking through the firmware for hints I noticed a buffer overflow flaw. All it required to exploit it was an oversized packet… via a chip with no datasheet and no documentation on the proprietary protocol. Thus started a 2 year odyssey. I used Software Defined Radio tools to study the signal’s modulations. I built a receiver in GNURadio and Python to convert signals into symbols, symbols obfuscated by a pattern that I had to deduce while only controlling a fraction of the bytes. Data was encoded in those symbols using proprietary convolution for even bits and Trellis Code Modulation for odd bits. I then reversed their bizarre CRC and wrote tools to craft and send packets. Using those tools I chained bugs in 2 chips and remotely crashed the badge. However, limitations in the NFMI protocol made more sophisticated attacks impossible. But after a year and a half invested, I was not about to give up. I soldered leads to middle layer traces, extracted and reverse engineered the NFMI firmware, fixed their protocol, and patched a badge FW to patch the NFMI FW. At long last I achieved what may be the world’s first, over-the-air, remote code exploit via NFMI.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 29",
+      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#kintigh",
+      "evidence-links": [
+        {
+          "title": "DEF CON 29 - Michael Whiteley Katie Whiteley - Making the DEF CON 29 Badge",
+          "url": "https://www.youtube.com/watch?v=H3kdq40PY3s"
+        },
+        {
+          "title": "DEF CON 29 - Seth Kintigh  - OTA remote code execution on the DEF CON 27 badge via NFMI",
+          "url": "https://www.youtube.com/watch?v=sDCIjcUEFj0"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2021,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

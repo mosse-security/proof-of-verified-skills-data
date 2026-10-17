@@ -1,34 +1,83 @@
 {
   "name": "Halvar Flake",
-  "last-updated": "2026-10-17T05:50:55Z",
+  "last-updated": "2026-10-17T08:51:40Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 3,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
-      "grc": 0,
+      "grc": 1,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 0,
+      "penetration-testing": 1,
       "red-teaming": 0,
-      "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "reverse-engineering": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 0
+      "unknown": 1
     }
   },
   "endorsements": [
+    {
+      "name": "Halvar Flake",
+      "label": "RE 2006: New Challenges Need Changing Tools",
+      "description": "RE 2006: New Challenges Need Changing Tools Halvar Flake, CEO of Sabre Security Abstract: Reverse Engineering has come a long wayâwhat used to be practiced behind closed doors is now a mainstream occupation practiced throughout the security industry. Compilers and languages are changing, and the reverse engineer has to adapt: Nowadays, understanding C and the target platform assembly language is not sufficient any more. Too many reverse engineers shy away from analyzing C++ code and run into trouble dealing with heavily optimized executables. This talk will list common challenges that the reverse engineer faces in the process of disassembling nowadays, and suggest some solutions. Furthermore, a list of unsolved problems will be discussed. Bio: Halvar Flake is SABRE Labs' founder and Black Hat's resident reverse engineer. Originating in the fields of copy protection and digital rights management, he gravitated more and more towards network securityover time as he realized that constructive copy protection is more or less fighting windmills. After writing his first few exploits he was hooked and realized that reverse engineering experience is a very handy asset when dealing with COTS software. With extensive experience in reverse engineering, network security, penetration testing and exploit development he recently joined Black Hat as their main reverse engineer.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 14",
+      "url": "https://defcon.org/html/defcon-14/dc-14-speakers.html#Flake",
+      "evidence-links": [
+        {
+          "title": "DEF CON 14 - Halvar Flake: RE 2006: New Challenges Need Changing Tools",
+          "url": "https://www.youtube.com/watch?v=q8OGmvR23CA"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2006,
+      "domains": [
+        "grc",
+        "penetration-testing",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "grc": [
+          "digital-rights-and-civil-liberties"
+        ],
+        "penetration-testing": [],
+        "reverse-engineering": [
+          "decompilation-and-disassembly"
+        ],
+        "vulnerability-research": [
+          "exploit-development"
+        ]
+      }
+    },
     {
       "name": "Halvar Flake",
       "label": "Exploiting the DRAM Rowhammer Bug to Gain Kernel Privileges",
@@ -64,6 +113,79 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Halvar Flake",
+      "label": "Keynote",
+      "description": "Keynote Offensivecon 2020 Read more",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2020",
+      "url": "https://www.offensivecon.org/speakers/2020/speakers/2020/halvar-flake.html",
+      "evidence-links": [
+        {
+          "title": "OffensiveCon19 - Alex Ionescu - Keynote - Reversing Without Reversing",
+          "url": "https://www.youtube.com/watch?v=2D9ExVc0G10"
+        },
+        {
+          "title": "OffensiveCon25 - Dino Dai Zovi - Keynote - How Offensive Security Made Me Better at Defense",
+          "url": "https://www.youtube.com/watch?v=60BcjiChncE"
+        },
+        {
+          "title": "OffensiveCon22 - Mark Dowd- Keynote -How Do You Actually Find Bugs?",
+          "url": "https://www.youtube.com/watch?v=7Ysy6iA2sqA"
+        },
+        {
+          "title": "OffensiveCon20 - Halvar Flake - Keynote - Why I Love Offensive Work, Why I don't Love Offensive Work",
+          "url": "https://www.youtube.com/watch?v=8QRnOpjmneo"
+        },
+        {
+          "title": "OffensiveCon26 - Ollie Whitehouse - Keynote",
+          "url": "https://www.youtube.com/watch?v=Pbdt5DQ6hAQ"
+        },
+        {
+          "title": "OffensiveCon22 - Shane Huntley - Keynote - Your Place in the Threat Landscape",
+          "url": "https://www.youtube.com/watch?v=Pufx4hVMVVw"
+        },
+        {
+          "title": "OffensiveCon18 -  Rodrigo Branco - Inside the Machine - Keynote Day 1",
+          "url": "https://www.youtube.com/watch?v=Rh5lDM8O4MA"
+        },
+        {
+          "title": "OffensiveCon25 - Perri Adams -Keynote- Automating Your Job? The Future of AI and Exploit Development",
+          "url": "https://www.youtube.com/watch?v=Y1naY3gupRw"
+        },
+        {
+          "title": "OffensiveCon24 - Solar Designer - Keynote - Password Cracking: Past, Present, Future",
+          "url": "https://www.youtube.com/watch?v=cNrMnveW9SA"
+        },
+        {
+          "title": "OffensiveCon23  - Hao Xu - Keynote - Changing and Unchanged Things in Vulnerability Research",
+          "url": "https://www.youtube.com/watch?v=hz9HiM2eKFY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2020,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
       }
     }
   ]
