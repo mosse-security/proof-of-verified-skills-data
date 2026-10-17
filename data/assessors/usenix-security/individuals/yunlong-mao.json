@@ -1,0 +1,129 @@
+{
+  "name": "Yunlong Mao",
+  "last-updated": "2026-10-17T21:39:27Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Yunlong Mao",
+      "label": "Designing Wallet-Based User Intervention for Approval Phishing Mitigation",
+      "description": "Approval phishing is a form of Web3 phishing that exploits token approval mechanisms to trick users into granting attackers spending authority over their tokens. As attackers increasingly hijack legitimate websites, URL-based detection alone becomes insufficient, leaving crypto wallets as the last line of defense. Based on the characteristics of approval mechanisms, we propose four wallet-based interventions for mitigating approval phishing: Spending Cap Suggestion, Active Spender Warning, Passive Spender Warning, and Delayed Confirmation. We evaluate the interventions through a between-subjects experiment (n = 364) and semi-structured interviews (n = 23). Compared with the control group, the Spending Cap Suggestion condition significantly increases the likelihood that users set spending caps. The Active Spender Warning, Passive Spender Warning, and Delayed Confirmation conditions all increase cancellation rates of phishing tasks, although the increases are statistically significant only for Active Spender Warning and Delayed Confirmation conditions. The effectiveness of the interventions varies across users, as users may struggle to interpret suspicious cues and focus on transaction outcomes while overlooking approval details. Our findings highlight the need to strengthen defenses against such attacks by increasing users' awareness of post-approval consequences and supporting approval-parameter verification at the moment of authorization.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/guan",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Yunlong Mao",
+      "label": "Fend for Yourself! Backdoor Purification in Federated Graph Learning with an Evolving Knowledge Anchor",
+      "description": "Federated Graph Learning (FedGL) enables collaborative training on decentralized graph data while preserving privacy, yet its distributed nature makes it highly vulnerable to backdoor attacks. These attacks compromise the integrity of the global model by injecting malicious triggers. Existing defenses, however, are often ineffective on complex graph data or rely on a trusted server, creating an architectural conflict with modern privacy-preserving technologies. To overcome these limitations, we propose GBHINDER, a novel and practical trusted-server-free defense framework where each benign participant defends itself. GBHINDER establishes a virtuous cycle: it leverages its own trusted historical knowledge as a benign anchor to purify the downloaded global model, and in turn, selectively incorporates the global model's benign knowledge to progressively evolve the anchor itself. Specifically, this cycle is driven by two key components. A Historical Channel Attention Regularization module uses the anchor to constrain the global model's representations and disrupt backdoor propagation. To resolve the tension between local trust and global collaboration, an Adaptive Momentum Information Update mechanism enables the anchor to safely evolve by dynamically integrating robust global information, ensuring the anchor remains effective with federated iteration. Extensive experiments on several benchmark datasets demonstrate that GBHINDER significantly outperforms state-of-the-art (SOTA) defenses, successfully reducing the backdoor attack success rate to below 10% while preserving high accuracy on the main task.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/zhu-chengcheng",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Yunlong Mao",
+      "label": "Liquidity Mining as an Attack Surface: Incentive-Induced Liquidity Attacks in Concentrated Liquidity Market Makers",
+      "description": "Decentralized finance (DeFi) platforms commonly deploy volume-based incentive programs to bootstrap liquidity and improve market efficiency. We show that such subsidies, while well-intentioned, can create an underexplored economic attack surface in concentrated liquidity market makers (CLMMs). These subsidies enable a novel manipulation strategy. Attackers attract subsidized trading volume by providing highly concentrated liquidity, artificially inflating yields and luring victim liquidity providers into narrow price ranges. Once sufficient victim liquidity has accumulated, the attacker induces a price crash to extract value. We formalize this behavior as an incentive-induced liquidity attack and prove that it arises endogenously whenever subsidy intensity and volume caps exceed critical thresholds. Although subsidies are intended to bootstrap liquidity, these attacks ultimately lead to substantial liquidity depletion, causing platforms to incur incentive costs while market liquidity deteriorates. We conduct a large-scale measurement study on incentivized CLMM pools on BSC that are tied to Binance Alpha programs. We identify 29 attack events across 18 pools with 99 positive-loss victim addresses across 13 loss-bearing episodes and $2.87M in measured victim loss. These measurements show that incentive programs can amplify manipulation by introducing externalities that enable new extraction opportunities. Based on our findings, we propose mitigation strategies that reshape incentive parameters and information disclosure to reduce liquidity-provider exposure to incentive-induced attacks. Our findings show that incentive mechanisms designed to improve market quality can instead create the security vulnerabilities they aim to prevent.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/lu-sinong",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

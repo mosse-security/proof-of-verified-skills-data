@@ -1,0 +1,139 @@
+{
+  "name": "Fabian Thomas",
+  "last-updated": "2026-10-17T21:39:23Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 1,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 2,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Fabian Thomas",
+      "label": "InstrSem: Automatically and Generically Inferring Semantics of (Undocumented) CPU Instructions",
+      "description": "Modern CPUs implement complex Instruction Set Architectures (ISAs), yet machine-readable semantics are often incomplete. Worse, many CPUs support undocumented instructions, i.e., bitstrings that execute on hardware but are absent from specifications, leading to potential security vulnerabilities. In this paper, we present InstrSem, an ISA-agnostic, modular, fully automated approach to infer instruction semantics from execution behavior alone and provide semantics that are understandable by both, humans and machines. Starting from a raw encoding, InstrSem executes it under systematically varied architectural states and synthesizes compact mathematical functions that explain every changed state component. By mutating encoding bits and correlating induced behavioral changes with bit positions, InstrSem then generalizes from a single encoding to a full instruction, recovering register and immediate fields. In contrast to prior work focusing on a single ISA, InstrSem is generic. It requires only a lightweight ISA model and a per-architecture user-space runner and supports fixed- and variable-length encodings (RISC and CISC), memory accesses, and conditional behavior. We evaluate InstrSem on RV64I, AArch64, and LA64, and additionally showcase CISC applicability on a Logitech macro language and partial x86-64. InstrSem automatically recovers correct semantics for over 97.81 % of the RV64I base instruction set, and 136 instructions covering 1 009 055 744 instruction encodings within 77 h for the LA64 instruction set. InstrSem discovers undocumented vector instructions, inconsistencies between QEMU and Loongson hardware, and instructions that crash QEMU. InstrSem enables scalable recovery of instruction semantics, substantially automating reverse engineering across commodity and niche targets and strengthening the foundations for emulation, verification, and security analysis. With minimal requirements to support new architectures, its modular design, and human-readable output, InstrSem can aid future security analysis.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/hetterich-lorenz-instrsem",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Fabian Thomas",
+      "label": "Loongleak: Architectural Cross-Privilege-Boundary Data Leakage on LoongArch CPUs",
+      "description": "Recent research has revealed architectural vulnerabilities in widely deployed CPUs that break confidentiality and integrity. While x86-64, Arm, and RISC-V CPUs have received significant scrutiny, Loongson processors, which are built on the LoongArch ISA and are widely used in Chinese infrastructure, have not. This lack of analysis leaves a critical blind spot in global security, especially as China phases out foreign CPUs. In this paper, we discover and analyze LoongLeak, a novel architectural vulnerability affecting multiple Loongson CPUs. LoongLeak exploits how 4-byte floating-point loads return stale bits from the L1 data cache, enabling unprivileged attackers to leak confidential data across security domains, such as the kernel or hypervisor. We demonstrate that this leakage is architectural and requires no timing or side channels, giving attackers fine-grained control over cache sets and offsets. Our case studies include recovering full-disk AES keys from the kernel, partial root password hashes from user-space, and bypassing traditional software defenses such as ASLR and stack canaries, all within seconds. LoongLeak can be exploited from unprivileged user space, containers, or virtual machines. We explore software-based mitigations, including floating-point emulation, which incurs an overhead of 10× to 21× for floating-point heavy applications, and flushing the L1 data cache on kernel to userspace transitions in conjunction with turning off SMT threads. While these mitigations can effectively mitigate LoongLeak in software, a long-term solution requires hardware fixes.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/hetterich-lorenz-loongleak",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Fabian Thomas",
+      "label": "StackWarp: Breaking AMD SEV-SNP Integrity via Deterministic Stack-Pointer Manipulation through the CPU's Stack Engine",
+      "description": "Confidential Virtual Machines (CVMs), such as AMD SEV-SNP, aim to protect guest operating systems from an untrusted host by encrypting state and constraining privileged control. These platforms promise isolation even in multi-tenant cloud setups where simultaneous multithreading (SMT) remains enabled. While prior attacks focus on the memory hierarchy or execution units, they largely ignore frontend configurations. In this paper, we present StackWarp, a software-based architectural attack exploiting the stack engine on AMD Zen CPUs to modify the stack pointer within an SEV-SNP guest, fully breaking integrity. StackWarp relies on an undocumented bit within a shared model-specific register (MSR) available on AMD Zen 1–5 CPUs that enables or disables the stack engine. Our reverse engineering shows that the state of the stack engine is not correctly synchronized across the logical cores, allowing an attacker to deterministically adjust the stack pointer on the sibling logical core across Zen generations, including fully patched Zen 5. We discover StackWarp via a systematic exploration of the MSR space, including undocumented MSRs. By flipping MSR bits, we discover bits that affect SEV-SNP guests running on a sibling logical core. To demonstrate the security impact, we show StackWarp in four end-to-end attacks on SEV-SNP guests: RSA-CRT private-key recovery, OpenSSH password-authentication bypass, and privilege escalations using either sudo or a kernel-mode ROP chain. We conclude with software hardening guidance and argue for a microcode or hardware change that prevents cross-core control of the stack engine when CVMs are active. Our results show that leaving SMT enabled undermines SEV-SNP integrity guarantees today.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-ruiyi",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cloud-security",
+        "cyber-defense",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cloud-security": [],
+        "cyber-defense": [],
+        "reverse-engineering": [],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ]
+      }
+    }
+  ]
+}

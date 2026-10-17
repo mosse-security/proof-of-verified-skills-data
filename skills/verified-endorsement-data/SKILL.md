@@ -43,8 +43,8 @@ cyber domains are introduced.
 8. Run `tests.test_individuals_coverage` and `tests.test_individual_quality` after merging. Every active
    individual must have at least one endorsement; stale profile-only files
    and title-shaped pseudo-people must be removed from `data/individuals`
-   before publishing. The merger quarantines these recoverably under
-   `data/individuals-stale/`.
+    before publishing. Stale generated files are removed rather than copied
+    to a second output directory.
 9. Run tests, compile checks, and schema validation before reporting completion.
 10. Run enrichers before endorsement generation when external datasets are
    needed. Enrichers are discovered recursively under `scrapers/enrichers/` and write
@@ -63,6 +63,12 @@ cyber domains are introduced.
     captured endorsement YouTube links and the source video catalog.
 14. Inspect `data/stats.json` after each scraper run. It is the operator and
    test contract for timestamps, counts, errors, and capture sanity checks.
+
+The global whitelist is `data/individuals-enumeration.txt`. It is UTF-8,
+duplicate-free, manually vetted data. Never rewrite it through an implicit
+PowerShell encoding conversion; use an explicit UTF-8 writer. The identity
+registry fails fast on likely mojibake so corrupted names cannot become new
+records.
 
 ## Non-negotiable contracts
 

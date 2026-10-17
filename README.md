@@ -163,6 +163,11 @@ The endorsement builders load these datasets and add matched recordings to
 declares a video source without a non-empty matching archive, preventing a
 conference from silently missing its recordings.
 
+Parser capture is local-first: it reads archived conference pages from
+`data/archives/html` and existing enrichment archives. `enrichment_cli` is an
+optional external refresh using `yt-dlp`; network failure there is not a
+parser-capture failure and must not replace usable local data.
+
 ## Microsoft BlueHat archive
 
 Microsoft BlueHat is inventoried in `data/assessors/bluehat.json`, including
@@ -484,11 +489,14 @@ a parser, regenerate its outputs and rebuild profiles; do not hand-edit generate
 JSON. Run `tests.test_individuals_coverage` and `tests.test_individual_quality`
 before publishing. The manually vetted global whitelist is stored in
 `data/individuals-enumeration.txt` and must contain no duplicate names. Rejected names remain assessor-local in
-`individuals-blacklist.txt`, and every other encountered name is rewritten into `individuals-blacklist.txt`,
-and every other encountered name is recorded once in
+`individuals-blacklist.txt`, and every other encountered name is recorded once in
 `individuals-not-validated.txt` on each run. Only globally whitelisted names are
 written to assessor-local individual or endorsement output; unknown and blacklisted names
 are excluded.
+The whitelist is UTF-8 data: preserve Unicode names exactly, and use an editor or
+an explicitly UTF-8 writer when updating it. Do not round-trip it through
+PowerShell `Get-Content`/`WriteAllLines` defaults. The registry rejects likely
+mojibake and duplicate normalized names before a scrape can write records.
 This includes short schedule titles such as `A girl`, `A SysCall to ARMs`, and
 `Ansible`; their associated people remain under their speaker names with the
 talk title stored in the endorsement label.

@@ -94,6 +94,29 @@ class IdentityRegistryTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 registry.allows("Ada Lovelace")
 
+    def test_global_enumeration_rejects_mojibake(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "individuals-enumeration.txt").write_text(
+                "JÃ©rÃ©my Matos\n", encoding="utf-8"
+            )
+            registry = IdentityRegistry(root)
+            with self.assertRaisesRegex(ValueError, "mojibake"):
+                registry.allows("Jérémy Matos")
+
+    def test_global_enumeration_is_utf8_and_unique(self):
+        path = Path("data/individuals-enumeration.txt")
+        text = path.read_bytes().decode("utf-8")
+        self.assertNotIn("\ufffd", text)
+        for marker in ("Ã", "Â", "â", "ƒ"):
+            self.assertNotIn(marker, text)
+        identities = [
+            IdentityRegistry.normalize(line)
+            for line in text.splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        ]
+        self.assertEqual(len(identities), len(set(identities)))
+
     def test_titles_are_removed_for_matching_and_pending_names(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

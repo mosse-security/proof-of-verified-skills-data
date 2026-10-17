@@ -1,0 +1,135 @@
+{
+  "name": "Marton Bognar",
+  "last-updated": "2026-10-17T21:39:25Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 2
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Marton Bognar",
+      "label": "M-Step: A Single-Stepping Framework for Side-Channel Analysis on TrustZone-M",
+      "description": "Trusted Execution Environments (TEEs) have become a key technology for isolating sensitive enclave applications from untrusted operating systems. Extensive research on high-end platforms like Intel SGX and TDX, AMD SEV, and Arm TrustZone-A has exposed their limitations in terms of software-based side-channel analysis, amplified by specialized single-stepping attack frameworks that exploit privileged timer interrupts to execute enclaves one instruction at a time. Meanwhile, TEEs are increasingly deployed on resource-constrained IoT devices, with Arm TrustZone-M emerging as a leading solution, which, however, remains largely unexplored for high-resolution, software-based side channels. This paper presents M-Step, an open and extensible single-stepping attack framework for TrustZone-M. While Cortex-M microcontrollers feature precise timers and deterministic behavior, achieving precise, instruction-level stepping remains challenging due to (i) the absence of virtual memory and page tables used in high-end frameworks; and (ii) Cortex-M's unique interrupt behavior, where certain multi-cycle instructions are abandoned or paused to reduce latency. To overcome these challenges, we extensively profile interrupt handling CPU behavior and develop a novel approach that uses previously dismissed interrupt-latency leakage to dynamically adjust the timer interrupts. We demonstrate M-Step's improved resolution and practicality by discovering previously unknown vulnerabilities in the latest Arm Mbed TLS library that enable single-trace, deterministic attacks recovering full RSA keys from a TrustZone enclave.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/rodrigues",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Marton Bognar",
+      "label": "Not All Those Who Share Are Lost: Analyzing 25 Years of Cybersecurity Artifact Sharing Practices Through Automated Discovery",
+      "description": "Cybersecurity publications are often accompanied by artifacts (code and data) that support the paper's findings. In recent years, all top-tier cybersecurity conferences have adopted policies regarding artifacts and introduced artifact evaluation. However, large-scale trends in artifact availability and the impact of conference policies remain largely unexplored, and meta-science studies (often focusing on reproducibility) typically cover a small set of papers due to the extensive manual effort required. In this paper, we enable larger-scale analyses by introducing ArtiFinder, an automated tool that accurately identifies artifact URLs in paper PDFs. Using ArtiFinder, we present the largest quantitative analysis to date of artifact availability and related effects in close to 9,000 papers published in the four leading cybersecurity conferences since 2000. Our longitudinal analysis reveals a steady increase in artifact sharing over time, with substantial variation across cybersecurity subfields. We find that recent policy changes are not consistently accompanied by increases in artifact sharing, but they coincide with clear shifts toward stable hosting services. We also replicate prior analyses on our dataset, examining trends in citation counts and repository popularity. Our findings highlight notable trends in artifact sharing and the guiding role of conference organizers, while our open-source tool and dataset enable future large-scale studies.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/vansteenhuyse",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Marton Bognar",
+      "label": "Spectre on RISC-V Silicon: Attacks and Defenses on Commercial Out-of-Order Processors",
+      "description": "Speculative execution attacks have been extensively studied on mainstream x86 and ARM architectures. However, on RISC-V, research has mostly concentrated on open-source academic designs. Commercially available RISC-V silicon is widely perceived as too simple to be vulnerable, and as a result, no end-to-end attacks have been demonstrated on real hardware to date and essential software such as the Linux kernel remains unmitigated. In this paper, we challenge that assumption. We systematically assess all commercially available out-of-order RISC-V processors (SiFive P550 and T-Head Xuantie C910/C920), finding them vulnerable to a range of Spectre attacks, and demonstrate the first Spectre attack leaking arbitrary kernel memory on real RISC-V hardware. Concerningly, our analysis reveals that mitigations in compilers, operating systems, and applications remain largely absent, and that the RISC-V instruction set lacks a dedicated speculation barrier. As a stopgap solution, we empirically characterize which instructions can halt speculation on commercial processors. We additionally audit the Linux kernel for Spectre gadgets and contribute patches, several of which have been accepted upstream. Finally, we evaluate and benchmark software-based Spectre mitigations and derive recommendations for the evolving RISC-V ecosystem, laying the groundwork for securing real hardware as it enters security-critical deployments.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/gerlach",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Tong Sun",
+  "last-updated": "2026-10-17T21:39:27Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Tong Sun",
+      "label": "Securing Retrieval-Augmented Code Generation via Contextual Knowledge Injection: A Case for Embedded IoT Applications",
+      "description": "Repository-grounded retrieval-augmented code generation (RACG) is increasingly used in embedded IoT development by retrieving code and documentation from a pinned RTOS/SDK repository (e.g., Zephyr OS). In this setting, security risks are often version-inherited: even without retrieval poisoning, generated applications may invoke benign-looking public APIs that transitively reach vulnerable internal routines in the pinned snapshot, thereby inheriting known CVEs. Existing secure RACG pipelines largely focus on task-level intent and generic vulnerability patterns, which can miss repository- and version-specific exposure. Meanwhile, conventional CVE scanners can flag vulnerable locations but cannot determine whether those vulnerabilities are reachable through the public APIs that the generator commits to during repository-grounded generation. In this paper, we present IoTRAGuarder, a contextual knowledge injection framework that aligns security hardening with generation-time API selection under repository grounding. IoTRAGuarder (i) recovers auditable reverse call chains from CVE-localized internals to exposing public APIs via static analysis plus an evidence-gated LLM to bridge indirections and macro-driven \"call-graph islands\", (ii) constructs a version-aware security knowledge base that binds affected version intervals to exposed public APIs with prompt-ready constraints, safer alternatives, or avoidance/upgrade guidance, and (iii) performs dual-layer, API-aligned online retrieval to inject concise, version-matched constraints into the final prompt. We evaluate IoTRAGuarder on 44 real-world Zephyr tasks across four LLMs. Compared to the prior state-of-the-art secure RACG baseline, IoTRAGuarder improves the overall security success rate from 5.11% to 78.41%.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/sun-tong",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure",
+          "exploit-mitigation-and-hardening"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    }
+  ]
+}

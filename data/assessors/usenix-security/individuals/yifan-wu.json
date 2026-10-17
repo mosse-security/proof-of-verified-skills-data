@@ -1,0 +1,69 @@
+{
+  "name": "Yifan Wu",
+  "last-updated": "2026-10-17T21:39:27Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Yifan Wu",
+      "label": "Melting the Flesh of PHP's Memory Hardening",
+      "description": "Heap allocators are responsible for efficiently allocating or releasing memory on the heap. In addition, they also commonly implement various mitigation measures to defend against heap-based memory corruption. Recently, the PHP project launched a heap hardening initiative aimed at stopping popular heap exploit techniques or restricting the exploit strategy space. In this paper, we conduct the first security study to understand the impact and effectiveness of these new protective measures. We find that while they are effective at stopping current-generation exploits, they fall short against determined attackers who will adapt. Through our analysis, we not only identify the flaw that allows specific mitigations to be bypassed, but also a new suite of novel exploitation strategies that work for the most common vulnerabilities involving out-of-bounds memory write and use-after-free write primitives. Notably, our strategy is generic across the built-in PHP objects and can still work even with a single-byte out-of-bounds memory write primitive. Finally, we evaluate our exploit strategies against five real vulnerabilities in an environment with all evaluated protections enabled. The results show that although the new protection measures can effectively defend against the exploitation of most vulnerabilities, the attack strategies proposed by this work can still make these vulnerabilities exploitable again. The identified flaw has since been patched after our responsible disclosure.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/wu-yifan",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ]
+      }
+    }
+  ]
+}

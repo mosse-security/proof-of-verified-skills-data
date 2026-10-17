@@ -71,6 +71,12 @@ The internal `Endorsement` fields map to the template as follows:
 The person name is required; do not substitute a talk title for a missing
 recipient. A four-digit year is required for standard records.
 
+Identity validation is centralized. Only names in the UTF-8 global whitelist
+`data/individuals-enumeration.txt` may be persisted; assessor-local blacklist
+and not-validated files remain review inputs. The whitelist must contain unique
+normalized names. Scraper startup rejects likely mojibake, including text
+produced by an implicit Windows PowerShell encoding conversion.
+
 `povs` is derived centrally from evidence state. A record without evidence has
 all four milestones false and level 0. An evidence-backed conference talk
 from an approved assessor has verifiable, defended, and recognized milestones

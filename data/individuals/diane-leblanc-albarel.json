@@ -1,0 +1,65 @@
+{
+  "name": "Diane Leblanc-Albarel",
+  "last-updated": "2026-10-17T21:42:48Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Diane Leblanc-Albarel",
+      "label": "Breaking Widely Deployed Perceptual Hash Functions: Black-Box Collisions in Apple NeuralHash and Microsoft PhotoDNA",
+      "description": "Perceptual hash functions have been designed to detect multimedia copyright violations and illegal content. To achieve their purpose, they map inputs that are perceived as similar to close outputs. For many widely deployed schemes, however, both the design strategy and detailed specifications remain proprietary. Governments are now considering their extension to Client-Side Scanning (CSS) for end-to-end encrypted services, verifying content against illegal material before encryption. In 2021, Apple presented a detailed proposal for CSS based on the NeuralHash perceptual hash function. After strong criticism over privacy and security concerns, Apple withdrew the proposal, but NeuralHash remains deployed on all devices, with its current purpose undisclosed.\\ In theory, brute-force collisions for NeuralHash (96-bit hash value) require 2 48 evaluations. Shortly after the NeuralHash release, researchers showed it is easy to craft perceptually dissimilar collisions, to incriminate any user by sending an innocent image sharing the same hash value as illegal content. This work shows a more serious weakness: when inputs are restricted to human faces, we found several collisions between perceptually different images after only 2 16 hash function evaluations. Unlike targeted attacks, our black-box approach requires no knowledge of the hash function design. We also demonstrate a high false negative rate (images that should share the same hash but do not). We further confirm the generality of our approach by studying PhotoDNA, Microsoft's widely deployed 1152-bit perceptual hash function. In the case of PhotoDNA, we found near-collisions at thresholds significantly lower than previously reported, appearing after between 2 14.6 and 2 17 evaluations depending on the threshold used. This is the first work to demonstrate exact collisions in NeuralHash and to identify near-collisions in PhotoDNA at such low thresholds. These results cast serious doubts on the suitability of these designs for large-scale client scanning, as they produce high false positive and false negative rates, and highlight the need to reassess their security and feasibility, particularly for large-scale applications where privacy risks and false positives have serious consequences.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/leblanc-albarel",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

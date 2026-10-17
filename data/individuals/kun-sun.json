@@ -1,0 +1,105 @@
+{
+  "name": "Kun Sun",
+  "last-updated": "2026-10-17T21:42:53Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 1,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Kun Sun",
+      "label": "BenchChecker: Assessing the Credibility of Bug-Fixing Benchmarks for LLMs",
+      "description": "While Large Language Models (LLMs) show promise for Automatic Program Repair (APR), existing benchmarks suffer from data contamination, in which test samples appear in training sets, artificially inflating performance. To address this, we propose BenchChecker, a framework compatible with both open-source and closed-source models that supports more credible evaluation by detecting such contamination. Grounded in the observation that persistent patches likely remain in recent repository snapshots used for training, BenchChecker employs a forensics-based two-stage detection process using only textual model outputs together with public repository history. The first stage conducts a repository presence test by probing the model with code prefixes to infer training inclusion; the second stage performs a patch presence test to verify patch persistence via similarity alignment and test-suite verification. Evaluations using StarCoder-15B, StarCoder2-15B, and CodeGen2-16B trained on The Stack v2 demonstrate that BenchChecker achieves robust detection with AUC scores around 0.9 across six benchmarks. Furthermore, applying BenchChecker to SWE-bench Verified and Multi-SWE-bench reveals that filtering contaminated samples reduces the reported resolution rates of most LLMs by more than 20% relative to the original rates on medium-difficulty tasks.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/wu-di",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "digital-forensics",
+        "red-teaming"
+      ],
+      "subspecialties": {
+        "digital-forensics": [],
+        "red-teaming": []
+      }
+    },
+    {
+      "name": "Kun Sun",
+      "label": "CULPA: Universal Detection of Memory-Safety Bugs in Unsafe Rust Through the Lens of Safety Requirements",
+      "description": "Rust has emerged as a leading system programming language by providing strong compile-time guarantees for memory safety. However, these guarantees do not extend to unsafe Rust, where developers may bypass compiler checks and inadvertently introduce memory-safety vulnerabilities. Although prior static analyzers have made progress in detecting such bugs, existing approaches are often fragmented: they target specific coding patterns or bug classes without modeling the underlying causes of unsafety. In this paper, we present CULPA, a universal detector for memory-safety bugs in Rust programs. The key insight of CULPA is to detect the root cause of such bugs: the violation of safety requirements in unsafe Rust contexts. To do so, CULPA first transforms the safety requirements in the standard library documentation into machine-executable predicates. Then it constructs the distinct memory segments to comply with safety requirements. Finally, CULPA collects all safety-relevant safeguards to construct the Requirement Graph. Based on the requirement graph traversal, we can determine whether violations inside unsafe blocks can be triggered. CULPA covers existing bug classes addressed by four prior static analyzers and identifies additional memory-safety vulnerabilities beyond their scope. We evaluate CULPA on the top 1,000 Rust packages. CULPA uncovers 55 previously unknown (zero-day) memory-safety bugs, 29 of which have been confirmed by developers. Most of these vulnerabilities are missed by four state-of-the-art Rust static analyzers and one LLM-based tool. To date, we have received five RustSec IDs and one CVE ID.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/chen-hung-mao",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ]
+      }
+    }
+  ]
+}

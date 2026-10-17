@@ -1,0 +1,104 @@
+{
+  "name": "Miao Chen",
+  "last-updated": "2026-10-17T21:42:55Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Miao Chen",
+      "label": "Uncovering Hidden Attack Surfaces in Web Applications via Semantic-Aware Black-Box Scanning",
+      "description": "Uncovering Hidden Attack Surfaces in Web Applications via Semantic-Aware Black-Box Scanning",
+      "type": "presentation",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Miao Chen",
+      "label": "From Length to Content: Token-Length Side-Channel Attacks on LLM API Merged Outputs",
+      "description": "Large Language Models (LLMs) are increasingly accessed via remote APIs over encrypted channels. While previous studies have shown that fine-grained side channels can leak information under token-by-token processing, modern LLM services typically stream outputs in multi-token chunks, seemingly mitigating such token-level leakage. However, in this paper, we demonstrate that token aggregation does not eliminate privacy risks. Instead, it introduces a merged token-length side channel. In this channel, the sizes of encrypted response chunks inadvertently expose character-length patterns of merged token groups. To study the practical implications of this leakage, we propose PromptEcho , a passive eavesdropping attack that reconstructs semantically meaningful portions of natural-language responses from observations of merged token lengths. PromptEcho frames the reconstruction task as a constrained sequence recovery problem, leveraging semantics-aware reasoning to resolve the ambiguity caused by merged token transmission. Specifically, PromptEcho first applies semantics-aware reasoning to decompose merged-token length observations, then uses probabilistic semantic alignment with a fine-tuned language model's linguistic priors to infer the most likely underlying tokens. We evaluate PromptEcho on real-world API interaction traffic from multiple commercial LLM services, correctly inferring the topic for 42.5% of sessions and reconstructing 25.5% of responses with a cosine similarity above 0.9 on OpenAI's GPT-4o and DeepSeek-V3. These findings demonstrate that merged-token transmission remains vulnerable to token-length side-channel attacks, indicating practical privacy risks from encrypted traffic observations under the evaluated API-based LLM settings.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/li-sijia",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ],
+        "vulnerability-research": [
+          "cryptographic-attacks",
+          "model-privacy-and-data-leakage"
+        ]
+      }
+    }
+  ]
+}

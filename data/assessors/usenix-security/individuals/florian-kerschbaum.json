@@ -1,0 +1,65 @@
+{
+  "name": "Florian Kerschbaum",
+  "last-updated": "2026-10-17T21:39:23Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Florian Kerschbaum",
+      "label": "ZipPIR: High-throughput Single-server PIR without Client-side Storage",
+      "description": "Private Information Retrieval (PIR) allows a client to privately access a database without revealing which element is accessed. Initial PIR protocols based on Ring Learning with Errors (RLWE) demonstrated the practicality of PIR, but achieve limited throughput. Alternatively, high-throughput protocols leverage an offline phase that requires substantial client-side storage (e.g., hints in SimplePIR) or involve prohibitive communication costs during the offline phase (e.g., Piano). These limitations conflict with the practical constraints of resource-limited clients and are further exacerbated by dynamic databases, where updates necessitate costly regeneration and retransmission of hints. To address these challenges, we propose ZipPIR, a high-throughput PIR protocol that compresses LWE ciphertexts into significantly smaller Paillier ciphertexts. ZipPIR leverages the offline phase to obtain this size reduction without incurring the associated computational cost in the online phase. Moreover, under computational assumptions, ZipPIR features an almost silent offline phase, requiring no communication beyond an initial public key, enabling the server to independently generate and update hints during idle times without client interaction. ZipPIR achieves over 2 GB/s of throughput — comparable to state-of-the-art protocols such as SimplePIR — without the need for a large client-stored hint. For PIR over a 1 GB database, ZipPIR has up to 10x higher throughput than existing protocols with no client-side storage, while requiring less than 200 KB of server-side storage per client, significantly enhancing scalability for practical deployments. While prior PIR protocols using Paillier are very inefficient, ZipPIR is the first PIR protocol using Paillier that achieves throughput that is competitive with state-of-the-art PIR protocols.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/mahdavi",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

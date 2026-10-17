@@ -1,0 +1,97 @@
+{
+  "name": "Mengyu Yao",
+  "last-updated": "2026-10-17T21:42:55Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Mengyu Yao",
+      "label": "Connect the Dots: Knowledge Graph–Guided Crawler Attack on Retrieval-Augmented Generation Systems",
+      "description": "Stealing attacks pose a persistent threat to the intellectual property of deployed machine-learning systems. Retrieval-augmented generation (RAG) intensifies this risk by extending the attack surface beyond model weights to knowledge base that often contains IP-bearing assets such as proprietary runbooks, curated domain collections, or licensed documents. Recent work shows that multi-turn questioning can gradually steal corpus content from RAG systems, yet existing attacks are largely heuristic and often plateau early. We address this gap by formulating {RAG knowledge-base stealing} as an adaptive stochastic coverage problem (ASCP), where each query is a stochastic action and the attacker's goal is to maximize the conditional expected marginal gain (CMG) in corpus coverage under a query budget. Bridging ASCP to real-world black-box RAG knowledge-base stealing raises three challenges: CMG is unobservable, the natural-language action space is intractably large, and feasibility constraints require stealthy queries that remain effective under diverse architectures. We introduce RAGCrawler, a knowledge graph-guided attacker that maintains a global attacker-side state to estimate coverage gains, schedule high-value semantic anchors, and generate non-redundant natural queries. Across four corpora and four generators with BGE retriever, RAGCrawler achieves 66.8% average coverage (up to 84.4%) within 1,000 queries, improving coverage by 44.90% relative to the strongest baseline. It also reduces the queries needed to reach 70% coverage by at least $4.03x on average and enables surrogate reconstruction with answer similarity up to 0.699. Moreover, the attack remains effective under retriever switching and newer RAG techniques such as query rewriting and multi-query retrieval, while being difficult for existing defenses to block. These results highlight urgent needs to protect RAG knowledge assets.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/yao-dots",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Mengyu Yao",
+      "label": "From Zero to Hero: Cross-modal-enhanced Adversarial Item Promotion Attack against Multimodal Recommender Systems",
+      "description": "Multimodal recommender systems (MRSs) jointly leverage visual and textual item representations to determine item ranking and exposure in modern online platforms. Their strong dependence on item content, however, introduces new security risks. In particular, malicious sellers can conduct the adversarial item promotion (AIP) attack to manipulate item content to deceive the recommender into overranking specific items. When it succeeds, the promoted items gain disproportionately higher exposure, leading to significant market visibility and direct economic gain. However, existing AIP research primarily targets unimodal recommenders, leaving the unique vulnerabilities of MRSs largely unexplored. Meanwhile, multimodal adversarial attacks for vision–language models (VLMs) optimize objectives unrelated to ranking and lack cross-modal coordination unique to MRSs. To bridge this gap, we propose CREAM (CRoss-modal-Enhanced AIP attack against MRSs). Our key insight is to jointly perturb multiple modalities in a semantically consistent manner}. We integrate a tailored visual perturbator, a text generator, and a joint optimization controller to fully exploit cross-modal correlations in a black-box setting. Our comprehensive evaluation shows that CREAM significantly outperforms existing methods, achieving on average 5.75x and 2.89x higher exposure at top-10 and top-50 metrics, and demonstrates robustness under evolving real-world conditions. This exposes a tangible economic risk to recommender platforms. Meanwhile, CREAM maintains high imperceptibility across visual, textual, and cross-modal dimensions. We further investigate several potential defense strategies and demonstrate their limitations, highlighting the urgent need for stronger protections against adversarial threats in MRSs.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/yao-zero",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

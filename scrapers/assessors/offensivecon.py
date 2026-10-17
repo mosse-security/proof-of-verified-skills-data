@@ -126,9 +126,9 @@ def _parse_speaker_cards(soup: BeautifulSoup, source_url: str, year: int) -> lis
         title_heading = speaker_heading.find_next(["h5", "h4"])
         if not title_heading or title_heading.name == speaker_heading.name and title_heading is not speaker_heading:
             continue
-        name = speaker_heading.get_text(" ", strip=True)
+        raw_name = speaker_heading.get_text(" ", strip=True)
         title = title_heading.get_text(" ", strip=True)
-        if not _valid_name(name) or not title or title.casefold() in {"read more", "bio", "address", "berlin", "the venue"}:
+        if not _valid_name(raw_name) or not title or title.casefold() in {"read more", "bio", "address", "berlin", "the venue"}:
             continue
         description_parts = []
         for paragraph in speaker_heading.find_all_next("p"):
@@ -138,7 +138,8 @@ def _parse_speaker_cards(soup: BeautifulSoup, source_url: str, year: int) -> lis
             if text:
                 description_parts.append(text)
         link = _detail_link(title_heading, source_url)
-        rows.append(OffensiveConEndorsement(name, title, " ".join(description_parts) or title, link, year))
+        for name in _split_names(raw_name):
+            rows.append(OffensiveConEndorsement(name, title, " ".join(description_parts) or title, link, year))
     return rows
 
 
@@ -185,16 +186,32 @@ def _detail_link(node: Tag, source_url: str) -> str:
 
 def _split_names(value: str) -> list[str]:
     value = re.sub(r"\s+", " ", value).strip(" .")
-    return [
-        part.strip(" .")
-        for part in re.split(r",\s+|\s+and\s+", value, flags=re.IGNORECASE)
-        if _valid_name(part)
-    ]
+    parts = re.split(r",\s+|\s+and\s+|\s*&\s*|\s+//\s+", value, flags=re.IGNORECASE)
+    names = []
+    for part in parts:
+        part = re.sub(r"\s*(?:\([^)]*\)|\[[^]]*\])\s*$", "", part)
+        part = re.sub(r"\s+(?:aka|a\.k\.a\.)\s+.*$", "", part, flags=re.IGNORECASE)
+        part = re.sub(r"\s*`[^`]+`\s*", " ", part)
+        part = re.sub(r"^and\s+", "", part, flags=re.IGNORECASE).strip(" .")
+        if _valid_name(part):
+            names.append(part)
+    return names
 
 
 def _valid_name(value: str) -> bool:
+    value = " ".join(value.split()).strip(" .")
     lowered = value.casefold()
-    return bool(value and len(value) < 100 and not any(x in lowered for x in ("coffee", "lunch", "remarks", "registration", "break", "party", "welcome")))
+    rejected = (
+        "coffee", "lunch", "remarks", "registration", "break", "party", "welcome",
+        "dfsec -", "dataflow security -", "red teaming by ",
+        "kernel streaming keeps giving vulnerabilities by ",
+    )
+    rejected_names = {"b1ack0wl", "oct0xor", "fish", "epsilon", "trenchant", "frame", "kaufi"}
+    return bool(
+        value and len(value) < 100
+        and lowered not in rejected_names
+        and not any(x in lowered for x in rejected)
+    )
 
 
 def _year(source: str, body: bytes) -> int:

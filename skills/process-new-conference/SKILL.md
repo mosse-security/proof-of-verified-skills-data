@@ -120,7 +120,10 @@ python -m scrapers.enrichment_cli --enricher <id> --overwrite
 python -m scrapers.enrichment_cli --overwrite
 ```
 
-Use `yt-dlp` for video channels when appropriate. Store a JSON array as
+Use `yt-dlp` for video channels when an external refresh is explicitly needed.
+Parser capture remains local-first and must use archived pages and existing
+enrichment ZIPs when available; a blocked network refresh is not a parser
+failure. Store a JSON array as
 `data.json` inside `data/enrichments/<enricher-id>/data.zip`. Include stable
 IDs, titles, URLs, conference/year hints, and any metadata needed for matching.
 Implement matching that tolerates conference prefixes, speaker-name prefixes,

@@ -1,0 +1,97 @@
+{
+  "name": "Noemi Terzo",
+  "last-updated": "2026-10-17T21:42:57Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Noemi Terzo",
+      "label": "Formal Security Analysis of the Olvid Messenger",
+      "description": "Formal Security Analysis of the Olvid Messenger",
+      "type": "presentation",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Noemi Terzo",
+      "label": "Message Injection Attacks Against Signal",
+      "description": "Signal is a secure messaging app offering end-to-end security for pairwise and group communications. It has tens of millions of users, and has heavily influenced the design of other secure messaging apps (including WhatsApp). Signal has been heavily analysed and, as a result, is rightly regarded as setting the \"gold standard\" for messaging apps by the scientific community. We present two practical attacks that break the integrity properties of Signal in its advertised threat model. Each attack arises from different features of Signal that are poorly documented and have eluded formal security analyses. The first attack, affecting Android and Desktop, arises from Signal's introduction of identities based on usernames (instead of phone numbers) in early 2022. We show that the protocol for resolving identities based on usernames and on phone numbers introduced a vulnerability that allows a malicious server to inject arbitrary messages into one-to-one conversations under specific circumstances. The injection causes a user-visible alert about a change of safety numbers, but if the users compare their safety numbers, they will be correct. The second attack is even more severe. It arises from Signal's Sealed Sender (SSS) feature, designed to allow sender identities to be hidden. We show that a combination of two errors in the SSS implementation in Android allows a malicious server to inject arbitrary messages into both one-to-one and group conversations. The errors relate to missing key checks and the loss of context when cryptographic processing is distributed across multiple software components. The attack is undetectable by users and can be mounted at any time, without any preconditions. As far as we can tell, the vulnerability has been present since the introduction of SSS in 2018. We disclosed both attacks to the engineers at Signal who promptly developed and deployed patches. Beyond presenting these devastating attacks on Signal's end-to-end security guarantees, we discuss more broadly what can be learned about the challenges of deploying new security features in complex software projects.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/truong",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

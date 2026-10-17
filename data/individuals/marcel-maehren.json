@@ -1,0 +1,97 @@
+{
+  "name": "Marcel Maehren",
+  "last-updated": "2026-10-17T21:42:54Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Marcel Maehren",
+      "label": "Breaking the Boundaries: Analyzing QUIC Frame-Packet Interactions With QUIC-Attacker",
+      "description": "QUIC is a new network protocol based on UDP that replaces TCP and TLS with an integrated protocol. It provides multiplexing of streams over a single encrypted and authenticated connection. The QUIC standard allows many different combinations of UDP datagrams, and QUIC packets, frames, and streams to transport the same information. This implies that testing the receiving side of QUIC is difficult. We develop probes to explore how different QUIC server implementations handle the coalescence and fragmentation of payloads, covering both valid and invalid combinations of datagrams, packets, and frames. Already at this basic level, we observe significant differences between implementations, some of which pointing towards exploitable vulnerabilities. Previous QUIC research tools were not designed to implement such probes. To address this limitation, we present QUIC-Attacker, a testing framework that allows maximum freedom on the sending side of QUIC. We present our results on these probes when applied to 15 QUIC server libraries, uncovering eight DoS vulnerabilities caused by unhandled exceptions and exploitable injection vulnerabilities in Kwik and Alibaba's XQUIC.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/erinola",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Marcel Maehren",
+      "label": "Opossum Attack: Application Layer Desynchronization using Opportunistic TLS",
+      "description": "Many protocols, like HTTP, FTP, POP3, and SMTP, were originally designed as synchronous plaintext protocols – commands and data are sent in the clear, and the client waits for the response to a pending request before sending the next one. Later, two main solutions were introduced to retrofit these protocols with TLS protection. (1) Implicit TLS: Designate a new, well-known TCP port for each protocol-over-TLS, and start with TLS immediately. (2) Opportunistic TLS: Keep the original well-known port and start with the plaintext protocol, then switch to TLS in response to a command like STARTTLS. In this work, we present a novel weakness in the way TLS is integrated into popular application layer protocols through implicit and opportunistic TLS. This weakness breaks authentication, even in modern TLS implementations if both implicit TLS and opportunistic TLS are supported at the same time. This authentication flaw can then be utilized to influence the exchanged messages after the TLS handshake from a pure MitM position.In contrast to previous attacks on opportunistic TLS, this attack class does not rely on bugs in the implementations and only requires one of the peers to support opportunistic TLS. We analyze popular application layer protocols that support opportunistic TLS regarding their vulnerability to the attack. To demonstrate the practical impact of the attack, we analyze exploitation techniques for HTTP (RFC 2817) in detail, and show four different exploit directions. To estimate the impact of the attack on deployed servers, we conducted a series of IPv4-wide scans over multiple protocols and ports to check for support of opportunistic TLS. We found that support for opportunistic TLS is still widespread for many application protocols, with over 3 million servers supporting both, implicit and opportunistic TLS at the same time. In the case of HTTP, we found 20,121 servers that support opportunistic HTTP across 35 ports, with 2,268 of these servers also supporting HTTPS and 539 using the same domain names for implicit HTTPS, presenting an exploitable scenario.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/merget",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

@@ -32,8 +32,44 @@ class NdssResult:
 
 
 def _authors(text: str) -> list[str]:
-    names = re.findall(r"([^,()]+?)\s*\([^)]*\)(?:,|$)", text)
-    return list(dict.fromkeys(name.strip() for name in names if name.strip()))
+    names: list[str] = []
+    for chunk in _split_author_chunks(text):
+        spans: list[tuple[int, int]] = []
+        depth = 0
+        start = None
+        for index, char in enumerate(chunk):
+            if char == "(":
+                if depth == 0:
+                    start = index
+                depth += 1
+            elif char == ")" and depth:
+                depth -= 1
+                if depth == 0 and start is not None:
+                    spans.append((start, index + 1))
+                    start = None
+        name = chunk[:spans[-1][0]] if spans else chunk
+        name = re.sub(r"[\"“”'`]([^\"“”'`]+)[\"“”'`]", "", name)
+        name = re.sub(r"\([^)]*\)", "", name)
+        name = " ".join(name.split()).strip(" ,")
+        if name:
+            names.append(name)
+    return list(dict.fromkeys(names))
+
+
+def _split_author_chunks(text: str) -> list[str]:
+    chunks: list[str] = []
+    start = 0
+    depth = 0
+    for index, char in enumerate(text):
+        if char == "(":
+            depth += 1
+        elif char == ")" and depth:
+            depth -= 1
+        elif char == "," and depth == 0:
+            chunks.append(text[start:index].strip())
+            start = index + 1
+    chunks.append(text[start:].strip())
+    return [chunk for chunk in chunks if chunk]
 
 
 def _year(url: str) -> int:

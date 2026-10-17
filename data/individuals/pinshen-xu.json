@@ -1,0 +1,65 @@
+{
+  "name": "Pinshen Xu",
+  "last-updated": "2026-10-17T21:42:58Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Pinshen Xu",
+      "label": "Exploiting PoH Time Semantics in Solana via Re-Anchoring and Forking",
+      "description": "Proof of History (PoH) is a core component of Solana that realizes a publicly verifiable notion of logical time via a sequential hash chain. It allows Solana to run a slot-based leader schedule, where a designated leader is expected to propose a block in each slot. Yet, the security implications of PoH-driven logical time remain insufficiently understood. In this paper, we identify a new protocol-valid attack surface in Solana's PoH time semantics: by withholding and later releasing protocol-valid blocks that commit to an earlier PoH-derived logical time than a validator's current local view, a scheduled malicious leader can trigger PoH re-anchoring at honest validators. Building on this primitive, we develop two attacks. First, Time Inflation Attack (TI) extends the malicious leader's effective block-production time budget by multiple slot intervals, enabling it to include more transactions without necessarily invalidating honest blocks. Second, Fork-Assisted Time Inflation Attack (FTI) extends the former by leveraging fork choice to further increase the time budget while suppressing honest leaders' proposals. We present a formal analysis that characterizes the conditions under which PoH re-anchoring occurs and bounds the adversary's impact under realistic network and stake assumptions. We implemented the attacks in a testbed and reported our findings to the Solana development team. We also analyze on-chain data and report timing and inclusion patterns that are compatible with the incentive channel exploited by TI. Finally, we discuss defenses that harden PoH time semantics and reduce incentives to exploit PoH re-anchoring.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/feng",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

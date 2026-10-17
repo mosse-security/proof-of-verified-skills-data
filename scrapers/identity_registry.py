@@ -14,6 +14,7 @@ class _CachedNames(NamedTuple):
 
 
 _PERSON_TITLE_PREFIX = re.compile(r"^(?:(?:dr|doctor)\.?\s+)+", re.IGNORECASE)
+_MOJIBAKE_MARKERS = ("\ufffd", "Ã", "Â", "â", "ƒ")
 
 
 def clean_person_name(value: str) -> str:
@@ -56,7 +57,13 @@ class IdentityRegistry:
 
     def _read(self, path: Path) -> dict[str, str]:
         result: dict[str, str] = {}
-        for line in path.read_text(encoding="utf-8").splitlines():
+        text = path.read_text(encoding="utf-8")
+        if path == self.global_whitelist_path and any(marker in text for marker in _MOJIBAKE_MARKERS):
+            raise ValueError(
+                f"Global whitelist contains likely mojibake: {path}. "
+                "Rewrite it as UTF-8 without a PowerShell encoding round trip."
+            )
+        for line in text.splitlines():
             value = line.strip()
             if value and not value.startswith("#"):
                 identity = self.normalize(value)

@@ -1,0 +1,97 @@
+{
+  "name": "Chen GONG",
+  "last-updated": "2026-10-17T21:39:23Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 2
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Chen Gong",
+      "label": "DP-SAPF: Saliency-Aware Parameter Fine-tuning of Public Models for Differentially Private Image Synthesis",
+      "description": "Differentially private (DP) image synthesis generates images that preserve the statistical characteristics of a sensitive dataset, enabling sensitive data analysis and usage while providing rigorous guarantees of privacy leakage. Existing methods fine-tune public models using DP Stochastic Gradient Descent (DP-SGD) on sensitive images to generate synthetic images. But full fine-tuning public models on sensitive images is computationally expensive, because current public models typically contain a large number of parameters. Recent work proposes heuristically using Low-Rank Adaptation (LoRA) on all attention-layer parameters of public models to reduce the number of trainable parameters. However, we argue that exhaustive LoRA coverage across all attention-layer parameters is suboptimal in a DP setting, as it leads to noise accumulation and collapse during private training. To address this issue, we propose DP-SAPF, which uses a saliency-aware strategy to identify specific target parameters for LoRA training under DP. DP-SAPF is inspired by the fact that larger gradients signify higher saliency, indicating that these parameters are most critical for the DP learning. Specifically, we feed the sensitive images into public models, compute gradients, and add noise to the gradients to satisfy DP. Then, DP-SAPF identifies the most salient parameters, those exhibiting high gradient magnitudes on sensitive images, for DP fine-tuning. Experiments on four sensitive image datasets show that DP-SAPF improves the utility and fidelity of synthetic images while requiring fewer computational resources than fine-tuning methods without parameter selection.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/gong-dp-sapf",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Chen GONG",
+      "label": "From Easy to Hard++: Promoting Differentially Private Image Synthesis Through Spatial-Frequency Curriculum",
+      "description": "Differentially private (DP) synthetic images serve as a critical tool for reducing privacy concerns by mimicking the statistical properties of sensitive data while ensuring privacy guarantees. To improve the quality of synthetic images, most studies have focused on improving the core optimization techniques (e.g., DP-SGD). Recently, we have witnessed a paradigm shift that takes these techniques off the shelf and studies how to use them together to achieve the best results. One notable work is DP-FETA, which proposes using 'central images' for 'warming up' the DP training and then using traditional DP-SGD. Inspired by DP-FETA, we are curious whether there are other such tools we can use together with DP-SGD. We first observe that using 'central images' only works for datasets where there are many samples that look similar. To handle scenarios where images could vary significantly, we propose FETA-Pro, which introduces frequency features as 'training shortcuts.' The complexity of frequency features lies between that of spatial features (captured by 'central images') and full images, allowing for a finer-grained curriculum for DP training. To incorporate these two types of shortcuts together, one challenge is to handle the training discrepancy between spatial and frequency features. To address it, we leverage the pipeline generation property of generative models (instead of having one model trained with multiple features/objectives, we can have multiple models working on different features, then feed the generated results from one model into another) and use a more flexible design. Specifically, FETA-Pro introduces an auxiliary generator to produce images aligned with noisy frequency features. Then, another model is trained with these images, together with spatial features and DP-SGD. Evaluated across five sensitive image datasets, FETA-Pro shows an average of 25.7% higher fidelity and 4.1% greater utility than the best-performing baseline, under a privacy budget ε = 1.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/gong-easy-hard",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

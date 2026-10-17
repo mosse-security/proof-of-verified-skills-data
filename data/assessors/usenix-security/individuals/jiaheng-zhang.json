@@ -1,0 +1,97 @@
+{
+  "name": "Jiaheng Zhang",
+  "last-updated": "2026-10-17T21:39:24Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Jiaheng Zhang",
+      "label": "Rarus: A Succinct and Efficient Range Proof for Polynomial-based Vector Commitment",
+      "description": "Range proofs enable a prover to convince a verifier that a committed value lies within a specific interval without revealing additional information. They are fundamental to privacy-preserving systems including anonymous credentials, e-voting, e-cash, and cryptocurrencies like Monero and Grin. A critical challenge is efficiently proving that multiple committed values simultaneously satisfy range constraints while minimizing communication overhead. Vector commitment schemes provide a promising approach to this problem. Missileproof (CCS'24) recently proposed a range proof for vector commitments achieving O(1) proof size and verifier time, but with prover complexity of O(Nℒlog(Nℒ)) for proving ℒ values in [0,2 N ). We present Rarus , an efficient range proof for polynomial-based vector commitments that achieves optimal asymptotic complexity across all metrics. Our key innovation is replacing binary decomposition with optimized b b-ary decomposition, coupled with Bi-variate Zero-Test and accelerated Uni-variate Sum-Check protocols. Rarus achieves O(1) proof size and verifier time, while reducing prover time to O (Nℒ / log (Nℒ)) G + O (Nℒ)F, where G and F denote group and field operations respectively. In addition , our protocol supports arbitrary ranges [0,R) beyond powers of two. Experimental results demonstrate that Rarus achieves a 20× speedup over both Bulletproofs and Missileproof when proving 16,384 values in [0,2 64 = ).",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/yang-xinyang",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Jiaheng Zhang",
+      "label": "TensorZKP: Repurposing GPU Tensor Cores for High-Performance Zero-Knowledge Proofs",
+      "description": "GPU Tensor Cores, specialized hardware units designed to accelerate matrix multiplication, have served as the primary engine behind the AI revolution. Given the exponential performance gains they have delivered, aligning cryptographic implementations with this hardware evolution is critical. This is particularly acute for zero-knowledge proofs (ZKPs), a cryptographic primitive that currently grapples with high proof generation costs. Existing GPU implementations for ZKPs rely exclusively on general-purpose SIMT cores, leaving the massive computational power of Tensor Cores untapped. In this paper, we introduce TensorZKP, the first GPU framework to harness Tensor Cores for ZKP acceleration. Since Tensor Cores are designed for low-precision matrix multiplication, mapping ZKP's arithmetic to this hardware is non-trivial. To bridge this gap, we develop Tensor-Core-compatible finite field arithmetic and reformulate ZKP modules, specifically sum-check protocols and Spielman code, into matrix multiplication tasks. Furthermore, we design an asynchronous warp-specialized framework that pipelines memory access, Tensor Core matrix operations, and SIMT-based modular reductions. We instantiate these optimizations with HyperPlonk as the Polynomial Interactive Oracle Proof (PIOP) and Brakedown as the Polynomial Commitment Scheme (PCS) to enable end-to-end proof generation. The evaluation results show that TensorZKP exhibits remarkable efficiency. At a 2^25 scale, the underlying building blocks complete in 0.85 ms for inner product, 0.91 ms for scalar-vector multiplication, 4.04 ms for degree-2 sum-check, and 11.58 ms for the encoder. For a circuit with 2^25 multiplication gates, TensorZKP achieves a proof generation time of only 215.28 milliseconds, representing a 955× speedup over the CPU baseline and a 36.2× improvement over state-of-the-art SIMT-based GPU implementations.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/lu-tao",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense"
+      ],
+      "subspecialties": {
+        "cyber-defense": []
+      }
+    }
+  ]
+}

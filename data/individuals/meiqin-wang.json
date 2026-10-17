@@ -1,0 +1,99 @@
+{
+  "name": "Meiqin Wang",
+  "last-updated": "2026-10-17T21:42:55Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Meiqin Wang",
+      "label": "GALAS: Compact VOLE-in-the-Head Signatures from Subfield Compression",
+      "description": "GALAS: Compact VOLE-in-the-Head Signatures from Subfield Compression",
+      "type": "presentation",
+      "assessor": "ACM Conference on Computer and Communications Security (CCS)",
+      "assessor-id": "acm-ccs",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "ACM CCS 2026",
+      "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Meiqin Wang",
+      "label": "Amortizing Randomness Cost: Efficient Masked Implementation of SDitH Signatures with Common Shares",
+      "description": "MPC-in-the-Head (MPCitH) signatures are attractive for postquantum deployment, but they are structurally vulnerable to side-channel leakage: verification opens almost all simulated views, so any leakage correlated with the remaining unopened view(s) can be amplified and exploited to recover the witness. Among the MPCitH-based signature candidates considered in NIST’s additional-signature round, Syndrome-Decodingin-the-Head (SDitH)-Hypercube is particularly susceptible to this concern, since its signing process combines: (i) offline last-party completion involving nonlinear arithmetic computations, (ii) online Baum–Nof (BN) arithmetic checking, and (iii) Keccak sponge calls that generate or absorb secretbearing values. To the best of our knowledge, this is the first protocol-compatible masked implementation-level protection architecture for SDitH-Hypercube on Cortex-M4. Our implementation combines three techniques, each protecting one attackcritical hotspot: (i) Common Shares to amortize the masking randomness required by masked multiplications in the offline phase, (ii) a Sec/Pub typing discipline that reconstructs transcript-public and verifier-reconstructible values early to avoid costly Sec×Sec gadgets in the online BN kernels, and (iii) selective masked Keccak backends applied only to secretbearing sponge call sites. On the L1 parameter set, Common Shares reduces arithmetic masking randomness from 8.37 KiB/signature of the Strong Non-Interference (SNI) profile to 16 B/signature, while the Sec/Pub-typed optimization removes 3,264 B/signature from the online BN kernels. When Keccak is masked, masking randomness is dominated by the sponge: 41,118.75 KiB/signature with DOM-Keccak and 82,237.50 KiB/signature with SNI-Keccak, motivating selective masked hashing and tunable backends. We implement a low-stack reference signer and all protected signers on Cortex-M4. Across protected profiles, signing takes 913.7–1,542.0 Mcycles (1.84×–3.10× over the *Corresponding Author. reference), and fits within 155.6 KiB flash, 136.7 KiB static RAM, and 7.96 KiB signing stack. A 1M-trace first-order fixed-vs-random Test Vector Leakage Assessment (TVLA) experiment on Cortex-M4 no longer detects the previously observed leakage peaks after protection.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/liu-guowei",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    }
+  ]
+}

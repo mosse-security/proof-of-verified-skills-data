@@ -1,12 +1,12 @@
 {
   "name": "Thomas Roth",
-  "last-updated": "2026-10-17T08:51:47Z",
+  "last-updated": "2026-10-17T21:43:01Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 8,
-    "assessors": 3,
-    "with-evidence": 3,
+    "endorsements": 10,
+    "assessors": 4,
+    "with-evidence": 5,
     "without-evidence": 5,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 1,
       "reverse-engineering": 1,
-      "vulnerability-research": 4,
+      "vulnerability-research": 6,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 1,
@@ -280,6 +280,45 @@
     },
     {
       "name": "Thomas Roth",
+      "label": "Inside Apple’s Lightning: JTAGging the iPhone for Fuzzing and Profit",
+      "description": "Inside Apple’s Lightning: JTAGging the iPhone for Fuzzing and Profit",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2023",
+      "url": "https://www.offensivecon.org/agenda/2023.html",
+      "evidence-links": [
+        {
+          "title": "OffensiveCon23 - Stacksmashing- Inside Apple’s Lightning: JTAGging the iPhone for Fuzzing and Profit",
+          "url": "https://www.youtube.com/watch?v=-nFWcKHIUN4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    },
+    {
+      "name": "Thomas Roth",
       "label": "ACE up the Sleeve: From getting JTAG on the iPhone 15 to hacking into Apple's new USB-C Controller",
       "description": "With the iPhone 15 & iPhone 15 Pro Apple switched their iPhone to USB-C - and introduced a new proprietary USB-C controller: The ACE3. But the ACE3 does more than just handle USB power delivery: It's a full microcontroller running a full USB stack connected to some of the internal busses of the device, and we even managed to access JTAG on the iPhone 15 through it. It also provides access to UART, the internal SPMI bus, etc. Previous variants of the ACE, namely the ACE2 found in MacBooks, could easily be dumped and analyzed using SWD - and even be persistently backdoored through a software vulnerability we found. On the ACE3 however, Apple upped their game: Firmware updates are personalized, debug interfaces seem to be disabled, and the external flash is validated and does not contain all the firmware. However using a combination of reverse-engineering, RF side-channel analysis and electro-magnetic fault-injection it was possible to gain code-execution on the ACE3 - allowing dumping of the ROM, and analysis of the functionality. This talk will show how to use a combination of hardware, firmware, reverse-engineering, side-channel analysis and fault-injection to gain code-execution on a completely custom chip, enabling further security research on an under-explored but security relevant part of Apple devices. AsahiLinux USB-PD Documentaiton - link AsahiLinux macvdmtool - link ACE Controller Secrets (for ACE/ACE2) - link Marc Zyngier's Central Scrutinizer - link",
       "type": "presentation",
@@ -301,6 +340,45 @@
         },
         "level": 0,
         "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    },
+    {
+      "name": "Thomas Roth",
+      "label": "ACE up the Sleeve: Hacking into Apple’s New USB-C Controller",
+      "description": "This talk will show how to use a combination of hardware, firmware, reverse-engineering, side-channel analysis and fault-injection to gain code-execution on a completely custom chip, enabling further security research on an under-explored but security relevant part of Apple devices. Read more",
+      "type": "presentation",
+      "assessor": "OffensiveCon",
+      "assessor-id": "offensivecon",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "OffensiveCon 2024",
+      "url": "https://www.offensivecon.org/speakers/2024/speakers/2024/stacksmashing.html",
+      "evidence-links": [
+        {
+          "title": "OffensiveCon24 - Thomas Roth - ACE up the Sleeve: Hacking into Apple’s New USB-C Controller",
+          "url": "https://www.youtube.com/watch?v=QlaJQEa3_zQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
       "year": 2024,
       "domains": [

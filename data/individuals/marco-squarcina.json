@@ -1,0 +1,97 @@
+{
+  "name": "Marco Squarcina",
+  "last-updated": "2026-10-17T21:42:54Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Marco Squarcina",
+      "label": "AutoFail: Breaking Web Boundaries using Android's Autofill Framework",
+      "description": "Password managers (PWMs) are widely used to improve both usability and security in password-based authentication. On Android, PWMs typically rely on the Autofill Framework (AF) to provide automatic credential filling in native applications and web browsers. The AF acts as an intermediary between apps and PWMs by offering a unified interface for credential extraction and injection. However, web content does not natively match the object structure expected by the AF, which forces browsers to translate a website's Document Object Model (DOM) into an Android-specific representation. This translation step introduces a complex and security-sensitive layer in the autofill pipeline. In this paper, we present the first systematic security analysis of Android's Autofill Framework pipeline. We introduce ADAPT, a differential-testing based approach that enables an end-to-end inspection of the autofill flow, from the browser's DOM translation process to the PWM's credential matching and filling logic. We identify multiple critical vulnerabilities affecting 9 password managers and 5 widely used mobile browsers. These flaws allow attackers to leak credentials to attacker-controlled origins, bypass web isolation mechanisms, and infer user account relationships across services. We precisely define preconditions for the attacks and evaluate their prevalence in the wild. We also propose concrete mitigations and a standardized design for secure DOM translation and context-aware credential filling. We disclosed our findings to the affected vendors. Major browser and password manager developers have confirmed our results and are implementing the suggested fixes.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/lamarca",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Marco Squarcina",
+      "label": "Plain Text, Plain Risks: Measuring HTTP Inclusion in Android WebViews at Scale",
+      "description": "While the widespread adoption of HTTPS and browser-based visual warnings for HTTP content has largely mitigated machine-in-the-middle (MitM) attacks on the traditional Web, the mobile ecosystem presents a different situation. Web content embedded via the Android WebView component commonly lacks these built-in visual security indicators and grants apps granular control over transport-layer security. This flexibility raises a critical question: does the mobile-Web ecosystem keep up with the advancements of the modern Web? In this paper, we perform the first large-scale analysis of HTTP inclusion in WebViews across 189,779 Google Play apps. Despite Android's default policy of blocking HTTP traffic, we find that 33.74% of apps explicitly opt out. Dynamic analysis of 35,000 apps reveals that 69.96% of apps that opt out also relax the Mixed Content Policy, and we observe active HTTP traffic in 2,790. The security impact of these configurations is severe. We identify high-profile apps with 10M+ installations vulnerable to attacks ranging from phishing to full app takeover. Furthermore, we identify a major ad library transmitting cleartext ads, exposing billions of users to MitM attacks. We conclude with a qualitative developer study revealing that insecure practices are frequently driven by the requirements of third-party ad libraries and misconceptions regarding WebView's security configuration modes.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/beer",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

@@ -26,3 +26,16 @@ class OffensiveConParserTest(unittest.TestCase):
         rows = parse_offensivecon(html, "https://example.test/speakers/2024/", 2024)
         self.assertEqual(len(rows), 1)
         self.assertIn("vulnerability discovery", rows[0].description)
+
+    def test_speaker_cards_split_conjoined_names_and_remove_aliases(self) -> None:
+        html = """
+        <section><h4>Nan Wang (sakura) &amp; Ziling Chen (R1nd0)</h4><h5>Finding Bugs</h5></section>
+        """
+        rows = parse_offensivecon(html, "https://example.test/speakers/2026/", 2026)
+        self.assertEqual([row.name for row in rows], ["Nan Wang", "Ziling Chen"])
+
+    def test_schedule_text_is_not_emitted_as_a_speaker(self) -> None:
+        html = """
+        <section><h4>Red Teaming by Jeong Wook Oh</h4><h5>Finding Bugs</h5></section>
+        """
+        self.assertEqual(parse_offensivecon(html, "https://example.test/speakers/2025/", 2025), [])

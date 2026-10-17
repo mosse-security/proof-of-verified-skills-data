@@ -1,0 +1,97 @@
+{
+  "name": "Bin Benjamin Zhu",
+  "last-updated": "2026-10-17T21:39:23Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Bin Benjamin Zhu",
+      "label": "Quantifying Large Language Model Attacks Through the Lens of Model Cognition",
+      "description": "Large language models (LLMs) are vulnerable to malicious inputs that elicit harmful content. Current safety mechanisms, such as keyword filters or output moderation, largely ignore internal model dynamics. We show that safety-relevant features correlated with harmful prompting are strongly separable under lightweight probes in intermediate hidden states (up to 99% accuracy) before generation, revealing that such features persist internally even when models produce compliant outputs. Leveraging this observation, we introduce layer-wise toxicity probes and a multi-layer complementary detection framework that fuses signals from diverse depths. Our lightweight Sentinel (<5M parameters) halves false negatives compared to generation-level refusal and maintains over 94% detection accuracy under adversarial attacks—where baselines drop by 32%. Sentinel also outperforms Llama-Guard-3-8B on heterogeneous harmful prompting across seven open-weight LLMs (1.5B→72B) and multiple benchmarks (I2P, SneakyPrompt, MMA, Labelled, PIJ, ChatAlpaca, and Multi-turn Jailbreak). Beyond detection, our method provides the first quantitative, layer-resolved map of how safety-relevant signals emerge, propagate, and degrade within LLMs, enabling interpretable, inside-out alignment and diagnostics. This paper contains potentially sensitive and offensive content, including but not limited to NSFW material, hate speech, discrimination, and other harmful text. Reader discretion is advised.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/liu-xiuming",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Bin Benjamin Zhu",
+      "label": "Sirens' Whisper: Inaudible Near-Ultrasonic Jailbreaks of Speech-Driven LLMs",
+      "description": "Speech-driven large language models (LLMs) are increasingly accessed through speech interfaces, introducing new security risks via open acoustic channels. We present Sirens' Whisper (SWhisper) , the first practical framework for covert prompt-based attacks against speech-driven LLMs under realistic black-box conditions using commodity hardware. SWhisper enables robust, inaudible delivery of arbitrary target baseband audio—including long and structured prompts—on commodity devices by encoding it into near-ultrasound waveforms that demodulate faithfully after acoustic transmission and microphone nonlinearity. This is achieved through a simple yet effective approach to modeling nonlinear channel characteristics across devices and environments, combined with lightweight channel‑inversion pre‑compensation. Building on this high‑fidelity covert channel, we design a voice‑aware jailbreak generation method that ensures intelligibility, brevity, and transferability under speech-driven interfaces. Experiments across both commercial and open-source speech-driven LLMs demonstrate strong black-box effectiveness. On commercial models, SWhisper achieves up to 0.94 non-refusal (NR) and 0.925 specific-convincing (SC). A controlled user study further shows that the injected jailbreak audio is perceptually indistinguishable from background-only playback for human listeners. Although jailbreaks serve as a case study, the underlying covert acoustic channel enables a broader class of high-fidelity prompt-injection and command-execution attacks.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/ling",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

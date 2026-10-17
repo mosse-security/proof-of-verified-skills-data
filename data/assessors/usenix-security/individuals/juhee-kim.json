@@ -1,0 +1,99 @@
+{
+  "name": "Juhee Kim",
+  "last-updated": "2026-10-17T21:39:24Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Juhee Kim",
+      "label": "DMGuard: Safeguarding Kernels from Physical-Page Use-After-Free Vulnerabilities",
+      "description": "Modern kernels depend on the integrity of page tables to enforce advanced security measures. Although these defenses have effectively mitigated various attacks including memory corruption, adversaries have shifted their focus to compromise the page table itself to bypass existing protections. Such threats are exacerbated by the rise of heterogeneous address translation domains including separate CPU, GPU, and IOMMU page tables, which impose heavy demands on synchronization and coherence management. When a virtual address remains mapped to a physical page that has already been freed or reallocated, attackers can exploit this to access arbitrary physical memory. We call this physical-page use-after-free, distinct from traditional heap use-after-free that operates on virtual addresses. In this paper, we present DMGuard, the first runtime mitigation that comprehensively addresses physical-page use-after-free vulnerabilities across diverse translation domains. DMGuard leverages a lightweight, lockless mechanism to manage a state machine of physical pages to ensure no dangling mappings exist in the page tables. Evaluation of DMGuard on Android devices demonstrates that it effectively blocks all known physical-page use-after-free vulnerabilities with negligible performance overheads, demonstrating the practicality and effectiveness against emerging attacks.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/kim-juhee-dmguard",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Juhee Kim",
+      "label": "SoK: Attack and Defense Landscape of Agentic AI Systems",
+      "description": "AI agents that integrate large language models with non-AI tool components are rapidly emerging in real-world applications, offering unprecedented automation and flexibility. However, this flexibility introduces complex security challenges that differ from traditional software systems. In this paper, we present the first comprehensive systematization of knowledge on AI agent security, analyzing the design space, attack landscape, and defense mechanisms for secure AI agent systems. In addition, we identify open challenges for future research in this emerging domain. Our work provides the first systematic framework for understanding AI agent security risks and defense strategies, serving as a foundation for building secure agentic systems and advancing research in this critical area.",
+      "type": "presentation",
+      "assessor": "USENIX Security Symposium",
+      "assessor-id": "usenix-security",
+      "assessor-category": "conference_academic",
+      "assessor-rigor-level": "very_high",
+      "reviewType": "double_blind",
+      "subtitle": "USENIX Security '26",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/kim-juhee-agentic",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "cyber-defense"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ]
+      }
+    }
+  ]
+}
