@@ -1,4 +1,4 @@
-﻿"""Standalone parser for archive page https://blackhat.com/archive/europe/2006/bh-eu-06-index.html."""
+"""Standalone parser for archive page https://blackhat.com/archive/europe/2006/bh-eu-06-index.html."""
 from __future__ import annotations
 
 # This file owns exactly one archived page; do not broaden its URL scope.
@@ -39,7 +39,7 @@ class BlackHatScraper:
     def __init__(
         self,
         *,
-        assessor_file: Path = Path("data/assessors/black-hat.json"),
+        assessor_file: Path = Path("data/assessors/black-hat/black-hat.json"),
         html_directory: Path = Path("data/archives/html/black-hat.zip"),
         output_directory: Path = Path("tmp/endorsements/black-hat"),
         profile_directory: Path = Path("tmp/profiles/black-hat"),

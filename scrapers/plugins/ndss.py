@@ -11,7 +11,7 @@ class NdssArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = NdssScraper(
-            assessor_file=context.assessors_directory / "ndss.json",
+            assessor_file=context.assessors_directory / "ndss" / "ndss.json",
             html_directory=context.html_directory / "ndss.zip",
             output_directory=context.output_directory / "ndss",
             profile_directory=context.profile_directory / "ndss",

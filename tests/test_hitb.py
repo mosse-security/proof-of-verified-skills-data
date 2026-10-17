@@ -58,7 +58,7 @@ class HitbParserTests(unittest.TestCase):
         self.assertEqual(parse_hitb_session("<a href='/speaker/a/'>A</a>", "https://example/"), [])
 
     def test_all_linked_session_pages_are_archived(self) -> None:
-        assessor = json.loads(Path("data/assessors/hitb.json").read_text(encoding="utf-8"))
+        assessor = json.loads(Path("data/assessors/hitb/hitb.json").read_text(encoding="utf-8"))
         with zipfile.ZipFile("data/archives/html/hitb.zip") as archive:
             members = set(archive.namelist())
             missing = set()

@@ -10,7 +10,7 @@ class DefConYouTubeRecordings(BaseEnricher):
     enricher_id = "def-con-youtube-recordings"
 
     def run(self, context: EnricherContext) -> EnrichmentResult:
-        assessor_path = context.assessors_directory / "def-con.json"
+        assessor_path = context.assessors_directory / "def-con" / "def-con.json"
         document = json.loads(assessor_path.read_text(encoding="utf-8"))
         youtube_url = document.get("links", {}).get("youtubeUrl")
         if not isinstance(youtube_url, str) or not youtube_url:

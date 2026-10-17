@@ -11,7 +11,7 @@ class DerbyConArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = DerbyConScraper(
-            assessor_file=context.assessors_directory / "derbycon.json",
+            assessor_file=context.assessors_directory / "derbycon" / "derbycon.json",
             html_directory=context.html_directory / "derbycon.zip",
             output_directory=context.output_directory / "derbycon",
             profile_directory=context.profile_directory / "derbycon",

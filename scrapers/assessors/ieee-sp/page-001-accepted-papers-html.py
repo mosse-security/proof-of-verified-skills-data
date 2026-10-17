@@ -1,4 +1,4 @@
-﻿"""Standalone parser for archive page https://sp2026.ieee-security.org/accepted-papers.html."""
+"""Standalone parser for archive page https://sp2026.ieee-security.org/accepted-papers.html."""
 from __future__ import annotations
 
 # This file owns exactly one archived page; do not broaden its URL scope.
@@ -59,7 +59,7 @@ class IeeeSpScraper:
     assessor_id = "ieee-sp"
     scraper_id = "ieee-sp-accepted-papers"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/ieee-sp.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/ieee-sp/ieee-sp.json"),
                  html_directory=Path("data/archives/html/ieee-sp.zip"),
                  output_directory=Path("tmp/endorsements/ieee-sp"),
                  profile_directory=Path("tmp/profiles/ieee-sp"), overwrite=True,

@@ -1,4 +1,4 @@
-﻿"""Standalone parser for archive page https://www.layerone.org/2024-speaker-lineup/."""
+"""Standalone parser for archive page https://www.layerone.org/2024-speaker-lineup/."""
 from __future__ import annotations
 
 # This file owns exactly one archived page; do not broaden its URL scope.
@@ -62,7 +62,7 @@ class LayerOneScraper:
     assessor_id = "layer-one"
     scraper_id = "layer-one-speakers"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/layer-one.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/layer-one/layer-one.json"),
                  html_directory=Path("data/archives/html/layer-one.zip"),
                  output_directory=Path("tmp/endorsements/layer-one"),
                  profile_directory=Path("tmp/profiles/layer-one"), overwrite=True,

@@ -1,4 +1,4 @@
-﻿"""Parser for Microsoft's BlueHat MSRC schedule and session posts."""
+"""Parser for Microsoft's BlueHat MSRC schedule and session posts."""
 from __future__ import annotations
 
 import json
@@ -41,7 +41,7 @@ class BlueHatScraper:
     assessor_id = "bluehat"
     scraper_id = "bluehat-sessions"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/bluehat.json"), html_directory=Path("data/archives/html/bluehat.zip"), output_directory=Path("tmp/endorsements/bluehat"), profile_directory=Path("tmp/profiles/bluehat"), overwrite=True, timeout=30, retries=2):
+    def __init__(self, *, assessor_file=Path("data/assessors/bluehat/bluehat.json"), html_directory=Path("data/archives/html/bluehat.zip"), output_directory=Path("tmp/endorsements/bluehat"), profile_directory=Path("tmp/profiles/bluehat"), overwrite=True, timeout=30, retries=2):
         self.assessor_file = Path(assessor_file)
         self.assessor = AssessorMetadata.from_file(self.assessor_file)
         self.enrichment_catalog = EnrichmentCatalog.from_directory(Path("data/enrichments"))

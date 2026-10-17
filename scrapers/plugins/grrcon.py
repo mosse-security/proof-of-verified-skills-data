@@ -11,7 +11,7 @@ class GrrconArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = GrrconScraper(
-            assessor_file=context.assessors_directory / "grrcon.json",
+            assessor_file=context.assessors_directory / "grrcon" / "grrcon.json",
             html_directory=context.html_directory / "grrcon.zip",
             output_directory=context.output_directory / "grrcon",
             profile_directory=context.profile_directory / "grrcon",

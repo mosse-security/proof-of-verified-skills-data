@@ -11,7 +11,7 @@ class AcmCcsArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = AcmCcsScraper(
-            assessor_file=context.assessors_directory / "acm-ccs.json",
+            assessor_file=context.assessors_directory / "acm-ccs" / "acm-ccs.json",
             html_directory=context.html_directory / "acm-ccs.zip",
             output_directory=context.output_directory / "acm-ccs",
             profile_directory=context.profile_directory / "acm-ccs",

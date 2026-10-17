@@ -11,7 +11,7 @@ class BlueTeamConArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = BlueTeamConScraper(
-            assessor_file=context.assessors_directory / "blue-team-con.json",
+            assessor_file=context.assessors_directory / "blue-team-con" / "blue-team-con.json",
             html_directory=context.html_directory / "blue-team-con.zip",
             output_directory=context.output_directory / "blue-team-con",
             profile_directory=context.profile_directory / "blue-team-con",

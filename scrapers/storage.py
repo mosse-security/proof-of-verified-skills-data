@@ -74,7 +74,7 @@ class EndorsementStore:
             cached = self._assessors.get(assessor_id)
             if cached is None:
                 cached = AssessorMetadata.from_file(
-                    self.assessors_directory / f"{assessor_id}.json"
+                    self.assessors_directory / assessor_id / f"{assessor_id}.json"
                 )
                 self._assessors[assessor_id] = cached
             return cached

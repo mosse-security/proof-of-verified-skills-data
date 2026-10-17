@@ -20,7 +20,7 @@ def archive_assessor(
     timeout: float = 30,
     retries: int = 2,
 ) -> tuple[int, int, list[str]]:
-    assessor_path = assessors_directory / f"{assessor_id}.json"
+    assessor_path = assessors_directory / assessor_id / f"{assessor_id}.json"
     document = json.loads(assessor_path.read_text(encoding="utf-8"))
     urls = document.get("links", {}).get("processUrls", [])
     if not isinstance(urls, list) or not urls:

@@ -11,7 +11,7 @@ class LayerOneArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = LayerOneScraper(
-            assessor_file=context.assessors_directory / "layer-one.json",
+            assessor_file=context.assessors_directory / "layer-one" / "layer-one.json",
             html_directory=context.html_directory / "layer-one.zip",
             output_directory=context.output_directory / "layer-one",
             profile_directory=context.profile_directory / "layer-one",

@@ -18,7 +18,7 @@ class InsomnihackArchiveValidationTest(unittest.TestCase):
     """Validate every archived Insomni'hack page independently, offline."""
 
     def test_each_configured_archive_has_clean_records(self) -> None:
-        config = json.loads(Path("data/assessors/insomnihack.json").read_text(encoding="utf-8"))
+        config = json.loads(Path("data/assessors/insomnihack/insomnihack.json").read_text(encoding="utf-8"))
         archive = ArchiveStore(Path("data/archives/html/insomnihack.zip"))
         sources = config["links"]["processUrls"]
         self.assertEqual(len(sources), 13)
@@ -49,7 +49,7 @@ class InsomnihackArchiveValidationTest(unittest.TestCase):
         )
 
     def test_known_insomnihack_names_have_correct_identity_forms(self) -> None:
-        config = json.loads(Path("data/assessors/insomnihack.json").read_text(encoding="utf-8"))
+        config = json.loads(Path("data/assessors/insomnihack/insomnihack.json").read_text(encoding="utf-8"))
         archive = ArchiveStore(Path("data/archives/html/insomnihack.zip"))
         found = {}
         for source in config["links"]["processUrls"]:
@@ -66,7 +66,7 @@ class InsomnihackArchiveValidationTest(unittest.TestCase):
         })
 
     def test_known_truncated_names_are_not_emitted(self) -> None:
-        config = json.loads(Path("data/assessors/insomnihack.json").read_text(encoding="utf-8"))
+        config = json.loads(Path("data/assessors/insomnihack/insomnihack.json").read_text(encoding="utf-8"))
         archive = ArchiveStore(Path("data/archives/html/insomnihack.zip"))
         found = {}
         bad = {"er kozlov", "rea apollino", "rea pierini", "reas schneider"}
@@ -87,7 +87,7 @@ class InsomnihackArchiveValidationTest(unittest.TestCase):
         })
 
     def test_organizations_are_not_emitted_as_people(self) -> None:
-        config = json.loads(Path("data/assessors/insomnihack.json").read_text(encoding="utf-8"))
+        config = json.loads(Path("data/assessors/insomnihack/insomnihack.json").read_text(encoding="utf-8"))
         archive = ArchiveStore(Path("data/archives/html/insomnihack.zip"))
         for source in config["links"]["processUrls"]:
             year = _year(source)

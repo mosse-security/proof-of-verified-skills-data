@@ -1,4 +1,4 @@
-﻿"""Historical DerbyCon schedule scraper using archived official pages."""
+"""Historical DerbyCon schedule scraper using archived official pages."""
 from __future__ import annotations
 
 import json
@@ -126,7 +126,7 @@ class DerbyConScraper:
     assessor_id = "derbycon"
     scraper_id = "derbycon-archived-schedules"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/derbycon.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/derbycon/derbycon.json"),
                  html_directory=Path("data/archives/html/derbycon.zip"),
                  output_directory=Path("tmp/endorsements/derbycon"),
                  profile_directory=Path("tmp/profiles/derbycon"), overwrite=True,

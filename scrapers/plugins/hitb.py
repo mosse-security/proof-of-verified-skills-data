@@ -11,7 +11,7 @@ class HitbArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = HitbScraper(
-            assessor_file=context.assessors_directory / "hitb.json",
+            assessor_file=context.assessors_directory / "hitb" / "hitb.json",
             html_directory=context.html_directory / "hitb.zip",
             output_directory=context.output_directory / "hitb",
             profile_directory=context.profile_directory / "hitb",

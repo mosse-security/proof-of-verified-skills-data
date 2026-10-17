@@ -1,4 +1,4 @@
-﻿"""CanSecWest Squarespace presentation archive parser."""
+"""CanSecWest Squarespace presentation archive parser."""
 from __future__ import annotations
 
 import json
@@ -27,7 +27,7 @@ class CanSecWestScraper:
     assessor_id = "cansecwest"
     scraper_id = "cansecwest-presentations"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/cansecwest.json"), html_directory=Path("data/archives/html/cansecwest.zip"), output_directory=Path("tmp/endorsements/cansecwest"), profile_directory=Path("tmp/profiles/cansecwest"), overwrite=True, timeout=30, retries=2):
+    def __init__(self, *, assessor_file=Path("data/assessors/cansecwest/cansecwest.json"), html_directory=Path("data/archives/html/cansecwest.zip"), output_directory=Path("tmp/endorsements/cansecwest"), profile_directory=Path("tmp/profiles/cansecwest"), overwrite=True, timeout=30, retries=2):
         self.assessor_file = Path(assessor_file)
         self.assessor = AssessorMetadata.from_file(self.assessor_file)
         self.enrichment_catalog = EnrichmentCatalog.from_directory(Path("data/enrichments"))

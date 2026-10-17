@@ -15,7 +15,7 @@ class CanSecWestArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         scraper = CanSecWestScraper(
-            assessor_file=context.assessors_directory / "cansecwest.json",
+            assessor_file=context.assessors_directory / "cansecwest" / "cansecwest.json",
             html_directory=context.html_directory / "cansecwest.zip",
             output_directory=context.output_directory / "cansecwest",
             profile_directory=context.profile_directory / "cansecwest",

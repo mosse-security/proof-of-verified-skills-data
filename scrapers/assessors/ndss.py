@@ -1,4 +1,4 @@
-﻿"""NDSS accepted-paper and abstract scraper."""
+"""NDSS accepted-paper and abstract scraper."""
 from __future__ import annotations
 
 import json
@@ -64,7 +64,7 @@ class NdssScraper:
     assessor_id = "ndss"
     scraper_id = "ndss-accepted-papers"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/ndss.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/ndss/ndss.json"),
                  html_directory=Path("data/archives/html/ndss.zip"),
                  output_directory=Path("tmp/endorsements/ndss"),
                  profile_directory=Path("tmp/profiles/ndss"), overwrite=True,

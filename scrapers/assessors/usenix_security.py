@@ -1,4 +1,4 @@
-﻿"""USENIX Security technical-session and paper parser."""
+"""USENIX Security technical-session and paper parser."""
 from __future__ import annotations
 
 import json
@@ -43,14 +43,19 @@ def _authors(article: Tag) -> list[str]:
             if isinstance(child, Tag) and child.name == "em":
                 continue
             if isinstance(child, str):
-                for value in re.split(r"\s*,\s*", child):
-                    value = value.strip(" ,;\n\t")
+                for value in re.split(r"\s*,\s*|\s+\band\b\s+", child, flags=re.IGNORECASE):
+                    value = _clean_author(value)
                     if _valid_author(value):
                         names.append(value)
     if not names:
         text = " ".join(field.get_text(" ", strip=True).split())
-        names = [part.strip(" ,") for part in text.split(";") if _valid_author(part.strip(" ,"))]
+        names = [_clean_author(part) for part in text.split(";") if _valid_author(_clean_author(part))]
     return list(dict.fromkeys(names))
+
+
+def _clean_author(value: str) -> str:
+    """Remove list-conjunctions that belong to the author separator."""
+    return re.sub(r"^and\s+", "", " ".join(value.split()), flags=re.IGNORECASE).strip(" ,;\n\t")
 
 
 def _valid_author(value: str) -> bool:
@@ -84,7 +89,7 @@ class UsenixSecurityScraper:
     assessor_id = "usenix-security"
     scraper_id = "usenix-security-papers"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/usenix-security.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/usenix-security/usenix-security.json"),
                  html_directory=Path("data/archives/html/usenix-security.zip"),
                  output_directory=Path("tmp/endorsements/usenix-security"),
                  profile_directory=Path("tmp/profiles/usenix-security"), overwrite=True,

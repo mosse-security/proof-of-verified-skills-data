@@ -13,7 +13,7 @@ class InsomnihackArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = InsomnihackScraper(
-            assessor_file=context.assessors_directory / "insomnihack.json",
+            assessor_file=context.assessors_directory / "insomnihack" / "insomnihack.json",
             html_directory=context.html_directory / "insomnihack.zip",
             output_directory=context.output_directory / "insomnihack",
             profile_directory=context.profile_directory / "insomnihack",

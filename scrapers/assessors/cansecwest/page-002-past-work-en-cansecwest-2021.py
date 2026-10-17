@@ -1,4 +1,4 @@
-﻿"""Standalone parser for archive page https://www.secwest.net/past-work/en-cansecwest-2021."""
+"""Standalone parser for archive page https://www.secwest.net/past-work/en-cansecwest-2021."""
 from __future__ import annotations
 
 # This file owns exactly one archived page; do not broaden its URL scope.
@@ -34,7 +34,7 @@ class CanSecWestScraper:
     assessor_id = "cansecwest"
     scraper_id = "cansecwest-presentations"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/cansecwest.json"), html_directory=Path("data/archives/html/cansecwest.zip"), output_directory=Path("tmp/endorsements/cansecwest"), profile_directory=Path("tmp/profiles/cansecwest"), overwrite=True, timeout=30, retries=2):
+    def __init__(self, *, assessor_file=Path("data/assessors/cansecwest/cansecwest.json"), html_directory=Path("data/archives/html/cansecwest.zip"), output_directory=Path("tmp/endorsements/cansecwest"), profile_directory=Path("tmp/profiles/cansecwest"), overwrite=True, timeout=30, retries=2):
         self.assessor_file = Path(assessor_file)
         self.assessor = AssessorMetadata.from_file(self.assessor_file)
         self.enrichment_catalog = EnrichmentCatalog.from_directory(Path("data/enrichments"))

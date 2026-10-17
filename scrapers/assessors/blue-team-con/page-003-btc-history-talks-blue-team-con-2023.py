@@ -1,4 +1,4 @@
-﻿"""Standalone parser for archive page https://blueteamcon.com/btc-history/talks-blue-team-con-2023/."""
+"""Standalone parser for archive page https://blueteamcon.com/btc-history/talks-blue-team-con-2023/."""
 from __future__ import annotations
 
 # This file owns exactly one archived page; do not broaden its URL scope.
@@ -53,7 +53,7 @@ class BlueTeamConScraper:
     assessor_id = "blue-team-con"
     scraper_id = "blue-team-con-talks"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/blue-team-con.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/blue-team-con/blue-team-con.json"),
                  html_directory=Path("data/archives/html/blue-team-con.zip"),
                  output_directory=Path("tmp/endorsements/blue-team-con"),
                  profile_directory=Path("tmp/profiles/blue-team-con"), overwrite=True,

@@ -273,6 +273,7 @@ class CollectionScraperRunner:
                 )
             assessor = AssessorMetadata.from_file(
                 self.context.assessors_directory
+                / scraper.assessor_id
                 / f"{scraper.assessor_id}.json"
             )
             output_files, removed = filter_non_endorsement_output_files(

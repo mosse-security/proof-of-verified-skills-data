@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import os
@@ -28,7 +28,7 @@ class DefConArchiveScraper(BaseCollectionScraper):
         )
         results = DefConScraper(
             assessor_file=(
-                context.assessors_directory / f"{self.assessor_id}.json"
+            context.assessors_directory / self.assessor_id / f"{self.assessor_id}.json"
             ),
             html_directory=(
                 context.html_directory / f"{self.assessor_id}.zip"
@@ -63,7 +63,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--assessor-file",
         type=Path,
-        default=Path("data/assessors/def-con.json"),
+        default=Path("data/assessors/def-con/def-con.json"),
     )
     parser.add_argument(
         "--html-dir", type=Path, default=Path("data/archives/html/def-con.zip")

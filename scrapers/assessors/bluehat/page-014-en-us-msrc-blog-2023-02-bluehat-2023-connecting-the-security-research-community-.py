@@ -1,4 +1,4 @@
-﻿"""Standalone parser for archive page https://www.microsoft.com/en-us/msrc/blog/2023/02/bluehat-2023-connecting-the-security-research-community-with-microsoft."""
+"""Standalone parser for archive page https://www.microsoft.com/en-us/msrc/blog/2023/02/bluehat-2023-connecting-the-security-research-community-with-microsoft."""
 from __future__ import annotations
 
 # This file owns exactly one archived page; do not broaden its URL scope.
@@ -48,7 +48,7 @@ class BlueHatScraper:
     assessor_id = "bluehat"
     scraper_id = "bluehat-sessions"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/bluehat.json"), html_directory=Path("data/archives/html/bluehat.zip"), output_directory=Path("tmp/endorsements/bluehat"), profile_directory=Path("tmp/profiles/bluehat"), overwrite=True, timeout=30, retries=2):
+    def __init__(self, *, assessor_file=Path("data/assessors/bluehat/bluehat.json"), html_directory=Path("data/archives/html/bluehat.zip"), output_directory=Path("tmp/endorsements/bluehat"), profile_directory=Path("tmp/profiles/bluehat"), overwrite=True, timeout=30, retries=2):
         self.assessor_file = Path(assessor_file)
         self.assessor = AssessorMetadata.from_file(self.assessor_file)
         self.enrichment_catalog = EnrichmentCatalog.from_directory(Path("data/enrichments"))

@@ -14,7 +14,7 @@ class BlueHatArchiveScraper(BaseCollectionScraper):
     overwrite_by_default = True
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
-        results = BlueHatScraper(assessor_file=context.assessors_directory / "bluehat.json", html_directory=context.html_directory / "bluehat.zip", output_directory=context.output_directory / "bluehat", profile_directory=context.profile_directory / "bluehat", overwrite=context.overwrite if context.overwrite is not None else True, timeout=context.timeout, retries=context.retries).run()
+        results = BlueHatScraper(assessor_file=context.assessors_directory / "bluehat" / "bluehat.json", html_directory=context.html_directory / "bluehat.zip", output_directory=context.output_directory / "bluehat", profile_directory=context.profile_directory / "bluehat", overwrite=context.overwrite if context.overwrite is not None else True, timeout=context.timeout, retries=context.retries).run()
         return CollectionScraperResult(pages=len(results), endorsements=sum(r.endorsements for r in results), created=len(results), output_files=tuple(r.output for r in results))
 
 

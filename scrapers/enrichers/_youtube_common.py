@@ -8,7 +8,8 @@ from scrapers.enrichment import EnricherContext, EnrichmentResult, write_json_zi
 
 
 def collect_youtube(context: EnricherContext, *, assessor_id: str, enricher_id: str) -> EnrichmentResult:
-    document = json.loads((context.assessors_directory / f"{assessor_id}.json").read_text(encoding="utf-8"))
+    assessor_path = context.assessors_directory / assessor_id / f"{assessor_id}.json"
+    document = json.loads(assessor_path.read_text(encoding="utf-8"))
     links = document.get("links", {})
     urls = []
     for key in ("youtubeUrl", "youtubePlaylistUrl"):

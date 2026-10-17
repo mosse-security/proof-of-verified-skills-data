@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import re
@@ -32,7 +32,7 @@ class BlackHatScraper:
     def __init__(
         self,
         *,
-        assessor_file: Path = Path("data/assessors/black-hat.json"),
+        assessor_file: Path = Path("data/assessors/black-hat/black-hat.json"),
         html_directory: Path = Path("data/archives/html/black-hat.zip"),
         output_directory: Path = Path("tmp/endorsements/black-hat"),
         profile_directory: Path = Path("tmp/profiles/black-hat"),

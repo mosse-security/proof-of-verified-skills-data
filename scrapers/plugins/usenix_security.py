@@ -11,7 +11,7 @@ class UsenixSecurityArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = UsenixSecurityScraper(
-            assessor_file=context.assessors_directory / "usenix-security.json",
+            assessor_file=context.assessors_directory / "usenix-security" / "usenix-security.json",
             html_directory=context.html_directory / "usenix-security.zip",
             output_directory=context.output_directory / "usenix-security",
             profile_directory=context.profile_directory / "usenix-security",

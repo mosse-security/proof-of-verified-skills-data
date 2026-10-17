@@ -1,4 +1,4 @@
-﻿"""HITB Security Conference archive scraper."""
+"""HITB Security Conference archive scraper."""
 from __future__ import annotations
 
 import json
@@ -28,7 +28,7 @@ class HitbScraper:
     assessor_id = "hitb"
     scraper_id = "hitb-presentations"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/hitb.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/hitb/hitb.json"),
                  html_directory=Path("data/archives/html/hitb.zip"),
                  output_directory=Path("tmp/endorsements/hitb"),
                  profile_directory=Path("tmp/profiles/hitb"), overwrite=True,

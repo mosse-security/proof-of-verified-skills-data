@@ -1,4 +1,4 @@
-﻿"""Chaos Communication Congress recordings scraper."""
+"""Chaos Communication Congress recordings scraper."""
 from __future__ import annotations
 
 import json
@@ -55,7 +55,7 @@ class CccScraper:
     assessor_id = "ccc"
     scraper_id = "ccc-recordings"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/ccc.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/ccc/ccc.json"),
                  html_directory=Path("data/archives/html/ccc.zip"),
                  output_directory=Path("tmp/endorsements/ccc"),
                  profile_directory=Path("tmp/profiles/ccc"), overwrite=True,

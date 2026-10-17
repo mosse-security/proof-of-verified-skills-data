@@ -1,4 +1,4 @@
-﻿"""OffensiveCon historical speaker and agenda archive parser."""
+"""OffensiveCon historical speaker and agenda archive parser."""
 from __future__ import annotations
 
 import json
@@ -45,7 +45,7 @@ class OffensiveConScraper:
     assessor_id = "offensivecon"
     scraper_id = "offensivecon-talks"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/offensivecon.json"), html_directory=Path("data/archives/html/offensivecon.zip"), output_directory=Path("tmp/endorsements/offensivecon"), profile_directory=Path("tmp/profiles/offensivecon"), overwrite=True, timeout=30, retries=2):
+    def __init__(self, *, assessor_file=Path("data/assessors/offensivecon/offensivecon.json"), html_directory=Path("data/archives/html/offensivecon.zip"), output_directory=Path("tmp/endorsements/offensivecon"), profile_directory=Path("tmp/profiles/offensivecon"), overwrite=True, timeout=30, retries=2):
         self.assessor_file = Path(assessor_file)
         self.assessor = AssessorMetadata.from_file(self.assessor_file)
         # Use an absolute archive path so Windows can atomically replace the

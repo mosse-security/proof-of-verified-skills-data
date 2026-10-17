@@ -28,7 +28,7 @@ from scrapers.models import Request
 from scrapers.schema import AssessorMetadata, build_endorsement_record
 
 
-DEFAULT_ASSESSOR_FILE = Path("data/assessors/def-con.json")
+DEFAULT_ASSESSOR_FILE = Path("data/assessors/def-con/def-con.json")
 DEFAULT_HTML_DIRECTORY = Path("data/archives/html/def-con")
 DEFAULT_OUTPUT_DIRECTORY = Path("tmp/endorsements/def-con")
 DEFAULT_PROFILE_DIRECTORY = Path("tmp/profiles/def-con")

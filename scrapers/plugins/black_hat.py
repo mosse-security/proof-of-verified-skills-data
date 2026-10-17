@@ -16,7 +16,7 @@ class BlackHatArchiveScraper(BaseCollectionScraper):
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         archive = context.html_directory / "black-hat.zip"
         scraper = BlackHatScraper(
-            assessor_file=context.assessors_directory / "black-hat.json",
+            assessor_file=context.assessors_directory / "black-hat" / "black-hat.json",
             html_directory=archive if archive.exists() else context.html_directory / "black-hat",
             output_directory=context.output_directory / "black-hat",
             profile_directory=context.profile_directory / "black-hat",

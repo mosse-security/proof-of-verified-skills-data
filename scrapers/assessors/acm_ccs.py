@@ -1,4 +1,4 @@
-﻿"""ACM CCS accepted-paper scraper."""
+"""ACM CCS accepted-paper scraper."""
 from __future__ import annotations
 
 import json
@@ -47,7 +47,7 @@ class AcmCcsScraper:
     assessor_id = "acm-ccs"
     scraper_id = "acm-ccs-accepted-papers"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/acm-ccs.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/acm-ccs/acm-ccs.json"),
                  html_directory=Path("data/archives/html/acm-ccs.zip"),
                  output_directory=Path("tmp/endorsements/acm-ccs"),
                  profile_directory=Path("tmp/profiles/acm-ccs"), overwrite=True,

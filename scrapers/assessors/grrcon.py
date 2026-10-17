@@ -1,4 +1,4 @@
-﻿"""GrrCON presentations archive scraper."""
+"""GrrCON presentations archive scraper."""
 from __future__ import annotations
 
 import json
@@ -28,7 +28,7 @@ class GrrconScraper:
     assessor_id = "grrcon"
     scraper_id = "grrcon-presentations"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/grrcon.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/grrcon/grrcon.json"),
                  html_directory=Path("data/archives/html/grrcon.zip"),
                  output_directory=Path("tmp/endorsements/grrcon"),
                  profile_directory=Path("tmp/profiles/grrcon"), overwrite=True,

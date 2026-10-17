@@ -1,4 +1,4 @@
-﻿"""Standalone parser for archive page https://media.ccc.de/c/24c3."""
+"""Standalone parser for archive page https://media.ccc.de/c/24c3."""
 from __future__ import annotations
 
 # This file owns exactly one archived page; do not broaden its URL scope.
@@ -62,7 +62,7 @@ class CccScraper:
     assessor_id = "ccc"
     scraper_id = "ccc-recordings"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/ccc.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/ccc/ccc.json"),
                  html_directory=Path("data/archives/html/ccc.zip"),
                  output_directory=Path("tmp/endorsements/ccc"),
                  profile_directory=Path("tmp/profiles/ccc"), overwrite=True,

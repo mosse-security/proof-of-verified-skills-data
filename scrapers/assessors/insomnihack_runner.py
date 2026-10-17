@@ -1,4 +1,4 @@
-﻿"""Insomni'hack output runner; extraction lives in one module per archive page."""
+"""Insomni'hack output runner; extraction lives in one module per archive page."""
 from __future__ import annotations
 
 import json
@@ -44,7 +44,7 @@ class InsomnihackScraper:
     assessor_id = "insomnihack"
     scraper_id = "insomnihack-talks"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/insomnihack.json"), html_directory=Path("data/archives/html/insomnihack.zip"), output_directory=Path("tmp/endorsements/insomnihack"), profile_directory=Path("tmp/profiles/insomnihack"), overwrite=True, timeout=30, retries=2):
+    def __init__(self, *, assessor_file=Path("data/assessors/insomnihack/insomnihack.json"), html_directory=Path("data/archives/html/insomnihack.zip"), output_directory=Path("tmp/endorsements/insomnihack"), profile_directory=Path("tmp/profiles/insomnihack"), overwrite=True, timeout=30, retries=2):
         self.assessor_file = Path(assessor_file)
         self.assessor = AssessorMetadata.from_file(self.assessor_file)
         self.archive = ArchiveStore(Path(html_directory).resolve())

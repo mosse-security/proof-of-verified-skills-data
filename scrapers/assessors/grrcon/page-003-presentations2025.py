@@ -1,4 +1,4 @@
-﻿"""Standalone parser for archive page https://grrcon.com/presentations2025/."""
+"""Standalone parser for archive page https://grrcon.com/presentations2025/."""
 from __future__ import annotations
 
 # This file owns exactly one archived page; do not broaden its URL scope.
@@ -35,7 +35,7 @@ class GrrconScraper:
     assessor_id = "grrcon"
     scraper_id = "grrcon-presentations"
 
-    def __init__(self, *, assessor_file=Path("data/assessors/grrcon.json"),
+    def __init__(self, *, assessor_file=Path("data/assessors/grrcon/grrcon.json"),
                  html_directory=Path("data/archives/html/grrcon.zip"),
                  output_directory=Path("tmp/endorsements/grrcon"),
                  profile_directory=Path("tmp/profiles/grrcon"), overwrite=True,

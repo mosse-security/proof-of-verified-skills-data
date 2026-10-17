@@ -11,7 +11,7 @@ class IeeeSpArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = IeeeSpScraper(
-            assessor_file=context.assessors_directory / "ieee-sp.json",
+            assessor_file=context.assessors_directory / "ieee-sp" / "ieee-sp.json",
             html_directory=context.html_directory / "ieee-sp.zip",
             output_directory=context.output_directory / "ieee-sp",
             profile_directory=context.profile_directory / "ieee-sp",

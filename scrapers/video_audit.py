@@ -18,7 +18,14 @@ def audit_conference_video_matching(
     output_directory: Path,
     enrichments_directory: Path = Path("data/enrichments"),
 ) -> None:
-    for assessor_path in sorted(assessors_directory.glob("*.json")):
+    assessor_paths = (
+        assessor_dir / f"{assessor_dir.name}.json"
+        for assessor_dir in sorted(assessors_directory.iterdir())
+        if assessor_dir.is_dir()
+    )
+    for assessor_path in assessor_paths:
+        if not assessor_path.is_file():
+            continue
         document = json.loads(assessor_path.read_text(encoding="utf-8"))
         if not str(document.get("category", "")).startswith("conference"):
             continue

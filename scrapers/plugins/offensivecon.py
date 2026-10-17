@@ -14,7 +14,7 @@ class OffensiveConArchiveScraper(BaseCollectionScraper):
 
     def run(self, context: CollectionScraperContext) -> CollectionScraperResult:
         results = OffensiveConScraper(
-            assessor_file=context.assessors_directory / "offensivecon.json",
+            assessor_file=context.assessors_directory / "offensivecon" / "offensivecon.json",
             html_directory=context.html_directory / "offensivecon.zip",
             output_directory=context.output_directory / "offensivecon",
             profile_directory=context.profile_directory / "offensivecon",
