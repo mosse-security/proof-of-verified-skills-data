@@ -6,7 +6,7 @@ import textwrap
 import unittest
 from pathlib import Path
 
-from endorsement_scraper import (
+from scrapers import (
     BaseCollectionScraper,
     BaseScraper,
     CollectionScraperContext,
@@ -17,10 +17,10 @@ from endorsement_scraper import (
     Request,
     Response,
 )
-from endorsement_scraper.discovery import discover_all_scrapers, discover_scrapers
-from endorsement_scraper.http import HttpClient
-from endorsement_scraper.runner import CollectionScraperRunner, ScraperRunner
-from endorsement_scraper.storage import EndorsementStore, ProfileStore
+from scrapers.discovery import discover_all_scrapers, discover_scrapers
+from scrapers.http import HttpClient
+from scrapers.runner import CollectionScraperRunner, ScraperRunner
+from scrapers.storage import EndorsementStore, ProfileStore
 
 
 class FakeClient:
@@ -234,7 +234,7 @@ class FrameworkTests(unittest.TestCase):
             nested.mkdir(parents=True)
             source = textwrap.dedent(
                 """
-                from endorsement_scraper import BaseScraper, PageResult
+                from scrapers import BaseScraper, PageResult
 
                 class Found(BaseScraper):
                     assessor_id = "found-org"
@@ -257,7 +257,7 @@ class FrameworkTests(unittest.TestCase):
             directory.mkdir()
             source = textwrap.dedent(
                 """
-                from endorsement_scraper import (
+                from scrapers import (
                     BaseCollectionScraper,
                     CollectionScraperResult,
                 )
@@ -324,7 +324,7 @@ class FrameworkTests(unittest.TestCase):
                 delay=0,
                 user_agent="test",
             )
-            with self.assertLogs("endorsement_scraper.runner", level="ERROR"):
+            with self.assertLogs("scrapers.runner", level="ERROR"):
                 report = CollectionScraperRunner(context=context, workers=1).run(
                     [InvalidGroupedScraper]
                 )
@@ -344,7 +344,7 @@ class FrameworkTests(unittest.TestCase):
             )
             request = Request("https://example.test/start")
             with patch(
-                "endorsement_scraper.http.urllib.request.urlopen",
+                "scrapers.http.urllib.request.urlopen",
                 return_value=FakeUrlResponse(),
             ):
                 response = client.fetch(request)

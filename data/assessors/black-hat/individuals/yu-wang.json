@@ -1,0 +1,74 @@
+{
+  "name": "Yu Wang",
+  "last-updated": "2026-10-17T08:13:11Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Yu Wang",
+      "label": "Understanding TOCTTOU in the Windows Kernel Font Scaler Engine",
+      "description": "The Font Scaler engine is widely used in Microsoft Windows and Mac OS operating systems for rendering TrueType/OpenType fonts. It was first introduced in 1989. Later, to improve the performance of the Windows NT operating system, Microsoft decided to move the engine from user mode to kernel mode. This enhancement does improve the performance, but it also brings security issues. Specifically, Font Scaler engine represents a significant kernel attack surface, and it is perhaps the most easily accessible point which can be reached remotely. For example, the famous Duqu malware well demonstrated vulnerabilities in this engine in 2011. Many things make the font engine vulnerable. Such as the complexity of font file format, the enhancement of the Font Scaler engine (i.e., moving from user mode to kernel), the assumptions about the interactions between the font engine and its clients (win32k.sys), and the existence of font cache. Among these vulnerabilities, TOCTTOU (Time-of-Check to Time-of-Use) is the most critical type. In this talk, I'm going to discuss the basic double fetch problem. Furthermore, I would like to present the more stealthy TOCTTOU vulnerability which is introduced by the design of the font engine.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "Understanding TOCTTOU in the Windows Kernel Font Scaler Engine",
+          "url": "https://www.youtube.com/watch?v=61K3kqTRbzU"
+        },
+        {
+          "title": "Black Hat USA 2013 - Smashing The Font Scaler Engine in Windows Kernel",
+          "url": "https://www.youtube.com/watch?v=efgoislKd8Q"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

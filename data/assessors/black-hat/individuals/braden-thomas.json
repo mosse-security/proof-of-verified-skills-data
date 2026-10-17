@@ -1,0 +1,76 @@
+{
+  "name": "Braden Thomas",
+  "last-updated": "2026-10-17T08:13:00Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Braden Thomas",
+      "label": "Reverse-Engineering the Supra iBox: Exploitation of a Hardened MSP430-Based Device",
+      "description": "This presentation walks through the reverse engineering and exploitation of a hardened embedded device and provides certain techniques you can use to exploit similar devices.  The Supra iBox BT is a bluetooth and IR-based physical key storage device used by many real estate professionals in the US.  It is physically hardened, and inside is a hardened MSP430 with a blown JTAG fuse. As MSP430 devices become more common, it is slowly becoming the norm to encounter devices in production with blown JTAG fuses. Previously, this was a significant hurdle. In 2008, Goodspeed described several attacks against the MSP's BSL (bootstrap loader). This presentation will review those attacks and describe the challenges facing a researcher attempting to perform them.  This presentation will demonstrate how to reliably perform successful firmware extraction on a MSP430 with a blown JTAG fuse. The second part of the presentation covers what I found inside the Supra iBox firmware, including a demonstration of an exploit that can open any iBox. The presentation will describe the complex and surprisingly effective crypto key management scheme used by Supra. The Supra lock has no internet access, and must rely on the keys (generally smartphones) to perform any necessary synchronization with the internet.  The key management scheme used by the Supra would be interesting to any developer attempting to manage cryptographic keys in embedded devices with occasional internet access.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "Reverse-Engineering the Supra iBox: Exploitation of a Hardened MSP430-Based Device",
+          "url": "https://www.youtube.com/watch?v=bEXbNPMjciA"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": [],
+        "iot-security": [
+          "embedded-devices"
+        ]
+      }
+    }
+  ]
+}

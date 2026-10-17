@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
-from endorsement_scraper.transcripts import _clean_vtt, archive_transcripts
+from scrapers.transcripts import _clean_vtt, archive_transcripts
 
 
 class TranscriptTests(unittest.TestCase):
@@ -20,7 +20,7 @@ class TranscriptTests(unittest.TestCase):
             enrichment.mkdir(parents=True)
             with zipfile.ZipFile(enrichment / "data.zip", "w") as archive:
                 archive.writestr("data.json", json.dumps([{"video-id": "abc1234", "url": "https://www.youtube.com/watch?v=abc1234", "title": "Talk"}]))
-            with patch("endorsement_scraper.transcripts._download_transcript", return_value="Transcript\n") as download:
+            with patch("scrapers.transcripts._download_transcript", return_value="Transcript\n") as download:
                 first = archive_transcripts("example", archived_directory=root / "archived", enrichments_directory=root / "enrichments")
                 second = archive_transcripts("example", archived_directory=root / "archived", enrichments_directory=root / "enrichments")
             self.assertEqual(first["downloaded"], 1)
@@ -38,7 +38,7 @@ class TranscriptTests(unittest.TestCase):
             ]
             with zipfile.ZipFile(enrichment / "data.zip", "w") as archive:
                 archive.writestr("data.json", json.dumps(records))
-            with patch("endorsement_scraper.transcripts._download_transcript", return_value="Transcript\n"):
+            with patch("scrapers.transcripts._download_transcript", return_value="Transcript\n"):
                 archive_transcripts("example", archived_directory=root / "archived", enrichments_directory=root / "enrichments")
                 archive_transcripts("example", archived_directory=root / "archived", enrichments_directory=root / "enrichments", video_ids={"abc1234"})
             archive_path = root / "archived" / "example-transcripts.zip"

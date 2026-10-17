@@ -1,6 +1,6 @@
 import unittest
 
-from endorsement_scraper.assessors.bluehat import _names, parse_bluehat
+from scrapers.assessors.bluehat import _names, parse_bluehat
 
 
 class BlueHatParserTest(unittest.TestCase):

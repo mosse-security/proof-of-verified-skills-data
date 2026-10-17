@@ -25,7 +25,7 @@ Do not call a conference onboarded until all of these are true:
 - Every endorsement has a detailed non-empty `description`, canonical
   lowercase hyphenated `domains`, `evidence-links`, and a derived boolean
   `evidence` that is true exactly when links exist.
-- Any useful external dataset has an enricher below `enrichers/`, with its own
+- Any useful external dataset has an enricher below `scrapers/enrichers/`, with its own
   `data/enrichments/<enricher-id>/data.zip` dataset and matching logic.
 - Every assessor with a YouTube channel or playlist has a corresponding
   non-empty `*-youtube-recordings` archive; `tests.test_video_enrichment_coverage`
@@ -110,14 +110,14 @@ exit, then the next URL.
 ### 4. Add enrichers
 
 For every independent evidence source, create one stable enricher under
-`enrichers/`; conference-specific modules belong in `enrichers/conferences/`.
+`scrapers/enrichers/`; conference-specific modules belong in `scrapers/enrichers/conferences/`.
 Discovery is recursive, so moving a module must not change its stable
 `enricher_id`. Enrichers must be independently discoverable and runnable:
 
 ```powershell
-python -m endorsement_scraper.enrichment_cli --list
-python -m endorsement_scraper.enrichment_cli --enricher <id> --overwrite
-python -m endorsement_scraper.enrichment_cli --overwrite
+python -m scrapers.enrichment_cli --list
+python -m scrapers.enrichment_cli --enricher <id> --overwrite
+python -m scrapers.enrichment_cli --overwrite
 ```
 
 Use `yt-dlp` for video channels when appropriate. Store a JSON array as
@@ -140,7 +140,7 @@ After the video catalog and endorsement evidence links exist, archive English
 transcripts for matched videos:
 
 ```powershell
-python -m endorsement_scraper.transcripts --assessor <id> --matched-only
+python -m scrapers.transcripts --assessor <id> --matched-only
 ```
 
 Run one conference process at a time. The command reuses one yt-dlp client,
@@ -157,8 +157,8 @@ inspect ignored `logs/general.log`, `logs/warnings.log`, and `logs/errors.log`.
 Run the complete scraper set with overwrite enabled, then merge profiles:
 
 ```powershell
-python -m endorsement_scraper --overwrite --workers 1
-python -m endorsement_scraper.individuals --overwrite --keep-tmp
+python -m scrapers --overwrite --workers 1
+python -m scrapers.individuals --overwrite --keep-tmp
 python -m unittest tests.test_individuals_coverage -v
 ```
 
@@ -186,7 +186,7 @@ Run tests and compilation checks before reporting completion:
 
 ```powershell
 python -m unittest discover -s tests -p 'test_*.py' -q
-python -m compileall -q endorsement_scraper scrapers enrichers tests
+python -m compileall -q scrapers scrapers enrichers tests
 ```
 
 For transcript-enabled assessors, also run:

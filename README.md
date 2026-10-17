@@ -1,6 +1,7 @@
 # Verified endorsement scrapers
 
-This repository stores one assessor per file in `data/assessors` and
+This repository stores each assessor under `data/assessors/{assessor-id}/`,
+including its metadata JSON, identity lists, and assessor-local `stats.json`, and
 provides an extensible Python framework for collecting that assessor's
 public endorsements: CVEs, conference talks, prizes, acknowledgements, and
 other assessor-specific evidence.
@@ -21,20 +22,22 @@ The framework requires Python 3.11+. Install runtime dependencies from
 
 ```powershell
 python -m pip install -r requirements.txt
-python -m endorsement_scraper --list
-python -m endorsement_scraper --workers 8
-python -m endorsement_scraper --assessor black-hat --save-html
-python -m endorsement_scraper --overwrite
-python -m endorsement_scraper.enrichment_cli --overwrite
+python -m scrapers --list
+python -m scrapers --workers 8
+python -m scrapers --assessor black-hat --save-html
+python -m scrapers --overwrite
+python -m scrapers.enrichment_cli --overwrite
 python -m unittest tests.test_archive_coverage -v
 python -m unittest tests.test_video_enrichment_coverage -v
 # Rebuild every assessor before merging individuals
-python -m endorsement_scraper --overwrite --workers 1
-python -m endorsement_scraper.individuals --overwrite --keep-tmp
+python -m scrapers --overwrite --workers 1
+python -m scrapers.individuals --overwrite --keep-tmp
 python -m unittest tests.test_individuals_coverage -v
+python -m unittest tests.test_individual_quality -v
+python -m unittest tests.test_insomnihack_archives -v
 ```
 
-Running `python -m endorsement_scraper` with no filters discovers and runs all
+Running `python -m scrapers` with no filters discovers and runs all
 page scrapers and collection scrapers in one invocation. Use `--assessor`
 or `--scraper` only when narrowing the run is intentional.
 
@@ -62,17 +65,17 @@ The first collection scraper reads every URL in
 conference:
 
 ```text
-data/tmp/endorsements/def-con/defcon-34.json
-data/tmp/endorsements/def-con/defcon-33.json
+tmp/endorsements/def-con/defcon-34.json
+tmp/endorsements/def-con/defcon-33.json
 ...
 ```
 
 Run it from the repository root:
 
 ```powershell
-python -m endorsement_scraper
+python -m scrapers
 # or run only this scraper:
-python -m endorsement_scraper --assessor def-con
+python -m scrapers --assessor def-con
 # dedicated equivalent:
 python -m scrapers.def_con
 ```
@@ -83,7 +86,7 @@ a fallback. A missing entry is downloaded from that conference's `processUrls`
 entry and saved back to the selected archive before parsing. Conference files are processed in parallel. Existing JSON is
 atomically overwritten by default, so reruns contain no duplicates or stale
 records; pass `--no-overwrite` to preserve existing outputs. Speaker profile
-fragments are written to `data/tmp/profiles/def-con/` for the later individual
+fragments are written to `tmp/profiles/def-con/` for the later individual
 merge.
 
 Run the archive coverage check before parsing:
@@ -132,10 +135,10 @@ are copied from `data/assessors/def-con.json`:
 The Black Hat collection scraper reads USA, Europe, Abu Dhabi, and MEA URLs
 from `data/assessors/black-hat.json`. It handles legacy briefing pages and
 modern schedule pages, writing one JSON array per event under
-`data/tmp/endorsements/black-hat/`:
+`tmp/endorsements/black-hat/`:
 
 ```powershell
-python -m endorsement_scraper --assessor black-hat --overwrite
+python -m scrapers --assessor black-hat --overwrite
 ```
 
 The same local-first ZIP, coverage test, merger, and temporary-output cleanup
@@ -150,9 +153,9 @@ channels and playlists are configured in each assessor's `links` object using
 example, uses multiple playlists. Run all enrichers, or one selected enricher:
 
 ```powershell
-python -m endorsement_scraper.enrichment_cli --list
-python -m endorsement_scraper.enrichment_cli --overwrite
-python -m endorsement_scraper.enrichment_cli --enricher bluehat-youtube-recordings --overwrite
+python -m scrapers.enrichment_cli --list
+python -m scrapers.enrichment_cli --overwrite
+python -m scrapers.enrichment_cli --enricher bluehat-youtube-recordings --overwrite
 ```
 
 The endorsement builders load these datasets and add matched recordings to
@@ -169,7 +172,7 @@ tables and newer session-heading posts. Pages are cached in
 `data/archives/html/bluehat.zip` and parsed with:
 
 ```powershell
-python -m endorsement_scraper --assessor bluehat --overwrite
+python -m scrapers --assessor bluehat --overwrite
 ```
 
 ## CanSecWest presentation archive
@@ -182,12 +185,12 @@ URLs now return 404. Source pages are cached in
 `cansecwest-presentations` collection scraper:
 
 ```powershell
-python -m endorsement_scraper --assessor cansecwest --overwrite
+python -m scrapers --assessor cansecwest --overwrite
 ```
 
 ## Blue Team Con archive
 
-Blue Team Con is inventoried for its official 2021–2025 historical talks
+Blue Team Con is inventoried for its official 2021â€“2025 historical talks
 pages in `data/assessors/blue-team-con.json`. The five pages are cached in
 `data/archives/html/blue-team-con.zip` and parsed by the discovered
 `blue-team-con-talks` collection scraper. Each presented speaker becomes an
@@ -195,7 +198,7 @@ endorsement; the linked talk page is retained as evidence and the parser is
 safe to rerun:
 
 ```powershell
-python -m endorsement_scraper --assessor blue-team-con --overwrite
+python -m scrapers --assessor blue-team-con --overwrite
 ```
 
 Archive coverage tests also enumerate every `/directory/` talk link exposed by
@@ -215,22 +218,22 @@ and the YouTube enricher stores recordings in
 `data/enrichments/offensivecon-youtube-recordings/data.zip`:
 
 ```powershell
-python -m endorsement_scraper.enrichment_cli --enricher offensivecon-youtube-recordings --overwrite
-python -m endorsement_scraper --assessor offensivecon --overwrite
+python -m scrapers.enrichment_cli --enricher offensivecon-youtube-recordings --overwrite
+python -m scrapers --assessor offensivecon --overwrite
 ```
 
 ## Insomni'hack archive
 
-Insomni'hack is inventoried for published talk pages from 2013–2020 and
-2022–2026. The live site currently redirects those historical paths to its
+Insomni'hack is inventoried for published talk pages from 2013â€“2020 and
+2022â€“2026. The live site currently redirects those historical paths to its
 2027 site, so the archive must be populated from manually saved historical
 HTML (the coverage test reports every missing URL) before parsing. Once pages
 are inserted into `data/archives/html/insomnihack.zip`, run:
 
 ```powershell
 python -m unittest tests.test_archive_coverage -v
-python -m endorsement_scraper --assessor insomnihack --overwrite
-python -m endorsement_scraper.enrichment_cli --enricher insomnihack-youtube-recordings --overwrite
+python -m scrapers --assessor insomnihack --overwrite
+python -m scrapers.enrichment_cli --enricher insomnihack-youtube-recordings --overwrite
 ```
 
 The Insomni'hack YouTube enrichment archive is ready at
@@ -282,7 +285,7 @@ runner, which validates every record and fails that scraper if domains or
 subspecialties are missing, unsupported, duplicated, or out of canonical order.
 
 The taxonomy, detection rules, normalization, and validators live in
-`endorsement_scraper/domains.py` so site scrapers cannot silently introduce
+`scrapers/domains.py` so site scrapers cannot silently introduce
 their own incompatible domain names.
 
 Clearly non-endorsement conference sessions (such as long-form panels,
@@ -307,7 +310,7 @@ whose names begin with `_`. A file may define one or many concrete
 classes. `scraper_id` must be globally unique.
 
 ```python
-from endorsement_scraper import BaseScraper, Endorsement, PageResult, PersonProfile, Request
+from scrapers import BaseScraper, Endorsement, PageResult, PersonProfile, Request
 
 
 class ConferenceArchive(BaseScraper):
@@ -352,7 +355,7 @@ crawl is intentional.
 
 When a page also exposes a speaker's profile, return a `PersonProfile` in the
 page result alongside the endorsement. The runner stores these fragments under
-`data/tmp/profiles/<assessor>/<scraper>/`; the individual merger combines them
+`tmp/profiles/<assessor>/<scraper>/`; the individual merger combines them
 later:
 
 ```python
@@ -372,7 +375,7 @@ needs them.
 Each endorsement is saved as:
 
 ```text
-data/tmp/endorsements/<assessor-id>/<deterministic-id>.json
+tmp/endorsements/<assessor-id>/<deterministic-id>.json
 ```
 
 When `external_id` exists, the ID is derived from assessor, endorsement
@@ -415,18 +418,22 @@ record.
 
 ## Individual profiles
 
-After collecting endorsements, merge them into the `individual.tpl` shape:
+The pipeline has three explicit stages:
 
 ```powershell
-python -m endorsement_scraper.individuals
-# or, after installing the package:
-merge-individuals
+python -m scrapers                 # scrape and rebuild assessor-local files
+python -m scrapers.enrichment_cli  # enrich assessor-local files
+python -m scrapers.individuals     # clean-rebuild canonical files
 ```
 
-The merger reads every JSON file below `data/tmp/endorsements`, groups records by
-case-insensitive person name, removes duplicate endorsement objects, and sorts
-each person's endorsements deterministically. It writes one file per person
-to `data/individuals`, for example `data/individuals/alice-example.json`:
+The scraper stage applies each assessor's whitelist/blacklist gate and rebuilds
+only that assessor's approved snapshot. The output is stored at
+`data/assessors/{assessor-id}/individuals/*.json`:
+
+```text
+data/assessors/insomnihack/individuals/alice-example.json
+data/individuals/alice-example.json
+```
 
 ```json
 {
@@ -445,23 +452,51 @@ to `data/individuals`, for example `data/individuals/alice-example.json`:
 }
 ```
 
-It also reads profile fragments from `data/tmp/profiles` (or `--profiles-dir`),
-keeping biography empty for now and combining the union of discovered contact
-links. AI-generated biography summaries will be added in a later step. This
-keeps source-specific profile extraction separate from the canonical
-endorsement records. The temporary endorsement and profile directories are
-emptied after every merger run, including failed runs; pass `--keep-tmp` when
-you need to inspect them.
+The enrichment stage updates those assessor-local JSON files in place. The final
+merge reads only the assessor-local snapshots: it first removes all generated
+content under `data/individuals/`, then rebuilds that directory from every
+`data/assessors/*/individuals/*.json`. It does not read raw scrape staging or
+reapply assessor decisions. Raw endorsement and profile staging is persistent
+under `tmp/endorsements/` and `tmp/profiles/`; it is not
+stored in `data/tmp`.
 
 Each individual also includes deterministic `stats`: total endorsements,
 the number of unique assessors represented, counts with and without evidence,
 and an endorsement count for every cyber domain (including `unknown`).
 
-Existing individual files are replaced on rerun so the result cannot accumulate
-duplicates. The merger compares the content before writing: unchanged records
-retain their existing `last-updated` UTC timestamp, while changed records get a
-new timestamp suitable for ascending or descending database sorting. Use
-`--no-overwrite` to preserve existing profile files.
+Every merge is a clean rebuild. Existing assessor-local and canonical
+individual JSON files are deleted before the approved records are written, so
+removed or newly blacklisted names cannot survive from an earlier run.
+
+Archive pages are also page-owned. Every configured non-Insomnihack archive URL
+has a standalone parser at
+`scrapers/assessors/{assessor-id}/page-{number}-{page-id}.py`; Insomnihack keeps
+its edition-owned parser files in the same location. Each page parser declares
+its source URL and exposes `parse_page`, and
+`tests/test_page_parser_coverage.py` fails when a configured archive page has
+no dedicated parser.
+
+### Individual-name quality checks
+
+The merger centrally rejects title-shaped names, reversed schedule rows,
+affiliation blocks, prose fragments, and obvious session labels. After changing
+a parser, regenerate its outputs and rebuild profiles; do not hand-edit generated
+JSON. Run `tests.test_individuals_coverage` and `tests.test_individual_quality`
+before publishing. The manually vetted global whitelist is stored in
+`data/individuals-enumeration.txt` and must contain no duplicate names. Rejected names remain assessor-local in
+`individuals-blacklist.txt`, and every other encountered name is rewritten into `individuals-blacklist.txt`,
+and every other encountered name is recorded once in
+`individuals-not-validated.txt` on each run. Only globally whitelisted names are
+written to assessor-local individual or endorsement output; unknown and blacklisted names
+are excluded.
+This includes short schedule titles such as `A girl`, `A SysCall to ARMs`, and
+`Ansible`; their associated people remain under their speaker names with the
+talk title stored in the endorsement label.
+Insomni'hack archives are validated one-by-one from the local archive so a
+parser change for one historical layout cannot silently pass for another.
+Each configured Insomni'hack archive page has its own parser module under
+`scrapers/assessors/insomnihack/`; the runner refuses to process a
+page without a registered page parser.
 
 As a safety check, the merger refuses to rebuild into an existing empty
 `data/individuals` directory, since that would make every record look new and
@@ -470,12 +505,12 @@ is intentional and timestamp preservation is not possible.
 
 ## Enrichers
 
-Enrichers are independently discovered recursively from `enrichers/` and collect external
+Enrichers are independently discovered recursively from `scrapers/enrichers/` and collect external
 datasets for later endorsement enrichment. Run all enrichers, or select one:
 
 ```powershell
-python -m endorsement_scraper.enrichment_cli --overwrite
-python -m endorsement_scraper.enrichment_cli --enricher def-con-youtube-recordings --overwrite
+python -m scrapers.enrichment_cli --overwrite
+python -m scrapers.enrichment_cli --enricher def-con-youtube-recordings --overwrite
 ```
 
 The DEF CON YouTube enricher reads `links.youtubeUrl` from the assessor JSON,
@@ -485,12 +520,14 @@ in endorsement records as `evidence-links` entries containing a title and URL;
 the companion `evidence` flag is set automatically. Future enrichers should write a JSON array as `data.json` in their own
 `<enricher-id>/data.zip` archive.
 
-Conference-specific enricher modules live under `enrichers/conferences/`.
+Conference-specific enricher modules live under `scrapers/enrichers/conferences/`.
 Recursive discovery keeps their stable enricher IDs and CLI commands unchanged.
 
 ## Run statistics
 
-Every scraper run writes `data/stats.json` with the UTC run timestamp, duration,
+Every scraper run writes the global `data/stats.json` and the corresponding
+`data/assessors/{assessor-id}/stats.json` with run state. The global file stores
+the UTC run timestamp, duration,
 per-scraper page and endorsement counts, totals, errors, and sanity checks.
 It also reports how many endorsements have evidence links versus no evidence
 links, plus endorsement counts grouped by every canonical cyber domain and by
@@ -505,7 +542,7 @@ visible to operators and automated tests.
 To archive all configured historical pages for an assessor:
 
 ```powershell
-python -m endorsement_scraper.archive_cli --assessor black-hat
+python -m scrapers.archive_cli --assessor black-hat
 ```
 
 The command stores pages in `data/archives/html/<assessor>.zip`, skips existing
@@ -555,7 +592,7 @@ For conferences with a YouTube enrichment archive, capture English subtitles
 for videos that are actually linked from endorsements:
 
 ```powershell
-python -m endorsement_scraper.transcripts --assessor def-con --matched-only
+python -m scrapers.transcripts --assessor def-con --matched-only
 ```
 
 Archives are written to `data/archives/yt-transcripts/<assessor>-transcripts.zip`.
@@ -573,4 +610,5 @@ subtitle records remain in the manifest and are not treated as successful
 captures. Runtime logs are written to ignored `logs/general.log`,
 `logs/warnings.log`, and `logs/errors.log`; warnings include missing subtitles
 and unmatched conference videos.
+
 

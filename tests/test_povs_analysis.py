@@ -4,7 +4,7 @@ import unittest
 import zipfile
 from pathlib import Path
 
-from endorsement_scraper.povs_analysis import analyze_assessor
+from scrapers.povs_analysis import analyze_assessor
 
 
 class PovsAnalysisTests(unittest.TestCase):

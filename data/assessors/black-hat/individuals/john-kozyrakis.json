@@ -1,0 +1,72 @@
+{
+  "name": "John Kozyrakis",
+  "last-updated": "2026-10-17T08:13:04Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "John Kozyrakis",
+      "label": "Inside Android's SafetyNet Attestation",
+      "description": "Many app developers often have questions like the following: \"Is the device my app runs on reliable and trustworthy?\" \"Could it be, god forbid, 'rooted'?\" It turns out that answering these questions is quite difficult. In an area traditionally dominated by \"root detection\" products and DIY techniques, Google attempts to respond to this request: \"OK Google, what do you think about the device I'm running in?\" SafetyNet is the primary security platform used by Google to keep the Android ecosystem in check. SafetyNet Attestation is a service offered by the SafetyNet system to all Android application developers, who can use it to gain some insight into what Google believes is the state of tampering of the operating system and the device. Unfortunately, SafetyNet Attestation is not well documented by Google. How does it work? What checks does it do? Does it really help? How can you implement it in your app without it being trivially bypassable? Taking a perspective useful to both developers and penetration testers, this presentation covers multiple aspects of the system. Part one of this presentation will quickly recap the basics of root detection and tamper detection on Android applications. Part two takes a deep dive into the internals of the SafetyNet system and Attestation specifically, what checks it does and how it is designed, detailing how it different to traditional detection techniques. Part three discusses the different ways the system can be implemented in real world applications and how each method may achieve different level of risk reduction. This is based on the lessons learned from implementing SafetyNet Attestation for several apps with large install bases and will show how an organization's maturity may impact security checks. Finally, part four presents various attacks and bypasses against SafetyNet Attestation which target not only SafetyNet but other similar approaches.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2017",
+      "url": "https://blackhat.com/archive/europe/2017/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Inside Android's SafetyNet Attestation",
+          "url": "https://www.youtube.com/watch?v=acuRIZ0I774"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

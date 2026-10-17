@@ -1,0 +1,117 @@
+{
+  "name": "Max Kersten",
+  "last-updated": "2026-10-17T08:13:35Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 2,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Max Kersten",
+      "label": "Game-Changing Advances in Windows Shellcode Analysis",
+      "description": "Shellcode is omnipresent, seen or unseen. Yet tooling to analyze shellcode is lacking. We present the cutting-edge SHAREM framework to analyze enigmatic shellcode. SHAREM can emulate shellcode, identifying 20,000 WinAPI functions and 99% of Windows syscalls. In some shellcode, some APIs may never be reached, due to the wrong environment, but SHAREM has a new solution: Complete code coverage preserves the CPU register context and memory at each change in control flow. Once the shellcode ends, it restarts, restoring memory and context, ensuring all functionality is reached and identifying all APIs. Encoded shellcode may be puzzling at times. SHAREM is a game-changer, as it presents emulated shellcode in its decoded form in a disassembler. IDA Pro and Ghidra can produce disassembly of shellcode that is of poor quality. However, SHAREM uniquely can ingest emulation data, resulting in virtually flawless disassembly. While SHAREM has its own custom disassembler, we are also releasing a Ghidra plugin, so SHAREM's enhanced disassembly can enhance what is in GHidra. Only SHAREM identifies APIs in disassembly, and this also can be brought to Ghidra. We will also see how SHAREM can be used by aspiring shellcode authors to enhance their own work, and we will examine advanced shellcode specimens in SHAREM. | Dr. Bramwell Brizendine completed his Ph.D. in Cyber Operations, for which he did his dissertation on Jump-Oriented Programming, a hitherto seldom-studied and poorly understood subset of code-reuse attacks.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Brizendine2",
+      "evidence-links": [
+        {
+          "title": "DEF CON 31 - Game Changing Advances in Windows Shellcode Analysis - Brizendine,  Kersten, Hince",
+          "url": "https://www.youtube.com/watch?v=ldg0K2wMxwE"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "red-teaming",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "reverse-engineering": [
+          "decompilation-and-disassembly"
+        ],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Max Kersten",
+      "label": "No Symbols When Reversing? No Problem: Bring Your Own",
+      "description": "We all know it all too well: that ominous feeling when opening an unknown file in your favorite analysis tool, only to be greeted with hundreds or thousands of unknown functions, none of which are matched by your existing function signatures, nor any of your helper scripts. This makes the analysis a painfully slow and tedious process. Additionally, it sometimes means that the required analysis time exceeds the available time, and another file is chosen to be reversed instead. Especially when dealing with malware, this is an undesired scenario, as it would create a blind spot from a blue team’s perspective. The goal of this talk is to share a tried and tested method on how to deal with thousands of unknown functions in a given file, significantly decreasing the time spent on the analysis. The example throughout the talk is the Golang based qBit family, but is applicable to any kind of binary. While this talk focuses on using Ghidra, given its free and open-source nature, it is equally possible with other industry standard tools. The focus will be on scripts, as well as the creation and usage of FunctionID and BSim databases. By combining these, you will be able to create your own symbols, and bring them anywhere you go, for any language of choice. While the symbols are portable, an aggregation of them scales very well over any number of analysts. As such, this methodology works well for individual researchers, but when scaling it for a team of researchers, the outcome will be greater than the sum of its parts. This talk will use (malicious) Golang binaries as examples and provide a large dataset of symbols for this language. The scripts, as well as FunctionID and BSim databases, mentioned in this talk will all be made publicly available at the time of this talk. In no particular order: Automate .fidb generation with headless Ghidra: link Understanding static and dynamic compilation and linking: link How symbols work: link BSim answers from the Ghidra team: link Feeding Gophers to Ghidra (a blog I wrote for my employer about my research into Golang internals): link A blog I wrote summarising my Golang reversing journey for my employer: link The open-source scripts on GitHub: link A talk I gave about the Golang internals at HackInTheBox Amsterdam 2023: link Ghidra’s FunctionID codebase: link Hex-Ray’s IDA Pro’s F.L.I.R.T. explained: link BSim’s GhidraDoc explanation and tutorial: link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54440",
+      "evidence-links": [
+        {
+          "title": "DEF CON 32   No Symbols When Reversing No Problem Bring Your Own   Max ‘Libra’ Kersten",
+          "url": "https://www.youtube.com/watch?v=-re_QOQoILY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2024,
+      "domains": [
+        "cyber-defense",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

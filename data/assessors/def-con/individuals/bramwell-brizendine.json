@@ -1,0 +1,217 @@
+{
+  "name": "Bramwell Brizendine",
+  "last-updated": "2026-10-17T08:13:27Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 5,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 2,
+      "reverse-engineering": 3,
+      "vulnerability-research": 5,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Bramwell Brizendine",
+      "label": "The JOP ROCKET: A Supremely Wicked Tool for JOP Gadget Discovery, or What to Do If ROP Is Too Easy",
+      "description": "Return-oriented Programming (ROP) has been the predominate code-reuse attack for over a decade, but there are other options. Many mitigations can detect ROP due to heuristics, but these fail to detect Jump-oriented Programming (JOP). The JOP ROCKET is a reverse engineering framework dedicated to facilitating JOP exploits. It allows hackers to discover JOP gadgets. This includes dispatcher gadget's, which helps to subvert and direct the control flow, and functional gadgets, our primitives. This tool provides numerous options to give hackers flexibility on how to find gadgets, to narrow and expand possibilities. Additionally, the tool uses opcode-splitting to discover many unintended gadgets. All gadgets are classified based on operation as well as registers used and affected. Thus, hackers could easily obtain the desired functional gadgets, such as MOV EBX, [VALUE], using simple language commands. Because of JOP's much more complex set up, the tool provides this classification, so time isn’t wasted hunting through results. JOP is rarely done in the wild. Part of that complexity is in set up, but another part is the lack of dedicated tools. Having to find JOP gadgets manually could be time-consuming and require expertise. JOP ROCKET simplifies that, allowing the JOP gadgets to be found quickly and easily. This talk will give brief content on ROP, and then it introduces JOP and its history. Then we will dive into JOP ROCKET, discussing its features, how to use it to find JOP gadgets, and how to set up your own JOP exploit. We will then demo the tool.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Brizendine",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2019,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Bramwell Brizendine",
+      "label": "Advanced ROP Framework: Pushing ROP to Its Limits",
+      "description": "This research provides innovative contributions to return-oriented programming (ROP), not seen before. We introduce ROP ROCKET, a cutting-edge ROP framework, to be released at DEF CON. With ROCKET, when attacking 32-bit applications, we can switch between x86 and x64 at will, by invoking a special ROP Heaven's Gate technique, thereby expanding the attack surface. We will discuss the ramifications of this novel approach. Bypassing DEP via ROP is typically straightforward, using WinAPIs such as VirualProtect and VirtualAlloc. We demonstrate an alternative: using Windows syscalls. In fact, ROCKET provides automatic ROP chain construction to bypass ROP using Windows syscalls. While extremely trendy, Windows syscalls are only very rarely used in ROP. One problem with automatic chain construction is bad chars or bad bytes. We demonstrate how ROCKET allows us to use virtulally any gadget whose address contains bad bytes. With this approach, automatic ROP chain construction is far less likely to fail. Thus, we overcome one of the major obstacles when creating a ROP chain: bad bytes, which reduces the attack surface needlessly. In fact, if one wanted, they could use ROCKET to \"obfuscate\" any gadget, obscuring what is being done. This presentation will do the seemingly impossible - and surprise even veteran users of ROP.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Brizendine",
+      "evidence-links": [
+        {
+          "title": "DEF CON 31 - Advanced ROP Framework  Pushing ROP to Its Limits - Brizendine, Kusuma",
+          "url": "https://www.youtube.com/watch?v=x_iUABsCH1w"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Bramwell Brizendine",
+      "label": "Game-Changing Advances in Windows Shellcode Analysis",
+      "description": "Shellcode is omnipresent, seen or unseen. Yet tooling to analyze shellcode is lacking. We present the cutting-edge SHAREM framework to analyze enigmatic shellcode. SHAREM can emulate shellcode, identifying 20,000 WinAPI functions and 99% of Windows syscalls. In some shellcode, some APIs may never be reached, due to the wrong environment, but SHAREM has a new solution: Complete code coverage preserves the CPU register context and memory at each change in control flow. Once the shellcode ends, it restarts, restoring memory and context, ensuring all functionality is reached and identifying all APIs. Encoded shellcode may be puzzling at times. SHAREM is a game-changer, as it presents emulated shellcode in its decoded form in a disassembler. IDA Pro and Ghidra can produce disassembly of shellcode that is of poor quality. However, SHAREM uniquely can ingest emulation data, resulting in virtually flawless disassembly. While SHAREM has its own custom disassembler, we are also releasing a Ghidra plugin, so SHAREM's enhanced disassembly can enhance what is in GHidra. Only SHAREM identifies APIs in disassembly, and this also can be brought to Ghidra. We will also see how SHAREM can be used by aspiring shellcode authors to enhance their own work, and we will examine advanced shellcode specimens in SHAREM. | Dr. Bramwell Brizendine completed his Ph.D. in Cyber Operations, for which he did his dissertation on Jump-Oriented Programming, a hitherto seldom-studied and poorly understood subset of code-reuse attacks.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Brizendine2",
+      "evidence-links": [
+        {
+          "title": "DEF CON 31 - Game Changing Advances in Windows Shellcode Analysis - Brizendine,  Kersten, Hince",
+          "url": "https://www.youtube.com/watch?v=ldg0K2wMxwE"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "red-teaming",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "reverse-engineering": [
+          "decompilation-and-disassembly"
+        ],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Bramwell Brizendine",
+      "label": "Techniques for Creating Process Injection Attacks with Advanced Return-Oriented Programming",
+      "description": "This talk showcases techniques for process injection using advanced return-oriented programming (ROP). Process injection via ROP introduces significant hurdles, requiring many WinAPIs to be chained together, each with complex parameters and return values. We give practical details on how to best manage this. One seemingly insurmountable challenge is in identifying the target binary, as string comparison can be extremely difficult in ROP, as needed ROP gadgets may be lacking. We unveil a unique, universal solution, giving a reliable means of string comparison via ROP, which works all the time, allowing a specific process to be pinpointed and injected into via ROP. We created numerous patterns for different WinAPIs, allowing for as many as a dozen ways of preparing a specific WinAPI via ROP, if using an approach centered around the PUSHAD instruction. With some WinAPIs, there are zero patterns for PUSHAD, forcing us to rely upon the much lauded “sniper” approach. We document all such variations of patterns for the WinAPIs in our demonstrated process injection. This research is not intended to demo a one-off example of process injection via ROP, but to provide a methodology that can be used time and time again, providing unique templates for others to use the same WinAPIs when attempting process injection via ROP. Anonymous.(2019.) Cobalt Strike’s Process Injection: The Details. link Hosseini, Ashkan. (2017). Ten Process Injection Techniques: A Technical Survey of Common and Trending Process Injection Techniques. link Klein, A., & Kotler, I. (2019). Windows process injection in 2019. Black Hat USA, 2019. Landau, Gabriel. (2021). What you need to know about Process Ghosting, a new executable image tampering attack. link Mundbrod, N., Grambow, G., Kolb, J., & Reichert, M. (2015). Context-aware process injection: enhancing process flexibility by late extension of process instances. In On the Move to Meaningful Internet Systems: OTM 2015 Conferences: Confederated International Conferences: CoopIS, ODBASE, and C&TC 2015, Rhodes, Greece, October 26-30, 2015. Proceedings (pp. 127-145). Springer International Publishing. Process Injection. MITRE ATT&CK. link Process Injection. link Unal, Ozan. (2020). Process Injection Techniques. link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54514",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2024,
+      "domains": [
+        "red-teaming",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Bramwell Brizendine",
+      "label": "Can't Stop the ROP: Automating Universal ASLR Bypasses for Windows",
+      "description": "High-entropy ASLR was supposed to make bypasses of ASLR on Windows virtually impossible - until now! This talk will debut nine novel bypasses of the strongest form of ASLR on Windows, which makes attacks such as brute-forcing totally infeasible. This talk showcases how mostly simple, easy-to-find ROP gadgets can be used to construct highly reliable, universal ASLR bypasses to key Windows system DLLs, allowing ROP gadgets from those DLLs to be used freely in exploits! The end result? The attack surface is greatly expanded, making it possible to do more attacks on binaries previously constrained by limited gadgets. What may have been impossible before due to insufficient ROP gadgets, now is quite possible! While this talk focuses primarily on ASLR bypass for x64, we will also briefly touch upon similar attacks for x86. As part of this talk, for the first time ever, I am also releasing and open-sourcing a new mini-tool that will generate complete, x64 ROP chains for each of these bypasses! We will see this ASLR bypass attack in action with demo. We conclude with recommendations to help remediate the problem. This talk is an in-depth technical deep dive into Windows internals and the design of this technique, but it will also be presented in an accessible way to beginners. References: J. Thompson, “Six facts about address space layout randomization on Windows,” Aug. 2020. link Microsoft Security Response Center, “Software defense: Mitigating common exploitation techniques,” Dec. 2013. link INCIBE-CERT, “ASLR: Essential protection against memory exploitation,” Mar. 29, 2025. link L. Binosi, G. Barzasi, M. Carminati, S. Zanero, and M. Polino, “The illusion of randomness: An empirical analysis of address space layout randomization implementations,” arXiv preprint arXiv:2408.15107, 2024. J. Ganz and S. Peisert, “ASLR: How robust is the randomness?” IEEE, 2017. D. H. Aristizabal, D. M. Rodriguez, and R. Y. Guevara, “Measuring ASLR implementations on modern operating systems,” in 2013 47th International Carnahan Conference on Security Technology (ICCST), IEEE, 2013, pp. 1–6. R. Hund, C. Willems, and T. Holz, “Practical timing side channel attacks against kernel space ASLR,” in 2013 IEEE Symposium on Security and Privacy, IEEE, 2013, pp. 191–205. K. Lu, C. Song, B. Lee, S. P. Chung, T. Kim, and W. Lee, “ASLR-Guard: Stopping address space leakage for code reuse attacks,” in Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security, 2015, pp. 280–291. C. Miller, “Mobile attacks and defense,” IEEE Security & Privacy, vol. 9, no. 4, pp. 68–70, 2011. S. Liebergeld and M. Lange, “Android security, pitfalls and lessons learned,” in Information Sciences and Systems 2013: Proceedings of the 28th International Symposium on Computer and Information Sciences, Springer, 2013, pp. 409–417. D. Gruss, C. Maurice, A. Fogh, M. Lipp, and S. Mangard, “Prefetch side channel attacks: Bypassing SMAP and kernel ASLR,” in Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, 2016, pp. 368–379. Microsoft Corporation, “High-Entropy VA / Support for 64-bit ASLR,” 2025. link R. V. Díaz, M. Rivera-Dourado, R. Pérez-Jove, P. V. Avendaño, and J. M. Vázquez-Naya, “Address space layout randomization comparative analysis on Windows 10 and Ubuntu 18.04 LTS,” Engineering Proceedings, vol. 7, no. 1, p. 26, 2021. Nergal, “The advanced return-into-lib(c) exploits: PaX case study,” Phrack Magazine, vol. 58, Dec. 2001. T. Durden, “Bypassing PaX ASLR protection,” Phrack Magazine, vol. 11, issue 59, Jul. 2002, Phile #0x09 of 0x12. M. A. Butt, Z. Ajmal, Z. I. Khan, M. Idrees, and Y. Javed, “An in-depth survey of bypassing buffer overflow mitigation techniques,” Applied Sciences, vol. 12, no. 13, p. 6702, 2022. X. Zhang, J. Huang, and Y. Feng, “A comprehensive approach to mitigate return-oriented programming attacks: Combining operating system protection mechanisms and hardware-assisted techniques,” in Proc. IEEE 8th Int. Conf. on Software Engineering and Computer Systems (ICSECS), 2023, pp. 453–458. R. Roemer, E. Buchanan, H. Shacham, and S. Savage, “Return-oriented programming: Systems, languages, and applications,” ACM Transactions on Information and System Security (TISSEC), vol. 15, no. 1, pp. 1–34, 2012. D. Dai Zovi, “Practical return-oriented programming,” Source Boston, 2010. M. Prandini and M. Ramilli, “Return-oriented programming,” IEEE Security & Privacy, vol. 10, no. 6, pp. 84–87, 2012. V. Pappas, “KBouncer: Efficient and transparent ROP mitigation,” vol. 1, pp. 1–2, Apr. 2012. E. Göktas, B. Kollenda, P. Koppe, E. Bosman, G. Portokalidis, T. Holz, H. Bos, and C. Giuffrida, “Position-independent code reuse: On the effectiveness of ASLR in the absence of information disclosure,” in IEEE European Symposium on Security and Privacy (EuroS&P), IEEE, 2018, pp. 227–242.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60378",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "mobile-platform-security"
+        ]
+      }
+    }
+  ]
+}

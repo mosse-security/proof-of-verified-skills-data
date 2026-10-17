@@ -1,0 +1,188 @@
+{
+  "name": "Min Zheng",
+  "last-updated": "2026-10-17T08:13:35Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 4,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 4,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Min Zheng",
+      "label": "macOS/iOS Kernel Debugging and Heap Feng Shui",
+      "description": "Friday at 10:00 in 101 Track 20 minutes Min(Spark) Zheng Security Expert @ Alibaba Inc. Ph.D of CUHK. Xiangyu Liu Security Engineer @ Alibaba Inc. Ph.D of CUHK. Kernel bug is always very difficult to reproduce and may lead to the entire system panic and restart. In practice, kernel debugging is the only way to analyze panic scenes. However, implementing such a technique in real world is not an easy task since kernel code cannot be executed in the debugger, thus is hard to be tracked. Luckily, macOS has provided a very powerful kernel debugging mechanism, KDK (Kernel Development Kit), to assist people to analyze and develop kernel exploits. While for iOS, although there is no official kernel debugger, it is also possible for us to achieve kernel debugging by leveraging some tricks. In this talk, we will share some kernel debugging techniques and their corresponding tricks on the latest iOS/macOS. In addition, we will also introduce the new kernel heap mitigation mechanisms on iOS 10/macOS 10.12 and two heap feng shui techniques to bypass them. Finally, we will demonstrate how to debug a concrete kernel heap overflow bug and then leverage our new heap feng shui techniques to gain arbitrary kernel memory read/write on the iOS 10.2/macOS 10.12.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Zheng",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 - Min Zheng, Xiangyu Liu - macOS:iOS Kernel Debugging and Heap Feng Shui",
+          "url": "https://www.youtube.com/watch?v=jqrw-VpYekY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Min Zheng",
+      "label": "Fasten your seatbelts: We are escaping iOS 11 sandbox!",
+      "description": "Apple's sandbox was introduced as \"SeatBelt\" in macOS 10.5 which provided the first full-fledged implementation of the MACF policy. After a successful trial on macOS, Apple applied sandbox mechanism to iOS 6. In its implementation, the policy hooked dozens of operations. The number of hooks has been growing steadily when new system calls or newly discovered threats appeared. In the beginning, Apple's sandbox used a black list approach which means Apple originally concentrated on the known dangerous APIs and blocked them, allowing all others by default. However, with the evolution of Apple's sandbox, it applies a white list approach that denies all APIs and only allows secure ones that Apple trusts. In this talk, we will first introduce Apple's sandbox mechanism and profiles in the latest iOS. Then, we discuss iOS IPC mechanism and review several old classic sandbox escape bugs. Most importantly, we show two new zero-day sandbox escape vulnerabilities we recently discovered in the latest iOS 11.4. Besides, we share our experience of exploiting vulnerabilities in system services through OOL msg heap spray and ROP (Return-oriented programming). In addition, we discuss a task port exploit technique which can be used to control the whole remote process through Mach messages. By using these techniques, security researchers could find and exploit sandbox escape bugs to control iOS user mode system services and further attack the kernel.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Zheng1",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 -  Zheng and Bai - Fasten your seatbelts We are escaping iOS 11 Sandbox",
+          "url": "https://www.youtube.com/watch?v=XD2CHFuaKI8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ]
+      }
+    },
+    {
+      "name": "Min Zheng",
+      "label": "One bite and all your dreams will come true: Analyzing and Attacking Apple Kernel Drivers",
+      "description": "Though many security mechanisms are deployed in Apple's macOS and iOS systems, some old-fashioned or poor-quality kernel code still leaves the door widely open to attackers. Especially, as kernel's critical components, device drivers are frequently exploited to attack Apple systems. In fact, bug hunting in Apple kernel drivers is not easy since they are mostly closed-source and heavily relying on object-oriented programming. In this talk, we will share our experience of analyzing and attacking Apple kernel drivers. In specific, we will introduce a new tool called Ryuk. Ryuk employs static analysis techniques to discover bugs by itself or assist manual review. In addition, we further combine static analysis with dynamic fuzzing for bug hunting in Apple drivers. In specific, we will introduce how we integrate Ryuk to the state-of-art Apple driver fuzzer, PassiveFuzzFrameworkOSX, for finding exploitable bugs. Most importantly, we will illustrate Ryuk's power with several new vulnerabilities that are recently discovered by Ryuk. In specific, we will show how we exploit these vulnerabilities for privilege escalation on macOS 10.13.3 and 10.13.2. We will not only explain why these bugs occur and how we find them, but also demonstrate how we exploit them with innovative kernel exploitation techniques.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Bai1",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 - Bai and Zheng  - Analyzing and Attacking Apple Kernel Drivers",
+          "url": "https://www.youtube.com/watch?v=07VqX4bbXTI"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "vulnerability-discovery",
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    },
+    {
+      "name": "Min Zheng",
+      "label": "HackPac: Hacking Pointer Authentication in iOS User Space",
+      "description": "Pointer Authentication (in short, PAuth) is the latest security mechanism in iOS. It is proposed to protect the integrity of pointers with hardware-assisted encryption, thus eliminating the threats of code-reuse attacks. In PAuth, a cryptographic signature called PAC is calculated from a pointer value and inserted into the pointer. When the pointer is about to be used, the PAC is extracted and verified whether it is consistent with the original pointer value. In this way, PAuth is able to ensure that the pointers are not tampered. iOS deployed PAuth in user-space system services, protecting pointers that may affect the control flow and preventing code-reuse attacks like ROP and JOP. However, in our study, we found that a fatal flaw in the implementation of iOS PAuth makes user-space system services till vulnerable to code-reuse attacks. The flaw is: iOS uses the same signing key in different user-space processes. This flaw allows a signed pointer from a malicious process can be correctly verified in a system service, thus making it possible to launch JOP. In this talk, we will explain how we found the flaw and why it is inevitable. In advance, we will demonstrate how to leverage this flaw and launch JOP attacks in a PAuth-protected system service. Also, we will propose a new tool, PAC-gadget, to automatically find JOP gadgets in PAuth-protected binaries.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Bai",
+      "evidence-links": [
+        {
+          "title": "Xiaolong Bai - HackPac Hacking Pointer Authentication in iOS User Space - DEF CON 27 Conference",
+          "url": "https://www.youtube.com/watch?v=DJFxhShJ6Ns"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

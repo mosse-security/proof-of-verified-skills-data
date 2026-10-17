@@ -1,0 +1,115 @@
+{
+  "name": "Will Schroeder",
+  "last-updated": "2026-10-17T08:13:43Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 2,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 2,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Will Schroeder",
+      "label": "An ACE in the Hole: Stealthy Host Persistence via Security Descriptors",
+      "description": "\"Attackers and information security professionals are increasingly looking at security descriptors and their ACLs, but most previous work has focused on escalation opportunities based on ACL implementation flaws and misconfigurations. However, the nefarious use of security descriptors as a persistence mechanism is rarely mentioned. Just like with Active Directory ACLs, it's often difficult to determine whether a specific security descriptor was set intentionally by an IT administrator, intentionally set by an attacker, or inadvertently set by an IT administrator via a third-party installation program. This uncertainty decreases the likelihood of attackers being discovered, granting attackers a great opportunity to persist on a host and in a network. We’ll dive deep into ACLs/DACLs/SACLs/ACEs/Security Descriptors and more, giving you the background to grasp the capabilities we’re talking about. Then we’ll describe dive into several case studies that demonstrate how attackers can use securable object takeover primitives to maliciously backdoor host-based security descriptors for the purposes of persistence, including, “gold image” backdooring, subverting DCOM application permissions, and more. We’ll conclude with an exhaustive overview of the deployment and detections of host-based security descriptor backdoors. All along the way we’ll be releasing new tooling to enumerate, exploit, and analyze host-based security descriptors. \" Lee Christensen (@tifkin_) is a red team operator, threat hunter, and capability engineer for SpecterOps. Lee has performed red team and hunt engagements against Fortune 500 companies for 5 years, and has trained information security professionals about offensive/defensive tactics at events throughout the world, including Black Hat USA/Europe/Asia. Lee is the author of several offensive tools and techniques, including UnmanagedPowerShell (derivatives now incorporated into the Metasploit, Empire, and Cobalt Strike toolsets) and is a co-author of KeeThief. Matt Nelson (@enigma0x3) is a red teamer and security researcher for SpecterOps. Matt has a passion for offensive PowerShell, is an active developer on the PowerShell Empire project, and helps build offensive toolsets to facilitate red team engagements. He has published research on a number of novel UAC bypasses and holds CVEs for his Device Guard bypass research. Will Schroeder (@harmj0y) is an offensive engineer and red teamer for SpecterOps. He is a co-founder of Empire/Empyre, BloodHound, KeeThief, and the Veil-Framework, developed PowerView and PowerUp, is an active developer on the PowerSploit project, and is a Microsoft PowerShell MVP. He has presented at a number of conferences, including DEF CON, Black Hat, DerbyCon, Troopers, BlueHat Israel, and various Security BSides. Lee - @tifkin_ Matt - @enigma0x3 Will - @harmj0y",
+      "type": "presentation",
+      "assessor": "DerbyCon",
+      "assessor-id": "derbycon",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "DerbyCon 2017",
+      "url": "https://web.archive.org/web/20170829160902/https://www.derbycon.com/friday-schedule/",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2017,
+      "domains": [
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "red-teaming": [
+          "offensive-tooling"
+        ],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Will Schroeder",
+      "label": "Here Be Dragons: The Unexplored Land of Active Directory ACLs",
+      "description": "\"During internal penetration tests and red team assessments, Active Directory remains a key arena for gaining initial access, performing lateral movement, escalating rights, and accessing/exfiltrating sensitive data. Over the years, a completely untapped landscape has existed just below the surface in the form of Active Directory object control relationships. Organizational staff come and go, applications deploy and alter Access Control Entries (ACEs), eventually creating an entire ecosystem of policy exceptions and forgotten privileges. Historically, Access Control Lists (ACLs) have been notoriously difficult and frustrating to analyze both defensively and offensively, something we hope to change. In this talk, we will clearly define the Active Directory ACL attack taxonomy, demonstrate analysis using BloodHound, and explain how to abuse misconfigured ACEs with several new PowerView cmdlets. We will cover real world examples of ACL-only attack paths we have identified on real assessments, discuss opsec considerations associated with these attacks, and provide statistics regarding the immense number of attack paths that open up once you introduce object control relations in the BloodHound attack graph (spoiler alert: it's a LOT). We hope you will leave this talk inspired and ready to add ACL-based attacks to your arsenal, and to defensively audit ACLs at scale in your AD domain.\" Andrew Robbins (@_wald0) is the Adversary Resilience lead at Specter Ops. Andy is an active Red Teamer and co-author of BloodHound, a tool designed to reveal the hidden and unintended permission relationships in Active Directory domains. He has performed numerous offensive engagements against banks, credit unions, health- care providers, defense companies, and other Fortune 500 companies across the world. He has presented at BlackHat, DEF CON, BSides Las Vegas, DerbyCon, ekoparty, and actively researches Active Directory security. He is also a veteran Black Hat trainer. Will Schroeder (@harmj0y) is an offensive engineer and red teamer for Specter Ops. He is a co-founder of Empire/Empyre, BloodHound, and the Veil-Framework, developed PowerView and PowerUp, is an active developer on the PowerSploit project, and is a Microsoft PowerShell MVP. He has spoken at a number of security conferences including ShmooCon, DerbyCon, Troopers, DEF CON, BlueHat Israel, and more on topics ranging from domain trust abuse to advanced offensive tradecraft with PowerShell. Rohan Vazarkar (@CptJesus) is a senior operator and developer for Specter Ops. He has spoken at numerous security conferences including DEF CON, BlackHat, SANS Hackfest, and more. Rohan has lead and supported operations against Fortune 500 companies, federal agencies and clients in the financial, defense, and health-care sectors. He is the co-author of the BloodHound analysis platform and has contributed to other open source projects such as Empire and EyeWitness. Andy - @_wald0 Will - @harmj0y Rohan - @CptJesus",
+      "type": "presentation",
+      "assessor": "DerbyCon",
+      "assessor-id": "derbycon",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "DerbyCon 2017",
+      "url": "https://web.archive.org/web/20170829160902/https://www.derbycon.com/friday-schedule/",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2017,
+      "domains": [
+        "red-teaming",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "red-teaming": [
+          "operational-security-and-tradecraft"
+        ],
+        "identity-and-access-management": [
+          "authorization-and-access-control",
+          "directory-services",
+          "single-sign-on-and-federation"
+        ]
+      }
+    }
+  ]
+}

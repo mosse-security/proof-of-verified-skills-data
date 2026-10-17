@@ -7,7 +7,7 @@ import zipfile
 from pathlib import Path
 from types import SimpleNamespace
 
-from endorsement_scraper.assessors.def_con import DefConScraper, parse_def_con_page
+from scrapers.assessors.def_con import DefConScraper, parse_def_con_page
 
 
 MODERN_HTML = b"""
@@ -47,6 +47,28 @@ class DefConTests(unittest.TestCase):
         self.assertEqual(
             records[0].url,
             "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_42",
+        )
+
+    def test_removes_quoted_speaker_aliases(self) -> None:
+        html = b"""
+        <article class="talk" id="content_alias">
+          <h3 class="talk-title">Alias Cleanup</h3>
+          <h4 class="speaker">Jeff &quot;The Dark Tangent&quot; Moss</h4>
+          <h4 class="speaker">Andrew 'bunnie' Huang</h4>
+          <h4 class="speaker">Jim O'Neill</h4>
+          <h4 class="speaker">Jeff Moss (Dark Tangent)</h4>
+          <h4 class="speaker">Charles Edge aka krypted</h4>
+        </article>
+        """
+        records = parse_def_con_page(
+            34,
+            html,
+            "https://defcon.org/html/defcon-34/dc-34-speakers.html",
+        )
+
+        self.assertEqual(
+            [record.name for record in records],
+            ["Jeff Moss", "Andrew Huang", "Jim O'Neill", "Charles Edge"],
         )
 
     def test_schedule_uses_talk_link_and_discards_timing_metadata(self) -> None:

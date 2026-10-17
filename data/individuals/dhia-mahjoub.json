@@ -1,25 +1,25 @@
 {
   "name": "Dhia Mahjoub",
-  "last-updated": "2026-10-16T05:18:13Z",
+  "last-updated": "2026-10-17T05:50:54Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 6,
-    "assessors": 3,
-    "with-evidence": 5,
-    "without-evidence": 1,
+    "endorsements": 4,
+    "assessors": 2,
+    "with-evidence": 4,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 4,
+      "cyber-defense": 3,
       "devsecops": 0,
-      "digital-forensics": 2,
+      "digital-forensics": 1,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 1,
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 5,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -45,49 +45,6 @@
         {
           "title": "Catching Malware En Masse: DNS and IP Style",
           "url": "https://www.youtube.com/watch?v=cHuyqnVhT4g"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2014,
-      "domains": [
-        "cyber-defense",
-        "digital-forensics",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "cyber-defense": [
-          "threat-intelligence-operations"
-        ],
-        "digital-forensics": [],
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Dhia Mahjoub",
-      "label": "Catching Malware En Masse: DNS and IP Style",
-      "description": "The Internet is constantly growing, providing a myriad of new services both legitimate and malicious. Criminals take advantage of the scalable, distributed, and rather easily accessible naming, hosting and routing infrastructures of the Internet. As a result, the battle against malware is raging on multiple fronts: the endpoint, the network perimeter, and the application layer. The need for innovative measures to gain ground against the enemy has never been greater. In this talk, we will present a novel and effective multi-pronged strategy to catch malware at the DNS and IP level, as well as our unique 3D visualization engine. We will describe the detection systems we built, and share several successful war stories about hunting down malware domains and associated rogue IP space. At the DNS level, we will describe original methods for tracking botnets, both fast flux and DGA-based. We use a combination of fast, light-weight graph clustering and DNS traffic analysis techniques and threat intelligence feeds to rapidly detect botnet domain families, identify new live CnC domains and IPs, and mitigate them. At the IP level, classical reputation methods assign “maliciousness” scores to IPs, BGP prefixes, or ASNs by merely counting domains and IPs. Our system takes an unconventional approach that combines two opposite, yet complementary views and leads to more effective predictive detections. (1) On one hand, we abstract away from the ASN view. We build the AS graph and investigate its topology to uncover hotspots of malicious or suspicious activities and then scan our DNS database for new domains hosted on these malicious IP ranges. To confirm certain common patterns in the AS graph and isolate suspicious address space, we will demonstrate novel forensics and investigative methods based on the monitoring of BGP prefix announcements. (2) On the other hand, we drill down to a granularity finer than the BGP prefix. For this, we zero in on re-assigned IP ranges reserved by bad customers within large prefixes to host Exploit kit domains, browlock, and other attack types. We will present various techniques we devised to efficiently discover suspicious smaller ranges and sweep en masse for candidate suspicious IPs. Our system provides actionable intelligence and preemptively detects and blocks malicious IP infrastructures prior to, or immediately after some of them are used to wage malware campaigns, therefore decisively closing the detection gap. During this presentation, we will publicly share some of the tools we built to gather this predictive intelligence. The discussion of these detection engines and “war stories” wouldn’t be complete without a visualization engine that adequately displays the use cases and offers a graph navigation and investigation tool. Therefore, in this presentation, we will present and publicly release for the first time our own 3D visualization engine, demonstrating the full process which transforms raw data into stunning 3D visuals. We will also present different techniques used to build and render large graph datasets: Force Directed algorithms accelerated on the GPU using OpenCL, 3D rendering and navigation using OpenGL ES, and GLSL Shaders. Finally, we will present a few scripts and methods used to explore our large networks. Every concept is intended to detect and highlight precise features and will be presented with its corresponding visual representation related to malware detection use cases.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 22",
-      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Mahjoub",
-      "evidence-links": [
-        {
-          "title": "DEF CON 22 - Mahjoub, Reuille, and Toonk - Catching Malware En Masse: DNS and IP Style",
-          "url": "https://www.youtube.com/watch?v=KFx4lhxMi-M"
         }
       ],
       "evidence": true,
@@ -202,38 +159,6 @@
           "cybercrime-forums-and-marketplaces",
           "ransomware-economics-and-operations"
         ]
-      }
-    },
-    {
-      "name": "Dhia Mahjoub",
-      "label": "Malicious CDNs: Identifying Zbot Domains en Masse via SSL Certificates and Bipartite Graphs",
-      "description": "Sunday at 13:00 in Track 3 45 minutes | Art of Defense Thomas Mathew OpenDNS (Cisco) Dhia Mahjoub Head of Security Research, Cisco Umbrella (OpenDNS) Prior research detailing the relationship between malware, bulletproof hosting, and SSL gave researchers methods to investigate SSL data only if given a set of seed domains. We present a novel statistical technique that allow us to discover botnet and bulletproof hosting IP space by examining SSL distribution patterns from open source data while working with limited or no seed information. This work can be accomplished using open source datasets and data tools. SSL data obtained from scanning the entire IPv4 namespace can be represented as a series of 4 million node bipartite graphs where a common name is connected to either an IP/CIDR/ASN via an edge. We use the concept of relative entropy to create a pairwise distance metric between any two common names and any two ASNs. The metric allows us to generalize the concept of regular and anomalous SSL distribution patterns. Relative entropy is useful in identifying domains that have anomalous network structures. The domains we found in this case were related to the Zbot proxy network. The Zbot proxy network contains a structure similar to popular CDNs like Akamai, Google, etc but instead rely on compromised devices to relay their data. Through layering these SSL signals with passive DNS data we create a pipeline that can extract Zbot domains with high accuracy.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 25",
-      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Mathew",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2017,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": []
       }
     },
     {

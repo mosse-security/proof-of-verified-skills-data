@@ -1,0 +1,115 @@
+{
+  "name": "Ryan O'Neill",
+  "last-updated": "2026-10-17T08:13:38Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "https://github.com/elfmaster",
+      "url": "https://github.com/elfmaster"
+    },
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/ryan_elfmaster"
+    }
+  ],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 1,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ryan O'Neill",
+      "label": "Advances in Linux Process Forensics Using ECFS",
+      "description": "Many hackers today are using process memory infections to maintain stealth residence inside of a compromised system. The current state of forensics tools in Linux, lack the sophistication used by the infection methods found in real world hacks. ECFS (Extended core file snapshot) technology, https://github.com/elfmaster/ecfs is an innovative extension to regular ELF core files, designed to be used as forensics-friendly snapshots of process memory. A brief showcasing of the ECFS technology was featured in POC||GTFO 0x7 (Innovations with core files). However this talk will reveal deeper insight on the many features of this technology, such as full symbol table reconstruction, builtin detection heuristics, and how common binutils such as objdump, and readelf can be used to quickly identify complex infections such as PLT/GOT hooks and shared library injection. We will also cover the libecfs API that was created specifically for malware and forensics analysts who aim to implement support for ECFS snapshots into new or existing malware detection software. While the ECFS core format was initially designed for runtime malware and forensics purposes, another very neat aspect to this technology was quickly extrapolated on; the ECFS snapshots can also be reloaded into memory and executed. Very similar to VM snapshots, which opens many more doors for research and exploration in a vast array of areas from dynamic analysis to migrating live processes across systems. ECFS is still a work in progress, but for those who understand the arduous nature of dissecting a process and identifying anomalies, will surely acquire a quick respect for the new technology that makes all of this so much easier.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#O'Neill",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Ryan Oneill -  Advances in Linux Process Forensics Using ECFS",
+          "url": "https://www.youtube.com/watch?v=fCJJnJ84MSE"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "cyber-defense",
+        "digital-forensics",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "digital-forensics": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Ryan O'Neill",
+      "label": "Revolutionizing ELF binary patching with Shiva: A JIT binary patching system for Linux.",
+      "description": "The esoteric art of patching ELF binaries has a long and fascinating history who's roots are deep within the hacking subculture; from ELF viruses to kernel rootkits. Silvio's 1997 \"UNIX Viruses\" paper taught us how to insert parasitic code into a page aligned text padding region. Many backdooring and hooking techniques have been revealed to us over the last 20 years-- perfect for hacking and injecting small patches and backdoors but on their own these techniques are limited, clunky and do not support the complexities of real-world patching problems in todays industry. Developers often need to fix complex bugs that exist within legacy ELF Binaries, no source code is available or the program cannot be recompiled. Let me introduce you to Shiva. Shiva is a JIT binary patching system for ELF; A custom ELF interpreter that loads and links ELF relocatable patches at runtime. Shiva allows developers to write patches in rich C code to naturally express the rewriting of binary code at runtime, in a high level language. ELF binary patching solutions over the past two decades have been scarce; some notable research: Katana and ERESI come to mind as pioneers in the early examples of custom ELF linkers and binary patchers. Shiva is a next-level solution that allows developers to quickly write patches in C with little to no reversing knowledge. Born out of 16 years of ELF research into virus design, binary patching, and extensive experience with writing custom linkers and loaders. In this talk we will discuss foundations of ELF binary patching and it's close relationship with ELF linkers, loaders and even ELF virus technology. This passionate body of research is combined and imbued into Shiva to create a highly innovative and powerful product that helps bridge the gap between Developers and Reverse engineers in modern binary patching solutions for ELF. A new workflow for maintaning insecure legacy software with modular patching capabilities is on the rise! Prepare for an indepth discussion of incredible new ELF hacking techniques and extensions. Old concepts such as userland-exec() brought back to life, and entirely new concepts such as \"Linker chaining\" to bring multiple dynamic linkers into a single process image. We will demonstrate complex patching scenarios, function splicing, program transformation, and even the weaponization of Shiva for writing sophisticated in-memory backdoors. Shiva; the ultimate ELF Binary hacker... aiming to solve the worlds most challenging binary patching problems today.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#O'Neill",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

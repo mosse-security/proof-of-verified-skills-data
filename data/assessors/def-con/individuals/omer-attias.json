@@ -1,0 +1,119 @@
+{
+  "name": "Omer Attias",
+  "last-updated": "2026-10-17T08:13:36Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "linkedin",
+      "url": "https://www.linkedin.com/in/omer-attias-209a9a127/"
+    },
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/omerat21"
+    }
+  ],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Omer Attias",
+      "label": "Defender-Pretender: When Windows Defender Updates Become a Security Risk",
+      "description": "The signature update process is critical to EDR's effectiveness against emerging threats. The security update process must be highly secured, as demonstrated by the Flame malware attack that leveraged a rogue certificate for lateral movement. Nation-state capabilities are typically required for such an attack, given that signature update files are digitally signed by Microsoft. We wondered if we could achieve similar capabilities running as an unprivileged user without possessing a rough certificate, instead we aimed to turn the original Windows Defender process to our full control. In this talk we will deep dive into Windows Defender architecture, the signature database format and the update process, with a focus on the security verification logic. We will explain how an attacker can completely compromise any Windows agent or server, including those used by enterprises, by exploiting a powerful 0day vulnerability that even we didn't expect to discover. We will demonstrate Defender-Pretender, a tool we developed to achieve neutralization of the EDR. allowing any already known malicious code to run Fully Un-Detected. It can also force Defender to delete admin’s data. OS and driver files, resulting in an unrecoverable OS. We will also explain how an attacker can alter Defender's detection and mitigation logic.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Bar",
+      "evidence-links": [
+        {
+          "title": "DEF CON 31 - Defender Pretender  When Windows Defender Updates Become a Security Risk  -Bar, Attias",
+          "url": "https://www.youtube.com/watch?v=LQ7ZQXs-uC0"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "endpoint-and-host-defense"
+        ],
+        "red-teaming": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ]
+      }
+    },
+    {
+      "name": "Omer Attias",
+      "label": "The Price of Convenience: How Security Vulnerabilities in Global Transportation Payment Systems Can Cost You",
+      "description": "Public transportation payment systems have undergone significant changes over the years. Recently, mobile payment solutions have become increasingly popular, allowing passengers to pay for their fare using their smartphones or other mobile devices. The evolution of public transportation payment systems has been driven by the need for faster, more convenient, and more secure payment methods, and this trend is likely to continue in the years to come, But how secure are mobile payment solutions for public transportation? In this presentation, we will examine the security risks associated with transportation applications, using Moovit as a case study. Moovit is a widely used transportation app operating in over 100 countries and 5000+ cities. Through our investigation of the app's API, including SSL-encrypted data, we discovered specific vulnerabilities, which we will discuss. We will also demonstrate a custom user interface that can obtain a \"free ticket\" and cause someone else to pay. Furthermore, we will explain how an attacker could gain unauthorized access to and exfiltrate Personal Identifiable Information (PII) of registered users. Our findings offer practical recommendations to improve the security of transportation apps.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Attias",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
   "name": "Tom Tervoort",
-  "last-updated": "2026-10-16T05:18:24Z",
+  "last-updated": "2026-10-17T05:50:59Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,9 +19,9 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 1,
       "identity-and-access-management": 1,
-      "iot-security": 1,
+      "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
@@ -66,49 +66,6 @@
       "subspecialties": {
         "vulnerability-research": [],
         "identity-and-access-management": []
-      }
-    },
-    {
-      "name": "Tom Tervoort",
-      "label": "No VPN Needed? Cryptographic Attacks Against the OPC UA Protocol",
-      "description": "OPC UA is a standardized communication protocol that is widely used in the areas of industrial automation and IoT. It is used within and between OT networks, but also as a bridge between IT and OT environments or to connect field systems with the cloud. Traditionally, VPN tunnels are used to secure connections between OT trust zones (especially when they cross the internet), but this is often considered not to be neccessary when using OPC UA because the protocol offers its own cryptographic authentication and transport security layer. This makes OPC UA a valuable target for attackers, because if they could hijack an OPC UA server they might be able to wreak havoc on whatever industrial systems are controlled by it. I decided to take a look at the cryptography used by the protocol, and managed to identify two protocol flaws which I could turn into practical authentication bypass attacks that worked against various implementations and configurations. These attacks involve signing oracles, signature spoofing padding oracles and turning \"RSA-ECB\" into a \"timing side channel amplifier\". In this talk, I will explore the protocols and the issues I identified, as well as the process of turning two theoretical crypto flaws into highly practical exploits. References: OPC UA Specifications, OPC Foundation, link \"Chosen ciphertext attacks against protocols based on the RSA encryption standard PKCS# 1.\", Daniel Bleichenbacher, Advances in Cryptology—CRYPTO'98: 18th Annual International Cryptology Conference Santa Barbara, California Prior OPC UA research work by the Claroty Research Team, link",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 33",
-      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60297",
-      "evidence-links": [
-        {
-          "title": "DEF CON 33 - No VPN Needed? Cryptographic Attacks Against the OPC UA Protocol  - Tom Tervoort",
-          "url": "https://www.youtube.com/watch?v=dFYR2oOK8wg"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2025,
-      "domains": [
-        "vulnerability-research",
-        "iot-security"
-      ],
-      "subspecialties": {
-        "vulnerability-research": [
-          "cryptographic-attacks"
-        ],
-        "iot-security": [
-          "automotive-security"
-        ]
       }
     }
   ]

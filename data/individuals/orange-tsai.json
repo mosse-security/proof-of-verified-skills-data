@@ -1,40 +1,31 @@
 {
   "name": "Orange Tsai",
-  "last-updated": "2026-10-16T05:18:21Z",
+  "last-updated": "2026-10-17T05:50:57Z",
   "biography": "",
-  "contact": [
-    {
-      "label": "https://blog.orange.tw/",
-      "url": "https://blog.orange.tw/"
-    },
-    {
-      "label": "twitter",
-      "url": "https://twitter.com/orange_8361"
-    }
-  ],
+  "contact": [],
   "stats": {
-    "endorsements": 7,
-    "assessors": 2,
-    "with-evidence": 5,
-    "without-evidence": 2,
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 2,
+      "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
-      "red-teaming": 1,
+      "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 5,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
-      "iot-security": 1,
-      "operational-technology-security": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 2
+      "unknown": 1
     }
   },
   "endorsements": [
@@ -80,214 +71,6 @@
           "fuzzing-and-automated-testing",
           "zero-day-and-0-day-research"
         ]
-      }
-    },
-    {
-      "name": "Orange Tsai",
-      "label": "A New Era of SSRF - Exploiting URL Parser in Trending Programming Languages!",
-      "description": "Friday at 12:00 in Track 3 45 minutes | Demo, Tool, Exploit Orange Tsai Security Consultant from DEVCORE We propose a new exploit technique that brings a whole-new attack surface to bypass SSRF (Server Side Request Forgery) protections. This is a very general attack approach, in which we used in combination with our own fuzzing tool to discover many 0days in built-in libraries of very widely-used programming languages, including Python, PHP, Perl, Ruby, Java, JavaScript, Wget and cURL. The root cause of the problem lies in the inconsistency of URL parsers and URL requesters. Being a very fundamental problem that exists in built-in libraries, sophisticated web applications such as WordPress (27% of the Web), vBulletin, MyBB and GitHub can also suffer, and 0days have been discovered in them via this technique. This general technique can also adapt to various code contexts and lead to protocol smuggling and SSRF bypassing. Several scenarios will be demonstrated to illustrate how URL parsers can be exploited to bypass SSRF protection and achieve RCE (Remote Code Execution), which is the case in our GitHub Enterprise demo. Understanding the basics of this technique, the audience won't be surprised to know that more than 20 vulnerabilities have been found in famous programming languages and web applications aforementioned via this technique.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 25",
-      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Tsai",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2017,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": [
-          "fuzzing-and-automated-testing",
-          "zero-day-and-0-day-research"
-        ]
-      }
-    },
-    {
-      "name": "Orange Tsai",
-      "label": "Breaking Parser Logic: Take Your Path Normalization Off and Pop 0days Out!",
-      "description": "We propose a new exploit technique that brings a whole-new attack surface to defeat path normalization, which is complicated in implementation due to many implicit properties and edge cases. This complication, being under-estimated or ignored by developers for a long time, has made our proposed attack vector possible, lethal, and general. Therefore, many 0days have been discovered via this approach in popular web frameworks written in trending programming languages, including Python, Ruby, Java, and JavaScript. Being a very fundamental problem that exists in path normalization logic, sophisticated web frameworks can also suffer. For example, we've found various 0days on Java Spring Framework, Ruby on Rails, Next.js, and Python aiohttp, just to name a few. This general technique can also adapt to multi-layered web architecture, such as using Nginx or Apache as a proxy for Tomcat. In that case, reverse proxy protections can be bypassed. To make things worse, we're able to chain path normalization bugs to bypass authentication and achieve RCE in real world Bug Bounty Programs. Several scenarios will be demonstrated to illustrate how path normalization can be exploited to achieve sensitive information disclosure, SMB-Relay and RCE. Understanding the basics of this technique, the audience won't be surprised to know that more than 10 vulnerabilities have been found in sophisticated frameworks and multi-layered web architectures aforementioned via this technique.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 26",
-      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Tsai",
-      "evidence-links": [
-        {
-          "title": "DEF CON 26 - Orange Tsai - Breaking Parser Logic Take Your Path Normalization Off and Pop 0Days Out",
-          "url": "https://www.youtube.com/watch?v=28xWcRegncw"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2018,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": [
-          "zero-day-and-0-day-research",
-          "bug-bounty-research"
-        ]
-      }
-    },
-    {
-      "name": "Orange Tsai",
-      "label": "Infiltrating Corporate Intranet Like NSA ̶Pre-auth RCE on Leading SSL VPNs",
-      "description": "Computer security is now a public policy issue. Election security, blockchain, \"going dark,\" the vulnerabilities equities debate, IoT safety , data privacy, algorithmic security and fairness, critical infrastructure: these are all important public policy issues with a strong Internet security component. But while an understanding of the technology involved is fundamental to crafting good policy, there is little involvement of technologists in policy discussions. This is not sustainable. We need public-interest technologists: people from our fields helping craft policy, and working to provide security to agencies and groups working in the broader public interest. We need these people in government, at NGOs, teaching at universities, as part of the press, and inside private companies. This is increasingly critical to both public safety and overall social welfare. This talk both describes the current state of public-interest technology, and offers a way forward for us individually and collectively for our field. The defining policy question of the Internet age is this: How much of our lives should be governed by technology, and under what terms? We need to be involved in that debate.SSL VPNs protect corporate assets from Internet exposure, but what if SSL VPNs themselves are vulnerable? They’re exposed to the Internet, trusted to reliably guard the only way to intranet. However, we found pre-auth RCEs on multiple leading SSL VPNs, used by nearly half of the Fortune 500 companies and many government organizations. To make things worse, a “magic” backdoor was found to allow changing any user’s password with no credentials required! To show how bad things can go, we will demonstrate gaining root shell from the only exposed HTTPS port, covertly weaponizing the server against their owner, and abusing a hidden feature to take over all VPN clients! In such complicated closed-source systems, gaining root shell from outside the box certainly ain’t easy. It takes advanced web and binary exploitation techniques to struggle for a way to root shell, which involves abusing defects in web architectures, hard-core Apache jemalloc exploitation and more. We will cover every detail of all the dirty tricks, crazy bug chains, and the built-in backdoor. After gaining root shell into the box, we then elaborate on post exploitation and how we hack back the clients. In addition, we will share the attack vectors against SSL VPNs to kick start researches on similar targets. On the other hand, from our previous experience, we derive general hardening actions that mitigate not only all the above attacks, but any other potential 0days. In summary, we disclose practical attacks capable of compromising millions of targets, including tech giants and many industry leaders. These techniques and methodologies are published in the hope that it can inspire more security researchers to think out-of-the-box; enterprises can apply immediate mitigation, and realize that SSL VPN is not merely Virtual Private Network, but also a “Vulnerable Point of your Network”.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 27",
-      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Tsai",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2019,
-      "domains": [
-        "cyber-defense",
-        "red-teaming",
-        "vulnerability-research",
-        "iot-security",
-        "operational-technology-security"
-      ],
-      "subspecialties": {
-        "cyber-defense": [],
-        "red-teaming": [],
-        "vulnerability-research": [
-          "zero-day-and-0-day-research",
-          "exploit-mitigation-and-hardening"
-        ],
-        "iot-security": [
-          "automotive-security"
-        ],
-        "operational-technology-security": [
-          "critical-infrastructure-resilience",
-          "automotive-security",
-          "ecu-and-automotive-embedded-systems"
-        ]
-      }
-    },
-    {
-      "name": "Orange Tsai",
-      "label": "ProxyLogon is Just the Tip of the Iceberg, A New Attack Surface on Microsoft Exchange Server!",
-      "description": "Microsoft Exchange Server is an email solution widely deployed within government and enterprises, and it is an integral part of both their daily operations and security. Needless to say, vulnerabilities in Exchange have long been the Holy Grail for attackers, hence our security research on Exchange. Surprisingly, we’ve found not only critical vulnerabilities such as ProxyLogon, but a whole new attack surface of Exchange. This new attack surface is based on a significant change in Exchange Server 2013, where the fundamental protocol handler, Client Access Service (CAS), splits into frontend and backend. In this fundamental change of architecture, quite an amount of design debt was incurred, and, even worse, it introduced inconsistencies between contexts, leading us to discover this new attack surface. To unveil the beauty of this attack surface and our novel exploitation, we’ll start by analyzing this architecture, followed by 7 vulnerabilities that consist of server-side bugs, client-side bugs, and crypto bugs found via this attack surface. In the end, these vulnerabilities are chained into 3 attack vectors that shine in different attack scenarios: ProxyLogon, ProxyShell, and ProxyOracle. These attack vectors enable any unauthenticated attacker to uncover plaintext passwords and even execute arbitrary code on Microsoft Exchange Servers through port 443, which is exposed to the Internet by ~400K Exchange Servers. This attack surface has its unparalleled impact for a reason: security researchers tend to find vulnerabilities from a certain perspective, such as digging for memory bugs, injections, or logic flaws, but we took a different approach by looking at Exchange from a high-level architectural view and captured this architecture-level attack surface, which yielded multiple vulnerabilities. We hope this brings a new paradigm to vulnerability research and inspires more security researchers to look into Exchange Server. Last but not least, we’ll provide hardening actions to mitigate such types of 0days in Exchange. # REFERENCES: * \"Hunting for bugs, catching dragons\" by Nicolas Joly in Black Hat USA 2019 * CVE-2020-0688 and CVE-2018-8302 from ZDI blog * CVE-2020-16875 from @steventseeley",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 29",
-      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#tsai",
-      "evidence-links": [
-        {
-          "title": "DEF CON 29 - Orange Tsai - ProxyLogon Just Tip of the Iceberg, New Attack Surface on Exchange Server",
-          "url": "https://www.youtube.com/watch?v=5mqid-7zp8k"
-        },
-        {
-          "title": "DEF CON 29 - Yuhao Weng, Steven Seeley, Zhiniang Peng - An Attack Surface Tour of SharePoint Server",
-          "url": "https://www.youtube.com/watch?v=mVXrl4W1jOU"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2021,
-      "domains": [
-        "cyber-defense",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "cyber-defense": [],
-        "vulnerability-research": [
-          "zero-day-and-0-day-research",
-          "cve-analysis-and-vulnerability-disclosure",
-          "exploit-mitigation-and-hardening"
-        ]
-      }
-    },
-    {
-      "name": "Orange Tsai",
-      "label": "Let's Dance in the Cache - Destabilizing Hash Table on Microsoft IIS",
-      "description": "Track 3 Let's Dance in the Cache - Destabilizing Hash Table on Microsoft IIS Orange Tsai 45 minutes 💻 🛠 🪲",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 30",
-      "url": "https://forum.defcon.org/node/241837",
-      "evidence-links": [
-        {
-          "title": "DEF CON 30 - Orange Tsai - Let's Dance in the Cache - Destabilizing Hash Table on Microsoft IIS",
-          "url": "https://www.youtube.com/watch?v=9w1VqFkVAJs"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2022,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
       }
     },
     {

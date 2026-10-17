@@ -1,0 +1,74 @@
+{
+  "name": "Seokwoo Choi",
+  "last-updated": "2026-10-17T08:13:09Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Seokwoo Choi",
+      "label": "API Deobfuscator: Resolving Obfuscated API Functions in Modern Packers",
+      "description": "Modern packers use API obfuscation techniques to obstruct malware sandboxes and reverse engineers. In such packers, API call instructions are replaced with equivalent lengthy and complex code. API obfuscation techniques can be categorized into two according to the obfuscation time - static and dynamic. Static obfuscation embeds obfuscated instructions into the executable file. Dynamic obfuscation allocates a new memory block and copies obfuscated API function code into the newly allocated block. For dynamic obfuscation, I suggest memory access analysis. Previous approaches use pattern matching of the obfuscating code or code optimization on instruction trace. Pattern matching and code optimization based approaches are fragile to pattern change along the version up of the packers. My approach utilizes the API function obfuscation process which is harder to change than obfuscation pattern. Embedded obfuscator in packed file obfuscates each API function during runtime by reading the original API function code and writing the obfuscated API code on a newly allocated memory block. Memory access analysis relates memory reads of each API function and its corresponding memory writes. Memory access analysis produces a map from the obfuscated API function addresses to the original API function. Obfuscated API calls are retrieved by obfuscated call pattern at OEP. Each obfuscated call instruction is replaced by the deobfuscated API calls of which the call target is resolved by the map from memory access analysis. This deobfuscation method is implemented with Intel Pin to record each memory read/write/execute of the packed binary. For static obfuscation, I suggest iterative run-until-API method. Previous approaches used code emulators to identify obfuscated API calls. But most code emulators are not appropriate for deobfuscation because they are developed for emulating the whole operating system. Developing own emulators is time consuming because it requires implementing complex runtime behavior, such as exception based branches and multi-threads that modern packers use. I use a dynamic binary instrumentation tool - Intel Pin - by which the process can be monitored without being detected by protection mechanisms of the packers. After executing the packed binary until the original entry point, the tool changes the instruction pointer into an obfuscated API call address. The execution continues until the instruction pointer reaches the real API function. So the original API function is identified, but the function itself is not executed. In order to confirm the identified API function is correct, the integrity of stack pointer and stack data is also checked. This process is performed for each obfuscated API call instruction. In order to identify obfuscated API calls, the tool searches for all call instructions of which the target address is in the other section of the process. With the two deobfuscation methods, obfuscated API calls of Themida 32/64 packed binaries can be deobfuscated. We can analyze the deobfuscated binary with common reversing tools, such as x64dbg, Ollydbg and IDA Pro.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "API Deobfuscator: Resolving Obfuscated API Functions In Modern Packers",
+          "url": "https://www.youtube.com/watch?v=O4usD-11tTU"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "unpacking-and-obfuscation-analysis"
+        ],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

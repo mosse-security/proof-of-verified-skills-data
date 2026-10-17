@@ -1,0 +1,147 @@
+{
+  "name": "Di Shen",
+  "last-updated": "2026-10-17T08:13:02Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Di Shen",
+      "label": "Attacking Your Trusted Core: Exploiting Trustzone on Android",
+      "description": "For years fingerprint scanning has been supported in many Android devices. Fingerprint scanning on ARM always needs an implementation of TrustZone. While we enjoy unlocking devices and paying by fingerprint, we also figure out these new features bring out some new attack surfaces. Attacking the kernel of Android or the secure world of TrustZone may be not impossible. Theoretically, devices developed with TrustZone technology can support a full Trusted Execution Environment (TEE). TEE runs in a special CPU mode called secure mode, so memory for secure mode and security functions can be hidden to the normal world. In this way, Android vendors can provide many secure features such as fingerprint scanning, DRM, kernel protection, secure boot, and so on. Even though TrustZone is designed for solving security problems, there may be some security issues inside when a developer implements a TEE for Android. The Huawei Hisilicon Kirin 925 processor is the new chip being used on the Huawei Ascend Mate 7, and Hisilicon implemented its own TEE software. There are few documents about it. I found some vulnerabilities both in a normal Android world and the secure world while analyzing Hisilicon's TEE OS. In this talk, I'll show how to analyze the TEE architecture of Huawei Hisilicon and find some new vulnerabilities in such an undocumented black hole. Then, I'll talk about exploit development in TrustZone. I exploited two bugs, one for rooting Androids normal world and disabling the newest SE for Android, the other for running shellcode in secure world. With these exploits, we can get the fingerprint image or bypass some other security features.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2015,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": [
+          "exploit-development"
+        ]
+      }
+    },
+    {
+      "name": "Di Shen",
+      "label": "Rooting EVERY Android: From Extension to Exploitation",
+      "description": "These years, Keen Lab of Tencent (formerly known as the Keen Team), worked on various Linux kernel bugs and applied some of them to Android devices for rooting. Rooting latest Android devices is more and more interesting and challenging in 2016. With SELinux being enforced more strictly, not many attack surfaces in kernel can be accessed by local user on Android. So, currently Linux Wireless-Extensions(WEXT) IOCTL is a really awesome attack surface in Android kernel. An Android application is able to invoke WEXT IOCTL interface via socket, and escalate privilege with WEXT-related kernel vulnerability. SELinux will not deny these kind of invoking. Normally, a Wireless-Extension on Android is implemented by Wi-Fi chipset vendor as a Linux kernel module. There are multiple chipsets available for Android devices, so different Android phone may have different implementation of WEXT. Broadcom Wi-Fi chipset is used on Google Nexus 6p, Huawei Mate 8, Samsung Galaxy and many other premium-end smartphones. Mediatek device always have its own Wi-Fi chipset. The rest of the devices, like Nexus 5x and Nexus 7, use Qualcomm chipset. We've found several different kernel bugs in every mentioned implementations of Linux WEXT on Android. With these vulnerabilities, we can gain root privilege on every Android device, no matter what Wi-Fi chipset it has. In this talk, we will not only introduce how to audit source code of WEXT on Android but also give three case studies of exploiting local privilege escalation vulnerabilities found in Broadcom, Qualcomm and Mediatek's implementation of WEXT. The first case study is exploiting a stack overflow vulnerability in Qualcomm WEXT, which requires building a special JOP chain to bypass PXN restriction in ARM64 Linux kernel. Only X19~X2n registers can be controlled when the overflow is triggered, so finding proper JOP gadgets to achieve kernel code execution is a challenge. The second case study is exploiting a data/BSS overflow vulnerability in Mediatek WEXT, which requires controlling PC by overwrite a function pointer in data section. The offset of function pointer is unknown, so another info leak vulnerability in WEXT will also be introduced here. This exploit doesn't need any hardcoded kernel symbol to gain root on most of Mediatek devices. The third case study is exploiting a use-after-free vulnerability in Broadcom WEXT; it requires two threads race into a kernel function in the same time to trigger a use-after-free issue due to race conditions. So we have to refill the freed object in very short time. Spraying kernel heap stably and quickly is a big challenge. Another interesting point of this case is that attacker (an untrusted application) need to ask 'system_server' process to trigger that UAF vulnerability in kernel via binder IPC. In summary, this presentation offers all exploitation techniques about rooting Android with mentioned WEXT vulnerabilities. Some ideas (e.g. the method of kernel heap spraying on Android) that have never been discussed before.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2016",
+      "url": "https://blackhat.com/archive/europe/2016/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Rooting EVERY Android: From Extension to Exploitation",
+          "url": "https://www.youtube.com/watch?v=RfT3seUOti4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "kernel-and-operating-system-vulnerabilities"
+        ]
+      }
+    },
+    {
+      "name": "Di Shen",
+      "label": "Defeating Samsung KNOX with Zero Privilege",
+      "description": "The story started mid-2016 by exploiting CVE-2016-6787 (found by myself) and rooting large numbers of Android devices shipped with 3.18 Linux kernel. However, we realized that our exploit wasn't working on Samsung Galaxy S7 Edge; the usual way we used to bypass KNOX on Galaxy S6 had expired. After KeenLab successfully worked out several rooting solutions on many old Samsung smartphones in past two years, Samsung KNOX unsurprisingly enforced Galaxy S7 series. This time, KNOX introduced the Data Flow Integrity (DFI) as a part of its Real time Kernel Protection (RKP) implemented in TrustZone. KNOX RKP tried to use DFI to prevent a process which has compromised the Linux kernel from gaining root privilege. Furthermore, KNOX introduced KASLR as an additional mitigation. KNOX also removed the global variable \"selinux enforce\" in kernel, and permissive domain is not permitted - this means SELinux cannot be disabled or inserted a permissive domain even if you have already achieve kernel code execution. In this talk I will describe how I used an exploit chain to defeat the new Samsung KNOX with zero privilege (exploit chain can be executed by any untrusted application), including KASLR bypassing, DFI bypassing, SELinux fully bypassing and privilege escalation. All details of vulnerabilities and mitigation bypassing techniques will be given during the presentation.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Defeating Samsung KNOX with Zero Privilege",
+          "url": "https://www.youtube.com/watch?v=6bPuEfHSYOc"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

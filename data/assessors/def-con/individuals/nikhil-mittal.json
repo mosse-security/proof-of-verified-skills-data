@@ -1,0 +1,118 @@
+{
+  "name": "Nikhil Mittal",
+  "last-updated": "2026-10-17T08:13:36Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 2,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Nikhil Mittal",
+      "label": "PowerPreter: Post Exploitation Like a Boss",
+      "description": "Powerpreter is \"The\" post exploitation tool. It is written completely in powershell which is present on all modern Windows systems. Powerpreter has multiple capabilties which any post exploitation shell worth its salt must have, minus the detection by anti virus or other countermeasure tools. Powerpreter has, to name a few, functions like stealing infromation, logging keys, dumping system secrets, in-memory code execution, getting user credenitals in plain, introducing vulnerabilties, stealing/modifying registry, web server and impersonate users. It is also capable of backdooring a target using multiple methods/payloads which could be controlled using top third party websites. Based on available privs, it could be used to pivot to other machines on a network and thus execute commands, code, powershell scripts etc. on those. It also contains a web shell which includes all these functionalities. It also has limited ability to clean up the system and tinker with logs. Almost all the capabilities of Powerpreter are persistent across reboots, memory resident and hard to detect. Powerpreter uses powershell which enables it not to use any \"foreign\" code. It could be deployed in a skeleton mode which pulls functionality from the internet on demand. It aims to improve Windows post exploitation practices and help in the most important phase of a Pen Test. The talk will be full of live demonstrations.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 21 - Nikhil Mittal - PowerPreter Post Exploitation Like a Boss",
+          "url": "https://www.youtube.com/watch?v=NXydblaJaZQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2013,
+      "domains": [
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Nikhil Mittal",
+      "label": "RACE - Minimal Rights and ACE for Active Directory Dominance",
+      "description": "User rights and privileges are a part of the access control model in Active Directory. Applicable only at the local computer level, a user generally has different rights (through access tokens) on different machines in a domain. Another part of the access control model is security descriptors (ACLs) that protects a securable object. At the domain level, ACL abuse is well known and adversaries have used it for persistence. For user rights, the abuse is mostly with the help of groups (memberships, SID History etc.) or misconfigured delegated rights. A lesser-known area of abuse and offensive research is a combination of minimal Rights and ACE (hence the term RACE). Often overlooked in audits and assessments, using minimal rights along with favourable ACEs provides a very interesting technique of persistence and on-demand privilege escalation on a Windows machine with much desired stealth. This talk covers interesting domain privilege escalation, persistence and backdoor techniques with the help of ACLs, minimal user rights and combinations of both. We will discuss how these techniques can be applied using open source tools and scripts. The talk also covers how to detect and mitigate such attacks. The talk will be full of live demonstrations.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Mittal",
+      "evidence-links": [
+        {
+          "title": "Nikhil Mittal - RACE   Minimal Rights and ACE for Active Directory Dominance - DEF CON 27 Conference",
+          "url": "https://www.youtube.com/watch?v=M7Z5h6reGc4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "authorization-and-access-control",
+          "directory-services"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "name": "Damien Cauquil",
+  "last-updated": "2026-10-17T08:13:27Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "mamot.fr/@virtualabs",
+      "url": "https://mamot.fr/@virtualabs"
+    },
+    {
+      "label": "quarkslab.com",
+      "url": "https://quarkslab.com"
+    }
+  ],
+  "stats": {
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 2,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Damien Cauquil",
+      "label": "Weaponizing the BBC Micro:Bit",
+      "description": "Friday at 11:00 in Track 2 45 minutes | Demo, Tool, Exploit Damien \"virtualabs\" Cauquil Senior security researcher, Econocom Digital Security In 2015, BBC sponsored Micro:Bit was launched and offered to one million students in the United Kingdom to teach them how to code. This device is affordable and have a lot of features and can be programmed in Python rather than C++ like the Arduino. When we discovered this initiative in 2016, we quickly thought it was possible to turn this tiny device into some kind of super-duper portable wireless attack tool, as it is based on a well-known 2.4GHz RF chip produced by Nordic Semiconductor. It took us a few months to hack into the Micro:Bit firmware and turn it into a powerful attack tool able to sniff keystrokes from wireless keyboards or to hijack and take complete control of quadcopters during flight. We also developed many tools allowing security researchers to interact with proprietary 2.4GHz protocols, such as an improved sniffer inspired by the mousejack tools designed by Bastille. We will release the source code of our firmware and related tools during the conference. The Micro:Bit will become a nifty platform to create portable RF attack tools and ease the life of security researchers dealing with 2.4GHz protocols !",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Cauquil",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 - Damien Cauquil - Weaponizing the BBC Micro Bit",
+          "url": "https://www.youtube.com/watch?v=I9AqIaMjYcw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Damien Cauquil",
+      "label": "You'd better secure your BLE devices or we'll kick your butts !",
+      "description": "Sniffing and attacking Bluetooth Low Energy devices has always been a real pain. Proprietary tools do the job but cannot be tuned to fit our offensive needs, while opensource tools work sometimes, but are not reliable and efficient. Even the recently released Man-in-the-Middle BLE attack tools have their limits, like their complexity and lack of features to analyze encrypted or short connections. Furthermore, as vendors do not seem inclined to improve the security of their devices by following the best practices, we decided to create a tool to lower the ticket: BtleJack. BtleJack not only provides an affordable and reliable way to sniff and analyze Bluetooth Low Energy devices and their protocol stacks, but also implements a brand new attack dubbed \"BtleJacking\" that provides a way to take control of any already connected BLE device. We will demonstrate how this attack works on various devices, how to protect them and avoid hijacking and of course release the source code of the tool. Vendors, be warned: BLE hijacking is real and should be considered in your threat model.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Cauquil",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26  - Damien virtualabs Cauquil  - You had better secure your BLE devices",
+          "url": "https://www.youtube.com/watch?v=VHJfd9h6G2s"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Damien Cauquil",
+      "label": "Defeating Bluetooth Low Energy 5 PRNG for Fun and Jamming",
+      "description": "Bluetooth Low energy version 5 has been published in late 2016, but we still have no sniffer supporting this specific version (and not that much compatible devices as well). The problem is this new version introduces a new channel hopping algorithm that renders previous sniffing tools useless as devices can no longer be attacked and connections analyzed. This new algorithm is based on a brand new pseudo-random number generator (PRNG) to provide better collision avoidance while kicking out all of our good old sniffing tools. Unless some random hacker manages to break this not-that-strong PRNG and upgrades his BLE sniffing tool to support this algorithm ;). In this talk, we will explain why this PRNG is vulnerable and how it can be easily defeated to sniff and jam communications between two BLE 5 devices. A new version of BtleJack will be released during this talk, providing an efficient way to sniff BLE 5 connections to our fellow IoT hacker family.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Cauquil",
+      "evidence-links": [
+        {
+          "title": "Damien Cauquil - Defeating Bluetooth Low Energy 5 PRNG for Fun and Jamming - DEF CON 27 Conference",
+          "url": "https://www.youtube.com/watch?v=wkIdpK7mAk4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "iot-security"
+      ],
+      "subspecialties": {
+        "iot-security": []
+      }
+    },
+    {
+      "name": "Damien Cauquil",
+      "label": "One for all and all for WHAD: wireless shenanigans made easy !",
+      "description": "A lot of security research have recently focused on various wireless communication protocols, targeting smartphones, wireless mice and keyboards and even cars. In order to demonstrate these attacks, researchers developed dedicated tools that for most of them include some specialized firmware of their own but also rely on various unique custom host/device communication protocols. These tools work great but are strongly tied to some specific hardware that at some point will not be available anymore, or require hackers to buy more hardware to carry on to have fun with. Why not making these tools compatible with more hardware ? And why researchers always have to create their own host/device protocol when it comes to using a dedicated hardware ? Why not having one flexible protocol and related tools to rule them all ? We will present in this talk WHAD, a framework that provides an extensible host/device communication protocol, dedicated protocol stacks and way more for hackers who love having fun with wireless protocols. WHAD makes interoperability possible between tools by allowing different hardware devices to be used if they provide the required capabilities, giving the opportunity to create advanced tools without having to care about the hardware and its firmware in most of the cases! [Atlas 2012] Atlas. SubGHz or Bust, 2012. Available at link . [Blu 2019] Bluetooth SIG. Bluetooth Core Specification, 2019. [Cauquil 2016] Damien Cauquil. BtleJuice: The Bluetooth Smart MiTM framework. In DEF CON, volume 24, 2016. [Cauquil 2017b] Damien Cauquil. Sniffing BTLE with the Micro:Bit. PoC or GTFO, vol. 17, pages 13–20, 2017. [Cauquil 2017c] Damien Cauquil. Weaponizing the BBC Micro:Bit. In DEF CON, volume 25, 2017. Available at link . [Cauquil 2018] Damien Cauquil. You’d better secure your BLE devices or we’ll kick your butts ! In DEF CON, volume 26, 2018. Available at link . [Cauquil 2019] Damien Cauquil. Defeating Bluetooth Low Energy 5 PRNG for fun and jamming. In DEF CON, volume 27, 2019. Available at link . [Cayre 2019a] Romain Cayre, Vincent Nicomette, Guillaume Auriol, Eric Alata, Mohamed Kaâniche and Geraldine Marconato. Mirage: towards a Metasploit-like framework for IoT. In 2019 IEEE 30th International Symposium on Software Reliability Engineering (ISSRE), Berlin, Germany, October 2019. [Cayre 2021b] Romain Cayre, Florent Galtier, Guillaume Auriol, Vincent Nicomette, Mohamed Kaâniche and Géraldine Marconato. InjectaBLE: Injecting malicious traffic into established Bluetooth Low Energy connections. In IEEE/IFIP International Conference on Dependable Systems and Networks (DSN 2021), Taipei (virtual), Taiwan, June 2021. [Cayre 2021c] Romain Cayre, Florent Galtier, Guillaume Auriol, Vincent Nicomette, Mohamed Kaâniche and Géraldine Marconato. WazaBee: attacking Zigbee networks by diverting Bluetooth Low Energy chips. In IEEE/IFIP International Conference on Dependable Systems and Networks (DSN 2021), Taipei (virtual), Taiwan, June 2021. [Cayre 2021d] Romain Cayre, Géraldine Marconato, Florent Galtier, Mohamed Kaâniche, Vincent Nicomette and Guillaume Auriol. Cross-protocol attacks: weaponizing a smartphone by diverting its Bluetooth controller. In 14th ACM Conference on Security and Privacy in Wireless and Mobile Networks, Abu Dhabi, United Arab Emirates, June 2021. [Cayre 2021e] Romain Cayre, Damien Cauquil and Aurélien Francillon. ESPwn32: hacking with ESP32 system-on-chips.In 17th IEEE Workshop on Offensive Technologies (WOOT 2023), co-located with IEEE S&P 2023, San Francisco, United States, May 2023. [Goodspeed 2011a] Travis Goodspeed. Promiscuity is the nRF24L01+’s Duty. Available at link , 2011. [IEE 2020] IEEE Standard for Low-Rate Wireless Networks. IEEE Std 802.15.4 2020 (Revision of IEEE Std 802.15.4-2015), pages 1–800, 2020. [Jasek 2016] Sławomir Jasek. Gattacking Bluetooth Smart Devices. In BlackHat USA, 2016. Available at link . [LOG 2019] LogiTacker GitHub Repository, 2019. Available at link [LoR 2017] LoRa Alliance, Inc. LoRaWan Specification, 2017. [Newlin 2016a] Marc Newlin. MouseJack : White Paper. In DEF CON, volume 24, 2016. Available at link . [Olawumi 2014] Olayemi Olawumi, Keijo Haataja, Mikko Asikainen, Niko Vidgren and Pekka Toivanen. Three practical attacks against ZigBee security: Attack scenario definitions, practical experiments, countermeasures, and lessons learned. In 2014 14th International Conference on Hybrid Intelligent Systems, pages 199–206, 2014. [Qasim Khan 2019] Sultan Qasim Khan. Sniffle: A sniffer for Bluetooth 5 (LE), 2019. Available at link . [Ryan 2013a] Mike Ryan. Bluetooth: With Low Energy Comes Low Security. In 7th USENIX Workshop on Offensive Technologies (WOOT 13), Washington, D.C., August 2013. USENIX Association. [Vidgren 2013a] N. Vidgren, K. Haataja, J. L. Patiño-Andres, J. J. Ramírez-Sanchis and P. Toivanen. Security Threats in ZigBee-Enabled Systems: Vulnerability Evaluation, Practical Experiments, Countermeasures, and Lessons Learned. In 2013 46th Hawaii International Conference on System Sciences, pages 5132–5138, 2013. [Wright 2009] Joshua Wright. KillerBee: Practical ZigBee Exploitation Framework, 2009. Available at link . [Zillner 2015] T. Zillner. ZigBee Exploited: The good , the bad and the ugly. In BlackHat, 2015.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54472",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2024,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [],
+        "iot-security": [
+          "iot-protocols",
+          "automotive-security"
+        ]
+      }
+    }
+  ]
+}

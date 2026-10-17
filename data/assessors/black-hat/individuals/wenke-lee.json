@@ -1,0 +1,72 @@
+{
+  "name": "Wenke Lee",
+  "last-updated": "2026-10-17T08:13:10Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Wenke Lee",
+      "label": "Cloak & Dagger: From Two Permissions to Complete Control of the UI Feedback Loop",
+      "description": "While both the SYSTEM_ALERT_WINDOW and the BIND_ACCESSIBILITY_SERVICE Android permissions have been abused individually (e.g., in UI redressing attacks, accessibility attacks), previous attacks based on these permissions failed to completely control the UI feedback loop and thus either rely on vanishing side-channels to time the appearance of overlay UI, cannot respond properly to user input, or make the attacks literally visible. In this work, we demonstrate how combining the capabilities of these permissions leads to complete control of the UI feedback loop and creates devastating and stealthy attacks. In particular, we demonstrate how an app with these two permissions can launch a variety of stealthy, powerful attacks, ranging from stealing user's login credentials and security PIN, to the silent installation of a God-like app with all permissions enabled. To make things even worse, we note that when installing an app targeting a recent Android SDK, the list of its required permissions is not shown to the user and that these attacks can be carried out without needing to lure the user to knowingly enable any permission, thus leaving him completely unsuspecting. In fact, we found that the SYSTEM_ALERT_WINDOW permission is automatically granted for apps installed from the Play Store and, even though the BIND_ACCESSIBILITY_SERVICE is not automatically granted, our experiment shows that it is very easy to lure users to unknowingly grant that permission by abusing capabilities from the SYSTEM_ALERT_WINDOW permission. We also found that it is straightforward to get a proof-of-concept app requiring both permissions accepted on the official store. We evaluated the practicality of these attacks by performing a user study: none of the 20 human subjects that took part of the experiment even suspected they had been attacked. We conclude with a number of observations and best-practices that Google and developers can adopt to secure the Android GUI.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Cloak & Dagger: From Two Permissions to Complete Control of the UI Feedback Loop",
+          "url": "https://www.youtube.com/watch?v=FRpcGwCedZ0"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    }
+  ]
+}

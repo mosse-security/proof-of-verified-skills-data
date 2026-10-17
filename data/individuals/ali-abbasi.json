@@ -1,160 +1,121 @@
 {
   "name": "Ali Abbasi",
-  "last-updated": "2026-10-16T07:42:18Z",
+  "last-updated": "2026-10-17T05:50:52Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 4,
+    "endorsements": 2,
     "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 4,
+    "with-evidence": 2,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
-      "red-teaming": 0,
+      "red-teaming": 2,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
-      "operational-technology-security": 0,
+      "operational-technology-security": 1,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 4
+      "unknown": 0
     }
   },
   "endorsements": [
     {
       "name": "Ali Abbasi",
-      "label": "Do as I Say not as I Do: Stealth Modification of Programmable Logic Controllers I/O by…",
-      "description": "Do as I Say not as I Do: Stealth Modification of Programmable Logic Controllers I/O by…",
+      "label": "APTs Way: Evading Your EBNIDS",
+      "description": "APTs and government-supported attackers use a broad arsenal of techniques to avoid having their exploits detected by IDSes. Signature Based IDSes are not efficient against nation-state-sponsored attackers which use custom shellcode encoders in an exploit. Emulation Based NIDSes (EBNIDS) have been proposed as a solution to mitigate such attacks. EBNISes detect a suspicious network stream (pre-processing) and after converting them to emulate-able byte sequences run it in an instrumented environment (Emulation), finally matching the behavior with certain heuristics (Heuristics Detection). In this talk, we will present novel ways that an APT might use to circumvente the Pre-Processing, Emulation and Heuristic Detection steps of EBNIDSes by employing a wide range of evasion techniques.",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "33C3",
-      "url": "https://media.ccc.de/v/33c3-7853-do_as_i_say_not_as_i_do_stealth_modification_of_programmable_logic_controllers_i_o_by_pin_control_attack",
-      "evidence-links": [],
-      "evidence": false,
+      "subtitle": "Black Hat Europe 2014",
+      "url": "https://blackhat.com/archive/europe/2014/archives.html",
+      "evidence-links": [
+        {
+          "title": "APTs Way: Evading Your EBNIDS",
+          "url": "https://www.youtube.com/watch?v=1DL2jnCFXsw"
+        }
+      ],
+      "evidence": true,
       "povs": {
         "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
           "trusted": false
         },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Ali Abbasi",
+      "label": "Ghost in the PLC: Designing an Undetectable Programmable Logic Controller Rootkit",
+      "description": "Programmable Logic Controllers (PLCs) are a family of embedded devices used for physical process control. Similar to other embedded devices, PLCs are vulnerable to cyber attacks. Because they are used to control the physical processes of critical infrastructures, compromised PLCs constitute a significant security and safety risk. In this research, we investigate attacks against PLCs from two different perspectives. We show how to circumvent current host-based detection mechanisms applicable to PLCs by avoiding typical function hooking or modifying kernel data structure. We then introduce a novel attack against a PLC that allows the adversary to stealthily manipulate the physical process it controls by tampering with the device I/O at a low level. The attack is feasible due to lack of hardware interrupt on the PLC's SoC and intensified by Pin Control subsystem inability for hardware level Pin Configuration detection. Our study is meant to be used as a basis for the design of more robust detection techniques specifically tailored for PLCs.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2016",
+      "url": "https://blackhat.com/archive/europe/2016/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Ghost in the PLC: Designing an Undetectable Programmable Logic Controller Rootkit",
+          "url": "https://www.youtube.com/watch?v=hS8QQeV3PTo"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
       "year": 2016,
       "domains": [
-        "unknown"
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research",
+        "operational-technology-security"
       ],
       "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "Ali Abbasi",
-      "label": "Wheel of Fortune",
-      "description": "Wheel of Fortune",
-      "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "33C3",
-      "url": "https://media.ccc.de/v/33c3-7949-wheel_of_fortune",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2016,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "Ali Abbasi",
-      "label": "Taking a scalpel to QNX",
-      "description": "Taking a scalpel to QNX",
-      "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "34C3",
-      "url": "https://media.ccc.de/v/34c3-8730-taking_a_scalpel_to_qnx",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2017,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "Ali Abbasi",
-      "label": "A Deep Dive Into Unconstrained Code Execution on Siemens S7 PLCs",
-      "description": "A Deep Dive Into Unconstrained Code Execution on Siemens S7 PLCs",
-      "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "36C3",
-      "url": "https://media.ccc.de/v/36c3-10709-a_deep_dive_into_unconstrained_code_execution_on_siemens_s7_plcs",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2019,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
+        "cyber-defense": [
+          "security-operations-and-soc-practice"
+        ],
+        "red-teaming": [],
+        "vulnerability-research": [],
+        "operational-technology-security": [
+          "plc-security",
+          "critical-infrastructure-resilience",
+          "automotive-security",
+          "ecu-and-automotive-embedded-systems"
+        ]
       }
     }
   ]

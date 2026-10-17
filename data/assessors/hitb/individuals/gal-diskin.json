@@ -1,0 +1,377 @@
+{
+  "name": "Gal Diskin",
+  "last-updated": "2026-10-17T08:13:46Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 9,
+    "assessors": 1,
+    "with-evidence": 6,
+    "without-evidence": 3,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 1,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 2,
+      "vulnerability-research": 6,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 1,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 3
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Gal Diskin",
+      "label": "Best Practices For Simulating Execution in Malicious Text Detection",
+      "description": "Static detection is the earliest text detection method, and it is still widely used since its birth. But in fact, the effect of static detection depends on the extraction of text features, and the dimension of the features directly determines the false positive rate and the false negative rate. The mainstream static detection methods have the characteristics of fast detection speed, good universality (cross-platform, cross-version, cross-language, etc.), and low implementation cost (in theory, as long as it is a black sample, rules can be written to cover it); however, due to the lack of Lexical and grammatical constraints are more prone to false positives, and at the same time, lack of adversarial and technical barriers makes this type of detection algorithm difficult to detect when it encounters packed, encrypted, and obfuscated samples, and cannot form a differentiated advantage. When the static feature extraction of malicious text is accurate enough, it is easier to detect. However, attackers usually use code obfuscation (packing, encoding, encryption) to hinder the extraction of features, so it is necessary to dynamically run and run all features for detection. The dynamic detection algorithm is technically difficult, and can implement more advanced and complex detection techniques. At the same time, due to real execution, the malicious code conforms to syntax and lexical constraints, and false positives are extremely low without forced intervention. However, since real execution requires simulation and custom design of the entire operating environment, there are problems of high cost, low detection efficiency, and poor compatibility. At the same time, when encountering the problem of version fragmentation, it is also a tedious thing to adapt to different versions of the sandbox. The sandbox solution also introduces new confrontation problems, such as branch confrontation, time confrontation, network confrontation, etc. During this presentation, the audience will hear the following:",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/best-practices-malicious-text-detection/",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2022,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Gal Diskin",
+      "label": "Can a Fuzzer Match a Human",
+      "description": "Compilers are programs that translate programs written in a high level programming language into machine code. The Solidity compiler accepts smart contracts written in the Solidity programming language and generates optimized Ethereum virtual machine (EVM) bytecode. There are multiple components of the compiler that can introduce security issues: the optimiser and the code generator being the most security sensitive because they influence the binary code. Testing the codegen and the optimiser within the compiler requires a structured approach. Arbitrary character sequences as input-what a COTS fuzzer can easily provide-will simply be rejected by the compiler as invalid programs. Second, finding bugs in the optimiser requires program interpretation and differential testing: side effects of the unoptimized and optimized programs need to be identical, otherwise the optimized program contains a bug. Testing the code generator is aided by the fact that the Solidity compiler has two implementations of the code generator, the legacy code generator and the new Yul intermediate representation (IR) based code generator. We employ a similar technique to find security relevant bugs in either codegens.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/can-a-fuzzer-match-a-human/",
+      "evidence-links": [
+        {
+          "title": "#HITB2022SIN #COMMSEC Can A Fuzzer Match A Human - Bhargava Shastry",
+          "url": "https://www.youtube.com/watch?v=Q6kEvIeUiEY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2022,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    },
+    {
+      "name": "Gal Diskin",
+      "label": "Can a Fuzzer Match a Human?",
+      "description": "Compilers are programs that translate programs written in a high level programming language into machine code. The Solidity compiler accepts smart contracts written in the Solidity programming language and generates optimized Ethereum virtual machine (EVM) bytecode. There are multiple components of the compiler that can introduce security issues: the optimiser and the code generator being the most security sensitive because they influence the binary code. Testing the codegen and the optimiser within the compiler requires a structured approach. Arbitrary character sequences as input-what a COTS fuzzer can easily provide-will simply be rejected by the compiler as invalid programs. Second, finding bugs in the optimiser requires program interpretation and differential testing: side effects of the unoptimized and optimized programs need to be identical, otherwise the optimized program contains a bug. Testing the code generator is aided by the fact that the Solidity compiler has two implementations of the code generator, the legacy code generator and the new Yul intermediate representation (IR) based code generator. We employ a similar technique to find security relevant bugs in either codegens.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/commsec-can-a-fuzzer-match-a-human/",
+      "evidence-links": [
+        {
+          "title": "#HITB2022SIN #COMMSEC Can A Fuzzer Match A Human - Bhargava Shastry",
+          "url": "https://www.youtube.com/watch?v=Q6kEvIeUiEY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2022,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    },
+    {
+      "name": "Gal Diskin",
+      "label": "COMMSEC LAB: A Practical Approach to Advanced Code Obfuscation with MBA Expressions",
+      "description": "One of the foundational blocks of current state-of-the-art code obfuscation are Mixed Boolean-Arithmetic (MBA) expressions: those combining both integer arithmetic and bitwise operators. Such expressions can be leveraged to arbitrarily increase the data-flow complexity of targeted code by iteratively applying rewrite rules and function identities which mess the syntax while preserving its semantic behavior. They can also be leveraged to conceal sensitive data that must be accessible through the program in runtime: cryptographic keys, known constants for hashing algorithms, etc. The use of such expressions is motivated by the fact that combinations of operators from these different fields do not interact well together: we have no rules (distributivity, factorization…) or general theory to deal with this mixing of operators. Through the course of this 2 hour session, we will explore how to apply MBA transformations to build robust obfuscation primitives from a practical standpoint: ranging from opaque predicates to VM-handlers of a virtualization based obfuscation scheme.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/commsec-lab-a-practical-approach-to-advanced-code-obfuscation-with-mba-expressions/",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2022,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Gal Diskin",
+      "label": "Cracking Kyocera Printers",
+      "description": "Printers are one of the most common devices in daily life which are considered rather common devices in our daily life. Their unique network location and functions determine that they are often used to process many confidential documents, making them attractive targets for APT groups. Once the printer is hacked, not only can the attacker enter the office network, but can even obtain and tamper with the confidential documents. We took a deep dive into Kyocera printers, one of the major printer brands with annual sales of nearly a million units around the world. Through research on several printers of this brand, we have found multiple high-risk vulnerabilities, which can lead to remote Dos, arbitrary file reading, password leakage, and even pre-auth RCE in severe cases, and these vulnerabilities will affect almost all Kyocera devices.At the same time, because of the long life of printers, a large number of older devices are still in use at home or in the company, we have found that such devices also have a serious preauth-RCE vulnerability but it can not be repaired, creating a significant risk. We will demonstrate these vulnerabilities which can preauth-rce to lead us to slip into office network and show how to monitor all files with printer native functions.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/cracking-kyocera-printers/",
+      "evidence-links": [
+        {
+          "title": "#HITB2022SIN #COMMSEC Cracking Kyocera Printers - Yue Liu and Juyang Gao & Minghang Shen",
+          "url": "https://www.youtube.com/watch?v=WaCOzp9HH7o"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Gal Diskin",
+      "label": "Getting Clear Text Passwords from an IdP & More: Our Research Methodology",
+      "description": "We’ve recently reported several methods to achieve several privilege escalation in Okta by getting the clear text of any employee, including super-admins + other methods to impersonate super-admins and users by admins of org units, or outsource companies. These issues were dubbed #PassBleed, and were classified by Okta as inherent operational risks of their platform. This talk will present the research process that led to the discovery of these non-vulnerabilities. We will share our internal research methodology based on using knowledge graphs for trust analysis and explain it through showing how we used it to discover these major weaknesses. Our methodology is useful to: 1. Automate vulnerability discovery 2. Enable research team collaboration 3. Visualize & Prioritize The talk will include some technical details such as basic Matrix math, a bit of Python code, and a (single) raw JSON data dump. A small code example will probably be open-sourced a few days after the talk.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/commsec-clear-text-psswrds-idp-more/",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "vulnerability-discovery"
+        ]
+      }
+    },
+    {
+      "name": "Gal Diskin",
+      "label": "ICEFALL - Revisiting a Decade of OT Insecure-by-Design Practices",
+      "description": "More than a decade ago, Project Basecamp highlighted how many OT devices and protocols deployed in a wide variety of industries and critical infrastructure applications were insecure-by-design. Ever since, it’s been common knowledge that one of the biggest issues facing OT security is not so much the presence of unintentional vulnerabilities but the persistent absence of basic security controls. While the past decade has seen the advent of standards-driven hardening efforts at the component and system level it has also seen impactful real-world OT incidents like Industroyer and TRITON abusing insecure-by-design functionality, which has left many defenders wondering just how much has changed. In this talk, we will present dozens of previously undisclosed issues in products from almost 20 vendors deployed in industry verticals ranging from oil & gas, chemical and power generation to water management, mining and manufacturing . We will provide a quantitative overview of these issues, which range from persistent insecure-by-design practices in security-certified products to failed attempts to move away from them, in order to illustrate how the opaque and proprietary nature of these systems, the suboptimal vulnerability management surrounding them and the often false sense of security offered by certifications significantly complicate OT risk management efforts. In addition, we will take a technical deep-dive into several of the issues to demonstrate the ability of attackers to achieve remote code execution on critical Level 1 devices using nothing but intended functionality and discuss its defensive implications . Finally, we will present quantitative insights into our research process in order to provide the audience with some hard numbers on the resources required to develop basic offensive capabilities for the issues discussed and its potential implications for the relevant threat landscape.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/icefall-revisiting-a-decade-of-ot-insecure-by-design-practices/",
+      "evidence-links": [
+        {
+          "title": "#HITB2022SIN #COMMSEC ICEFALL – Revisiting A Decade Of OT Insecure-By-Design Practices - Jos Wetzels",
+          "url": "https://www.youtube.com/watch?v=OHRgak1fI9k"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2022,
+      "domains": [
+        "cyber-defense",
+        "grc",
+        "vulnerability-research",
+        "operational-technology-security"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "grc": [
+          "risk-management"
+        ],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ],
+        "operational-technology-security": [
+          "critical-infrastructure-resilience",
+          "automotive-security",
+          "ecu-and-automotive-embedded-systems"
+        ]
+      }
+    },
+    {
+      "name": "Gal Diskin",
+      "label": "MPT: Pentest In Action",
+      "description": "Security penetration testing is more than necessary. If not all, most organisations either have their own penetration testing team in-house or they have third party pentesters. In any fast paced organisation with multiple product lines and development planning timelines, it becomes challenging for security teams to efficiently manage all these pentest activities and effectively produce security assessment reports and track them. In order to solve above challenges I have developed a solution called ‘Managing Pentest (MPT: Pentest in Action)’ MPT also has security pentest analytics which helps us not only track and view everything in single pane of glass but also helps with: NOTE: This is tool will be released at #HITB2022SIN",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/mpt-pentest-in-action/",
+      "evidence-links": [
+        {
+          "title": "#HITB2022SIN #COMMSEC MPT: Pentest In Action - Jyoti Raval",
+          "url": "https://www.youtube.com/watch?v=ewCRbnXGqS0"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2022,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Gal Diskin",
+      "label": "Web3 + Scams = It's a Match!",
+      "description": "In 2022, there is rarely a week without a stolen JPEG worth 100K USD, yet most consumer-grade endpoint protection does not even know what a dApp looks like. Even ITSEC people do not understand or agree on what a dApp looks like or even what Web3 is. Most cryptocurrency-related scams are not sophisticated, yet they are paramount due to the damage they can cause. While researching the magical world of crypto scams, I have identified at least 35 different types of these scams. These can be cheap replicas from the “pre-Web3” world. Others are novel and specific to Web3 and smart contracts. Pump and dump or rug pull are not unknown, but proof of weak hands or NFT airdrop scams are the products of the new Web3 world order. Warning: this research includes blockchain mumbo jumbo, but I will turn down the hype factor.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2022",
+      "url": "https://archive.conference.hitb.org/hitbsecconf2022sin/session/web3-scams-its-a-match/",
+      "evidence-links": [
+        {
+          "title": "#HITB2022SIN #COMMSEC Web3 + Scams = It’s A Match - Zoltan Balazs",
+          "url": "https://www.youtube.com/watch?v=U25P_lRLNw0"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2022,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

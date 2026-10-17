@@ -1,0 +1,72 @@
+{
+  "name": "Nishad Herath",
+  "last-updated": "2026-10-17T08:13:07Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Nishad Herath",
+      "label": "These are Not Your Grand Daddys CPU Performance Counters - CPU Hardware Performance Counters for Security",
+      "description": "CPU hardware performance counters allow us to do low latency performance measuring, without special runtime or compile time software instrumentation. It is said \"advanced users often rely on those counters to conduct low-level performance analysis or tuning\" according to Wikipedia. But is this all we can do? Maybe it is all that they were meant for, faster debugging and profiling. But these days, the performance counters you find in your CPUs are not exactly your grand daddy's CPU performance counters! They can do bigger and better things - even defending against RowHammer! Yes, they can be used to to make platforms more secure! Okay, so on Intel x86/x64 compatible CPUs, the MSR_DEBUGCTLA MSR (Model Specific Register) can be used for LBR (Last Branch Recording). BTF CPU flag can facilitate \"single stepping\" on branching rather than just single stepping on every instruction. Clearly many uses. Some of it security related, like the potential for ROP mitigation. These are reasonably well explored. Perhaps not widely discussed though. Anyway, in this talk, we will be talking about very interesting features that we find today on Intel x86/x64 compatible CPUs that can be leveraged to achieve platform security relevant outcomes that were simply impractical using software only means, or your grandaddy's CPU performance counters. Some of the use cases might surprise you! We will be demonstrating these techniques against real world exploit code, with performance impact numbers to boot! We might even share our code with those who ask us nicely.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "These Are Not Your Grand Daddy's CPU Performance Counters - CPU Hardware Performance Counters...",
+          "url": "https://www.youtube.com/watch?v=dfIoKgw65I0"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

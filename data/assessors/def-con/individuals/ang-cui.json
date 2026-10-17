@@ -1,0 +1,160 @@
+{
+  "name": "Ang Cui",
+  "last-updated": "2026-10-17T08:13:26Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 2,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 2,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ang Cui",
+      "label": "Embedded Device Firmware Vulnerability Hunting Using FRAK, the Firmware Reverse Analysis Konsole",
+      "description": "We present FRAK, the firmware reverse analysis konsole. FRAK is a framework for unpacking, analyzing, modifying and repacking the firmware images of proprietary embedded devices. The FRAK framework provides a programmatic environment for the analysis of arbitrary embedded device firmware as well as an interactive environment for the disassembly, manipulation and re-assembly of such binary images. We demonstrate the automated analysis of Cisco IOS, Cisco IP phone and HP LaserJet printer firmware images. We show how FRAK can integrate with existing vulnerability analysis tools to automate bug hunting for embedded devices. We also demonstrate how FRAK can be used to inject experimental host-based defenses into proprietary devices like Cisco routers and HP printers.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 20",
+      "url": "https://defcon.org/html/defcon-20/dc-20-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 20 - Ang Cui - Embedded Device Firmware Vulnerability Hunting Using FRAK",
+          "url": "https://www.youtube.com/watch?v=EKy_f-etWy8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2012,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "decompilation-and-disassembly",
+          "unpacking-and-obfuscation-analysis"
+        ],
+        "vulnerability-research": [
+          "vulnerability-discovery",
+          "hardware-and-firmware-vulnerabilities"
+        ],
+        "iot-security": [
+          "embedded-devices"
+        ]
+      }
+    },
+    {
+      "name": "Ang Cui",
+      "label": "Stepping P3wns: Adventures in full spectrum embedded exploitation (and defense!)",
+      "description": "Our presentation focuses on two live demonstrations of exploitation and defense of a wide array of ubiquitous networked embedded devices like printers, phones and routers. The first demonstration will feature a proof-of-concept embedded worm capable of stealthy, autonomous polyspecies propagation. This PoC worm will feature at least one 0-day vulnerability on Cisco IP phones as well as several embedded device vulnerabilities previously disclosed by the authors. We will demonstrate how an attacker can gain stealthy and persistent access to the victim network via multiple remote initial attack vectors against routers and printers. Once inside, we will show how the attacker can use other embedded devices as stepping stones to compromise significant portions of the victim network without ever needing to compromise the general purpose computers residing on the network. Our PoC worm is capable of network reconnaissance, manual full-mesh propagation between IP phones, network printers and common networking equipment. Finally, we will demonstrate fully autonomous reconnaissance and exploitation of all embedded devices on the demo network. The second demonstration showcases host-based embedded defense techniques, called Symbiotes, developed by the authors at Columbia University under support from DARPA's Cyber Fast Track and CRASH programs, as well as IARPA's STONESOUP and DHS's S&T Research programs. The Symbiote is an OS and vendor agnostic host-based defense designed specifically for proprietary embedded systems. We will demonstrate the automated injection of Software Symbiotes into each vulnerable embedded device presented during the first demonstration. We then repeat all attack scenarios presented in the first demo against Symbiote defended devices to demonstrate real-time detection, alerting and mitigation of all malicious embedded implants used by our PoC worm. Lastly, we demonstrate the scalability and integration of Symbiote detection and alerting mechanisms into existing enterprise endpoint protection systems like Symantec End Point.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2013,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ],
+        "iot-security": [
+          "embedded-devices"
+        ]
+      }
+    },
+    {
+      "name": "Ang Cui",
+      "label": "100 Seconds of Solitude: Defeating Cisco Trust Anchor With FPGA Bitstream Shenanigans",
+      "description": "First commercially introduced in 2013, Cisco Trust Anchor module(TAm) is a proprietary hardware security module that is used in a wide range of Cisco products, including enterprise routers, switches and firewalls. TAm is the foundational root of trust that underpins all other Cisco security and trustworthy computing mechanisms in such devices. We disclose two 0-day vulnerabilities and show a remotely exploitable attack chain that reliably bypasses Cisco Trust Anchor. We present an in-depth analysis of the TAm, from both theoretical and applied perspectives. We present a series of architectural and practical flaws of TAm, describe theoretical methods of attack against such flaws. Next, we enumerate limitations in current state-of-the-art offensive capabilities that made the design of TAm seem secure. Using Cisco 1001-X series of Trust Anchor enabled routers as a demonstrative platform, we present a detailed analysis of a current implementation of TAm, including results obtained through hardware reverse engineering, Trust Anchor FPGA bitstream analysis, and the reverse engineering of numerous Cisco trustworthy computing mechanisms that depend on TAm. Finally, we present two 0-day vulnerabilities within Cisco IOS and TAm and demonstrate a remotely exploitable attack chain that results in persistent compromise of an up-to-date Cisco router. We discuss the implementation of our TAm bypass, which involves novel methods of reliably manipulating FPGA functionality through bitstream analysis and modification while circumventing the need to perform RTL reconstruction. The use of our methods of manipulation creates numerous possibilities in the exploitation of embedded systems that use FPGAs. While this presentation focuses on the use of our FPGA manipulation techniques in the context of Cisco Trust Anchor, we briefly discuss other uses of our bitstream modification techniques.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Kataria",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2019,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "hardware-reverse-engineering"
+        ],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ]
+      }
+    }
+  ]
+}

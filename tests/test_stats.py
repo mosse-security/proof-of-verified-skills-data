@@ -5,8 +5,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from endorsement_scraper.runner import RunReport, ScraperReport
-from endorsement_scraper.stats import build_run_stats, count_subspecialties, validate_run_stats
+from scrapers.runner import RunReport, ScraperReport
+from scrapers.stats import build_run_stats, count_subspecialties, validate_run_stats
 
 
 class RunStatsTests(unittest.TestCase):

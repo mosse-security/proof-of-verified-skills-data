@@ -1,0 +1,76 @@
+{
+  "name": "Joseph Sharkey",
+  "last-updated": "2026-10-17T08:13:04Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Joseph Sharkey",
+      "label": "Breaking Hardware-Enforced Security with Hypervisors",
+      "description": "Hardware-Enforced Security is touted as the panacea solution to many modern computer security challenges. While certainly adding robust options to the defenders toolset, they are not without their own weaknesses. In this talk we will demonstrate how low-level technologies such as hypervisors can be used to subvert the claims of security made by these mechanisms. Specifically, we will show how a hypervisor rootkit can bypass Intel's Trusted Execution Environment (TXT) DRTM (dynamic root of trust measurement) and capture keys from Intel's AES-NI instructions. These attacks against TXT and AES-NI have never been published before. Trusted computing has had a varied history, to include technologies such as Trusted Execution Technology (TXT), ARM TrustZone, and now Microsoft Isolated User Mode and Intel SGX. All of these technologies attempt to protect user data from privileged processes snooping or controlling execution. These technologies claim that no elevated process, whether kernel based, System Management Mode (SMM) based, or hypervisor based will be able to compromise the user's data and execution. This presentation will highlight the age-old problem of misconfiguration of Intel TXT by exploiting a machine through the use of another Intel technology, the Type-1 hypervisor (VT-x). Problems with these technologies have surfaced not as design issues but during implementation. Whether there remains a hardware weakness where attestation keys can be compromised, or a software and hardware combination, such as exposed DMA that permits exfiltration, and sometimes modification, of user process memory. This presentation will highlight one of these implementation flaws as exhibited by the open source tBoot project and the underlying Intel TXT technology. Summation will offer defenses against all too often pitfalls when deploying these systems, including proper deployment design using sealed storage, remote attestation, and hardware hardening.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Breaking Hardware-Enforced Security With Hypervisors",
+          "url": "https://www.youtube.com/watch?v=s3UfzxY1z40"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "red-teaming": [],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ]
+      }
+    }
+  ]
+}

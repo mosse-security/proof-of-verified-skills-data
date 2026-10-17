@@ -1,13 +1,13 @@
 {
   "name": "Mathy Vanhoef",
-  "last-updated": "2026-10-16T07:42:27Z",
+  "last-updated": "2026-10-17T05:50:56Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
+    "endorsements": 3,
     "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 2,
+    "with-evidence": 3,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,78 +19,127 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 2
+      "unknown": 0
     }
   },
   "endorsements": [
     {
       "name": "Mathy Vanhoef",
-      "label": "Predicting and Abusing WPA2/802.11 Group Keys",
-      "description": "Predicting and Abusing WPA2/802.11 Group Keys",
+      "label": "HEIST: HTTP Encrypted Information can be Stolen Through TCP-Windows",
+      "description": "Over the last few years, a worryingly number of attacks against SSL/TLS and other secure channels have been discovered. Fortunately, at least from a defenders perspective, these attacks require an adversary capable of observing or manipulating network traffic. This prevented a wide and easy exploitation of these vulnerabilities. In contrast, we introduce HEIST, a set of techniques that allows us to carry out attacks against SSL/TLS purely in the browser. More generally, and surprisingly, with HEIST it becomes possible to exploit certain flaws in network protocols without having to sniff actual traffic. HEIST abuses weaknesses and subtleties in the browser, and the underlying HTTP, SSL/TLS, and TCP layers. Most importantly, we discover a side-channel attack that leaks the exact size of any cross-origin response. This side-channel abuses the way responses are sent at the TCP level. Combined with the fact that SSL/TLS lacks length-hiding capabilities, HEIST can directly infer the length of the plaintext message. Concretely, this means that compression-based attacks such as CRIME and BREACH can now be performed purely in the browser, by any malicious website or script, without requiring network access. Moreover, we also show that our length-exposing attacks can be used to obtain sensitive information from unwitting victims by abusing services on popular websites. Finally, we explore the reach and feasibility of exploiting HEIST. We show that attacks can be performed on virtually every web service, even when HTTP/2 is used. In fact, HTTP/2 allows for more damaging attack techniques, further increasing the impact of HEIST. In short, HEIST is a set of novel attack techniques that brings network-level attacks to the browser, posing an imminent threat to our online security and privacy.",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "33C3",
-      "url": "https://media.ccc.de/v/33c3-8195-predicting_and_abusing_wpa2_802_11_group_keys",
-      "evidence-links": [],
-      "evidence": false,
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "HEIST: HTTP Encrypted Information can be Stolen Through TCP-Windows",
+          "url": "https://www.youtube.com/watch?v=GwQsu8dGSeA"
+        }
+      ],
+      "evidence": true,
       "povs": {
         "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
           "trusted": false
         },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
       "year": 2016,
       "domains": [
-        "unknown"
+        "vulnerability-research"
       ],
       "subspecialties": {
-        "unknown": []
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
       }
     },
     {
       "name": "Mathy Vanhoef",
-      "label": "KRACKing WPA2 by Forcing Nonce Reuse",
-      "description": "KRACKing WPA2 by Forcing Nonce Reuse",
+      "label": "Key Reinstallation Attacks: Breaking the WPA2 Protocol",
+      "description": "We introduce key reinstallation attacks. These attacks abuse features of a protocol to reinstall an already in-use key, thereby resetting nonces and/or replay counters associated to this key. We show that our novel attack technique breaks several handshakes that are used in a WPA2-protected network. All protected Wi-Fi networks use the 4-way handshake to generate fresh session keys. The design of this handshake was proven secure, and over its 14-year lifetime no weaknesses have been found in it. However, contrary to this history, we show that the 4-way handshake is vulnerable to key reinstallation attacks. In such an attack, the adversary tricks a victim into reinstalling an already in-use key. This is achieved by manipulating and replaying handshake messages. When the victim reinstalls the key, the associated incremental nonce and replay counter is reset to its initial value. Apart from breaking the 4-way handshake, we also show that our key reinstallation attack breaks the group key and Fast BSS Transition (FT) handshake. The impact of our attacks depend on both the handshake being targeted, and the data-confidentiality protocol in use. Simplified, against AES-CCMP, an  adversary can replay and decrypt packets, but cannot forge packets. Still, this makes it possible to hijack TCP streams and inject malicious data into them. Against WPA-TKIP and GCMP, the impact is catastrophic: an adversary can replay, decrypt, and forge arbitrary packets. Rather surprisingly, GCMP is especially affected because it uses the same authentication key in both communication directions. Finally, we confirmed our findings in practice, and found that every Wi-Fi device is vulnerable to some variant of our attacks. Notably, our attack is exceptionally devastating against Android and Linux: it forces the client into using a predictable all-zero encryption key.",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "34C3",
-      "url": "https://media.ccc.de/v/34c3-9273-kracking_wpa2_by_forcing_nonce_reuse",
-      "evidence-links": [],
-      "evidence": false,
+      "subtitle": "Black Hat Europe 2017",
+      "url": "https://blackhat.com/archive/europe/2017/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Key Reinstallation Attacks: Breaking the WPA2 Protocol",
+          "url": "https://www.youtube.com/watch?v=fZ1R9RliM1w"
+        }
+      ],
+      "evidence": true,
       "povs": {
         "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
           "trusted": false
         },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
       "year": 2017,
       "domains": [
-        "unknown"
+        "vulnerability-research"
       ],
       "subspecialties": {
-        "unknown": []
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Mathy Vanhoef",
+      "label": "WiFuzz: Detecting and Exploiting Logical Flaws in the Wi-Fi Cryptographic Handshake",
+      "description": "Encrypted Wi-Fi networks are increasingly popular. This is highlighted by new standards such as Hotspot 2.0 and Opportunistic Wireless Encryption. Hotspot 2.0 streamlines network discovery and selection, creating an authenticated roaming experience matching that of cellular phones. On the other hand, Opportunistic Wireless Encryption introduces unauthenticated encryption for Wi-Fi networks. However, these advancements are meaningless if there are implementation flaws in the cryptographic 4-way Wi-Fi handshake that negotiates the fresh session keys. In this talk we show how to detect and abuse logical flaws in implementations of this handshake.Our goal is not to detect common programming errors such as buffer overflows or double frees, but to detect logical vulnerabilities. An example of a logical vulnerability is that some message(s) in a handshake can be skipped, causing it to use or negotiate an uninitialized (all-zero) cryptographic key. Clearly such vulnerabilities void all security guarantees. To detect these types of logical vulnerabilities, we first build a model of the Wi-Fi handshake that describes the expected behavior of an implementation. We then automatically generate invalid executions of the handshake, and check whether an implementation correctly reacts to these invalid executions. We tested 12 Wi-Fi access points, and found irregularities in all of them. These consist of authentication bypasses, fingerprinting techniques, downgrade attacks, denial-of-service (DoS) attacks, and so on. Most prominently, we discovered two critical vulnerabilities in OpenBSD. The first can be abused as a DoS against the AP, and the second can be exploited to perform a man-in-the-middle attack against WPA1 and WPA2 clients. We also discovered downgrade attacks against MediaTek and Broadcom that force usage of TKIP and RC4. Additionally, we discovered a targeted DoS against Windows 7. We also found other irregularities in Airohive, Apple, Cisco, Hostapd, and Windows 10.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "WiFuzz: Detecting and Exploiting Logical Flaws in the Wi-Fi Cryptographic Handshake",
+          "url": "https://www.youtube.com/watch?v=e3utIwUA1Ek"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
       }
     }
   ]

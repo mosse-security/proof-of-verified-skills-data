@@ -1,0 +1,123 @@
+{
+  "name": "Ralf Spenneberg",
+  "last-updated": "2026-10-17T08:13:08Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 1,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 1,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ralf Spenneberg",
+      "label": "Don't Trust Your USB! How to Find Bugs in USB Device Drivers",
+      "description": "The Universal Serial Bus (USB) has become the standard interface for interconnecting computers with peripheral hardware today. USB is used to access human interface devices (HID) like keyboards and mice, storage devices like USB flash sticks or external harddrives but also webcams, soundcards, network cards (NIC), wireless cards, and bluetooth sticks etc. While the most common devices like keyboards, mice, and storage devices are handled via generic drivers by the kernel on the host system, many devices require specific drivers. Using the facedancer device created by Travis Goodspeed and Sergey Bratus, many implementation bugs in the generic drivers have been found. Systematic analysis of the hardware specific drivers using fuzzing based on the facedancer device is almost impossible because of the enormous amount of different devices and drivers. The current Linux kernel supports 15,000 different vendor and product ids which are mapped to several hundred drivers. These drivers might behave differently depending on the vendor/product id presented. One basic USB simulated test using the facedancer requires 2-7 seconds execution time and can only be parallized using several facedancer devices and as many physical hosts. Therefore, I developed the vUSBf framework. This framework implements a virtual USB fuzzer based on KVM and the USB redirection protocol in QEMU. It virtualizes the target systems and using parallization we are able to execute up to 150 tests/second on a single Intel system with 24 cores. Using the built-in cluster protocol, we are able to arbitrarily scale this using additional systems. The vUSBf framework allows the dynamic definition of several million testcases using a simple XML configuration. Each test is identified using a unique test id and thus is reproducible. We are triggering and detecting the following bugs in both Enterprise Linux kernels and the most current Linux kernels: - Null-pointer dereferences - Kernel paging requests - Kernel panic - Bad page state - Segfault While the actual exploitation of these bugs still needs to be tested and their severity to be determined, the vast amount of bugs we are finding, is frightening. About 0.3% of the tests trigger one of the above listed exceptions in the Linux kernels depending on the kernel used and the amount of drivers included. To validate the results some of the bugs were reproduced using the facedancer and physical hosts. This proves that these bugs might be reproduced using specialized hardware which than can attack, exploit, and maybe compromise the target system. The vUSBf framework uses several emulators for the fuzzing of different devices and stages of the usb connection. Further emulators can be added via a simple API and are currently in development. Additionally, first tests have been executed using Microsoft Windows as a target. The framework will be released as Open Source at the Black Hat Conference.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2014",
+      "url": "https://blackhat.com/archive/europe/2014/archives.html",
+      "evidence-links": [
+        {
+          "title": "Don't Trust Your USB! How to Find Bugs in USB Device Drivers",
+          "url": "https://www.youtube.com/watch?v=OAbzN8k6Am4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    },
+    {
+      "name": "Ralf Spenneberg",
+      "label": "PLC-Blaster:  A Worm Living Solely in the PLC",
+      "description": "We will present and demonstrate the first PLC only worm. Our PLC worm will scan and compromise Siemens Simatic S7-1200 v1-v3 PLCs without any external support. No PCs or additional hardware is required. The worm is fully self-contained and \"lives\" only on the PLC. The Siemens Simatic PLCs are managed using a proprietary Siemens protocol. Using this protocol the PLC may be stopped, started and diagnostic information may be read. Futhermore this protocol is used to upload and download user programs to the PLC. The older S7-300 and S7-400 PLCs are supported by several OpenSource solutions supporting the protocols used on these older PLCs. With the introduction of the S7-1200 the protocol has been replaced by a new version. We inspected the protocol based on the S7-1200v3 and implemented the protocol by ourselves. We are now able to install and extract any user program on these PLCs currently sold by Siemens. The current versions S7-1200v4 and S7-1500 again changed the protocol and are not susceptible to the attack. Based on this work we developed a PLC program which scans a local network for other S7-1200v3 PLCs. Once these are found the program compromises these PLCs by uploading itself to these devices. The already installed user software is not removed and still running on the PLC. Our malware attaches itself to the original software and runs in parallel to the original user program. The operator does not notice any changed behavior. We developed the first PLC only worm. The worm is only written using the programming language SCL and does not need any additional support. For the remote administration of the compromised PLCs we implemented a Command&Control server. Infected PLCs automatically contact the C&C server and may be remotely controlled using this connection. Using this connection we can manipulate any physical input or output of the PLC. An additional proxy function enables us to access any additional system using a tunnel. Lastly the Stop mode may be initiated through the C&C connection requiring a cold restart of the PLC by disconnecting the power supply. We will demonstrate the attack during the talk. Our worm prevents its detection and analysis. If the operator connects to the PLC using the programming software TIA Portal 11 the operator may notice unnamed additional function blocks. But when accessing these blocks the TIA Portal crashes preventing the forensic analysis. The infection of the PLC takes roughly 10 seconds. While the infection is in progress the PLC is in Stop mode. As soon as the infection has succeeded the PLC undergoes a warm restart and the worm is running additionally to to the original user program. Our worm malware requires 38,5kb RAM and 216,6kb persistent memory. If the PLC does not offer the memory required by the original user software including our worm the worm may overwrite the original user program. Based on the actually used model of the S7-1200 different setups may be required. Model RAM (Worm) Persistent Memory (Worm) S7-1211 50kb (77%) 1Mb (21%) S7-1212 75kb (51%) 1MB (5 %) S7-1214 100kb (38%) 4MB (5 %) S7-1215 125kb (30%) 4MB (5 %) S7-1217 150kb (25%) 4MB (5 %) A critical requirement for the execution of a PLC program is the cycle time for one full cycle of the user program. Our malware requires 7ms per cycle. This is just 4.7% of the maximum cycle time configured by default on the PLC models we inspected. The original user program still has plenty of time to run. By default all Siemens Simatic S7-1200v1-v3 PLCs are susceptible to this attack. The PLC user programs may be uploaded and downloaded without any restriction. The Siemens Simatic PLCs support several protection mechanisms. We will explain these mechanisms and their result on the attack. With the introduction of the S7-1200v4 Siemens introduced again a new protocol. These PLCs are not susceptible to the attack. The built-in copy protection restricts the user program to run only on a subset of PLCs with specific serial numbers. This protection is only implemented within the programming software (Siemens Simatic TIA Portal) used to install the software. We can upload and download user programs using this feature to any PLC using our own implementation. The whole protection is implemented on the client. This is the first time this is publicly shown. The built-in know-how protection forbids modifications of the user program on the PLC and prevents the extraction of the user program from the PLC. Again this protection is implemented only in the programming software (Siemens Simatic TIA Portal). Our own implementation can extract the user program, display the source code, modify the program and reinstall the modified program. This feature does not offer the protection advertised. This is the first time publicly shown. The built-in access protection does prevent the attack we will demonstrate. While we present an attack via the ethernet interface the installation of the user program can also happen using the field bus interface. Using this interface even PLCs not connected to the ethernet network may be compromised. Once the first PLC is infected using the Ethernet all other PLCs connected by the field bus would be compromised as well. This talk emphasizes the significance of the built in protection features in modern PLCs and their correct deployment by the user.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "PLC-Blaster: A worm Living Solely In The PLC",
+          "url": "https://www.youtube.com/watch?v=NNAKaAKRUow"
+        },
+        {
+          "title": "PLC-Blaster: A Worm Living Solely in the PLC",
+          "url": "https://www.youtube.com/watch?v=z8oxA0Z0VCg"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "digital-forensics",
+        "vulnerability-research",
+        "operational-technology-security"
+      ],
+      "subspecialties": {
+        "digital-forensics": [],
+        "vulnerability-research": [],
+        "operational-technology-security": [
+          "plc-security",
+          "automotive-security",
+          "ecu-and-automotive-embedded-systems"
+        ]
+      }
+    }
+  ]
+}

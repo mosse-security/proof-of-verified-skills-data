@@ -1,13 +1,13 @@
 {
   "name": "Andrea Barisani",
-  "last-updated": "2026-10-16T07:42:18Z",
+  "last-updated": "2026-10-17T05:50:52Z",
   "biography": "",
   "contact": [],
   "stats": {
     "endorsements": 3,
-    "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 3,
+    "assessors": 2,
+    "with-evidence": 2,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -31,29 +31,34 @@
   "endorsements": [
     {
       "name": "Andrea Barisani",
-      "label": "Forging the USB armory",
-      "description": "Forging the USB armory",
+      "label": "Fully Arbitrary 802.3 Packet Injection: Maximizing the Ethernet Attack Surface",
+      "description": "It is generally assumed that crafting arbitrary, and sniffing, Fast Ethernet packets can be performed with standard Network Interface Cards (NIC) and generally available packet injection software. However, full control of frame values such as the Frame Check Sequence (FCS) or Start-of-Frame delimiter (SFD) have historically required the use of dedicated and costly hardware. Our presentation will dissect Fast Ethernet layer 1 & 2 presenting novel attack techniques supported by an affordable hardware setup with customized firmware which will be publicly released.",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "31C3",
-      "url": "https://media.ccc.de/v/31c3_-_6541_-_en_-_saal_2_-_201412281730_-_forging_the_usb_armory_-_andrea_barisani",
-      "evidence-links": [],
-      "evidence": false,
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - Fully Arbitrary 802.3 Packet Injection: Maximizing the Ethernet Attack Surface",
+          "url": "https://www.youtube.com/watch?v=j_sqwo1xjIA"
+        }
+      ],
+      "evidence": true,
       "povs": {
         "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
           "trusted": false
         },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
-      "year": 2014,
+      "year": 2013,
       "domains": [
         "unknown"
       ],
@@ -63,29 +68,38 @@
     },
     {
       "name": "Andrea Barisani",
-      "label": "Practical EMV PIN interception and fraud detection",
-      "description": "Practical EMV PIN interception and fraud detection",
+      "label": "Forging the USB Armory an Open Source Secure Flash-Drive-Sized Computer",
+      "description": "Forging the USB Armory an Open Source Secure Flash-Drive-Sized Computer",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "31C3",
-      "url": "https://media.ccc.de/v/31c3_-_6120_-_en_-_saal_1_-_201412271600_-_practical_emv_pin_interception_and_fraud_detection_-_andrea_barisani",
-      "evidence-links": [],
-      "evidence": false,
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Forging the USB Armory",
+          "url": "https://www.youtube.com/watch?v=MsK2V_iO9Z4"
+        },
+        {
+          "title": "Forging The USB Armory, An Open Source Secure Flash-Drive-Sized Computer",
+          "url": "https://www.youtube.com/watch?v=lL6ZO7NL4YM"
+        }
+      ],
+      "evidence": true,
       "povs": {
         "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
           "trusted": false
         },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
-      "year": 2014,
+      "year": 2015,
       "domains": [
         "unknown"
       ],
@@ -95,16 +109,16 @@
     },
     {
       "name": "Andrea Barisani",
-      "label": "TamaGo - bare metal Go framework for ARM SoCs.",
-      "description": "TamaGo - bare metal Go framework for ARM SoCs.",
+      "label": "Armored Witness: Building a Trusted Notary for Bare Metal.",
+      "description": "We are building an Open Source https://transparency.dev/ witness, in collaboration with Google. This project entailed creating new hardware (USB armory LAN with PoE) software (Trusted OS and Applet) leveraging on TamaGo and GoTEE frameworks. This presentation aims to discuss the journey of this project, achievements (such as bare metal Go IRQ handlers…in space!) and results.",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "CanSecWest",
+      "assessor-id": "cansecwest",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "36C3",
-      "url": "https://media.ccc.de/v/36c3-10597-tamago_-_bare_metal_go_framework_for_arm_socs",
+      "subtitle": "CanSecWest 2024",
+      "url": "https://www.secwest.net/presentations-2024/armored-witness-building-a-trusted-notary-for-bare-metal",
       "evidence-links": [],
       "evidence": false,
       "povs": {
@@ -117,7 +131,7 @@
         "level": 0,
         "explanation": "No evidence discovered for this record therefore it could not be verified"
       },
-      "year": 2019,
+      "year": 2024,
       "domains": [
         "unknown"
       ],

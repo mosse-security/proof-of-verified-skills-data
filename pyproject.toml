@@ -10,15 +10,15 @@ requires-python = ">=3.11"
 dependencies = ["beautifulsoup4>=4.12", "yt-dlp>=2024.12"]
 
 [project.scripts]
-scrape-endorsements = "endorsement_scraper.cli:main"
-scrape-def-con = "scrapers.def_con:main"
-scrape-black-hat = "scrapers.black_hat:main"
-scrape-cansecwest = "scrapers.cansecwest:main"
-scrape-bluehat = "scrapers.bluehat:main"
-merge-individuals = "endorsement_scraper.individuals:main"
-enrich-endorsements = "endorsement_scraper.enrichment_cli:main"
-archive-assessor = "endorsement_scraper.archive_cli:main"
+scrape-endorsements = "scrapers.cli:main"
+scrape-def-con = "scrapers.plugins.def_con:main"
+scrape-black-hat = "scrapers.plugins.black_hat:main"
+scrape-cansecwest = "scrapers.plugins.cansecwest:main"
+scrape-bluehat = "scrapers.plugins.bluehat:main"
+merge-individuals = "scrapers.individuals:main"
+enrich-endorsements = "scrapers.enrichment_cli:main"
+archive-assessor = "scrapers.archive_cli:main"
 
 [tool.setuptools.packages.find]
-include = ["endorsement_scraper*", "scrapers*", "enrichers*"]
+include = ["scrapers*"]
 

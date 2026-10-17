@@ -1,0 +1,113 @@
+{
+  "name": "Gabriel Gegenhuber",
+  "last-updated": "2026-10-17T08:13:30Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "bluesky",
+      "url": "https://bsky.app/profile/ggegenhuber.bsky.social"
+    },
+    {
+      "label": "linkedin",
+      "url": "https://www.linkedin.com/in/gabriel-gegenhuber/"
+    }
+  ],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 1,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Gabriel Gegenhuber",
+      "label": "Silent Signals: Exploiting Security and Privacy Side-Channels in End-to-End Encrypted Messengers",
+      "description": "With billions of users worldwide, mobile messaging apps like WhatsApp and Signal have become critical for personal and professional communication. While these platforms promise security and privacy, our research uncovers two significant vulnerabilities that expose users to stealthy tracking and security degradation. First, we reveal how delivery receipts --commonly used to confirm message delivery-- can be exploited to track a user's online status, screen activity, and device usage without their knowledge. This technique enables passive surveillance, draining a target's battery and data allowance while remaining entirely invisible to them. Second, we demonstrate a novel attack on WhatsApp's implementation of the Signal Protocol, specifically targeting its Perfect Forward Secrecy (PFS) mechanism. By depleting a victim's stash of ephemeral encryption keys, an attacker can weaken message security, disrupt communication, and exploit flaws in the prekey refilling process. Both attacks require nothing more than the victim's phone number and leverage fundamental design choices in these widely used platforms. This talk will provide an in-depth analysis of these vulnerabilities, their implications, and potential mitigations -- challenging the security assumptions of modern encrypted messaging. References: Careless Whisper: Exploiting End-to-End Leakage in Mobile Instant Messengers, Gabriel K. Gegenhuber, Maximilian Günther, Markus Maier, Aljosha Judmayer, Florian Holzbauer, Philipp É. Frenzel, Johanna Ullrich; link Prekey Pogo: Investigating Security and Privacy Issues in WhatsApp's Handshake Mechanism, USENIX WOOT 2025, Gabriel K. Gegenhuber, Philipp É. Frenzel, Maximilian Günther, Aljosha Judmayer; link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60388",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2025,
+      "domains": [
+        "grc",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "grc": [
+          "privacy-and-data-protection",
+          "surveillance-and-tracking"
+        ],
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gegenhuber",
+      "label": "Gotta Catch 'Em All: How To Capture 3.5 Billion WhatsApp Accounts",
+      "description": "Contact discovery on instant messengers is designed to help users find their friends. But when identifiers are predictable and safeguards are weak, it allows attackers to find everyone. At that point, \"catching 'em all\" stops being a slogan and becomes an engineering problem. In this talk, we show how we turned WhatsApp into a global Pokédex. By combining reverse-engineered API access with large-scale phone number generation, we probed tens of billions of candidates and identified over 3.5 billion active WhatsApp accounts --- all from a single machine, without raising flags and getting blocked. Beyond simple presence checks, enumeration exposes rich metadata, including profile pictures, public keys, device information, timestamps, and user-defined about tags. This enables both macroscopic insights into global platform usage and profiling of individual users. Our analysis uncovers systemic issues, such as persistent exposure of numbers from historical data leaks and reuse of cryptographic keys across accounts. Moreover, we expose signals of criminal activity (e.g., drug dealers and scam factories), and measurable activity in regions where WhatsApp is officially restricted (e.g., North Korea). At global scale, small design decisions become big problems. This is what allowed us to complete our 3.5B-sized Pokédex.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66607",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

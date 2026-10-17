@@ -1,0 +1,72 @@
+{
+  "name": "Wenyue Li",
+  "last-updated": "2026-10-17T08:13:46Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Wenyue Li",
+      "label": "The Lost World of DirectComposition: Hunting Windows Desktop Window Manager Bugs",
+      "description": "In the past few years, Windows win32k privilege escalation vulnerabilities have emerged in an endless stream. Researchers discovered new attack surfaces such as win32k Callback, DirectX, DirectComposition, etc. Even so, it’s still difficult to discover new vulnerabilities inside win32k attack surface. Are there still other attack surfaces inside the windows graphics component? Desktop Window Manager (DWM.EXE) is the compositing window manager in Microsoft Windows since Windows Vista that enables the use of hardware acceleration to render the graphical user interface of Windows. We found that this process has high privileges, users with low privileges can interact with the DWM process, which create a very large attack surface. However, there’re not too much research on this attack surface. We found 10 bugs inside the dwm process, all of these bugs were reported to Microsoft and got acknowledgements. In this talk, we will first introduce the basic architecture of the Desktop Window Manager, and explain how low privileged users interact with the dwm process. We will also introduce some special features found in the DWM process through reverse engineering, such as restart recovery, exception handling, etc. We will disclose some vulnerabilities we found, and you will gain a better understanding of this attack surface. Finally, we’ll make a conclusion and share our opinions on this attack surface, and also the speculation on the future security of the Desktop Window Manager process. Vulnerabilities of DirectComposition UserSpace This part is the key content of our speech. We will use 5 vulnerability cases we found as an explanation. Our presentation will leave attendees with the following takeaways:",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2023",
+      "url": "https://conference.hitb.org/hitbsecconf2023ams/session/hunting-windows-desktop-window-manager-bugs/",
+      "evidence-links": [
+        {
+          "title": "#HITB2023AMS D1T1 - Hunting Windows Desktop Window Manager Bugs - Z. WangJunjie, Y. He & W. Li",
+          "url": "https://www.youtube.com/watch?v=4_ExouTXe10"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

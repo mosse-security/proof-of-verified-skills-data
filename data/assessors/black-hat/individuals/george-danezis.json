@@ -1,0 +1,70 @@
+{
+  "name": "George Danezis",
+  "last-updated": "2026-10-17T08:13:03Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "George Danezis",
+      "label": "OpenCrypto: Unchaining the JavaCard Ecosystem",
+      "description": "JavaCard is a subset of Java that allows applets to run securely on smartcards and has been deployed to over 15 billion devices. Its main advantage compared to competing technologies is \"applet interoperability.\" Unfortunately, over the years, several glitches in the ecosystem became apparent, and hindered its evolution. For instance, in practice, most applets are tailored for a specific card model, while there is at least a three-year gap between the time a JavaCard specification is released, and the time features appear in products. We argue that these inconsistencies between the JavaCard vision and practice are due to the control card vendors have over the ecosystem. Specifically, since JavaCard relies on vendors to implement the specification, this enables them to impose barriers to protect their market share. For instance, the cryptographic coprocessor is accessible only for high-level operations (e.g., ECDSA signing method), while low-level methods (e.g., ECPoint Addition) are available only in vendor-specific, proprietary APIs. Moreover, vendors often release new features of the specification in their own APIs. In this session, we present the OpenCrypto library that enables programmers to utilize all the capabilities of JavaCards (e.g., the cryptographic coprocessor) without being bound to a specific vendor. The library realizes classes for: 1) mutable Integers, 2) Elliptic Curve Points and 3) EC Curves. Currently, these classes are either not supported at all (even though they may be listed in the JC specification, e.g., Integers), or are available only through vendor-specific APIs (e.g., ECPoint). To overcome the vendor barriers, we use a combination of low-level byte manipulation tricks and mathematical properties to reconstruct low-level arithmetic operations (e.g., integer multiplication, ECPoint Addition) from high-level crypto methods (e.g., RSA encryption). Our final library supports all the methods found in the proprietary APIs, performs almost as fast, and eliminates vendor-specific dependencies from the ecosystem.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "OpenCrypto: Unchaining the JavaCard Ecosystem",
+          "url": "https://www.youtube.com/watch?v=vd0-Uhx2OoQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

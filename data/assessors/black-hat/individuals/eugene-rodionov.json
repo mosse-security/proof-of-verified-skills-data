@@ -1,0 +1,77 @@
+{
+  "name": "Eugene Rodionov",
+  "last-updated": "2026-10-17T08:13:03Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Eugene Rodionov",
+      "label": "Distributing the Reconstruction of High-Level Intermediate Representation for Large Scale Malware Analysis",
+      "description": "Malware is acknowledged as an important threat and the number of new samples grows at an absurd pace. Additionally, targeted and so called advanced malware became the rule, not the exception. Analysts and companies use different degrees of automation to be able to handle the challenge, but there is always a gap. Reverse engineering is an even harder task due to the increased amount of work and the stricter time-frame to accomplish it. This has a direct impact on the investigative process and thus makes prevention of future threats more challenging. In this work, the authors discuss distributed reverse engineering techniques, using intermediate representation (thanks Hex-Rays team for support us in this research) in a clustered environment. The results presented demonstrate different uses for this kind of approach, for example to find algorithmic commonalities between malware families. A higher level abstraction of the malware code is constructed from the abstract syntax tree (ctree) provided by Hex-Rays Decompiler. That abstraction facilitates the extraction of characteristics such as domain generation algorithms (DGA), custom encryption and specific parsers for configuration data. In order to reduce the number of false positives in some C++ metadata identification, such as virtual function tables and RTTI, the authors created the object-oriented artifacts directly from the analyzed malware. The extracted characteristics of 2 million malware samples are analyzed and the presented results provide a rich dataset to improve malware analysis efforts and threat intelligence initiatives. With that dataset, other researchers will be able to extract a ctree from new samples and compare to the millions we performed. As an additional contribution, the gathered representation together with all the raw information from the samples will be available to other researchers after the presentation; together with additional ideas for future development. The developed Hex-Rays Decompiler plugin and analysis/automation tools used to extract the characteristics will also be made available to the audience on Github.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Distributing The Reconstruction Of High-Level Intermediate Representation...",
+          "url": "https://www.youtube.com/watch?v=QcCT2RQVgMQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "cyber-defense",
+        "reverse-engineering"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "threat-intelligence-operations"
+        ],
+        "reverse-engineering": [
+          "malware-analysis",
+          "decompilation-and-disassembly"
+        ]
+      }
+    }
+  ]
+}

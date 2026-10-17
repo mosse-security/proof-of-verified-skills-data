@@ -1,0 +1,156 @@
+{
+  "name": "Alvaro Muñoz",
+  "last-updated": "2026-10-17T08:13:25Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Alvaro Muñoz",
+      "label": "Friday the 13th: JSON attacks!",
+      "description": "Sunday at 14:00 in Track 4 45 minutes | Demo, Exploit Alvaro Muñoz Principal Security Researcher,Hewlett Packard Enterprise Oleksandr Mirosh Senior Security QA Engineer, Hewlett Packard Enterprise 2016 was the year of Java deserialization apocalypse. Although Java Deserialization attacks were known for years, the publication of the Apache Commons Collection Remote Code Execution (RCE from now on) gadget finally brought this forgotten vulnerability to the spotlight and motivated the community to start finding and fixing these issues. One of the most suggested solutions for avoiding Java deserialization issues was to move away from Java Deserialization altogether and use safer formats such as JSON. In this talk, we will analyze the most popular JSON parsers in both .NET and Java for potential RCE vectors. We will demonstrate that RCE is also possible in these libraries and present details about the ones that are vulnerable to RCE by default. We will also discuss common configurations that make other libraries vulnerable. In addition to focusing on JSON format, we will generalize the attack techniques to other serialization formats. In particular, we will pay close attention to several serialization formats in .NET. These formats have also been known to be vulnerable since 2012 but the lack of known RCE gadgets led some software vendors to not take this issue seriously. We hope this talk will change this. With the intention of bringing the due attention to this vulnerability class in .NET, we will review the known vulnerable formats, present other formats which we found to be vulnerable as well and conclude presenting several gadgets from system libraries that may be used to achieve RCE in a stable way: no memory corruption — just simple process invocation. Finally, we will provide recommendations on how to determine if your code is vulnerable, provide remediation advice, and discuss alternative approaches.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Munoz",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 Conference - Alvaro Muñoz, Alexandr Mirosh - Friday the 13th JSON attacks",
+          "url": "https://www.youtube.com/watch?v=ZBfBYoK_Wr0"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Alvaro Muñoz",
+      "label": "SSO Wars: The Token Menace",
+      "description": "It is the year 2019. Humanity has almost won its long-standing war against Single-Sign On (SSO) bugs. The last of them were discovered and eradicated some time ago and the world is now living in an era of prosperity while the Auth Federation enjoys peaceful CVE-free times. However, while things seem to be running smoothly, new bugs are brewing at the core of major implementation libraries. This is probably the last chance for the evil empire to launch a world scale attack against the Auth Federation. In this talk, we will present two new techniques: 1) A new breed of SAML implementation flaws that break XML signature validation and enable arbitrary modification of the SAML assertion, which enables attackers to authenticate as arbitrary users or grant themselves arbitrary authorization claims. Although any implementation may be affected by this flaw, we will show how it affects Microsoft Windows Identity Framework (WIF) applications, Windows Communication Foundation (WCF) web services, and flagship products such as SharePoint and Exchange Servers. 2) A bug in the .NET crypto library, which may allow attackers to gain Remote Code Execution (RCE) or Denial of Service (DoS) depending on the availability of code gadgets in the target server. A new tool to detect this type of vulnerability will also be discussed and released.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Munoz",
+      "evidence-links": [
+        {
+          "title": "Alvaro Muñoz - SSO Wars: The Token Menace - DEF CON 27 Conference",
+          "url": "https://www.youtube.com/watch?v=ObxxXU8GRMI"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "authorization-and-access-control",
+          "single-sign-on-and-federation",
+          "oauth-oidc-and-saml"
+        ]
+      }
+    },
+    {
+      "name": "Alvaro Munoz",
+      "label": "Room for Escape: Scribbling Outside the Lines of Template Security",
+      "description": "Now more than ever, digital communication and collaboration are essential to the modern human experience. Shared digital content is everywhere and Content Management Systems (CMS) play a crucial role allowing users to design, create, modify and visualize dynamic content. In our research we discovered multiple ways to achieve Remote Code Execution (RCE) on CMS platforms through which an attacker can take full control of the resources your organization relies on. Using a Microsoft SharePoint server as our main CMS attack surface, we combined flaws in its implementation and design with framework and language specific features to find six unique RCE vulnerabilities. In addition, we discovered ways to escape template sandboxes of the most popular Java Template engines and achieved RCE in many products including: Atlassian Confluence, Alfresco, Liferay, Crafter CMS, XWiki, Apache OfBiz, and more. We will analyze how these products and frameworks implement security controls and review the various techniques that we used to bypass them. We will describe all the vulnerabilities we uncovered in detail and show working demos of the most interesting attacks. Finally, we will present our general review methodologies for systems with dynamic content templates and provide practical recommendations to better protect them.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 28",
+      "url": "https://defcon.org/html/defcon-safemode/dc-safemode-speakers.html#Mirosh",
+      "evidence-links": [
+        {
+          "title": "DEF CON Safe Mode - Alvaro Muñoz and Oleksandr Mirosh - Room For Escape Scribbling Outside The Lines",
+          "url": "https://www.youtube.com/watch?v=-XOs_bnZjgg"
+        },
+        {
+          "title": "DEF CON Safe Mode - Oleksandr Mirosh, Alvaro Munoz - Scribbling Outside the Lines of Template Sec",
+          "url": "https://www.youtube.com/watch?v=DeU3H6-9zCE"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

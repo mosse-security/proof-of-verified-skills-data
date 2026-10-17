@@ -1,0 +1,78 @@
+{
+  "name": "Robin David",
+  "last-updated": "2026-10-17T08:13:08Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Robin David",
+      "label": "Code Deobfuscation: Intertwining Dynamic Static and Symbolic Approaches",
+      "description": "Over the years, obfuscation has taken a significant place in the software protection field. The term generally embraces any mean aiming at slowing down the analysis of a program, either by an analyst or an automated algorithm. As such, it has gained a certain popularity in the video-game industry. Unfortunately, it has also gained popularity in the malware underground ecosystem, leading to the need of deobfuscation techniques. The only property that should be preserved by obfuscation is the semantic of the program, i.e. its behavior. Hence, in the broadest sense, deobfuscation is the mean to make the behavior of the malware more intelligible, taken as a fact that recovering the original program is impossible in the general case. The first step toward understanding a binary program is to disassemble it in order to obtain a good representation of its Control-Flow Graph (CFG). As a consequence, obfuscation techniques (also) aim at fooling existing disassembly tools and techniques. Standard obfuscations usually target either static analysis (CFG flattening, self-modification, etc.) or dynamic analysis (anti-debugging tricks, VM detection or runtime monitoring). Thus, taking advantages of different approaches might become essential to handle obfuscated codes. While static analysis cover the whole program but is quickly fooled by obfuscations such as self-modification, dynamic analysis helps getting a real execution trace of the program but is limited to one or a few execution paths. In between, dynamic symbolic execution (DSE) -- aka concolic execution -- helps covering more new paths in the program using symbolic values and automatic solvers. This technique has already been fruitfully applied for various purposes such as test generation [1], vulnerability discovery [2] and more recently deobfuscation [3]. Unfortunately, the main problem is that it hardly scales on large obfuscated codes. We show in this talk how to combine in a successful way several disassembly techniques -- namely dynamic analysis, several state-of-the-art variants of symbolic execution and static analysis, in order to help recovering a more precise CFG of the obfuscated code under analysis. Especially, dynamic analysis brings robustness to tricky obfuscations such as self-modification, variants of symbolic executions can answer both feasibility and infeasibility queries arising during the deobfuscation process, and standard static analysis can be guided in a safe way to extend the disassembly. These analyses are implemented in the open-source framework BINSEC. They are articulated around three components: * BINSEC/SE: the core dynamic symbolic engine * Pinsec: a Pin-based dynamic instrumenter * IDASec: an IDA plugin allowing to lift analysis data into IDA, making them straightly usable for the reverse-engineer. This talk will explain in detail the method and how it is implemented in BINSEC. Practical examples will focus on the detection of opaque predicates and call stack tampering, with case-studies based on Tigress, o-llvm and several commercial packers. The end goal is to empower the reverse-engineering by giving the analyst semantic information about the program such as obfuscation in order to hold all the cards in hand for a better and deeper understanding of the binary being analyzed. [1] {BHUSA2014} Contemporary Automatic Program Analysis. Julian Cohen [2] {RECON14,HITB14, Shakacon2014} Fuzzing and Patch Analysis SAGEly Advice. Richard Johnson [3] {CCS15} Symbolic Execution of Obfuscated Code. Babak Yadegari, Saumya Debray",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2016",
+      "url": "https://blackhat.com/archive/europe/2016/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Code Deobfuscation: Intertwining Dynamic, Static and Symbolic Approaches",
+          "url": "https://www.youtube.com/watch?v=KCMCqxEYIzY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "decompilation-and-disassembly",
+          "unpacking-and-obfuscation-analysis"
+        ],
+        "vulnerability-research": [
+          "vulnerability-discovery",
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    }
+  ]
+}

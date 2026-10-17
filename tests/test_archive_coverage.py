@@ -7,7 +7,7 @@ from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
 
-from endorsement_scraper.archive_coverage import missing_archive_urls
+from scrapers.archive_coverage import missing_archive_urls
 
 
 class ArchiveCoverageTest(unittest.TestCase):

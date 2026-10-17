@@ -1,0 +1,266 @@
+"""Operator-facing run statistics and sanity checks."""
+
+from __future__ import annotations
+
+import json
+import os
+import tempfile
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+from .domains import ALLOWED_DOMAINS
+from .runner import RunReport, ScraperReport
+
+
+def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: datetime | None = None, evidence_counts: tuple[int, int] = (0, 0), domain_counts: dict[str, int] | None = None, subspecialty_counts: dict[str, dict[str, int]] | None = None, individual_count: int = 0) -> dict[str, Any]:
+    finished_at = finished_at or datetime.now(timezone.utc)
+    totals = report.totals()
+    totals["by-domain"] = {domain: int((domain_counts or {}).get(domain, 0)) for domain in ALLOWED_DOMAINS}
+    totals["by-subspecialty"] = {
+        domain: {specialty: int(count) for specialty, count in (subspecialty_counts or {}).get(domain, {}).items()}
+        for domain in ALLOWED_DOMAINS
+    }
+
+    totals["individuals"] = int(individual_count)
+    scrapers = []
+    for item in report.scrapers:
+        scrapers.append({
+            "scraper-id": item.scraper_id,
+            "assessor-id": item.assessor_id,
+            "pages": item.pages,
+            "endorsements": item.endorsements,
+            "created": item.created,
+            "skipped": item.skipped,
+            "overwritten": item.overwritten,
+            "error": item.error,
+        })
+    validations = []
+    for item in report.scrapers:
+        if item.assessor_id == "def-con":
+            validations.append({
+                "name": "def-con-endorsements-nonzero",
+                "passed": item.endorsements > 0 and item.error is None,
+                "actual": item.endorsements,
+                "minimum": 1,
+            })
+    return {
+        "last-run": finished_at.astimezone(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "started-at": started_at.astimezone(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "duration-seconds": round((finished_at - started_at).total_seconds(), 3),
+        "status": "ok" if not report.failed and all(item["passed"] for item in validations) else "failed",
+        "scrapers": scrapers,
+        "totals": totals,
+        "evidence": {
+            "with-links": evidence_counts[0],
+            "without-links": evidence_counts[1],
+        },
+        "validations": validations,
+    }
+
+
+def write_assessor_run_stats(
+    assessors_directory: Path,
+    report: RunReport,
+    *,
+    started_at: datetime,
+    finished_at: datetime | None = None,
+) -> None:
+    """Write the run state for each assessor into its local subdirectory."""
+    assessor_ids = sorted({item.assessor_id for item in report.scrapers})
+    for assessor_id in assessor_ids:
+        assessor_report = RunReport([
+            item for item in report.scrapers if item.assessor_id == assessor_id
+        ])
+        path = assessors_directory / assessor_id / "stats.json"
+        write_run_stats(
+            path,
+            build_run_stats(
+                assessor_report,
+                started_at=started_at,
+                finished_at=finished_at,
+            ),
+        )
+
+
+def count_evidence(output_directory: Path) -> tuple[int, int]:
+    """Count endorsement records with and without independently verifiable links."""
+
+    with_links = without_links = 0
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            if record.get("evidence") is True:
+                with_links += 1
+            elif record.get("evidence") is False:
+                without_links += 1
+    return with_links, without_links
+
+
+def summarize_output(
+    output_directory: Path,
+) -> tuple[tuple[int, int], dict[str, int], dict[str, dict[str, int]], int]:
+    """Collect all operator-facing output counts in one filesystem pass.
+
+    The individual count helpers remain available for callers that need one
+    metric, but the normal CLI needs all four metrics. Parsing each JSON file
+    four times was unnecessary overhead on large scrape runs.
+    """
+
+    with_links = without_links = 0
+    domain_counts = {domain: 0 for domain in ALLOWED_DOMAINS}
+    subspecialty_counts: dict[str, dict[str, int]] = {}
+    names: set[str] = set()
+    if not output_directory.exists():
+        return (0, 0), domain_counts, subspecialty_counts, 0
+
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            name = record.get("name")
+            if isinstance(name, str):
+                names.add(" ".join(name.split()).casefold())
+            if record.get("evidence") is True:
+                with_links += 1
+            elif record.get("evidence") is False:
+                without_links += 1
+            domains = record.get("domains", [])
+            if not isinstance(domains, list):
+                domains = []
+            for domain in domains:
+                if domain in domain_counts:
+                    domain_counts[domain] += 1
+            specialties_by_domain = record.get("subspecialties", {})
+            if not isinstance(specialties_by_domain, dict):
+                continue
+            for domain, specialties in specialties_by_domain.items():
+                if not isinstance(specialties, list):
+                    continue
+                counts = subspecialty_counts.setdefault(domain, {})
+                for specialty in specialties:
+                    if isinstance(specialty, str):
+                        counts[specialty] = counts.get(specialty, 0) + 1
+    return (with_links, without_links), domain_counts, subspecialty_counts, len(names)
+
+
+def count_domains(output_directory: Path) -> dict[str, int]:
+    """Count endorsement records by their normalized cyber domains."""
+
+    counts = {domain: 0 for domain in ALLOWED_DOMAINS}
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            domains = record.get("domains", [])
+            if isinstance(domains, list):
+                for domain in domains:
+                    if domain in counts:
+                        counts[domain] += 1
+    return counts
+
+
+def count_individuals(output_directory: Path) -> int:
+    """Count unique people represented by the current endorsement output."""
+
+    names: set[str] = set()
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if isinstance(record, dict) and isinstance(record.get("name"), str):
+                names.add(" ".join(record["name"].split()).casefold())
+    return len(names)
+
+
+def count_subspecialties(output_directory: Path) -> dict[str, dict[str, int]]:
+    """Count each normalized subspecialty under its parent domain."""
+
+    counts: dict[str, dict[str, int]] = {}
+    for path in output_directory.rglob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        records = document if isinstance(document, list) else [document]
+        for record in records:
+            if not isinstance(record, dict) or not isinstance(record.get("subspecialties"), dict):
+                continue
+            for domain, specialties in record["subspecialties"].items():
+                if not isinstance(specialties, list):
+                    continue
+                domain_counts = counts.setdefault(domain, {})
+                for specialty in specialties:
+                    if isinstance(specialty, str):
+                        domain_counts[specialty] = domain_counts.get(specialty, 0) + 1
+    return counts
+
+
+def validate_run_stats(stats: dict[str, Any]) -> None:
+    if not isinstance(stats, dict):
+        raise ValueError("stats must be an object")
+    if stats.get("status") not in {"ok", "failed"}:
+        raise ValueError("stats.status must be ok or failed")
+    if not isinstance(stats.get("last-run"), str) or not stats["last-run"].endswith("Z"):
+        raise ValueError("stats.last-run must be a UTC timestamp")
+    scrapers = stats.get("scrapers")
+    if not isinstance(scrapers, list):
+        raise ValueError("stats.scrapers must be an array")
+    for item in scrapers:
+        if not isinstance(item, dict) or not isinstance(item.get("endorsements"), int):
+            raise ValueError("each scraper stat must include an endorsement count")
+    evidence = stats.get("evidence")
+    if not isinstance(evidence, dict) or not all(isinstance(evidence.get(key), int) for key in ("with-links", "without-links")):
+        raise ValueError("stats.evidence must contain with-links and without-links counts")
+    totals = stats.get("totals")
+    by_domain = totals.get("by-domain") if isinstance(totals, dict) else None
+    if not isinstance(by_domain, dict) or any(not isinstance(by_domain.get(domain), int) for domain in ALLOWED_DOMAINS):
+        raise ValueError("stats.totals.by-domain must contain integer counts for every domain")
+    if not isinstance(totals.get("individuals") if isinstance(totals, dict) else None, int):
+        raise ValueError("stats.totals.individuals must be an integer")
+    by_subspecialty = totals.get("by-subspecialty") if isinstance(totals, dict) else None
+    if (
+        not isinstance(by_subspecialty, dict)
+        or any(not isinstance(by_subspecialty.get(domain), dict) for domain in ALLOWED_DOMAINS)
+        or any(
+            not isinstance(count, int)
+            for domain_counts in by_subspecialty.values()
+            if isinstance(domain_counts, dict)
+            for count in domain_counts.values()
+        )
+    ):
+        raise ValueError("stats.totals.by-subspecialty must be a domain-keyed object")
+
+
+def write_run_stats(path: Path, stats: dict[str, Any]) -> None:
+    validate_run_stats(stats)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_name: str | None = None
+    try:
+        with tempfile.NamedTemporaryFile(dir=path.parent, prefix=f".{path.name}.", delete=False, mode="w", encoding="utf-8") as temporary:
+            json.dump(stats, temporary, ensure_ascii=False, indent=2)
+            temporary.write("\n")
+            temporary_name = temporary.name
+        os.replace(temporary_name, path)
+    finally:
+        if temporary_name and os.path.exists(temporary_name):
+            os.unlink(temporary_name)

@@ -1,0 +1,75 @@
+{
+  "name": "Tom Van Goethem",
+  "last-updated": "2026-10-17T08:13:41Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/tomvangoethem"
+    }
+  ],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Tom Van Goethem",
+      "label": "Timeless Timing Attacks",
+      "description": "25 years ago, the first timing attacks against well-known cryptosystems such as RSA and Diffie-Hellman were introduced. By carefully measuring the execution time of crypto operations, an attacker could infer the bits of the secret. Ever since, timing attacks have frequently resurfaced, leading to many vulnerabilities in various applications and cryptosystems that do not have constant-time execution. As networks became more stable and low-latency, it soon became possible to perform these timing attacks over an Internet connection, potentially putting millions of devices at risk. However, attackers still face the challenge of overcoming the jitter that is incurred on the network path, as it obfuscates the real timing values. Up until now, an adversary would have to collect thousands or millions of measurements to infer a single bit of information. In this presentation, we introduce a conceptually novel way of performing timing attacks that is completely resilient to network jitter. This means that remote timing attacks can now be executed with a performance and accuracy that is similar as if the attack was performed on the local system. With this technique, which leverages coalescing of network packets and request multiplexing, it is possible to detect timing differences as small as 100ns over any Internet connection. We will elaborate on how this technique can be launched against HTTP/2 webservers, Tor onion services, and EAP-pwd, a popular Wi-Fi authentication method. REFERENCES: See page 15 to 17 in our paper for a list of references: https://www.usenix.org/system/files/sec20-van_goethem.pdf",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 29",
+      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#van_goethem",
+      "evidence-links": [
+        {
+          "title": "DEF CON 29 - Tom Van Goethem, Mathy Vanhoef - Timeless Timing Attacks",
+          "url": "https://www.youtube.com/watch?v=s5w4RG7-Y6g"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

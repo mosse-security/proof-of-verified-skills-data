@@ -1,0 +1,109 @@
+{
+  "name": "Joe Rozner",
+  "last-updated": "2026-10-17T08:13:31Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Joe Rozner",
+      "label": "Wiping out CSRF",
+      "description": "Thursday at 13:00 in 101 Track 2 45 minutes | Art of Defense, Demo Joe Rozner Senior Software Security Engineer, Prevoty CSRF remains an elusive problem due to legacy code, legacy frameworks, and developers not understanding the problem or how to protect against it. Wiping out CSRF introduces primitives and strategies for building solutions to CSRF that can be bolted on to any http application where http requests and responses can be intercepted, inspected, and modified. Modern frameworks have done a great job at providing solutions to the CSRF problem that automatically integrate into the application and solve most of the conditions. However, many existing apps and new apps that don't take advantage of these frameworks or use them incorrectly are still plagued with this problem. Wiping out CSRF will provide an in depth overview of the various reasons that CSRF occurs and provide payload examples to target those specific issues and variations. We'll see live demos of these attacks and the protections against them. Next we'll look at how to compose these primitives into a complete solution capable of solving most cases of CSRF explaining the limits and how to layer them to address potential short comings. Finally we'll finish by looking at Same Site Cookies, a new extension to cookies that could be the final nail in the coffin, and see how to use the prior solution as a graceful degradation for user agents that don't support it yet.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Rozner",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 - Joe Rozner - Wiping out CSRF",
+          "url": "https://www.youtube.com/watch?v=9h6bJpDeBnQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Joe Rozner",
+      "label": "Synfuzz: Building a Grammar Based Re-targetable Test Generation Framework",
+      "description": "Fuzzers have played an important role in the discovery of reliability and security flaws in software for decades. They have allowed for test case generation at a rate impossible by hand and the creation of test cases humans may never conceive of. While there are many excellent fuzzers available most are designed for mutating source files or input in random ways and attempting to discover edge cases in the handling of them. Some others are designed with structured input in mind and use grammars to more strategically generate and mutate possible inputs that adhere to the format defined. These specifically are the ones we care about for the goals of identifying differences between multiple implementations of a single language, finding bugs in parse tree generation/handling of tokens, and handling of the data at runtime once it has been successfully lexically and syntactically analyzed. We'll look at some of the shortcomings of existing fuzzers and discuss the implementation for a new platform designed to make fuzzer creation easier with the goal of being able utilize grammars from the implementations of the languages themselves.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Rozner",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 - Joe Rozner - Synfuzz Building a Grammar Based Retargetable Test Generation Framework",
+          "url": "https://www.youtube.com/watch?v=HCK0yeGQI-U"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    }
+  ]
+}

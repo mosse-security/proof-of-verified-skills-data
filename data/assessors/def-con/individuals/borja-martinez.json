@@ -1,0 +1,105 @@
+{
+  "name": "Borja Martinez",
+  "last-updated": "2026-10-17T08:13:27Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Borja Martinez",
+      "label": "Kill Chain Reloaded: Abusing legacy paths for stealth persistence",
+      "description": "Throughout our Red Team operations, we've focused our research on advancing techniques to gain direct access to physical memory and achieve execution with the highest privileges (Kernel-mode). This talk presents the current state of the art in stealthy post-exploitation, sharing innovative approaches and refined methodologies developed over recent years. Topics include: bypassing modern EDR solutions via physical memory access primitives, physical access techniques and advanced post-exploitation techniques in Windows systems. We will demonstrate how low-level access vectors often overlooked can enable persistent, undetectable control over targeted systems. The session is tailored for cybersecurity professionals interested in cutting-edge Red Team tactics and emerging hardware/software threats. Practical demos will be included, along with tools and methodologies applicable across multiple scenarios. This is a deeply technical talk, showcasing real world tradecraft and threat modeling beyond traditional offensive security. References: ESET. (s. f.). Machine Learning and UEFI. [link]]( https://web-assets.esetstatic.com/wls/en/papers/white-papers/ESET_Machine_Learning_UEFI.pdf ) HackingThings. (s. f.). SignedUEFIShell [GitHub repository]. GitHub. link SOC Investigation. (2023). UEFI persistence via wpbbin: Detection & response. link Sophos. (2023, junio 2). Researchers claim Windows backdoor affects hundreds of Gigabyte motherboards. link tandasat. (s. f.). WPBT-Builder [GitHub repository]. GitHub. link Persistence Info. (s. f.). WPBBin. link Unified Extensible Firmware Interface Forum. (s. f.). UEFI Revocation List File. link Microsoft. (s. f.). secureboot_objects [GitHub repository]. GitHub. link HackingThings. (s. f.). OneBootloaderToLoadThemAll [GitHub repository]. GitHub. link Knopper, K. (s. f.). Knoppix and UEFI. link br-sn. (n.d.). Removing Kernel Callbacks Using Signed Drivers. Retrieved from link br-sn. (n.d.). CheekyBlinder [GitHub repository]. GitHub. Retrieved from link VL. (2021). Removing Process Creation Kernel Callbacks. Medium. Retrieved from link lawiet47. (n.d.). STFUEDR [GitHub repository]. GitHub. Retrieved from link hfiref0x. (n.d.). KDU (Kernel Driver Utility) [GitHub repository]. GitHub. Retrieved from link TheCruZ. (n.d.). kdmapper [GitHub repository]. GitHub. Retrieved from link Sophos. (2022, October 4). BlackByte ransomware returns, abuses RTCore64.sys driver to disable kernel callbacks. Sophos News. Retrieved from link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60335",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2025,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "security-operations-and-soc-practice",
+          "endpoint-and-host-defense",
+          "ai-for-security-operations"
+        ],
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Borja Martinez",
+      "label": "Plug And Pwn: Weaponizing Windows PnP Auto-Install",
+      "description": "Every time a USB device is plugged into a Windows machine, the OS may silently download a package from Microsoft and execute vendor code as SYSTEM. No admin required. The package is signed, so nothing looks wrong. We spent the better part of a year mapping this attack surface. We analyzed 7K packages approx, built tools to emulate arbitrary USB devices without hardware, and found that the same kernel code path fires when a USB device is redirected over RDP channels, meaning a non admin user can trigger SYSTEM level code execution on the target, with no physical access at all (under certain conditions). How Windows PnP search actually works, the real kernel flow, not the MSDN summary. How to make Windows believe any USB device is connected, using device emulation and composite device tricks that bypass inbox driver interception. Why RDP USB redirection (MS-RDPEUSB / URBDRC) triggers the exact same kernel PnP path as a physical plug-in, and what that means for remote exploitation. A WHQL-signed software that contains a hidden debug backdoor alowing execution as SYSTEM, chainable with other vulnerabilities for full user to SYSTEM escalation from a standard account. A forced installation leading to the creation of a named pipe that lets any authenticated network user rewrite config on any machine.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66590",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

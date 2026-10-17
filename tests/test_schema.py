@@ -4,7 +4,7 @@ import json
 import unittest
 from pathlib import Path
 
-from endorsement_scraper import (
+from scrapers import (
     ENDORSEMENT_FIELDS,
     EndorsementSchemaError,
     AssessorMetadata,

@@ -2,7 +2,7 @@ import unittest
 import json
 from pathlib import Path
 
-from endorsement_scraper.assessors.layer_one import parse_layer_one
+from scrapers.assessors.layer_one import parse_layer_one
 
 
 class LayerOneParserTests(unittest.TestCase):

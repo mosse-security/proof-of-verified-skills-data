@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import unittest
 
-from endorsement_scraper import Endorsement, AssessorMetadata, detect_domains, normalize_domains
-from endorsement_scraper.domains import detect_subspecialties
-from endorsement_scraper.domains import DomainMappingError, validate_record_domains
+from scrapers import Endorsement, AssessorMetadata, detect_domains, normalize_domains
+from scrapers.domains import detect_subspecialties
+from scrapers.domains import DomainMappingError, validate_record_domains
 
 
 class DomainMappingTests(unittest.TestCase):

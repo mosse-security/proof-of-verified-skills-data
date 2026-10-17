@@ -1,0 +1,115 @@
+{
+  "name": "Aapo Oksman",
+  "last-updated": "2026-10-17T08:13:24Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "linkedin",
+      "url": "https://linkedin.com/in/AapoOksman"
+    }
+  ],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Aapo Oksman",
+      "label": "certmitm: automatic exploitation of TLS certificate validation vulnerabilities",
+      "description": "TLS is the de facto way of securing network connections. It provides an easy way of ensuring confidentiality, integrity and authentication for any type of communication. However, like most things in life, this is also too good to be true. TLS allows communicating parties to uniquely authenticate each other by validating each other's certificate. However, many TLS libraries and frameworks have insecure default settings or allow for the developers to skip important aspects of certificate validation in their client implementations. This talk explores issues in TLS client certificate validation and the underlying reasons why developers still fail to implement TLS correctly. Most importantly, we hack all the things with a new TLS mitm tool: certmitm. certmitm automatically discovers and exploits insecure certificate validation vulnerabilities in TLS clients. Let's use the tool to hack iOS, Windows 11 and more while we deep dive into the world of insecure TLS certificate validation.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Oksman",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Aapo Oksman",
+      "label": "Leveraging private APNs for mobile network traffic analysis",
+      "description": "Knowing where and how your mobile and IoT devices communicate on the Internet is essential for ensuring privacy and security. In the past, it has been easy to follow their communication through a WIFI connection that you control. However, your devices are becoming more locked down and utilize mobile networks such as 4G and 5G for communication. As the devices communicate directly through mobile network base stations operated by Internet Service Providers (ISPs), tampering with or even monitoring their communication is outside your reach. While it is possible to set up a private base station, it requires expensive components and is hard to operate. However, many ISPs have begun offering private Access Point Names (APNs) to allow you to have a private network inside the ISP infrastructure. This talk will show how you can affordably leverage ISP-operated mobile networks and their private APN services to control your mobile devices' network traffic. This technique lets you inspect, filter, and tamper with your mobile devices' IP traffic for offensive and defensive cyber security needs, such as penetration testing IoT devices or monitoring mobile device endpoints for malicious traffic. link Janne Taponen - Economizing Mobile Network Warfare: Budget-Friendly Baseband Fuzzing - T2 2024 Conference XiaoHuiHui - All the 4G Modules Could Be Hacked - DEF CON 27 Conference link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54468",
+      "evidence-links": [
+        {
+          "title": "DEF CON 32 - Leveraging private APNs for mobile network traffic analysis - Aapo Oksman",
+          "url": "https://www.youtube.com/watch?v=4lQ2GnmTFkY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2024,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    }
+  ]
+}

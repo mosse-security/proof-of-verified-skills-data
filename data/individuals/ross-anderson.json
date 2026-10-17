@@ -1,13 +1,13 @@
 {
   "name": "Ross Anderson",
-  "last-updated": "2026-10-16T07:42:30Z",
+  "last-updated": "2026-10-17T05:50:58Z",
   "biography": "",
   "contact": [],
   "stats": {
     "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,46 +19,55 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 1
+      "unknown": 0
     }
   },
   "endorsements": [
     {
       "name": "Ross Anderson",
-      "label": "The sustainability of safety, security and privacy",
-      "description": "The sustainability of safety, security and privacy",
+      "label": "How Smartcard Payment Systems Fail",
+      "description": "The USA is starting to introduce EMV, the Europay-Mastercard-Visa system for making payments using chip cards instead of the old mag strip variety. EMV is already in wide use in Europe, and has started to appear in countries from Canada to India. In theory, smartcards should have reduced fraud by making bankcards much harder to copy and by enabling banks to authenticate users at the point of sale using PINs rather than signatures. The practice has been different. In Britain, for example, fraud first went up, then down, and is now headed upwards again. There have been many fascinating attacks, which I'll describe. The certification system wasn't fit for purpose, so terminals that were certified as tamper-resistant turned out not to be. We even saw Trojans inserted in the supply chain. A protocol flaw meant that a crook could use a stolen card without knowing the PIN; he could use a man-in-the-middle device to persuade the terminal that the card had accepted the PIN, while the card was told to do a signature-only transaction. Merchant refunds were not authenticated, so a crook could pretend to the bank that he was a merchant, and credit his card back after making a purchase. The most recent series of attacks exploit the freshness mechanisms in the EMV protocol. To prevent transaction replay, the terminal generates an \"unpredictable number\" while the card supplies an \"application transaction counter\" or ATC that is supposed to increase monotonically and never repeat. Yet the unpredictable numbers often aren't (in many of the terminals we looked at, they seem to be just counters) while many banks don't bother to check the ATC, as writing code to deal with out-of-order offline transactions is too much bother. As a result, we've seen some interesting attacks where cardholders unlucky enough to shop at a dishonest merchant find themselves dunned for a lot of large transactions later. In fact these \"preplay\" attacks behave just like card cloning, and make all the fancy tamper-resistant electronics almost irrelevant. At heart these are problems of governance and regulation. The vendors sell what they can get away with; the acquiring banks dump liability on merchants and card-issuing banks; they in turn dump it on the cardholder where they can; and the regulators just don't want to know as it's all too difficult. This wonderful system is now being rolled out at scale in the USA.",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "36C3",
-      "url": "https://media.ccc.de/v/36c3-10924-the_sustainability_of_safety_security_and_privacy",
-      "evidence-links": [],
-      "evidence": false,
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "How Smartcard Payment Systems Fail",
+          "url": "https://www.youtube.com/watch?v=ET0MFkRorbo"
+        },
+        {
+          "title": "UWB Real Time Locating Systems: How Secure Radio Communications May Fail in Practice",
+          "url": "https://www.youtube.com/watch?v=U1x2MGdIWkA"
+        }
+      ],
+      "evidence": true,
       "povs": {
         "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
           "trusted": false
         },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
-      "year": 2019,
+      "year": 2014,
       "domains": [
-        "unknown"
+        "vulnerability-research"
       ],
       "subspecialties": {
-        "unknown": []
+        "vulnerability-research": []
       }
     }
   ]

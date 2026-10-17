@@ -1,0 +1,141 @@
+{
+  "name": "HD Moore",
+  "last-updated": "2026-10-17T08:13:30Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "HD Moore",
+      "label": "Sshamble: Unexpected Exposures in the Secure Shell",
+      "description": "The Secure Shell (SSH) has evolved from a remote shell service to a standardized secure transport that is second only to Transport Layer Security (TLS) in terms of exposure and popularity. SSH is no longer just for POSIX operating systems; SSH services can be found in everything from network devices, to source code forges, to Windows-based file transfer tools. While OpenSSH is still the most prominent implementation, it's now just one of dozens, and these include a handful of libraries that drive a wide range of applications. This presentation digs deep into SSH, the lesser-known implementations, many of the surprising security issues found along the way, and how to exploit them. As part of this talk, we will release an open source tool, dubbed \"sshamble\", that assists with research and security testing of SSH services.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54452",
+      "evidence-links": [
+        {
+          "title": "DEF CON 32 - Sshamble  Unexpected Exposures in the Secure Shell - HD Moore, Rob King",
+          "url": "https://www.youtube.com/watch?v=G7GwXu684JY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "HD Moore",
+      "label": "Shaking Out Shells with SSHamble",
+      "description": "Secure Shell (SSH) is finally fun again! After a wild two years, including a near-miss backdoor, clever cryptographic failures, unauthenticated remote code execution in OpenSSH, and piles of state machine bugs and authentication bypass issues, the security of SSH implementations has never been more relevant. This session is an extension of our 2024 work (Unexpected Exposures in the Secure Shell) and includes new research as well as big updates to our open source research and assessment tool, SSHamble. References: link link link link link Metasploit: ssh_identify_pubkeys (2012) regreSSHion: link Terrapin: link link link link link Kannisto, J., Harju, J. (2017). The Time Will Tell on You: Exploring Information Leaks in SSH Public Key Authentication. In: Yan, Z., Molva, R., Mazurczyk, W., Kantola, R. (eds) Network and System Security. NSS 2017. Lecture Notes in Computer Science(), vol 10394. Springer, Cham. link West, J.C., Moore, T. (2022). Longitudinal Study of Internet-Facing OpenSSH Update Patterns. In: Hohlfeld, O., Moura, G., Pelsser, C. (eds) Passive and Active Measurement. PAM 2022. Lecture Notes in Computer Science, vol 13210. Springer, Cham. link Neef, S. (2022). Source & result datasets for \"Oh SSH-it, what's my fingerprint? A Large-Scale Analysis of SSH Host Key Fingerprint Verification Records in the DNS\" [Data set]. Zenodo. link link link link [link]( https://badkeys.info/ & https://github.com/badkeys/badkeys ) link link link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60360",
+      "evidence-links": [
+        {
+          "title": "DEF CON 33 - Shaking Out Shells with SSHamble - HD Moore",
+          "url": "https://www.youtube.com/watch?v=XHoH4ic8fX8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2025,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "HD Moore",
+      "label": "Lights Out: Out-of-Band, Out of Mind, Out of Control",
+      "description": "Every enterprise server has a second computer you probably forgot about. The baseboard management controller runs its own OS, has its own network stack, and stays on even when the server is off. It speaks IPMI, a protocol from the 1990s that Dan Farmer thoroughly dismantled in 2013. Thirteen years later, nobody went back to check. We did. We scanned 15,000 internet-facing BMCs and 125,000 across corporate networks, extracted RAKP password hashes from three out of four targets without credentials, and cracked thousands offline. We show how to fingerprint vendors from unauthenticated GUID responses, extract Dell service tags and HPE serial numbers before logging in, and brute-force the \"random\" passwords that California's SB-327 law was supposed to fix. Then we show what comes next: pivoting from a compromised host to its BMC over the internal bus without touching the network, jumping to the out-of-band management VLAN, reusing shared credentials across the fleet, and landing on production hosts via Serial-over-LAN and virtual media. The host and BMC are the same physical machine; network segmentation means nothing when the bridge is a PCIe bus. We release OOBscan, an open-source IPMI exploitation tool, and demonstrate the full attack chain.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66635",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

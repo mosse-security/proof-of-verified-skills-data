@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from endorsement_scraper.assessors.grrcon import parse_grrcon
+from scrapers.assessors.grrcon import parse_grrcon
 
 
 class GrrconParserTests(unittest.TestCase):
@@ -32,6 +32,22 @@ class GrrconParserTests(unittest.TestCase):
         self.assertEqual(rows[0][0], "Defending Cloud Workloads")
         self.assertEqual(rows[0][1], "Jordan Example")
         self.assertEqual(rows[0][3], 2024)
+
+    def test_splits_historical_multi_speaker_cells(self) -> None:
+        rows = parse_grrcon(
+            "<h2>James Niven and Lindsay Kaye</h2>"
+            "<h3>Crossing the Event Horizon</h3>",
+            "https://grrcon.com/presentations2022/",
+        )
+        self.assertEqual([row[1] for row in rows], ["James Niven", "Lindsay Kaye"])
+
+    def test_drops_keynote_label_and_role_suffix(self) -> None:
+        rows = parse_grrcon(
+            "<h2>Friday Morning Keynote – Alex Example, CISO</h2>"
+            "<h3>Security Leadership</h3>",
+            "https://grrcon.com/presentations2022/",
+        )
+        self.assertEqual([row[1] for row in rows], ["Alex Example"])
 
 
 if __name__ == "__main__":

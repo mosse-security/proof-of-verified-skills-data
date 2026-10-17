@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from endorsement_scraper.individuals import (
+from scrapers.individuals import (
     IndividualMergeError,
     cleanup_generated_directory,
     merge_endorsements,
@@ -132,12 +132,12 @@ class IndividualMergeTests(unittest.TestCase):
                 json.dumps([endorsement("Casey Example", "Talk")]), encoding="utf-8"
             )
             output = root / "individuals"
-            with patch("endorsement_scraper.individuals._utc_timestamp", return_value="2026-01-01T00:00:00Z"):
+            with patch("scrapers.individuals._utc_timestamp", return_value="2026-01-01T00:00:00Z"):
                 merge_endorsements(source, output, profiles_directory=root / "profiles")
             path = output / "casey-example.json"
             first = json.loads(path.read_text())
 
-            with patch("endorsement_scraper.individuals._utc_timestamp", return_value="2026-01-02T00:00:00Z"):
+            with patch("scrapers.individuals._utc_timestamp", return_value="2026-01-02T00:00:00Z"):
                 merge_endorsements(source, output, profiles_directory=root / "profiles")
             second = json.loads(path.read_text())
 
@@ -154,12 +154,12 @@ class IndividualMergeTests(unittest.TestCase):
                 json.dumps([endorsement("Dana Example", "Talk")]), encoding="utf-8"
             )
             output = root / "individuals"
-            with patch("endorsement_scraper.individuals._utc_timestamp", return_value="2026-01-01T00:00:00Z"):
+            with patch("scrapers.individuals._utc_timestamp", return_value="2026-01-01T00:00:00Z"):
                 merge_endorsements(source, output, profiles_directory=root / "profiles")
             source_file.write_text(
                 json.dumps([endorsement("Dana Example", "Updated Talk")]), encoding="utf-8"
             )
-            with patch("endorsement_scraper.individuals._utc_timestamp", return_value="2026-01-02T00:00:00Z"):
+            with patch("scrapers.individuals._utc_timestamp", return_value="2026-01-02T00:00:00Z"):
                 merge_endorsements(source, output, profiles_directory=root / "profiles")
             document = json.loads((output / "dana-example.json").read_text())
             self.assertEqual(document["last-updated"], "2026-01-02T00:00:00Z")

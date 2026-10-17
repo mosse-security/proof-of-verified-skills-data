@@ -1,0 +1,74 @@
+{
+  "name": "Ralf Hund",
+  "last-updated": "2026-10-17T08:13:08Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ralf Hund",
+      "label": "The Beast Within - Evading Dynamic Malware Analysis Using Microsoft COM",
+      "description": "Microsoft Common Object Model (COM) is a technology for providing a binary programming interface for Windows programs. Despite its age it still forms the internal foundation of many new Microsoft technologies such as .NET. However, over the course of more than twenty years of development, the inevitable pressure to retain backwards compatibility has turned the COM runtime into an obscure beast. These days, many COM interfaces exist that mirror almost the same functionality provided by common Windows APIs. Malware authors can easily execute almost any operation (creating files, starting new processes, etc.) only using COM calls. Dynamic malware analyzers must deal with this accordingly without getting lost in the shadowy depths of the COM runtime. The talk presents various aspects of automated dynamic COM malware analysis and shows which approaches are actually practical and which ones are hopeless from the beginning. We show how COM interfaces are already actively used by malware in the wild. Our data retrieved from various sample sharing programs indicates that COM use is widespread and not only limited to sophisticated attacks. It can be used to create arbitrary files, access the registry, control the Windows firewall, tap into audio interfaces and much more. The possibilities are endless. Furthermore, many script engines such as VBScript or JScript use COM underneath. If such samples are analyzed, then this must be dealt with appropriately. Unfortunately, many existing dynamic analysis solutions fail at monitoring COM correctly which makes it easy for malware to evade many common sandboxes. One essential problem is that COM classes can be implemented in various places: in the calling program itself, in other processes on the same machine, or even in remote processes on different machines using DCOM. This requires to catch and process COM calls at the very first API layer and not later on. Due to the myriad of COM calls in question, hooking-based solutions quickly hit a wall. The popular workaround is to hook on API layers behind (such as NTDLL). Since COM calls can be executed in remote processes and heavily rely on data marshalling, this approach can only be used for not more than simple COM interfaces. Furthermore, it requires filtering out irrelevant API calls from OS libraries, which, notwithstanding the above, poses many problems by itself. Last but not least, hooking COM calls (or API calls in general) makes it easy for malware to detect that it is running in a sandbox. We show how transition-based monitoring can be used to monitor all COM calls at the first interface layer. This requires additional effort in parsing the numerous different formats COM uses to encode function call parameters. We show what obstacles are to be expected and how to deal with them accordingly. This generic approach yields a detailed list of all COM calls executed by malware with all their parameters. In addition, malware cannot evade the analysis since transitions are detected transparently in a hypervisor. Not a single bit has to be modified in the analysis environment.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "The Beast Within - Evading Dynamic Malware Analysis Using Microsoft COM",
+          "url": "https://www.youtube.com/watch?v=6POwbEpEtpw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "cyber-defense",
+        "reverse-engineering"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "reverse-engineering": [
+          "malware-analysis"
+        ]
+      }
+    }
+  ]
+}

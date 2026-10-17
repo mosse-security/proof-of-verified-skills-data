@@ -1,0 +1,65 @@
+{
+  "name": "Andrew Chi",
+  "last-updated": "2026-10-17T08:13:26Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Andrew Chi",
+      "label": "Assessing the Security of Certificates at Scale",
+      "description": "The security of digital certificates is too often undermined by the use of poor entropy sources in key generation. Flawed entropy can be hard to discover, especially when analyzing individual devices. However, some flaws can be detected when a large set of keys from the same entropy source are analyzed, as was dramatically demonstrated in 2012 and 2016 by the detection of weak HTTPS keys on the Internet. In this talk, we present tools and techniques to identify weak keys at scale, by checking issued certificates obtained from passive monitoring, active network scans, or certificate authority logs. Our tools use efficient multithreaded implementations of network monitors, scanners, certificate parsers, and mathematical tests. The batch greatest common divisor test (BGCD) identifies RSA public keys with common factors, and outputs the corresponding private keys. The common key test identifies distinct devices that share identical keys. We report on findings from both tests and demonstrate how to audit HTTPS servers, run BGCD on 100M+ keys, identify RSA keys with common factors, and generate the corresponding private keys. Because nothing convinces like an attack, we show how to produce and use PEM files for factored keys.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 31",
+      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#DMcGrew",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

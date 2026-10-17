@@ -1,0 +1,84 @@
+{
+  "name": "Taylor Hornby",
+  "last-updated": "2026-10-17T08:13:09Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Taylor Hornby",
+      "label": "Side-Channel Attacks on Everyday Applications",
+      "description": "In 2013, Yuval Yarom and Katrina Falkner discovered the FLUSH+RELOAD L3 cache side-channel. So far it has broken numerous implementations of cryptography including, notably, the AES and ECDSA in OpenSSL and the RSA GnuPG. Given FLUSH+RELOAD's astounding success at breaking cryptography, we're lead to wonder if it can be applied more broadly, to leak useful information out of regular applications like text editors and web browsers whose main functions are not cryptography. In this talk, I'll briefly describe how the FLUSH+RELOAD attack works, and how it can be used to build input distinguishing attacks. In particular, I'll demonstrate how when the user Alice browses around the top 100 Wikipedia pages, the user Bob can spy on which of those pages she's visiting. This isn't an earth-shattering attack, but as the code I'm releasing shows, it can be implemented reliably. My goal is to convince the community that side channels, FLUSH+RELOAD in particular, are useful for more than just breaking cryptography. The code I'm releasing is a starting point for developing better attacks. If you have access to a vulnerable CPU running a suitable OS, you should be able to reproduce the attack within minutes after watching the talk and downloading the code.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Practical Side-Channel Attacks Against WPA-TKIP",
+          "url": "https://www.youtube.com/watch?v=AYD3by7J--k"
+        },
+        {
+          "title": "How We Taught ChatGPT-4 to Break mbedTLS AES With Side-Channel Attacks",
+          "url": "https://www.youtube.com/watch?v=BF7xmb7YLbc"
+        },
+        {
+          "title": "Side-Channel Attacks on Everyday Applications",
+          "url": "https://www.youtube.com/watch?v=GPwNFrpd1KU"
+        },
+        {
+          "title": "Side Channel Attacks in 4G and 5G Cellular Networks",
+          "url": "https://www.youtube.com/watch?v=iOUDuecunjE"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    }
+  ]
+}

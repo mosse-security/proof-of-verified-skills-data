@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from endorsement_scraper.logging_config import configure_logging
+from scrapers.logging_config import configure_logging
 
 
 class LoggingTests(unittest.TestCase):

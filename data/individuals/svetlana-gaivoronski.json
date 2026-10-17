@@ -1,22 +1,13 @@
 {
   "name": "Svetlana Gaivoronski",
-  "last-updated": "2026-10-16T05:18:23Z",
+  "last-updated": "2026-10-17T05:50:59Z",
   "biography": "",
-  "contact": [
-    {
-      "label": "http://redsecure.ru/team/denis-gamayunov",
-      "url": "http://redsecure.ru/team/denis-gamayunov"
-    },
-    {
-      "label": "lvk.cs.msu.su/~sadie",
-      "url": "http://lvk.cs.msu.su/~sadie"
-    }
-  ],
+  "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
+    "endorsements": 1,
+    "assessors": 1,
     "with-evidence": 1,
-    "without-evidence": 2,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -25,10 +16,10 @@
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 1,
-      "red-teaming": 3,
+      "penetration-testing": 0,
+      "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 3,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -38,44 +29,6 @@
     }
   },
   "endorsements": [
-    {
-      "name": "Svetlana Gaivoronski",
-      "label": "Demorpheus: Getting Rid Of Polymorphic Shellcodes In Your Network",
-      "description": "One of the most effective techniques used in CTF is the usage of various exploits, written with the help of well-known tools or even manually during the game. Experience in CTF participation shows that the mechanism for detecting such exploits is able to significantly increase the defense level of the team. In this presentation we propose an approach and hybrid shellcode detection method, aimed at early detection and filtering of unknown 0-day exploits at the network level. The proposed approach allows us to summarize capabilities of shellcode detection algorithms developed over recent ten years into optimal classifiers. The proposed approach allows us to reduce the total fp rate almost to 0, provides full coverage of shellcode classes detected by individual classifiers and significantly increases total throughput of detectors. Evaluation with shellcode datasets, including Metasploit Framework 4.3 plain-text, encrypted and obfuscated shellcodes, benign Win32 and Linux ELF executables, random data and multimedia shows that hybrid data-flow classifier significantly boosts analysis throughput for benign data - up to 45 times faster than linear combination of classifiers, and almost 1.5 times faster for shellcode only datasets.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 20",
-      "url": "https://defcon.org/html/defcon-20/dc-20-speakers.html",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2012,
-      "domains": [
-        "penetration-testing",
-        "red-teaming",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "penetration-testing": [],
-        "red-teaming": [],
-        "vulnerability-research": [
-          "zero-day-and-0-day-research"
-        ]
-      }
-    },
     {
       "name": "Svetlana Gaivoronski",
       "label": "Hybrid Defense: How to Protect Yourself From Polymorphic 0-days",
@@ -106,42 +59,6 @@
         "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
       "year": 2013,
-      "domains": [
-        "red-teaming",
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "red-teaming": [],
-        "vulnerability-research": [
-          "zero-day-and-0-day-research"
-        ]
-      }
-    },
-    {
-      "name": "Svetlana Gaivoronski",
-      "label": "Shellcodes for ARM: Your Pills Don't Work on Me, x86",
-      "description": "Despite that it is almost 2014, the problem of shellcode detection, discovered in 1999, is still a challenge for researchers in industry and academia. The significance of remotely exploitable vulnerabilities does not seem to fade away. The number of remotely exploitable vulnerabilities continues to grow despite the significant efforts in improving code quality via code analysis tools, code review, and plethora of testing methods. The other trend of recent years is the rise of variety of ARM-based devices such as mobile phones, tablets, etc. As of now the total number of ARM-based devices exceeds the number of PCs in times. This trend sometimes is terrifying as people trust almost all aspects of their lives to such digital devices. People care much more about convenience than security of the data. For example, mobile phones now knows our financial information, health records, keeps a lot of other private data. That's why ARM-based systems became a cherry pie for attackers. There is a variety of shellcode detection methods that work more or less acceptable with x86-based shellcodes. There are even hybrid solutions that combine capabilities of existing approaches. Unfortunately, almost all of them focus on a fixed set of shellcode features, specific for x86 architecture. This work aims to cover this gap. This work makes the following contributions: • We provide an analysis of existing shellcode detection methods with regards to their applicability to shellcodes developed for ARM architecture. As a result, we show that most of existing algorithms are not applicable for shellcodes written for ARM. Moreover, the methods that work for ARM shellcodes produce too many false positives to be applicable for real-life network channels and 0-day detection. • We analyzed available ARM-based shellcodes from public exploit databases, and identified a set of ARM shellcode features that distinguishes them from x86 shellcodes and benign binaries. • We implemented our detectors of ARM shellcode features as an extension for Demorpheus[1] shellcode detection open-source library. The algorithm used for generation of detectors’ topology guarantees the solution to be optimal in terms of computational complexity and false positive rate.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 22",
-      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Gaivoronski",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2014,
       "domains": [
         "red-teaming",
         "vulnerability-research"

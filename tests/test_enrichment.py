@@ -6,14 +6,14 @@ import unittest
 import zipfile
 from pathlib import Path
 
-from endorsement_scraper.enrichment import EnrichmentCatalog, discover_enrichers
+from scrapers.enrichment import EnrichmentCatalog, discover_enrichers
 
 
 class EnrichmentTests(unittest.TestCase):
     def test_discovery_finds_def_con_youtube_enricher(self) -> None:
         self.assertIn(
             "def-con-youtube-recordings",
-            {item.enricher_id for item in discover_enrichers(Path("enrichers"))},
+            {item.enricher_id for item in discover_enrichers(Path("scrapers/enrichers"))},
         )
 
     def test_catalog_matches_title_and_conference(self) -> None:

@@ -1,0 +1,72 @@
+{
+  "name": "Martin Vigo",
+  "last-updated": "2026-10-17T08:13:06Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Martin Vigo",
+      "label": "Even the LastPass Will be Stolen Deal with It!",
+      "description": "Password managers have become very popular as a solution to avoid reusing passwords. With that in mind, password managers are a prized target for pentesters and attackers. If a password manager is compromised, the consequences are catastrophic as all the victim's secrets reside in the vault. One breach to get it all. LastPass is arguably one of the most popular password managers in the market. Over 10,000 corporate customers ranging in various sizes including Fortune 500's rely on LastPass to protect all their data. Research has been done on how to attack password managers but it has all focused on leaking specific credentials from the vault. LastPass not only stores credentials, but also bank accounts, ssh keys, personal records, etc. Therefore, we focused our research on finding the silver bullet to gain full access to the vault and steal all the secrets. By reversing LastPass plugins, we found several ways to do so. We will demonstrate how it is possible to steal and decrypt the master password. We also found how it is possible to abuse account recovery to ultimately obtain the encryption key for the vault. In addition, we discovered ways to bypass 2 factor authentication. We wrote a Metasploit module that takes care of all of this. The module is able to search for all LastPass data in the machine comprising all accounts present. It will find and decrypt the master password, it will derive the encryption key for the vault, it will find the 2FA trust token and it will steal the vault so it can be decrypted. All secrets in the vault will be printed out for the pen-tester's satisfaction.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2015",
+      "url": "https://blackhat.com/archive/europe/2015/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Even The Lastpass Will Be Stolen, Deal With It!",
+          "url": "https://www.youtube.com/watch?v=MlmEiT5bhxg"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

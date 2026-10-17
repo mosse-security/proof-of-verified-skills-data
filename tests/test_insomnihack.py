@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from endorsement_scraper.assessors.insomnihack import parse_insomnihack
+from scrapers.assessors.insomnihack import parse_insomnihack
 
 
 class InsomnihackParserTest(unittest.TestCase):

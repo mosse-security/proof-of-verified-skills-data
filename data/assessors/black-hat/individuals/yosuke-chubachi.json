@@ -1,0 +1,72 @@
+{
+  "name": "Yosuke Chubachi",
+  "last-updated": "2026-10-17T08:13:11Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Yosuke Chubachi",
+      "label": "Freeze Drying for Capturing Environment-Sensitive Malware Alive",
+      "description": "We propose a set of techniques for \"freeze drying\" malware and restoring the captured malware to enable live process migration. Our system can capture environment-sensitive malware in-process and run it in an environment other than the infected host. Sophisticated malware, such as Citadel and ZeuS/GameOver, are armed with anti-analysis techniques to prevent running except on an infected host. These malwares detect the execution environment and do not engage in malicious behavior when the current host differs from the infected host. We developed a malware capture system called Sweetspot that can capture malware in-process by using process live migration and mimicking the infected host's environment on the analyzer by means of system call proxies. In addition, Sweetspot can serve as a honeypot and provide dummy data when the malware requests sensitive information. In briefings, we will demonstrate freeze-drying and instant dynamic analysis of real malware.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2014",
+      "url": "https://blackhat.com/archive/europe/2014/archives.html",
+      "evidence-links": [
+        {
+          "title": "Freeze Drying for Capturing Environment-Sensitive Malware Alive",
+          "url": "https://www.youtube.com/watch?v=h7Tc3E3ao38"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "cyber-defense"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "deception-and-honeypots"
+        ]
+      }
+    }
+  ]
+}

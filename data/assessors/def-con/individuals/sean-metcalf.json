@@ -1,0 +1,258 @@
+{
+  "name": "Sean Metcalf",
+  "last-updated": "2026-10-17T08:13:39Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "adsecurity.org",
+      "url": "http://www.adsecurity.org/"
+    },
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/PyroTek3"
+    }
+  ],
+  "stats": {
+    "endorsements": 5,
+    "assessors": 1,
+    "with-evidence": 4,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 2,
+      "cyber-defense": 2,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 2,
+      "red-teaming": 3,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 4,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Sean Metcalf",
+      "label": "Red vs. Blue: Modern Active Directory Attacks & Defense",
+      "description": "Kerberos \"Golden Tickets\" were unveiled by Alva \"Skip\" Duckwall & Benjamin Delpy in 2014 during their Black Hat USA presentation. Around this time, Active Directory (AD) admins all over the world felt a great disturbance in the Force. Golden Tickets are the ultimate method for persistent, forever AD admin rights to a network since they are valid Kerberos tickets and can't be detected, right? This talk explores the latest Active Directory attack vectors and describes how Golden Ticket usage can be detected. When forged Kerberos tickets are used in AD, there are some interesting artifacts that can be identified. Yes, despite what you may have read on the internet, there are ways to detect Golden & Silver Ticket usage. Skip the fluff and dive right into the technical detail describing the latest methods for gaining and maintaining administrative access in Active Directory, including some sneaky AD persistence methods. Also covered are traditional security measures that work (and ones that don't) as well as the mitigation strategies that disrupts the attacker's preferred game-plan. Prepare to go beyond \"Pass-the-Hash\" and down the rabbit hole. Some of the topics covered: Sneaky persistence methods attackers use to maintain admin rights. How attackers go from zero to (Domain) Admin MS14-068: the vulnerability, the exploit, and the danger. \"SPN Scanning\" with PowerShell to identify potential targets without network scans (SQL, Exchange, FIM, webservers, etc.). Exploiting weak service account passwords as a regular AD user. Mimikatz, the attacker's multi-tool. Using Silver Tickets for stealthy persistence that won’t be detected (until now). Identifying forged Kerberos tickets (Golden & Silver Tickets) on your network. Detecting offensive PowerShell tools like Invoke-Mimikatz. Active Directory attack mitigation. Kerberos expertise is not required since the presentation covers how Active Directory leverages Kerberos for authentication identifying the areas useful for attack. Information presented is useful for both Red Team & Blue Team members.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Metcalf",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Sean Metcalfe - Red vs Blue: Modern Active Directory Attacks & Defense",
+          "url": "https://www.youtube.com/watch?v=rknpKIxT7NM"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "red-teaming": [],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "authentication",
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Sean Metcalf",
+      "label": "Beyond the MCSE: Red Teaming Active Directory",
+      "description": "Active Directory (AD) is leveraged by 95% of the Fortune 1000 companies for its directory, authentication, and management capabilities, so why do red teams barely scratch the surface when it comes to leveraging the data it contains? This talk skips over the standard intro to Active Directory fluff and dives right into the compelling offensive information useful to a Red Teamer, such as quickly identifying target systems and accounts. AD can yield a wealth of information if you know the right questions to ask. This presentation ventures into areas many didn't know existed and leverages capability to quietly identify interesting accounts & systems, identify organizations the target company does business with regularly, build target lists without making a sound, abuse misconfigurations/existing trusts, and quickly discover the most interesting shares and their location. PowerShell examples and AD defense evasion techniques are provided throughout the talk. Let's go beyond the MCSE and take a different perspective on the standard AD recon and attack tactics.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 24",
+      "url": "https://defcon.org/html/defcon-24/dc-24-speakers.html#Metcalf",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2016,
+      "domains": [
+        "red-teaming",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "identity-and-access-management": [
+          "authentication",
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Sean Metcalf",
+      "label": "Hacking the Cloud",
+      "description": "Thursday at 14:00 in 101 Track 45 minutes | Demo Gerald Steere Cloud Wrecker, Microsoft Sean Metcalf CTO, Trimarc You know the ins and outs of pivoting through your target's domains. You've had the KRBTGT hash for months and laid everything bare. Or have you? More targets today have some or all of their infrastructure in the cloud. Do you know how to follow once the path leads there? Red teams and penetration testers need to think beyond the traditional network boundaries and follow the data and services they are after. This talk will focus on how to take domain access and leverage internal access as a ticket to your target's cloud deployments. We will also discuss round trip flights from cloud to on-premises targets and what authorizations are required to access your target's cloud deployments. While this talk is largely focused on Microsoft Azure implementations, the concepts can be applied to most cloud providers.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Steere",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 - Gerald Steere, Sean Metcalf - Hacking the Cloud",
+          "url": "https://www.youtube.com/watch?v=LufXEPTlPak"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "cloud-security",
+        "penetration-testing"
+      ],
+      "subspecialties": {
+        "cloud-security": [],
+        "penetration-testing": []
+      }
+    },
+    {
+      "name": "Sean Metcalf",
+      "label": "Exploiting Active Directory Administrator Insecurities",
+      "description": "Defenders have been slowly adapting to the new reality: Any organization is a target. They bought boxes that blink and software that floods the SOC with alerts. None of this matters as much as how administration is performed: Pop an admin, own the system. Admins are being dragged into a new paradigm where they have to more securely administer the environment. What does this mean for the pentester or Red Teamer? Admins are gradually using better methods like two-factor and more secure administrative channels. Security is improving at many organizations, often quite rapidly. If we can quickly identify the way that administration is being performed, we can better highlight the flaws in the admin process. This talk explores some common methods Active Directory administrators (and others) use to protect their admin credentials and the flaws with these approaches. New recon methods will be provided on how to identify if the org uses an AD Red Forest (aka Admin Forest) and what that means for one hired to test the organization's defenses, as well as how to successfully avoid the Red Forest and still be successful on an engagement. Some of the areas explored in this talk: Current methods organizations use to administer Active Directory and the weaknesses around them. Using RODCs in the environment in ways the organization didn't plan for (including persistence). Exploiting access to agents typically installed on Domain Controllers and other highly privileged systems to run/install code when that's not their typical purpose. Discovering and exploiting an AD forest that leverages an AD Admin Forest (aka Red Forest) without touching the Admin Forest. If you are wondering how to pentest/red team against organizations that are improving their defenses, this talk is for you. If you are a blue team looking for inspiration on effective defenses, this talk is also for you to gain better insight into how you can be attacked.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Metcalf",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 - Sean Metcalf - Exploiting Active Directory Administrator Insecurities",
+          "url": "https://www.youtube.com/watch?v=ze1UcSLOypw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "cyber-defense",
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "security-operations-and-soc-practice"
+        ],
+        "penetration-testing": [],
+        "red-teaming": [],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Sean Metcalf",
+      "label": "Hacking the Hybrid Cloud",
+      "description": "Most companies have moved into the cloud and on-premises applications and systems remain. This configuration is reasonably referred to as \"hybrid\"; in the cloud and not at the same time. Hybrid cloud requires integration and communication between the remaining on-prem infrastructure and the new(er) cloud services. This talk describes several scenarios that appear to subvert typical security and protections which involve federation configuration, Identity Access Management (IAM), and interaction between SaaS and IaaS in the Microsoft Cloud.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 28",
+      "url": "https://defcon.org/html/defcon-safemode/dc-safemode-speakers.html#Metcalf",
+      "evidence-links": [
+        {
+          "title": "DEF CON Safe Mode - Sean Metcalf - Hacking the Hybrid Cloud",
+          "url": "https://www.youtube.com/watch?v=AR5aLszXA2E"
+        },
+        {
+          "title": "DEF CON Safe Mode - Sean Metcalf - Hacking the Hybrid Cloud   Q&A",
+          "url": "https://www.youtube.com/watch?v=H26ElMkweiw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2020,
+      "domains": [
+        "cloud-security",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "cloud-security": [],
+        "identity-and-access-management": [
+          "single-sign-on-and-federation"
+        ]
+      }
+    }
+  ]
+}

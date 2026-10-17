@@ -1,13 +1,13 @@
 {
   "name": "Angelos Stavrou",
-  "last-updated": "2026-10-16T05:18:11Z",
+  "last-updated": "2026-10-17T05:50:52Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
-    "with-evidence": 2,
-    "without-evidence": 1,
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 3,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -59,77 +59,6 @@
         "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
       "year": 2017,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "Angelos Stavrou",
-      "label": "Vulnerable Out of the Box: An Evaluation of Android Carrier Devices",
-      "description": "Pre-installed apps and firmware pose a risk due to vulnerabilities that can be pre-positioned on a device, rendering the device vulnerable on purchase. This means that the vulnerabilities are present even before the user enables wireless communications and starts installing third-party apps. To quantify the exposure of the Android end-users to vulnerabilities residing within pre-installed apps and firmware, we analyzed a wide range of Android vendors and carriers using devices spanning from low-end to flagship. Our primary focus was exposing pre-positioned threats on Android devices sold by United States (US) carriers, although our results affect devices worldwide. We will provide details of vulnerabilities in devices from all four major US carriers, as well two smaller US carriers, among others. The vulnerabilities we discovered on devices offered by the major US carriers are the following: arbitrary command execution as the system user, obtaining the modem logs and logcat logs, wiping all user data from a device (i.e., factory reset), obtaining and modifying a user’s text messages, sending arbitrary text messages, and getting the phone numbers of the user’s contacts, and more. All of the aforementioned capabilities are obtained outside of the normal Android permission model. Including both locked and unlocked devices, we provide details for 37 unique vulnerabilities affecting 25 Android devices with 11 of them being sold by US carriers. In this talk, we will present our framework that is capable of discovering 0-day vulnerabilities from binary firmware images and applications at scale allowing us to continuously monitor devices across different manufacturers and firmware versions. During the talk, we plan to perform a live demo of how our system works.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 26",
-      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Johnson",
-      "evidence-links": [
-        {
-          "title": "DEF CON 26 - Johnson and Stavrou - Vulnerable Out of the Box - Evaluation of Android Carrier Devices",
-          "url": "https://www.youtube.com/watch?v=R2brQvQeTvM"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2018,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": [
-          "zero-day-and-0-day-research"
-        ]
-      }
-    },
-    {
-      "name": "Angelos Stavrou",
-      "label": "Still Vulnerable Out of the Box: Revisiting the Security of Prepaid Android Carrier Devices",
-      "description": "Prepaid Android smartphones present an attractive option since they can be used and discarded at will without significant financial cost. The reasons for their use are manifold, although some people may use them to dissemble their true identity. Prepaid smartphones offer value, but there may be an additional \"cost\" for their cheap price. We present an examination of the local attack surface of 21 prepaid Android smartphones sold by American carriers (and 11 unlocked smartphones). While examining these devices, we discovered instances of arbitrary command execution in the context of a \"system\" user app, arbitrary AT command execution, arbitrary file write in the context of the Android System (i.e., \"system_server\"), arbitrary file read/write in the context of a \"system\" user app, programmatic factory reset, leakage of GPS coordinates to a loopback port, numerous exposures of non-resettable device identifiers to system properties, and more. The only user interaction that our threat model assumes is that the user installs and runs a third-party app that has no permissions or only a single \"normal\" level permission that is automatically granted to the third-party app upon installation. The installed third-party app can leverage flaws in pre-loaded software to escalate privileges to indirectly perform actions or obtain data while lacking the necessary privileges to do so directly. Due to a wide range of local interfaces with missing access control checks and inadequate input validation, a third-party app’s behavior is not truly circumscribed by the permissions that it requests. Due to the common inclusion of pre-loaded software from Android vendors, chipset manufacturers, carriers, and vendor partners, exploit code can have significant breadth. The inter-app communication used to exploit these vulnerabilities may be difficult to classify as inherently malicious in general since it uses the standard communication channels employed by non-malicious apps. We pick up again where we left off from our DEF CON 26 talk … raiding the prepaid Android smartphone aisles at Walmart. We provide another snapshot on the state of security for Android carrier devices. In this talk, we examine 21 different prepaid Android smartphones being sold by the major American carriers, and we also cover 11 unlocked Android devices, which are primarily ZTE smartphones. We identified vulnerabilities in multiple layers of the Android software stack. For each discovered vulnerability, we step through the attack requirements, access vector, and attack workflow in order to help developers and bug hunters identify common software flaws going forward.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 31",
-      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Johnson",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2023,
       "domains": [
         "vulnerability-research"
       ],

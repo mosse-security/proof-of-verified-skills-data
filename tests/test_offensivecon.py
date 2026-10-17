@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from endorsement_scraper.assessors.offensivecon import parse_offensivecon
+from scrapers.assessors.offensivecon import parse_offensivecon
 
 
 class OffensiveConParserTest(unittest.TestCase):

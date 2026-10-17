@@ -1,0 +1,146 @@
+{
+  "name": "Elie Bursztein",
+  "last-updated": "2026-10-17T08:13:02Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 1,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Elie Bursztein",
+      "label": "Attacking Encrypted USB Keys the Hard(ware) Way",
+      "description": "Ever wondered if your new shiny AES hardware-encrypted USB device really encrypts your data - or is just a fluke? If you have, come to our talk to find out if those products live up to the hype and hear about the results of the audit we conducted on multiples USB keys and hard drives that claim to securely encrypt data. In this talk, we will present our methodology to assess \"secure\" USB devices both from the software and the hardware perspectives. We will demonstrate how this methodology works in practice via a set of case-studies. We will demonstrate some of the practical attacks we found during our audit so you will learn what type of vulnerability to look for and how to exploit them. Armed with this knowledge and our tools, you will be able to evaluate the security of the USB device of your choice.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Attacking Encrypted USB Keys the Hard(ware) Way",
+          "url": "https://www.youtube.com/watch?v=jVKl3GuazEs"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "How We Created the First SHA-1 Collision and What it Means for Hash Security",
+      "description": "In February 2017, we announced the first SHA-1 collision. This collision combined with a clever use of the PDF format allows attackers to forge PDF pairs that have identical SHA-1 hashes and yet display different content. This attack is the result of over two years of intense research. It took 6500 CPU years and 110 GPU years of computations which is still 100,000 times faster than a brute-force attack. In this talk, we recount how we found the first SHA-1 collision. We delve into the challenges we faced from developing a meaningful payload, to scaling the computation to that massive scale, to solving unexpected cryptanalytic challenges that occurred during this endeavor. We discuss the aftermath of the release including the positive changes it brought and its unforeseen consequences. For example it was discovered that SVN is vulnerable to SHA-1 collision attacks only after the WebKit SVN repository was brought down by the commit of a unit-test aimed at verifying that Webkit is immune to collision attacks. Building on the Github and Gmail examples we explain how to use counter-cryptanalysis to mitigate the risk of a collision attacks against software that has yet to move away from SHA-1. Finally, we look at the next generation of hash functions and what the future of hash security holds.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "How We Created the First SHA-1 Collision and What it Means for Hash Security",
+          "url": "https://www.youtube.com/watch?v=Zl1TZJGfvPo"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "Tracking Ransomware End to End",
+      "description": "A niche term just two years ago, ransomware has rapidly risen to fame in the last year, infecting hundreds of thousands of users, locking their documents, and demanding hefty ransoms to get them back. In doing so, it has become one of the largest cybercrime revenue sources, with heavy reliance on Bitcoins and Tor to confound the money trail. In this talk, we demonstrate a method to track the ransomware ecosystem at scale, from distribution sites to the cash-out points. By processing 100k+ samples, we shed light on the economics and infrastructure of the largest families, and we provide insight on their revenue and conversion rates. With a deep dive in the two largest groups, we show the details of their operation. Finally, we uncover the cash-out points, tracking how the money exits the bitcoin network, enabling the authorities to pick up the money trail using conventional financial tracing means.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Tracking Ransomware End to End",
+          "url": "https://www.youtube.com/watch?v=RV2tcc6e168"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "cybercrime-and-fraud"
+      ],
+      "subspecialties": {
+        "cybercrime-and-fraud": [
+          "ransomware-economics-and-operations"
+        ]
+      }
+    }
+  ]
+}

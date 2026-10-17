@@ -1,0 +1,149 @@
+{
+  "name": "Jonathan Brossard",
+  "last-updated": "2026-10-17T08:13:31Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 1,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Jonathan Brossard",
+      "label": "Hardware Backdooring is Practical",
+      "description": "This presentation will demonstrate that permanent backdooring of hardware is practical. We have built a generic proof of concept malware for the intel architecture, Rakshasa, capable of infecting more than a hundred of different motherboards. The first net effect of Rakshasa is to disable NX permanently and remove SMM related fixes from the BIOS, resulting in permanent lowering of the security of the backdoored computer, even after complete earasing of hard disks and reinstallation of a new operating system. We shall also demonstrate that preexisting work on MBR subvertions such as bootkiting and preboot authentication software bruteforce can be embedded in Rakshasa with little effort. More over, Rakshasa is built on top of free software, including the Coreboot project, meaning that most of its source code is already public. This presentation will take a deep dive into Coreboot and hardware components such as the BIOS, CMOS and PIC embedded on the motherboard, before detailing the inner workings of Rakshasa and demo its capabilities. It is hoped to raise awareness of the security community regarding the dangers associated with non open source firmwares shipped with any computer and question their integrity. This shall also result in upgrading the best practices for forensics and post intrusion analysis by including the afore mentioned firmwares as part of their scope of work.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 20",
+      "url": "https://defcon.org/html/defcon-20/dc-20-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 20 - Jonathan Brossard - Hardware Backdooring is Practical",
+          "url": "https://www.youtube.com/watch?v=MqbvxrJqrPU"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2012,
+      "domains": [
+        "digital-forensics",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "digital-forensics": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Jonathan Brossard",
+      "label": "Introduction the Wichcraft Compiler Collection : Towards Universal Code Theft",
+      "description": "With this presentation, we take a new approach to reverse engineering. Instead of attempting to decompile code, we seek to undo the work of the linker and produce relocatable files, the typical output of a compiler. The main benefit of the later technique over the former being that it does work. Once achieved universal code ‘reuse’ by relinking those relocatable objects as arbitrary shared libraries, we'll create a form of binary reflection, add scripting capabilities and in memory debugging using a JIT compiler, to attain automated API prototyping and annotation, which, we will argue, constitutes a primary form of binary code self awareness. Finally, we'll see how abusing the dynamic linker internals shall elegantly solve a number of complex tasks for us, such as calling a given function within a binary without having to craft a valid input to reach it. The applications in terms of vulnerability exploitation, functional testing, static analysis validation and more generally computer wizardry being tremendous, we'll have fun demoing some new exploits in real life applications, and commit public program profanity, such as turing PEs into ELFs, functional scripting of sshd in memory, stealing crypto routines without even disassembling them, among other things that were never supposed to work. All the above techniques have been implemented into the Wichcraft Compiler Collection, to be released as proper open source software (MIT/BSD-2 licenses) exclusively at DEF CON 24.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 24",
+      "url": "https://defcon.org/html/defcon-24/dc-24-speakers.html#Brossard",
+      "evidence-links": [
+        {
+          "title": "DEF CON 24 - Jonathan Brossard - Intro to Wichcraft Compiler Collection",
+          "url": "https://www.youtube.com/watch?v=1cgtr7VW7gY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "decompilation-and-disassembly"
+        ],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Jonathan Brossard",
+      "label": "Witchcraft Solver: Automated 0day Discovery in Stripped Binaries",
+      "description": "You have a stripped binary. No source. No symbols. No harness. You want a PoC. How do you get there? Witchcraft Solver (wsolver) is a fully automated binary-only 0day discovery pipeline. Phase 1 lifts the binary to LLVM IR via wunstrip (.eh_frame symbol recovery, 99.98% accuracy), runs an SSA taint pre-filter to cut targets by ~50%, then drives four parallel formal verification engines (KLEE, IKOS, SeaHorn, SMACK) to produce concrete violation witnesses - covering the entire binary in ~30 minutes, no source required. Phase 2 uses those witnesses to seed directed fuzzing (AFLGo) and binary-only concolic execution (SymQEMU), converting symbolic candidates into working PoCs. An optional Phase 0 handles non-Intel targets via a lifter portfolio (RetDec + Anvill + rev.ng), covering 93% of 39,364 production ELF binaries across ARM64, ARMv7, RISC-V, and s390x. Validated against CVE-2023-2804 (libjpeg-turbo heap-buffer-overflow): SymQEMU produces the first crash in 25 minutes from a stripped binary with zero source access. The tool will be released under MIT license at the conference at: https://github.com/endrazine/wsolver Experimental validation against the wider internet is left as an exercise to the audience...",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66599",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing",
+          "zero-day-and-0-day-research",
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

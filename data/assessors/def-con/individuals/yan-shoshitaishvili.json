@@ -1,0 +1,149 @@
+{
+  "name": "Yan Shoshitaishvili",
+  "last-updated": "2026-10-17T08:13:41Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 1,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Yan Shoshitaishvili",
+      "label": "Angry Hacking - the next generation of binary analysis",
+      "description": "Security has gone from a curiosity to a phenomenon in the last decade. Fortunately for us, despite the rise of memory-safe, interpreted, lame languages, the security of binaries is as relevant as ever. On top of that, (computer security) Capture the Flag competitions have skyrocketed in popularity, with new and exciting binaries on offer for hacking every weekend. This all sounds great, and it is. Unfortunately, the more time goes by, the older we get, and the more our skills fade. Whereas we were happy to stare at objdump a decade ago, today, we find the menial parts of reversing and pwning more and more tiring and more and more difficult. Worse, while security analysis tools have been evolving to make life easier for us hackers, the core tools that we use (like IDA Pro) have remained mostly stagnant. And on top of that, the term \"binaries\" have expanded to regularly include ARM, MIPS, PPC, MSP430, and every other crazy architecture you can think of, rather than the nice, comfortable x86 of yesteryear. New tools are required, and we're here to deliver. Over the last two years, we have been working on a next-generation binary analysis framework in an attempt to turn back the tide and reduce our mounting noobness. The result is called angr. angr assists in binary analysis by providing extremely powerful, state-of-the-art analyses, and making them as straightforward to use as possible. Ever wanted to know *what freaking value* some variable could take on in a function (say, can the target of a computed write point to the return address)? angr can tell you! Want to know what input you need to trigger a certain code path and export a flag? Ask angr! In the talk, we'll cover three of the analyses that angr provides: a powerful static analysis engine (able to, among other things, automatically identify potential memory corruption in binaries through the use of Value-Set Analysis), its symbolic execution engine, and dynamic emulation of various architectures (*super* useful for debugging shellcode). On top of that, angr is designed to make the life of a hacker as easy as possible -- for example, the whole system is 98% Python, and is designed to be a breeze to interact with through iPython. Plus, it comes with a nifty GUI with nice visualizations for symbolically exploring a program, tracking differences between different program paths, and understanding value ranges of variables and registers. Finally, angr is designed to be easily extensible and embeddable in other applications. We'll show off a semantic-aware ROP gadget finder (\"are there any gadgets that write to a positive offset of rax but don't clobber rbx\" or \"given this program state, what are the gadgets that won't cause a segfault\") and a binary diffing engine, both built on angr. We've used angr to solve CTF binaries, analyze embedded devices, debug shellcode, and even dabble in the DARPA Cyber Grand Challenge. We'll talk about our experiences with all of that and will release angr to the world, hopefully revolutionizing binary analysis and making everyone ANGRY!",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Shoshitaishvili",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Packet Capture Village - David Schwartzberg - Hacking the Next Generation",
+          "url": "https://www.youtube.com/watch?v=HC1ychmVdA4"
+        },
+        {
+          "title": "DEF CON 23 - Shoshitaishvili and Wang - Angry Hacking: The next gen of binary analysis",
+          "url": "https://www.youtube.com/watch?v=oznsT-ptAbk"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "red-teaming",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "reverse-engineering": [
+          "binary-and-application-reverse-engineering"
+        ],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Yan Shoshitaishvili",
+      "label": "Dark side of the ELF - leveraging dynamic loading to pwn noobs",
+      "description": "The ELF format is ancient, and much mystery lurks in its dark depths. For 16 years, it has safely encompassed our software, providing support for binary loading, symbol resolution, and lots of very useful binary stuff. In that time, security has become a key concern, resulting in binary defenses like NX and ASLR, which have made exploiting vulnerabilities quite difficult. ASLR, for example, randomizes the location of the stack, the heap, libraries, and (optionally), the binary itself at every execution of an application. There is no easy way to say this: ELF has let us down. In this talk, we'll explore the dark side of ELF. Specifically, we'll show how ELF, by design, implicitly trusts data structures in the ELF headers. Even in the presence of ASLR, an attacker able to corrupt these headers can trick the ELF loader into calling any function in any linked-in library, providing nothing but the name of the binary. In essence, this technique allows an attacker to call arbitrary library functions (such as system()!) without leaking memory addresses. We call this technique Leakless. While developing Leakless, we checked many different implementations of the standard C library and found that Leakless can be adapted to attack the ELF loader implementations in all of the common ones (i.e., GNU libc, the libc of the major BSDs, and uClibc). In this talk, we'll describe the internals of the ELF format, show how Leakless works to subvert library function resolution, and demonstrate how it can be use to carry out attacks without information disclosures. And, of course, we'll open-source the tool that we developed to make carrying out this attack easier.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#Di Federico",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Di Federico and Shoshitaishvili - Dark Side of the ELF",
+          "url": "https://www.youtube.com/watch?v=aGoDYa7Kbec"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Yan Shoshitaishvili",
+      "label": "DEF CON Academy: Cultivating M4D SK1LLZ In the DEF CON Community",
+      "description": "DEF CON is a siren song for the hacker mind. Clever people around the world hear it and are pulled, every year, to Las Vegas. They mass by the tens of thousands, streaming through the halls of DEF CON to watch talks given by absolute legends about incredible escapades, to gaze in wonder as true wizards bend bytes to their will in the CTF room, and to dream about one day reaching to those heights themselves. Some have the critical combination of grit, perseverance, raw talent, and (let's face it) privilege to push through to those dreams of greatness. But among even the clever and the motivated, it is rare for n00bs to rise to l33tness without support. Some find this support in inspiring classes in college. Others, among friends or mentors. But many don't find it at all, and remain in the hallways, dreaming. Do you want to leave the hallways and hack the planet? We are hackers, educators, and learners who are creating DEF CON Academy, a concerted effort to maximize hacker potential by providing open, clear, approachable, and inclusive practical resources for budding hackers to transcend and rule cyberspace. Through extensive DEF CON event presence and year-round hacking resources, we will pro up the noobs of the world and bring the community, at scale, to the next level of skill. Come, listen, and learn how we can help! link Connor Nelson, Yan Shoshitaishvili. DOJO: Applied Cybersecurity Education In The Browser. ACM SIGCSE 2024. link Connor Nelson, Yan Shoshitaishvili. PWN The Learning Curve: Education-First CTF Challenges. ACM SIGCSE 2024. link link link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54511",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

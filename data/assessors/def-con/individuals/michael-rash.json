@@ -1,0 +1,113 @@
+{
+  "name": "Michael Rash",
+  "last-updated": "2026-10-17T08:13:35Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 2,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Michael Rash",
+      "label": "Advanced Netfilter; Content Replacement (ala Snort_inline), and Port Knocking Based on Passive OS Fingerprinting",
+      "description": "Advanced Netfilter; Content Replacement (ala Snort_inline), and Port Knocking Based on Passive OS Fingerprinting The boundaries between network access control devices and network monitoring devices are steadily becomming blured. Network intrusion detection systems are moving into the realm of not only monitoring network traffic, but also modifying it either through dynamic reconfiguration of firewall rulesets, spoofed session-busting traffic, or outright alteration of application layer data (ala Snort_inline). Firewalls themselves are also getting smarter about protocol validation and application layer data. This talk will discuss two main topics; 1) a patch to the iptables string match extension in the Linux kernel that allows iptables to perform the same data substitution as Snort_inline but three times faster, and 2) a new tool called \"fwknop\" that implements port knocking authentication based on passive operating system fingerprints as detected via iptables log messages. The latter makes it possible to allow only, say, Linux systems to connect to your SSH daemon.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 12",
+      "url": "https://defcon.org/html/defcon-12/dc-12-speakers.html#rash",
+      "evidence-links": [
+        {
+          "title": "DEF CON 12 - Michael Rash, Advanced Netfilter; Content Replacement (ala Snort_inline)",
+          "url": "https://www.youtube.com/watch?v=DPo7eeq0JuE"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2004,
+      "domains": [
+        "cyber-defense"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "network-defense-and-monitoring"
+        ]
+      }
+    },
+    {
+      "name": "Michael Rash",
+      "label": "Service Cloaking and Anonymous Access; Combining Tor with Single Packet Authorization (SPA)",
+      "description": "Service Cloaking and Anonymous Access; Combining Tor with Single Packet Authorization (SPA) Michael Rash, CTO, Solirix, Inc. Abstract: Single Packet Authentication is becoming an increasingly important method for protecting arbitrary network services through the use of a kernel level filtering mechanism such as Netfilter in the Linux kernel. By sending SPA packets over the Tor network, SPA packets can be endowed with an additional layer of privacy and anonymity. It becomes cryptographically difficult to deduce the communication of the SPA packet from any particular source address; even from the perspective of an attacker that is in the enviable position to montior all packets going to and leaving from the SPA client system. The end result it that the exploitation of even 0-day vulnerabilities in a service that is protected with SPA/Tor is much more difficult. This talk will focus on applied aspects of Single Packet Authentication, and will include a lengthy demonstration at the beginning of the talk. A new version of the Single Packet Authentication software \"fwknop\" will also be released contains new features such as GPG-hardened last-hop IP resolution, a web interface to monitor SPA usage in an Enterprise environment, remote Netfilter policy management, and more. Bio: Michael Rash holds a Master's Degree in applied mathematics with a concentration in computer security from the University of Maryland, and is the CTO of Solirix, Inc. where he leads the Solsen product development effort. Previous to Solirix, Michael was a developer on the Dragon intrusion detection and prevention system, and also wrote a custom host-based intrusion detection system which was used to monitor the security of over one thousand systems from Linux to Cisco IOS at a major ASP. Michael frequently contributes to open source projects such as Netfilter and Bastille-Linux, and has written security related articles for the Linux Journal, Sys Admin Magazine, and USENIX ;login: Magazine. He is also the lead author of the book \"Intrusion Prevention and Active Response; Deploying Network and Host IPS\", and a co-author of \"Snort-2.1 Intrusion Detection\", both published by Syngress Press. Michael is the creator of two open source tools \"psad\" and \"fwsnort\" that are designed to blur the boundaries between Netfilter firewalls and the Snort IDS.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 14",
+      "url": "https://defcon.org/html/defcon-14/dc-14-speakers.html#Rash",
+      "evidence-links": [
+        {
+          "title": "DEF CON 14 - Michael Rash: Service Cloaking and Anonymous Access",
+          "url": "https://www.youtube.com/watch?v=Cbiojmk_N9E"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2006,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ]
+      }
+    }
+  ]
+}

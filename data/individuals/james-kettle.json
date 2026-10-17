@@ -1,25 +1,12 @@
 {
   "name": "James Kettle",
-  "last-updated": "2026-10-16T05:18:16Z",
+  "last-updated": "2026-10-17T05:50:55Z",
   "biography": "",
-  "contact": [
-    {
-      "label": "https://infosec.exchange/@albinowax",
-      "url": "https://infosec.exchange/@albinowax"
-    },
-    {
-      "label": "https://skeletonscribe.net/",
-      "url": "https://skeletonscribe.net/"
-    },
-    {
-      "label": "twitter",
-      "url": "https://twitter.com/albinowax"
-    }
-  ],
+  "contact": [],
   "stats": {
-    "endorsements": 6,
-    "assessors": 2,
-    "with-evidence": 6,
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -32,13 +19,13 @@
       "penetration-testing": 1,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 5,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 1
+      "unknown": 0
     }
   },
   "endorsements": [
@@ -154,117 +141,6 @@
       ],
       "subspecialties": {
         "penetration-testing": [],
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "James Kettle",
-      "label": "HTTP/2: The Sequel is Always Worse",
-      "description": "HTTP/2 is easily mistaken for a transport-layer protocol that can be swapped in with zero security implications for the website behind it. Two years ago, I presented HTTP Desync Attacks and kicked off a wave of request smuggling, but HTTP/2 escaped serious analysis. In this presentation, I'll take you beyond the frontiers of existing HTTP/2 research, to unearth horrifying implementation flaws and subtle RFC oversights. I'll show you how these flaws enable HTTP/2-exclusive desync attacks, with case studies targeting high-profile websites powered by servers ranging from Amazon's Application Load Balancer to WAFs, CDNs, and bespoke stacks by big tech. I'll demonstrate critical impact by hijacking thick clients, poisoning caches, and stealing plaintext passwords to net multiple max-bounties. After that, I'll unveil novel techniques and tooling to crack open a widespread but overlooked request smuggling variant affecting both HTTP/1 and HTTP/2 that is typically mistaken for a false positive. Finally, I'll drop multiple exploit-primitives that resurrect a largely-forgotten class of vulnerability, and use HTTP/2 to expose fresh application-layer attack surface. I'll leave you with an open-source scanner, a custom, open-source HTTP/2 stack, and free interactive labs so you can hone your new skills on live systems. REFERENCES: The HTTP/2 RFC is essential reading: https://tools.ietf.org/html/rfc7540 This research is built on my previous work on this topic: https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn This presentation by defparam has good explanations of response queue poisoning and self-desync attacks: https://www.youtube.com/watch?v=3tpnuzFLU8g I had a partial research collision with Emil Lerner. His work provides an alternative perspective on certain techniques: https://github.com/neex/http2smugl",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 29",
-      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#kettle",
-      "evidence-links": [
-        {
-          "title": "DEF CON 29 - James Kettle -  HTTP2: The Sequel is Always Worse",
-          "url": "https://www.youtube.com/watch?v=rHxVVeM9R-M"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2021,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
-        "vulnerability-research": []
-      }
-    },
-    {
-      "name": "James Kettle",
-      "label": "Browser-Powered Desync Attacks: A New Frontier in HTTP Request Smuggling",
-      "description": "Track 4 Browser-Powered Desync Attacks: A New Frontier in HTTP Request Smuggling James Kettle 45 minutes 💻 🪲",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 30",
-      "url": "https://forum.defcon.org/node/241826",
-      "evidence-links": [
-        {
-          "title": "DEF CON 30 - James Kettle - Browser-Powered Desync Attacks: A New Frontier in HTTP Request Smuggling",
-          "url": "https://www.youtube.com/watch?v=B8KW8KPVcUo"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2022,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "James Kettle",
-      "label": "Smashing the state machine: the true potential of web race conditions",
-      "description": "For too long, web race-condition attacks have focused on a tiny handful of scenarios. Their true potential has been masked thanks to tricky workflows, missing tooling, and simple network jitter hiding all but the most trivial, obvious examples. In this session, I'll introduce multiple new classes of race condition that go far beyond the limit-overrun exploits you're probably already familiar with. Inside every website lurks a state machine: a delicately balanced system of states and transitions that each user, session, and object can flow through. I'll show how to fire salvos of conflicting inputs at high-profile websites to make state machines collapse, enabling you to forge trusted data, misroute tokens, and mask backdoors. To handle this explosion of attack surface, I'll share a polished methodology designed to help you eke out subtle tell-tale clues and scent blood long before sacrificing anything to the RNG gods. I've also taken lore amassed over years of research into HTTP Desync Attacks and developed a strategy that can squeeze 30 requests sent from Melbourne to Dublin into a sub-1ms execution window. Alongside the open source tool, we'll also release free online labs so you can try out your new skillset immediately.",
-      "type": "presentation",
-      "assessor": "DEF CON",
-      "assessor-id": "def-con",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "DEF CON 31",
-      "url": "https://defcon.org/html/defcon-31/dc-31-speakers.html#Kettle",
-      "evidence-links": [
-        {
-          "title": "DEF CON 31 -  Smashing the State Machine the True Potential of Web Race Conditions - James Kettle",
-          "url": "https://www.youtube.com/watch?v=tKJzsaB1ZvI"
-        }
-      ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": false
-        },
-        "level": 2,
-        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
-      },
-      "year": 2023,
-      "domains": [
-        "vulnerability-research"
-      ],
-      "subspecialties": {
         "vulnerability-research": []
       }
     }

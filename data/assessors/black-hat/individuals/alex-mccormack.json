@@ -1,0 +1,94 @@
+{
+  "name": "Alex McCormack",
+  "last-updated": "2026-10-17T08:12:59Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 1,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 1,
+      "grc": 0,
+      "incident-response": 1,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Alex McCormack",
+      "label": "Hardening AWS Environments and Automating Incident Response for AWS Compromises",
+      "description": "Incident Response procedures differ in the cloud versus when performed in traditional, on-premise, environments. The cloud offers the ability to respond to an incident by programmatically collecting evidence and quarantining instances but with this programmatic ability comes the risk of a compromised API key. The risk of a compromised key can be mitigated but proper configuration and monitoring must be in place. The talk discusses the paradigm of Incident Response in the cloud and introduces tools to automate the collection of forensic evidence of a compromised host. It highlights the need to properly configure an AWS environment and provides a tool to aid the configuration process. Cloud IR How is it Different? Incident response in the cloud is performed differently than when performed in on-premise systems. Specifically, in a cloud environment you can not walk up to the physical asset, clone the drive with a write-blocker, or perform any action that requires hands on time with the system in question. Incident response best practices advise following predefined practiced procedures when dealing with a security incident, but organizations moving infrastructure to the cloud may fail to realize the procedural differences in obtaining forensic evidence. Furthermore, while cloud providers produce documents on handling incident response in the cloud, these documents fail to address the newly released features or services that can aid incident response or help harden cloud infrastructure. (1.) A survey of AWS facilities for automation around IR The same features in cloud platforms that create the ability to globally deploy workloads in the blink of an eye can also add to ease of incident handling. An AWS user may establish API keys to use the AWS SDK to programmatically add or remove resources to an environment, scaling on demand. A savvy incident responder can use the same AWS SDK, or (the AWS command line tools) to leverage cloud services to facilitate the collection of evidence. For example, using the AWS command line tools or the AWS SDK, a user can programmatically image the disk of a compromised machine with a single call. However, the power of the AWS SDK introduces a new threat in the event of an API key compromise. Increased Attack Surface via Convenience ( Walk through some compromise scenarios to illustrate ) There are many stories of users accidentally uploading their AWS keys to GitHub or another sharing service and then having to fight to regain control of the AWS account while their bill skyrockets. (2. 3.) And while these stories are sensational, they are preventable by placing limits on a cloud account directly. More concerning is the risk of a compromised key being used to access private data. A compromised API key without restrictions could access managed database, storage, or code repository services, to name a few. (4.) While the API key itself may not be used to access a targeted box, it is possible to use that key to clone a targeted box, and relaunch it with an attacker's SSH key, giving the attacker full access to the newly instantiated clone. While the consequences of a compromised API key can be dire, the risks can be substantially mitigated with proper configuration and monitoring. Hardening of AWS Infrastructure AWS environments can be hardened by following traditional security best practices and leveraging AWS services. AWS Services like CloudTrail and Config should be used to monitor and configure an AWS environment. CloudTrail provides logging of AWS API invocations tied to a specific API key. AWS Config provides historical insight into the configuration of AWS resources including users and the permissions granted in their policies. API keys associated to AWS accounts should be delegated according to least privilege and therefore have the fewest number of permissions granted in its policy as possible. Furthermore, API keys should be tightened to restrict access only to the resources they need. Managing of these policies is made easier by the group and role constructs provided by AWS IAM, but it still leaves to the user having to understand each of the 195 policies currently recognized by IAM. Introduction of Tools We present custom tooling so the entire incident response process can be automated based on certain triggers within the AWS account. With very little configuration users could detect a security incident, acquire memory, take snapshots of disk images, quarantine, and have it presented to an examiner workstation all in the time it takes to get a cup of coffee. Additional tooling is presented to aid in the recovery of an AWS account should a AWS key be compromised. The tool attempts to rotate compromised keys, identify and remove rogue EC2 instances and produce a report with next steps for the user. Finally, we present a tool that examines an existing AWS environments and aides in configuring that environment to a hardened state. The tool recommends services to enable, permissions to remove from user accounts, and metrics to collect. We discuss Incident Response in the cloud and introduce tools to automate the collection of forensic evidence of a compromised host. We highlight the need to properly configure an AWS environment and provide tools to aid the configuration process. References 1. AWS Security Resources. N.p., n.d. Web. 10 Apr. 2016. . 2. Example AWS Key Compromises. Ed. Soulskill. N.p., n.d. Web. 10 Apr. 2016. . 3. IT News Article on AWS Keys. N.p., n.d. Web. 10 Apr. 2016. . 4. AWS Console Breach CloudSpaces. N.p., n.d. Web. 10 Apr. 2016. .",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Automating Incident Response",
+          "url": "https://www.youtube.com/watch?v=0i6DVHsQamM"
+        },
+        {
+          "title": "Hardening AWS Environments and Automating Incident Response for AWS Compromises",
+          "url": "https://www.youtube.com/watch?v=Y9cAHxd0kW4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "cloud-security",
+        "cyber-defense",
+        "digital-forensics",
+        "incident-response",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "cloud-security": [
+          "cloud-workload-and-virtual-machine-security"
+        ],
+        "cyber-defense": [],
+        "digital-forensics": [
+          "disk-and-filesystem-forensics"
+        ],
+        "incident-response": [
+          "incident-handling-and-triage"
+        ],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ],
+        "identity-and-access-management": [
+          "single-sign-on-and-federation"
+        ]
+      }
+    }
+  ]
+}

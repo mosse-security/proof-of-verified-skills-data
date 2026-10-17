@@ -1,0 +1,323 @@
+{
+  "name": "Elie Bursztein",
+  "last-updated": "2026-10-17T08:13:29Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "http://elie.im",
+      "url": "http://elie.im"
+    }
+  ],
+  "stats": {
+    "endorsements": 7,
+    "assessors": 1,
+    "with-evidence": 7,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 3,
+      "devsecops": 0,
+      "digital-forensics": 1,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 6,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Elie Bursztein",
+      "label": "Bad Memories",
+      "description": "No matter which kind of cryptography you are using to defend your network, , sooner or later to make it work you will have to store somewhere a password, a key or a certificate. If the attacker is able to tampers with its storage mechanism then even the strongest encryption mechanism became irrelevant. In this talk we will present Tapjacking attacks which abuse smartphone features to create more efficient clickjacking attacks. We also show how to attack storage mechanisms to tampers with SSL session and break into Wifi network that use WPA encryption. For SSL we will show how to exploit warning inconsistency and caching mechanisms to trick the user into accepting a bad cert and gets his credential stolen. For Wifi network we will demonstrate how to use clickjacking, CSRF, and XSS to steal from routers the two pieces of information that an attacker needs to geo-localize and break into it, namely the WPA key and the mac address. Finally we will discuss how to discuss what frame busting defense are used by the Alexa top 100 website and how we were able to break them using standard and not so standard tricks. We also demonstrate how to use Paul Stone scrolling attack in novel ways. This is joint work with Dan Boneh and Collin Jackson.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 18",
+      "url": "https://defcon.org/html/defcon-18/dc-18-speakers.html#Bursztein",
+      "evidence-links": [
+        {
+          "title": "DEF CON 18 - Elie Bursztein & Panel - Bad Memories",
+          "url": "https://www.youtube.com/watch?v=UaOFMLqxxko"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2010,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "Kartograph : Finding a Needle in a Haystack or How to Apply Reverse Engineering Techniques to Cheat at Video Games",
+      "description": "While we were slaving away hacking an awesome memory analysis tool, Kartograph, our lazy graduate student friends next door were busy honing their skills in CIV 4, Age of Empire III, Anno, C&C, and WarCraft III. They did not anticipate that we could use Kartograph to own them in these games. This talk shows how we turned the tables on them by using Kartograph to build 0-day cheats. Kartograph is a tool designed to reverse-engineer the memory structure of games, applying analysis and visualization techniques to find small chunks of valuable information within large process footprints (like a needle in a haystack). As a proof of concept, we used Kartograph to extract the relevant 256KB chunks from 1+GB processes and built what is considered the most difficult cheat to build: a map-hack. We will show a live demo of how Kartograph works and some cool cheats we built with it for CIV4, AoE3, Anno, and WarIII. If you want to learn about memory forensic techniques, or if you want to cheat at these popular games, you don't want to miss this talk.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 18",
+      "url": "https://defcon.org/html/defcon-18/dc-18-speakers.html#Bursztein2",
+      "evidence-links": [
+        {
+          "title": "DEF CON 18 - Elie Bursztein & Jocelyn Lagarenne - Kartograph : Finding a Needle in a Haystack",
+          "url": "https://www.youtube.com/watch?v=OHLxUXFLkgk"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2010,
+      "domains": [
+        "digital-forensics",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "digital-forensics": [],
+        "reverse-engineering": [],
+        "vulnerability-research": [
+          "zero-day-and-0-day-research"
+        ]
+      }
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "Fuzzing Online Games",
+      "description": "Fuzzing online games to find interesting bugs requires a unique set of novel techniques. In a nutshell the lack of direct access to the game server and having to deal with clients that are far too complex to be easily emulated force us to rely on injecting fuzzing data into a legitimate connections rather than use the standard replay execution approach. Top that with heavily encrypted and complex network protocols and you start to see why we had to become creative to succeed :) In this talk, we will discuss and illustrate the novels techniques we had to develop to be able to fuzz online games, including how to successfully inject data into a gaming sessions and how to instrument the game memory to know that our fuzzing was successful. We will also tell you how to find and reverse the interesting part of the protocol, and how to decide when to perform the injection.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 20",
+      "url": "https://defcon.org/html/defcon-20/dc-20-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 20 - Elie Bursztein and Patrick Samy - Fuzzing Online Games",
+          "url": "https://www.youtube.com/watch?v=exs1ut5OEyA"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2012,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "fuzzing-and-automated-testing"
+        ]
+      }
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "I am a legend: Hacking Hearthstone with machine learning",
+      "description": "Want to become a legend at Hearthstone -- Blizzard's new blockbuster collecting card game -- or simply learn how to play better? Then pull up a chair by the hearth and join us for a talk about Hearthstone mechanics and how to improve your chance of winning using machine learning and data mining. This talk is packed with examples that show how to use the tools that we are releasing at Defcon. First, we will show you how to uncover the most undervalued cards by building a pricing model reflecting the cards' abilities. Next we will explain how decks can be optimized by tweaking their mana curve to maximize mana efficiency. Finally, we will cover how to predict with relatively good accuracy what opponents are likely to play turn-by-turn by data-mining game replays and building a predictive model that uses that information. Even if you've never heard of Hearthstone before (shame on you!), you should still come to to the talk. That's because it's fun and the techniques discussed can help you improve your performance on other collectible cards games including Magic.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 22",
+      "url": "https://defcon.org/html/defcon-22/dc-22-speakers.html#Bursztein",
+      "evidence-links": [
+        {
+          "title": "DEF CON 22 - Elie Bursztein and Celine Bursztein - I am a legend: Hacking Hearthstone",
+          "url": "https://www.youtube.com/watch?v=7AAilkNRQAw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "cyber-defense"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ]
+      }
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "How we created the first SHA-1 collision and what it means for hash security",
+      "description": "Friday at 14:00 in Track 4 45 minutes | Demo, Tool Elie Bursztein Anti-abuse research lead, Google In February 2017, we announced the first SHA-1 collision. This collision combined with a clever use of the PDF format allows attackers to forge PDF pairs that have identical SHA-1 hashes and yet display different content. This attack is the result of over two years of intense research. It took 6500 CPU years and 110 GPU years of computations which is still 100,000 times faster than a brute-force attack. In this talk, we recount how we found the first SHA-1 collision. We delve into the challenges we faced from developing a meaningful payload, to scaling the computation to that massive scale, to solving unexpected cryptanalytic challenges that occurred during this endeavor. We discuss the aftermath of the release including the positive changes it brought and its unforeseen consequences. For example it was discovered that SVN is vulnerable to SHA-1 collision attacks only after the WebKit SVN repository was brought down by the commit of a unit-test aimed at verifying that Webkit is immune to collision attacks. Building on the Github and Gmail examples we explain how to use counter-cryptanalysis to mitigate the risk of a collision attacks against software that has yet to move away from SHA-1. Finally we look at the next generation of hash functions and what the future of hash security holds",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Bursztein",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 -  Elie Bursztein - How We Created the First SHA 1 Collision",
+          "url": "https://www.youtube.com/watch?v=NbHL0SYlrSQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "A Hacker Guide To Deep-Learning Based Side Channel Attacks",
+      "description": "This talk explores how AI is revolutionizing hardware side-channel attacks and what this new wave of attacks mean for the future of hardware cryptography. Based on the lessons learned while successfully attacking many hardware AES implementations using deep-learning this talk discuss why those attacks are fundamentally more efficient and details how to conduct then in practice.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Bursztein",
+      "evidence-links": [
+        {
+          "title": "DEF CON Safe Mode - Elie Bursztein - A Hacker's Guide to Reducing Side Channel Attack Surfaces",
+          "url": "https://www.youtube.com/watch?v=nGKfWD5BnRI"
+        },
+        {
+          "title": "DEF CON Safe Mode - Elie Bursztein - A Hacker’s Guide to Reducing Side Channel Attack Surfaces",
+          "url": "https://www.youtube.com/watch?v=oPHWLIo88b8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    },
+    {
+      "name": "Elie Bursztein",
+      "label": "A Hacker’s Guide to Reducing Side-Channel Attack Surfaces Using Deep-Learning",
+      "description": "in recent years, deep-learning based side-channel attacks have been proven to be very effective and opened the door to automated implementation techniques. Building on this line of work, this talk explores how to take the approach a step further and showcases how to leverage the recent advance in AI explainability to quickly assess which parts of the implementation is responsible for the information. Through a concrete set by step example, we will showcase the promise of this approach, its limitations, and how it can be used today.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 28",
+      "url": "https://defcon.org/html/defcon-safemode/dc-safemode-speakers.html#Bursztein",
+      "evidence-links": [
+        {
+          "title": "DEF CON Safe Mode - Elie Bursztein - A Hacker's Guide to Reducing Side Channel Attack Surfaces",
+          "url": "https://www.youtube.com/watch?v=nGKfWD5BnRI"
+        },
+        {
+          "title": "DEF CON Safe Mode - Elie Bursztein - A Hacker’s Guide to Reducing Side Channel Attack Surfaces",
+          "url": "https://www.youtube.com/watch?v=oPHWLIo88b8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2020,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cryptographic-attacks"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "Anish Athalye",
+  "last-updated": "2026-10-17T08:13:26Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Anish Athalye",
+      "label": "Want Strong Isolation? Just Reset Your Processor",
+      "description": "Today's systems sandbox code through traditional techniques: memory protection and user-kernel mode. Even high-security devices like hardware cryptocurrency wallets use such an architecture. Unfortunately, this arrangement has a history of security bugs due to misconfigured protection hardware, bugs in kernel code, hardware bugs, and side channels. This talk proposes a new approach to isolation for devices like crypto wallets: separate the user and kernel onto two CPUs and multiplex processes by completely resetting the user processor between tasks so that there is no leakage. Processor reset is more complicated than might be expected. Simply asserting the reset line isn't enough to clear all CPU-internal state, but it turns out that software can be used to clear this state. However, reasoning about the correctness of such code is challenging. This talk presents a tool that can be used to develop and formally verify the correctness of reset code for a given CPU implementation. This talk also walks through a design of a wallet based on this reset-based isolation technique, discusses known security vulnerabilities in current designs such as the Ledger and Trezor wallets (including bugs in MPU misconfiguration, system calls, and drivers), and explores how a reset-based design could prevent such vulnerabilities.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Athalye",
+      "evidence-links": [
+        {
+          "title": "Anish Athalye - Want Strong Isolation Just Reset Your Processor - DEF CON 27 Conference",
+          "url": "https://www.youtube.com/watch?v=AgCNPc5RfL8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

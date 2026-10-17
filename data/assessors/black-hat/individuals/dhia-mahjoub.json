@@ -1,0 +1,165 @@
+{
+  "name": "Dhia Mahjoub",
+  "last-updated": "2026-10-17T08:13:02Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 3,
+      "devsecops": 0,
+      "digital-forensics": 1,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 2,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Dhia Mahjoub",
+      "label": "Catching Malware En Masse: DNS and IP Style",
+      "description": "The Internet is constantly growing, providing a myriad of new services both legitimate and malicious. Criminals take advantage of the scalable, distributed, and rather easily accessible naming, hosting and routing infrastructures of the Internet. As a result, the battle against malware is raging on multiple fronts: the endpoint, the network perimeter, and the application layer. The need for innovative measures to gain ground against the enemy has never been greater. In this talk, we will present a novel and effective multi-pronged strategy to catch malware at the DNS and IP level, as well as our unique 3D visualization engine. We will describe the detection systems we built, and share several successful war stories about hunting down malware domains and associated rogue IP space. At the DNS level, we will describe original methods for tracking botnets, both fast flux and DGA-based. We use a combination of fast, light-weight graph clustering and DNS traffic analysis techniques and threat intelligence feeds to rapidly detect botnet domain families, identify new live CnC domains and IPs, and mitigate them. At the IP level, classical reputation methods assign \"maliciousness\" scores to IPs, BGP prefixes, or ASNs by merely counting domains and IPs. Our system takes an unconventional approach that combines two opposite, yet complementary views and leads to more effective predictive detections. On one hand, we abstract away from the ASN view. We build the AS graph and investigate its topology to uncover hotspots of malicious or suspicious activities and then scan our DNS database for new domains hosted on these malicious IP ranges. To confirm certain common patterns in the AS graph and isolate suspicious address space, we will demonstrate novel forensics and investigative methods based on the monitoring of BGP prefix announcements. On the other hand, we drill down to a granularity finer than the BGP prefix. For this, we zero in on re-assigned IP ranges reserved by bad customers within large prefixes to host Exploit kit domains, browlock, and other attack types. We will present various techniques we devised to efficiently discover suspicious reserved ranges and sweep en masse for candidate suspicious IPs. Our system provides actionable intelligence and preemptively detects and blocks malicious IP infrastructures prior to, or immediately after some of them are used to wage malware campaigns, therefore decisively closing the detection gap. During this presentation, we will publicly share some of the tools we built to gather this predictive intelligence. The discussion of these detection engines and \"war stories\" wouldn't be complete without a visualization engine that adequately displays the use cases and offers a graph navigation and investigation tool. Therefore, in this presentation, we will present and publicly release for the first time our own 3D visualization engine, demonstrating the full process which transforms raw data into stunning 3D visuals. We will also present different techniques used to build and render large graph datasets: Force Directed algorithms accelerated on the GPU using OpenCL, 3D rendering and navigation using OpenGL ES, and GLSL Shaders. Finally, we will present a few scripts and methods used to explore our large networks. Every concept is intended to detect and highlight precise features and will be presented with its corresponding visual representation related to malware detection use cases.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2014",
+      "url": "https://blackhat.com/us-14/archives.html",
+      "evidence-links": [
+        {
+          "title": "Catching Malware En Masse: DNS and IP Style",
+          "url": "https://www.youtube.com/watch?v=cHuyqnVhT4g"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2014,
+      "domains": [
+        "cyber-defense",
+        "digital-forensics",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "threat-intelligence-operations"
+        ],
+        "digital-forensics": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Dhia Mahjoub",
+      "label": "Towards a Holistic Approach in Building Intelligence to Fight Crimeware",
+      "description": "To defeat your adversaries, it is crucial to understand how they operate and to develop a comprehensive view of their playing field. In this talk, we describe a holistic and scalable approach to investigating and combating cybercrime. Our strategy focuses on two perspectives: the network attack surface and the actors. The network attack surface exploited by malware manifests itself through various aspects such as hosting IP space, DNS traffic, open ports, BGP announcements, ASN peerings, and SSL certificates. The actors' view tracks trends, motivations, and TTPs of cyber criminals by infiltrating and maintaining access to closed underground forums where threat actors collaborate to plan cyber attacks. Crimeware campaigns nowadays rely heavily on bulletproof hosting for scalable deployment. We distinguish two types of such hosting infrastructures: the first consists of a large number of infected residential hosts scattered geographically that are leveraged to build a fast flux proxy network. This network is a hosting-as-a service platform for various malware and ransomware C2, phishing, carding, and botnet panels. The second type exists in dedicated servers acquired from rogue hosting companies or large abused hosting providers with the purpose of hosting exploit kits, phishing, malware C2, and other gray content. We start by using DNS traffic analysis and passive DNS mining algorithms to massively detect malware domains. After we identify the hosting IPs of these domains, we will demonstrate novel methods using DNS PTR data to further map out the entire IP space of bulletproof hosters serving these attacks. In the case of fast flux proxy networks, we leverage SSL data to map out larger sets of compromised hosts. Concurrently, we investigate underground forums for emerging signals about bulletproof hosters just about to be employed for malware campaigns. The talk describes how to proactively bridge the gap between the actors and network views by identifying the IP space of the mentioned hosters given very few initial indicators and predictively block it. This is made possible thanks to the deployment at large scale of DNS PTR, SSL, and HTTP data provided by Project Sonar datasets and our own scanning of certain IP regions. It is undoubtedly a serious challenge facing security researchers to devise means to quickly index and search through vast quantities of security related log data. Therefore, we will also describe the backend architecture, based on HBase and ElasticSearch, that we use to index global Internet metadata so it is easily searchable and retrievable. Join us in this talk to learn about effective methods to investigate malware from both network and actors' perspectives and hear about our experience on how to deploy and mine large scale Internet data to support threat research.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Towards a Holistic Approach in Building Intelligence to Fight Crimeware",
+          "url": "https://www.youtube.com/watch?v=hBzGM3d7c1Y"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "cybercrime-and-fraud"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [],
+        "cybercrime-and-fraud": [
+          "ransomware-economics-and-operations"
+        ]
+      }
+    },
+    {
+      "name": "Dhia Mahjoub",
+      "label": "RBN Reloaded - Amplifying Signals from the Underground",
+      "description": "Threat intelligence gains immensely in clarity and precision when signals intelligence (SIGINT) and on-the-ground human intelligence (HUMINT) work closely in tandem. This fusion offers the best opportunity to build real visibility into an adversary's TTPs, intent, sophistication and composition. As a result, a deeper understanding of the adversary not only leads to better decision making to mitigate the threat, but also helps to proactively exploit pain points and have a longer lasting impact. In this talk, we will illustrate how we use the network- (SIGINT) and actor-centric (HUMINT) approaches, in much the same way SIGINT and HUMINT have contributed in the fight against terrorism, organized crime and the drug trade, to proactively expose key information about sophisticated bulletproof hosting (BPH) operations that have been enabling long-lasting and lucrative cybercrime campaigns. We will be showcasing the results of combining both approaches by highlighting details of our research into a top tier Russian BPH service that has been supporting the full spectrum (banking trojans, phishing, ransomware, etc) of cyber criminals since at least 2010. The talk will highlight key findings such as networks/ASNs, the service's history across the underground marketplace, and relationships with other bulletproof hosters. We will also describe a new large scale integrated methodology that combines both the network- and actor-centric approaches to track, expose and disrupt crimeware. This system is built to offer the capabilities of a search and recommender engine. The network-centric component is powered by worldwide DNS and network data that is ingested, processed and indexed at Internet scale. The actor-centric component is facilitated by exclusive access to closed underground forums, marketplaces and threat actors/groups. Given initial intelligence from the actor or network perspective, we show how we use the search and recommender system to amplify seed signals and cast a much wider net on a richer set of crimeware assets: malware C2s, dump shops, criminal forums and jabber servers, rogue VPN and proxy services, stolen accounts shops, etc. This talk will be beneficial to a wide audience including threat intelligence analysts, security researchers, big data engineers, investigators, and decision makers.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "RBN Reloaded - Amplifying Signals from the Underground",
+          "url": "https://www.youtube.com/watch?v=PGTTRN6Vs-Y"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "cybercrime-and-fraud"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "threat-intelligence-operations"
+        ],
+        "vulnerability-research": [],
+        "cybercrime-and-fraud": [
+          "cybercrime-forums-and-marketplaces",
+          "ransomware-economics-and-operations"
+        ]
+      }
+    }
+  ]
+}

@@ -16,7 +16,7 @@ cyber domains are introduced.
 2. Inspect the target assessor JSON in `data/assessors/<id>.json`.
    Keep assessor metadata in the assessor file; never duplicate or
    edit unrelated fields such as `peerReview.processUrl` while changing links.
-3. Put reusable framework behavior in `endorsement_scraper/`. Put discovered
+3. Put reusable framework behavior in `scrapers/`. Put discovered
    site adapters in `scrapers/`, normally one adapter per assessor. There is no
    fixed assessor list: discovery recursively loads any number of adapters and
    the merger recursively consumes any assessor directory. Use a
@@ -40,12 +40,14 @@ cyber domains are introduced.
    combines contact data, writes one `individual.tpl` record per person under
    `data/individuals`, and clears the temporary output directories even when
    merging fails. Use `--keep-tmp` only when debugging.
-8. Run `tests.test_individuals_coverage` after merging. Every active
+8. Run `tests.test_individuals_coverage` and `tests.test_individual_quality` after merging. Every active
    individual must have at least one endorsement; stale profile-only files
-   must be removed from `data/individuals` before publishing.
+   and title-shaped pseudo-people must be removed from `data/individuals`
+   before publishing. The merger quarantines these recoverably under
+   `data/individuals-stale/`.
 9. Run tests, compile checks, and schema validation before reporting completion.
 10. Run enrichers before endorsement generation when external datasets are
-   needed. Enrichers are discovered recursively under `enrichers/` and write
+   needed. Enrichers are discovered recursively under `scrapers/enrichers/` and write
    one dataset archive per enricher under `data/enrichments/`.
 11. For every assessor JSON that advertises a YouTube URL or playlist,
     including `archiveInventory.youtubeYears`, collect videos before
@@ -53,7 +55,7 @@ cyber domains are introduced.
     non-empty catalogs, and report both catalog size and matched evidence-link
     count. A large unmatched remainder requires better matching logic.
 12. For every non-empty YouTube catalog, archive English transcripts with
-   `python -m endorsement_scraper.transcripts --assessor <id>`. This writes
+   `python -m scrapers.transcripts --assessor <id>`. This writes
    one idempotent ZIP under `data/archives/yt-transcripts/` per assessor, skips unchanged video
    IDs, and captures newly added or changed videos on later runs.
 13. Run `python -m unittest tests.test_transcript_coverage -v` whenever
@@ -86,7 +88,7 @@ cyber domains are introduced.
   `peerReview.rigorLevel`, and `peerReview.reviewType`.
 - Every endorsement has a non-empty `domains` array and a `subspecialties`
   object keyed exactly by those domains. Use the canonical taxonomy in
-  `endorsement_scraper/domains.py`; use `unknown` only when no rule matches.
+  `scrapers/domains.py`; use `unknown` only when no rule matches.
   Specialty identifiers are lowercase and hyphenated, and must remain under
   their parent domain.
   Update the central classifier and tests when expanding the taxonomy.
@@ -97,6 +99,9 @@ cyber domains are introduced.
   `last-updated` is an ISO-8601 UTC timestamp:
   unchanged merges preserve it, while content changes refresh it. Contact
   entries use the template's label plus URL or email.
+- Individual `name` values must identify a person or explicitly recognized
+  speaker identity, never a talk title, schedule prose, affiliation block, or
+  session label. The central merger and quality regression test enforce this.
 - Preserve deterministic output, atomic writes, and idempotent reruns. Default
   overwrite behavior must be explicit, and provide a no-overwrite option where
   generated files may be protected.
@@ -109,26 +114,29 @@ cyber domains are introduced.
 
 ```powershell
 # Discover and run all assessor adapters
-python -m endorsement_scraper
+python -m scrapers
 
 # Run one assessor and refresh its grouped output
-python -m endorsement_scraper --assessor def-con --overwrite
-python -m endorsement_scraper --assessor black-hat --overwrite
+python -m scrapers --assessor def-con --overwrite
+python -m scrapers --assessor black-hat --overwrite
 
 # Rebuild all assessors before merging individuals
-python -m endorsement_scraper --overwrite --workers 1
+python -m scrapers --overwrite --workers 1
 
 # Confirm every configured source URL has a local archive member
 python -m unittest tests.test_archive_coverage -v
 
 # Merge all endorsements and profiles into individual records
-python -m endorsement_scraper.individuals --overwrite
+python -m scrapers.individuals --overwrite
 
 # Detect stale/profile-only individual files
 python -m unittest tests.test_individuals_coverage -v
 
+# Detect title-shaped names and reversed speaker/title rows
+python -m unittest tests.test_individual_quality -v
+
 # Preserve temporary outputs for inspection
-python -m endorsement_scraper.individuals --overwrite --keep-tmp
+python -m scrapers.individuals --overwrite --keep-tmp
 
 # Run the complete test suite
 python -m unittest discover -s tests -q

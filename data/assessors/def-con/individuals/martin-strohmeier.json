@@ -1,0 +1,123 @@
+{
+  "name": "Martin Strohmeier",
+  "last-updated": "2026-10-17T08:13:34Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/masorx"
+    }
+  ],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 1,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Martin Strohmeier",
+      "label": "Exploiting Bluetooth - from your car to the bank account$$",
+      "description": "Over the past decade, infotainment systems have experienced a growth in functionality, broader adoption, and central incorporation into vehicle architecture. Due to the ever-growing role of wireless protocols such as Bluetooth and a known lack of patches alongside the difficulty of patch installation, this poses a new attack surface and a genuine threat to the users. Meanwhile, the tools and methodologies required for testing are scattered across the Internet, absent and need a rigorous setup. In this talk, we share a comprehensive framework BlueToolkit to test and replay Bluetooth Classic vulnerabilities. Additionally, we release new exploits and a privilege escalation attack vector. We show how we used the toolkit to find 64 new vulnerabilities in 22 modern cars and the Garmin Flight Stream flight management system used in several aircraft types. Our work equips hackers with insights and necessary information on novel vulnerabilities that could be used to steal information from target cars, establish MitM position or escalate privileges to hijack victims’ accounts and MFA codes stealthily. Overall, we show vulnerabilities in cars, aircraft and smartphones. We believe our research will be beneficial in finding new vulnerabilities and making Bluetooth research more accessible and reproducible. References: BlueToolkit - Bluetooth Classic vulnerability testing framework link (all exploits will be uploaded after 9th of August) MapAccountHijack - Tool that allows hijacking services by exploiting widely used Bluetooth Classic functionality link - link (accessible after 9th of August) D. Antonioli and M. Payer. On the insecurity of vehicles against protocol-level bluetooth threats. In 2022 IEEE Security and Privacy Workshops (SPW), pages 353–362, Los Alamitos, CA, USA, May 2022. IEEE Computer Society. Cross-Sectional Analysis of the Bluetooth Stack of Modern Cars - (The link will be updated) Wenjian Xu. Stealthily Access Your Android Phones: Bypass The Bluetooth Authentication. link, 2020. Tyler Tucker, Hunter Searle, Kevin Butler, and Patrick Traynor. Blue’s clues: Practical discovery of non-discoverable bluetooth devices. In 2023 IEEE Symposium on Security and Privacy (SP), pages 3098–3112, 2023. Maximilian von Tschirschnitz, Ludwig Peuckert, Fabian Franzen, and Jens Grossklags. Method confusion attack on bluetooth pairing. In 2021 IEEE Symposium on Security and Privacy (SP), pages 1332–1347, 2021. Daniele Antonioli, Nils Ole Tippenhauer, and Kasper Rasmussen. The KNOB is Broken: Exploiting Low Entropy in the Encryption Key Negotiation of Bluetooth BR/EDR. In USENIX Security Symposium (SEC), August 2019",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 32",
+      "url": "https://defcon.org/html/defcon-32/dc-32-speakers.html#54473",
+      "evidence-links": [
+        {
+          "title": "DEF CON 32 - Exploiting Bluetooth from your car to the bank account  - Vladyslav Zubkov, Martin Str",
+          "url": "https://www.youtube.com/watch?v=JL7a_oLoXHY"
+        },
+        {
+          "title": "DEF CON 32  - Exploiting Bluetooth from your car to the bank account$$ - Yso & Martin Strohmeier",
+          "url": "https://www.youtube.com/watch?v=MS582wba46E"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2024,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "endpoint-and-host-defense"
+        ],
+        "vulnerability-research": [],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "Sliding into the Flight Deck’s DMs: Practical Message Attacks on CPDLC",
+      "description": "Air traffic control quietly moved from voice radios to text messages—and almost nobody outside aviation noticed. We did. And it turns out you can slide into a commercial aircraft’s DMs. In this talk, we show how modern aircraft receive digital instructions (like “climb,” “descend,” or “turn”) over a system called CPDLC—and how that system has basically zero real security. No crypto. No authentication. Just vibes and protocol complexity. We built a full fake ground station using cheap SDR gear and made certified avionics believe we were air traffic control. From there, we can inject real flight instructions or knock aircraft offline at scale with protocol-level DoS attacks—no jamming required. This isn’t a simulation. We tested it against real aviation hardware in a live CPDLC environment. If you’ve ever wondered what happens when safety-critical infrastructure assumes “nobody will try this,” this talk is for you.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 34",
+      "url": "https://defcon.org/html/defcon-34/dc-34-speakers.html#content_66578",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "operational-technology-security"
+      ],
+      "subspecialties": {
+        "operational-technology-security": [
+          "critical-infrastructure-resilience",
+          "automotive-security",
+          "ecu-and-automotive-embedded-systems"
+        ]
+      }
+    }
+  ]
+}

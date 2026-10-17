@@ -100,7 +100,7 @@ individual with a cross-assessor count.
 
 ## Enrichers
 
-Enrichers are plugins discovered recursively below `enrichers/`, independent of
+Enrichers are plugins discovered recursively below `scrapers/enrichers/`, independent of
 the endorsement scrapers. Each has a stable `enricher_id` and writes a JSON
 array as `data.json` inside `data/enrichments/<enricher-id>/data.zip`.
 `EnrichmentCatalog` loads all such datasets and adapters pass matching records
@@ -121,7 +121,7 @@ assessor-specific matching logic rather than silently treating videos as
 irrelevant. `tests.test_video_enrichment_coverage` verifies non-empty catalogs.
 
 Transcript archives are separate from video metadata catalogs. Run
-`python -m endorsement_scraper.transcripts --assessor <id>` after collecting a
+`python -m scrapers.transcripts --assessor <id>` after collecting a
 catalog. It stores normalized English transcript text in
 `data/archives/yt-transcripts/<id>-transcripts.zip`, with a `manifest.json` keyed by video ID.
 Unchanged videos are skipped, while new or changed catalog entries are
@@ -135,7 +135,7 @@ IDs, and transcript members absent from the catalog.
 
 ## Run statistics
 
-`endorsement_scraper.stats` writes an atomic `data/stats.json` after the main
+`scrapers.stats` writes an atomic `data/stats.json` after the main
 scraper CLI completes. It records UTC timestamps, duration, per-scraper counts,
 totals, evidence-link counts, errors, and validations such as the DEF CON
 non-zero endorsement check.
@@ -157,7 +157,7 @@ captured conference endorsements without a matched YouTube video.
 
 ## Conference adapter lessons
 
-`endorsement_scraper/assessors/def_con.py` supports multiple historical
+`scrapers/assessors/def_con.py` supports multiple historical
 HTML layouts. Modern pages use `.talk`, `.speaker`, `.speaker-bio`/
 `.speakerBio`, and empty abstract markers whose description is in following
 siblings. DEF CON 18–21 use `h2.title`/`h4.byLine`; their speaker bios may be
@@ -192,12 +192,12 @@ blank browser `saved_resource.html` files are not source pages.
 
 After parser/schema changes:
 
-1. Run `python -m compileall -q endorsement_scraper scrapers tests`.
+1. Run `python -m compileall -q scrapers scrapers tests`.
 2. Run `python -m unittest discover -s tests -q`.
 3. Run all configured scrapers with `--overwrite` when rebuilding the dataset;
    running only one assessor produces incomplete per-person histories. Use
    `--workers 1` for browser-backed retrieval.
-4. Run `python -m endorsement_scraper.individuals --overwrite --keep-tmp`.
+4. Run `python -m scrapers.individuals --overwrite --keep-tmp`.
    Keep the existing `data/individuals` directory in place during this step;
    the merger can only preserve `last-updated` values when it can compare
    against the existing files. If a clean-room rebuild is unavoidable, restore
@@ -208,7 +208,7 @@ After parser/schema changes:
 5. Run `python -m unittest tests.test_individuals_coverage -v` and remove or
    quarantine stale profile-only files it identifies.
 6. Validate all generated individual files through
-   `endorsement_scraper.individuals._validate_individual` or the public schema
+   `scrapers.individuals._validate_individual` or the public schema
    helpers, and report record/profile counts.
 
 

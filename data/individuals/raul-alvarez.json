@@ -1,6 +1,6 @@
 {
   "name": "Raul Alvarez",
-  "last-updated": "2026-10-16T05:18:21Z",
+  "last-updated": "2026-10-17T05:50:58Z",
   "biography": "",
   "contact": [],
   "stats": {
@@ -18,7 +18,7 @@
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
-      "reverse-engineering": 1,
+      "reverse-engineering": 0,
       "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
@@ -32,7 +32,7 @@
     {
       "name": "Raul Alvarez",
       "label": "Dissecting a Metamorphic File-Infecting Ransomware",
-      "description": "Virlock is a polymorphic file-infecting ransomware. It is capable of infecting executable files and at the same time, hold your computer hostage. Running a single infected file is a sure way of infecting your computer all over again. That is one of the main goals of Virlock. As a ransomware, the malware makes sure that you won’t be able to use your computer until you pay the ransom demand. And to make our lives, even harder, Virlock employs an on-demand polymorphic algorithm, where each and every copy of the infected executable file is different from each other. And there is more, Virlock is not only a polymorphic file-infecting ransomware. The initial set of the malware code is metamorphic in nature. In this presentation, we will dive deep in Virlock’s code to expose how it implements its metamorphic code, and how it uses an on-demand polymorphic algorithm. We will also look at how we can detect Virlock, and how we can clean an infected file. We will also look into not only how the metamorphic algorithm works, but also on how it generates the metamorphic algorithm itself.",
+      "description": "Dissecting a Metamorphic File-Infecting Ransomware",
       "type": "presentation",
       "assessor": "Insomni'hack",
       "assessor-id": "insomnihack",
@@ -69,7 +69,7 @@
     {
       "name": "Raul Alvarez",
       "label": "Hijacking the Boot Process - Ransomware Style",
-      "description": "Have you ever wondered how a boot process works? How a computer detects which operating system it needs to load? Or what is the impact if that single sector in your harddisk is compromised? In this presentation, we are going to look into how Petya, a ransomware, can overwrite an MBR (Master Boot Record), both in MBR- and GPT-style disk, with its malicious code. Then, we are going to follow the code in the MBR and show how a simple malicious kernel code can take control of the boot process until you pay the ransom. I will show a demo on how to debug the MBR to see how the actual native code executes without any API. We are also going to see how we can use a combination of different tools to figure out how a ransomware can infect the very first sector of a harddisk. Tools, such as, Disk Management, DISKPART, WinObj, Process Monitor, and HDHacker. And of course, x64dbg and ollydbg for debugging the ransomware in application-level. And finally, we are going to see how to use Bochs debugger to analyze the malware while it runs its own kernel code.",
+      "description": "Hijacking the Boot Process - Ransomware Style",
       "type": "presentation",
       "assessor": "Insomni'hack",
       "assessor-id": "insomnihack",
@@ -97,11 +97,9 @@
       },
       "year": 2018,
       "domains": [
-        "reverse-engineering",
         "vulnerability-research"
       ],
       "subspecialties": {
-        "reverse-engineering": [],
         "vulnerability-research": []
       }
     }

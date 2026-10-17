@@ -8,7 +8,7 @@ from urllib.parse import urljoin, urlsplit
 
 from bs4 import BeautifulSoup
 
-from endorsement_scraper.assessors.hitb import parse_hitb_session
+from scrapers.assessors.hitb import parse_hitb_session
 
 
 class HitbParserTests(unittest.TestCase):

@@ -1,0 +1,77 @@
+{
+  "name": "Ami Luttwak",
+  "last-updated": "2026-10-17T08:13:25Z",
+  "biography": "",
+  "contact": [
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/amiluttwak"
+    }
+  ],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 1,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ami Luttwak",
+      "label": "A new class of DNS vulnerabilities affecting many DNS-as-Service platforms",
+      "description": "We present a novel class of DNS vulnerabilities that affects multiple DNS-as-a-Service (DNSaaS) providers. The vulnerabilities have been proven and successfully exploited on three major cloud providers including AWS Route 53 and may affect many others. Successful exploitation of the vulnerabilities may allow exfiltration of sensitive information from service customers' corporate networks. The leaked information contains internal and external IP addresses, computer names, and sometimes NTLM hashes. The number of organizations vulnerable to this weakness is shocking. Over a few hours of DNS sniffing, we received sensitive information carried by DNS update queries from ~1M Windows endpoints from around 15,000 potentially vulnerable companies, including 15 Fortune 500 companies. In some organizations, there were more than 20,000 endpoints that actively leaked their information out of the organization. We will review possible mitigations to this problem and solutions for both DNSaaS providers and managed networks. REFERENCES: I. Microsoft Windows DNS Update algorithm explained - https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-dns-dynamic-updates-windows-server-2003 II. An excellent blog post by Matthew Bryant on hijacking DNS Updates abusing a dangling domain issue on Guatemala State's Top Level Domain - https://thehackerblog.com/hacking-guatemalas-dns-spying-on-active-directory-users-by-exploiting-a-tld-misconfiguration/",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 29",
+      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#tamari",
+      "evidence-links": [
+        {
+          "title": "DEF CON 29 - Shir Tamari, Ami Luttwak - New class of DNS Vulns Affecting DNS-as-Service Platforms",
+          "url": "https://www.youtube.com/watch?v=72uzIZPyVjI"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2021,
+      "domains": [
+        "cloud-security",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cloud-security": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

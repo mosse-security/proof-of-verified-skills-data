@@ -1,0 +1,193 @@
+{
+  "name": "Nguyen Anh Quynh",
+  "last-updated": "2026-10-17T08:13:07Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 4,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 2,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Nguyen Anh Quynh",
+      "label": "OptiROP: hunting for ROP gadgets in style",
+      "description": "Return-Oriented-Programming (ROP) is the fundamental technique to bypass the widely-used DEP-based exploitation mitigation. Unfortunately, available tools that can help to find ROP gadgets mainly rely on syntactic searching. This method proves to be in inefficient, time-consuming and makes the process of developing ROP-based shellcode pretty frustrated for exploitation writers.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2013",
+      "url": "https://blackhat.com/us-13/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2013 - OptiROP: hunting for ROP gadgets in style",
+          "url": "https://www.youtube.com/watch?v=_3uBybBpq48"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2013,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Nguyen Anh Quynh",
+      "label": "OptiSig: Semantic Signature for Metamorphic Malware",
+      "description": "String pattern matching is the most widely used method for anti-virus software to detect malware. However, this technique proves to be ineffective against metamorphism, which use a lot of transformation technique to evade pattern-based signature.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Europe 2013",
+      "url": "https://blackhat.com/archive/europe/2013/archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat EU 2013 - OptiSig: Semantic Signature for Metamorphic Malware",
+          "url": "https://www.youtube.com/watch?v=W9NGEd_b0fY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2013,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    },
+    {
+      "name": "Nguyen Anh Quynh",
+      "label": "Unicorn: Next Generation CPU Emulator Framework",
+      "description": "CPU emulator is a program emulating the internal operation of a physical CPU in software. CPU emulator plays a vital role and has a lot of applications in computer security area, such as reversing obfuscated malware or verifying code semantics. Unfortunately, such a fundamental component does not get the attention it absolutely deserves. At the moment, all the existing CPU emulators suffer from some major issues: Do not get updated with latest hardware. Example: PyEmu for X86 was released in 2009, but no longer developed since then. Mostly available only for Python, but support for other programming languages is not existent. Often restricted to some environments, thus cannot be used to build independent tools. Example: IDA-x86emu is for IDA Pro only. No single tool supports Intel X86_64, which is the dominant architecture at the moment. Solely focus on X86, but support for other important architectures are horribly missing: Arm, Arm64, Mips, PPC, Sparc, etc. It is unbelievable that the lack of such a fundamental component as CPU emulator has happened forever without a proper fix. We decided to step up and took the problem in our own hands to solve it once and for all. As a result, Unicorn emulator was born and succesfully handles all the outstanding problems. Unicorn offers some unparalleled features, as highlighted below: Provide an independent framework to develop independent security tools on top of it. Building plugins for other environment, such as IDA is also well supported. Multi-architectures: Unicorn can emulate all the popular architectures, such as X86 (including X86_64), ARM, ARMv8, M68K, Mips, PowerPC, and Sparc, etc. Multi-platforms: Natively available for Windows, Mac OSX, Linux & *BSD. Implemented in pure C, with bindings for Python available. Support for other languages are also in pipeline. Clean/simple/lightweight/intuitive architecture-neutral API. Thread-safe by design. Open source. This talk introduces some existing emulators, then goes into details of their design/implementation and explains their current issues. Next, we will present the architecture of Unicorn and the challenges of designing and implementing it. The audience will understand the advantages of our framework and see why the future is assured, so that Unicorn will keep getting better, stronger and become the emulator engine of choice for the security community. Unicorn aims to lay the ground for innovative works. To conclude the talk, some new advanced tools built on top of Unicorn will be introduced to demonstrate its power, so the audience can see how our framework can open up many opportunities for future of security research & development.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2015",
+      "url": "https://blackhat.com/us-15/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Unicorn: Next Generation CPU Emulator Framework",
+          "url": "https://www.youtube.com/watch?v=U8zIToF8wmE"
+        },
+        {
+          "title": "Capstone: Next Generation Disassembly Framework",
+          "url": "https://www.youtube.com/watch?v=cwyJm6b1F0k"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Nguyen Anh Quynh",
+      "label": "Keystone Engine: Next Generation Assembler Framework",
+      "description": "Assembler is an application that compiles a string of assembly code and returns instruction encodings. An assembler framework allows us to build new tools, and is a fundamental component in the Reverse Engineering (RE) toolset. However, a good assembler framework is sorely missed since the ice age! Indeed, there is no single multi-architecture, multi-platform and open source framework available and the whole RE community are badly suffering from this lingering issue. We have decided to step up again to solve this challenge once and for all. We built Keystone, an assembler engine with unparalleled features: - Multi-architecture, with support for Arm, Arm64 (AArch64/Armv8), Hexagon, Mips, PowerPC, Sparc, SystemZ, & X86 (include 16/32/64bit). - Clean/simple/lightweight/intuitive architecture-neutral API. - Implemented in C/C++ languages, with bindings for Python, NodeJS, Ruby, Go & Rust available. - Native support for Windows & *nix (with Mac OSX, Linux, *BSD & Solaris confirmed). - Thread-safe by design. - Open source. This talk is going to introduce some existing assembler frameworks, then goes into details of their design/implementation and explains their current issues. Next, we will present the architecture of Keystone and the challenges of designing and implementing it. The audience will understand the advantages of our engine and see why the future is assured, so that Keystone will keep getting better, stronger and become the ultimate assembler engine of choice for the security community. Keystone aims to lay the ground for innovative works and open up new opportunities for future of security research and development. To conclude the talk, some new advanced RE tools built on top of Keystone will be introduced to demonstrate its power. Keystone has a homepage at http://www.keystone-engine.org . Full source code of our engine will be released at Black Hat USA 2016.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Keystone Engine: Next Generation Assembler Framework",
+          "url": "https://www.youtube.com/watch?v=-vzoz_KJTps"
+        },
+        {
+          "title": "Capstone: Next Generation Disassembly Framework",
+          "url": "https://www.youtube.com/watch?v=cwyJm6b1F0k"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "reverse-engineering"
+      ],
+      "subspecialties": {
+        "reverse-engineering": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "name": "Stephan Huber",
+  "last-updated": "2026-10-17T08:13:39Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 2,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 1,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Stephan Huber",
+      "label": "Bypassing Android Password Manager Apps Without Root",
+      "description": "Sunday at 13:00 in Track 2 45 minutes | Demo, Exploit Stephan Huber Fraunhofer SIT Siegfried Rasthofer Fraunhofer SIT Security experts recommend using different, complex passwords for individual services, but everybody knows the issue arising from this approach: It is impossible to keep all the complex passwords in mind. One solution to this issue are password managers, which aim to provide a secure, centralized storage for credentials. The rise of mobile password managers even allows the user to carry their credentials in their pocket, providing instant access to these credentials if required. This advantage can immediately turn into a disadvantage as all credentials are stored in one central location. What happens if your device gets lost, stolen or a hacker gets access to your device? Are your personal secrets and credentials secure? We say no! In our recent analysis of well-known Android password manager apps, amongst them are vendors such as LastPass, Dashlane, 1Password, Avast, and several others, we aimed to bypass their security by either stealing the master password or by directly accessing the stored credentials. Implementation flaws resulted in severe security vulnerabilities. In all of those cases, no root permissions were required for a successful attack. We will explain our attacks in detail. We will also propose possible security fixes and recommendations on how to avoid the vulnerabilities.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Huber",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Stephan Huber",
+      "label": "All your family secrets belong to us—Worrisome security issues in tracker apps",
+      "description": "Google Play Store provides thousands of applications for monitoring your children/family members. Since these apps deal with highly sensitive information, they immediately raise questions on privacy and security. Who else can track the users? Is this data properly protected? To answer these questions, we analyzed a selection of the most popular tracking apps from the Google Play Store. Many apps and services suffer from grave security issues. Some apps use self-made algorithms instead of proper cryptography for data storage and transmission. Others do not even attempt to protect their communication at all and make use of the unprotected http protocol, or even give an attacker full access to a vulnerable backend system. Hard coded database credentials in apps allowed access to all stored user locations. We would be able to extract hundreds of thousands of tracking profiles, even in real time. In others, this wasn't even necessary, because the user authentication could be bypassed altogether. Flaws in server API allowed us to extract all user credentials (1.7m plain text passwords), further we saw full communication histories containing messages, pictures and location data. In total, the state of tracker apps is worrisome, effectively leading to users unknowingly installing espionage software on their devices.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Rasthofer",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 - Dr Rasthofer and Panel - Worrisome Security Issues in Tracker Apps",
+          "url": "https://www.youtube.com/watch?v=e9PdX-NmCSg"
+        },
+        {
+          "title": "DEF CON 26 -  sghctoma - All Your Math are Belong to Us",
+          "url": "https://www.youtube.com/watch?v=w-jVUSw_7ko"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Stephan Huber",
+      "label": "I'm on your phone, listening - Attacking VoIP Configuration Interfaces",
+      "description": "If toasters talking to fridges is no joke to you, then you are aware of the big Internet of Things hype these days. While all kind of devices get connected and hacked, one of the oldest class of IoT devices seems to be forgotten even though it is literally everywhere - VoIP phones. For configuration and management purposes, VoIP phones run a web application locally on the device. We found several critical bugs (reported CVEs) in the web application as well as in the webserver which enabled us to hijack the phones. Starting with simple XSS and CSRF issues, via command injections and memory corruptions right through to remote code executions, all popular vulnerability classes can be found on those devices. We will present our findings together with the tools and strategies we used, and will enable you to do the same with your own phones and other IoT devices. Further, we will provide helpful ARM shell code patterns, scripts and tricks which hackers can use to find bugs. We will conclude our talk by showing that automatic tools fail to discover such vulnerabilities. Therefore, manual IoT pentesting is still required. If you think these management interfaces are not exposed to the internet, you are wrong. In a scan, we found thousands of reachable phones vulnerable to our exploits.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Huber",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2019,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "penetration-testing": [
+          "web-application-penetration-testing"
+        ],
+        "vulnerability-research": [],
+        "iot-security": [
+          "consumer-iot-security",
+          "automotive-security"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "name": "Slava Makkaveev",
+  "last-updated": "2026-10-17T08:13:39Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 5,
+    "assessors": 1,
+    "with-evidence": 5,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Slava Makkaveev",
+      "label": "Unboxing Android: Everything you wanted to know about Android packers",
+      "description": "Sunday at 10:00 in 101 Track 45 minutes | Demo, Tool Avi Bashan Mobile R&D Team Leader, Check Point Slava Makkaveev Security Researcher, Check Point To understand the Android ecosystem today, one must understand Android packers. Whether used for protecting legitimate apps' business logic or hiding malicious content, Android packer usage is on the rise. Android packers continue to increase their efforts to prevent reverse engineers and static analysis engines from understanding what's inside the package. To do so they employ elaborate tactics, including state of the art ELF tampering, obfuscation and various anti-debugging techniques. In this talk, we will provide an overview of the packer industry and present real world test cases. We will do a deep technical dive into the internal workings of popular Android packers, exposing the different methods which protect the app's code. As a countermeasure, we will provide various techniques to circumvent them, allowing hackers and security researchers to unpack the secrets they withhold.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Bashan",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 Rootz Asylum - Leonard Bailey - Everything You Need To Know About The US Dept of Justice",
+          "url": "https://www.youtube.com/watch?v=FTOPI-YAmao"
+        },
+        {
+          "title": "DEF CON 25 - Avi Bashan, Slava Makkaveev - Everything to know about Android packers",
+          "url": "https://www.youtube.com/watch?v=U1XeGYDFp9A"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "reverse-engineering"
+      ],
+      "subspecialties": {
+        "reverse-engineering": [
+          "unpacking-and-obfuscation-analysis"
+        ]
+      }
+    },
+    {
+      "name": "Slava Makkaveev",
+      "label": "Man-In-The-Disk",
+      "description": "Most of modern OS are using sandboxing in order to prevent malicious apps from affecting other apps or even harming the OS itself. Google is constantly reinforcing Android’s sandbox protection, introducing new features to prevent any kind of sandbox bypass. In this talk we want to shed new light on a less known attack surface which affects all Android devices and allows an attacker to hijack the communication between privileged apps and the disk, bypassing Android’s latest sandbox protection. The problem begins when privileged apps interact with files stored in exposed areas, and even worse, some of them will unintentionally break the sandbox by insecurely appending such data to its confinements. Can you imagine if someone could execute code in the context of your keyboard, or install an unwanted app without your consent? Well… It’s hardly within the realm of imagination. The external storage and network based vulnerabilities we discovered, can be leveraged by the attacker to corrupt data, steal sensitive information or even take control of your device.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Makkaveev",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 -  Slava Makkaveev - Man In The Disk",
+          "url": "https://www.youtube.com/watch?v=vvfs0u1or3M"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Slava Makkaveev",
+      "label": "Pwn2Own Qualcomm compute DSP for fun and profit",
+      "description": "Qualcomm Snapdragon SoC integrates multiple subsystems, each one is customized for a particular application domain. Compute digital-signal processor (cDSP) is a subsystem which allows a mobile device to process simple sets of data with high performance on low power. In the talk we will show that this little studied proprietary subsystem has many security problems that open the door to malicious Android applications for PE and DoS attacks of the device. For security reasons, the cDSP is licensed for programming by OEMs and by a limited number of third-party software vendors. The code running on DSP is signed by Qualcomm. However, we will demonstrate how an Android application can bypass Qualcomm’s signature and execute privileged code on DSP, and what further security issues this can lead to. Hexagon SDK is the official way for the vendors to prepare DSP related code. We discovered serious bugs in the SDK that have led to the hundreds of hidden vulnerabilities in the Qualcomm-owned and vendors’ code. The truth is that almost all DSP executable libraries embedded in Qualcomm-based smartphones are vulnerable to attacks due to issues in the Hexagon SDK. We are going to highlight the auto generated security holes in the DSP software and then exploit them.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 28",
+      "url": "https://defcon.org/html/defcon-safemode/dc-safemode-speakers.html#Makkaveev",
+      "evidence-links": [
+        {
+          "title": "DEF CON Safe Mode - Slava Makkaveev - Pwn2Own Qualcomm Compute DSP for Fun and Profit",
+          "url": "https://www.youtube.com/watch?v=CrLJ29quZY8"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2020,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "security-operations-and-soc-practice"
+        ],
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Slava Makkaveev",
+      "label": "Do you like to read? I know how to take over your Kindle with an e-book",
+      "description": "Since 2007, Amazon has sold tens of millions of Kindles, which is impressive. But this also means that tens of millions of people can be hacked through a software bug in those same Kindles. Their devices can be turned into bots, their private local networks can be compromised, and perhaps even information in their billing accounts can be stolen. The easiest way to remotely reach a user's Kindle is through an e-book. A malicious book can be published and made available for free access in any virtual library, including the Kindle Store, or sent directly to the end-user device via Amazon services. While you might not be happy with the writing in a particular book, nobody expects to download one that is malicious. No such scenarios have been publicized. Antiviruses do not have signatures for e-books. But... we succeeded in making a malicious book for you. If you open this book on a Kindle device, it causes a hidden piece of code to be executed with root rights. From this moment on, you lost your e-reader, account and more. Want to know the details?",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 29",
+      "url": "https://defcon.org/html/defcon-29/dc-29-speakers.html#makkaveev",
+      "evidence-links": [
+        {
+          "title": "DEF CON 29 - Slava Makkaveev - I know how to take over your Kindle with an e-book",
+          "url": "https://www.youtube.com/watch?v=1jM_r-pe8Ss"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Slava Makkaveev",
+      "label": "Digging into Xiaomi’s TEE to get to Chinese money",
+      "description": "Track 2 Digging into Xiaomi’s TEE to get to Chinese money Slava Makkaveev 20 minutes 💻 🪲",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 30",
+      "url": "https://forum.defcon.org/node/241991",
+      "evidence-links": [
+        {
+          "title": "DEF CON 30 - Slava Makkaveev -  Digging into Xiaomis TEE to to Get to Chinese Money",
+          "url": "https://www.youtube.com/watch?v=huAJpikYBdk"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2022,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

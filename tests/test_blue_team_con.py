@@ -1,6 +1,6 @@
 import unittest
 
-from endorsement_scraper.assessors.blue_team_con import parse_blue_team_con
+from scrapers.assessors.blue_team_con import parse_blue_team_con
 
 
 class BlueTeamConParserTest(unittest.TestCase):

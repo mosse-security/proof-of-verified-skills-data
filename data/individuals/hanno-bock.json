@@ -1,13 +1,13 @@
 {
   "name": "Hanno Böck",
-  "last-updated": "2026-10-16T07:42:23Z",
+  "last-updated": "2026-10-17T05:50:55Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 4,
+    "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 4,
+    "with-evidence": 1,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,142 +19,51 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
-      "unknown": 4
+      "unknown": 0
     }
   },
   "endorsements": [
     {
       "name": "Hanno Böck",
-      "label": "Not quite Free and Open Source",
-      "description": "Not quite Free and Open Source",
+      "label": "Nonce-Disrespecting Adversaries: Practical Forgery Attacks on GCM in TLS",
+      "description": "We investigate nonce-reuse issues with the Galois/Counter Mode (GCM) algorithm as used in TLS. Nonce reuse in GCM allows an attacker to recover the authentication key and forge messages as described by Joux. With an Internet-wide scan we identified over 70,000 HTTPS servers that are at risk of nonce reuse. We also identified 184 HTTPS servers repeating nonces directly in a short connection. Affected servers include large corporations, financial institutions, and a credit card company. We implement a proof of concept attack allowing us to violate the authenticity of affected HTTPS connections and inject content.",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "35C3",
-      "url": "https://media.ccc.de/v/35c3-1084-session_not_quite_free_and_open_source",
-      "evidence-links": [],
-      "evidence": false,
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Nonce-Disrespecting Adversaries: Practical Forgery Attacks on GCM in TLS",
+          "url": "https://www.youtube.com/watch?v=uxuXFK5XKEU"
+        }
+      ],
+      "evidence": true,
       "povs": {
         "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
           "trusted": false
         },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
-      "year": 2018,
+      "year": 2016,
       "domains": [
-        "unknown"
+        "vulnerability-research"
       ],
       "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "Hanno Böck",
-      "label": "The dire Reality of the Climate Crisis",
-      "description": "The dire Reality of the Climate Crisis",
-      "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "36C3",
-      "url": "https://media.ccc.de/v/36c3-131-the-dire-reality-of-the-climate-crisis",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2019,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "Hanno Böck",
-      "label": "Is Green Methanol the missing piece for the Energy Transition?",
-      "description": "Is Green Methanol the missing piece for the Energy Transition?",
-      "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "38C3",
-      "url": "https://media.ccc.de/v/38c3-is-green-methanol-the-missing-piece-for-the-energy-transition",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2024,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
-      }
-    },
-    {
-      "name": "Hanno Böck",
-      "label": "Greenhouse Gas Emission Data",
-      "description": "Greenhouse Gas Emission Data",
-      "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
-      "assessor-category": "conference_community",
-      "assessor-rigor-level": "medium",
-      "reviewType": "community_review",
-      "subtitle": "39C3",
-      "url": "https://media.ccc.de/v/39c3-greenhouse-gas-emission-data-public-difficult-to-access-and-not-always-correct",
-      "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
-      "year": 2025,
-      "domains": [
-        "unknown"
-      ],
-      "subspecialties": {
-        "unknown": []
+        "vulnerability-research": []
       }
     }
   ]

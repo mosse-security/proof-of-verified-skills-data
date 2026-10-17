@@ -1,13 +1,13 @@
 {
   "name": "Stefan Esser",
-  "last-updated": "2026-10-16T07:42:31Z",
+  "last-updated": "2026-10-17T05:50:59Z",
   "biography": "",
   "contact": [],
   "stats": {
     "endorsements": 1,
     "assessors": 1,
-    "with-evidence": 0,
-    "without-evidence": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -31,36 +31,39 @@
   "endorsements": [
     {
       "name": "Stefan Esser",
-      "label": "Vulnerability discovery in encrypted closed source PHP applications",
-      "description": "Vulnerability discovery in encrypted closed source PHP applications",
+      "label": "iOS Kernel Heap Armageddon Revisited",
+      "description": "Previous work on kernel heap exploitation for iOS or Mac OS X has only covered attacking the freelist of the kernel heap zone allocator. It was however never discussed before what other kernel heap memory allocators exist or what kernel heap allocation functions wrap these allocators. Attacks against further heap meta data or attacking kernel application data has not been discussed before.",
       "type": "presentation",
-      "assessor": "Chaos Communication Congress (CCC)",
-      "assessor-id": "ccc",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
       "assessor-category": "conference_community",
       "assessor-rigor-level": "medium",
       "reviewType": "community_review",
-      "subtitle": "25C3",
-      "url": "https://media.ccc.de/v/25c3-2678-en-vulnerability_discovery_in_encrypted_closed_source_php_applications",
-      "evidence-links": [],
-      "evidence": false,
+      "subtitle": "Black Hat Usa 2012",
+      "url": "https://blackhat.com/html/bh-us-12/bh-us-12-archives.html",
+      "evidence-links": [
+        {
+          "title": "Black Hat USA 2012 - iOS Kernel Heap Armageddon Revisited",
+          "url": "https://www.youtube.com/watch?v=rsmjebMIHX0"
+        }
+      ],
+      "evidence": true,
       "povs": {
         "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
           "trusted": false
         },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
-      "year": 2008,
+      "year": 2012,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
-        "vulnerability-research": [
-          "vulnerability-discovery"
-        ]
+        "vulnerability-research": []
       }
     }
   ]

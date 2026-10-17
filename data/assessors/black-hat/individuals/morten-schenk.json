@@ -1,0 +1,84 @@
+{
+  "name": "Morten Schenk",
+  "last-updated": "2026-10-17T08:13:07Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Morten Schenk",
+      "label": "Taking Windows 10 Kernel Exploitation to the Next Level – Leveraging Write-What-Where Vulnerabilities in Creators Update",
+      "description": "Since the release of Windows 10, and especially in the Anniversary Edition released in August of 2016 and the upcoming Creators Update, Microsoft has continued introducing exploit mitigations to the Windows kernel. These include full scale KASLR, fixing kernel pointer leaks, and even Hypervisor assisted mitigations of assembly instructions like SIDT (Store Interrupt Descriptor Table Register). This presentation picks up the mantle and reviews a number of powerful read and write kernel primitives that can still be leveraged despite the most recent hardening mitigations. The presented techniques include abusing the kernel-mode Window and Bitmap objects, which Microsoft has attempted to lock down several times. Doing so will present a generic approach to leveraging write-what-where vulnerabilities. A stable and precise kernel exploit has to be able to overcome KASLR, most often using kernel driver leaks. Although Microsoft has mitigated all publicly known leak sources, I will disclose two previously unknown KASLR bypasses in Windows 10 Creators Update. Obtaining kernel-mode code execution on Windows has become more difficult with the hardening of SMEP and the randomization of Page Table entries. I will show how a generic de-randomization of the Page Table entries can be performed through dynamic reverse engineering. This technique does not depend on the underlying hardware and can also be applied to virtual machines. Additionally, I will present an entirely different method which makes the usage of Page Table entries obsolete. This method allocates an arbitrary size piece of executable kernel pool memory and transfers code execution to it through hijacked system calls. It is important to note that this method will work even when VBS blocks the misuse of Page Table entries. Overall, this presentation gives a complete overhaul of Windows kernel exploitation, exposing multiple generic methods which can be leveraged by future kernel driver vulnerabilities.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2017",
+      "url": "https://blackhat.com/us-17/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Taking Kernel Hardening to the Next Level",
+          "url": "https://www.youtube.com/watch?v=1titzBiuxSc"
+        },
+        {
+          "title": "Taking DMA Attacks to the Next Level",
+          "url": "https://www.youtube.com/watch?v=QeIPcA8zsHk"
+        },
+        {
+          "title": "Black Hat USA 2012 - Easy Local Windows Kernel Exploitation",
+          "url": "https://www.youtube.com/watch?v=eToqPY1BYWw"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "cyber-defense",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "reverse-engineering": [],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "Tom Nipravsky",
+  "last-updated": "2026-10-17T08:13:10Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Tom Nipravsky",
+      "label": "Certificate Bypass: Hiding and Executing Malware from a Digitally Signed Executable",
+      "description": "Malware developers are constantly looking for new ways to evade the detection and prevention capabilities of security solutions. In recent years, we have seen many different tools, such as packers and new encryption techniques, help malware reach this goal of hiding the malicious code. If the security solution cannot unpack the compressed or encrypted malicious content (or at least unpack it dynamically), then the security solution will not be able to identify that it is facing malware. To further complicate the matter, we present a new technique for hiding malware (encrypted and unencrypted) inside a digitally signed file (while still keeping the file with a valid certificate) and executing it from the memory, using a benign executable (which acts as a reflective EXE loader, written from scratch). Our research demonstrates our Certificate Bypass tool and the Reflective EXE Loader. During the presentation, we will focus on the research we conducted on the PE file structure. We will take a closer look at the certificate table and how we can inject data to the table without damaging the certificate itself (the file will still look and be treated as a valid digitally signed file). We will examine the tool we wrote to execute PE files from memory (without writing them to the disk). We will cover the relevant fields in the PE structure, as well as the steps required to run a PE file directly from the memory without requiring any files on disk. Last, we will conclude the demonstration with a live example and show how we bypass security solutions based on the way they look at the certificate table.",
+      "type": "presentation",
+      "assessor": "Black Hat",
+      "assessor-id": "black-hat",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "Black Hat Usa 2016",
+      "url": "https://blackhat.com/us-16/briefings.html",
+      "evidence-links": [
+        {
+          "title": "Certificate Bypass: Hiding and Executing Malware from a Digitally Signed Executable",
+          "url": "https://www.youtube.com/watch?v=yG4wj_0iVkQ"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

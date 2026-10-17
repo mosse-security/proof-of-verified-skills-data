@@ -1,0 +1,80 @@
+{
+  "name": "Dominic Couture",
+  "last-updated": "2026-10-17T08:13:46Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 1,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 1,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Dominic Couture",
+      "label": "An Ode to Rabbit Holes: Writing a New Decompiler Just for a Security Audit",
+      "description": "Dominic is a staff security engineer at GitLab, a weekend bug bounty hunter, and someone who generally loves exploring rabbit holes. While on the job he attempts to prevent vulnerabilities from making it to production and make it easier for developers to write secure code. On the other hand, some of his play time is dedicated to identifying holes where that same process wasn’t so successful in other companies. To contrast with all this screen time, Dominic can often be found in the forest or on top of a mountain in a place with no phone reception. In this talk, we will dive right down the rabbit hole of navigating through poorly documented software to turn black-box research to grey. We will look at vulnerabilities found during the audit of products that use JRuby thanks to this research and introduce YBurj, a new free and open-source JRuby IR decompiler released during the conference that allows the automated recovery of compiled source code. Choosing the latter is how I crossed paths with JRuby. Unlike Scala, this Java Virtual Machine language isn’t very popular, but it is used by Elastic, RedHat, and eazyBI among others. It has even been labelled as a “high performance” alternative to the standard Ruby implementation. JRuby and its Intermediate Representation (IR) format provide ahead-of-time compilation that turns standard Ruby files into Java ones that contain a serialized IR of the original code. When looking for vulnerabilities in products, we sometimes come across software running on seldom used technology without much documentation. We are then left with two choices: moving on, because going down this road will not offer a good return on investment of our time, or… ignore all common sense and dive down the rabbit hole to shed some light on that mysterious piece of tech.",
+      "type": "presentation",
+      "assessor": "HITB (Hack In The Box Security Conference)",
+      "assessor-id": "hitb",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "HITB 2023",
+      "url": "https://conference.hitb.org/hitbsecconf2023hkt/session/an-ode-to-rabbit-holes-writing-a-new-decompiler-just-for-a-security-audit/",
+      "evidence-links": [
+        {
+          "title": "#HITB2023HKT D1T1 - Writing A New Decompiler Just For A Security Audit -  Dominic Couture",
+          "url": "https://www.youtube.com/watch?v=h-x5Igpp9bY"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2023,
+      "domains": [
+        "grc",
+        "reverse-engineering",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "grc": [
+          "compliance-and-audit"
+        ],
+        "reverse-engineering": [
+          "decompilation-and-disassembly"
+        ],
+        "vulnerability-research": [
+          "bug-bounty-research"
+        ]
+      }
+    }
+  ]
+}
