@@ -432,8 +432,10 @@ python -m scrapers.individuals     # clean-rebuild canonical files
 ```
 
 The scraper stage applies each assessor's whitelist/blacklist gate and rebuilds
-only that assessor's approved snapshot. The output is stored at
-`data/assessors/{assessor-id}/individuals/*.json`:
+only that assessor's approved snapshot. The output is stored locally at
+`data/assessors/{assessor-id}/individuals/*.json`; it is generated, gitignored,
+and intentionally does not contain `last-updated` because it duplicates the
+canonical records:
 
 ```text
 data/assessors/insomnihack/individuals/alice-example.json
@@ -443,7 +445,6 @@ data/individuals/alice-example.json
 ```json
 {
   "name": "Alice Example",
-  "last-updated": "2026-01-01T00:00:00Z",
   "biography": "",
   "contact": [],
   "stats": {

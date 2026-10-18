@@ -17,6 +17,9 @@
   `{name, last-updated, biography, contact, stats, endorsements}`. `stats`
   contains endorsement total, unique assessor count, evidence counts, counts
   for every canonical domain, and nested per-domain subspecialty counts.
+- `data/assessors/<id>/individuals/*.json`: local, generated assessor snapshots
+  used as merge inputs. They intentionally omit `last-updated`, are gitignored,
+  and must not be committed because they duplicate canonical records.
 - The individual merger clears `data/tmp/endorsements` and
   `data/tmp/profiles` after a successful run; use `--keep-tmp` for debugging.
 - The merger does not automatically delete every legacy profile-only file.

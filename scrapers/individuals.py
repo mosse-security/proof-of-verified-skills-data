@@ -79,7 +79,6 @@ def build_assessor_individuals(
             person["profiles"].append(profile)
 
     output = assessors_directory / assessor_id / "individuals"
-    previous = _existing_individuals(output)
     cleanup_generated_directory(output)
     output.mkdir(parents=True, exist_ok=True)
     used: dict[str, str] = {}
@@ -89,14 +88,12 @@ def build_assessor_individuals(
             continue
         payload = {
             "name": person["name"],
-            "last-updated": "",
             "biography": "",
             "contact": _merged_contacts(person["profiles"]),
             "stats": _individual_stats(records),
             "endorsements": records,
         }
-        payload["last-updated"] = _preserved_timestamp(previous.get(identity), payload)
-        _validate_individual(payload, source=str(output))
+        _validate_individual(payload, source=str(output), require_timestamp=False)
         path = output / _individual_filename(person["name"], identity, used)
         _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
     return len([p for p in output.glob("*.json")])
@@ -123,7 +120,7 @@ def merge_canonical_individuals(
             continue
         for path in sorted(individual_directory.glob("*.json")):
             document = json.loads(path.read_text(encoding="utf-8"))
-            _validate_individual(document, source=str(path))
+            _validate_individual(document, source=str(path), require_timestamp=False)
             identity = _person_identity(document["name"])
             person = aggregate.setdefault(identity, {"name": document["name"], "records": []})
             person["records"].extend(document["endorsements"])
@@ -357,13 +354,21 @@ def merge_endorsements(
     )
 
 
-def _validate_individual(document: dict[str, Any], *, source: str) -> None:
-    expected = {"name", "last-updated", "biography", "contact", "stats", "endorsements"}
+def _validate_individual(
+    document: dict[str, Any], *, source: str, require_timestamp: bool = True
+) -> None:
+    expected = {"name", "biography", "contact", "stats", "endorsements"}
+    if require_timestamp:
+        expected.add("last-updated")
+    elif "last-updated" in document:
+        # Accept pre-existing snapshots during migration; new local output
+        # omits the field entirely.
+        expected.add("last-updated")
     if set(document) != expected:
         raise IndividualMergeError(f"{source} must contain exactly {sorted(expected)}")
     if not isinstance(document["name"], str) or not document["name"].strip():
         raise IndividualMergeError(f"{source}.name must be a non-empty string")
-    if not _is_timestamp(document["last-updated"]):
+    if "last-updated" in document and not _is_timestamp(document["last-updated"]):
         raise IndividualMergeError(
             f"{source}.last-updated must be an ISO-8601 UTC timestamp"
         )
@@ -483,11 +488,6 @@ def _rebuild_assessor_outputs(
 ) -> None:
     """Write assessor-local profiles, then rebuild the canonical individuals set."""
     assessor_root.mkdir(parents=True, exist_ok=True)
-    previous_by_assessor = {
-        assessor_dir.name: _existing_individuals(assessor_dir / "individuals")
-        for assessor_dir in assessor_root.iterdir()
-        if assessor_dir.is_dir()
-    }
     _clear_assessor_individual_outputs(assessor_root)
     by_assessor: dict[str, dict[str, dict[str, Any]]] = {}
     current_documents: list[dict[str, Any]] = []
@@ -518,16 +518,12 @@ def _rebuild_assessor_outputs(
         for person_id, person in sorted(people.items()):
             payload = {
                 "name": person["name"],
-                "last-updated": "",
                 "biography": "",
                 "contact": [],
                 "stats": _individual_stats(person["records"]),
                 "endorsements": sorted(person["records"], key=_endorsement_sort_key),
             }
-            payload["last-updated"] = _preserved_timestamp(
-                previous_by_assessor.get(assessor_id, {}).get(person_id), payload
-            )
-            _validate_individual(payload, source=str(individual_dir))
+            _validate_individual(payload, source=str(individual_dir), require_timestamp=False)
             path = individual_dir / _individual_filename(person["name"], person_id, used)
             _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
 
