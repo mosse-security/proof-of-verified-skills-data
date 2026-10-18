@@ -79,6 +79,7 @@ def build_assessor_individuals(
             person["profiles"].append(profile)
 
     output = assessors_directory / assessor_id / "individuals"
+    previous = _existing_individuals(output)
     cleanup_generated_directory(output)
     output.mkdir(parents=True, exist_ok=True)
     used: dict[str, str] = {}
@@ -88,12 +89,13 @@ def build_assessor_individuals(
             continue
         payload = {
             "name": person["name"],
-            "last-updated": _utc_timestamp(),
+            "last-updated": "",
             "biography": "",
             "contact": _merged_contacts(person["profiles"]),
             "stats": _individual_stats(records),
             "endorsements": records,
         }
+        payload["last-updated"] = _preserved_timestamp(previous.get(identity), payload)
         _validate_individual(payload, source=str(output))
         path = output / _individual_filename(person["name"], identity, used)
         _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
@@ -107,6 +109,7 @@ def merge_canonical_individuals(
 ) -> int:
     """Delete and rebuild canonical individuals solely from assessor-local files."""
 
+    previous = _existing_individuals(output_directory)
     # This is deliberately a clean rebuild.  No canonical file may survive
     # after its assessor-local source has disappeared or been rejected.
     cleanup_generated_directory(output_directory)
@@ -129,12 +132,13 @@ def merge_canonical_individuals(
         records = sorted(person["records"], key=_endorsement_sort_key)
         payload = {
             "name": person["name"],
-            "last-updated": _utc_timestamp(),
+            "last-updated": "",
             "biography": "",
             "contact": [],
             "stats": _individual_stats(records),
             "endorsements": records,
         }
+        payload["last-updated"] = _preserved_timestamp(previous.get(identity), payload)
         _validate_individual(payload, source=str(output_directory))
         path = output_directory / _individual_filename(person["name"], identity, used)
         _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
@@ -215,6 +219,7 @@ def merge_endorsements(
         if output_directory == Path("data/individuals")
         else output_directory.parent / "assessors"
     )
+    previous_output = _existing_individuals(output_directory)
     # This is a snapshot rebuild. Clear assessor-local output before reading
     # or writing anything so failed and empty runs cannot leave old records.
     _clear_assessor_individual_outputs(assessor_root)
@@ -311,7 +316,9 @@ def merge_endorsements(
             "stats": _individual_stats(records),
             "endorsements": records,
         }
-        payload["last-updated"] = _last_updated_for(path, payload)
+        payload["last-updated"] = _preserved_timestamp(
+            previous_output.get(identity), payload
+        )
         _validate_individual(payload, source=str(path))
         if path.exists() and not overwrite:
             skipped += 1
@@ -411,6 +418,37 @@ def _last_updated_for(path: Path, payload: dict[str, Any]) -> str:
     return _utc_timestamp()
 
 
+def _existing_individuals(directory: Path) -> dict[str, dict[str, Any]]:
+    """Snapshot generated individuals before a clean rebuild removes them."""
+
+    result: dict[str, dict[str, Any]] = {}
+    if not directory.is_dir():
+        return result
+    for path in directory.glob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(document, dict) and isinstance(document.get("name"), str):
+            result[_person_identity(document["name"])] = document
+    return result
+
+
+def _preserved_timestamp(
+    previous: dict[str, Any] | None, payload: dict[str, Any]
+) -> str:
+    """Keep the prior timestamp only when every other field is deeply equal."""
+
+    if isinstance(previous, dict):
+        previous_content = dict(previous)
+        previous_timestamp = previous_content.pop("last-updated", None)
+        current_content = dict(payload)
+        current_content.pop("last-updated", None)
+        if previous_content == current_content and _is_timestamp(previous_timestamp):
+            return previous_timestamp
+    return _utc_timestamp()
+
+
 def _upgrade_existing_timestamp(path: Path) -> None:
     """Add the timestamp to legacy individual records without source rows."""
 
@@ -445,6 +483,11 @@ def _rebuild_assessor_outputs(
 ) -> None:
     """Write assessor-local profiles, then rebuild the canonical individuals set."""
     assessor_root.mkdir(parents=True, exist_ok=True)
+    previous_by_assessor = {
+        assessor_dir.name: _existing_individuals(assessor_dir / "individuals")
+        for assessor_dir in assessor_root.iterdir()
+        if assessor_dir.is_dir()
+    }
     _clear_assessor_individual_outputs(assessor_root)
     by_assessor: dict[str, dict[str, dict[str, Any]]] = {}
     current_documents: list[dict[str, Any]] = []
@@ -475,12 +518,15 @@ def _rebuild_assessor_outputs(
         for person_id, person in sorted(people.items()):
             payload = {
                 "name": person["name"],
-                "last-updated": _utc_timestamp(),
+                "last-updated": "",
                 "biography": "",
                 "contact": [],
                 "stats": _individual_stats(person["records"]),
                 "endorsements": sorted(person["records"], key=_endorsement_sort_key),
             }
+            payload["last-updated"] = _preserved_timestamp(
+                previous_by_assessor.get(assessor_id, {}).get(person_id), payload
+            )
             _validate_individual(payload, source=str(individual_dir))
             path = individual_dir / _individual_filename(person["name"], person_id, used)
             _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
@@ -496,6 +542,7 @@ def _rebuild_assessor_outputs(
             person = aggregate.setdefault(identity, {"name": document["name"], "records": []})
             person["records"].extend(document.get("endorsements", []))
 
+    previous_canonical = _existing_individuals(output_directory)
     for path in output_directory.glob("*.json"):
         path.unlink(missing_ok=True)
     used: dict[str, str] = {}
@@ -503,12 +550,15 @@ def _rebuild_assessor_outputs(
         records = sorted(person["records"], key=_endorsement_sort_key)
         payload = {
             "name": person["name"],
-            "last-updated": _utc_timestamp(),
+            "last-updated": "",
             "biography": "",
             "contact": [],
             "stats": _individual_stats(records),
             "endorsements": records,
         }
+        payload["last-updated"] = _preserved_timestamp(
+            previous_canonical.get(identity), payload
+        )
         _validate_individual(payload, source=str(output_directory))
         path = output_directory / _individual_filename(person["name"], identity, used)
         _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))

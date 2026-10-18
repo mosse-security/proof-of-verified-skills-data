@@ -77,6 +77,11 @@ and not-validated files remain review inputs. The whitelist must contain unique
 normalized names. Scraper startup rejects likely mojibake, including text
 produced by an implicit Windows PowerShell encoding conversion.
 
+Clean rebuilds snapshot existing individual records before deleting generated
+files. `last-updated` is retained only when the complete replacement document,
+excluding that field, is deeply equal; new or changed endorsements therefore
+receive a new timestamp while idempotent reruns do not.
+
 `povs` is derived centrally from evidence state. A record without evidence has
 all four milestones false and level 0. An evidence-backed conference talk
 from an approved assessor has verifiable, defended, and recognized milestones

@@ -8,7 +8,10 @@ from unittest.mock import patch
 
 from scrapers.individuals import (
     IndividualMergeError,
+    _individual_stats,
+    build_assessor_individuals,
     cleanup_generated_directory,
+    merge_canonical_individuals,
     merge_endorsements,
 )
 
@@ -163,6 +166,60 @@ class IndividualMergeTests(unittest.TestCase):
                 merge_endorsements(source, output, profiles_directory=root / "profiles")
             document = json.loads((output / "dana-example.json").read_text())
             self.assertEqual(document["last-updated"], "2026-01-02T00:00:00Z")
+
+    def test_assessor_rebuild_preserves_timestamp_for_deeply_equal_content(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "tmp" / "endorsements" / "example"
+            source.mkdir(parents=True)
+            (root / "data" / "individuals-enumeration.txt").parent.mkdir(parents=True)
+            (root / "data" / "individuals-enumeration.txt").write_text(
+                "Casey Example\n", encoding="utf-8"
+            )
+            (source / "one.json").write_text(
+                json.dumps([endorsement("Casey Example", "Talk")]), encoding="utf-8"
+            )
+            assessors = root / "data" / "assessors"
+            with patch("scrapers.individuals._utc_timestamp", return_value="2026-01-01T00:00:00Z"):
+                build_assessor_individuals(
+                    "example", endorsements_directory=root / "tmp" / "endorsements",
+                    profiles_directory=root / "tmp" / "profiles", assessors_directory=assessors,
+                )
+            path = assessors / "example" / "individuals" / "casey-example.json"
+            first = json.loads(path.read_text(encoding="utf-8"))
+            with patch("scrapers.individuals._utc_timestamp", return_value="2026-01-02T00:00:00Z"):
+                build_assessor_individuals(
+                    "example", endorsements_directory=root / "tmp" / "endorsements",
+                    profiles_directory=root / "tmp" / "profiles", assessors_directory=assessors,
+                )
+            second = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(second["last-updated"], first["last-updated"])
+
+    def test_canonical_rebuild_preserves_timestamp_for_deeply_equal_content(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            local = root / "assessors" / "example" / "individuals"
+            local.mkdir(parents=True)
+            document = {
+                "name": "Casey Example", "last-updated": "2026-01-01T00:00:00Z",
+                "biography": "", "contact": [],
+                "stats": _individual_stats([endorsement("Casey Example", "Talk")]),
+                "endorsements": [endorsement("Casey Example", "Talk")],
+            }
+            local.joinpath("casey-example.json").write_text(
+                json.dumps(document), encoding="utf-8"
+            )
+            output = root / "individuals"
+            output.mkdir()
+            output.joinpath("casey-example.json").write_text(
+                json.dumps(document), encoding="utf-8"
+            )
+            with patch("scrapers.individuals._utc_timestamp", return_value="2026-01-02T00:00:00Z"):
+                merge_canonical_individuals(
+                    assessors_directory=root / "assessors", output_directory=output
+                )
+            rebuilt = json.loads((output / "casey-example.json").read_text(encoding="utf-8"))
+            self.assertEqual(rebuilt["last-updated"], "2026-01-01T00:00:00Z")
 
     def test_refuses_empty_existing_output_to_protect_timestamps(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

@@ -497,6 +497,10 @@ The whitelist is UTF-8 data: preserve Unicode names exactly, and use an editor o
 an explicitly UTF-8 writer when updating it. Do not round-trip it through
 PowerShell `Get-Content`/`WriteAllLines` defaults. The registry rejects likely
 mojibake and duplicate normalized names before a scrape can write records.
+Individual `last-updated` values are preserved across clean rebuilds when the
+complete individual document is deeply unchanged apart from that field. They
+change only when an endorsement, enrichment, contact/profile data, or other
+persisted content changes.
 This includes short schedule titles such as `A girl`, `A SysCall to ARMs`, and
 `Ansible`; their associated people remain under their speaker names with the
 talk title stored in the endorsement label.
