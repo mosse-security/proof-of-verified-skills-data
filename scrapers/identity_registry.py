@@ -4,6 +4,7 @@ from __future__ import annotations
 import threading
 import json
 import re
+from copy import deepcopy
 from pathlib import Path
 from typing import NamedTuple
 
@@ -24,6 +25,22 @@ def clean_person_name(value: str) -> str:
 
     cleaned = " ".join(str(value).replace("\u00a0", " ").split()).strip()
     return _PERSON_TITLE_PREFIX.sub("", cleaned).strip()
+
+
+def expand_person_names(value: str) -> list[str]:
+    """Expand a schedule's joined speaker field into individual names."""
+
+    credential = re.compile(r",?\s+(?:jr|sr|ii|iii|iv|esq|phd|md|ms|mba)\.?$", re.IGNORECASE)
+    if credential.search(str(value)):
+        cleaned = credential.sub("", str(value))
+        return [clean_person_name(cleaned).strip(" .-:,;")]
+    parts = re.split(r"\s*(?:,|&|/|\band\b)\s*", str(value), flags=re.IGNORECASE)
+    result: list[str] = []
+    for part in parts:
+        name = clean_person_name(part).strip(" .-:,;")
+        if name and name.casefold() not in {item.casefold() for item in result}:
+            result.append(name)
+    return result or [clean_person_name(value)]
 
 
 class IdentityRegistry:
@@ -119,10 +136,17 @@ class IdentityRegistry:
         removed = 0
         for record in document:
             name = record.get("name") if isinstance(record, dict) else None
-            if isinstance(name, str) and not self.allows(name):
-                removed += 1
-            else:
+            if not isinstance(name, str):
                 kept.append(record)
+                continue
+            names = expand_person_names(name)
+            for expanded_name in names:
+                if self.allows(expanded_name):
+                    expanded = deepcopy(record)
+                    expanded["name"] = expanded_name
+                    kept.append(expanded)
+                else:
+                    removed += 1
         if removed:
             path.write_text(json.dumps(kept, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return removed

@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 from scrapers.domains import ALLOWED_DOMAINS
-from scrapers.identity_registry import IdentityRegistry
+from scrapers.identity_registry import IdentityRegistry, expand_person_names
 from scrapers.individuals import (
     _person_identity,
     build_assessor_individuals,
@@ -14,6 +14,12 @@ from scrapers.individuals import (
 
 
 class IdentityRegistryTests(unittest.TestCase):
+    def test_expand_person_names_splits_joined_speakers(self):
+        self.assertEqual(
+            expand_person_names("Tim Krugh, Christian Mergliano, Robby Spengler"),
+            ["Tim Krugh", "Christian Mergliano", "Robby Spengler"],
+        )
+        self.assertEqual(expand_person_names("Tyler Pitchford, Esq."), ["Tyler Pitchford"])
     def test_person_identity_collapses_cosmetic_name_variants(self):
         self.assertEqual(
             _person_identity("Eloi San Felix"),

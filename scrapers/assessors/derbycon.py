@@ -40,6 +40,12 @@ def parse_derbycon(html: bytes | str, source_url: str) -> list[tuple[str, str, s
         if " - " not in raw:
             continue
         raw_name, raw_title = raw.split(" - ", 1)
+        # Some archived schedule entries put the talk title after a colon in
+        # the speaker field instead of using the normal separator.
+        if ":" in raw_name:
+            possible_name, possible_title = raw_name.split(":", 1)
+            if _looks_like_speaker(possible_name) and not _looks_like_speaker(possible_title):
+                raw_name, raw_title = possible_name.strip(), possible_title.strip()
         if not raw_name or not raw_title or raw_title.lower() in {"lunch", "break", "registration"}:
             continue
         event_id = event.get("data-event-id")
@@ -85,7 +91,7 @@ def _split_names(value: str) -> list[str]:
     names = []
     for name in re.split(r"\s*(?:/|&|,|\band\b)\s*", value, flags=re.IGNORECASE):
         name = _clean_person_name(name)
-        if name and name.casefold() not in {"derbycon team", "keynote"}:
+        if name and _looks_like_speaker(name) and name.casefold() not in {"derbycon team", "keynote"}:
             names.append(name)
     return list(dict.fromkeys(names))
 
@@ -99,6 +105,8 @@ _QUOTED_ALIAS_PATTERNS = (
 _PAREN_ALIAS_PATTERN = re.compile(r"\s*\([^)]*\)")
 _ANGLE_ALIAS_PATTERN = re.compile(r"\s*<[^>]*>")
 _AKA_ALIAS_PATTERN = re.compile(r"\s+(?:a\.k\.a\.?|aka)\b.*$", re.IGNORECASE)
+_CREDENTIAL_SUFFIX_PATTERN = re.compile(r"(?:,?\s+)(?:md|ms|phd|esq|cissp|ceh)(?:\s+(?:md|ms|phd|esq|cissp|ceh))*\.?$", re.IGNORECASE)
+_TRAILING_METADATA_PATTERN = re.compile(r"(?:tbd|to be determined)$", re.IGNORECASE)
 
 
 def _clean_person_name(value: str) -> str:
@@ -108,6 +116,8 @@ def _clean_person_name(value: str) -> str:
     cleaned = _PAREN_ALIAS_PATTERN.sub(" ", cleaned)
     cleaned = _ANGLE_ALIAS_PATTERN.sub(" ", cleaned)
     cleaned = _AKA_ALIAS_PATTERN.sub(" ", cleaned)
+    cleaned = _CREDENTIAL_SUFFIX_PATTERN.sub("", cleaned)
+    cleaned = _TRAILING_METADATA_PATTERN.sub("", cleaned)
     return " ".join(cleaned.split()).strip(" .-:,")
 
 
@@ -117,7 +127,11 @@ def _looks_like_speaker(value: str) -> bool:
     lowered = value.casefold()
     if not (1 <= len(words) <= 6) or len(value) > 70:
         return False
-    if lowered.startswith(("a ", "an ", "the ", "how ", "what ", "why ", "building ", "attack", "security ", "introduction ", "longtail ")):
+    if any(char in value for char in "=!?_") or re.search(r"\b\d{1,2}:\d{2}\b", value):
+        return False
+    if lowered.startswith(("a ", "an ", "the ", "how ", "what ", "why ", "building ", "attack", "security ", "introduction ", "longtail ", "opening ceremonies", "closing ceremonies")):
+        return False
+    if any(token in lowered for token in ("password", "phish", "perimeter", "forensics", "stomping", "application", "break-ins", "bug mine", "high risk", "low risk")):
         return False
     return any(any(char.isupper() for char in word) or any(char.isdigit() for char in word) for word in words)
 

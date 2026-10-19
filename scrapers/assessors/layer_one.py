@@ -35,7 +35,7 @@ def parse_layer_one(html: bytes | str, source_url: str) -> list[tuple[str, str, 
             re.I,
         )
         for match in pattern.finditer(text):
-            presenters = re.split(r"\s*(?:;|&|\band\b)\s*", match.group(1), flags=re.I)
+            presenters = re.split(r"\s*(?:,|;|&|\band\b)\s*", match.group(1), flags=re.I)
             title = match.group(2).strip(" .")
             for name in presenters:
                 name = name.strip(" ,")

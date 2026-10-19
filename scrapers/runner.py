@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Callable, Iterable
 
 from .base import (
@@ -13,7 +13,7 @@ from .base import (
     CollectionScraperResult,
 )
 from .http import HttpClient
-from .identity_registry import IdentityRegistry
+from .identity_registry import IdentityRegistry, expand_person_names
 from .models import Endorsement, PageResult, PersonProfile, Request
 from .schema import (
     AssessorMetadata,
@@ -162,14 +162,16 @@ class ScraperRunner:
                             raise TypeError(
                                 f"{scraper.scraper_id} emitted a non-PersonProfile value: {profile!r}"
                             )
-                        if not self._identity_registry(scraper.assessor_id).allows(profile.name):
-                            report.skipped += 1
-                            continue
-                        self.profile_store.save(
-                            profile,
-                            assessor_id=scraper.assessor_id,
-                            scraper_id=scraper.scraper_id,
-                        )
+                        for name in expand_person_names(profile.name):
+                            expanded_profile = PersonProfile(name, profile.biography, profile.contact)
+                            if not self._identity_registry(scraper.assessor_id).allows(name):
+                                report.skipped += 1
+                                continue
+                            self.profile_store.save(
+                                expanded_profile,
+                                assessor_id=scraper.assessor_id,
+                                scraper_id=scraper.scraper_id,
+                            )
                 pending.extend(result.follow)
         except Exception as exc:
             report.error = f"{type(exc).__name__}: {exc}"
@@ -194,21 +196,19 @@ class ScraperRunner:
                 f"{scraper.scraper_id} emitted assessor_id "
                 f"{endorsement.assessor_id!r}; expected {scraper.assessor_id!r}"
             )
-        if not self._identity_registry(scraper.assessor_id).allows(endorsement.recipient or ""):
-            report.skipped += 1
-            return
-        result = self.store.save(
-            endorsement,
-            scraper_id=scraper.scraper_id,
-            overwrite=self.overwrite,
-        )
-        report.endorsements += 1
-        setattr(report, result.status, getattr(report, result.status) + 1)
-        validate_endorsement_output_files(
-            (result.path,),
-            expected_records=1,
-            assessor=self.store.assessor_metadata(scraper.assessor_id),
-        )
+        recipients = expand_person_names(endorsement.recipient or "")
+        for recipient in recipients:
+            if not self._identity_registry(scraper.assessor_id).allows(recipient):
+                report.skipped += 1
+                continue
+            expanded = replace(endorsement, recipient=recipient)
+            result = self.store.save(expanded, scraper_id=scraper.scraper_id, overwrite=self.overwrite)
+            report.endorsements += 1
+            setattr(report, result.status, getattr(report, result.status) + 1)
+            validate_endorsement_output_files(
+                (result.path,), expected_records=1,
+                assessor=self.store.assessor_metadata(scraper.assessor_id),
+            )
 
 
 class CollectionScraperRunner:
