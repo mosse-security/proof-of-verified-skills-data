@@ -1,0 +1,65 @@
+{
+  "name": "Brian Somers",
+  "last-updated": "2026-10-19T07:31:05Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 0,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 1
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Brian Somers",
+      "label": "\"First-try\" DNS Cache Poisoning with IPv4 and IPv6 Fragmentation",
+      "description": "DNS fragmentation attacks are a more recent series of attacks that take advantage of the consistent composition of fragmented DNS responses by sending a crafted (malicious) second fragment to be reassembled with a legitimate first fragment at the IP layer. Even if DNSSEC is fully implemented, an attacker can still poison unsigned \"glue\" records. These types of attacks are difficult, and have really only been considered remotely feasible over IPv4. Most nameservers use \"per-destination\" IP-layer ID (IPID) counters, and the IPID in the IPv6 Fragment Extension Header cannot be easily guessed blindly, as the number of bits in the field has been comparatively doubled to 32 bits (making blind-guessing even in ideal conditions take an average 34 million iterations). Unfortunately, as part of optimizations made to Linux. The IPID counter is no longer truly \"per-destination\" and the IPID for a given destination can be inferred consistently enough to facilitate an attack. This allows DNS poisoning on IPv4 and IPv6 with equal consistency and precision, and makes poisoning on the first attempt \"thousands\" of times easier. This talk will cover how this attack is carried out, how consistent it really can be, and mitigations that can be put in place by operators of both DNS nameservers and resolvers to limit its effectiveness.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 27",
+      "url": "https://defcon.org/html/defcon-27/dc-27-speakers.html#Palmer",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2019,
+      "domains": [
+        "unknown"
+      ],
+      "subspecialties": {
+        "unknown": []
+      }
+    }
+  ]
+}

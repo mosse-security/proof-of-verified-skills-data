@@ -14,6 +14,7 @@ from ..http import HttpClient
 from ..models import Request
 from ..schema import AssessorMetadata, build_endorsement_record
 from ..enrichment import EnrichmentCatalog
+from ..identity_registry import clean_person_name
 
 
 @dataclass(frozen=True, slots=True)
@@ -164,7 +165,8 @@ def _parse_modern(soup: BeautifulSoup, source_url: str, year: int, region: str) 
         desc = description.get_text(" ", strip=True) if description else talk
         link = urljoin(source_url, title.get("href", ""))
         for speaker in speakers:
-            rows.append(BlackHatEndorsement(speaker.get_text(" ", strip=True), talk, desc, link, year, f"Black Hat {region.title()} {year}"))
+            for name in _speaker_names(speaker.get_text(" ", strip=True)):
+                rows.append(BlackHatEndorsement(name, talk, desc, link, year, f"Black Hat {region.title()} {year}"))
     return rows
 
 
@@ -184,8 +186,8 @@ def _parse_legacy(soup: BeautifulSoup, source_url: str, year: int, region: str) 
             text = re.sub(r"^presented\s+by\s*:?\s*", "", text, flags=re.I)
             names = [text] if text else []
         for speaker in names:
-            name = speaker.get_text(" ", strip=True) if isinstance(speaker, Tag) else str(speaker)
-            if name:
+            value = speaker.get_text(" ", strip=True) if isinstance(speaker, Tag) else str(speaker)
+            for name in _speaker_names(value):
                 rows.append(BlackHatEndorsement(name, title, description, link, year, f"Black Hat {region.title()} {year}"))
     for block in soup.select("div.span-13, div.span-14"):
         heading = block.select_one("h2 a, h2")
@@ -199,10 +201,19 @@ def _parse_legacy(soup: BeautifulSoup, source_url: str, year: int, region: str) 
         sibling = block.find_next_sibling("div", class_=lambda value: value and "span-5" in value)
         speakers = sibling.select("a") if sibling else []
         for speaker in speakers:
-            name = speaker.get_text(" ", strip=True)
-            if name:
+            for name in _speaker_names(speaker.get_text(" ", strip=True)):
                 rows.append(BlackHatEndorsement(name, title, description, link, year, f"Black Hat {region.title()} {year}"))
     return rows
+
+
+def _speaker_names(value: str) -> list[str]:
+    """Split comma-joined speaker fields and remove honorific prefixes."""
+
+    return [
+        cleaned
+        for part in re.split(r"\s*,\s*", value)
+        if (cleaned := clean_person_name(part))
+    ]
 
 
 def _event_identity(url: str) -> tuple[int, str]:

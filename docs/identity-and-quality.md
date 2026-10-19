@@ -6,8 +6,13 @@ The registry applies this order:
 
 1. A globally whitelisted name is allowed.
 2. An assessor-local blacklisted name is denied.
-3. Any other encountered name is written once to the assessor-local
+3. An unknown single-word name, or an unknown name containing `(` or `)`, is
+   automatically appended to the assessor-local blacklist and denied.
+4. Any other encountered name is written once to the assessor-local
    `individuals-not-validated.txt` and is not persisted.
+
+The global whitelist is checked first, so a manually vetted single-word or
+parenthesized name is still allowed.
 
 The global whitelist is `data/individuals-enumeration.txt`. It is manually
 vetted UTF-8 data and must contain no duplicate normalized names. Preserve
@@ -15,7 +20,8 @@ Unicode characters exactly. Never rewrite it through an implicit PowerShell
 encoding conversion; use an explicit UTF-8 writer or a Unicode-safe editor.
 The registry rejects likely mojibake before a run can write records.
 
-Academic prefixes such as `Dr.` are removed for matching and output names.
+Academic and official prefixes such as `Dr.`, `Rep.`, and `Representative` are
+removed for matching and output names.
 Aliases and nicknames must be handled by the relevant parser when the source
 page identifies them as aliases rather than part of the person's name.
 

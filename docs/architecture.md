@@ -23,7 +23,7 @@ data/individuals/*.json
 - `data/individuals/` — canonical individual records committed to the repo.
 - `data/enrichments/<id>/data.zip` — local enrichment datasets.
 - `data/individuals-enumeration.txt` — global UTF-8 whitelist.
-- `data/assessors/<id>/individuals-blacklist.txt` — assessor-local blacklist.
+- `data/assessors/<id>/parsing-errors.txt` — assessor-local parsing-error review list.
 - `data/assessors/<id>/individuals-not-validated.txt` — assessor-local review queue.
 - `tmp/` — transient capture and profile data.
 

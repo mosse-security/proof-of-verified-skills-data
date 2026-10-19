@@ -1,0 +1,74 @@
+{
+  "name": "Dan Borges",
+  "last-updated": "2026-10-19T07:31:09Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 1,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Dan Borges",
+      "label": "I'll See Your Missile and Raise You A MIRV: An overview of the Genesis Scripting Engine",
+      "description": "Typically, the activities of a malware attack occur on an execution timeline that generally consists of 3 segments—the vector, the stage, and the persistence. First, a vector, or method of exploitation is identified. This could be anything from logging in over a credentialed method like RDP or SSH and running a malicious payload directly, to exploiting a memory corruption vulnerability remotely. Second, that access is leveraged into running malicious code that prepares the victim for the deployment of persistence (commonly \"implant\"). While segments one and three have been extensively automated, a effective automated utility for deploying persistence in a dynamic and unified context has yet to present itself. Enter the Genesis Scripting Engine. The Genesis Scripting Engine, or Gscript for short, is a framework for building multi-tenant executors for several implants in a stager. The engine works by embedding runtime logic (powered by the V8 Javascript Virtual Machine) for each persistence technique. This logic gets run at deploy time on the victim machine, in parallel for every implant contained with the stager. The Gscript engine leverages the multi-platform support of Golang to produce final stage one binaries for Windows, Mac, and Linux. This talk will consist of an overview of the origins of the project, a technical deep dive into the inner workings including the modified Javascript VM, a walk through of the CLI utility, and examples of how we've leveraged Gscript in the real world. Multiple demos involving practical application scenarios will be presented, as well as an opportunity for audience members to submit their own implants and have them built into a hydra on stage in a matter of minutes.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 26",
+      "url": "https://defcon.org/html/defcon-26/dc-26-speakers.html#Levinson",
+      "evidence-links": [
+        {
+          "title": "DEF CON 26 - Levinson and Borges - Ill See Your Missile and Raise You A MIRV",
+          "url": "https://www.youtube.com/watch?v=04WeAwSQja0"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2018,
+      "domains": [
+        "cloud-security",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cloud-security": [],
+        "red-teaming": [],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

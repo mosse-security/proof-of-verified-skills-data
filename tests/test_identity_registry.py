@@ -28,7 +28,7 @@ class IdentityRegistryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / "individuals-enumeration.txt").write_text("Ada Lovelace\n", encoding="utf-8")
-            (root / "individuals-blacklist.txt").write_text("Bad Person\n", encoding="utf-8")
+            (root / "parsing-errors.txt").write_text("Bad Person\n", encoding="utf-8")
             registry = IdentityRegistry(root)
             self.assertEqual(registry.decision("  ada   lovelace "), "allow")
             self.assertEqual(registry.decision("bad person"), "deny")
@@ -42,10 +42,37 @@ class IdentityRegistryTests(unittest.TestCase):
     def test_blacklisted_names_are_not_recorded_as_unknown(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            (root / "individuals-blacklist.txt").write_text("Bad Person\n", encoding="utf-8")
+            (root / "parsing-errors.txt").write_text("Bad Person\n", encoding="utf-8")
             registry = IdentityRegistry(root)
             self.assertFalse(registry.allows("Bad Person"))
             self.assertEqual((root / "individuals-not-validated.txt").read_text(encoding="utf-8"), "")
+
+    def test_single_word_and_parenthesized_unknowns_are_auto_blacklisted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            registry = IdentityRegistry(root)
+            self.assertEqual(registry.decision("Trust Valley"), "unknown")
+            self.assertEqual(registry.decision("A-girl"), "deny")
+            self.assertEqual(registry.decision("Alex (Research)"), "deny")
+            self.assertEqual(
+                (root / "individuals-not-validated.txt").read_text(encoding="utf-8"),
+                "Trust Valley\n",
+            )
+            self.assertEqual(
+                (root / "parsing-errors.txt").read_text(encoding="utf-8").splitlines(),
+                ["A-girl", "Alex (Research)"],
+            )
+
+    def test_global_whitelist_overrides_auto_blacklist_shape(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "individuals-enumeration.txt").write_text(
+                "Madonna\nAlex (Research)\n", encoding="utf-8"
+            )
+            registry = IdentityRegistry(root)
+            self.assertEqual(registry.decision("Madonna"), "allow")
+            self.assertEqual(registry.decision("Alex (Research)"), "allow")
+            self.assertEqual((root / "parsing-errors.txt").read_text(encoding="utf-8"), "")
 
     def test_reset_not_validated_starts_a_fresh_review_list(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -75,7 +102,7 @@ class IdentityRegistryTests(unittest.TestCase):
             self.assertTrue(registry.allows("Pending Person"))
 
             (root / "individuals-enumeration.txt").write_text("", encoding="utf-8")
-            (root / "individuals-blacklist.txt").write_text("Pending Person\n", encoding="utf-8")
+            (root / "parsing-errors.txt").write_text("Pending Person\n", encoding="utf-8")
             self.assertFalse(registry.allows("Pending Person"))
 
     def test_cached_lists_refresh_after_manual_edit(self):
@@ -135,7 +162,7 @@ class IdentityRegistryTests(unittest.TestCase):
             (root / "individuals-enumeration.txt").write_text(
                 "", encoding="utf-8"
             )
-            (root / "individuals-blacklist.txt").write_text(
+            (root / "parsing-errors.txt").write_text(
                 "Edited Person\n", encoding="utf-8"
             )
             self.assertFalse(registry.allows("Edited Person"))

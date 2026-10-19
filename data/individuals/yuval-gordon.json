@@ -1,0 +1,70 @@
+{
+  "name": "Yuval Gordon",
+  "last-updated": "2026-10-19T07:32:04Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Yuval Gordon",
+      "label": "The (Un)Rightful Heir: My dMSA Is Your New Domain Admin",
+      "description": "Delegated Managed Service Accounts (dMSA) are Microsoft’s shiny new addition to Active Directory in Windows Server 2025. Their primary goal was to improve the security of domain environments. As it turns out, that didn’t go so well. In this talk, we introduce BadSuccessor - an attack that abuses dMSAs to escalate privileges in Active Directory. Crucially, the attack works even if your domain doesn’t use dMSAs at all. We’ll demonstrate how a very common, and seemingly benign, permission in Active Directory can allow us to trick a Domain Controller into issuing a Kerberos ticket for any principal - including Domain Admins and Domain Controllers. Then we’ll take it a step further, showing how the same technique can be used to obtain the NTLM hash of every user in the domain - without ever touching the domain controller. We’ll walk through how we found this attack, how it works, and its potential impact on AD environments References: Rubeus with dMSA support, thanks to Joe Dibley: link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60322",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "directory-services",
+          "single-sign-on-and-federation"
+        ]
+      }
+    }
+  ]
+}

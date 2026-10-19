@@ -13,7 +13,9 @@ class _CachedNames(NamedTuple):
     values: dict[str, str]
 
 
-_PERSON_TITLE_PREFIX = re.compile(r"^(?:(?:dr|doctor)\.?\s+)+", re.IGNORECASE)
+_PERSON_TITLE_PREFIX = re.compile(
+    r"^(?:(?:dr|doctor|rep|representative)\.?\s+)+", re.IGNORECASE
+)
 _MOJIBAKE_MARKERS = ("\ufffd", "Ã", "Â", "â", "ƒ")
 
 
@@ -37,7 +39,7 @@ class IdentityRegistry:
         self.data_directory = root / "assessors" / assessor_id if assessor_id else root
         self.global_whitelist_path = root / "individuals-enumeration.txt"
         self.whitelist_path = self.global_whitelist_path
-        self.blacklist_path = self.data_directory / "individuals-blacklist.txt"
+        self.blacklist_path = self.data_directory / "parsing-errors.txt"
         self.not_validated_path = self.data_directory / "individuals-not-validated.txt"
         self._lock = threading.Lock()
         self._whitelist: _CachedNames | None = None
@@ -86,6 +88,10 @@ class IdentityRegistry:
                 return "deny"
             if identity in whitelist:
                 return "allow"
+            value = clean_person_name(name)
+            if _is_automatically_blacklisted(value):
+                self._record_blacklist_locked(value)
+                return "deny"
             self._record_unknown_locked(name)
             return "unknown"
 
@@ -137,6 +143,19 @@ class IdentityRegistry:
                 self._signature(self.not_validated_path), existing
             )
 
+    def _record_blacklist_locked(self, name: str) -> None:
+        value = clean_person_name(name)
+        if not value:
+            return
+        existing = self._cached(self.blacklist_path, "blacklist")
+        identity = self.normalize(value)
+        if identity in existing:
+            return
+        with self.blacklist_path.open("a", encoding="utf-8", newline="\n") as handle:
+            handle.write(value + "\n")
+        existing[identity] = value
+        self._blacklist = _CachedNames(self._signature(self.blacklist_path), existing)
+
     def _cached(self, path: Path, attribute: str) -> dict[str, str]:
         signature = self._signature(path)
         cached = getattr(self, f"_{attribute}")
@@ -152,3 +171,9 @@ class IdentityRegistry:
         except OSError:
             return (0, 0)
         return (stat.st_mtime_ns, stat.st_size)
+
+
+def _is_automatically_blacklisted(value: str) -> bool:
+    """Identify obvious non-person fragments before manual review."""
+
+    return len(value.split()) == 1 or "(" in value or ")" in value

@@ -1,0 +1,75 @@
+{
+  "name": "Jacob Thompson",
+  "last-updated": "2026-10-19T07:31:19Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 1,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Jacob Thompson",
+      "label": "C.R.E.A.M. Cache Rules Evidently Ambiguous, Misunderstood",
+      "description": "Common wisdom dictates that web applications serving sensitive data must use an encrypted connection (i.e., HTTPS) to protect data in transit. Once served, that same sensitive data must be protected at rest, either through encryption, or more appropriately by not storing the sensitive data on disk at all. In the past, web browser disk caching policies maintained a distinction between HTTP and HTTPS requests, typically refusing to cache HTTPS requests. With today's bandwidth- and performance-hungry AJAX and HTML5 applications, most modern browsers treat all content (including HTTPS) as safe to cache to disk unless explicitly restricted by the server. This silent \"shift\" of responsibility from browser to web-application server has eluded both secure web-application and safe-browsing paradigms, leaving consumers exposed. Even OWASP recommended guidelines for creating secure web applications are wrong regarding this topic [ 1 ]. We tested over thirty sites that provide personal financial, health, and insurance-related information to determine what, if any, sensitive information was cached to disk and the results were surprising. Over 70% of tested sites cached sensitive information, ranging from account balances to bank-check images, bank statements, and full credit reports. We will discuss not only the technical details of these caching vulnerabilities, but also the history behind the \"shift\" in cache policy responsibility, the breakdown in conventional wisdom concerning web application and web-browser security policies, the ramifications of caching PII to disk, and the potential widespread violation of most compliance standards, including PCI, HIPAA, SOX, and government standards such as FIPS or Common Criteria.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 21",
+      "url": "https://defcon.org/html/defcon-21/dc-21-speakers.html",
+      "evidence-links": [
+        {
+          "title": "DEF CON 21 - Jacob Thompson - C R E A M Cache Rules Evidently Ambiguous Misunderstood",
+          "url": "https://www.youtube.com/watch?v=S9vvG8z7bCk"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2013,
+      "domains": [
+        "grc",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "grc": [
+          "compliance-and-audit",
+          "privacy-and-data-protection"
+        ],
+        "vulnerability-research": []
+      }
+    }
+  ]
+}

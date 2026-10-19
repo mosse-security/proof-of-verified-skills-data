@@ -1,0 +1,73 @@
+{
+  "name": "Cyrus Parzian",
+  "last-updated": "2026-10-19T07:31:09Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 0,
+    "without-evidence": 1,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Cyrus Parzian",
+      "label": "Loading Models, Launching Shells: Abusing AI File Formats for Code Execution",
+      "description": "Everyone knows not to trust pickle files, but what about .onnx, .h5, or .npz? This talk explores how trusted file formats used in AI and large language model workflows can be weaponized to deliver reverse shells and stealth payloads. These attacks rely solely on the default behavior of widely used machine learning libraries and do not require exploits or unsafe configuration. The presentation focuses on formats that are not typically seen as dangerous: ONNX, HDF5, Feather, YAML, JSON, and NPZ. These formats are commonly used across model sharing, training pipelines, and inference systems, and are automatically loaded by tools such as onnx, h5py, pyarrow, and numpy. A live demo will show a healthcare chatbot executing code silently when these formats are deserialized, with no user interaction and no alerts. This is a demonstration of how trusted data containers can become malware carriers in AI systems. Attendees will leave with a clear understanding of the risks introduced by modern ML workflows, and practical techniques for payload delivery, threat detection, and hardening against this type of tradecraft. References: Parzian, Cyrus. Turning a Healthcare Chatbot into a Reverse Shell – A Deep Dive into Pickle Exploitation. iRedTeam.ai. link Trail of Bits. Fickling: A Pickle Inspection and Manipulation Tool. link TensorFlow Developers. SavedModel Format Overview. link ONNX Project. ONNX Model Format Documentation. link Apache Arrow Project. Feather and Parquet Format Specification. link Hugging Face. Transformers File Formats and Model Loading. link NumPy Developers. NumPy NPZ and NPY Format Documentation. link PyYAML Documentation. YAML Deserialization and UnsafeLoader. link OWASP. Deserialization Cheat Sheet. link DEF CON and Black Hat Archives. Past Talks on Serialization, Supply Chain, and Model Abuse. link / link",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 33",
+      "url": "https://defcon.org/html/defcon-33/dc-33-speakers.html#content_60394",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2025,
+      "domains": [
+        "cyber-defense",
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "ai-for-security-operations"
+        ],
+        "red-teaming": [],
+        "vulnerability-research": [
+          "exploit-mitigation-and-hardening"
+        ]
+      }
+    }
+  ]
+}

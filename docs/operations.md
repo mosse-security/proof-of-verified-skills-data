@@ -24,7 +24,7 @@ are safe for independent archive pages when execution time matters.
 - `data/assessors/<id>/individuals/` — local generated snapshots.
 - `data/individuals/` — canonical committed records.
 - `data/assessors/<id>/individuals-not-validated.txt` — names awaiting review.
-- `data/assessors/<id>/individuals-blacklist.txt` — rejected assessor-local names.
+- `data/assessors/<id>/parsing-errors.txt` — assessor-local names rejected as parsing errors.
 
 Before publishing, inspect parser errors, unknown names, and the generated
 canonical records. Video-audit warnings are coverage diagnostics; they do not

@@ -262,28 +262,28 @@ def parse_def_con_page(
         talk = _clean_talk(talk)
         if not talk:
             continue
-        for name in names:
-            name = _clean_person_name(name)
-            if not name or _is_noise_name(name):
-                continue
-            item = DefConEndorsement(
-                name=name,
-                label=talk,
-                description=_description(evidence, talk),
-                subtitle=conference,
-                url=link,
-                year=calendar_year,
-                domains=detect_domains(name, talk, evidence, conference),
-                contact=tuple(profiles.get(_person_key(name), {}).get("contact", ())),
-                evidence_links=(
-                    enrichment_catalog.links_for(
-                        assessor_id="def-con", label=talk, subtitle=conference
-                    )
-                    if enrichment_catalog
-                    else ()
-                ),
-            )
-            unique.setdefault((name.casefold(), talk.casefold(), link), item)
+        for raw_name in names:
+            for name in _expand_person_names(raw_name):
+                if not name or _is_noise_name(name):
+                    continue
+                item = DefConEndorsement(
+                    name=name,
+                    label=talk,
+                    description=_description(evidence, talk),
+                    subtitle=conference,
+                    url=link,
+                    year=calendar_year,
+                    domains=detect_domains(name, talk, evidence, conference),
+                    contact=tuple(profiles.get(_person_key(name), {}).get("contact", ())),
+                    evidence_links=(
+                        enrichment_catalog.links_for(
+                            assessor_id="def-con", label=talk, subtitle=conference
+                        )
+                        if enrichment_catalog
+                        else ()
+                    ),
+                )
+                unique.setdefault((name.casefold(), talk.casefold(), link), item)
     return list(unique.values())
 
 
@@ -842,6 +842,46 @@ def _clean_person_name(value: str) -> str:
     return _clean(cleaned).strip(" -:,")
 
 
+_PERSON_TITLE_PREFIX = re.compile(
+    r"^(?:(?:dr|doctor|mr|mrs|ms|rep|representative|prof|professor|gen|general|"
+    r"colonel|senator|ambassador|agent|captain|major|lt\.?\s+gen|former\s+rep)\.?\s+)+",
+    re.IGNORECASE,
+)
+_ROLE_PREFIX = re.compile(
+    r"^(?:presenter|moderator|panelists?|panel|speaker|speakers|agent)\s*:?\s+",
+    re.IGNORECASE,
+)
+_CREDENTIAL_SUFFIX = re.compile(
+    r"(?:,?\s+(?:esq|ph\.?d|md|mba|cissp|cto|director(?:\s+for\s+technology\s+and\s+security)?|general|founder|m\.s\.|mcp|sr\.?|jr\.?)\.?)+$",
+    re.IGNORECASE,
+)
+
+
+def _expand_person_names(value: str) -> list[str]:
+    """Split joined speaker fields and remove roles, titles, aliases, credentials."""
+
+    cleaned = _clean(value)
+    if not cleaned:
+        return []
+    if re.match(r"^(?:a\.?k\.?a\.?|aka)\b", cleaned, re.IGNORECASE):
+        return []
+    cleaned = re.sub(r"^(?:possibly|with)\s+", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"^[A-Z0-9_]+\s+-\s+", "", cleaned)
+    parts = re.split(r"\s*(?:,|&|/|\band\b)\s*", cleaned, flags=re.IGNORECASE)
+    result: list[str] = []
+    for part in parts:
+        name = _clean_person_name(part)
+        name = _ROLE_PREFIX.sub("", name)
+        name = _PERSON_TITLE_PREFIX.sub("", name)
+        name = _CREDENTIAL_SUFFIX.sub("", name).strip(" -:,.\u2013")
+        if "\u2013" in name or " - " in name:
+            name = re.split(r"\s+(?:\u2013|-)\s+", name, maxsplit=1)[0]
+        name = _clean_person_name(name)
+        if name and not _is_noise_name(name) and name not in result:
+            result.append(name)
+    return result
+
+
 def _clean_talk(value: str) -> str:
     value = _clean(value)
     value = re.split(
@@ -872,6 +912,20 @@ def _is_noise_name(name: str) -> bool:
                 "computer warriors",
                 "speakers saturday",
                 "speakers sunday",
+                "us army",
+                "pentester academy",
+                "coco communications",
+                "events goons",
+                "black ratchet",
+                "director of",
+                "director for technology",
+                "rear admiral",
+                "general",
+                "professor",
+                "representative",
+                "senator",
+                "possibly more to come",
+                "struwwelpeter fellow",
             )
         )
     )

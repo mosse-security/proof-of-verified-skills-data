@@ -1,12 +1,12 @@
 {
   "name": "Andy Robbins",
-  "last-updated": "2026-10-18T02:29:43Z",
+  "last-updated": "2026-10-19T07:31:00Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 4,
+    "endorsements": 5,
     "assessors": 4,
-    "with-evidence": 3,
+    "with-evidence": 4,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 1,
@@ -16,11 +16,11 @@
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 0,
-      "red-teaming": 3,
+      "penetration-testing": 1,
+      "red-teaming": 4,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
-      "identity-and-access-management": 3,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 4,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
@@ -29,6 +29,51 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Andy Robbins",
+      "label": "Six Degrees of Domain Admin - Using Graph Theory to Accelerate Red Team Operations",
+      "description": "Active Directory domain privilege escalation is a critical component of most penetration tests and red team assessments, but standard methodology dictates a manual and often tedious process – gather credentials, analyze new systems we now have admin rights on, pivot, and repeat until we reach our objective. Then -- and only then -- we can look back and see the path we took in its entirety. But that may not be the only, nor shortest path we could have taken. By combining our concept of derivative admin (the chaining or linking of administrative rights), existing tools, and graph theory, we can reveal the hidden and unintended relationships in Active Directory domains. Bob is an admin on Steve’s system, and Steve is an admin on Mary’s system; therefore, Bob is effectively (and perhaps unintentionally) an admin on Mary’s system. While existing tools such as Nmap, PowerView, CrackMapExec, and others can gather much of the information needed to find these paths, graph theory is the missing link that gives us the power to find hidden relationships in this offensive data. The application of graph theory to an Active Directory domain offers several advantages to attackers and defenders. Otherwise invisible, high-level organizational relationships are exposed. All possible escalation paths can be efficiently and swiftly identified. Simplified data aggregation accelerates blue and red team analysis. Graph theory has the power and the potential to dramatically change the way you think about and approach Active Directory domain security.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 24",
+      "url": "https://defcon.org/html/defcon-24/dc-24-speakers.html#Robbins",
+      "evidence-links": [
+        {
+          "title": "DEF CON 24 - Andy Robbins. Rohan Vazarkar, Will Schroeder - Six Degrees of Domain Admin",
+          "url": "https://www.youtube.com/watch?v=wP8ZCczC1OU"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "penetration-testing",
+        "red-teaming",
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "red-teaming": [],
+        "vulnerability-research": [],
+        "identity-and-access-management": [
+          "directory-services"
+        ]
+      }
+    },
     {
       "name": "Andy Robbins",
       "label": "An ACE Up the Sleeve: Designing Active Directory DACL Backdoors",

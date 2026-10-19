@@ -7,7 +7,11 @@ import zipfile
 from pathlib import Path
 from types import SimpleNamespace
 
-from scrapers.assessors.def_con import DefConScraper, parse_def_con_page
+from scrapers.assessors.def_con import (
+    DefConScraper,
+    _expand_person_names,
+    parse_def_con_page,
+)
 
 
 MODERN_HTML = b"""
@@ -32,6 +36,28 @@ def assessor_document(process_urls: list[str]) -> dict[str, object]:
 
 
 class DefConTests(unittest.TestCase):
+    def test_expands_joined_speakers_and_removes_titles(self) -> None:
+        self.assertEqual(
+            _expand_person_names(
+                'Cory Doctorow, Christian Dameff MD, Rep. James Langevin'
+            ),
+            ["Cory Doctorow", "Christian Dameff", "James Langevin"],
+        )
+
+    def test_expands_aliases_and_non_comma_joiners(self) -> None:
+        self.assertEqual(
+            _expand_person_names("Mudge & Hobbit / Jeff 'The Dark Tangent' Moss"),
+            ["Mudge", "Hobbit", "Jeff Moss"],
+        )
+
+    def test_discards_roles_affiliations_and_metadata_fragments(self) -> None:
+        self.assertEqual(
+            _expand_person_names(
+                "Paul M. Nakasone, General, US Army, Director for Technology"
+            ),
+            ["Paul M. Nakasone"],
+        )
+
     def test_modern_page_emits_one_simple_record_per_speaker(self) -> None:
         records = parse_def_con_page(
             34,

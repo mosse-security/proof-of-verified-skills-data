@@ -1,0 +1,144 @@
+{
+  "name": "Luke Young",
+  "last-updated": "2026-10-19T07:31:30Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Luke Young",
+      "label": "Investigating the Practicality and Cost of Abusing Memory Errors with DNS",
+      "description": "In a world full of targeted attacks and complex exploits this talk explores an attack that can simplified so even the most non-technical person can understand, yet the potential impact is massive: Ever wonder what would happen if one of the millions of bits in memory flipped value from a 0 to a 1 or vice versa? This talk will explore abusing that specific memory error, called a bit flip, via DNS. The talk will cover the various hurdles involved in exploiting these errors, as well as the costs of such exploitation. It will take you through my path to 1.3 million mis-directed queries a day, purchasing hundreds of domain names, wildcard SSL certificates, getting banned from payment processors, getting banned from the entire Comcast network and much more.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 23",
+      "url": "https://defcon.org/html/defcon-23/dc-23-speakers.html#LYoung",
+      "evidence-links": [
+        {
+          "title": "DEF CON 23 - Luke Young - Investigating the Practicality and Cost of Abusing Memory Errors",
+          "url": "https://www.youtube.com/watch?v=4b5disac9g4"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2015,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Luke Young",
+      "label": "Attacking Network Infrastructure to Generate a 4 Tb/s DDoS for $5",
+      "description": "As bandwidth, computing power, and software advancements have improved over the years, we've begun to see larger and larger DDoS attacks against organizations. Often times these attacks employ techniques such as DNS Amplification to take advantage of servers with very large uplinks. This talk explores a similar technique targeting commonly used throughput testing software typically running on very large uplinks. We will explore the process of attacking this software, eventually compromising it and gaining root access. Then we'll explore some of these servers in the real world determining the size of their uplinks and calculating the total available bandwidth at our fingertips all from a $5 VPS. We will finish up the presentation with a live demo exploiting an instance and launching a DoS.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 24",
+      "url": "https://defcon.org/html/defcon-24/dc-24-speakers.html#Young",
+      "evidence-links": [
+        {
+          "title": "DEF CON 24 - Luke Young - Attacking Network Infrastructure to Generate a 4 Tbs DDoS",
+          "url": "https://www.youtube.com/watch?v=Fi-nI-Faj4I"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Luke Young",
+      "label": "There's no place like 127.0.0.1 - Achieving reliable DNS rebinding in modern browsers",
+      "description": "Thursday at 10:00 in 101 Track 45 minutes | Demo, Tool, Exploit Luke Young Senior Information Security Engineer, LinkedIn Most people lock their doors at night, however if you walk into someone's home you likely won't find every piece of furniture bolted to the floor as well. We trust that if someone is inside our home they are supposed to be there. Unfortunately many developers treat local networks just the same, assuming all internal HTTP traffic is trusted, however this is not always the case. They incorrectly assume that their services will be protected by the same-origin policy in browsers, rather than implementing proper authentication mechanisms. By abusing this implicit trust we can gain access to confidential data and internal services which are not intended to be publicly accessible. I will demonstrate that this is a poor security control and can be trivially bypassed via an older technique, DNS rebinding. The talk will cover how DNS rebinding works, the mitigations imposed by modern browsers and networks, and how each mitigation can be bypassed. I will discuss the notorious unreliability of DNS rebinding attacks that causes many developers to ignore the issue and how to overcome this unreliability. Finally, I will examine a variety of popular services and tools to understand how they are affected by DNS rebinding. I will be releasing a tool that allows researchers to automate DNS rebinding attacks, the associated mitigation bypasses and generate drop-dead simple proof-of-concept exploits. I will demonstrate this tool by developing exploits for each vulnerable service, ending the talk by exploiting a vulnerable service to obtain remote-code execution, live.",
+      "type": "presentation",
+      "assessor": "DEF CON",
+      "assessor-id": "def-con",
+      "assessor-category": "conference_community",
+      "assessor-rigor-level": "medium",
+      "reviewType": "community_review",
+      "subtitle": "DEF CON 25",
+      "url": "https://defcon.org/html/defcon-25/dc-25-speakers.html#Young",
+      "evidence-links": [
+        {
+          "title": "DEF CON 25 - Luke Young - There’s no place like 127.001: Achieving reliable DNS rebinding",
+          "url": "https://www.youtube.com/watch?v=Q0JG_eKLcws"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": false
+        },
+        "level": 2,
+        "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    }
+  ]
+}
