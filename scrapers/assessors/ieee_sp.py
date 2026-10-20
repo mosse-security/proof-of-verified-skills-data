@@ -13,6 +13,7 @@ from ..archives import ArchiveStore
 from ..domains import detect_domains
 from ..enrichment import EnrichmentCatalog
 from ..http import HttpClient
+from ..identity_registry import clean_person_name
 from ..models import Request
 from ..schema import AssessorMetadata, build_endorsement_record
 
@@ -42,7 +43,7 @@ def parse_ieee_sp(html: bytes | str, source_url: str) -> list[tuple[str, str, st
             parts.append(child.get_text(" ", strip=False) if isinstance(child, Tag) else str(child))
         author_text = "".join(parts)
         for name in re.split(r"\s*,\s*", author_text):
-            name = re.sub(r"\s+", " ", name).strip()
+            name = clean_person_name(re.sub(r"\s+", " ", name))
             if name:
                 rows.append((title, name, source_url))
     return list(dict.fromkeys(rows))

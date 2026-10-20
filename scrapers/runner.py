@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import json
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field, replace
@@ -284,7 +285,10 @@ class CollectionScraperRunner:
                 for path in output_files
             )
             removed += identity_removed
-            expected_records = result.endorsements - removed
+            expected_records = 0
+            for path in output_files:
+                document = json.loads(path.read_text(encoding="utf-8"))
+                expected_records += len(document) if isinstance(document, list) else 1
             validate_endorsement_output_files(
                 output_files,
                 expected_records=expected_records,

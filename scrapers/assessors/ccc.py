@@ -13,6 +13,7 @@ from ..archives import ArchiveStore
 from ..domains import detect_domains
 from ..enrichment import EnrichmentCatalog
 from ..http import HttpClient
+from ..identity_registry import clean_person_name
 from ..models import Request
 from ..schema import AssessorMetadata, build_endorsement_record
 
@@ -35,7 +36,7 @@ def parse_ccc(html: bytes | str, source_url: str) -> list[tuple[str, str, str]]:
         title = " ".join(title_link.get_text(" ", strip=True).split())
         url = urljoin(source_url, title_link["href"])
         for link in people.select("a[href]"):
-            name = re.sub(r"\s+", " ", link.get_text(" ", strip=True)).strip()
+            name = clean_person_name(re.sub(r"\s+", " ", link.get_text(" ", strip=True)))
             if title and name:
                 rows.append((title, name, url))
     return list(dict.fromkeys(rows))

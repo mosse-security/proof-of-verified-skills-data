@@ -17,6 +17,9 @@ class _CachedNames(NamedTuple):
 _PERSON_TITLE_PREFIX = re.compile(
     r"^(?:(?:dr|doctor|rep|representative)\.?\s+)+", re.IGNORECASE
 )
+_QUOTED_ALIAS = re.compile(r"(?:\"[^\"]*\"|'[^']*'|“[^”]*”|‘[^’]*’)")
+_PAREN_ALIAS = re.compile(r"\s*\([^)]*\)")
+_AKA_ALIAS = re.compile(r"\s+(?:a\.k\.a\.?|aka)\b.*$", re.IGNORECASE)
 _MOJIBAKE_MARKERS = ("\ufffd", "Ã", "Â", "â", "ƒ")
 
 
@@ -24,6 +27,10 @@ def clean_person_name(value: str) -> str:
     """Normalize whitespace and remove academic honorifics from a name."""
 
     cleaned = " ".join(str(value).replace("\u00a0", " ").split()).strip()
+    cleaned = _QUOTED_ALIAS.sub(" ", cleaned)
+    cleaned = _PAREN_ALIAS.sub(" ", cleaned)
+    cleaned = _AKA_ALIAS.sub(" ", cleaned)
+    cleaned = " ".join(cleaned.split()).strip(" .-:,")
     return _PERSON_TITLE_PREFIX.sub("", cleaned).strip()
 
 

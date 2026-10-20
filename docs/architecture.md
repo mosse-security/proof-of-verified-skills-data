@@ -34,8 +34,10 @@ owns whether a name may be persisted. The assessor-local snapshot stage owns
 whitelisted assessor results. The canonical merger owns cross-assessor grouping
 and the final committed records.
 
-The canonical merger always clears `data/individuals` before rebuilding it, so
-removed or revoked assessor records cannot survive accidentally.
+The canonical merger reconciles `data/individuals` from scratch logically: it
+writes only changed records and removes stale records, so removed or revoked
+assessor records cannot survive while unchanged files do not generate needless
+filesystem and IDE events.
 
 Assessor-local records intentionally omit `last-updated`; they are disposable
 duplicates. Canonical records retain `last-updated`, preserving it when the

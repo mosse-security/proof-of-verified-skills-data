@@ -79,9 +79,9 @@ def build_assessor_individuals(
             person["profiles"].append(profile)
 
     output = assessors_directory / assessor_id / "individuals"
-    cleanup_generated_directory(output)
     output.mkdir(parents=True, exist_ok=True)
     used: dict[str, str] = {}
+    expected: set[Path] = set()
     for identity, person in sorted(grouped.items()):
         records = sorted(person["records"].values(), key=_endorsement_sort_key)
         if not records:
@@ -95,7 +95,11 @@ def build_assessor_individuals(
         }
         _validate_individual(payload, source=str(output), require_timestamp=False)
         path = output / _individual_filename(person["name"], identity, used)
-        _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+        expected.add(path)
+        _write_if_changed(path, payload)
+    for stale in output.glob("*.json"):
+        if stale not in expected:
+            stale.unlink(missing_ok=True)
     return len([p for p in output.glob("*.json")])
 
 
@@ -104,12 +108,9 @@ def merge_canonical_individuals(
     assessors_directory: Path = Path("data/assessors"),
     output_directory: Path = Path("data/individuals"),
 ) -> int:
-    """Delete and rebuild canonical individuals solely from assessor-local files."""
+    """Reconcile canonical individuals solely from assessor-local files."""
 
     previous = _existing_individuals(output_directory)
-    # This is deliberately a clean rebuild.  No canonical file may survive
-    # after its assessor-local source has disappeared or been rejected.
-    cleanup_generated_directory(output_directory)
     output_directory.mkdir(parents=True, exist_ok=True)
     if not assessors_directory.exists():
         return 0
@@ -125,6 +126,7 @@ def merge_canonical_individuals(
             person = aggregate.setdefault(identity, {"name": document["name"], "records": []})
             person["records"].extend(document["endorsements"])
     used: dict[str, str] = {}
+    expected: set[Path] = set()
     for identity, person in sorted(aggregate.items()):
         records = sorted(person["records"], key=_endorsement_sort_key)
         payload = {
@@ -138,8 +140,28 @@ def merge_canonical_individuals(
         payload["last-updated"] = _preserved_timestamp(previous.get(identity), payload)
         _validate_individual(payload, source=str(output_directory))
         path = output_directory / _individual_filename(person["name"], identity, used)
-        _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+        expected.add(path)
+        _write_if_changed(path, payload)
+    for stale in output_directory.glob("*.json"):
+        if stale not in expected:
+            stale.unlink(missing_ok=True)
+    for stale_directory in output_directory.iterdir():
+        if stale_directory.is_dir() and not stale_directory.is_symlink():
+            shutil.rmtree(stale_directory)
     return len(aggregate)
+
+
+def _write_if_changed(path: Path, payload: dict[str, Any]) -> bool:
+    """Write a JSON document only when its UTF-8 bytes have changed."""
+
+    encoded = (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    try:
+        if path.read_bytes() == encoded:
+            return False
+    except FileNotFoundError:
+        pass
+    _atomic_write(path, encoded)
+    return True
 
 
 def apply_enrichments_to_assessor_individuals(
@@ -217,10 +239,6 @@ def merge_endorsements(
         else output_directory.parent / "assessors"
     )
     previous_output = _existing_individuals(output_directory)
-    # This is a snapshot rebuild. Clear assessor-local output before reading
-    # or writing anything so failed and empty runs cannot leave old records.
-    _clear_assessor_individual_outputs(assessor_root)
-
     registry = identity_registry
     enforce_registry = (
         registry is not None
@@ -286,10 +304,9 @@ def merge_endorsements(
             person.setdefault("profiles", []).append(profile)
 
     output_directory.mkdir(parents=True, exist_ok=True)
-    for existing_path in output_directory.glob("*.json"):
-        existing_path.unlink(missing_ok=True)
     used_paths: dict[str, str] = {}
     files: list[Path] = []
+    expected_output_paths: set[Path] = set()
     created = overwritten = skipped = 0
     total = 0
     for identity, person in sorted(grouped.items(), key=lambda item: item[0]):
@@ -297,6 +314,7 @@ def merge_endorsements(
         total += len(records)
         filename = _individual_filename(person["name"], identity, used_paths)
         path = output_directory / filename
+        expected_output_paths.add(path)
         # A profile-only pass must never erase an existing person's
         # endorsements. This also makes cleanup/rerun races harmless.
         if not records and path.exists():
@@ -330,10 +348,7 @@ def merge_endorsements(
                     skipped += 1
                     files.append(path)
                     continue
-            _atomic_write(
-                path,
-                (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"),
-            )
+            _write_if_changed(path, payload)
             overwritten += int(existed)
             created += int(not existed)
         files.append(path)
@@ -343,6 +358,10 @@ def merge_endorsements(
         assessor_root=assessor_root,
         identity_registry=registry,
     )
+
+    for stale in output_directory.glob("*.json"):
+        if stale not in expected_output_paths:
+            stale.unlink(missing_ok=True)
 
     return IndividualMergeResult(
         people=len(grouped),
@@ -488,7 +507,6 @@ def _rebuild_assessor_outputs(
 ) -> None:
     """Write assessor-local profiles, then rebuild the canonical individuals set."""
     assessor_root.mkdir(parents=True, exist_ok=True)
-    _clear_assessor_individual_outputs(assessor_root)
     by_assessor: dict[str, dict[str, dict[str, Any]]] = {}
     current_documents: list[dict[str, Any]] = []
     for path in output_directory.glob("*.json"):
@@ -515,6 +533,7 @@ def _rebuild_assessor_outputs(
         individual_dir = assessor_root / assessor_id / "individuals"
         individual_dir.mkdir(parents=True, exist_ok=True)
         used: dict[str, str] = {}
+        expected: set[Path] = set()
         for person_id, person in sorted(people.items()):
             payload = {
                 "name": person["name"],
@@ -525,23 +544,28 @@ def _rebuild_assessor_outputs(
             }
             _validate_individual(payload, source=str(individual_dir), require_timestamp=False)
             path = individual_dir / _individual_filename(person["name"], person_id, used)
-            _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
-
-    aggregate: dict[str, dict[str, Any]] = {}
+            expected.add(path)
+            _write_if_changed(path, payload)
+        for stale in individual_dir.glob("*.json"):
+            if stale not in expected:
+                stale.unlink(missing_ok=True)
     for assessor_dir in assessor_root.iterdir():
         individual_dir = assessor_dir / "individuals"
-        if not individual_dir.is_dir():
+        if not individual_dir.is_dir() or assessor_dir.name in by_assessor:
             continue
-        for path in individual_dir.glob("*.json"):
-            document = json.loads(path.read_text(encoding="utf-8"))
-            identity = _person_identity(str(document["name"]))
-            person = aggregate.setdefault(identity, {"name": document["name"], "records": []})
-            person["records"].extend(document.get("endorsements", []))
+        for stale in individual_dir.glob("*.json"):
+            stale.unlink(missing_ok=True)
+
+    aggregate: dict[str, dict[str, Any]] = {}
+    for people in by_assessor.values():
+        for person in people.values():
+            identity = _person_identity(str(person["name"]))
+            aggregate_person = aggregate.setdefault(identity, {"name": person["name"], "records": []})
+            aggregate_person["records"].extend(person["records"])
 
     previous_canonical = _existing_individuals(output_directory)
-    for path in output_directory.glob("*.json"):
-        path.unlink(missing_ok=True)
     used: dict[str, str] = {}
+    expected_canonical: set[Path] = set()
     for identity, person in sorted(aggregate.items()):
         records = sorted(person["records"], key=_endorsement_sort_key)
         payload = {
@@ -557,7 +581,11 @@ def _rebuild_assessor_outputs(
         )
         _validate_individual(payload, source=str(output_directory))
         path = output_directory / _individual_filename(person["name"], identity, used)
-        _atomic_write(path, (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+        expected_canonical.add(path)
+        _write_if_changed(path, payload)
+    for stale in output_directory.glob("*.json"):
+        if stale not in expected_canonical:
+            stale.unlink(missing_ok=True)
 
 
 def _clear_assessor_individual_outputs(assessor_root: Path) -> int:
