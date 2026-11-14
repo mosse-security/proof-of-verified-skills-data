@@ -33,6 +33,10 @@ description, type, assessor metadata, source URL, year, domains, evidence
 fields, and POV state. A talk title, affiliation, company, or session label is
 not a person name.
 
+CVE endorsements use the existing `subtitle` field to show the published CVSS
+severity, base score, and version. The endorsement `description` is the CVE
+record's published vulnerability description.
+
 ## Stats
 
 Individual stats are derived from the final deduplicated endorsements. They

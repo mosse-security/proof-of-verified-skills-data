@@ -92,6 +92,7 @@ class AssessorMetadata:
     category: str
     rigor_level: str
     review_type: str
+    pov_policy: dict[str, Any] | None = None
 
     @classmethod
     def from_file(cls, path: Path) -> AssessorMetadata:
@@ -119,11 +120,13 @@ class AssessorMetadata:
                 if isinstance(peer_review, dict)
                 else None
             ),
+            "pov_policy": document.get("povPolicy"),
         }
         invalid = [
             label
             for label, value in values.items()
-            if not isinstance(value, str) or not value.strip()
+            if label != "pov_policy"
+            and (not isinstance(value, str) or not value.strip())
         ]
         if invalid:
             raise EndorsementSchemaError(
@@ -136,6 +139,23 @@ class AssessorMetadata:
                 f"Assessor file {path.name!r} contains id {metadata.id!r}"
             )
         return metadata
+
+    def povs_for_evidence(self, evidence: bool) -> dict[str, Any]:
+        if not evidence or not self.pov_policy:
+            return _povs_for_evidence(evidence)
+        policy = self.pov_policy
+        milestones = policy.get("milestones") if isinstance(policy, dict) else None
+        if (
+            not isinstance(milestones, dict)
+            or set(milestones) != {"verifiable", "defended", "recognized", "trusted"}
+            or any(not isinstance(value, bool) for value in milestones.values())
+        ):
+            raise EndorsementSchemaError(f"Invalid povPolicy in assessor metadata for {self.id}")
+        return {
+            "milestones": dict(milestones),
+            "level": int(policy.get("level", 0)),
+            "explanation": str(policy.get("explanation", "")),
+        }
 
 
 def build_endorsement_record(
@@ -181,7 +201,7 @@ def build_endorsement_record(
             "url": url,
             "evidence-links": normalized_evidence_links,
             "evidence": bool(normalized_evidence_links),
-            "povs": _povs_for_evidence(bool(normalized_evidence_links)),
+            "povs": assessor.povs_for_evidence(bool(normalized_evidence_links)),
             "year": year,
             "domains": list(detected_domains),
             "subspecialties": {domain: list(names) for domain, names in normalize_subspecialties(specialty_values, domains=detected_domains).items()},
@@ -226,13 +246,19 @@ def _povs_for_evidence(evidence: bool) -> dict[str, Any]:
     }
 
 
-def _validate_povs(value: Any, *, evidence: bool, source: str) -> None:
+def _validate_povs(
+    value: Any,
+    *,
+    evidence: bool,
+    source: str,
+    expected: dict[str, Any] | None = None,
+) -> None:
     if not isinstance(value, dict) or set(value) != {"milestones", "level", "explanation"}:
         raise EndorsementSchemaError(
             f"{source}.povs must contain exactly milestones, level, and explanation"
         )
     milestones = value["milestones"]
-    expected = _povs_for_evidence(evidence)
+    expected = expected or _povs_for_evidence(evidence)
     if not isinstance(milestones, dict) or set(milestones) != {"verifiable", "defended", "recognized", "trusted"}:
         raise EndorsementSchemaError(f"{source}.povs.milestones has invalid fields")
     if any(not isinstance(milestones[key], bool) for key in milestones):
@@ -326,7 +352,11 @@ def validate_endorsement_record(
             f"{source}.evidence must be true exactly when evidence-links is non-empty"
         )
 
-    _validate_povs(record["povs"], evidence=record["evidence"], source=source)
+    expected_povs = assessor.povs_for_evidence(record["evidence"]) if assessor else None
+    _validate_povs(
+        record["povs"], evidence=record["evidence"], source=source,
+        expected=expected_povs,
+    )
 
     validate_record_domains(record, source=source)
 
