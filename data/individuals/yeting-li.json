@@ -1,12 +1,12 @@
 {
   "name": "Yeting Li",
-  "last-updated": "2026-10-18T03:23:06Z",
+  "last-updated": "2026-11-15T08:32:06Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
-    "with-evidence": 0,
+    "endorsements": 33,
+    "assessors": 3,
+    "with-evidence": 30,
     "without-evidence": 3,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 31,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,1176 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-28469",
+      "description": "This affects the package glob-parent before 5.1.2. The enclosure regex used to check for strings ending in enclosure containing path separator.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-28469",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-28469"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-28493",
+      "description": "This affects the package jinja2 from 0.0.0 and before 2.11.3. The ReDoS vulnerability is mainly due to the `_punctuation_re regex` operator and its use of multiple wildcards. The last wildcard is the most exploitable as it searches for trailing punctuation. This issue can be mitigated by Markdown to format user content instead of the urlize filter, or by implementing request timeouts and limiting process memory.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-28493",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-28493"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-28496",
+      "description": "This affects the package three before 0.125.0. This can happen when handling rgb or hsl colors. PoC: var three = require('three') function build_blank (n) { var ret = \"rgb(\" for (var i = 0; i < n; i++) { ret += \" \" } return ret + \"\"; } var Color = three.Color var time = Date.now(); new Color(build_blank(50000)) var time_cost = Date.now() - time; console.log(time_cost+\" ms\")",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-28496",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-28496"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-7733",
+      "description": "The package ua-parser-js before 0.7.22 are vulnerable to Regular Expression Denial of Service (ReDoS) via the regex for Redmi Phones and Mi Pad Tablets UA.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7733",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7733"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-7754",
+      "description": "This affects the package npm-user-validate before 1.0.1. The regex that validates user emails took exponentially longer to process long input strings beginning with @ characters.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7754",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7754"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-7755",
+      "description": "All versions of package dat.gui are vulnerable to Regular Expression Denial of Service (ReDoS) via specifically crafted rgb and rgba values.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7755",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7755"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-7760",
+      "description": "This affects the package codemirror before 5.58.2; the package org.apache.marmotta.webjars:codemirror before 5.58.2. The vulnerable regular expression is located in https://github.com/codemirror/CodeMirror/blob/cdb228ac736369c685865b122b736cd0d397836c/mode/javascript/javascript.jsL129. The ReDOS vulnerability of the regex is mainly due to the sub-pattern (s|/*.*?*/)*",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7760",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7760"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-7761",
+      "description": "This affects the package @absolunet/kafe before 3.2.10. It allows cause a denial of service when validating crafted invalid emails.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7761",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7761"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-7767",
+      "description": "All versions of package express-validators are vulnerable to Regular Expression Denial of Service (ReDoS) when validating specifically-crafted invalid urls.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7767",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7767"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-7779",
+      "description": "All versions of package djvalidator are vulnerable to Regular Expression Denial of Service (ReDoS) by sending crafted invalid emails - for example, --@------------------------------------------------------------------------------------------------------------------------!.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7779",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7779"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2020-7793",
+      "description": "The package ua-parser-js before 0.7.23 are vulnerable to Regular Expression Denial of Service (ReDoS) in multiple regexes (see linked commit for more info).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7793",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7793"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23341",
+      "description": "The package prismjs before 1.23.0 are vulnerable to Regular Expression Denial of Service (ReDoS) via the prism-asciidoc, prism-rest, prism-tap and prism-eiffel components.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23341",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23341"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23343",
+      "description": "All versions of package path-parse are vulnerable to Regular Expression Denial of Service (ReDoS) via splitDeviceRe, splitTailRe, and splitPathRe regular expressions. ReDoS exhibits polynomial worst-case time complexity.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23343",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23343"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23346",
+      "description": "This affects the package html-parse-stringify before 2.0.1; all versions of package html-parse-stringify2. Sending certain input could cause one of the regular expressions that is used for parsing to backtrack, freezing the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23346",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23346"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23353",
+      "description": "This affects the package jspdf before 2.3.1. ReDoS is possible via the addImage function.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23353",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23353"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23354",
+      "description": "The package printf before 0.6.1 are vulnerable to Regular Expression Denial of Service (ReDoS) via the regex string /\\%(?:\\(([\\w_.]+)\\)|([1-9]\\d*)\\$)?([0 +\\-\\]*)(\\*|\\d+)?(\\.)?(\\*|\\d+)?[hlL]?([\\%bscdeEfFgGioOuxX])/g in lib/printf.js. The vulnerable regular expression has cubic worst-case time complexity.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23354",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23354"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23362",
+      "description": "The package hosted-git-info before 3.0.8 are vulnerable to Regular Expression Denial of Service (ReDoS) via regular expression shortcutMatch in the fromUrl function in index.js. The affected regular expression exhibits polynomial worst-case time complexity.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23362",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23362"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23364",
+      "description": "The package browserslist from 4.0.0 and before 4.16.5 are vulnerable to Regular Expression Denial of Service (ReDoS) during parsing of queries.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23364",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23364"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23368",
+      "description": "The package postcss from 7.0.0 and before 8.2.10 are vulnerable to Regular Expression Denial of Service (ReDoS) during source map parsing.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23368",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23368"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23382",
+      "description": "The package postcss before 8.2.13 are vulnerable to Regular Expression Denial of Service (ReDoS) via getAnnotationURL() and loadAnnotation() in lib/previous-map.js. The vulnerable regexes are caused mainly by the sub-pattern \\/\\*\\s* sourceMappingURL=(.*).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23382",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23382"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23392",
+      "description": "The package locutus before 2.0.15 are vulnerable to Regular Expression Denial of Service (ReDoS) via the gopher_parsedir function.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23392",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23392"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23561",
+      "description": "All versions of package comb are vulnerable to Prototype Pollution via the deepMerge() function.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23561",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23561"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23663",
+      "description": "All versions of package sey are vulnerable to Prototype Pollution via the deepmerge() function.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23663",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23663"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23700",
+      "description": "All versions of package merge-deep2 are vulnerable to Prototype Pollution via the mergeDeep() function.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23700",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23700"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2021-23797",
+      "description": "All versions of package http-server-node are vulnerable to Directory Traversal via use of --path-as-is.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-23797",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-23797"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2022-4196",
+      "description": "The Multi Step Form WordPress plugin before 1.7.8 does not sanitise and escape some of its form fields, which could allow high privilege users such as admin to perform Stored Cross-Site Scripting attacks even when the unfiltered_html capability is disallowed (for example in multisite setup).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-4196",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-4196"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2022-4197",
+      "description": "The Sliderby10Web WordPress plugin before 1.2.53 does not sanitise and escape some of its settings, which could allow high privilege users such as admin to perform Stored Cross-Site Scripting attacks even when the unfiltered_html capability is disallowed (for example in multisite setup).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-4197",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-4197"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2022-4198",
+      "description": "The WP Social Sharing WordPress plugin through 2.2 does not sanitise and escape some of its settings, which could allow high privilege users such as admin to perform Stored Cross-Site Scripting attacks even when the unfiltered_html capability is disallowed (for example in multisite setup).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-4198",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-4198"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2022-4226",
+      "description": "The Simple Basic Contact Form WordPress plugin before 20221201 does not sanitise and escape some of its settings, which could allow high privilege users such as admin to perform Stored Cross-Site Scripting attacks even when the unfiltered_html capability is disallowed (for example in multisite setup).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-4226",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-4226"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Yeting Li",
+      "label": "CVE-2023-1408",
+      "description": "The Video List Manager WordPress plugin through 1.7 does not properly sanitise and escape a parameter before using it in a SQL statement, leading to a SQL injection exploitable by high privilege users such as admin",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-1408",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-1408"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Yeting Li",
       "label": "Repairing ReDoS by Construction: Certified Algebraic Derivation for Language-Preserving Regex Transformation",

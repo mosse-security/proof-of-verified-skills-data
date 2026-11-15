@@ -1,0 +1,189 @@
+{
+  "name": "Hagai Wechsler",
+  "last-updated": "2026-11-15T08:31:50Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 4,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 4,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Hagai Wechsler",
+      "label": "CVE-2021-25954",
+      "description": "In “Dolibarr” application, 2.8.1 to 13.0.4 don’t restrict or incorrectly restricts access to a resource from an unauthorized actor. A low privileged attacker can modify the Private Note which only an administrator has rights to do, the affected field is at “/adherents/note.php?id=1” endpoint.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-25954",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-25954"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hagai Wechsler",
+      "label": "CVE-2021-25955",
+      "description": "In “Dolibarr ERP CRM”, WYSIWYG Editor module, v2.8.1 to v13.0.2 are affected by a stored XSS vulnerability that allows low privileged application users to store malicious scripts in the “Private Note” field at “/adherents/note.php?id=1” endpoint. These scripts are executed in a victim’s browser when they open the page containing the vulnerable field. In the worst case, the victim who inadvertently triggers the attack is a highly privileged administrator. The injected scripts can extract the Session ID, which can lead to full Account takeover of the admin and due to other vulnerability (Improper Access Control on Private notes) a low privileged user can update the private notes which could lead to privilege escalation.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-25955",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-25955"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hagai Wechsler",
+      "label": "CVE-2021-25957",
+      "description": "In “Dolibarr” application, v2.8.1 to v13.0.2 are vulnerable to account takeover via password reset functionality. A low privileged attacker can reset the password of any user in the application using the password reset link the user received through email when requested for a forgotten password.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-25957",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-25957"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hagai Wechsler",
+      "label": "CVE-2021-37866",
+      "description": "Mattermost Boards plugin v0.10.0 and earlier fails to invalidate a session on the server-side when a user logged out of Boards, which allows an attacker to reuse old session token for authorization.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-37866",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-37866"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "name": "Bernd Edlinger",
+  "last-updated": "2026-11-15T08:31:45Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 5,
+    "assessors": 1,
+    "with-evidence": 5,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 5,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Bernd Edlinger",
+      "label": "CVE-2019-1563",
+      "description": "In situations where an attacker receives automated notification of the success or failure of a decryption attempt an attacker, after sending a very large number of messages to be decrypted, can recover a CMS/PKCS7 transported encryption key or decrypt any RSA encrypted message that was encrypted with the public RSA key, using a Bleichenbacher padding oracle attack. Applications are not affected if they use a certificate together with the private RSA key to the CMS_decrypt or PKCS7_decrypt functions to select the correct recipient info to decrypt. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-1563",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-1563"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Bernd Edlinger",
+      "label": "CVE-2020-1967",
+      "description": "Server or client applications that call the SSL_check_chain() function during or after a TLS 1.3 handshake may crash due to a NULL pointer dereference as a result of incorrect handling of the \"signature_algorithms_cert\" TLS extension. The crash occurs if an invalid or unrecognised signature algorithm is received from the peer. This could be exploited by a malicious peer in a Denial of Service attack. OpenSSL version 1.1.1d, 1.1.1e, and 1.1.1f are affected by this issue. This issue did not affect OpenSSL versions prior to 1.1.1d. Fixed in OpenSSL 1.1.1g (Affected 1.1.1d-1.1.1f).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-1967",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-1967"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Bernd Edlinger",
+      "label": "CVE-2021-4160",
+      "description": "There is a carry propagation bug in the MIPS32 and MIPS64 squaring procedure. Many EC algorithms are affected, including some of the TLS 1.3 default curves. Impact was not analyzed in detail, because the pre-requisites for attack are considered unlikely and include reusing private keys. Analysis suggests that attacks against RSA and DSA as a result of this defect would be very difficult to perform and are not believed likely. Attacks against DH are considered just feasible (although very difficult) because most of the work necessary to deduce information about a private key may be performed offline. The amount of resources required for such an attack would be significant. However, for an attack on TLS to be meaningful, the server would have to share the DH private key among multiple clients, which is no longer an option since CVE-2016-0701. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0.0. It was addressed in the releases of 1.1.1m and 3.0.1 on the 15th of December 2021. For the 1.0.2 release it is addressed in git commit 6fc1aaaf3 that is available to premium support customers only. It will be made available in 1.0.2zc when it is released. The issue only affects OpenSSL on MIPS platforms. Fixed in OpenSSL 3.0.1 (Affected 3.0.0). Fixed in OpenSSL 1.1.1m (Affected 1.1.1-1.1.1l). Fixed in OpenSSL 1.0.2zc-dev (Affected 1.0.2-1.0.2zb).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-4160",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-4160"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Bernd Edlinger",
+      "label": "CVE-2023-3817",
+      "description": "Issue summary: Checking excessively long DH keys or parameters may be very slow.\n\nImpact summary: Applications that use the functions DH_check(), DH_check_ex()\nor EVP_PKEY_param_check() to check a DH key or DH parameters may experience long\ndelays. Where the key or parameters that are being checked have been obtained\nfrom an untrusted source this may lead to a Denial of Service.\n\nThe function DH_check() performs various checks on DH parameters. After fixing\nCVE-2023-3446 it was discovered that a large q parameter value can also trigger\nan overly long computation during some of these checks. A correct q value,\nif present, cannot be larger than the modulus p parameter, thus it is\nunnecessary to perform these checks if q is larger than p.\n\nAn application that calls DH_check() and supplies a key or parameters obtained\nfrom an untrusted source could be vulnerable to a Denial of Service attack.\n\nThe function DH_check() is itself called by a number of other OpenSSL functions.\nAn application calling any of those other functions may similarly be affected.\nThe other functions affected by this are DH_check_ex() and\nEVP_PKEY_param_check().\n\nAlso vulnerable are the OpenSSL dhparam and pkeyparam command line applications\nwhen using the \"-check\" option.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-3817",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-3817"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Bernd Edlinger",
+      "label": "CVE-2023-4807",
+      "description": "Issue summary: The POLY1305 MAC (message authentication code) implementation\ncontains a bug that might corrupt the internal state of applications on the\nWindows 64 platform when running on newer X86_64 processors supporting the\nAVX512-IFMA instructions.\n\nImpact summary: If in an application that uses the OpenSSL library an attacker\ncan influence whether the POLY1305 MAC algorithm is used, the application\nstate might be corrupted with various application dependent consequences.\n\nThe POLY1305 MAC (message authentication code) implementation in OpenSSL does\nnot save the contents of non-volatile XMM registers on Windows 64 platform\nwhen calculating the MAC of data larger than 64 bytes. Before returning to\nthe caller all the XMM registers are set to zero rather than restoring their\nprevious content. The vulnerable code is used only on newer x86_64 processors\nsupporting the AVX512-IFMA instructions.\n\nThe consequences of this kind of internal application state corruption can\nbe various - from no consequences, if the calling application does not\ndepend on the contents of non-volatile XMM registers at all, to the worst\nconsequences, where the attacker could get complete control of the application\nprocess. However given the contents of the registers are just zeroized so\nthe attacker cannot put arbitrary values inside, the most likely consequence,\nif any, would be an incorrect result of some application dependent\ncalculations or a crash leading to a denial of service.\n\nThe POLY1305 MAC algorithm is most frequently used as part of the\nCHACHA20-POLY1305 AEAD (authenticated encryption with associated data)\nalgorithm. The most common usage of this AEAD cipher is with TLS protocol\nversions 1.2 and 1.3 and a malicious client can influence whether this AEAD\ncipher is used by the server. This implies that server applications using\nOpenSSL can be potentially impacted. However we are currently not aware of\nany concrete application that would be affected by this issue therefore we\nconsider this a Low severity security issue.\n\nAs a workaround the AVX512-IFMA instructions support can be disabled at\nruntime by setting the environment variable OPENSSL_ia32cap:\n\n   OPENSSL_ia32cap=:~0x200000\n\nThe FIPS provider is not affected by this issue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-4807",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-4807"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

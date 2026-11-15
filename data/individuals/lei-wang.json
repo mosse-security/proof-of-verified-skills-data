@@ -1,12 +1,12 @@
 {
   "name": "Lei Wang",
-  "last-updated": "2026-10-18T02:29:59Z",
+  "last-updated": "2026-11-15T08:31:55Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 1,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,45 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Lei Wang",
+      "label": "CVE-2023-1326",
+      "description": "A privilege escalation attack was found in apport-cli 2.26.0 and earlier which is similar to CVE-2023-26604. If a system is specially configured to allow unprivileged users to run sudo apport-cli, less is configured as the pager, and the terminal size can be set: a local attacker can escalate privilege. It is extremely unlikely that a system administrator would configure sudo to allow unprivileged users to perform this class of exploit.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-1326",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-1326"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Lei Wang",
       "label": "HyperAudit: Towards User Transparent and Highly Efficient System Auditing for Cloud Platforms",

@@ -1,0 +1,930 @@
+{
+  "name": "Julien Grall",
+  "last-updated": "2026-11-15T08:31:54Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 23,
+    "assessors": 1,
+    "with-evidence": 23,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 23,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2021-28693",
+      "description": "xen/arm: Boot modules are not scrubbed The bootloader will load boot modules (e.g. kernel, initramfs...) in a temporary area before they are copied by Xen to each domain memory. To ensure sensitive data is not leaked from the modules, Xen must \"scrub\" them before handing the page over to the allocator. Unfortunately, it was discovered that modules will not be scrubbed on Arm.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-28693",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-28693"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2021-28700",
+      "description": "xen/arm: No memory limit for dom0less domUs The dom0less feature allows an administrator to create multiple unprivileged domains directly from Xen. Unfortunately, the memory limit from them is not set. This allow a domain to allocate memory beyond what an administrator originally configured.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-28700",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-28700"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2021-28701",
+      "description": "Another race in XENMAPSPACE_grant_table handling Guests are permitted access to certain Xen-owned pages of memory. The majority of such pages remain allocated / associated with a guest for its entire lifetime. Grant table v2 status pages, however, are de-allocated when a guest switches (back) from v2 to v1. Freeing such pages requires that the hypervisor enforce that no parallel request can result in the addition of a mapping of such a page to a guest. That enforcement was missing, allowing guests to retain access to pages that were freed and perhaps re-used for other purposes. Unfortunately, when XSA-379 was being prepared, this similar issue was not noticed.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-28701",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-28701"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2021-28703",
+      "description": "grant table v2 status pages may remain accessible after de-allocation (take two) Guest get permitted access to certain Xen-owned pages of memory. The majority of such pages remain allocated / associated with a guest for its entire lifetime. Grant table v2 status pages, however, get de-allocated when a guest switched (back) from v2 to v1. The freeing of such pages requires that the hypervisor know where in the guest these pages were mapped. The hypervisor tracks only one use within guest space, but racing requests from the guest to insert mappings of these pages may result in any of them to become mapped in multiple locations. Upon switching back from v2 to v1, the guest would then retain access to a page that was freed and perhaps re-used for other purposes. This bug was fortuitously fixed by code cleanup in Xen 4.14, and backported to security-supported Xen branches as a prerequisite of the fix for XSA-378.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-28703",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-28703"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2021-28706",
+      "description": "guests may exceed their designated memory limit When a guest is permitted to have close to 16TiB of memory, it may be able to issue hypercalls to increase its memory allocation beyond the administrator established limit. This is a result of a calculation done with 32-bit precision, which may overflow. It would then only be the overflowed (and hence small) number which gets compared against the established upper bound.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-28706",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-28706"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-23034",
+      "description": "A PV guest could DoS Xen while unmapping a grant To address XSA-380, reference counting was introduced for grant mappings for the case where a PV guest would have the IOMMU enabled. PV guests can request two forms of mappings. When both are in use for any individual mapping, unmapping of such a mapping can be requested in two steps. The reference count for such a mapping would then mistakenly be decremented twice. Underflow of the counters gets detected, resulting in the triggering of a hypervisor bug check.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23034",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-23034"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-23035",
+      "description": "Insufficient cleanup of passed-through device IRQs The management of IRQs associated with physical devices exposed to x86 HVM guests involves an iterative operation in particular when cleaning up after the guest's use of the device. In the case where an interrupt is not quiescent yet at the time this cleanup gets invoked, the cleanup attempt may be scheduled to be retried. When multiple interrupts are involved, this scheduling of a retry may get erroneously skipped. At the same time pointers may get cleared (resulting in a de-reference of NULL) and freed (resulting in a use-after-free), while other code would continue to assume them to be valid.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23035",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-23035"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-33746",
+      "description": "P2M pool freeing may take excessively long The P2M pool backing second level address translation for guests may be of significant size. Therefore its freeing may take more time than is reasonable without intermediate preemption checks. Such checking for the need to preempt was so far missing.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-33746",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-33746"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42309",
+      "description": "Xenstore: Guests can crash xenstored Due to a bug in the fix of XSA-115 a malicious guest can cause xenstored to use a wrong pointer during node creation in an error path, resulting in a crash of xenstored or a memory corruption in xenstored causing further damage. Entering the error path can be controlled by the guest e.g. by exceeding the quota value of maximum nodes per domain.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42309",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42309"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42310",
+      "description": "Xenstore: Guests can create orphaned Xenstore nodes By creating multiple nodes inside a transaction resulting in an error, a malicious guest can create orphaned nodes in the Xenstore data base, as the cleanup after the error will not remove all nodes already created. When the transaction is committed after this situation, nodes without a valid parent can be made permanent in the data base.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42310",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42310"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42311",
+      "description": "Xenstore: guests can let run xenstored out of memory T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Malicious guests can cause xenstored to allocate vast amounts of memory, eventually resulting in a Denial of Service (DoS) of xenstored. There are multiple ways how guests can cause large memory allocations in xenstored: - - by issuing new requests to xenstored without reading the responses, causing the responses to be buffered in memory - - by causing large number of watch events to be generated via setting up multiple xenstore watches and then e.g. deleting many xenstore nodes below the watched path - - by creating as many nodes as allowed with the maximum allowed size and path length in as many transactions as possible - - by accessing many nodes inside a transaction",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42311",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42311"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42312",
+      "description": "Xenstore: guests can let run xenstored out of memory T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Malicious guests can cause xenstored to allocate vast amounts of memory, eventually resulting in a Denial of Service (DoS) of xenstored. There are multiple ways how guests can cause large memory allocations in xenstored: - - by issuing new requests to xenstored without reading the responses, causing the responses to be buffered in memory - - by causing large number of watch events to be generated via setting up multiple xenstore watches and then e.g. deleting many xenstore nodes below the watched path - - by creating as many nodes as allowed with the maximum allowed size and path length in as many transactions as possible - - by accessing many nodes inside a transaction",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42312",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42312"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42313",
+      "description": "Xenstore: guests can let run xenstored out of memory T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Malicious guests can cause xenstored to allocate vast amounts of memory, eventually resulting in a Denial of Service (DoS) of xenstored. There are multiple ways how guests can cause large memory allocations in xenstored: - - by issuing new requests to xenstored without reading the responses, causing the responses to be buffered in memory - - by causing large number of watch events to be generated via setting up multiple xenstore watches and then e.g. deleting many xenstore nodes below the watched path - - by creating as many nodes as allowed with the maximum allowed size and path length in as many transactions as possible - - by accessing many nodes inside a transaction",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42313",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42313"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42314",
+      "description": "Xenstore: guests can let run xenstored out of memory T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Malicious guests can cause xenstored to allocate vast amounts of memory, eventually resulting in a Denial of Service (DoS) of xenstored. There are multiple ways how guests can cause large memory allocations in xenstored: - - by issuing new requests to xenstored without reading the responses, causing the responses to be buffered in memory - - by causing large number of watch events to be generated via setting up multiple xenstore watches and then e.g. deleting many xenstore nodes below the watched path - - by creating as many nodes as allowed with the maximum allowed size and path length in as many transactions as possible - - by accessing many nodes inside a transaction",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42314",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42314"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42315",
+      "description": "Xenstore: guests can let run xenstored out of memory T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Malicious guests can cause xenstored to allocate vast amounts of memory, eventually resulting in a Denial of Service (DoS) of xenstored. There are multiple ways how guests can cause large memory allocations in xenstored: - - by issuing new requests to xenstored without reading the responses, causing the responses to be buffered in memory - - by causing large number of watch events to be generated via setting up multiple xenstore watches and then e.g. deleting many xenstore nodes below the watched path - - by creating as many nodes as allowed with the maximum allowed size and path length in as many transactions as possible - - by accessing many nodes inside a transaction",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42315",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42315"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42316",
+      "description": "Xenstore: guests can let run xenstored out of memory T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Malicious guests can cause xenstored to allocate vast amounts of memory, eventually resulting in a Denial of Service (DoS) of xenstored. There are multiple ways how guests can cause large memory allocations in xenstored: - - by issuing new requests to xenstored without reading the responses, causing the responses to be buffered in memory - - by causing large number of watch events to be generated via setting up multiple xenstore watches and then e.g. deleting many xenstore nodes below the watched path - - by creating as many nodes as allowed with the maximum allowed size and path length in as many transactions as possible - - by accessing many nodes inside a transaction",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42316",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42316"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42317",
+      "description": "Xenstore: guests can let run xenstored out of memory T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Malicious guests can cause xenstored to allocate vast amounts of memory, eventually resulting in a Denial of Service (DoS) of xenstored. There are multiple ways how guests can cause large memory allocations in xenstored: - - by issuing new requests to xenstored without reading the responses, causing the responses to be buffered in memory - - by causing large number of watch events to be generated via setting up multiple xenstore watches and then e.g. deleting many xenstore nodes below the watched path - - by creating as many nodes as allowed with the maximum allowed size and path length in as many transactions as possible - - by accessing many nodes inside a transaction",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42317",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42317"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42318",
+      "description": "Xenstore: guests can let run xenstored out of memory T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] Malicious guests can cause xenstored to allocate vast amounts of memory, eventually resulting in a Denial of Service (DoS) of xenstored. There are multiple ways how guests can cause large memory allocations in xenstored: - - by issuing new requests to xenstored without reading the responses, causing the responses to be buffered in memory - - by causing large number of watch events to be generated via setting up multiple xenstore watches and then e.g. deleting many xenstore nodes below the watched path - - by creating as many nodes as allowed with the maximum allowed size and path length in as many transactions as possible - - by accessing many nodes inside a transaction",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42318",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42318"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42319",
+      "description": "Xenstore: Guests can cause Xenstore to not free temporary memory When working on a request of a guest, xenstored might need to allocate quite large amounts of memory temporarily. This memory is freed only after the request has been finished completely. A request is regarded to be finished only after the guest has read the response message of the request from the ring page. Thus a guest not reading the response can cause xenstored to not free the temporary memory. This can result in memory shortages causing Denial of Service (DoS) of xenstored.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42319",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42319"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42325",
+      "description": "Xenstore: Guests can create arbitrary number of nodes via transactions T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] In case a node has been created in a transaction and it is later deleted in the same transaction, the transaction will be terminated with an error. As this error is encountered only when handling the deleted node at transaction finalization, the transaction will have been performed partially and without updating the accounting information. This will enable a malicious guest to create arbitrary number of nodes.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42325",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42325"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2022-42326",
+      "description": "Xenstore: Guests can create arbitrary number of nodes via transactions T[his CNA information record relates to multiple CVEs; the text explains which aspects/vulnerabilities correspond to which CVE.] In case a node has been created in a transaction and it is later deleted in the same transaction, the transaction will be terminated with an error. As this error is encountered only when handling the deleted node at transaction finalization, the transaction will have been performed partially and without updating the accounting information. This will enable a malicious guest to create arbitrary number of nodes.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-42326",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42326"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2023-34321",
+      "description": "Arm provides multiple helpers to clean & invalidate the cache\nfor a given region.  This is, for instance, used when allocating\nguest memory to ensure any writes (such as the ones during scrubbing)\nhave reached memory before handing over the page to a guest.\n\nUnfortunately, the arithmetics in the helpers can overflow and would\nthen result to skip the cache cleaning/invalidation.  Therefore there\nis no guarantee when all the writes will reach the memory.\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-34321",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-34321"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Julien Grall",
+      "label": "CVE-2023-34323",
+      "description": "When a transaction is committed, C Xenstored will first check\nthe quota is correct before attempting to commit any nodes.  It would\nbe possible that accounting is temporarily negative if a node has\nbeen removed outside of the transaction.\n\nUnfortunately, some versions of C Xenstored are assuming that the\nquota cannot be negative and are using assert() to confirm it.  This\nwill lead to C Xenstored crash when tools are built without -DNDEBUG\n(this is the default).\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-34323",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-34323"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

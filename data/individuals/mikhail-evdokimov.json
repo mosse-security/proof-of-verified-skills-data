@@ -1,12 +1,12 @@
 {
   "name": "Mikhail Evdokimov",
-  "last-updated": "2026-10-18T02:30:03Z",
+  "last-updated": "2026-11-15T08:31:58Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 14,
+    "assessors": 2,
+    "with-evidence": 14,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,9 +19,9 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 14,
       "identity-and-access-management": 0,
-      "iot-security": 0,
+      "iot-security": 4,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
@@ -29,6 +29,244 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2023-28906",
+      "description": "A command injection in the networking service of the MIB3 infotainment allows an attacker already presenting in the system to escalate privileges and obtain administrative access to the system.\nThe vulnerability was originally discovered in Skoda Superb III car with MIB3 infotainment unit OEM part number 3V0035820. The list of affected MIB3 OEM part numbers is provided in the referenced resources.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28906",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28906"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2023-28908",
+      "description": "A specific flaw exists within the Bluetooth stack of the MIB3 infotainment. The issue results from the lack of proper validation of user-supplied data, which can result in an integer overflow when receiving non-fragmented HCI packets on a channel.\nThe vulnerability was originally discovered in Skoda Superb III car with MIB3 infotainment unit OEM part number 3V0035820. The list of affected MIB3 OEM part numbers is provided in the referenced resources.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28908",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28908"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2023-28909",
+      "description": "A specific flaw exists within the Bluetooth stack of the MIB3 unit. The issue results from the lack of proper validation of user-supplied data, which can result in an integer overflow when receiving fragmented HCI packets on a channel. An attacker can leverage this vulnerability to bypass the MTU check on a channel with enabled fragmentation. Consequently, this can lead to a buffer overflow in upper layer profiles, which can be used to obtain remote code execution.\nThe vulnerability was originally discovered in Skoda Superb III car with MIB3 infotainment unit OEM part number 3V0035820. The list of affected MIB3 OEM part numbers is provided in the referenced resources.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28909",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28909"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2023-28910",
+      "description": "A specific flaw exists within the Bluetooth stack of the MIB3 infotainment system. The issue results from the disabled abortion flag eventually leading to bypassing assertion functions.\nThe vulnerability was originally discovered in Skoda Superb III car with MIB3 infotainment unit OEM part number 3V0035820. The list of affected MIB3 OEM part numbers is provided in the referenced resources.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28910",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28910"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2023-28911",
+      "description": "A specific flaw exists within the Bluetooth stack of the MIB3 infotainment. The issue results from the lack of proper validation of user-supplied data, which can result in an arbitrary channel disconnection. An attacker can leverage this vulnerability to cause a denial-of-service attack for every connected client of the infotainment device.\nThe vulnerability was originally discovered in Skoda Superb III car with MIB3 infotainment unit OEM part number 3V0035820. The list of affected MIB3 OEM part numbers is provided in the referenced resources.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28911",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28911"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2023-28912",
+      "description": "The MIB3 unit stores the synchronized phone contact book in clear-text, allowing an attacker with either code execution privilege on the system or physical access to the system to obtain vehicle owner's contact data.\nThe vulnerability was originally discovered in Skoda Superb III car with MIB3 infotainment unit OEM part number 3V0035820. The list of affected MIB3 OEM part numbers is provided in the referenced resources.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28912",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28912"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
     {
       "name": "Mikhail Evdokimov",
       "label": "Over the Air: Compromise of Modern Volkswagen Group Vehicles",
@@ -64,6 +302,291 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2025-32059",
+      "description": "The specific flaw exists within the Bluetooth stack developed by Alps Alpine of the Infotainment ECU manufactured by Bosch. The issue results from the lack of proper boundary validation of user-supplied data, which can result in a stack-based buffer overflow when receiving a specific packet on the established upper layer L2CAP channel. An attacker can leverage this vulnerability to obtain remote code execution on the Infotainment ECU with root privileges.\n\n\n\nFirst identified on Nissan Leaf ZE1 manufactured in 2020.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32059",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-32059"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2025-32060",
+      "description": "The system suffers from the absence of a kernel module signature verification. If an attacker can execute commands on behalf of root user (due to additional vulnerabilities), then he/she is also able to load custom kernel modules to the kernel space and execute code in the kernel context. Such a flaw can lead to taking control over the entire system.\n\n\n\nFirst identified on Nissan Leaf ZE1 manufactured in 2020.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32060",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-32060"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2025-32061",
+      "description": "The specific flaw exists within the Bluetooth stack developed by Alps Alpine of the Infotainment ECU manufactured by Bosch. The issue results from the lack of proper boundary validation of user-supplied data, which can result in a stack-based buffer overflow when receiving a specific packet on the established upper layer L2CAP channel. An attacker can leverage this vulnerability to obtain remote code execution on the Infotainment ECU with root privileges.\n\n\n\nFirst identified on Nissan Leaf ZE1 manufactured in 2020.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32061",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-32061"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2025-32062",
+      "description": "The specific flaw exists within the Bluetooth stack developed by Alps Alpine of the Infotainment ECU manufactured by Bosch. The issue results from the lack of proper boundary validation of user-supplied data, which can result in a stack-based buffer overflow when receiving a specific packet on the established upper layer L2CAP channel. An attacker can leverage this vulnerability to obtain remote code execution on the Infotainment ECU with root privileges.\n\n\n\nFirst identified on Nissan Leaf ZE1 manufactured in 2020.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32062",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-32062"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2025-5476",
+      "description": "Sony XAV-AX8500 Bluetooth Improper Isolation Authentication Bypass Vulnerability. This vulnerability allows network-adjacent attackers to bypass authentication on affected Sony XAV-AX8500 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of ACL-U links. The issue results from the lack of L2CAP channel isolation. An attacker can leverage this vulnerability to bypass authentication on the system. Was ZDI-CAN-26284.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 6.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5476",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-5476"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2025-5477",
+      "description": "Sony XAV-AX8500 Bluetooth L2CAP Protocol Heap-based Buffer Overflow Remote Code Execution Vulnerability. This vulnerability allows network-adjacent attackers to execute arbitrary code on affected Sony XAV-AX8500 devices. An attacker must first obtain the ability to pair a malicious Bluetooth device with the target system in order to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of the Bluetooth L2CAP protocol. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a heap-based buffer. An attacker can leverage this vulnerability to execute code in the context of the elysian-bt-service process. Was ZDI-CAN-26286.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.0, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5477",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-5477"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mikhail Evdokimov",
+      "label": "CVE-2025-5820",
+      "description": "Sony XAV-AX8500 Bluetooth ERTM Channel Authentication Bypass Vulnerability. This vulnerability allows network-adjacent attackers to bypass authentication on affected Sony XAV-AX8500 devices. Authentication is not required to exploit this vulnerability.\n\nThe specific flaw exists within the implementation of Bluetooth ERTM channel communication. The issue results from improper channel data initialization. An attacker can leverage this vulnerability to bypass authentication on the system. Was ZDI-CAN-26285.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 6.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5820",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-5820"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

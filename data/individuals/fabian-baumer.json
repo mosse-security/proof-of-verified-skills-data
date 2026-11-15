@@ -1,12 +1,12 @@
 {
   "name": "Fabian Bäumer",
-  "last-updated": "2026-10-18T02:29:51Z",
+  "last-updated": "2026-11-15T08:31:49Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 1,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,45 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Fabian Bäumer",
+      "label": "CVE-2024-41909",
+      "description": "Like many other SSH implementations, Apache MINA SSHD suffered from the issue that is more widely known as CVE-2023-48795. An attacker that can intercept traffic between client and server could drop certain packets from the stream, potentially causing client and server to consequently end up with a connection for which \nsome security features have been downgraded or disabled, aka a Terrapin \nattack\n\nThe mitigations to prevent this type of attack were implemented in Apache MINA SSHD 2.12.0, both client and server side. Users are recommended to upgrade to at least this version. Note that both the client and the server implementation must have mitigations applied against this issue, otherwise the connection may still be affected.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-41909",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-41909"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Fabian Bäumer",
       "label": "Crossing the Streams: SSH Plaintext Recovery via a Common Compression Context in Multiplexed Channels",

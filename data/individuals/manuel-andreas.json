@@ -1,12 +1,12 @@
 {
   "name": "Manuel Andreas",
-  "last-updated": "2026-10-18T02:30:01Z",
+  "last-updated": "2026-11-15T08:31:56Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,84 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Manuel Andreas",
+      "label": "CVE-2023-46842",
+      "description": "Unlike 32-bit PV guests, HVM guests may switch freely between 64-bit and\nother modes.  This in particular means that they may set registers used\nto pass 32-bit-mode hypercall arguments to values outside of the range\n32-bit code would be able to set them to.\n\nWhen processing of hypercalls takes a considerable amount of time,\nthe hypervisor may choose to invoke a hypercall continuation.  Doing so\ninvolves putting (perhaps updated) hypercall arguments in respective\nregisters.  For guests not running in 64-bit mode this further involves\na certain amount of translation of the values.\n\nUnfortunately internal sanity checking of these translated values\nassumes high halves of registers to always be clear when invoking a\nhypercall.  When this is found not to be the case, it triggers a\nconsistency check in the hypervisor and causes a crash.\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-46842",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-46842"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Manuel Andreas",
+      "label": "CVE-2024-45818",
+      "description": "The hypervisor contains code to accelerate VGA memory accesses for HVM\nguests, when the (virtual) VGA is in \"standard\" mode.  Locking involved\nthere has an unusual discipline, leaving a lock acquired past the\nreturn from the function that acquired it.  This behavior results in a\nproblem when emulating an instruction with two memory accesses, both of\nwhich touch VGA memory (plus some further constraints which aren't\nrelevant here).  When emulating the 2nd access, the lock that is already\nbeing held would be attempted to be re-acquired, resulting in a\ndeadlock.\n\nThis deadlock was already found when the code was first introduced, but\nwas analysed incorrectly and the fix was incomplete.  Analysis in light\nof the new finding cannot find a way to make the existing locking\ndiscipline work.\n\nIn staging, this logic has all been removed because it was discovered\nto be accidentally disabled since Xen 4.7.  Therefore, we are fixing the\nlocking problem by backporting the removal of most of the feature.  Note\nthat even with the feature disabled, the lock would still be acquired\nfor any accesses to the VGA MMIO region.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-45818",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-45818"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Manuel Andreas",
       "label": "HyperMirage: Direct State Manipulation in Hybrid Virtual CPU Fuzzing",

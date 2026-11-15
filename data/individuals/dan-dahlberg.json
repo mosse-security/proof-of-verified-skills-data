@@ -1,0 +1,273 @@
+{
+  "name": "Dan Dahlberg",
+  "last-updated": "2026-11-15T08:31:47Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 6,
+    "assessors": 1,
+    "with-evidence": 6,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 2,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 6,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Dan Dahlberg",
+      "label": "CVE-2016-6564",
+      "description": "Android devices with code from Ragentek contain a privileged binary that performs over-the-air (OTA) update checks. Additionally, there are multiple techniques used to hide the execution of this binary. This behavior could be described as a rootkit. This binary, which resides as /system/bin/debugs, runs with root privileges and does not communicate over an encrypted channel. The binary has been shown to communicate with three hosts via HTTP: oyag[.]lhzbdvm[.]com oyag[.]prugskh[.]net oyag[.]prugskh[.]com Server responses to requests sent by the debugs binary include functionalities to execute arbitrary commands as root, install applications, or update configurations. Examples of a request sent by the client binary: POST /pagt/agent?data={\"name\":\"c_regist\",\"details\":{...}} HTTP/1. 1 Host: 114.80.68.223 Connection: Close An example response from the server could be: HTTP/1.1 200 OK {\"code\": \"01\", \"name\": \"push_commands\", \"details\": {\"server_id\": \"1\" , \"title\": \"Test Command\", \"comments\": \"Test\", \"commands\": \"touch /tmp/test\"}} This binary is reported to be present in the following devices: BLU Studio G BLU Studio G Plus BLU Studio 6.0 HD BLU Studio X BLU Studio X Plus BLU Studio C HD Infinix Hot X507 Infinix Hot 2 X510 Infinix Zero X506 Infinix Zero 2 X509 DOOGEE Voyager 2 DG310 LEAGOO Lead 5 LEAGOO Lead 6 LEAGOO Lead 3i LEAGOO Lead 2S LEAGOO Alfa 6 IKU Colorful K45i Beeline Pro 2 XOLO Cube 5.0",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6564",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6564"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Dan Dahlberg",
+      "label": "CVE-2022-2107",
+      "description": "The MiCODUS MV720 GPS tracker API server has an authentication mechanism that allows devices to use a hard-coded master password. This may allow an attacker to send SMS commands directly to the GPS tracker as if they were coming from the GPS owner’s mobile number.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-2107",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-2107"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Dan Dahlberg",
+      "label": "CVE-2022-2141",
+      "description": "SMS-based GPS commands can be executed by MiCODUS MV720 GPS tracker without authentication.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-2141",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-2141"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Dan Dahlberg",
+      "label": "CVE-2022-2199",
+      "description": "The main MiCODUS MV720 GPS tracker web server has a reflected cross-site scripting vulnerability that could allow an attacker to gain control by tricking a user into making a request.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-2199",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-2199"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Dan Dahlberg",
+      "label": "CVE-2022-33944",
+      "description": "The main MiCODUS MV720 GPS tracker web server has an authenticated insecure direct object references vulnerability on endpoint and POST parameter “Device ID,” which accepts arbitrary device IDs.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-33944",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-33944"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Dan Dahlberg",
+      "label": "CVE-2022-34150",
+      "description": "The main MiCODUS MV720 GPS tracker web server has an authenticated insecure direct object reference vulnerability on endpoint and parameter device IDs, which accept arbitrary device IDs without further verification.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-34150",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-34150"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

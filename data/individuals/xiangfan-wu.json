@@ -1,16 +1,16 @@
 {
   "name": "Xiangfan Wu",
-  "last-updated": "2026-10-18T03:23:02Z",
+  "last-updated": "2026-11-15T08:32:06Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 0,
+    "endorsements": 3,
+    "assessors": 3,
+    "with-evidence": 1,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 2,
+      "cyber-defense": 3,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,47 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Xiangfan Wu",
+      "label": "CVE-2025-24783",
+      "description": "** UNSUPPORTED WHEN ASSIGNED ** Incorrect Usage of Seeds in Pseudo-Random Number Generator (PRNG) vulnerability in Apache Cocoon.\n\nThis issue affects Apache Cocoon: all versions.\n\nWhen a continuation is created, it gets a random identifier. Because the random number generator used to generate these identifiers was seeded with the startup time, it may not have been sufficiently unpredictable, and an attacker could use this to guess continuation ids and look up continuations they should not have had access to.\n\nAs a mitigation, you may enable the \"session-bound-continuations\" option to make sure continuations are not shared across sessions.\n\n\nAs this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-24783",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-24783"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Xiangfan Wu",
       "label": "Single Medium, Multiple Perspectives: Exposing and Exploiting Semantic Gaps in AI Services' Media Preprocessing Pipelines",

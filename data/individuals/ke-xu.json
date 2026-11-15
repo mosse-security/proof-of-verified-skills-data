@@ -1,16 +1,16 @@
 {
   "name": "Ke Xu",
-  "last-updated": "2026-10-18T02:29:59Z",
+  "last-updated": "2026-11-15T08:31:55Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 13,
-    "assessors": 3,
-    "with-evidence": 0,
+    "endorsements": 15,
+    "assessors": 4,
+    "with-evidence": 2,
     "without-evidence": 13,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 3,
+      "cyber-defense": 4,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 6,
+      "vulnerability-research": 8,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,86 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Ke Xu",
+      "label": "CVE-2023-6534",
+      "description": "In versions of FreeBSD 14.0-RELEASE before 14-RELEASE-p2, FreeBSD 13.2-RELEASE before 13.2-RELEASE-p7 and FreeBSD 12.4-RELEASE before 12.4-RELEASE-p9, the pf(4) packet filter incorrectly validates TCP sequence numbers.  This could allow a malicious actor to execute a denial-of-service attack against hosts behind the firewall.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6534",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-6534"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ke Xu",
+      "label": "CVE-2025-10259",
+      "description": "Improper Validation of Specified Quantity in Input vulnerability in TCP Communication Function on Mitsubishi Electric Corporation MELSEC iQ-F Series CPU module allows a remote attacker to disconnect the connection by sending specially crafted TCP packets to cause a denial-of-service (DoS) condition on the products. There is no impact on connections other than the attacked one.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-10259",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-10259"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Ke Xu",
       "label": "FrontSpec: Uncovering and Characterizing Frontend Memory Predictors on Apple M4 Processors",

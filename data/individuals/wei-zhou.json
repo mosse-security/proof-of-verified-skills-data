@@ -1,15 +1,15 @@
 {
   "name": "Wei Zhou",
-  "last-updated": "2026-10-18T03:23:01Z",
+  "last-updated": "2026-11-15T08:32:05Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 1,
+    "endorsements": 4,
+    "assessors": 3,
+    "with-evidence": 3,
     "without-evidence": 1,
     "by-domain": {
-      "cloud-security": 0,
+      "cloud-security": 1,
       "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -68,6 +68,88 @@
       ],
       "subspecialties": {
         "unknown": []
+      }
+    },
+    {
+      "name": "Wei Zhou",
+      "label": "CVE-2024-29008",
+      "description": "A problem has been identified in the CloudStack additional VM configuration (extraconfig) feature which can be misused by anyone who has privilege to deploy a VM instance or configure settings of an already deployed VM instance, to configure additional VM configuration even when the feature is not explicitly enabled by the administrator. In a KVM based CloudStack environment, an attacker can exploit this issue to attach host devices such as storage disks, and PCI and USB devices such as network adapters and GPUs, in a regular VM instance that can be further exploited to gain access to the underlying network and storage infrastructure resources, and access any VM instance disks on the local storage.\n\nUsers are advised to upgrade to version 4.18.1.1 or 4.19.0.1, which fixes this issue.\n\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-29008",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-29008"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Wei Zhou",
+      "label": "CVE-2025-26521",
+      "description": "When an Apache CloudStack user-account creates a CKS-based Kubernetes cluster in a project, the API key and the secret key of the 'kubeadmin' user of the caller account are used to create the secret config in the CKS-based Kubernetes cluster. A member of the project who can access the CKS-based Kubernetes cluster, can also access the API key and secret key of the 'kubeadmin' user of the CKS cluster's creator's account. An attacker who's a member of the project can exploit this to impersonate and perform privileged actions that can result in complete compromise of the confidentiality, integrity, and availability of resources owned by the creator's account.\n\nCKS users are recommended to upgrade to version 4.19.3.0 or 4.20.1.0, which fixes this issue.Updating Existing Kubernetes Clusters in ProjectsA service account should be created for each project to provide limited access specifically for Kubernetes cluster providers and autoscaling. Follow the steps below to create a new service account, update the secret inside the cluster, and regenerate existing API and service keys:1. Create a New Service AccountCreate a new account using the role \"Project Kubernetes Service Role\" with the following details:\n\nAccount Name\nkubeadmin-<FIRST_EIGHT_CHARACTERS_OF_PROJECT_ID>\nFirst Name\nKubernetes\nLast Name\nService User\nAccount Type\n0 (Normal User)\nRole ID\n<ID_OF_SERVICE_ROLE>\n\n\n\n2. Add the Service Account to the ProjectAdd this account to the project where the Kubernetes cluster(s) are hosted.\n3. Generate API and Secret KeysGenerate API Key and Secret Key for the default user of this account.\n4. Update the CloudStack Secret in the Kubernetes ClusterCreate a temporary file `/tmp/cloud-config` with the following data:\n   api-url = <API_URL>       # For example: <MS_URL>/client/api\n  api-key = <SERVICE_USER_API_KEY>\n  secret-key = <SERVICE_USER_SECRET_KEY>\n  project-id = <PROJECT_ID>\n\n\n\n\nDelete the existing secret using kubectl and Kubernetes cluster config:\n   ./kubectl --kubeconfig kube.conf -n kube-system delete secret cloudstack-secret\n\n\n\n\nCreate a new secret using kubectl and Kubernetes cluster config:\n    ./kubectl --kubeconfig kube.conf -n kube-system create secret generic cloudstack-secret --from-file=/tmp/cloud-config\n\n\n\n\nRemove the temporary file:\n    rm /tmp/cloud-config5. Regenerate API and Secret KeysRegenerate the API and secret keys for the original user account that was used to create the Kubernetes cluster.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-26521",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-26521"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "cloud-security",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cloud-security": [
+          "container-and-kubernetes-security"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     },
     {

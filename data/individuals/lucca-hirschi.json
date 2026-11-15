@@ -1,12 +1,12 @@
 {
   "name": "Lucca Hirschi",
-  "last-updated": "2026-10-18T02:30:00Z",
+  "last-updated": "2026-11-15T08:31:56Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -66,6 +66,45 @@
       "subspecialties": {
         "cyber-defense": [],
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Lucca Hirschi",
+      "label": "CVE-2023-6936",
+      "description": "In wolfSSL prior to 5.6.6, if callback functions are enabled (via the WOLFSSL_CALLBACKS flag), then a malicious TLS client or network attacker can trigger a buffer over-read on the heap of 5 bytes (WOLFSSL_CALLBACKS is only intended for debugging).\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-6936",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-6936"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

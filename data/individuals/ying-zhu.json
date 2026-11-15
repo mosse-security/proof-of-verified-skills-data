@@ -1,12 +1,12 @@
 {
   "name": "Ying Zhu",
-  "last-updated": "2026-10-18T03:23:07Z",
+  "last-updated": "2026-11-15T08:32:06Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 3,
+    "with-evidence": 2,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -96,6 +96,45 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Ying Zhu",
+      "label": "CVE-2025-27819",
+      "description": "In CVE-2023-25194, we announced the RCE/Denial of service attack via SASL JAAS JndiLoginModule configuration in Kafka Connect API. But not only Kafka Connect API is vulnerable to this attack, the Apache Kafka brokers also have this vulnerability. To exploit this vulnerability, the attacker needs to be able to connect to the Kafka cluster and have the AlterConfigs permission on the cluster resource.\n\n\nSince Apache Kafka 3.4.0, we have added a system property (\"-Dorg.apache.kafka.disallowed.login.modules\") to disable the problematic login modules usage in SASL JAAS configuration. Also by default \"com.sun.security.auth.module.JndiLoginModule\" is disabled in Apache Kafka 3.4.0, and \"com.sun.security.auth.module.JndiLoginModule,com.sun.security.auth.module.LdapLoginModule\" is disabled by default in in Apache Kafka 3.9.1/4.0.0",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-27819",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-27819"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

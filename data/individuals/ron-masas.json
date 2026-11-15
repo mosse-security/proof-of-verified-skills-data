@@ -1,0 +1,158 @@
+{
+  "name": "Ron Masas",
+  "last-updated": "2026-11-15T08:32:01Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 1,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ron Masas",
+      "label": "CVE-2020-2005",
+      "description": "A cross-site scripting (XSS) vulnerability exists when visiting malicious websites with the Palo Alto Networks GlobalProtect Clientless VPN that can compromise the user's active session. This issue affects: PAN-OS 7.1 versions earlier than 7.1.26; PAN-OS 8.1 versions earlier than 8.1.13; PAN-OS 9.0 versions earlier than 9.0.7; All versions of PAN-OS 8.0.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-2005",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-2005"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ron Masas",
+      "label": "CVE-2022-22984",
+      "description": "The package snyk before 1.1064.0; the package snyk-mvn-plugin before 2.31.3; the package snyk-gradle-plugin before 3.24.5; the package @snyk/snyk-cocoapods-plugin before 2.5.3; the package snyk-sbt-plugin before 2.16.2; the package snyk-python-plugin before 1.24.2; the package snyk-docker-plugin before 5.6.5; the package @snyk/snyk-hex-plugin before 1.1.6 are vulnerable to Command Injection due to an incomplete fix for [CVE-2022-40764](https://security.snyk.io/vuln/SNYK-JS-SNYK-3037342). A successful exploit allows attackers to run arbitrary commands on the host system where the Snyk CLI is installed by passing in crafted command line flags. In order to exploit this vulnerability, a user would have to execute the snyk test command on untrusted files. In most cases, an attacker positioned to control the command line arguments to the Snyk CLI would already be positioned to execute arbitrary commands. However, this could be abused in specific scenarios, such as continuous integration pipelines, where developers can control the arguments passed to the Snyk CLI to leverage this component as part of a wider attack against an integration/build pipeline. This issue has been addressed in the latest Snyk Docker images available at https://hub.docker.com/r/snyk/snyk as of 2022-11-29. Images downloaded and built prior to that date should be updated. The issue has also been addressed in the Snyk TeamCity CI/CD plugin as of version v20221130.093605.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-22984",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-22984"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "devsecops",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "devsecops": [
+          "ci-cd-and-pipeline-security"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ron Masas",
+      "label": "CVE-2022-24441",
+      "description": "The package snyk before 1.1064.0 are vulnerable to Code Injection when analyzing a project. An attacker who can convince a user to scan a malicious project can include commands in a build file such as build.gradle or gradle-wrapper.jar, which will be executed with the privileges of the application. This vulnerability may be triggered when running the the CLI tool directly, or when running a scan with one of the IDE plugins that invoke the Snyk CLI. Successful exploitation of this issue would likely require some level of social engineering - to coerce an untrusted project to be downloaded and analyzed via the Snyk CLI or opened in an IDE where a Snyk IDE plugin is installed and enabled. Additionally, if the IDE has a Trust feature then the target folder must be marked as ‘trusted’ in order to be vulnerable. **NOTE:** This issue is independent of the one reported in [CVE-2022-40764](https://security.snyk.io/vuln/SNYK-JS-SNYK-3037342), and upgrading to a fixed version for this addresses that issue as well. The affected IDE plugins and versions are: - VS Code - Affected: <=1.8.0, Fixed: 1.9.0 - IntelliJ - Affected: <=2.4.47, Fixed: 2.4.48 - Visual Studio - Affected: <=1.1.30, Fixed: 1.1.31 - Eclipse - Affected: <=v20221115.132308, Fixed: All subsequent versions - Language Server - Affected: <=v20221109.114426, Fixed: All subsequent versions",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-24441",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-24441"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [
+          "social-engineering"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

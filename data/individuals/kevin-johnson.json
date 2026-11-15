@@ -1,12 +1,12 @@
 {
   "name": "Kevin Johnson",
-  "last-updated": "2026-10-18T02:29:59Z",
+  "last-updated": "2026-11-15T08:31:55Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 6,
-    "assessors": 2,
-    "with-evidence": 1,
+    "endorsements": 7,
+    "assessors": 3,
+    "with-evidence": 2,
     "without-evidence": 5,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 2,
       "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 3,
+      "vulnerability-research": 4,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,45 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Kevin Johnson",
+      "label": "CVE-2007-5578",
+      "description": "Basic Analysis and Security Engine (BASE) before 1.3.8 sends a redirect to the web browser but does not exit, which allows remote attackers to bypass authentication via (1) base_main.php, (2) base_qry_alert.php, and possibly other vectors.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2007-5578",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2007-5578"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2007,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Kevin Johnson",
       "label": "Injectable Exploits: Two New Tools for Pwning Web Apps and Browsers",

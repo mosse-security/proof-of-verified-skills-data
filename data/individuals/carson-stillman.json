@@ -1,12 +1,12 @@
 {
   "name": "Carson Stillman",
-  "last-updated": "2026-10-19T23:45:36Z",
+  "last-updated": "2026-11-15T08:31:46Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,84 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Carson Stillman",
+      "label": "CVE-2025-10937",
+      "description": "Oxford Nanopore Technologies' MinKNOW software at or prior to version 24.11 creates a temporary file to store the local authentication token during startup, before copying it to its final location. This temporary file is created in a directory accessible to all users on the system. An unauthorized local user or process can exploit this behavior by placing a file lock on the temporary token file using the flock system call. This prevents MinKNOW from completing the token generation process. As a result, no valid local token is created, and the software is unable to execute commands on the sequencer. This leads to a denial-of-service (DoS) condition, blocking sequencing operations.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-10937",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-10937"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Carson Stillman",
+      "label": "CVE-2025-54808",
+      "description": "Oxford Nanopore Technologies' MinKNOW software at or prior to version 24.11 stores authentication tokens in a file located in the system's temporary directory (/tmp) on the host machine. This directory is typically world-readable, allowing any local user or application to access the token. If the token is leaked (e.g., via malware infection or other local exploit), and remote access is enabled, it can be used to establish unauthorized remote connections to the sequencer. Remote access must be enabled for remote exploitation to succeed. This may occur either because the user has enabled remote access for legitimate operational reasons or because malware with elevated privileges (e.g., sudo access) enables it without user consent. This vulnerability can be chained with remote access capabilities to generate a developer token from a remote device. Developer tokens can be created with arbitrary expiration dates, enabling persistent access to the sequencer and bypassing standard authentication mechanisms.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-54808",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-54808"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Carson Stillman",
       "label": "Fizzle: A Framework for Deterministic and Reproducible Network Fuzzing",

@@ -1,12 +1,12 @@
 {
   "name": "Alexander Bolshev",
-  "last-updated": "2026-10-18T02:29:42Z",
+  "last-updated": "2026-11-15T08:31:42Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 4,
-    "assessors": 1,
-    "with-evidence": 4,
+    "endorsements": 6,
+    "assessors": 2,
+    "with-evidence": 6,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 1,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 3,
+      "vulnerability-research": 5,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 3,
@@ -197,6 +197,84 @@
           "safety-systems",
           "automotive-security",
           "ecu-and-automotive-embedded-systems"
+        ]
+      }
+    },
+    {
+      "name": "Alexander Bolshev",
+      "label": "CVE-2019-3742",
+      "description": "Dell/Alienware Digital Delivery versions prior to 3.5.2013 contain a privilege escalation vulnerability. A local non-privileged malicious user could exploit a named pipe that performs binary deserialization via a process hollowing technique to inject malicous code to run an executable with elevated privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.0, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-3742",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-3742"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Alexander Bolshev",
+      "label": "CVE-2019-3744",
+      "description": "Dell/Alienware Digital Delivery versions prior to 4.0.41 contain a privilege escalation vulnerability. A local non-privileged malicious user could exploit a Universal Windows Platform application by manipulating the install software package feature with a race condition and a path traversal exploit in order to run a malicious executable with elevated privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.0, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-3744",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-3744"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
         ]
       }
     }

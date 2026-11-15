@@ -1,12 +1,12 @@
 {
   "name": "Alessandro Magnosi",
-  "last-updated": "2026-10-19T07:30:58Z",
+  "last-updated": "2026-11-15T08:31:42Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 7,
+    "assessors": 2,
+    "with-evidence": 5,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 2,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 7,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,201 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Alessandro Magnosi",
+      "label": "CVE-2019-25062",
+      "description": "A vulnerability was found in Sricam IP CCTV Camera and classified as critical. This issue affects some unknown processing of the component Device Viewer. The manipulation leads to memory corruption. An attack has to be approached locally. The exploit has been disclosed to the public and may be used.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-25062",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-25062"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Alessandro Magnosi",
+      "label": "CVE-2019-25064",
+      "description": "A vulnerability was found in CoreHR Core Portal up to 27.0.7. It has been classified as problematic. Affected is an unknown function. The manipulation leads to cross site request forgery. It is possible to launch the attack remotely. Upgrading to version 27.0.8 is able to address this issue. It is recommended to upgrade the affected component.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-25064",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-25064"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Alessandro Magnosi",
+      "label": "CVE-2019-25435",
+      "description": "Sricam DeviceViewer 3.12.0.1 contains a local buffer overflow vulnerability in the user management add user function that allows authenticated attackers to execute arbitrary code by bypassing data execution prevention. Attackers can inject a malicious payload through the Username field in User Management to trigger a stack-based buffer overflow and execute commands via ROP chain gadgets.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-25435",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-25435"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Alessandro Magnosi",
+      "label": "CVE-2019-25436",
+      "description": "Sricam DeviceViewer 3.12.0.1 contains a password change security bypass vulnerability that allows authenticated users to change passwords without proper validation of the old password field. Attackers can inject a large payload into the old password parameter during the change password process to bypass validation and set an arbitrary new password.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-25436",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-25436"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Alessandro Magnosi",
+      "label": "CVE-2019-25437",
+      "description": "Foscam Video Management System 1.1.6.6 contains a buffer overflow vulnerability in the UID field that allows local attackers to crash the application by supplying an excessively long string. Attackers can input a 5000-character buffer into the UID parameter during device addition to trigger an application crash when the Login Check function is invoked.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-25437",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-25437"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Alessandro Magnosi",
       "label": "StackMoonwalk: A Novel approach to stack spoofing on Windows x64",

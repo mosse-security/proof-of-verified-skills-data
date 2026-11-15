@@ -1,12 +1,12 @@
 {
   "name": "Steven Darracott",
-  "last-updated": "2026-10-18T02:30:13Z",
+  "last-updated": "2026-11-15T06:51:17Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 1,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 1,
       "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -67,6 +67,45 @@
         "penetration-testing": [],
         "red-teaming": [],
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Steven Darracott",
+      "label": "CVE-2020-28251",
+      "description": "NETSCOUT AirMagnet Enterprise 11.1.4 build 37257 and earlier has a sensor escalated privileges vulnerability that can be exploited to provide someone with administrative access to a sensor, with credentials to invoke a command to provide root access to the operating system. The attacker must complete a straightforward password-cracking exercise.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-28251",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-28251"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

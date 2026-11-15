@@ -1,17 +1,17 @@
 {
   "name": "Bofei Chen",
-  "last-updated": "2026-10-18T02:29:45Z",
+  "last-updated": "2026-11-15T08:31:46Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
-      "devsecops": 0,
+      "devsecops": 1,
       "digital-forensics": 0,
       "grc": 0,
       "incident-response": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,86 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Bofei Chen",
+      "label": "CVE-2023-29234",
+      "description": "A deserialization vulnerability existed when decode a malicious package.This issue affects Apache Dubbo: from 3.1.0 through 3.1.10, from 3.2.0 through 3.2.4.\n\nUsers are recommended to upgrade to the latest version, which fixes the issue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-29234",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-29234"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "devsecops",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "devsecops": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Bofei Chen",
+      "label": "CVE-2024-52046",
+      "description": "The ObjectSerializationDecoder in Apache MINA uses Java’s native deserialization protocol to process\nincoming serialized data but lacks the necessary security checks and defenses. This vulnerability allows\nattackers to exploit the deserialization process by sending specially crafted malicious serialized data,\npotentially leading to remote code execution (RCE) attacks.\n\n\n\n\t\t\t\t\t\n\n\n\t\t\t\t\n\n\n\t\t\t\n\n\n\t\t\n\n\n\t\nThis issue affects MINA core versions 2.0.X, 2.1.X and 2.2.X, and will be fixed by the releases 2.0.27, 2.1.10 and 2.2.4.\n\n\n\n\n\nIt's also important to note that an application using MINA core library will only be affected if the IoBuffer#getObject() method is called, and this specific method is potentially called when adding a ProtocolCodecFilter instance using the ObjectSerializationCodecFactory class in the filter chain. If your application is specifically using those classes, you have to upgrade to the latest version of MINA core library.\n\n\n\n\nUpgrading will  not be enough: you also need to explicitly allow the classes the decoder will accept in the ObjectSerializationDecoder instance, using one of the three new methods:\n\n\n\n\n    /**\n\n     * Accept class names where the supplied ClassNameMatcher matches for\n\n     * deserialization, unless they are otherwise rejected.\n\n     *\n\n     * @param classNameMatcher the matcher to use\n\n     */\n\n    public void accept(ClassNameMatcher classNameMatcher)\n\n\n\n\n    /**\n\n     * Accept class names that match the supplied pattern for\n\n     * deserialization, unless they are otherwise rejected.\n\n     *\n\n     * @param pattern standard Java regexp\n\n     */\n\n    public void accept(Pattern pattern) \n\n\n\n\n\n    /**\n\n     * Accept the wildcard specified classes for deserialization,\n\n     * unless they are otherwise rejected.\n\n     *\n\n     * @param patterns Wildcard file name patterns as defined by\n\n     *                  {@link org.apache.commons.io.FilenameUtils#wildcardMatch(String, String) FilenameUtils.wildcardMatch}\n\n     */\n\n    public void accept(String... patterns)\n\n\n\n\n\n\n\nBy default, the decoder will reject *all* classes that will be present in the incoming data.\n\n\n\n\n\n\n\nNote: The FtpServer, SSHd and Vysper sub-project are not affected by this issue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 10)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-52046",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-52046"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Bofei Chen",
       "label": "Patch-Guided Vulnerability Detection: Extracting Java API Security Rules via Attack–Defense Cross-Analysis",

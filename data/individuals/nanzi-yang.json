@@ -1,12 +1,12 @@
 {
   "name": "Nanzi Yang",
-  "last-updated": "2026-10-18T02:30:04Z",
+  "last-updated": "2026-11-15T08:31:58Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
-    "with-evidence": 0,
+    "endorsements": 4,
+    "assessors": 3,
+    "with-evidence": 1,
     "without-evidence": 3,
     "by-domain": {
       "cloud-security": 1,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,45 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Nanzi Yang",
+      "label": "CVE-2024-9779",
+      "description": "A flaw was found in Open Cluster Management (OCM) when a user has access to the worker nodes which contain the cluster-manager or klusterlet deployments. The cluster-manager deployment uses a service account with the same name \"cluster-manager\" which is bound to a ClusterRole also named \"cluster-manager\", which includes the permission to create Pod resources. If this deployment runs a pod on an attacker-controlled node, the attacker can obtain the cluster-manager's token and steal any service account token by creating and mounting the target service account to control the whole cluster.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9779",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-9779"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Nanzi Yang",
       "label": "From Fault to Oracle: Breaking Google Pixel TPU Hardware Memory Isolation via Trusted Deserialization Faults",

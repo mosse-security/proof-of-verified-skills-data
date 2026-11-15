@@ -1,12 +1,12 @@
 {
   "name": "Adam Crosser",
-  "last-updated": "2026-10-18T02:29:42Z",
+  "last-updated": "2026-11-15T08:31:41Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 3,
+    "assessors": 3,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 1,
       "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,45 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Adam Crosser",
+      "label": "CVE-2022-0016",
+      "description": "An improper handling of exceptional conditions vulnerability exists within the Connect Before Logon feature of the Palo Alto Networks GlobalProtect app that enables a local attacker to escalate to SYSTEM or root privileges when authenticating with Connect Before Logon under certain circumstances. This issue impacts GlobalProtect app 5.2 versions earlier than GlobalProtect app 5.2.9 on Windows and MacOS. This issue does not affect the GlobalProtect app on other platforms.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-0016",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-0016"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Adam Crosser",
       "label": "Leveraging Request Smuggling For Authentication Bypass and Remote Code Execution",

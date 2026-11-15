@@ -1,0 +1,74 @@
+{
+  "name": "Mritunjay Bhardwaj",
+  "last-updated": "2026-11-15T06:51:14Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Mritunjay Bhardwaj",
+      "label": "CVE-2020-1673",
+      "description": "Insufficient Cross-Site Scripting (XSS) protection in Juniper Networks J-Web and web based (HTTP/HTTPS) services allows an unauthenticated attacker to hijack the target user's HTTP/HTTPS session and perform administrative actions on the Junos device as the targeted user. This issue only affects Juniper Networks Junos OS devices with HTTP/HTTPS services enabled such as J-Web, Web Authentication, Dynamic-VPN (DVPN), Firewall Authentication Pass-Through with Web-Redirect, and Zero Touch Provisioning (ZTP). Junos OS devices with HTTP/HTTPS services disabled are not affected. If HTTP/HTTPS services are enabled, the following command will show the httpd processes: user@device> show system processes | match http 5260 - S 0:00.13 /usr/sbin/httpd-gk -N 5797 - I 0:00.10 /usr/sbin/httpd --config /jail/var/etc/httpd.conf In order to successfully exploit this vulnerability, the attacker needs to convince the device administrator to take action such as clicking the crafted URL sent via phishing email or convince the administrator to input data in the browser console. This issue affects Juniper Networks Junos OS: 18.1 versions prior to 18.1R3-S1; 18.2 versions prior to 18.2R3-S5; 18.3 versions prior to 18.3R2-S4, 18.3R3-S2; 18.4 versions prior to 18.4R2-S5, 18.4R3-S2; 19.1 versions prior to 19.1R2-S2, 19.1R3-S1; 19.2 versions prior to 19.2R1-S5, 19.2R2; 19.3 versions prior to 19.3R2-S4, 19.3R3; 19.4 versions prior to 19.4R1-S3, 19.4R2; 20.1 versions prior to 20.1R1-S2, 20.1R2. This issue does not affect Juniper Networks Junos OS prior to 18.1R1.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-1673",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-1673"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

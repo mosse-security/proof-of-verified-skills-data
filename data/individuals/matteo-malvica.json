@@ -1,25 +1,25 @@
 {
   "name": "Matteo Malvica",
-  "last-updated": "2026-10-18T02:30:02Z",
+  "last-updated": "2026-11-15T08:31:57Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 5,
+    "assessors": 2,
+    "with-evidence": 4,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
-      "grc": 0,
+      "grc": 1,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
-      "red-teaming": 0,
+      "red-teaming": 3,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 4,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,174 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Matteo Malvica",
+      "label": "CVE-2018-25366",
+      "description": "CuteFTP 5.0 XP contains a buffer overflow vulnerability that allows local attackers to execute arbitrary code by injecting malicious payload into the Site Manager label field. Attackers can craft a payload exceeding 520 bytes that overwrites the return address and executes shellcode when a shortcut is created and launched.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2018-25366",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2018-25366"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2018,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Matteo Malvica",
+      "label": "CVE-2018-25383",
+      "description": "Free MP3 CD Ripper 2.8 contains a stack-based buffer overflow vulnerability in WMA file processing that allows local attackers to bypass DEP protection via structured exception handling manipulation. Attackers can craft a malicious WMA file that triggers the overflow when loaded through the Convert function, enabling execution of arbitrary code through ROP chain gadgets and shellcode injection.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2018-25383",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2018-25383"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2018,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Matteo Malvica",
+      "label": "CVE-2019-25679",
+      "description": "RealTerm Serial Terminal 2.0.0.70 contains a structured exception handling (SEH) buffer overflow vulnerability in the Echo Port tab that allows local attackers to execute arbitrary code by supplying a malicious payload. Attackers can craft a buffer overflow payload with a POP POP RET gadget chain and shellcode that triggers code execution when pasted into the Port field and the Change button is clicked.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-25679",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-25679"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Matteo Malvica",
+      "label": "CVE-2020-2035",
+      "description": "When SSL/TLS Forward Proxy Decryption mode has been configured to decrypt the web transactions, the PAN-OS URL filtering feature inspects the HTTP Host and URL path headers for policy enforcement on the decrypted HTTPS web transactions but does not consider Server Name Indication (SNI) field within the TLS Client Hello handshake. This allows a compromised host in a protected network to evade any security policy that uses URL filtering on a firewall configured with SSL Decryption in the Forward Proxy mode. A malicious actor can then use this technique to evade detection of communication on the TLS handshake phase between a compromised host and a remote malicious server. This technique does not increase the risk of a host being compromised in the network. It does not impact the confidentiality or availability of a firewall. This is considered to have a low impact on the integrity of the firewall because the firewall fails to enforce a policy on certain traffic that should have been blocked. This issue does not impact the URL filtering policy enforcement on clear text or encrypted web transactions. This technique can be used only after a malicious actor has compromised a host in the protected network and the TLS/SSL Decryption feature is enabled for the traffic that the attacker controls. Palo Alto Networks is not aware of any malware that uses this technique to exfiltrate data. This issue is applicable to all current versions of PAN-OS. This issue does not impact Panorama or WF-500 appliances.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 3.1, 3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-2035",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-2035"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "cyber-defense",
+        "grc",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "grc": [
+          "security-policy-and-standards"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Matteo Malvica",
       "label": "You can't touch this: Secure Enclaves for Offensive Operations",

@@ -1,12 +1,12 @@
 {
   "name": "Jonathan Bar Or",
-  "last-updated": "2026-10-18T02:29:57Z",
+  "last-updated": "2026-11-15T08:31:53Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 1,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,8 +19,8 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 1,
-      "vulnerability-research": 1,
-      "identity-and-access-management": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 1,
       "iot-security": 0,
       "operational-technology-security": 0,
       "threat-hunting": 0,
@@ -29,6 +29,50 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Jonathan Bar Or",
+      "label": "CVE-2021-35247",
+      "description": "Serv-U web login screen to LDAP authentication was allowing characters that were not sufficiently sanitized. SolarWinds has updated the input mechanism to perform additional validation and sanitization. Please Note: No downstream affect has been detected as the LDAP servers ignored improper characters. To insure proper input validation is completed in all environments. SolarWinds recommends scheduling an update to the latest version of Serv-U.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-35247",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-35247"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "authentication",
+          "directory-services"
+        ]
+      }
+    },
     {
       "name": "Jonathan Bar Or",
       "label": "Getting a Migraine - uncovering a unique SIP bypass on macOS",

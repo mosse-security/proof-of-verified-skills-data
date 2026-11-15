@@ -1,0 +1,84 @@
+{
+  "name": "Sebastian Köhler",
+  "last-updated": "2026-11-15T08:32:02Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 1,
+      "operational-technology-security": 1,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Sebastian Köhler",
+      "label": "CVE-2022-0878",
+      "description": "Electric Vehicle (EV) commonly utilises the Combined Charging System (CCS) for DC rapid charging. To exchange important messages such as the State of Charge (SoC) with the Electric Vehicle Supply Equipment (EVSE) CCS uses a high-bandwidth IP link provided by the HomePlug Green PHY (HPGP) power-line communication (PLC) technology. The attack interrupts necessary control communication between the vehicle and charger, causing charging sessions to abort. The attack can be conducted wirelessly from a distance using electromagnetic interference, allowing individual vehicles or entire fleets to be disrupted simultaneously. In addition, the attack can be mounted with off-the-shelf radio hardware and minimal technical knowledge. With a power budget of 1 W, the attack is successful from around 47 m distance. The exploited behavior is a required part of the HomePlug Green PHY, DIN 70121 & ISO 15118 standards and all known implementations exhibit it. In addition to electric cars, Brokenwire affects electric ships, airplanes and heavy duty vehicles utilising these standards.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-0878",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-0878"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "iot-security",
+        "operational-technology-security"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "security-operations-and-soc-practice"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "iot-security": [
+          "electric-vehicle-and-charging-security"
+        ],
+        "operational-technology-security": [
+          "plc-security"
+        ]
+      }
+    }
+  ]
+}

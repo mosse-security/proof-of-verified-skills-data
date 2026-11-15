@@ -1,12 +1,12 @@
 {
   "name": "Gabriele Digregorio",
-  "last-updated": "2026-10-19T23:45:47Z",
+  "last-updated": "2026-11-15T08:31:50Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 5,
+    "assessors": 2,
+    "with-evidence": 4,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 5,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,162 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Gabriele Digregorio",
+      "label": "CVE-2025-12080",
+      "description": "On Wear OS devices, when Google Messages is configured as the default SMS/MMS/RCS application, the handling of ACTION_SENDTO intents utilizing the sms:, smsto:, mms:, and mmsto: Uniform Resource Identifier (URI) schemes is incorrectly implemented.\n\nDue to this misconfiguration, an attacker capable of invoking an Android intent can exploit this vulnerability to send messages on the user’s behalf to arbitrary receivers without requiring any further user interaction or specific permissions. This allows for the silent and unauthorized transmission of messages from a compromised Wear OS device.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-12080",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-12080"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriele Digregorio",
+      "label": "CVE-2025-1550",
+      "description": "The Keras Model.load_model function permits arbitrary code execution, even with safe_mode=True, through a manually constructed, malicious .keras archive. By altering the config.json file within the archive, an attacker can specify arbitrary Python modules and functions, along with their arguments, to be loaded and executed during model loading.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1550",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-1550"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriele Digregorio",
+      "label": "CVE-2025-9905",
+      "description": "The Keras Model.load_model method can be exploited to achieve arbitrary code execution, even with safe_mode=True.\n\nOne can create a specially crafted .h5/.hdf5 model archive that, when loaded via Model.load_model, will trigger arbitrary code to be executed.\n\nThis is achieved by crafting a special .h5 archive file that uses the Lambda layer feature of keras which allows arbitrary Python code in the form of pickled code. The vulnerability comes from the fact that the safe_mode=True option is not honored when reading .h5 archives.\n\nNote that the .h5/.hdf5 format is a legacy format supported by Keras 3 for backwards compatibility.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-9905",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-9905"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriele Digregorio",
+      "label": "CVE-2025-9906",
+      "description": "The Keras Model.load_model method can be exploited to achieve arbitrary code execution, even with safe_mode=True.\n\nOne can create a specially crafted .keras model archive that, when loaded via Model.load_model, will trigger arbitrary code to be executed. This is achieved by crafting a special config.json (a file within the .keras archive) that will invoke keras.config.enable_unsafe_deserialization() to disable safe mode. Once safe mode is disable, one can use the Lambda layer feature of keras, which allows arbitrary Python code in the form of pickled code. Both can appear in the same archive. Simply the keras.config.enable_unsafe_deserialization() needs to appear first in the archive and the Lambda with arbitrary code needs to be second.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-9906",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-9906"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Gabriele Digregorio",
       "label": "On the (In)Security of Loading Machine Learning Models",

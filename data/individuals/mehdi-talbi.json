@@ -1,12 +1,12 @@
 {
   "name": "Mehdi Talbi",
-  "last-updated": "2026-10-18T02:30:02Z",
+  "last-updated": "2026-11-15T08:31:57Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -61,6 +61,84 @@
       "subspecialties": {
         "red-teaming": [],
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Mehdi Talbi",
+      "label": "CVE-2022-23087",
+      "description": "The e1000 network adapters permit a variety of modifications to an Ethernet packet when it is being transmitted.  These include the insertion of IP and TCP checksums, insertion of an Ethernet VLAN header, and TCP segmentation offload (\"TSO\").  The e1000 device model uses an on-stack buffer to generate the modified packet header when simulating these modifications on transmitted packets.\n\nWhen checksum offload is requested for a transmitted packet, the e1000 device model used a guest-provided value to specify the checksum offset in the on-stack buffer.  The offset was not validated for certain packet types.\n\nA misbehaving bhyve guest could overwrite memory in the bhyve process on the host, possibly leading to code execution in the host context.\n\nThe bhyve process runs in a Capsicum sandbox, which (depending on the FreeBSD version and bhyve configuration) limits the impact of exploiting this issue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23087",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-23087"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Mehdi Talbi",
+      "label": "CVE-2022-24672",
+      "description": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.02 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the CADM service. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length heap-based buffer. An attacker can leverage this vulnerability to execute code in the context of the service account. Was ZDI-CAN-15802.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.0, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-24672",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-24672"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

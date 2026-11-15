@@ -1,12 +1,12 @@
 {
   "name": "Szymon Chadam",
-  "last-updated": "2026-10-18T02:30:13Z",
+  "last-updated": "2026-11-15T08:32:03Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 10,
+    "assessors": 2,
+    "with-evidence": 9,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 9,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -59,6 +59,357 @@
       ],
       "subspecialties": {
         "unknown": []
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2024-10576",
+      "description": "Infinix devices contain a pre-loaded \"com.transsion.agingfunction\" application, that exposes an unsecured broadcast receiver. An attacker can communicate with the receiver and force the device to perform a factory reset without any Android system permissions. \n\nAfter multiple attempts to contact the vendor we did not receive any answer. We suppose this issue affects all Infinix Mobile devices.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-10576",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-10576"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2024-11136",
+      "description": "The default TCL Camera application exposes a provider vulnerable to path traversal vulnerability. Malicious application can supply malicious URI path and delete arbitrary files from user’s external storage.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-11136",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-11136"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2024-12993",
+      "description": "Infinix devices contain a pre-loaded \"com.rlk.weathers\" application, that exposes an unsecured content provider. An attacker can communicate with the provider and reveal the user’s location without any privileges. \nAfter multiple attempts to contact the vendor we did not receive any answer. We suppose this issue affects all Infinix Mobile devices.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 4.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-12993",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-12993"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2024-13915",
+      "description": "Android based smartphones from vendors such as Ulefone and Krüger&Matz contain \"com.pri.factorytest\" application preloaded onto devices during manufacturing process.\nThe application \"com.pri.factorytest\" (version name: 1.0, version code: 1) exposes a ”com.pri.factorytest.emmc.FactoryResetService“ service allowing any application to perform a factory reset of the device. \nApplication update did not increment the APK version. Instead, it was bundled in OS builds released later than December 2024 (Ulefone) and April 2025 (Krüger&Matz).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-13915",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-13915"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2024-13916",
+      "description": "An application \"com.pri.applock\", which is pre-loaded on Kruger&Matz smartphones, allows a user to encrypt any application using user-provided PIN code or by using biometric data.\nExposed ”com.android.providers.settings.fingerprint.PriFpShareProvider“ content provider's public method query() allows any other malicious application, without any granted Android system permissions, to exfiltrate the PIN code.\n\nOnly version (version name: 13, version code: 33) was tested and confirmed to have this vulnerability. \nApplication update was released in April 2025.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-13916",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-13916"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2024-13917",
+      "description": "An application \"com.pri.applock\", which is pre-loaded on Kruger&Matz smartphones, allows a user to encrypt any application using user-provided PIN code or by using biometric data.\nExposed ”com.pri.applock.LockUI“ activity allows any other malicious application, with no granted Android system permissions, to inject an arbitrary intent with system-level privileges to a protected application. One must know the protecting PIN number (it might be revealed by exploiting CVE-2024-13916) or ask the user to provide it.\n\nOnly version (version name: 13, version code: 33) was tested and confirmed to have this vulnerability. \nApplication update was released in April 2025.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-13917",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-13917"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2025-5344",
+      "description": "Bluebird devices contain a pre-loaded kiosk application. This application exposes an unsecured service provider \"com.bluebird.kiosk.launcher.IpartnerKioskRemoteService\". A local attacker can bind to the AIDL-type service to modify device's global settings and wallpaper image.\n\nThis issue affects all versions before 1.1.2.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5344",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-5344"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2025-5345",
+      "description": "Bluebird devices contain a pre-loaded file manager application. This application exposes an unsecured service provider \"com.bluebird.system.koreanpost.IsdcardRemoteService\". A local attacker can bind to the AIDL-type service to copy and delete arbitrary files from device's storage with system-level permissions.\n\nVersion 1.4.4 is vulnerable, vendor reverted vulnerable versions to older version: 1.3.6",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5345",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-5345"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Szymon Chadam",
+      "label": "CVE-2025-5346",
+      "description": "Bluebird devices contain a pre-loaded barcode scanner application. This application exposes an unsecured broadcast receiver \"kr.co.bluebird.android.bbsettings.BootReceiver\". A local attacker can call the receiver to overwrite file containing \".json\" keyword with default barcode config file. It is possible to overwrite file in any location due to lack of protection against path traversal in name of the file.\n\nThis issue affects all versions before 1.3.3.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5346",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-5346"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

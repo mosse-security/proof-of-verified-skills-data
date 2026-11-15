@@ -1,12 +1,12 @@
 {
   "name": "Jeff Thomas",
-  "last-updated": "2026-10-18T02:29:55Z",
+  "last-updated": "2026-11-15T08:31:52Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -64,6 +64,45 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Jeff Thomas",
+      "label": "CVE-2022-43684",
+      "description": "ServiceNow has released patches and an upgrade that address an Access Control List (ACL) bypass issue in ServiceNow Core functionality.\n\n\n\nAdditional Details\n\nThis issue is present in the following supported ServiceNow releases: \n\n\n\n  *  Quebec prior to Patch 10 Hot Fix 8b\n  *  Rome prior to Patch 10 Hot Fix 1\n  *  San Diego prior to Patch 7\n  *  Tokyo prior to Tokyo Patch 1; and \n  *  Utah prior to Utah General Availability \n\n\n\n\nIf this ACL bypass issue were to be successfully exploited, it potentially could allow an authenticated user to obtain sensitive information from tables missing authorization controls.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-43684",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-43684"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

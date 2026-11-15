@@ -1,15 +1,15 @@
 {
   "name": "Ionut Cernica",
-  "last-updated": "2026-10-19T07:31:19Z",
+  "last-updated": "2026-11-15T08:31:52Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
+    "endorsements": 4,
+    "assessors": 2,
+    "with-evidence": 4,
     "without-evidence": 0,
     "by-domain": {
-      "cloud-security": 0,
+      "cloud-security": 1,
       "cyber-defense": 0,
       "devsecops": 0,
       "digital-forensics": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -101,6 +101,86 @@
       ],
       "subspecialties": {
         "unknown": []
+      }
+    },
+    {
+      "name": "Ionut Cernica",
+      "label": "CVE-2024-5166",
+      "description": "An Insecure Direct Object Reference in Google Cloud's Looker allowed metadata exposure across authenticated Looker users sharing the same LookML model.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-5166",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-5166"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "cloud-security",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cloud-security": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ionut Cernica",
+      "label": "CVE-2025-12997",
+      "description": "Insecure Direct Object Reference vulnerability in Medtronic CareLink Network which allows an authenticated attacker with access to specific device and user information to submit web requests to an API endpoint that would expose sensitive user information. This issue affects CareLink Network: before December 4, 2025.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 3.1, 2.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-12997",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-12997"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

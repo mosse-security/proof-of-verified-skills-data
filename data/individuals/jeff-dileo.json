@@ -1,12 +1,12 @@
 {
   "name": "Jeff Dileo",
-  "last-updated": "2026-10-19T07:31:20Z",
+  "last-updated": "2026-11-15T06:51:11Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 4,
+    "assessors": 3,
+    "with-evidence": 3,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -16,10 +16,10 @@
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 0,
+      "penetration-testing": 1,
       "red-teaming": 0,
       "reverse-engineering": 1,
-      "vulnerability-research": 2,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -99,6 +99,47 @@
         "reverse-engineering": [],
         "vulnerability-research": [
           "exploit-development"
+        ]
+      }
+    },
+    {
+      "name": "Jeff Dileo",
+      "label": "CVE-2020-7385",
+      "description": "By launching the drb_remote_codeexec exploit, a Metasploit Framework user will inadvertently expose Metasploit to the same deserialization issue that is exploited by that module, due to the reliance on the vulnerable Distributed Ruby class functions. Since Metasploit Framework typically runs with elevated privileges, this can lead to a system compromise on the Metasploit workstation. Note that an attacker would have to lie in wait and entice the Metasploit user to run the affected module against a malicious endpoint in a \"hack-back\" type of attack. Metasploit is only vulnerable when the drb_remote_codeexec module is running. In most cases, this cannot happen automatically.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7385",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7385"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
         ]
       }
     },

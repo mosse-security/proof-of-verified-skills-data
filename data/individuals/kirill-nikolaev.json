@@ -1,0 +1,234 @@
+{
+  "name": "Kirill Nikolaev",
+  "last-updated": "2026-11-15T08:31:55Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 5,
+    "assessors": 1,
+    "with-evidence": 5,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 1,
+      "reverse-engineering": 0,
+      "vulnerability-research": 5,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Kirill Nikolaev",
+      "label": "CVE-2019-25336",
+      "description": "SpotAuditor 5.3.2 contains a local buffer overflow vulnerability in the Base64 Encrypted Password tool that allows attackers to execute arbitrary code by crafting a malicious payload. Attackers can generate a specially crafted Base64 encoded payload to trigger a Structured Exception Handler (SEH) overwrite and execute shellcode on the vulnerable system.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-25336",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-25336"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "red-teaming",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "red-teaming": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Kirill Nikolaev",
+      "label": "CVE-2025-14600",
+      "description": "An insecure deserialization vulnerability in vsDesk allows a remote attacker to gain unauthorized administrative access. By manipulating application configuration data, an attacker can force the system to authenticate against an arbitrary LDAP server and provision a new administrative account.\n\n\n\n\nApply patch from vendor  https://vsdesk.ru/ . Versions 14.0402 and on have the patch.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14600",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14600"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Kirill Nikolaev",
+      "label": "CVE-2025-14601",
+      "description": "An OS command injection vulnerability in vsDesk allows an authenticated attacker with administrative privileges to execute arbitrary operating system commands due to insufficient input filtering. An attacker can exploit this flaw to disrupt web server operations, expose sensitive data, or potentially achieve full server compromise.\n\n\n\n\nApply patch from vendor  https://vsdesk.ru/ . Versions 14.0101 and on have the patch.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14601",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14601"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Kirill Nikolaev",
+      "label": "CVE-2025-14602",
+      "description": "The application generates uploaded file names using a weak and predictable method based on the request timestamp. This allows a remote attacker to accurately guess or brute-force the generated filename within a short time window. An attacker can successfully locate and access uploaded files, which can be used to facilitate further attacks.\n\n\n\n\nApply patch from vendor  https://vsdesk.ru/ . Versions 14.0101 and on have the patch.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14602",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14602"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Kirill Nikolaev",
+      "label": "CVE-2025-14603",
+      "description": "The application component processes user-supplied parameters insecurely, passing them into SQL queries. This can enable blind SQL injection, potentially exposing database contents or causing the application to become unresponsive. \nApply patch from vendor  https://vsdesk.ru/ . Versions 14.0101 and on have the patch.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14603",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14603"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
   "name": "Craig Heffner",
-  "last-updated": "2026-10-18T02:29:48Z",
+  "last-updated": "2026-11-15T08:31:47Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 5,
+    "assessors": 3,
+    "with-evidence": 5,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 5,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -68,6 +68,45 @@
     },
     {
       "name": "Craig Heffner",
+      "label": "CVE-2012-10021",
+      "description": "A stack-based buffer overflow vulnerability exists in D-Link DIR-605L Wireless N300 Cloud Router firmware versions 1.12 and 1.13 via the getAuthCode() function. The flaw arises from unsafe usage of sprintf() when processing user-supplied CAPTCHA data via the FILECODE parameter in /goform/formLogin. A remote unauthenticated attacker can exploit this to execute arbitrary code with root privileges on the device.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2012-10021",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2012-10021"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2012,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Craig Heffner",
       "label": "Exploiting Network Surveillance Cameras Like a Hollywood Hacker",
       "description": "This talk will examine 0-day vulnerabilities that can be trivially exploited by remote attackers to gain administrative and root-level access to consumer and enterprise network surveillance cameras manufactured by D-Link, Trendnet, Cisco, IQInvision, Alinking and 3SVision. Thousands of these cameras are Internet accessible, and known to be deployed in homes, businesses, hotels, casinos, banks and prisons, as well as military and industrial facilities.",
       "type": "presentation",
@@ -106,6 +145,84 @@
         ],
         "vulnerability-research": [
           "zero-day-and-0-day-research"
+        ]
+      }
+    },
+    {
+      "name": "Craig Heffner",
+      "label": "CVE-2014-125117",
+      "description": "A stack-based buffer overflow vulnerability in the my_cgi.cgi component of certain D-Link devices, including the DSP-W215 version 1.02, can be exploited via a specially crafted HTTP POST request to the /common/info.cgi endpoint. This flaw enables an unauthenticated attacker to achieve remote code execution with system-level privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2014-125117",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2014-125117"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2014,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Craig Heffner",
+      "label": "CVE-2014-125122",
+      "description": "A stack-based buffer overflow vulnerability exists in the tmUnblock.cgi endpoint of the Linksys WRT120N wireless router. The vulnerability is triggered by sending a specially crafted HTTP POST request with an overly long TM_Block_URL parameter to the endpoint. By exploiting this flaw, an unauthenticated remote attacker can overwrite memory in a controlled manner, enabling them to temporarily reset the administrator password of the device to a blank value. This grants unauthorized access to the router’s web management interface without requiring valid credentials.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2014-125122",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2014-125122"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2014,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
         ]
       }
     }

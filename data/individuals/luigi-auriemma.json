@@ -1,12 +1,12 @@
 {
   "name": "Luigi Auriemma",
-  "last-updated": "2026-10-18T02:30:00Z",
+  "last-updated": "2026-11-15T08:31:56Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 8,
+    "assessors": 2,
+    "with-evidence": 8,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,16 +19,250 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 8,
       "identity-and-access-management": 0,
       "iot-security": 0,
-      "operational-technology-security": 0,
+      "operational-technology-security": 1,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
       "unknown": 0
     }
   },
   "endorsements": [
+    {
+      "name": "Luigi Auriemma",
+      "label": "CVE-2011-10015",
+      "description": "Cytel Studio version 9.0 and earlier is vulnerable to a stack-based buffer overflow triggered by parsing a malformed .CY3 file. The vulnerability occurs when the application copies user-controlled strings into a fixed-size stack buffer (256 bytes) without proper bounds checking. Exploitation allows arbitrary code execution when the crafted file is opened.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2011-10015",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2011-10015"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2011,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Luigi Auriemma",
+      "label": "CVE-2011-10032",
+      "description": "Sunway ForceControl version 6.1 SP3 and earlier contains a stack-based buffer overflow vulnerability in the SNMP NetDBServer service, which listens on TCP port 2001. The flaw is triggered when the service receives a specially crafted packet using opcode 0x57 with an overly long payload. Due to improper bounds checking during packet parsing, attacker-controlled data overwrites the Structured Exception Handler (SEH), allowing arbitrary code execution in the context of the service. This vulnerability can be exploited remotely without authentication and may lead to full system compromise on affected Windows hosts.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2011-10032",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2011-10032"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2011,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Luigi Auriemma",
+      "label": "CVE-2011-10034",
+      "description": "AUTOMGEN versions up to and including 8.0.0.7 (also referenced as 8.022) contain a vulnerability in that project file handling frees an object and subsequently dereferences the stale pointer when processing certain malformed fields. The dangling-pointer use enables an attacker to influence an indirect call through attacker-controlled memory, resulting in denial-of-service. In some conditions, remote code execution may be possible.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2011-10034",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2011-10034"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2011,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Luigi Auriemma",
+      "label": "CVE-2012-10058",
+      "description": "RabidHamster R4 v1.25 contains a stack-based buffer overflow vulnerability due to unsafe use of sprintf() when logging malformed HTTP requests. A remote attacker can exploit this flaw by sending a specially crafted URI, resulting in arbitrary code execution under the context of the web server process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 10)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2012-10058",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2012-10058"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2012,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Luigi Auriemma",
+      "label": "CVE-2012-10061",
+      "description": "Sockso Music Host Server versions <= 1.5 are vulnerable to a path traversal flaw that allows unauthenticated remote attackers to read arbitrary files from the server’s filesystem. The vulnerability exists in the HTTP interface on port 4444, where the endpoint /file/ fails to properly sanitize user-supplied input. Attackers can traverse directories and access sensitive files outside the intended web root.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2012-10061",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2012-10061"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2012,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Luigi Auriemma",
+      "label": "CVE-2012-5972",
+      "description": "Directory traversal vulnerability in the web server in SpecView 2.5 build 853 and earlier allows remote attackers to read arbitrary files via a ... (dot dot dot) in a URI.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: UNKNOWN (CVSS 2.0, 2.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2012-5972",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2012-5972"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2012,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Luigi Auriemma",
       "label": "Multiplayer Online Games Insecurity",
@@ -66,6 +300,49 @@
         "vulnerability-research": [
           "vulnerability-discovery",
           "zero-day-and-0-day-research"
+        ]
+      }
+    },
+    {
+      "name": "Luigi Auriemma",
+      "label": "CVE-2014-0753",
+      "description": "Stack-based buffer overflow in the SCADA server in Ecava IntegraXor before 4.1.4390 allows remote attackers to cause a denial of service (system crash) by triggering access to DLL code located in the IntegraXor directory.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: UNKNOWN (CVSS 2.0, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2014-0753",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2014-0753"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2014,
+      "domains": [
+        "vulnerability-research",
+        "operational-technology-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "operational-technology-security": [
+          "scada-security"
         ]
       }
     }

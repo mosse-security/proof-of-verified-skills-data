@@ -1,12 +1,12 @@
 {
   "name": "Ceri Coburn",
-  "last-updated": "2026-10-19T07:31:06Z",
+  "last-updated": "2026-11-15T08:31:46Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 2,
+    "endorsements": 7,
+    "assessors": 2,
+    "with-evidence": 7,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -16,10 +16,10 @@
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
-      "penetration-testing": 0,
+      "penetration-testing": 2,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 6,
       "identity-and-access-management": 1,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,123 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Ceri Coburn",
+      "label": "CVE-2020-8318",
+      "description": "A privilege escalation vulnerability was reported in the LenovoSystemUpdatePlugin for Lenovo System Interface Foundation prior to version that could allow an authenticated user to execute code with elevated privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-8318",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-8318"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ceri Coburn",
+      "label": "CVE-2020-8319",
+      "description": "A privilege escalation vulnerability was reported in Lenovo System Interface Foundation prior to version 1.1.19.3 that could allow an authenticated user to execute code with elevated privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-8319",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-8319"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ceri Coburn",
+      "label": "CVE-2020-8324",
+      "description": "A vulnerability was reported in LenovoAppScenarioPluginSystem for Lenovo System Interface Foundation prior to version 1.2.184.31 that could allow unsigned DLL files to be executed.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-8324",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-8324"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Ceri Coburn",
       "label": "A Broken Marriage: Abusing Mixed Vendor Kerberos Stacks",
@@ -103,6 +220,88 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Ceri Coburn",
+      "label": "CVE-2024-29209",
+      "description": "A medium severity vulnerability has been identified in the update mechanism of the Phish Alert Button for Outlook, which could allow an attacker to remotely execute arbitrary code on the host machine. The vulnerability arises from the application's failure to securely verify the authenticity and integrity of the update server.\n\nThe application periodically checks for updates by querying a specific URL. However, this process does not enforce strict SSL/TLS verification, nor does it validate the digital signature of the received update files. An attacker with the capability to perform DNS spoofing can exploit this weakness. By manipulating DNS responses, the attacker can redirect the application's update requests to a malicious server under their control.\n\nOnce the application queries the spoofed update URL, the malicious server can respond with a crafted update package. Since the application fails to properly verify the authenticity of the update file, it will accept and execute the package, leading to arbitrary code execution on the host machine.\n\nImpact:\nSuccessful exploitation of this vulnerability allows an attacker to execute code with elevated privileges, potentially leading to data theft, installation of further malware, or other malicious activities on the host system.\n\nAffected Products:\nPhish Alert Button (PAB) for Outlook versions 1.10.0-1.10.11\nSecond Chance Client versions 2.0.0-2.0.9\nPIQ Client versions 1.0.0-1.0.15\n\nRemediation:\nAutomated updates will be pushed to address this issue. Users of affected versions should verify the latest version is applied and, if not, apply the latest updates provided by KnowBe4, which addresses this vulnerability by implementing proper SSL/TLS checks of the update server. It is also recommended to ensure DNS settings are secure to prevent DNS spoofing attacks.\n\nWorkarounds:\nUse secure corporate networks or VPN services to secure network communications, which can help mitigate the risk of DNS spoofing.\n\nCredits:\nThis vulnerability was discovered by Ceri Coburn at Pen Test Partners, who reported it responsibly to the vendor.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-29209",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-29209"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ceri Coburn",
+      "label": "CVE-2024-29210",
+      "description": "A local privilege escalation (LPE) vulnerability has been identified in Phish Alert Button for Outlook (PAB), specifically within its configuration management functionalities. This vulnerability allows a regular user to modify the application's configuration file to redirect update checks to an arbitrary server, which can then be exploited in conjunction with CVE-2024-29209 to execute arbitrary code with elevated privileges.\n\nThe issue stems from improper permission settings on the application's configuration file, which is stored in a common directory accessible to all users. This file includes critical parameters, such as the update server URL. By default, the application does not enforce adequate access controls on this file, allowing non-privileged users to modify it without administrative consent.\n\nAn attacker with regular user access can alter the update server URL specified in the configuration file to point to a malicious server. When the application performs its next update check, it will contact the attacker-controlled server. If the system is also vulnerable to CVE-2024-29209, the attacker can deliver a malicious update package that, when executed, grants them elevated privileges.\n\nImpact:\nThis vulnerability can lead to a regular user executing code with administrative privileges. This can result in unauthorized access to sensitive data, installation of additional malware, and a full takeover of the affected system.\n\nAffected Products:\nPhish Alert Button (PAB) for Outlook versions 1.10.0-1.10.11\nSecond Chance Client versions 2.0.0-2.0.9\nPIQ Client versions 1.0.0-1.0.15\n\nRemediation:\nKnowBe4 has released a patch that corrects the permission settings on the configuration file to prevent unauthorized modifications. Automated updates will be pushed to address this issue. Users of affected versions should verify the latest version is applied and, if not, apply the latest updates provided by KnowBe4.\n\nWorkarounds:\nManually set the correct permissions on the configuration file to restrict write access to administrators only.\n\nCredits:\nThis vulnerability was discovered by Ceri Coburn at Pen Test Partners, who reported it responsibly to the vendor.\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 3.0, 2.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-29210",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-29210"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "penetration-testing",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "penetration-testing": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

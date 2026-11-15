@@ -1,12 +1,12 @@
 {
   "name": "Nimrod Stoler",
-  "last-updated": "2026-10-18T02:30:05Z",
+  "last-updated": "2026-11-15T06:51:14Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 3,
+    "with-evidence": 2,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 1,
       "operational-technology-security": 0,
@@ -59,6 +59,45 @@
       ],
       "subspecialties": {
         "unknown": []
+      }
+    },
+    {
+      "name": "Nimrod Stoler",
+      "label": "CVE-2020-27352",
+      "description": "When generating the systemd service units for the docker snap (and other similar snaps), snapd does not specify Delegate=yes - as a result systemd will move processes from the containers created and managed by these snaps into the cgroup of the main daemon within the snap itself when reloading system units. This may grant additional privileges to a container within the snap that were not originally intended.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-27352",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-27352"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     },
     {

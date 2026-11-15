@@ -1,12 +1,12 @@
 {
   "name": "Herbert Bos",
-  "last-updated": "2026-10-18T02:29:53Z",
+  "last-updated": "2026-11-15T08:31:51Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 6,
-    "assessors": 3,
-    "with-evidence": 3,
+    "endorsements": 7,
+    "assessors": 4,
+    "with-evidence": 4,
     "without-evidence": 3,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 5,
+      "vulnerability-research": 6,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -146,6 +146,45 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Herbert Bos",
+      "label": "CVE-2022-48804",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nvt_ioctl: fix array_index_nospec in vt_setactivate\n\narray_index_nospec ensures that an out-of-bounds value is set to zero\non the transient path. Decreasing the value by one afterwards causes\na transient integer underflow. vsa.console should be decreased first\nand then sanitized with array_index_nospec.\n\nKasper Acknowledgements: Jakob Koschel, Brian Johannesmeyer, Kaveh\nRazavi, Herbert Bos, Cristiano Giuffrida from the VUSec group at VU\nAmsterdam.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-48804",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-48804"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     },
     {

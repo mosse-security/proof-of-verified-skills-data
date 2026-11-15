@@ -1,12 +1,12 @@
 {
   "name": "Polina Smirnova",
-  "last-updated": "2026-10-18T02:30:07Z",
+  "last-updated": "2026-11-15T08:32:00Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,9 +19,9 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
-      "iot-security": 0,
+      "iot-security": 1,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
@@ -29,6 +29,49 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Polina Smirnova",
+      "label": "CVE-2023-28904",
+      "description": "A logic flaw leading to a RAM buffer overflow in the bootloader component of the MIB3 infotainment unit allows an attacker with physical access to the MIB3 ECU to bypass firmware signature verification and run arbitrary code in the infotainment system at boot process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-28904",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28904"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
     {
       "name": "Polina Smirnova",
       "label": "Over the Air: Compromise of Modern Volkswagen Group Vehicles",
@@ -64,6 +107,45 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Polina Smirnova",
+      "label": "CVE-2025-32056",
+      "description": "The anti-theft protection mechanism can be bypassed by attackers due to weak response generation algorithms for the head unit. It is possible to reveal all 32 corresponding responses by sniffing CAN traffic or by pre-calculating the values, which allow to bypass the protection.\n\nFirst identified on Nissan Leaf ZE1 manufactured in 2020.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-32056",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-32056"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

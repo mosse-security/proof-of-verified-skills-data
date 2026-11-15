@@ -1,0 +1,228 @@
+{
+  "name": "Zdeno Kuzmany",
+  "last-updated": "2026-11-15T08:32:07Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 5,
+    "assessors": 1,
+    "with-evidence": 5,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 5,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Zdeno Kuzmany",
+      "label": "CVE-2021-27910",
+      "description": "Insufficient sanitization / filtering allows for arbitrary JavaScript Injection in Mautic using the bounce management callback function. The values submitted in the \"error\" and \"error_related_to\" parameters of the POST request of the bounce management callback will be permanently stored and executed once the details page of an affected lead is opened by a Mautic user. An attacker with access to the bounce management callback function (identified with the Mailjet webhook, but it is assumed this will work uniformly across all kinds of webhooks) can inject arbitrary JavaScript Code into the \"error\" and \"error_related_to\" parameters of the POST request (POST /mailer/<product / webhook>/callback). It is noted that there is no authentication needed to access this function. The JavaScript Code is stored permanently in the web application and executed every time an authenticated user views the details page of a single contact / lead in Mautic. This means, arbitrary code can be executed to, e.g., steal or tamper with information.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-27910",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-27910"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Zdeno Kuzmany",
+      "label": "CVE-2022-25769",
+      "description": "ImpactThe default .htaccess file has some restrictions in the access to PHP files to only allow specific PHP files to be executed in the root of the application.\n\nThis logic isn't correct, as the regex in the second FilesMatch only checks the filename, not the full path.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-25769",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-25769"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Zdeno Kuzmany",
+      "label": "CVE-2022-25770",
+      "description": "Mautic allows you to update the application via an upgrade script.\n\nThe upgrade logic isn't shielded off correctly, which may lead to vulnerable situation.\n\nThis vulnerability is mitigated by the fact that Mautic needs to be installed in a certain way to be vulnerable.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-25770",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-25770"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Zdeno Kuzmany",
+      "label": "CVE-2022-25774",
+      "description": "Prior to the patched version, logged in users of Mautic are vulnerable to a self XSS vulnerability in the notifications within Mautic.\n\nUsers could inject malicious code into the notification when saving Dashboards.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-25774",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-25774"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Zdeno Kuzmany",
+      "label": "CVE-2025-5257",
+      "description": "SummaryThis advisory addresses a security vulnerability in Mautic where unpublished page previews could be accessed by unauthenticated users and potentially indexed by search engines. This could lead to the unintended disclosure of draft content or sensitive information.\n\nUnauthorized Access to Unpublished Page Previews: The page preview functionality for unpublished content, accessible via predictable URLs (e.g., /page/preview/1, /page/preview/2), lacked proper authorization checks. This allowed any unauthenticated user to view content that was not yet intended for public release, and allowed search engines to index these private preview URLs, making the content publicly discoverable.\nMitigationMautic has patched this vulnerability by enforcing proper permission checks on preview pages. Users should upgrade to the patched version of Mautic or later.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-5257",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-5257"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

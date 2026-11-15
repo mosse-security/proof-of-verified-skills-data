@@ -1,12 +1,12 @@
 {
   "name": "Meng Xu",
-  "last-updated": "2026-10-19T23:46:12Z",
+  "last-updated": "2026-11-15T08:31:57Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 1,
-    "with-evidence": 0,
+    "endorsements": 5,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 4,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,123 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Meng Xu",
+      "label": "CVE-2025-11964",
+      "description": "On Windows only, if libpcap needs to convert a Windows error message to UTF-8 and the message includes characters that UTF-8 represents using 4 bytes, utf_16le_to_utf_8_truncated() can write data beyond the end of the provided buffer.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 3.1, 1.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11964",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11964"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Meng Xu",
+      "label": "CVE-2025-9389",
+      "description": "A vulnerability was identified in vim 9.1.0000. Affected is the function __memmove_avx_unaligned_erms of the file memmove-vec-unaligned-erms.S. The manipulation leads to memory corruption. The attack needs to be performed locally. The exploit is publicly available and might be used. Some users are not able to reproduce this. One of the users mentions that this appears not to be working, \"when coloring is turned on\".",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 4.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-9389",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-9389"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Meng Xu",
+      "label": "CVE-2025-9390",
+      "description": "A security flaw has been discovered in vim up to 9.1.1615. Affected by this vulnerability is the function main of the file src/xxd/xxd.c of the component xxd. The manipulation results in buffer overflow. The attack requires a local approach. The exploit has been released to the public and may be exploited. Upgrading to version 9.1.1616 addresses this issue. The patch is identified as eeef7c77436a78cd27047b0f5fa6925d56de3cb0. It is recommended to upgrade the affected component.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-9390",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-9390"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Meng Xu",
       "label": "Contextualizing Sink Knowledge for Java Vulnerability Discovery",

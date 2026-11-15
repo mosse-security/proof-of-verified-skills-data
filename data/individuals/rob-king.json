@@ -1,12 +1,12 @@
 {
   "name": "Rob King",
-  "last-updated": "2026-10-18T02:30:09Z",
+  "last-updated": "2026-11-15T08:32:01Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 3,
+    "assessors": 3,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -103,6 +103,45 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Rob King",
+      "label": "CVE-2025-8452",
+      "description": "By using the \"uscan\" protocol provided by the eSCL specification, an attacker can discover the serial number of multi-function printers that implement the Brother-provided firmware. This serial number can, in turn, can be leveraged by the flaw described by CVE-2024-51978 to calculate the default administrator password. This flaw is similar to CVE-2024-51977, with the only difference being the protocol by which an attacker can use to learn the remote device's serial number. The eSCL/uscan vector is typically only exposed on the local network. Any discovery service that implements the eSCL specification can be used to exploit this vulnerability, and one such implementation is the runZero Explorer. Changing the default administrator password will render this vulnerability virtually worthless, since the calculated default administrator password would no longer be the correct password.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-8452",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-8452"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

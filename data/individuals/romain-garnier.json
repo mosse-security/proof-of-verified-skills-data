@@ -1,0 +1,501 @@
+{
+  "name": "Romain Garnier",
+  "last-updated": "2026-11-15T08:32:01Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 12,
+    "assessors": 1,
+    "with-evidence": 12,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 12,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2022-24674",
+      "description": "This vulnerability allows network-adjacent attackers to execute arbitrary code on affected installations of Canon imageCLASS MF644Cdw 10.02 printers. Authentication is not required to exploit this vulnerability. The specific flaw exists within the privet API. The issue results from the lack of proper validation of the length of user-supplied data prior to copying it to a fixed-length stack-based buffer. An attacker can leverage this vulnerability to execute code in the context of root. Was ZDI-CAN-15834.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.0, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-24674",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-24674"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55108",
+      "description": "The Control-M/Agent is vulnerable to unauthenticated remote code execution, arbitrary file read and write and similar unauthorized actions when mutual SSL/TLS authentication is not enabled (i.e. in the default configuration).\n\n\nNOTE: \n\n  *  The vendor believes that this vulnerability only occurs when documented security best practices are not followed. BMC has always strongly recommended to use security best practices such as configuring SSL/TLS between Control-M Server and Agent.\n\n  *  The vendor notifies that Control-M/Agent is not impacted in Control-M SaaS",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 10)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55108",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55108"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55109",
+      "description": "An authentication bypass vulnerability exists in the out-of-support Control-M/Agent versions 9.0.18 to 9.0.20 and potentially earlier unsupported versions when using an empty or default kdb keystore or a default PKCS#12 keystore. A remote attacker with access to a signed third-party or demo certificate for client authentication can bypass the need for a certificate signed by the certificate authority of the organization during authentication on the Control-M/Agent.\n\nThe Control-M/Agent contains hardcoded certificates which are only trusted as fallback if an empty kdb keystore is used; they are never trusted if a PKCS#12 keystore is used. All of these certificates are now expired.\n\n\nIn addition, the Control-M/Agent default kdb and PKCS#12 keystores contain trusted third-party certificates (external recognized CAs and default self-signed demo certificates) which are trusted for client authentication.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55109",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55109"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55110",
+      "description": "Control-M/Agents use a kdb or PKCS#12 keystore by default, and the default keystore password is well known and documented.\n\nAn attacker with read access to the keystore could access sensitive data using this password.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55110",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55110"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55111",
+      "description": "Certain files with overly permissive permissions were identified in the out-of-support Control-M/Agent versions 9.0.18 to 9.0.20 and potentially earlier unsupported versions as well as in newer versions which were upgraded from an affected version. These files contain keys and passwords relating to SSL files, keystore and policies. An attacker with local access to the system running the Agent can access these files.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55111",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55111"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55112",
+      "description": "Out-of-support Control-M/Agent versions 9.0.18 to 9.0.20 (and potentially earlier unsupported versions) that are configured to use the non-default Blowfish cryptography algorithm use a hardcoded key. An attacker with access to network traffic and to this key could decrypt network traffic between the Control-M/Agent and Server.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55112",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55112"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55113",
+      "description": "If the Access Control List is enforced by the Control-M/Agent and the C router is in use (default in Out-of-support Control-M/Agent versions 9.0.18 to 9.0.20 and potentially earlier unsupported versions; non-default but configurable using the JAVA_AR setting in newer versions), the verification stops at the first NULL byte encountered in the email address referenced in the client certificate. An attacker could bypass configured ACLs by using a specially crafted certificate.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55113",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55113"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55114",
+      "description": "The improper order of AUTHORIZED_CTM_IP validation in the Control-M/Agent, where the Control-M/Server IP address is validated only after the SSL/TLS handshake is completed, exposes the Control-M/Agent to vulnerabilities in the SSL/TLS implementation under certain non-default conditions (e.g. CVE-2025-55117 or CVE-2025-55118) or potentially to resource exhaustion.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55114",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55114"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55115",
+      "description": "A path traversal in the Control-M/Agent can lead to a local privilege escalation when an attacker has access to the system running the Agent. This vulnerability impacts the out-of-support Control-M/Agent versions 9.0.18 to 9.0.20 and potentially earlier unsupported versions. This vulnerability was fixed in 9.0.20.100 and above.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55115",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55115"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55116",
+      "description": "A buffer overflow in the Control-M/Agent can lead to a local privilege escalation when an attacker has access to the system running the Agent.\n\nThis vulnerability impacts the out-of-support Control-M/Agent versions 9.0.18 to 9.0.20 and potentially earlier unsupported versions.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55116",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55116"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55117",
+      "description": "A stack-based buffer overflow can be remotely triggered when formatting an error message in the Control-M/Agent when SSL/TLS communication is configured.\n\n\nThe issue occurs in the following cases:\n\n  *  Control-M/Agent 9.0.20: SSL/TLS configuration is set to the non-default setting \"use_openssl=n\";\n  *  Control-M/Agent 9.0.21 and 9.0.22: Agent router configuration uses the non-default settings \"JAVA_AR=N\" and \"use_openssl=n\".",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55117",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55117"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Romain Garnier",
+      "label": "CVE-2025-55118",
+      "description": "Memory corruptions can be remotely triggered in the Control-M/Agent when SSL/TLS communication is configured.\n\n\nThe issue occurs in the following cases:\n\n  *  Control-M/Agent 9.0.20: SSL/TLS configuration is set to the non-default setting \"use_openssl=n\";\n  *  Control-M/Agent 9.0.21 and 9.0.22: Agent router configuration uses the non-default settings \"JAVA_AR=N\" and \"use_openssl=n\"",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-55118",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-55118"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 {
   "name": "Martin Strohmeier",
-  "last-updated": "2026-10-20T05:54:38Z",
+  "last-updated": "2026-11-15T08:31:57Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 0,
+    "endorsements": 12,
+    "assessors": 3,
+    "with-evidence": 10,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
-      "cyber-defense": 0,
+      "cyber-defense": 1,
       "devsecops": 0,
       "digital-forensics": 0,
       "grc": 0,
@@ -19,16 +19,418 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 12,
       "identity-and-access-management": 0,
-      "iot-security": 0,
-      "operational-technology-security": 0,
+      "iot-security": 1,
+      "operational-technology-security": 1,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
       "unknown": 0
     }
   },
   "endorsements": [
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2022-0878",
+      "description": "Electric Vehicle (EV) commonly utilises the Combined Charging System (CCS) for DC rapid charging. To exchange important messages such as the State of Charge (SoC) with the Electric Vehicle Supply Equipment (EVSE) CCS uses a high-bandwidth IP link provided by the HomePlug Green PHY (HPGP) power-line communication (PLC) technology. The attack interrupts necessary control communication between the vehicle and charger, causing charging sessions to abort. The attack can be conducted wirelessly from a distance using electromagnetic interference, allowing individual vehicles or entire fleets to be disrupted simultaneously. In addition, the attack can be mounted with off-the-shelf radio hardware and minimal technical knowledge. With a power budget of 1 W, the attack is successful from around 47 m distance. The exploited behavior is a required part of the HomePlug Green PHY, DIN 70121 & ISO 15118 standards and all known implementations exhibit it. In addition to electric cars, Brokenwire affects electric ships, airplanes and heavy duty vehicles utilising these standards.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-0878",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-0878"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research",
+        "iot-security",
+        "operational-technology-security"
+      ],
+      "subspecialties": {
+        "cyber-defense": [
+          "security-operations-and-soc-practice"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "iot-security": [
+          "electric-vehicle-and-charging-security"
+        ],
+        "operational-technology-security": [
+          "plc-security"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2024-11166",
+      "description": "For TCAS II systems using transponders compliant with MOPS earlier than RTCA DO-181F, an attacker can impersonate a ground station and issue a Comm-A Identity Request. This action can set the Sensitivity Level Control (SLC) to the lowest setting and disable the Resolution Advisory (RA), leading to a denial-of-service condition.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-11166",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-11166"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2024-13502",
+      "description": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Newtec/iDirect NTC2218, NTC2250, NTC2299 on Linux, PowerPC, ARM allows Local Code Inclusion.This issue affects NTC2218, NTC2250, NTC2299: from 1.0.1.1 through 2.2.6.19.\n\n\nThe `commit_multicast` page used to configure multicasts in the modem's web administration interface uses improperly parses incoming data from the request before passing it to an `eval` statement in a bash script. This allows attackers to inject arbitrary shell commands.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-13502",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-13502"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2024-13503",
+      "description": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') vulnerability in Newtec NTC2218, NTC2250, NTC2299 on Linux, PowerPC, ARM (Updating signaling process in the swdownload binary modules) allows Local Execution of Code, Remote Code Inclusion.\nThis issue affects NTC2218, NTC2250, NTC2299: from 1.0.1.1 through 2.2.6.19. The issue is both present on the PowerPC versions of the modem and the ARM versions.\n\nA stack buffer buffer overflow in the swdownload binary allows attackers to execute arbitrary code. The parse_INFO function uses an unrestricted `sscanf` to read a string of an incoming network packet into a statically sized buffer.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-13503",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-13503"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2024-9310",
+      "description": "By utilizing software-defined radios and a custom low-latency processing pipeline, RF signals with spoofed location data can be transmitted to aircraft targets. This can lead to the appearance of fake aircraft on displays and potentially trigger undesired Resolution Advisories (RAs).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-9310",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-9310"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2025-71409",
+      "description": "Lack of authentication for Very High Frequency Data Link messages allows rogue ground stations to inject CPDLC messages leading to unexpected or misleading clearances and potential pilot confusion. This type of attack can be carried out remotely over radio frequency.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-71409",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-71409"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2025-71410",
+      "description": "Unnumbered Disconnect (U DISC) and malformed Aviation Very High Frequency Link Control frames can terminate sessions and lead to a loss of CPDLC functions requiring a reversion to voice communication and increased controller workload. This type of attack can be carried out remotely over radio frequency.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-71410",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-71410"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2025-71411",
+      "description": "Broadcast control frames can disconnect multiple aircraft simultaneously leading to delayed clearances and air traffic controller overload. This type of attack can be carried out remotely over radio frequency.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-71411",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-71411"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2025-71412",
+      "description": "Injection of false emergency or status messages over CPDLC may lead to misallocation of resources, operational confusion, and improper response actions by flight crews, traffic controllers, and ground operations.  This type of attack can be carried out remotely over radio frequency.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-71412",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-71412"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Martin Strohmeier",
+      "label": "CVE-2025-71413",
+      "description": "Malformed or out-of-sequence frames at the Aviation Very High Frequency Link Control X.25 layers cause repeated resets which may result in increased workload and reduced situational awareness. This type of attack can be carried out remotely over radio frequency.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-71413",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-71413"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Martin Strohmeier",
       "label": "SatBleed: Security of Commoditized Communication Modules in Satellites",

@@ -1,12 +1,12 @@
 {
   "name": "Eran Shimony",
-  "last-updated": "2026-10-18T02:29:51Z",
+  "last-updated": "2026-11-15T08:31:49Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 2,
-    "with-evidence": 2,
+    "endorsements": 10,
+    "assessors": 3,
+    "with-evidence": 9,
     "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 9,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,201 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Eran Shimony",
+      "label": "CVE-2019-3726",
+      "description": "An Uncontrolled Search Path Vulnerability is applicable to the following: Dell Update Package (DUP) Framework file versions prior to 19.1.0.413, and Framework file versions prior to 103.4.6.69 used in Dell EMC Servers. Dell Update Package (DUP) Framework file versions prior to 3.8.3.67 used in Dell Client Platforms. The vulnerability is limited to the DUP framework during the time window when a DUP is being executed by an administrator. During this time window, a locally authenticated low privilege malicious user potentially could exploit this vulnerability by tricking an administrator into running a trusted binary, causing it to load a malicious DLL and allowing the attacker to execute arbitrary code on the victim system. The vulnerability does not affect the actual binary payload that the DUP delivers.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 6.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-3726",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-3726"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Eran Shimony",
+      "label": "CVE-2019-6163",
+      "description": "A denial of service vulnerability was reported in Lenovo System Update before version 5.07.0084 that could allow service log files to be written to non-standard locations.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 5.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-6163",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-6163"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Eran Shimony",
+      "label": "CVE-2019-6173",
+      "description": "A DLL search path vulnerability could allow privilege escalation in some Lenovo installation packages, prior to version 1.2.9.3, during installation if an attacker already has administrative privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-6173",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-6173"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Eran Shimony",
+      "label": "CVE-2019-6175",
+      "description": "A denial of service vulnerability was reported in Lenovo System Update versions prior to 5.07.0088 that could allow configuration files to be written to non-standard locations.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-6175",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-6175"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Eran Shimony",
+      "label": "CVE-2019-6196",
+      "description": "A symbolic link vulnerability in some Lenovo installation packages, prior to version 1.2.9.3, could allow privileged file operations during file extraction and installation.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-6196",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-6196"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Eran Shimony",
       "label": "30 CVEs in 30 Days",
@@ -59,6 +254,84 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Eran Shimony",
+      "label": "CVE-2020-7250",
+      "description": "Symbolic link manipulation vulnerability in McAfee Endpoint Security (ENS) for Windows prior to 10.7.0 February 2020 Update allows authenticated local user to potentially gain an escalation of privileges by pointing the link to files which the user which not normally have permission to alter via carefully creating symbolic links from the ENS log file directory.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7250",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7250"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Eran Shimony",
+      "label": "CVE-2020-7807",
+      "description": "A vulnerability that can hijack a DLL file that is loaded during products(LGPCSuite_Setup, IPSFULLHD, LG_ULTRAWIDE, ULTRA_HD_Driver Setup) installation into a DLL file that the hacker wants. Missing Support for Integrity Check vulnerability in ____COMPONENT____ of LG Electronics (LGPCSuite_Setup), (IPSFULLHD, LG_ULTRAWIDE, ULTRA_HD_Driver Setup) allows ____ATTACKER/ATTACK____ to cause ____IMPACT____. This issue affects: LG Electronics; LGPCSuite_Setup : 1.0.0.3 on Windows(x86, x64); IPSFULLHD, LG_ULTRAWIDE, ULTRA_HD_Driver Setup : 1.0.0.9 on Windows(x86, x64).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7807",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7807"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     },
     {

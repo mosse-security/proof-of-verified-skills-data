@@ -1,0 +1,271 @@
+{
+  "name": "Amit Laish",
+  "last-updated": "2026-11-15T08:31:43Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 6,
+    "assessors": 1,
+    "with-evidence": 6,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 1,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 6,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Amit Laish",
+      "label": "CVE-2022-28890",
+      "description": "A vulnerability in the RDF/XML parser of Apache Jena allows an attacker to cause an external DTD to be retrieved. This issue affects Apache Jena version 4.4.0 and prior versions. Apache Jena 4.2.x and 4.3.x do not allow external entities.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-28890",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-28890"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Amit Laish",
+      "label": "CVE-2023-29193",
+      "description": "SpiceDB is an open source, Google Zanzibar-inspired, database system for creating and managing security-critical application permissions. The `spicedb serve` command contains a flag named `--grpc-preshared-key` which is used to protect the gRPC API from being accessed by unauthorized requests. The values of this flag are to be considered sensitive, secret data. The `/debug/pprof/cmdline` endpoint served by the metrics service (defaulting running on port `9090`) reveals the command-line flags provided for debugging purposes. If a password is set via the `--grpc-preshared-key` then the key is revealed by this endpoint along with any other flags provided to the SpiceDB binary. This issue has been fixed in version 1.19.1.\n\n### Impact\n\nAll deployments abiding by the recommended best practices for production usage are **NOT affected**:\n- Authzed's SpiceDB Serverless\n- Authzed's SpiceDB Dedicated\n- SpiceDB Operator\n\nUsers configuring SpiceDB via environment variables are **NOT affected**.\n\nUsers **MAY be affected** if they expose their metrics port to an untrusted network and are configuring `--grpc-preshared-key` via command-line flag.\n\n### Patches\n\nTODO\n\n### Workarounds\n\nTo workaround this issue you can do one of the following:\n\n- Configure the preshared key via an environment variable (e.g. `SPICEDB_GRPC_PRESHARED_KEY=yoursecret spicedb serve`)\n- Reconfigure the `--metrics-addr` flag to bind to a trusted network (e.g. `--metrics-addr=localhost:9090`)\n- Disable the metrics service via the flag (e.g. `--metrics-enabled=false`)\n- Adopt one of the recommended deployment models: [Authzed's managed services](https://authzed.com/pricing) or the [SpiceDB Operator](https://github.com/authzed/spicedb-operator)\n\n### References\n\n- [GitHub Security Advisory issued for SpiceDB](https://github.com/authzed/spicedb/security/advisories/GHSA-cjr9-mr35-7xh6)\n- [Go issue #22085](https://github.com/golang/go/issues/22085) for documenting the risks of exposing pprof to the internet\n- [Go issue #42834](https://github.com/golang/go/issues/42834) discusses preventing pprof registration to the default serve mux\n- [semgrep rule go.lang.security.audit.net.pprof.pprof-debug-exposure](https://semgrep.dev/r?q=go.lang.security.audit.net.pprof) checks for a variation of this issue\n\n### Credit\n\nWe'd like to thank Amit Laish, a security researcher at GE Vernova for responsibly disclosing this vulnerability.\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-29193",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-29193"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "cloud-security",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cloud-security": [
+          "serverless-security"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Amit Laish",
+      "label": "CVE-2023-42502",
+      "description": "An authenticated attacker with update datasets permission could change a dataset link to an untrusted site by spoofing the HTTP Host header, users could be redirected to this site when clicking on that specific dataset. This issue affects Apache Superset versions before 3.0.0.\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-42502",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-42502"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Amit Laish",
+      "label": "CVE-2023-42504",
+      "description": "An authenticated malicious user could initiate multiple concurrent requests, each requesting multiple dashboard exports, leading to a possible denial of service.\n\nThis issue affects Apache Superset: before 3.0.0",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-42504",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-42504"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Amit Laish",
+      "label": "CVE-2023-43701",
+      "description": "Improper payload validation and an improper REST API response type, made it possible for an authenticated malicious actor to store malicious code into Chart's metadata, this code could get executed if a user specifically accesses a specific deprecated API endpoint. This issue affects Apache Superset versions prior to 2.1.2. \nUsers are recommended to upgrade to version 2.1.2, which fixes this issue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-43701",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-43701"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Amit Laish",
+      "label": "CVE-2023-49657",
+      "description": "A stored cross-site scripting (XSS) vulnerability exists in Apache Superset before 3.0.3. An authenticated attacker with create/update permissions on charts or dashboards could store a script or add a specific HTML snippet that would act as a stored XSS.\n\nFor 2.X versions, users should change their config to include:\n\nTALISMAN_CONFIG = {\n    \"content_security_policy\": {\n        \"base-uri\": [\"'self'\"],\n        \"default-src\": [\"'self'\"],\n        \"img-src\": [\"'self'\", \"blob:\", \"data:\"],\n        \"worker-src\": [\"'self'\", \"blob:\"],\n        \"connect-src\": [\n            \"'self'\",\n            \" https://api.mapbox.com\" https://api.mapbox.com\" ;,\n            \" https://events.mapbox.com\" https://events.mapbox.com\" ;,\n        ],\n        \"object-src\": \"'none'\",\n        \"style-src\": [\n            \"'self'\",\n            \"'unsafe-inline'\",\n        ],\n        \"script-src\": [\"'self'\", \"'strict-dynamic'\"],\n    },\n    \"content_security_policy_nonce_in\": [\"script-src\"],\n    \"force_https\": False,\n    \"session_cookie_secure\": False,\n}\n\n",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-49657",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-49657"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

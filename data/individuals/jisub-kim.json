@@ -1,12 +1,12 @@
 {
   "name": "Jisub Kim",
-  "last-updated": "2026-10-18T02:29:56Z",
+  "last-updated": "2026-11-15T08:31:53Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 1,
       "operational-technology-security": 0,
@@ -66,6 +66,45 @@
       "subspecialties": {
         "vulnerability-research": [],
         "iot-security": []
+      }
+    },
+    {
+      "name": "Jisub Kim",
+      "label": "CVE-2024-11071",
+      "description": "Permissive Cross-domain Policy with Untrusted Domains vulnerability in local API server of DestinyECM solution(versions described below) which is developed and maintained by Cyberdigm may allow Cross-Site Request Forgery (CSRF) attack, which probabilistically enables JSON Hijacking (aka JavaScript Hijacking) via forgery web page.* Due to product customization, version information may differ from the following version description. For further inquiries, please contact the vendor.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-11071",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-11071"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     }
   ]

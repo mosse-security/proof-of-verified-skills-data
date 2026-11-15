@@ -1,0 +1,72 @@
+{
+  "name": "Avri Altman",
+  "last-updated": "2026-11-15T08:31:45Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Avri Altman",
+      "label": "CVE-2022-23005",
+      "description": "Western Digital has identified a weakness in the UFS standard that could result in a security vulnerability. This vulnerability may exist in some systems where the Host boot ROM code implements the UFS Boot feature to boot from UFS compliant storage devices. The UFS Boot feature, as specified in the UFS standard, is provided by UFS devices to support platforms that need to download the system boot loader from external non-volatile storage locations. Several scenarios have been identified in which adversaries may disable the boot capability, or revert to an old boot loader code, if the host boot ROM code is improperly implemented. UFS Host Boot ROM implementers may be impacted by this vulnerability. UFS devices are only impacted when connected to a vulnerable UFS Host and are not independently impacted by this vulnerability. When present, the vulnerability is in the UFS Host implementation and is not a vulnerability in Western Digital UFS Devices. Western Digital has provided details of the vulnerability to the JEDEC standards body, multiple vendors of host processors, and software solutions providers.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-23005",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-23005"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

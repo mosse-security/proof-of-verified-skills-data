@@ -1,12 +1,12 @@
 {
   "name": "Nitesh Surana",
-  "last-updated": "2026-10-18T02:30:05Z",
+  "last-updated": "2026-11-15T08:31:59Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 1,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 1,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -86,6 +86,84 @@
         ],
         "threat-hunting": [
           "proactive-threat-hunting"
+        ]
+      }
+    },
+    {
+      "name": "Nitesh Surana",
+      "label": "CVE-2025-14740",
+      "description": "Docker Desktop for Windows contains multiple incorrect permission assignment vulnerabilities in the installer's handling of the C:\\ProgramData\\DockerDesktop directory. The installer creates this directory without proper ownership verification, creating two exploitation scenarios:\n\nScenario 1 (Persistent Attack):\nIf a low-privileged attacker pre-creates C:\\ProgramData\\DockerDesktop before Docker Desktop installation, the attacker retains ownership of the directory even after the installer applies restrictive ACLs. At any time after installation completes, the attacker can modify the directory ACL (as the owner) and tamper with critical configuration files such as install-settings.json to specify a malicious credentialHelper, causing arbitrary code execution when any user runs Docker Desktop.\n\nScenario 2 (TOCTOU Attack):\nDuring installation, there is a time-of-check-time-of-use (TOCTOU) race condition between when the installer creates C:\\ProgramData\\DockerDesktop and when it sets secure ACLs. A low-privileged attacker actively monitoring for the installation can inject malicious files (such as install-settings.json) with attacker-controlled ACLs during this window, achieving the same code execution outcome.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14740",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14740"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Nitesh Surana",
+      "label": "CVE-2025-15558",
+      "description": "Docker CLI for Windows searches for plugin binaries in C:\\ProgramData\\Docker\\cli-plugins, a directory that does not exist by default. A low-privileged attacker can create this directory and place malicious CLI plugin binaries (docker-compose.exe, docker-buildx.exe, etc.) that are executed when a victim user opens Docker Desktop or invokes Docker CLI plugin features, and allow privilege-escalation if the docker CLI is executed as a privileged user.\n\nThis issue affects Docker CLI: through 29.1.5 and Windows binaries acting as a CLI-plugin manager using the  github.com/docker/cli/cli-plugins/manager https://pkg.go.dev/github.com/docker/cli@v29.1.5+incompatible/cli-plugins/manager  package, such as Docker Compose.\n\nThis issue does not impact non-Windows binaries, and projects not using the plugin-manager code.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-15558",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-15558"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
         ]
       }
     }

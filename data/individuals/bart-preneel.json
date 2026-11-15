@@ -1,12 +1,12 @@
 {
   "name": "Bart Preneel",
-  "last-updated": "2026-10-18T02:29:44Z",
+  "last-updated": "2026-11-15T08:31:45Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 3,
-    "assessors": 3,
-    "with-evidence": 1,
+    "endorsements": 5,
+    "assessors": 4,
+    "with-evidence": 3,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 4,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -64,6 +64,84 @@
       ],
       "subspecialties": {
         "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Bart Preneel",
+      "label": "CVE-2019-6538",
+      "description": "The Conexus telemetry protocol utilized within Medtronic MyCareLink Monitor versions 24950 and 24952, CareLink Monitor version 2490C, CareLink 2090 Programmer, Amplia CRT-D, Claria CRT-D, Compia CRT-D, Concerto CRT-D, Concerto II CRT-D, Consulta CRT-D, Evera ICD, Maximo II CRT-D and ICD, Mirro ICD, Nayamed ND ICD, Primo ICD, Protecta ICD and CRT-D, Secura ICD, Virtuoso ICD, Virtuoso II ICD, Visia AF ICD, and Viva CRT-D does not implement authentication or authorization. An attacker with adjacent short-range access to an affected product, in situations where the product’s radio is turned on, can inject, replay, modify, and/or intercept data within the telemetry communication. This communication protocol provides the ability to read and write memory values to affected implanted cardiac devices; therefore, an attacker could exploit this communication protocol to change memory in the implanted cardiac device.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-6538",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-6538"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Bart Preneel",
+      "label": "CVE-2019-6540",
+      "description": "The Conexus telemetry protocol utilized within Medtronic MyCareLink Monitor versions 24950 and 24952, CareLink Monitor version 2490C, CareLink 2090 Programmer, Amplia CRT-D, Claria CRT-D, Compia CRT-D, Concerto CRT-D, Concerto II CRT-D, Consulta CRT-D, Evera ICD, Maximo II CRT-D and ICD, Mirro ICD, Nayamed ND ICD, Primo ICD, Protecta ICD and CRT-D, Secura ICD, Virtuoso ICD, Virtuoso II ICD, Visia AF ICD, and Viva CRT-D does not implement encryption. An attacker with adjacent short-range access to a target product can listen to communications, including the transmission of sensitive data.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-6540",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-6540"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     },
     {

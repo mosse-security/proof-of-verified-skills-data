@@ -1,25 +1,25 @@
 {
   "name": "Gabriel Gonzalez",
-  "last-updated": "2026-10-18T02:29:52Z",
+  "last-updated": "2026-11-15T08:31:50Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 13,
+    "assessors": 2,
+    "with-evidence": 13,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
       "devsecops": 0,
-      "digital-forensics": 0,
+      "digital-forensics": 1,
       "grc": 0,
       "incident-response": 0,
       "open-source-intelligence": 0,
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 13,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 1,
@@ -70,6 +70,478 @@
           "safety-systems",
           "automotive-security",
           "ecu-and-automotive-embedded-systems"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11778",
+      "description": "Stack-based buffer overflow in Circutor SGE-PLC1000/SGE-PLC50 v0.9.2. This vulnerability allows an attacker to remotely exploit memory corruption through the 'read_packet()' function of the TACACSPLUS implementation.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 10)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11778",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11778"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11779",
+      "description": "Stack-based buffer overflow vulnerability in CircutorSGE-PLC1000/SGE-PLC50 v9.0.2. The 'SetLan' function is invoked when a new configuration is applied. This new configuration function is activated by a management web request, which can be invoked by a user when making changes to the 'index.cgi' web application. The parameters are not being sanitised, which could lead to command injection.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11779",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11779"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11780",
+      "description": "Stack-based buffer overflow vulnerability in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. In the 'showMeterReport()' function, there is an unlimited user input that is copied to a fixed-size buffer via 'sprintf()'. The 'GetParameter(meter)' function retrieves the user input, which is directly incorporated into a buffer without size validation. An attacker can provide an excessively large input for the “meter” parameter.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11780",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11780"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11781",
+      "description": "Use of hardcoded cryptographic keys in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. The affected firmware contains a hardcoded static authentication key. An attacker with local access to the device can extract this key (e.g., by analysing the firmware image or memory dump) and create valid firmware update packages. This bypasses all intended access controls and grants full administrative privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11781",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11781"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "digital-forensics",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "digital-forensics": [
+          "memory-forensics"
+        ],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11782",
+      "description": "Stack-based buffer overflow vulnerability in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. The 'ShowDownload()' function uses “sprintf()” to format a string that includes the user-controlled input of 'GetParameter(meter)' in the fixed-size buffer 'acStack_4c' (64 bytes) without checking the length. An attacker can provide an excessively long value for the 'meter' parameter that exceeds the 64-byte buffer size.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11782",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11782"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11783",
+      "description": "Stack-based buffer overflow vulnerability in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. The vulnerability is found in the 'AddEvent()' function when copying the user-controlled username input to a fixed-size buffer (48 bytes) without boundary checking. This can lead to memory corruption, resulting in possible remote code execution.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11783",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11783"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11784",
+      "description": "Stack-based buffer overflow vulnerability in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. In the 'ShowMeterDatabase()' function, there is an unlimited user input that is copied to a fixed-size buffer via 'sprintf()'. The 'GetParameter(meter)' function retrieves the user input, which is directly incorporated into a buffer without size validation. An attacker can provide an excessively large input for the 'meter' parameter.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11784",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11784"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11785",
+      "description": "Stack-based buffer overflow vulnerability in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. In the 'ShowMeterPasswords()' function, there is an unlimited user input that is copied to a fixed-size buffer via 'sprintf()'. The 'GetParameter(meter)' function retrieves the user input, which is directly incorporated into a buffer without size validation. An attacker can provide an excessively large input for the 'meter' parameter.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11785",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11785"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11786",
+      "description": "Stack-based buffer overflow vulnerability in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. In the 'SetUserPassword()' function, the 'newPassword' parameter is directly embedded in a shell command string using 'sprintf()' without any sanitisation or validation, and then executed using 'system()'. This allows an attacker to inject arbitrary shell commands that will be executed with the same privileges as the application.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11786",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11786"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11787",
+      "description": "Command injection vulnerability in the operating system in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2 through the 'GetDNS()', 'CheckPing()' and 'TraceRoute()' functions.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11787",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11787"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11788",
+      "description": "Heap-based buffer overflow vulnerability in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. In the 'ShowSupervisorParameters()' function, there is an unlimited user input that is copied to a fixed-size buffer via 'sprintf()'. The 'GetParameter(meter)' function retrieves the user input, which is directly incorporated into a buffer without size validation. An attacker can provide an excessively large input for the 'meter' parameter.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11788",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11788"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Gabriel Gonzalez",
+      "label": "CVE-2025-11789",
+      "description": "Out-of-bounds read vulnerability in Circutor SGE-PLC1000/SGE-PLC50 v9.0.2. The 'DownloadFile' function converts a parameter to an integer using 'atoi()' and then uses it as an index in the 'FilesDownload' array with '(&FilesDownload)[iVar2]'. If the parameter is too large, it will access memory beyond the limits.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11789",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11789"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
         ]
       }
     }

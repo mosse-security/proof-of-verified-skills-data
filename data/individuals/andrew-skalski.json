@@ -1,0 +1,72 @@
+{
+  "name": "Andrew Skalski",
+  "last-updated": "2026-11-15T08:31:43Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Andrew Skalski",
+      "label": "CVE-2018-5738",
+      "description": "Change #4777 (introduced in October 2017) introduced an unforeseen issue in releases which were issued after that date, affecting which clients are permitted to make recursive queries to a BIND nameserver. The intended (and documented) behavior is that if an operator has not specified a value for the \"allow-recursion\" setting, it SHOULD default to one of the following: none, if \"recursion no;\" is set in named.conf; a value inherited from the \"allow-query-cache\" or \"allow-query\" settings IF \"recursion yes;\" (the default for that setting) AND match lists are explicitly set for \"allow-query-cache\" or \"allow-query\" (see the BIND9 Administrative Reference Manual section 6.2 for more details); or the intended default of \"allow-recursion {localhost; localnets;};\" if \"recursion yes;\" is in effect and no values are explicitly set for \"allow-query-cache\" or \"allow-query\". However, because of the regression introduced by change #4777, it is possible when \"recursion yes;\" is in effect and no match list values are provided for \"allow-query-cache\" or \"allow-query\" for the setting of \"allow-recursion\" to inherit a setting of all hosts from the \"allow-query\" setting default, improperly permitting recursion to all clients. Affects BIND 9.9.12, 9.10.7, 9.11.3, 9.12.0->9.12.1-P2, the development release 9.13.0, and also releases 9.9.12-S1, 9.10.7-S1, 9.11.3-S1, and 9.11.3-S2 from BIND 9 Supported Preview Edition.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2018-5738",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2018-5738"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2018,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
   "name": "Sara Rampazzi",
-  "last-updated": "2026-10-18T02:30:10Z",
+  "last-updated": "2026-11-15T08:32:02Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 0,
+    "endorsements": 5,
+    "assessors": 3,
+    "with-evidence": 3,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 5,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,124 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Sara Rampazzi",
+      "label": "CVE-2020-25183",
+      "description": "Medtronic MyCareLink Smart 25000 contains \n\nan authentication protocol vulnerability where the method used to authenticate between the MCL Smart Patient Reader and the Medtronic MyCareLink Smart mobile app is vulnerable to bypass. This vulnerability enables an attacker to use another mobile device or malicious application on the patient’s smartphone to authenticate to the patient’s Medtronic Smart Reader, fooling the device into believing it is communicating with the original Medtronic smart phone application when executed within range of Bluetooth communication.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-25183",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-25183"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure",
+          "protocol-and-network-vulnerabilities"
+        ]
+      }
+    },
+    {
+      "name": "Sara Rampazzi",
+      "label": "CVE-2025-10937",
+      "description": "Oxford Nanopore Technologies' MinKNOW software at or prior to version 24.11 creates a temporary file to store the local authentication token during startup, before copying it to its final location. This temporary file is created in a directory accessible to all users on the system. An unauthorized local user or process can exploit this behavior by placing a file lock on the temporary token file using the flock system call. This prevents MinKNOW from completing the token generation process. As a result, no valid local token is created, and the software is unable to execute commands on the sequencer. This leads to a denial-of-service (DoS) condition, blocking sequencing operations.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-10937",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-10937"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Sara Rampazzi",
+      "label": "CVE-2025-54808",
+      "description": "Oxford Nanopore Technologies' MinKNOW software at or prior to version 24.11 stores authentication tokens in a file located in the system's temporary directory (/tmp) on the host machine. This directory is typically world-readable, allowing any local user or application to access the token. If the token is leaked (e.g., via malware infection or other local exploit), and remote access is enabled, it can be used to establish unauthorized remote connections to the sequencer. Remote access must be enabled for remote exploitation to succeed. This may occur either because the user has enabled remote access for legitimate operational reasons or because malware with elevated privileges (e.g., sudo access) enables it without user consent. This vulnerability can be chained with remote access capabilities to generate a developer token from a remote device. Developer tokens can be created with arbitrary expiration dates, enabling persistent access to the sequencer and bypassing standard authentication mechanisms.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-54808",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-54808"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Sara Rampazzi",
       "label": "Illusion of Depth: Revealing Hidden Stereo Vision Vulnerabilities in Depth Estimation",

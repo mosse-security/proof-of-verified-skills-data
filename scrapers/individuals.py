@@ -8,13 +8,14 @@ import re
 import shutil
 import tempfile
 import unicodedata
+import zipfile
 from collections import OrderedDict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .schema import is_non_endorsement_session, validate_endorsement_record
+from .schema import AssessorMetadata, is_non_endorsement_session, validate_endorsement_record
 from .domains import ALLOWED_DOMAINS
 from .identity_registry import IdentityRegistry, clean_person_name
 
@@ -45,15 +46,41 @@ def build_assessor_individuals(
     registry = IdentityRegistry.for_assessor(
         assessor_id, data_directory=assessors_directory.parent
     )
+    assessor_metadata = None
+    assessor_file = assessors_directory / assessor_id / f"{assessor_id}.json"
+    if assessor_file.exists():
+        assessor_metadata = AssessorMetadata.from_file(assessor_file)
     grouped: OrderedDict[str, dict[str, Any]] = OrderedDict()
     source_directory = endorsements_directory / assessor_id
-    for source_path in sorted(source_directory.rglob("*.json")) if source_directory.exists() else []:
-        document = json.loads(source_path.read_text(encoding="utf-8"))
+    source_paths = (
+        sorted(source_directory.rglob("*.json"))
+        if source_directory.exists()
+        else []
+    )
+    documents: list[tuple[str, Any]] = [
+        (str(source_path), json.loads(source_path.read_text(encoding="utf-8")))
+        for source_path in source_paths
+    ]
+    if assessor_id == "mitre":
+        archive_directory = assessors_directory.parent / "archives" / "cve"
+        for archive_path in sorted(archive_directory.glob("cve-records-*.zip")):
+            with zipfile.ZipFile(archive_path) as archive:
+                for member in archive.namelist():
+                    if member.endswith(".json"):
+                        with archive.open(member) as handle:
+                            documents.append(
+                                (f"{archive_path}!{member}", json.load(handle))
+                            )
+    for source_name, document in documents:
         records = document if isinstance(document, list) else [document]
         for index, record in enumerate(records):
             if not isinstance(record, dict):
-                raise IndividualMergeError(f"{source_path}[{index}] must be a JSON object")
-            validate_endorsement_record(record, source=f"{source_path}[{index}]")
+                raise IndividualMergeError(f"{source_name}[{index}] must be a JSON object")
+            validate_endorsement_record(
+                record,
+                source=f"{source_name}[{index}]",
+                assessor=assessor_metadata,
+            )
             name = _clean_name(record["name"])
             if not registry.allows(name) or _looks_like_talk_title(name, record.get("label", "")):
                 continue
@@ -93,7 +120,12 @@ def build_assessor_individuals(
             "stats": _individual_stats(records),
             "endorsements": records,
         }
-        _validate_individual(payload, source=str(output), require_timestamp=False)
+        _validate_individual(
+            payload,
+            source=str(output),
+            require_timestamp=False,
+            assessors_directory=assessors_directory,
+        )
         path = output / _individual_filename(person["name"], identity, used)
         expected.add(path)
         _write_if_changed(path, payload)
@@ -374,7 +406,11 @@ def merge_endorsements(
 
 
 def _validate_individual(
-    document: dict[str, Any], *, source: str, require_timestamp: bool = True
+    document: dict[str, Any],
+    *,
+    source: str,
+    require_timestamp: bool = True,
+    assessors_directory: Path = Path("data/assessors"),
 ) -> None:
     expected = {"name", "biography", "contact", "stats", "endorsements"}
     if require_timestamp:
@@ -397,8 +433,24 @@ def _validate_individual(
         raise IndividualMergeError(f"{source}.contact must be an array")
     if not isinstance(document["endorsements"], list):
         raise IndividualMergeError(f"{source}.endorsements must be an array")
+    assessor_cache: dict[str, AssessorMetadata | None] = {}
     for index, endorsement in enumerate(document["endorsements"]):
-        validate_endorsement_record(endorsement, source=f"{source}.endorsements[{index}]")
+        assessor_id = endorsement.get("assessor-id") if isinstance(endorsement, dict) else None
+        assessor = None
+        if isinstance(assessor_id, str):
+            if assessor_id not in assessor_cache:
+                assessor_file = assessors_directory / assessor_id / f"{assessor_id}.json"
+                assessor_cache[assessor_id] = (
+                    AssessorMetadata.from_file(assessor_file)
+                    if assessor_file.exists()
+                    else None
+                )
+            assessor = assessor_cache[assessor_id]
+        validate_endorsement_record(
+            endorsement,
+            source=f"{source}.endorsements[{index}]",
+            assessor=assessor,
+        )
     if document["stats"] != _individual_stats(document["endorsements"]):
         raise IndividualMergeError(f"{source}.stats does not match endorsements")
 

@@ -1,12 +1,12 @@
 {
   "name": "Ilja van Sprundel",
-  "last-updated": "2026-10-18T02:29:54Z",
+  "last-updated": "2026-11-15T06:51:10Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 10,
-    "assessors": 4,
-    "with-evidence": 2,
+    "endorsements": 13,
+    "assessors": 5,
+    "with-evidence": 5,
     "without-evidence": 8,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 1,
       "red-teaming": 0,
       "reverse-engineering": 1,
-      "vulnerability-research": 3,
+      "vulnerability-research": 6,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -301,6 +301,123 @@
       ],
       "subspecialties": {
         "unknown": []
+      }
+    },
+    {
+      "name": "Ilja Van Sprundel",
+      "label": "CVE-2020-15292",
+      "description": "Lack of validation on data read from guest memory in IntPeGetDirectory, IntPeParseUnwindData, IntLogExceptionRecord, IntKsymExpandSymbol and IntLixTaskDumpTree may lead to out-of-bounds read or it could cause DoS due to integer-overflor (IntPeGetDirectory), TOCTOU (IntPeParseUnwindData) or insufficient validations.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-15292",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-15292"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ilja Van Sprundel",
+      "label": "CVE-2020-15293",
+      "description": "Memory corruption in IntLixCrashDumpDmesg, IntLixTaskFetchCmdLine, IntLixFileReadDentry and IntLixFileGetPath due to insufficient guest-data input validation may lead to denial of service conditions.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-15293",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-15293"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ilja Van Sprundel",
+      "label": "CVE-2020-15294",
+      "description": "Compiler Optimization Removal or Modification of Security-critical Code vulnerability in IntPeParseUnwindData() results in multiple dereferences to the same pointer. If the pointer is located in memory-mapped from the guest space, this may cause a race-condition where the generated code would dereference the same address twice, thus obtaining different values, which may lead to arbitrary code execution. This issue affects: Bitdefender Hypervisor Introspection versions prior to 1.132.2.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-15294",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-15294"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
       }
     },
     {

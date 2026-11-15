@@ -1,12 +1,12 @@
 {
   "name": "Cong Wang",
-  "last-updated": "2026-10-18T02:29:48Z",
+  "last-updated": "2026-11-15T08:31:47Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 8,
-    "assessors": 3,
-    "with-evidence": 0,
+    "endorsements": 10,
+    "assessors": 4,
+    "with-evidence": 2,
     "without-evidence": 8,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 2,
+      "vulnerability-research": 4,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,84 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Cong Wang",
+      "label": "CVE-2021-47557",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet/sched: sch_ets: don't peek at classes beyond 'nbands'\n\nwhen the number of DRR classes decreases, the round-robin active list can\ncontain elements that have already been freed in ets_qdisc_change(). As a\nconsequence, it's possible to see a NULL dereference crash, caused by the\nattempt to call cl->qdisc->ops->peek(cl->qdisc) when cl->qdisc is NULL:\n\n BUG: kernel NULL pointer dereference, address: 0000000000000018\n #PF: supervisor read access in kernel mode\n #PF: error_code(0x0000) - not-present page\n PGD 0 P4D 0\n Oops: 0000 [#1] PREEMPT SMP NOPTI\n CPU: 1 PID: 910 Comm: mausezahn Not tainted 5.16.0-rc1+ #475\n Hardware name: Red Hat KVM, BIOS 1.11.1-4.module+el8.1.0+4066+0f1aadab 04/01/2014\n RIP: 0010:ets_qdisc_dequeue+0x129/0x2c0 [sch_ets]\n Code: c5 01 41 39 ad e4 02 00 00 0f 87 18 ff ff ff 49 8b 85 c0 02 00 00 49 39 c4 0f 84 ba 00 00 00 49 8b ad c0 02 00 00 48 8b 7d 10 <48> 8b 47 18 48 8b 40 38 0f ae e8 ff d0 48 89 c3 48 85 c0 0f 84 9d\n RSP: 0000:ffffbb36c0b5fdd8 EFLAGS: 00010287\n RAX: ffff956678efed30 RBX: 0000000000000000 RCX: 0000000000000000\n RDX: 0000000000000002 RSI: ffffffff9b938dc9 RDI: 0000000000000000\n RBP: ffff956678efed30 R08: e2f3207fe360129c R09: 0000000000000000\n R10: 0000000000000001 R11: 0000000000000001 R12: ffff956678efeac0\n R13: ffff956678efe800 R14: ffff956611545000 R15: ffff95667ac8f100\n FS:  00007f2aa9120740(0000) GS:ffff95667b800000(0000) knlGS:0000000000000000\n CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033\n CR2: 0000000000000018 CR3: 000000011070c000 CR4: 0000000000350ee0\n Call Trace:\n  <TASK>\n  qdisc_peek_dequeued+0x29/0x70 [sch_ets]\n  tbf_dequeue+0x22/0x260 [sch_tbf]\n  __qdisc_run+0x7f/0x630\n  net_tx_action+0x290/0x4c0\n  __do_softirq+0xee/0x4f8\n  irq_exit_rcu+0xf4/0x130\n  sysvec_apic_timer_interrupt+0x52/0xc0\n  asm_sysvec_apic_timer_interrupt+0x12/0x20\n RIP: 0033:0x7f2aa7fc9ad4\n Code: b9 ff ff 48 8b 54 24 18 48 83 c4 08 48 89 ee 48 89 df 5b 5d e9 ed fc ff ff 0f 1f 00 66 2e 0f 1f 84 00 00 00 00 00 f3 0f 1e fa <53> 48 83 ec 10 48 8b 05 10 64 33 00 48 8b 00 48 85 c0 0f 85 84 00\n RSP: 002b:00007ffe5d33fab8 EFLAGS: 00000202\n RAX: 0000000000000002 RBX: 0000561f72c31460 RCX: 0000561f72c31720\n RDX: 0000000000000002 RSI: 0000561f72c31722 RDI: 0000561f72c31720\n RBP: 000000000000002a R08: 00007ffe5d33fa40 R09: 0000000000000014\n R10: 0000000000000000 R11: 0000000000000246 R12: 0000561f7187e380\n R13: 0000000000000000 R14: 0000000000000000 R15: 0000561f72c31460\n  </TASK>\n Modules linked in: sch_ets sch_tbf dummy rfkill iTCO_wdt intel_rapl_msr iTCO_vendor_support intel_rapl_common joydev virtio_balloon lpc_ich i2c_i801 i2c_smbus pcspkr ip_tables xfs libcrc32c crct10dif_pclmul crc32_pclmul crc32c_intel ahci libahci ghash_clmulni_intel serio_raw libata virtio_blk virtio_console virtio_net net_failover failover sunrpc dm_mirror dm_region_hash dm_log dm_mod\n CR2: 0000000000000018\n\nEnsuring that 'alist' was never zeroed [1] was not sufficient, we need to\nremove from the active list those elements that are no more SP nor DRR.\n\n[1] https://lore.kernel.org/netdev/60d274838bf09777f0371253416e8af71360bc08.1633609148.git.dcaratti@redhat.com/\n\nv3: fix race between ets_qdisc_change() and ets_qdisc_dequeue() delisting\n    DRR classes beyond 'nbands' in ets_qdisc_change() with the qdisc lock\n    acquired, thanks to Cong Wang.\n\nv2: when a NULL qdisc is found in the DRR active list, try to dequeue skb\n    from the next list item.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-47557",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-47557"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Cong Wang",
+      "label": "CVE-2022-49209",
+      "description": "In the Linux kernel, the following vulnerability has been resolved:\n\nbpf, sockmap: Fix memleak in tcp_bpf_sendmsg while sk msg is full\n\nIf tcp_bpf_sendmsg() is running while sk msg is full. When sk_msg_alloc()\nreturns -ENOMEM error, tcp_bpf_sendmsg() goes to wait_for_memory. If partial\nmemory has been alloced by sk_msg_alloc(), that is, msg_tx->sg.size is\ngreater than osize after sk_msg_alloc(), memleak occurs. To fix we use\nsk_msg_trim() to release the allocated memory, then goto wait for memory.\n\nOther call paths of sk_msg_alloc() have the similar issue, such as\ntls_sw_sendmsg(), so handle sk_msg_trim logic inside sk_msg_alloc(),\nas Cong Wang suggested.\n\nThis issue can cause the following info:\nWARNING: CPU: 3 PID: 7950 at net/core/stream.c:208 sk_stream_kill_queues+0xd4/0x1a0\nCall Trace:\n <TASK>\n inet_csk_destroy_sock+0x55/0x110\n __tcp_close+0x279/0x470\n tcp_close+0x1f/0x60\n inet_release+0x3f/0x80\n __sock_release+0x3d/0xb0\n sock_close+0x11/0x20\n __fput+0x92/0x250\n task_work_run+0x6a/0xa0\n do_exit+0x33b/0xb60\n do_group_exit+0x2f/0xa0\n get_signal+0xb6/0x950\n arch_do_signal_or_restart+0xac/0x2a0\n exit_to_user_mode_prepare+0xa9/0x200\n syscall_exit_to_user_mode+0x12/0x30\n do_syscall_64+0x46/0x80\n entry_SYSCALL_64_after_hwframe+0x44/0xae\n </TASK>\n\nWARNING: CPU: 3 PID: 2094 at net/ipv4/af_inet.c:155 inet_sock_destruct+0x13c/0x260\nCall Trace:\n <TASK>\n __sk_destruct+0x24/0x1f0\n sk_psock_destroy+0x19b/0x1c0\n process_one_work+0x1b3/0x3c0\n kthread+0xe6/0x110\n ret_from_fork+0x22/0x30\n </TASK>",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2022-49209",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-49209"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2022,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Cong Wang",
       "label": "From Snapshot to Snooping: An Empirical Study on Geolocation Privacy Leakage in Large Vision Language Models",

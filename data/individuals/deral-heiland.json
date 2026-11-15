@@ -1,13 +1,13 @@
 {
   "name": "Deral Heiland",
-  "last-updated": "2026-10-18T02:29:49Z",
+  "last-updated": "2026-11-15T08:31:48Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 4,
-    "assessors": 3,
-    "with-evidence": 3,
-    "without-evidence": 1,
+    "endorsements": 24,
+    "assessors": 5,
+    "with-evidence": 22,
+    "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,9 +19,9 @@
       "penetration-testing": 2,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 4,
-      "identity-and-access-management": 1,
-      "iot-security": 1,
+      "vulnerability-research": 24,
+      "identity-and-access-management": 2,
+      "iot-security": 3,
       "operational-technology-security": 0,
       "threat-hunting": 0,
       "cybercrime-and-fraud": 0,
@@ -149,6 +149,474 @@
     },
     {
       "name": "Deral Heiland",
+      "label": "CVE-2016-6538",
+      "description": "The TrackR Bravo mobile app stores the account password used to authenticate to the cloud API in cleartext in the cache.db file. Updated apps, version 5.1.6 for iOS and 2.2.5 for Android, have been released by the vendor to address the vulnerabilities in CVE-2016-6538, CVE-2016-6539, CVE-2016-6540 and CVE-2016-6541.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6538",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6538"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6539",
+      "description": "The Trackr device ID is constructed of a manufacturer identifier of four zeroes followed by the BLE MAC address in reverse. The MAC address can be obtained by being in close proximity to the Bluetooth device, effectively exposing the device ID. The ID can be used to track devices. Updated apps, version 5.1.6 for iOS and 2.2.5 for Android, have been released by the vendor to address the vulnerabilities in CVE-2016-6538, CVE-2016-6539, CVE-2016-6540 and CVE-2016-6541.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6539",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6539"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6540",
+      "description": "Unauthenticated access to the cloud-based service maintained by TrackR Bravo is allowed for querying or sending GPS data for any Trackr device by using the tracker ID number which can be discovered as described in CVE-2016-6539. Updated apps, version 5.1.6 for iOS and 2.2.5 for Android, have been released by the vendor to address the vulnerabilities in CVE-2016-6538, CVE-2016-6539, CVE-2016-6540 and CVE-2016-6541.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6540",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6540"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6541",
+      "description": "TrackR Bravo device allows unauthenticated pairing, which enables unauthenticated connected applications to write to various device attributes. Updated apps, version 5.1.6 for iOS and 2.2.5 for Android, have been released by the vendor to address the vulnerabilities in CVE-2016-6538, CVE-2016-6539, CVE-2016-6540 and CVE-2016-6541.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6541",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6541"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6542",
+      "description": "The iTrack device tracking ID number, also called \"LosserID\" in the web API, can be obtained by being in the range of an iTrack device. The tracker ID is the device's BLE MAC address.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6542",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6542"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6543",
+      "description": "A captured MAC/device ID of an iTrack Easy can be registered under multiple user accounts allowing access to getgps GPS data, which can allow unauthenticated parties to track the device.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6543",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6543"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6544",
+      "description": "getgps data in iTrack Easy can be modified without authentication by setting the data using the parametercmd:setothergps. This vulnerability can be exploited to alter the GPS data of a lost device.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6544",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6544"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6545",
+      "description": "Session cookies are not used for maintaining valid sessions in iTrack Easy. The user's password is passed as a POST parameter over HTTPS using a base64 encoded passwd field on every request. In this implementation, sessions can only be terminated when the user changes the associated password.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6545",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6545"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6546",
+      "description": "The iTrack Easy mobile application stores the account password used to authenticate to the cloud API in base64-encoding in the cache.db file. The base64 encoding format is considered equivalent to cleartext.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6546",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6546"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6547",
+      "description": "The Zizai Tech Nut mobile app stores the account password used to authenticate to the cloud API in cleartext in the cache.db file.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6547",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6547"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6548",
+      "description": "The Zizai Tech Nut mobile app makes requests via HTTP instead of HTTPS. These requests contain the user's authenticated session token with the URL. An attacker can capture these requests and reuse the session token to gain full access the user's account.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6548",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6548"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2016-6549",
+      "description": "The Zizai Tech Nut device allows unauthenticated Bluetooth pairing, which enables unauthenticated connected applications to write data to the device name attribute.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2016-6549",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2016-6549"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2016,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
       "label": "IoT Security – Executing an Effective Security Testing Process",
       "description": "With IoT expected to top 20 billion connected devices by the end of the decade. A focused effort is critical if we plan to be successfully securing our new IoT driven world. One of the primary necessities to meet this goal is to develop sound methods for identification, and mitigation of security vulnerabilities within IoT products. As an IoT security researcher and consultant, I regularly conduct IoT security testing. Within my testing methodologies I leverage a holistic approach that focuses on the entire ecosystem of an IoT solution, including: hardware, mobile, and cloud environments allowing for a more through evaluation of a solutions security issues. During this presentation attendees will learn about the ecosystem structure of IoT and security implication of the interconnected components as I guide the audience through several research projects focused on security testing of an IoT technology. Using live demonstration I will show real-world security vulnerability examples identified within each segment of an IoT ecosystem Deral Heiland CISSP, serves as a Research Lead (IoT) for Rapid7. Deral has over 20 years of experience in the Information Technology field. Over the last 10+ years Deral’s career has focused on security research, security assessments, penetration testing, and consulting for corporations and government agencies. Deral also has conducted security research on a numerous technical subjects, releasing white papers, security advisories, and has presented the information at numerous national and international security conferences including Blackhat, Defcon, Shmoocon, DerbyCon, RSAC, Hack In Paris. Deral has been interviewed by and quoted by several media outlets and publications including ABC World News Tonight, BBC, Consumer Reports, MIT Technical Review, SC Magazine, Threat Post and The Register. @percent_x",
       "type": "presentation",
@@ -179,6 +647,324 @@
       ],
       "subspecialties": {
         "penetration-testing": [],
+        "vulnerability-research": [],
+        "iot-security": [
+          "automotive-security"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2019-5625",
+      "description": "The Android mobile application Halo Home before 1.11.0 stores OAuth authentication and refresh access tokens in a clear text file. This file persists until the user logs out of the application and reboots the device. This vulnerability can allow an attacker to impersonate the legitimate user by reusing the stored OAuth token, thus allowing them to view and change the user's personal information stored in the backend cloud service. The attacker would first need to gain physical control of the Android device or compromise it with a malicious app.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 3.0, 2.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-5625",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-5625"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "authentication",
+          "oauth-oidc-and-saml"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2019-5626",
+      "description": "The Android mobile application BlueCats Reveal before 3.0.19 stores the username and password in a clear text file. This file persists until the user logs out or the session times out from non-usage (30 days of no user activity). This can allow an attacker to compromise the affected BlueCats network implementation. The attacker would first need to gain physical control of the Android device or compromise it with a malicious app.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 3.0, 2.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-5626",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-5626"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2019-5627",
+      "description": "The iOS mobile application BlueCats Reveal before 5.14 stores the username and password in the app cache as base64 encoded strings, i.e. clear text. These persist in the cache even if the user logs out. This can allow an attacker to compromise the affected BlueCats network implementation. The attacker would first need to gain physical control of the iOS device or compromise it with a malicious app.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 3.0, 2.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-5627",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-5627"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2019-5632",
+      "description": "An insecure storage of sensitive information vulnerability is present in Hickory Smart for Android mobile devices from Belwith Products, LLC. The application's database was found to contain information that could be used to control the lock devices remotely. This issue affects Hickory Smart for Android, version 01.01.43 and prior versions.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-5632",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-5632"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2019-5633",
+      "description": "An insecure storage of sensitive information vulnerability is present in Hickory Smart for iOS mobile devices from Belwith Products, LLC. The application's database was found to contain information that could be used to control the lock devices remotely. This issue affects Hickory Smart for iOS, version 01.01.07 and prior versions.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-5633",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-5633"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2019-5634",
+      "description": "An inclusion of sensitive information in log files vulnerability is present in Hickory Smart for Android mobile devices from Belwith Products, LLC. Communications to the internet API services and direct connections to the lock via Bluetooth Low Energy (BLE) from the mobile application are logged in a debug log on the Android device at HickorySmartLog/Logs/SRDeviceLog.txt. This information was found stored in the Android device's default USB or SDcard storage paths and is accessible without rooting the device. This issue affects Hickory Smart for Android, version 01.01.43 and prior versions.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-5634",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-5634"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "CVE-2019-5635",
+      "description": "A cleartext transmission of sensitive information vulnerability is present in Hickory Smart Ethernet Bridge from Belwith Products, LLC. Captured data reveals that the Hickory Smart Ethernet Bridge device communicates over the network to an MQTT broker without using encryption. This exposed the default username and password used to authenticate to the MQTT broker. This issue affects Hickory Smart Ethernet Bridge, model number H077646. The firmware does not appear to contain versioning information.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.0, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2019-5635",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2019-5635"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2019,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "iot-security": [
+          "iot-protocols"
+        ]
+      }
+    },
+    {
+      "name": "Deral Heiland",
+      "label": "Exploiting Cellular IoT Pathways to Compromise Trusted Access - [ NCS-T09 ]",
+      "description": "Network & Communications Security Track Session Network & Communications Security Securing All the Things Speaker eFG All Access ESAF Media: Press/Analyst Cyber Leaders Forum CISO Boot Camp All Access Advanced—Technical Available On Demand Default (Internal Only) All Reserve Seat 1:00 p.m. Tuesday, Mar 24 Tuesday, Mar 24 Exploiting Cellular IoT Pathways to Compromise Trusted Access - [ NCS-T09 ] Deral Heiland , Principal Security Researcher, IoT, Rapid7 Session Ended Tuesday, Mar 24 1:15 PM - 2:05 PM PDT Moscone West 2020 Reserved Seating info",
+      "type": "presentation",
+      "assessor": "RSA Conference",
+      "assessor-id": "rsa-conference",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "RSA Conference 2026",
+      "url": "https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1755402086556001fcjs",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
+      "domains": [
+        "vulnerability-research",
+        "iot-security"
+      ],
+      "subspecialties": {
         "vulnerability-research": [],
         "iot-security": [
           "automotive-security"

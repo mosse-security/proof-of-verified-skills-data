@@ -1,0 +1,72 @@
+{
+  "name": "Olaf Hering",
+  "last-updated": "2026-11-15T08:31:59Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Olaf Hering",
+      "label": "CVE-2021-28687",
+      "description": "HVM soft-reset crashes toolstack libxl requires all data structures passed across its public interface to be initialized before use and disposed of afterwards by calling a specific set of functions. Many internal data structures also require this initialize / dispose discipline, but not all of them. When the \"soft reset\" feature was implemented, the libxl__domain_suspend_state structure didn't require any initialization or disposal. At some point later, an initialization function was introduced for the structure; but the \"soft reset\" path wasn't refactored to call the initialization function. When a guest nwo initiates a \"soft reboot\", uninitialized data structure leads to an assert() when later code finds the structure in an unexpected state. The effect of this is to crash the process monitoring the guest. How this affects the system depends on the structure of the toolstack. For xl, this will have no security-relevant effect: every VM has its own independent monitoring process, which contains no state. The domain in question will hang in a crashed state, but can be destroyed by `xl destroy` just like any other non-cooperating domain. For daemon-based toolstacks linked against libxl, such as libvirt, this will crash the toolstack, losing the state of any in-progress operations (localized DoS), and preventing further administrator operations unless the daemon is configured to restart automatically (system-wide DoS). If crashes \"leak\" resources, then repeated crashes could use up resources, also causing a system-wide DoS.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2021-28687",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-28687"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2021,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,13 +1,13 @@
 {
   "name": "Tod Beardsley",
-  "last-updated": "2026-10-18T02:30:14Z",
+  "last-updated": "2026-11-15T08:32:04Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
-    "without-evidence": 0,
+    "endorsements": 6,
+    "assessors": 3,
+    "with-evidence": 5,
+    "without-evidence": 1,
     "by-domain": {
       "cloud-security": 0,
       "cyber-defense": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 6,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -59,6 +59,194 @@
         "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
       },
       "year": 2014,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": []
+      }
+    },
+    {
+      "name": "Tod Beardsley",
+      "label": "CVE-2023-0391",
+      "description": "MGT-COMMERCE CloudPanel ships with a static SSL certificate to encrypt communications to the administrative interface, shared across every installation of CloudPanel. This behavior was observed in version 2.2.0. There has been no indication from the vendor this has been addressed in version 2.2.1.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-0391",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-0391"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Tod Beardsley",
+      "label": "CVE-2025-11534",
+      "description": "The affected Raisecom devices allow SSH sessions to be established without completing user authentication. This could allow attackers to gain shell access without valid credentials.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11534",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11534"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Tod Beardsley",
+      "label": "CVE-2025-35021",
+      "description": "By failing to authenticate three times to an unconfigured Abilis CPX device via SSH, an attacker can login to a restricted shell on the fourth attempt, and from there, relay connections.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-35021",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-35021"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Tod Beardsley",
+      "label": "CVE-2025-8452",
+      "description": "By using the \"uscan\" protocol provided by the eSCL specification, an attacker can discover the serial number of multi-function printers that implement the Brother-provided firmware. This serial number can, in turn, can be leveraged by the flaw described by CVE-2024-51978 to calculate the default administrator password. This flaw is similar to CVE-2024-51977, with the only difference being the protocol by which an attacker can use to learn the remote device's serial number. The eSCL/uscan vector is typically only exposed on the local network. Any discovery service that implements the eSCL specification can be used to exploit this vulnerability, and one such implementation is the runZero Explorer. Changing the default administrator password will render this vulnerability virtually worthless, since the calculated default administrator password would no longer be the correct password.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-8452",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-8452"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Tod Beardsley",
+      "label": "The Patchless Age: Year Zero After the Great CVE Collapse - [ VLG-T02 ]",
+      "description": "Villages Track Track Session Hackers & Threats Villages Track Speaker eFG All Access ESAF Media: Press/Analyst Media: Content Creator Cyber Leaders Forum CISO Boot Camp eFG Expo Plus Expo Plus All Access General Available On Demand Default (Internal Only) All NO Reserve a Seat for this session 9:00 a.m. Tuesday, Mar 24 Tuesday, Mar 24 The Patchless Age: Year Zero After the Great CVE Collapse - [ VLG-T02 ] Madison Ficorilli , Senior Security Manager, GitHub Tod Beardsley , Vice President, Security Research, runZero, Inc Lisa OLSON , Principal Security Release Program Manager, Microsoft NO Reserve a Seat for this session: NO Reserve a Seat for this session Session Ended Tuesday, Mar 24 9:40 AM - 10:30 AM PDT Moscone South 204 Briefing Center Reserved Seating info",
+      "type": "presentation",
+      "assessor": "RSA Conference",
+      "assessor-id": "rsa-conference",
+      "assessor-category": "conference_industry",
+      "assessor-rigor-level": "medium",
+      "reviewType": "committee_review",
+      "subtitle": "RSA Conference 2026",
+      "url": "https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1755470003779001WEMM",
+      "evidence-links": [],
+      "evidence": false,
+      "povs": {
+        "milestones": {
+          "verifiable": false,
+          "defended": false,
+          "recognized": false,
+          "trusted": false
+        },
+        "level": 0,
+        "explanation": "No evidence discovered for this record therefore it could not be verified"
+      },
+      "year": 2026,
       "domains": [
         "vulnerability-research"
       ],

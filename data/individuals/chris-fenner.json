@@ -1,0 +1,72 @@
+{
+  "name": "Chris Fenner",
+  "last-updated": "2026-11-15T06:51:07Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Chris Fenner",
+      "label": "CVE-2020-8918",
+      "description": "An improperly initialized 'migrationAuth' value in Google's go-tpm TPM1.2 library versions prior to 0.3.0 can lead an eavesdropping attacker to discover the auth value for a key created with CreateWrapKey. An attacker listening in on the channel can collect both 'encUsageAuth' and 'encMigrationAuth', and then can calculate 'usageAuth ^ encMigrationAuth' as the 'migrationAuth' can be guessed for all keys created with CreateWrapKey. TPM2.0 is not impacted by this. We recommend updating your library to 0.3.0 or later, or, if you cannot update, to call CreateWrapKey with a random 20-byte value for 'migrationAuth'.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-8918",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-8918"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

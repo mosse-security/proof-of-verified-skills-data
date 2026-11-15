@@ -1,12 +1,12 @@
 {
   "name": "Anastasios Stasinopoulos",
-  "last-updated": "2026-10-18T02:29:43Z",
+  "last-updated": "2026-11-15T08:31:43Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 3,
+    "assessors": 2,
+    "with-evidence": 3,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 3,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -65,6 +65,84 @@
       "subspecialties": {
         "vulnerability-research": [
           "zero-day-and-0-day-research"
+        ]
+      }
+    },
+    {
+      "name": "Anastasios Stasinopoulos",
+      "label": "CVE-2020-7351",
+      "description": "An OS Command Injection vulnerability in the endpoint_devicemap.php component of Fonality Trixbox Community Edition allows an attacker to execute commands on the underlying operating system as the \"asterisk\" user. Note that Trixbox Community Edition has been unsupported by the vendor since 2012. This issue affects: Fonality Trixbox Community Edition, versions 1.2.0 through 2.8.0.4. Versions 1.0 and 1.1 are unaffected.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2020-7351",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2020-7351"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2020,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Anastasios Stasinopoulos",
+      "label": "CVE-2024-27315",
+      "description": "An authenticated user with privileges to create Alerts on Alerts & Reports has the capability to generate a specially crafted SQL statement that triggers an error on the database. This error is not properly handled by Apache Superset and may inadvertently surface in the error log of the Alert exposing possibly sensitive data.\n\n\nThis issue affects Apache Superset: before 3.0.4, from 3.1.0 before 3.1.1.\n\nUsers are recommended to upgrade to version 3.1.1 or 3.0.4, which fixes the issue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-27315",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-27315"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
         ]
       }
     }

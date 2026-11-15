@@ -1,12 +1,12 @@
 {
   "name": "Zhiyuan Zhang",
-  "last-updated": "2026-10-18T03:23:14Z",
+  "last-updated": "2026-11-15T08:32:07Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 2,
-    "assessors": 2,
-    "with-evidence": 0,
+    "endorsements": 3,
+    "assessors": 3,
+    "with-evidence": 1,
     "without-evidence": 2,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 0,
+      "vulnerability-research": 1,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,46 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Zhiyuan Zhang",
+      "label": "CVE-2025-13912",
+      "description": "Multiple constant-time implementations in wolfSSL before version 5.8.4 may be transformed into non-constant-time binary by LLVM optimizations, which can potentially result in observable timing discrepancies and lead to information disclosure through timing side-channel attacks.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 4.0, 1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-13912",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-13912"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure",
+          "cryptographic-attacks"
+        ]
+      }
+    },
     {
       "name": "Zhiyuan Zhang",
       "label": "Formal Security Analysis of the Olvid Messenger",

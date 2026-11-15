@@ -1,12 +1,12 @@
 {
   "name": "Ilya Smith",
-  "last-updated": "2026-10-18T02:29:54Z",
+  "last-updated": "2026-11-15T08:31:52Z",
   "biography": "",
   "contact": [],
   "stats": {
-    "endorsements": 1,
-    "assessors": 1,
-    "with-evidence": 1,
+    "endorsements": 2,
+    "assessors": 2,
+    "with-evidence": 2,
     "without-evidence": 0,
     "by-domain": {
       "cloud-security": 0,
@@ -19,7 +19,7 @@
       "penetration-testing": 0,
       "red-teaming": 0,
       "reverse-engineering": 0,
-      "vulnerability-research": 1,
+      "vulnerability-research": 2,
       "identity-and-access-management": 0,
       "iot-security": 0,
       "operational-technology-security": 0,
@@ -29,6 +29,45 @@
     }
   },
   "endorsements": [
+    {
+      "name": "Ilya Smith",
+      "label": "CVE-2017-3223",
+      "description": "Dahua IP camera products using firmware versions prior to V2.400.0000.14.R.20170713 include a version of the Sonia web interface that may be vulnerable to a stack buffer overflow. Dahua IP camera products include an application known as Sonia (/usr/bin/sonia) that provides the web interface and other services for controlling the IP camera remotely. Versions of Sonia included in firmware versions prior to DH_IPC-Consumer-Zi-Themis_Eng_P_V2.408.0000.11.R.20170621 do not validate input data length for the 'password' field of the web interface. A remote, unauthenticated attacker may submit a crafted POST request to the IP camera's Sonia web interface that may lead to out-of-bounds memory operations and loss of availability or remote code execution. The issue was originally identified by the researcher in firmware version DH_IPC-HX1X2X-Themis_EngSpnFrn_N_V2.400.0000.30.R.20160803.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2017-3223",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2017-3223"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2017,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
     {
       "name": "Ilya Smith",
       "label": "Linux ASLR and GNU Libc: Address Space Layout Computing and Defence, and 'Stack Canary' Protection Bypass",
