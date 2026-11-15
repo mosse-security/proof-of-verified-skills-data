@@ -50,6 +50,7 @@ class CollectionScraperContext:
     delay: float
     user_agent: str
     profile_directory: Path = Path("tmp/profiles")
+    cve_year: int | None = None
 
 
 @dataclass(frozen=True, slots=True)

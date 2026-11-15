@@ -15,6 +15,7 @@ class CveCollectionScraper(BaseCollectionScraper):
             output_directory=context.output_directory / "mitre",
             profile_directory=context.profile_directory / "mitre",
             overwrite=context.overwrite if context.overwrite is not None else True,
+            year=context.cve_year,
         ).run()
         return CollectionScraperResult(
             pages=result.cve_files,

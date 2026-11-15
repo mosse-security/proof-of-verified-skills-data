@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .base import CollectionScraperContext
+from .assessors.cve import archive_yearly_outputs
 from .discovery import DiscoveryError, discover_all_scrapers
 from .http import HttpClient
 from .individuals import build_assessor_individuals
@@ -30,6 +31,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output-dir", type=Path, default=Path("tmp/endorsements"))
     parser.add_argument("--html-dir", type=Path, default=Path("data/archives/html"))
     parser.add_argument("--profiles-dir", type=Path, default=Path("tmp/profiles"))
+    parser.add_argument(
+        "--cve-year",
+        type=int,
+        help="Process only this CVE year; use with the MITRE CVE scraper and sparse checkout.",
+    )
     parser.add_argument("--stats-file", type=Path, default=Path("data/stats.json"))
     parser.add_argument(
         "--assessor",
@@ -156,6 +162,7 @@ def main(argv: list[str] | None = None) -> int:
         delay=args.delay,
         user_agent=args.user_agent,
         profile_directory=args.profiles_dir,
+        cve_year=args.cve_year,
     )
     collection_report = (
         CollectionScraperRunner(
@@ -183,6 +190,11 @@ def main(argv: list[str] | None = None) -> int:
             assessor_id,
             count,
         )
+    if any(item.scraper_id == "cve-records" and not item.error for item in report.scrapers):
+        archived = archive_yearly_outputs(
+            args.output_dir / "mitre", Path("data/archives/cve")
+        )
+        logging.getLogger(__name__).info("Archived yearly MITRE CVE outputs: %d", archived)
     audit_conference_video_matching(
         assessors_directory=args.assessors_dir,
         output_directory=args.output_dir,

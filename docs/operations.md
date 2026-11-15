@@ -48,3 +48,28 @@ archives. Do not treat a failed external refresh as a parser failure.
 Use `tmp/` for transient endorsement, profile, and debugging output. It is
 ignored by Git. Do not use `.endorsements` or `.profiles` in the repository
 root.
+
+## CVE processing
+
+The CVE repository is processed from its current working tree; its JSON files
+are never copied into this repository. Process one year at a time to keep the
+working tree and temporary output bounded:
+
+```powershell
+git -C external/cvelistV5 restore --source=HEAD -- cves/2026
+C:\Python312\python.exe -m scrapers --assessor mitre --scraper cve-records `
+  --cve-year 2026 --overwrite --workers 1 --max-pages 0
+Remove-Item external/cvelistV5/cves/2026 -Recurse -Force
+```
+
+The parser records completed relative paths in
+`tmp/mitre/processed-cves-2026.txt`. The JSON staging collection is used to
+build assessor-local individual files. Completed historical years are
+compressed to `data/archives/cve/cve-records-YYYY.zip` and the uncompressed
+JSON is removed. If a year is resumed, the scraper reads that durable ZIP and
+recreates the temporary JSON only while processing. The current year remains
+unarchived so it can be refreshed normally.
+
+The yearly ZIP files are durable source archives and should be committed. The
+generated assessor-local individual files remain ignored, while canonical
+records are built from them.

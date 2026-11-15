@@ -37,6 +37,12 @@ CVE endorsements use the existing `subtitle` field to show the published CVSS
 severity, base score, and version. The endorsement `description` is the CVE
 record's published vulnerability description.
 
+CVE collection staging is partitioned by year. Each completed historical
+yearly JSON collection is compressed as a durable ZIP under
+`data/archives/cve/` after assessor-local individual files are built. The
+current year remains as temporary JSON for refreshes. Individual JSON records
+remain uncompressed for the normal merge pipeline.
+
 ## Stats
 
 Individual stats are derived from the final deduplicated endorsements. They
