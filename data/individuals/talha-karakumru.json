@@ -1,0 +1,72 @@
+{
+  "name": "Talha Karakumru",
+  "last-updated": "2026-11-15T23:15:16Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Talha Karakumru",
+      "label": "CVE-2025-34076",
+      "description": "An authenticated local file inclusion vulnerability exists in Microweber CMS versions <= 1.2.11 through misuse of the backup management API. Authenticated users can abuse the /api/BackupV2/upload and /api/BackupV2/download endpoints to read arbitrary files from the underlying filesystem. By specifying an absolute file path in the src parameter of the upload request, the server may relocate or delete the target file depending on the web service user’s privileges. The corresponding download endpoint can then be used to retrieve the file contents, effectively enabling local file disclosure. This behavior stems from insufficient validation of user-supplied paths and inadequate restrictions on file access and backup logic.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34076",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34076"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

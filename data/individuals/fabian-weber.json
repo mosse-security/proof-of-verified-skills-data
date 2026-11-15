@@ -1,0 +1,345 @@
+{
+  "name": "Fabian Weber",
+  "last-updated": "2026-11-15T23:14:59Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 8,
+    "assessors": 1,
+    "with-evidence": 8,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 8,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Fabian Weber",
+      "label": "CVE-2025-14095",
+      "description": "A \"Privilege boundary violation\" vulnerability is identified affecting multiple Radiometer Products. Exploitation of this vulnerability gives a user with physical access to the analyzer, the possibility to gain unauthorized access to functionalities outside the restricted environment. The vulnerability is due to weakness in the design of access control implementation in application software. \n\nOther related CVE's are CVE-2025-14096 & CVE-2025-14097.\n\nAffected customers have been informed about this vulnerability. This CVE is being published to provide transparency.\n\nRequired configuration for Exposure:\n\n\nPhysical access to the analyzer is needed.\n\nTemporary work Around:\n\n\nOnly authorized people can physically access the analyzer. \n\nPermanent solution:\nLocal Radiometer representatives will contact all affected customers to discuss a permanent solution.\n\n\n\nExploit Status:\nResearchers have provided working proof-of-concept. Radiometer is not aware of any publicly available exploit at the time of publication.                                                                                                                                                                                        Note: \n\nCVSS score 6.8 when underlying OS is Windows 7 or Windows XP Operating systems and CVSS score 5.7 when underlying OS is Windows 8 or Windows 10 operating systems.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14095",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14095"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fabian Weber",
+      "label": "CVE-2025-14096",
+      "description": "A vulnerability exists in multiple Radiometer products that allow an attacker with physical access to the analyzer possibility to extract credential information. The vulnerability is due to a weakness in the design and insufficient credential protection in operating system.\n\nOther related CVE's are CVE-2025-14095 & CVE-2025-14097.\n\n\n\nAffected customers have been informed about this vulnerability. This CVE is being published to provide transparency.\n\n\n\n\n\nRequired Configuration for Exposure:\n\n\nAttacker requires physical access to the analyzer.\n\n\n\nTemporary work Around:\nOnly authorized people can physically access the analyzer.\n\nPermanent solution:\nLocal Radiometer representatives will contact all affected customers to discuss a permanent solution.\n\nExploit Status:\n\n\nResearchers have provided a working proof-of-concept (PoC). Radiometer is not aware of any public exploit code at the time of this publication.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14096",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14096"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fabian Weber",
+      "label": "CVE-2025-14097",
+      "description": "A vulnerability in the application software of multiple Radiometer products may allow remote code execution and unauthorized device management when specific internal conditions are met. Exploitation requires that a remote connection is established with additional information obtained through other means.  The issue is caused by a weakness in the analyzer’s application software.                                                                                                                                                                                                Other related CVE's are CVE-2025-14095 & CVE-2025-14096.                                                                                                      Affected customers have been informed about this vulnerability. This CVE is being published to provide transparency.\n\n\n\nRequired Configuration for Exposure: Affected application software version is in use and remote support feature is enabled in the analyzer.                                                                                                                                                                        Temporary work Around: If the network is not considered secure, please remove the analyzer from the network.                         Permanent solution:\nCustomers should ensure the following:\n•  The network is secure, and access follows best practices.\nLocal Radiometer representatives will contact all affected customers to discuss a permanent solution.                                                     \nExploit Status:\n\n\nResearchers have provided working proof-of-concept (PoC). Radiometer is not aware of any publicly available exploits at the time of this publication.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14097",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14097"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fabian Weber",
+      "label": "CVE-2025-3321",
+      "description": "A predefined administrative account is not documented and cannot\nbe deactivated. This account cannot be misused from the network, only by local\nusers on the server.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3321",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-3321"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fabian Weber",
+      "label": "CVE-2025-3322",
+      "description": "An improper neutralization of inputs used in expression\nlanguage allows remote code execution with the highest privileges on the\nserver.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 10)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3322",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-3322"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fabian Weber",
+      "label": "CVE-2025-3365",
+      "description": "A missing protection against path traversal allows to access\nany file on the server.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 3.1, 9.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-3365",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-3365"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fabian Weber",
+      "label": "CVE-2025-34164",
+      "description": "A heap-based buffer overflow vulnerability in NetSupport Manager 14.x versions prior to 14.12.0000 allows a remote, unauthenticated attacker to cause a denial of service (DoS) or execute arbitrary code.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34164",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34164"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fabian Weber",
+      "label": "CVE-2025-34165",
+      "description": "A stack-based buffer overflow vulnerability in NetSupport Manager 14.x versions prior to 14.12.0000 allows a remote, unauthenticated attacker to cause a denial of service (DoS) or potentially leak a limited amount of memory.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34165",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34165"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

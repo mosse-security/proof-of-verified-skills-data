@@ -1,5 +1,8 @@
 # Documentation
 
+- [CVE data pipeline](cve.md) - source, identity decisions, evidence records, and durable outputs.
+- [CVE operations](cve-operations.md) - yearly processing, unattended runs, verification, and disk cleanup.
+
 - [Usage and operations](operations.md) — run, verify, and troubleshoot the pipeline.
 - [Architecture](architecture.md) — stages, ownership, and filesystem layout.
 - [Data contracts](data-contracts.md) — JSON shapes, timestamps, and merge rules.

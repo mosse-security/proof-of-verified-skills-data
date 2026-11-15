@@ -1,0 +1,273 @@
+{
+  "name": "Fredrik Alexandersson",
+  "last-updated": "2026-11-15T23:14:59Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 6,
+    "assessors": 1,
+    "with-evidence": 6,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 6,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Fredrik Alexandersson",
+      "label": "CVE-2023-32712",
+      "description": "In Splunk Enterprise versions below 9.1.0.2, 9.0.5.1, and 8.2.11.2, an attacker can inject American National Standards Institute (ANSI) escape codes into Splunk log files that, when a vulnerable terminal application reads them, can potentially, at worst, result in possible code execution in the vulnerable application. This attack requires a user to use a terminal application that supports the translation of ANSI escape codes to read the malicious log file locally in the vulnerable terminal, and to perform additional user interaction to exploit.\nUniversal Forwarder versions 9.1.0.1, 9.0.5, 8.2.11, and lower can be vulnerable in situations where they have management services active and accessible over the network. Universal Forwarder versions 9.0.x and 9.1.x bind management services to the local machine and are not vulnerable in this specific configuration. See SVD-2022-0605 for more information. Universal Forwarder versions 9.1 use Unix Domain Sockets (UDS) for communication, which further reduces the potential attack surface.\nThe vulnerability does not directly affect Splunk Enterprise or Universal Forwarder. The indirect impact on Splunk Enterprise and Universal Forwarder can vary significantly depending on the permissions in the vulnerable terminal application and where and how the user reads the malicious log file. For example, users can copy the malicious file from the Splunk Enterprise instance and read it on their local machine.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-32712",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-32712"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fredrik Alexandersson",
+      "label": "CVE-2023-3997",
+      "description": "Splunk SOAR versions lower than 6.1.0 are indirectly affected by a potential vulnerability accessed through the user’s terminal. A third party can send Splunk SOAR a maliciously crafted web request containing special ANSI characters to cause log file poisoning. When a terminal user attempts to view the poisoned logs, this can tamper with the terminal and cause possible malicious code execution from the terminal user’s action.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-3997",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-3997"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fredrik Alexandersson",
+      "label": "CVE-2023-4571",
+      "description": "In Splunk IT Service Intelligence (ITSI) versions below below 4.13.3, 4.15.3, or 4.17.1, a malicious actor can inject American National Standards Institute (ANSI) escape codes into Splunk ITSI log files that, when a vulnerable terminal application reads them, can run malicious code in the vulnerable application. This attack requires a user to use a terminal application that translates ANSI escape codes to read the malicious log file locally in the vulnerable terminal. The vulnerability also requires additional user interaction to succeed. \n\nThe vulnerability does not directly affect Splunk ITSI. The indirect impact on Splunk ITSI can vary significantly depending on the permissions in the vulnerable terminal application, as well as where and how the user reads the malicious log file. For example, users can copy the malicious file from Splunk ITSI and read it on their local machine.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2023-4571",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-4571"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2023,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fredrik Alexandersson",
+      "label": "CVE-2024-36997",
+      "description": "In Splunk Enterprise versions below 9.2.2, 9.1.5, and 9.0.10 and Splunk Cloud Platform versions below 9.1.2312, an admin user could store and execute arbitrary JavaScript code in the browser context of another Splunk user through the conf-web/settings REST endpoint. This could potentially cause a persistent cross-site scripting (XSS) exploit.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-36997",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-36997"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Fredrik Alexandersson",
+      "label": "CVE-2025-20370",
+      "description": "In Splunk Enterprise versions below 10.0.1, 9.4.4, 9.3.6, and 9.2.8, and Splunk Cloud Platform versions below 9.3.2411.108, 9.3.2408.118 and 9.2.2406.123, a user who holds a role that contains the high-privilege capability `change_authentication`, could send multiple LDAP bind requests to a specific internal endpoint, resulting in high server CPU usage, which could potentially lead to a denial of service (DoS) until the Splunk Enterprise instance is restarted. See https://help.splunk.com/en/splunk-enterprise/administer/manage-users-and-security/10.0/manage-splunk-platform-users-and-roles/define-roles-on-the-splunk-platform-with-capabilities and https://help.splunk.com/en/splunk-enterprise/administer/manage-users-and-security/10.0/use-ldap-as-an-authentication-scheme/configure-ldap-with-splunk-web#cfe47e31_007f_460d_8b3d_8505ffc3f0dd__Configure_LDAP_with_Splunk_Web for more information.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-20370",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-20370"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "authentication",
+          "directory-services",
+          "single-sign-on-and-federation"
+        ]
+      }
+    },
+    {
+      "name": "Fredrik Alexandersson",
+      "label": "CVE-2025-20384",
+      "description": "In Splunk Enterprise versions below 10.0.1, 9.4.6, 9.3.8, and 9.2.10, and Splunk Cloud Platform versions below 10.1.2507.4, 10.0.2503.6, and 9.3.2411.117.125, an unauthenticated attacker can inject American National Standards Institute (ANSI) escape codes into Splunk log files due to improper validation at the /en-US/static/ web endpoint. This may allow them to poison, forge, or obfuscate sensitive log data through specially crafted HTTP requests, potentially impacting log integrity and detection capabilities.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-20384",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-20384"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

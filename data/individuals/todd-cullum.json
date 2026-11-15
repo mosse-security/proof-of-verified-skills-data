@@ -1,0 +1,154 @@
+{
+  "name": "Todd Cullum",
+  "last-updated": "2026-11-15T23:15:17Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Todd Cullum",
+      "label": "CVE-2024-7260",
+      "description": "An open redirect vulnerability was found in Keycloak. A specially crafted URL can be constructed where the referrer and referrer_uri parameters are made to trick a user to visit a malicious webpage. A trusted URL can trick users and automation into believing that the URL is safe, when, in fact, it redirects to a malicious server. This issue can result in a victim inadvertently trusting the destination of the redirect, potentially leading to a successful phishing attack or other types of attacks.\r\n\r\nOnce a crafted URL is made, it can be sent to a Keycloak admin via email for example. This will trigger this vulnerability when the user visits the page and clicks the link. A malicious actor can use this to target users they know are Keycloak admins for further attacks. It may also be possible to bypass other domain-related security checks, such as supplying this as a OAuth redirect uri. The malicious actor can further obfuscate the redirect_uri using URL encoding, to hide the text of the actual malicious website domain.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 6.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7260",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-7260"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "oauth-oidc-and-saml"
+        ]
+      }
+    },
+    {
+      "name": "Todd Cullum",
+      "label": "CVE-2024-7318",
+      "description": "A vulnerability was found in Keycloak. Expired OTP codes are still usable when using FreeOTP when the OTP token period is set to 30 seconds (default). Instead of expiring and deemed unusable around 30 seconds in, the tokens are valid for an additional 30 seconds totaling 1 minute.\r\nA one time passcode that is valid longer than its expiration time increases the attack window for malicious actors to abuse the system and compromise accounts. Additionally, it increases the attack surface because at any given time, two OTPs are valid.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-7318",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-7318"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Todd Cullum",
+      "label": "CVE-2025-2515",
+      "description": "A vulnerability was found in BlueChi, a multi-node systemd service controller used in RHIVOS. This flaw allows a user with root privileges on a managed node (qm) to create or override systemd service unit files that affect the host node. This issue can lead to privilege escalation, unauthorized service execution, and potential system compromise.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 7.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-2515",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-2515"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

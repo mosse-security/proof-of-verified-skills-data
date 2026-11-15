@@ -1,0 +1,72 @@
+{
+  "name": "Edwin Török",
+  "last-updated": "2026-11-15T23:14:58Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Edwin Török",
+      "label": "CVE-2025-58146",
+      "description": "There are multiple issues.\n\n 1. Updates to the XAPI database sanitise input strings, but try\n    generating the notification using the unsanitised input.  This\n    causes the database's event thread to terminate and cease further\n    processing.\n\n 2. XAPI's UTF-8 encoder implements v3.0 of the Unicode spec, but XAPI\n    uses libraries which conform to the stricter v3.1 of the Unicode\n    spec.  This causes some strings to be accepted as valid UTF-8 by\n    XAPI, but rejected by other libraries in use.  Notably, such strings\n    can be entered into the database, after which the database can no\n    longer be loaded.\n\n 3. There is no input sanitisation for Map/Set updates on objects in the\n    XAPI database.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-58146",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-58146"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

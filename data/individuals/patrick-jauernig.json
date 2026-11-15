@@ -1,0 +1,72 @@
+{
+  "name": "Patrick Jauernig",
+  "last-updated": "2026-11-15T23:15:11Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Patrick Jauernig",
+      "label": "CVE-2025-7844",
+      "description": "Exporting a TPM based RSA key larger than 2048 bits from the TPM could overrun a stack buffer if the default `MAX_RSA_KEY_BITS=2048` is used. If your TPM 2.0 module supports RSA key sizes larger than 2048 bit and your applications supports creating or importing an RSA private or public key larger than 2048 bits and your application calls `wolfTPM2_RsaKey_TpmToWolf` on that key, then a stack buffer could be overrun. If the `MAX_RSA_KEY_BITS` build-time macro is set correctly (RSA bits match what TPM hardware is capable of) for the hardware target, then a stack overrun is not possible.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 4.0, 1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-7844",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-7844"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

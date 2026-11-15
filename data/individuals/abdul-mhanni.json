@@ -1,0 +1,813 @@
+{
+  "name": "Abdul Mhanni",
+  "last-updated": "2026-11-15T23:14:51Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 20,
+    "assessors": 1,
+    "with-evidence": 20,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 20,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-1131",
+      "description": "A local privilege escalation vulnerability exists in the safe_asterisk script included with the Asterisk toolkit package. When Asterisk is started via this script (common in SysV init or FreePBX environments), it sources all .sh files located in /etc/asterisk/startup.d/ as root, without validating ownership or permissions.\n\n\nNon-root users with legitimate write access to /etc/asterisk can exploit this behaviour by placing malicious scripts in the startup.d directory, which will then execute with root privileges upon service restart.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-1131",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-1131"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-12683",
+      "description": "The service employed by Everything, running as SYSTEM, communicates with the lower privileged Everything GUI via a named pipe. The named pipe has a NULL DACL and thus provides all users full permission over it; leading to potential Service Denial Of Service or Privilege escalation(only if chained with other elements) for a local low privilege user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-12683",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-12683"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66250",
+      "description": "Unauthenticated Arbitrary File Upload (status_contents.php) in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform Allows unauthenticated arbitrary file upload via /var/tdf/status_contents.php.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66250",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66250"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66251",
+      "description": "Unauthenticated Path Traversal with Arbitrary File Deletion in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform The deletehidden parameter allows path traversal deletion of arbitrary .tgz files.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66251",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66251"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66252",
+      "description": "Infinite Loop Denial of Service via Failed File Deletion in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform Infinite loop when unlink() fails in status_contents.php causing DoS. Due to the fact that the unlink operation is done in a while loop; if an immutable file is specified or otherwise a file in which the process has no permissions to delete; it would repeatedly attempt to do in a loop.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66252",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66252"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66253",
+      "description": "Unauthenticated OS Command Injection (start_upgrade.php) in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform User input passed directly to exec() allows remote code execution via start_upgrade.php. The `/var/tdf/start_upgrade.php` endpoint passes user-controlled `$_GET[\"filename\"]` directly into `exec()` without sanitization or shell escaping. Attackers can inject arbitrary shell commands using metacharacters (`;`, `|`, etc.) to achieve remote code execution as the web server user (likely root).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66253",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66253"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66254",
+      "description": "Unauthenticated Arbitrary File Deletion (upgrade_contents.php) in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform The deleteupgrade parameter allows unauthenticated deletion of arbitrary files. \n\nThe `deleteupgrade` parameter in `/var/www/upgrade_contents.php` allows unauthenticated deletion of arbitrary files in `/var/www/upload/` without any extension restriction or path sanitization, enabling attackers to remove critical system files.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66254",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66254"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66255",
+      "description": "Unauthenticated Arbitrary File Upload (upgrade_contents.php) in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform Missing signature validation allows uploading malicious firmware packages. \nThe firmware upgrade endpoint in `upgrade_contents.php` accepts arbitrary file uploads without validating file headers, cryptographic signatures, or enforcing .tgz format requirements, allowing malicious firmware injection. This endpoint also subsequently provides ways for arbitrary file uploads and subsequent remote code execution",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66255",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66255"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66256",
+      "description": "Unauthenticated Arbitrary File Upload (patch_contents.php) in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform Unrestricted file upload in patch_contents.php allows uploading malicious files.\n\nThe `/var/tdf/patch_contents.php` endpoint allows unauthenticated arbitrary file uploads without file type validation, MIME checking, or size restrictions beyond 16MB, enabling attackers to upload malicious files.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66256",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66256"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66257",
+      "description": "Unauthenticated Arbitrary File Deletion (patch_contents.php) in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform The deletepatch parameter allows unauthenticated deletion of arbitrary files.\nThe `deletepatch` parameter in `patch_contents.php` allows unauthenticated deletion of arbitrary files in `/var/www/patch/` directory without sanitization or access control checks.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66257",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66257"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66258",
+      "description": "Stored Cross-Site Scripting via XML Injection in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform Stored XSS via crafted filenames injected into patchlist.xml.\nUser-controlled filenames are directly concatenated into `patchlist.xml` without encoding, allowing injection of malicious JavaScript payloads via crafted filenames (e.g., `<img src=x onerror=alert()>.bin`). The XSS executes when ajax.js processes and renders the XML file.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66258",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66258"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66259",
+      "description": "Authenticated Root Remote Code Execution via improrer user input filtering in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform in main_ok.php user supplied data/hour/time is passed directly into date shell command",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66259",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66259"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66260",
+      "description": "PostgreSQL SQL Injection (status_sql.php) in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform SQL injection via sw1 and sw2 parameters in status_sql.php.\nThe `status_sql.php` endpoint constructs SQL UPDATE queries by directly concatenating user-controlled `sw1` and `sw2` parameters without using parameterized queries or `pg_escape_string()`. While PostgreSQL's `pg_exec` limitations prevent stacked queries, attackers can inject subqueries for data exfiltration and leverage verbose error messages for reconnaissance.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66260",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66260"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66261",
+      "description": "Unauthenticated OS Command Injection (restore_settings.php) in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform URL-decoded name parameter passed to exec() allows remote code execution.\nThe `/var/tdf/restore_settings.php` endpoint passes user-controlled `$_GET[\"name\"]` parameter through `urldecode()` directly into `exec()` without validation or escaping. Attackers can inject arbitrary shell commands using metacharacters (`;`, `|`, `&&`, etc.) to achieve unauthenticated remote code execution as the web server user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66261",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66261"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66262",
+      "description": "Arbitrary File Overwrite via Tar Extraction Path Traversal in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform Tar extraction with -C / allow arbitrary file overwrite via crafted archive.\nThe `restore_mozzi_memories.sh` script extracts user-controlled tar archives with `-C /` flag, depositing contents to the filesystem root without path validation. When combined with the unauthenticated file upload vulnerabilities (CVE-01, CVE-06, CVE-07), attackers can craft malicious .tgz archives containing path-traversed filenames (e.g., `etc/shadow`, `var/www/index.php`) to overwrite critical system files in writable directories, achieving full system compromise.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66262",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66262"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66263",
+      "description": "Unauthenticated Arbitrary File Read via Null Byte Injection in DB Electronica Telecomunicazioni S.p.A. Mozart FM Transmitter versions 30, 50, 100, 300, 500, 1000, 2000, 3000, 3500, 6000, 7000 allows an attacker to perform Null byte injection in download_setting.php allows reading arbitrary files.\nThe `/var/tdf/download_setting.php` endpoint constructs file paths by concatenating user-controlled `$_GET['filename']` with a forced `.tgz` extension. Running on PHP 5.3.2 (pre-5.3.4), the application is vulnerable to null byte injection (%00), allowing attackers to bypass the extension restriction and traverse paths. By requesting `filename=../../../../etc/passwd%00`, the underlying C functions treat the null byte as a string terminator, ignoring the appended `.tgz` and enabling unauthenticated arbitrary file disclosure of any file readable by the web server user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66263",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66263"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66264",
+      "description": "The CMService.exe service runs with SYSTEM privileges and contains an unquoted service path. This allows a local attacker with write privileges to the filesystem to insert a malicious executable in the path, leading to privilege escalation.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66264",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66264"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66265",
+      "description": "CMService.exe creates the C:\\\\usr directory and subdirectories with insecure permissions, granting write access to all authenticated users. This allows attackers to replace configuration files (such as snmp.conf) or hijack DLLs to escalate privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66265",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66265"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66266",
+      "description": "The RupsMon.exe service executable in UPSilon 2000 has insecure permissions, allowing the 'Everyone' group Full Control. A local attacker can replace the executable with a malicious binary to execute code with SYSTEM privileges or simply change the config path of the service to a command; starting and stopping the service to immediately achieve code execution and privilege escalation",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66266",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66266"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Abdul Mhanni",
+      "label": "CVE-2025-66269",
+      "description": "The RupsMon and USBMate services in UPSilon 2000 run with SYSTEM privileges and contain unquoted service paths. This allows a local attacker to perform path interception and escalate privileges if they have write permissions to the directories proceeding that of which the real service executables live in",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-66269",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-66269"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

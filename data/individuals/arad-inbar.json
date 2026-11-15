@@ -1,0 +1,115 @@
+{
+  "name": "Arad Inbar",
+  "last-updated": "2026-11-15T23:14:53Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 1,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Arad Inbar",
+      "label": "CVE-2025-59088",
+      "description": "If kdcproxy receives a request for a realm which does not have server addresses defined in its configuration, by default, it will query SRV records in the DNS zone matching the requested realm name. This creates a server-side request forgery vulnerability, since an attacker could send a request for a realm matching a DNS zone where they created SRV records pointing to arbitrary ports and hostnames (which may resolve to loopback or internal IP addresses). This vulnerability can be exploited to probe internal network topology and firewall rules, perform port scanning, and exfiltrate data. Deployments where\nthe \"use_dns\" setting is explicitly set to false are not affected.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 3.1, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59088",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59088"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Arad Inbar",
+      "label": "CVE-2025-59089",
+      "description": "If an attacker causes kdcproxy to connect to an attacker-controlled KDC server (e.g. through server-side request forgery), they can exploit the fact that kdcproxy does not enforce bounds on TCP response length to conduct a denial-of-service attack. While receiving the KDC's response, kdcproxy copies the entire buffered stream into a new\nbuffer on each recv() call, even when the transfer is incomplete, causing excessive memory allocation and CPU usage. Additionally, kdcproxy accepts incoming response chunks as long as the received data length is not exactly equal to the length indicated in the response\nheader, even when individual chunks or the total buffer exceed the maximum length of a Kerberos message. This allows an attacker to send unbounded data until the connection timeout is reached (approximately 12 seconds), exhausting server memory or CPU resources. Multiple concurrent requests can cause accept queue overflow, denying service to legitimate clients.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 5.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59089",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59089"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": []
+      }
+    }
+  ]
+}

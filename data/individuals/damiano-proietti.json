@@ -1,0 +1,111 @@
+{
+  "name": "Damiano Proietti",
+  "last-updated": "2026-11-15T23:14:56Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Damiano Proietti",
+      "label": "CVE-2025-34033",
+      "description": "An OS command injection vulnerability exists in the Blue Angel Software Suite running on embedded Linux devices via the ping_addr parameter in the webctrl.cgi script. The application fails to properly sanitize input before passing it to the system-level ping command. An authenticated attacker can inject arbitrary commands by appending shell metacharacters to the ping_addr parameter in a crafted GET request to /cgi-bin/webctrl.cgi?action=pingtest_update. The command's output is reflected in the application's web interface, enabling attackers to view results directly. Default and backdoor credentials can be used to access the interface and exploit the issue. Successful exploitation results in arbitrary command execution as the root user. Exploitation evidence was observed by the Shadowserver Foundation on 2025-01-26 UTC.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34033",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34033"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Damiano Proietti",
+      "label": "CVE-2025-34034",
+      "description": "A hardcoded credential vulnerability exists in the Blue Angel Software Suite deployed on embedded Linux systems. The application contains multiple known default and hardcoded user accounts that are not disclosed in public documentation. These accounts allow unauthenticated or low-privilege attackers to gain administrative access to the device’s web interface. Exploitation evidence was observed by the Shadowserver Foundation on 2025-01-26 UTC.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34034",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34034"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

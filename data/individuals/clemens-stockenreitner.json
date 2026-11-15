@@ -1,0 +1,813 @@
+{
+  "name": "Clemens Stockenreitner",
+  "last-updated": "2026-11-15T23:14:56Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 20,
+    "assessors": 1,
+    "with-evidence": 20,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 20,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59090",
+      "description": "On the exos 9300 server, a SOAP API is reachable on port 8002. This API does not require any authentication prior to sending requests. Therefore, network access to the exos server allows e.g. the creation of arbitrary access log events as well as querying the 2FA PINs associated with the enrolled chip cards.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59090",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59090"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59091",
+      "description": "Multiple hardcoded credentials have been identified, which are allowed to sign-in to the exos 9300 datapoint server running on port 1004 and 1005. This server is used for relaying status information from and to the Access Managers. This information, among other things, is used to graphically visualize open doors and alerts. However, controlling the Access Managers via this interface is also possible.\n\nTo send and receive status information, authentication is necessary. The Kaba exos 9300 application contains hard-coded credentials for four different users, which are allowed to login to the datapoint server and receive as well as send information, including commands to open arbitrary doors.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59091",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59091"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59092",
+      "description": "An RPC service, which is part of exos 9300, is reachable on port 4000, run by the process FSMobilePhoneInterface.exe. This service is used for interprocess communication between services and the Kaba exos 9300 GUI, containing status information about the Access Managers. Interacting with the service does not require any authentication. Therefore, it is possible to send arbitrary status information about door contacts etc. without prior authentication.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59092",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59092"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59093",
+      "description": "Exos 9300 instances are using a randomly generated database password to connect to the configured MSSQL server. The password is derived from static random values, which are concatenated to the hostname and a random string that can be read by every user from the registry. This allows an attacker to derive the database password and get authenticated access to the central exos 9300 database as the user Exos9300Common. The user has the roles ExosDialog and ExosDialogDotNet assigned, which are able to read most tables of the database as well as update and insert into many tables.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59093",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59093"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59094",
+      "description": "A local privilege escalation vulnerability has been identified in the Kaba exos 9300 System management application (d9sysdef.exe). Within this application it is possible to specify an arbitrary executable as well as the weekday and start time, when the specified executable should be run with SYSTEM privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59094",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59094"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59095",
+      "description": "The program libraries (DLL) and binaries used by exos 9300 contain multiple hard-coded secrets. One notable example is the function \"EncryptAndDecrypt\" in the library Kaba.EXOS.common.dll. This algorithm uses a simple XOR encryption technique combined with a cryptographic key (cryptoKey) to transform each character of the input string. However, it's important to note that this implementation does not provide strong encryption and should not be considered secure for sensitive data. It's more of a custom encryption approach rather than a common algorithm used in cryptographic applications. The key itself is static and based on the founder's name of the company. The functionality is for example used to encrypt the user PINs before storing them in the MSSQL database.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59095",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59095"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59096",
+      "description": "The default password for the extended admin user mode in the application U9ExosAdmin.exe (\"Kaba 9300 Administration\") is hard-coded in multiple locations as well as documented in the locally stored user documentation.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 4.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59096",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59096"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59097",
+      "description": "The exos 9300 application can be used to configure Access Managers (e.g. 92xx, 9230 and 9290). The configuration is done in a graphical user interface on the dormakaba exos server. As soon as the save button is clicked in exos 9300, the whole configuration is sent to the selected Access Manager via SOAP. The SOAP request is sent without any prior authentication or authorization by default. Though authentication and authorization can be configured using IPsec for 92xx-K5 devices and mTLS for 92xx-K7 devices, it is not enabled by default and must therefore be activated with additional steps.\n\nThis insecure default allows an attacker with network level access to completely control the whole environment. An attacker is for example easily able to conduct the following tasks without prior authentication:\n- Re-configure Access Managers (e.g. remove alarming system requirements)\n- Freely re-configure the inputs and outputs\n- Open all connected doors permanently\n- Open all doors for a defined time interval\n- Change the admin password\n- and many more\n\nNetwork level access can be gained due to an insufficient network segmentation as well as missing LAN firewalls. Devices with an insecure configuration have been identified to be directly exposed to the internet.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59097",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59097"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59098",
+      "description": "The Access Manager is offering a trace functionality to debug errors and issues with the device. The trace functionality is implemented as a simple TCP socket. A tool called TraceClient.exe, provided by dormakaba via the Access Manager web interface, is used to connect to the socket and receive debug information. The data is permanently broadcasted on the TCP socket. The socket can be accessed without any authentication or encryption. \n\nThe transmitted data is based on the set verbosity level. The verbosity level can be set using the http(s) endpoint with the service interface password or with the guessable identifier of the device via the SOAP interface.\n\nThe transmitted data contains sensitive data like the Card ID as well as all button presses on Registration units. This allows an attacker with network level access to retrieve all entered PINs on a registration unit.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59098",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59098"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59099",
+      "description": "The Access Manager is using the open source web server CompactWebServer written in C#. This web server is affected by a path traversal vulnerability, which allows an attacker to directly access files via simple GET requests without prior authentication. \n\nHence, it is possible to retrieve all files stored on the file system, including the SQLite database Database.sq3, containing badge information and the corresponding PIN codes. Additionally, when trying to access certain files, the web server crashes and becomes unreachable for about 60 seconds. This can be abused to continuously send the request and cause denial of service.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59099",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59099"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59100",
+      "description": "The web interface offers a functionality to export the internal SQLite database. After executing the database export, an automatic download is started and the device reboots. After rebooting, the exported database is deleted and cannot be accessed anymore. However, it was noticed that sometimes the device does not reboot and therefore the exported database is not deleted, or the device reboots and the export is not deleted for unknown reasons. The path where the database export is located can be accessed without prior authentication. This leads to the fact that an attacker might be able to get access to the exported database without prior authentication. \nThe database includes sensitive data like passwords, card pins, encrypted Mifare sitekeys and much more.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59100",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59100"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59101",
+      "description": "Instead of typical session tokens or cookies, it is verified on a per-request basis if the originating IP address has once successfully logged in. As soon as an authentication request from a certain source IP is successful, the IP address is handled as authenticated. No other session information is stored. Therefore, it is possible to spoof the IP address of a logged-in user to gain access to the Access Manager web interface.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59101",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59101"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59102",
+      "description": "The web server of the Access Manager offers a functionality to download a backup of the local database stored on the device. This database contains the whole configuration. This includes encrypted MIFARE keys, card data, user PINs and much more. The PINs are even stored unencrypted. Combined with the fact that an attacker can easily get access to the backup functionality by abusing the session management issue (CVE-2025-59101), or by exploiting the weak default password (CVE-2025-59108), or by simply setting a new password without prior authentication via the SOAP API (CVE-2025-59097), it is easily possible to access the sensitive data on the device.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59102",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59102"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59103",
+      "description": "The Access Manager 92xx in hardware revision K7 is based on Linux instead of Windows CE embedded in older hardware revisions. In this new hardware revision it was noticed that an SSH service is exposed on port 22. By analyzing the firmware of the devices, it was noticed that there are two users with hardcoded and weak passwords that can be used to access the devices via SSH. The passwords can be also guessed very easily. The password of at least one user is set to a random value after the first deployment, with the restriction that the password is only randomized if the configured date is prior to 2022. Therefore, under certain circumstances, the passwords are not randomized. For example, if the clock is never set on the device, the battery of the clock module has been changed, the Access Manager has been factory reset and has not received a time yet.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59103",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59103"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59104",
+      "description": "With physical access to the device and enough time an attacker is able to solder test leads to the debug footprint (or use the 6-Pin tag-connect cable). Thus, the attacker gains access to the bootloader, where the kernel command line can be changed. An attacker is able to gain a root shell through this vulnerability.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59104",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59104"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59105",
+      "description": "With physical access to the device and enough time an attacker can desolder the flash memory, modify it and then reinstall it because of missing encryption. Thus, essential files, such as \"/etc/passwd\", as well as stored certificates, cryptographic keys, stored PINs and so on can be modified and read, in order to gain SSH root access on the Linux-based K7 model. On the Windows CE based K5 model, the password for the Access Manager can additionally be read in plain text from the stored SQLite database.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59105",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59105"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59106",
+      "description": "The binary serving the web server and executing basically all actions launched from the Web UI is running with root privileges. This is against the least privilege principle. If an attacker is able to execute code on the system via other vulnerabilities it is possible to directly execute commands with highest privileges.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59106",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59106"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59107",
+      "description": "Dormakaba provides the software FWServiceTool to update the firmware version of the Access Managers via the network. The firmware in some instances is provided in an encrypted ZIP file. Within this tool, the password used to decrypt the ZIP and extract the firmware is set statically and can be extracted. This password was valid for multiple observed firmware versions.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59107",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59107"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59108",
+      "description": "By default, the password for the Access Manager's web interface, is set to 'admin'. In the tested version changing the password was not enforced.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: CRITICAL (CVSS 4.0, 9.2)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59108",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59108"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Clemens Stockenreitner",
+      "label": "CVE-2025-59109",
+      "description": "The dormakaba registration units 9002 (PIN Pad Units) have an exposed UART header on the backside. The PIN pad is sending every button press to the UART interface. An attacker can use the interface to exfiltrate PINs. As the devices are explicitly built as Plug-and-Play to be easily replaced, an attacker is easily able to remove the device, install a hardware implant which connects to the UART and exfiltrates the data exposed via UART to another system (e.g. via WiFi).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.1)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-59109",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-59109"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

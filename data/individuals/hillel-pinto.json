@@ -1,0 +1,72 @@
+{
+  "name": "Hillel Pinto",
+  "last-updated": "2026-11-15T23:15:01Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Hillel Pinto",
+      "label": "CVE-2025-34352",
+      "description": "JumpCloud Remote Assist for Windows versions prior to 0.317.0 include an uninstaller that is invoked by the JumpCloud Windows Agent as NT AUTHORITY\\SYSTEM during agent uninstall or update operations. The Remote Assist uninstaller performs privileged create, write, execute, and delete actions on predictable files inside a user-writable %TEMP% subdirectory without validating that the directory is trusted or resetting its ACLs when it already exists. A local, low-privileged attacker can pre-create the directory with weak permissions and leverage mount-point or symbolic-link redirection to (a) coerce arbitrary file writes to protected locations, leading to denial of service (e.g., by overwriting sensitive system files), or (b) win a race to redirect DeleteFileW() to attacker-chosen targets, enabling arbitrary file or folder deletion and local privilege escalation to SYSTEM. This issue is fixed in JumpCloud Remote Assist 0.317.0 and affects Windows systems where Remote Assist is installed and managed through the Agent lifecycle.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34352",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34352"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

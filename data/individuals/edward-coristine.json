@@ -1,0 +1,72 @@
+{
+  "name": "Edward Coristine",
+  "last-updated": "2026-11-15T23:14:58Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Edward Coristine",
+      "label": "CVE-2025-6087",
+      "description": "A Server-Side Request Forgery (SSRF) vulnerability was identified in the @opennextjs/cloudflare package. The vulnerability stems from an unimplemented feature in the Cloudflare adapter for Open Next, which allowed unauthenticated users to proxy arbitrary remote content via the /_next/image endpoint.\n\nThis issue allowed attackers to load remote resources from arbitrary hosts under the victim site’s domain for any site deployed using the Cloudflare adapter for Open Next. \n\n\n\n\nFor example:\n\n https://victim-site.com/_next/image?url=https://attacker.com \n\nIn this example, attacker-controlled content from attacker.com is served through the victim site’s domain (victim-site.com), violating the same-origin policy and potentially misleading users or other services.\n\n\n\n\nImpact:\n\n  *  SSRF via unrestricted remote URL loading\n\n\n\n\n  *  Arbitrary remote content loading\n\n\n\n\n  *  Potential internal service exposure or phishing risks through domain abuse\n\n\n\n\n\n\n\nMitigation:\n\nThe following mitigations have been put in place:\n\n  *  Server side updates to Cloudflare’s platform to restrict the content loaded via the /_next/image endpoint to images. The update automatically mitigates the issue for all existing and any future sites deployed to Cloudflare using the affected version of the Cloudflare adapter for Open Next\n\n\n\n\n  *   Root cause fix https://github.com/opennextjs/opennextjs-cloudflare/pull/727  to the Cloudflare adapter for Open Next. The patched version of the adapter is found here  @opennextjs/cloudflare@1.3.0 https://www.npmjs.com/package/@opennextjs/cloudflare/v/1.3.0 \n\n\n  *   Package dependency update https://github.com/cloudflare/workers-sdk/pull/9608  to create-cloudflare (c3) to use the fixed version of the Cloudflare adapter for Open Next. The patched version of create-cloudflare is found here:  create-cloudflare@2.49.3 https://www.npmjs.com/package/create-cloudflare/v/2.49.3 \n\n\n\n\nIn addition to the automatic mitigation deployed on Cloudflare’s platform, we encourage affected  users to upgrade to @opennext/cloudflare v1.3.0 and use the  remotePatterns  https://nextjs.org/docs/pages/api-reference/components/image#remotepatterns  filter in Next config https://nextjs.org/docs/pages/api-reference/components/image#remotepatterns  if they need to allow-list external urls with images assets.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.8)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-6087",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-6087"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Krishna Gudimetla",
+  "last-updated": "2026-11-15T23:15:05Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Krishna Gudimetla",
+      "label": "CVE-2025-12060",
+      "description": "The keras.utils.get_file API in Keras, when used with the extract=True option for tar archives, is vulnerable to a path traversal attack. The utility uses Python's tarfile.extractall function without the filter=\"data\" feature. A remote attacker can craft a malicious tar archive containing special symlinks, which, when extracted, allows them to write arbitrary files to any location on the filesystem outside of the intended destination folder. This vulnerability is linked to the underlying Python tarfile weakness, identified as CVE-2025-4517. Note that upgrading Python to one of the versions that fix CVE-2025-4517 (e.g. Python 3.13.4) is not enough. One additionally needs to upgrade Keras to a version with the fix (Keras 3.12).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-12060",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-12060"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

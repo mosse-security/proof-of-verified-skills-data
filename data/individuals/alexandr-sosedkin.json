@@ -1,0 +1,72 @@
+{
+  "name": "Alexandr Sosedkin",
+  "last-updated": "2026-11-15T23:14:52Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Alexandr Sosedkin",
+      "label": "CVE-2025-4575",
+      "description": "Issue summary: Use of -addreject option with the openssl x509 application adds\na trusted use instead of a rejected use for a certificate.\n\nImpact summary: If a user intends to make a trusted certificate rejected for\na particular use it will be instead marked as trusted for that use.\n\nA copy & paste error during minor refactoring of the code introduced this\nissue in the OpenSSL 3.5 version. If, for example, a trusted CA certificate\nshould be trusted only for the purpose of authenticating TLS servers but not\nfor CMS signature verification and the CMS signature verification is intended\nto be marked as rejected with the -addreject option, the resulting CA\ncertificate will be trusted for CMS signature verification purpose instead.\n\nOnly users which use the trusted certificate format who use the openssl x509\ncommand line application to add rejected uses are affected by this issue.\nThe issues affecting only the command line application are considered to\nbe Low severity.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue.\n\nOpenSSL 3.4, 3.3, 3.2, 3.1, 3.0, 1.1.1 and 1.0.2 are also not affected by this\nissue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-4575",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-4575"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

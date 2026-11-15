@@ -1,0 +1,432 @@
+{
+  "name": "Florian Stuhlmann",
+  "last-updated": "2026-11-15T23:14:59Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 10,
+    "assessors": 1,
+    "with-evidence": 10,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 10,
+      "identity-and-access-management": 2,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-25975",
+      "description": "The application implements an up- and downvote function which alters a value within a JSON file. The POST parameters are not filtered properly and therefore an arbitrary file can be overwritten. The file can be controlled by an authenticated attacker, the content cannot be controlled. It is possible to overwrite all files for which the webserver has write access. It is required to supply a relative path (path traversal).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-25975",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-25975"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-25976",
+      "description": "When LDAP authentication is activated in the configuration it is possible to obtain reflected XSS execution by creating a custom URL that the victim only needs to open in order to execute arbitrary JavaScript code in the victim's browser. This is due to a fault in the file login.php where the content of \"$_SERVER['PHP_SELF']\" is reflected into the HTML of the website. Hence the attacker does not need a valid account in order to exploit this issue.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-25976",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-25976"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "authentication",
+          "directory-services"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-25977",
+      "description": "The application does not change the session token when using the login or logout functionality. An attacker can set a session token in the victim's browser (e.g. via XSS) and prompt the victim to log in (e.g. via a redirect to the login page). This results in the victim's account being taken over.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-25977",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-25977"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-50588",
+      "description": "An unauthenticated attacker with access to the local network of the \nmedical office can use known default credentials to gain remote DBA \naccess to the Elefant Firebird database. The data in the database \nincludes patient data and login credentials among other sensitive data. \nIn addition, this enables an attacker to create and overwrite arbitrary \nfiles on the server filesystem with the rights of the Firebird database \n(\"NT AUTHORITY\\SYSTEM\").",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-50588",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-50588"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-50589",
+      "description": "An unauthenticated attacker with access to the local network of the \nmedical office can query an unprotected Fast Healthcare Interoperability\n Resources (FHIR) API to get access to sensitive electronic health \nrecords (EHR).",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-50589",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-50589"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-50590",
+      "description": "Attackers with local access to the medical office computer can \nescalate their Windows user privileges to \"NT AUTHORITY\\SYSTEM\" by \noverwriting one of two Elefant service binaries with weak permissions. The default installation directory of Elefant is \"C:\\Elefant1\" which is \nwritable for all users. In addition, the Elefant installer registers two\n Firebird database services which are running as “NT AUTHORITY\\SYSTEM”. \n\nPath: C:\\Elefant1\\Firebird_2\\bin\\fbserver.exe\n\nPath: C:\\Elefant1\\Firebird_2\\bin\\fbguard.exe\n\n\nBoth service binaries are user writable. This means that a local \nattacker can rename one of the service binaries, replace the service \nexecutable with a new executable, and then restart the system. Once the \nsystem has rebooted, the new service binary is executed as \"NT \nAUTHORITY\\SYSTEM\".",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-50590",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-50590"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-50591",
+      "description": "An attacker with local access the to medical office computer can \nescalate his Windows user privileges to \"NT AUTHORITY\\SYSTEM\" by \nexploiting a command injection vulnerability in the Elefant Update \nService. The command injection can be exploited by communicating with \nthe Elefant Update Service which is running as \"SYSTEM\" via Windows \nNamed Pipes.The Elefant Software Updater (ESU) consists of two components. An ESU\n service which runs as \"NT AUTHORITY\\SYSTEM\" and an ESU tray client \nwhich communicates with the service to update or repair the installation\n and is running with user permissions. The communication is implemented \nusing named pipes. A crafted message of type \n\"MessageType.SupportServiceInfos\" can be sent to the local ESU service \nto inject commands, which are then executed as \"NT AUTHORITY\\SYSTEM\".",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-50591",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-50591"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-50592",
+      "description": "An attacker with local access the to medical office computer can \nescalate his Windows user privileges to \"NT AUTHORITY\\SYSTEM\" by \nexploiting a race condition in the Elefant Update Service during the \nrepair or update process. When using the repair function, the service queries the server for a \nlist of files and their hashes. In addition, instructions to execute \nbinaries to finalize the repair process are included. The executables are executed as \"NT AUTHORITY\\SYSTEM\" after they are \ncopied over to the user writable installation folder (C:\\Elefant1). This\n means that a user can overwrite either \"PostESUUpdate.exe\" or \n\"Update_OpenJava.exe\" in the time frame after the copy and before the \nexecution of the final repair step. The overwritten executable is then executed as \"NT AUTHORITY\\SYSTEM\".",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-50592",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-50592"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2024-50593",
+      "description": "An attacker with local access to the medical office computer can \naccess restricted functions of the Elefant Service tool by using a \nhard-coded \"Hotline\" password in the Elefant service binary, which is shipped with the software.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-50593",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-50593"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Florian Stuhlmann",
+      "label": "CVE-2025-9943",
+      "description": "An SQL injection vulnerability has been identified in the \"ID\" attribute of the SAML response when the replay cache of the Shibboleth Service Provider (SP) is configured to use an SQL database as storage service. An unauthenticated attacker can exploit this issue via blind SQL injection, allowing for the extraction of arbitrary data from the database, if the database connection is configured to use the ODBC plugin. The vulnerability arises from insufficient escaping of single quotes in the class SQLString (file odbc-store.cpp, lines 253-271).\n\nThis issue affects Shibboleth Service Provider through 3.5.0.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-9943",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-9943"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research",
+        "identity-and-access-management"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ],
+        "identity-and-access-management": [
+          "oauth-oidc-and-saml"
+        ]
+      }
+    }
+  ]
+}

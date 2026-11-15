@@ -1,0 +1,72 @@
+{
+  "name": "Mike Buhot",
+  "last-updated": "2026-11-15T23:15:09Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Mike Buhot",
+      "label": "CVE-2025-4754",
+      "description": "Insufficient Session Expiration vulnerability in team-alembic ash_authentication_phoenix allows a session token captured before sign-out to remain usable afterwards.\n\nThe default sign_out/2 that AshAuthentication.Phoenix.Controller injects into an application's auth controller only calls Plug.Conn.clear_session/1. It never revokes the stored session or bearer tokens, so a token obtained before sign-out, through script injection, interception or device theft, keeps authenticating until its own expiry. Changing the password still revokes it.\n\nThis issue affects ash_authentication_phoenix: from 0.1.0 before 2.10.0.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 4.0, 2.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-4754",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-4754"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

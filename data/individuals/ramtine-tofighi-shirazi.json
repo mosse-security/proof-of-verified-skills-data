@@ -1,0 +1,111 @@
+{
+  "name": "Ramtine Tofighi Shirazi",
+  "last-updated": "2026-11-15T23:15:13Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 2,
+    "assessors": 1,
+    "with-evidence": 2,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 2,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Ramtine Tofighi Shirazi",
+      "label": "CVE-2025-14547",
+      "description": "An integer underflow vulnerability is present in Silicon Lab’s implementation of PSA Crypto and SE Manager EC-JPAKE APIs during ZKP parsing. Triggering the underflow can lead to a hard fault, causing a temporary denial of service.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: LOW (CVSS 4.0, 2.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-14547",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-14547"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Ramtine Tofighi Shirazi",
+      "label": "CVE-2025-69209",
+      "description": "ArduinoCore-avr contains the source code and configuration files of the Arduino AVR Boards platform. A vulnerability in versions prior to 1.8.7 allows an attacker to trigger a stack-based buffer overflow when converting floating-point values to strings with high precision. By passing very large `decimalPlaces` values to the affected String constructors or concat methods, the `dtostrf` function writes beyond fixed-size stack buffers, causing memory corruption and denial of service. Under specific conditions, this could enable arbitrary code execution on AVR-based Arduino boards.\n\n### Patches\n\n- The Fix is included starting from the `1.8.7` release available from the following link [ArduinoCore-avr v1.8.7](https://github.com/arduino/ArduinoCore-avr)\n\n- The Fixing Commit is available at the following link [1a6a417f89c8901dad646efce74ae9d3ddebfd59](https://github.com/arduino/ArduinoCore-avr/pull/613/commits/1a6a417f89c8901dad646efce74ae9d3ddebfd59)\n\n### References\n\n- [ASEC-26-001 ArduinoCore-avr vXXXX Resolves Buffer Overflow Vulnerability](https://support.arduino.cc/hc/en-us/articles/XXXXX)\n\n### Credits\n\n- Maxime Rossi Bellom and Ramtine Tofighi Shirazi from SecMate (https://secmate.dev/)",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.9)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-69209",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-69209"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "name": "Brecht Snijders",
+  "last-updated": "2026-11-15T23:14:55Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Brecht Snijders",
+      "label": "CVE-2025-10702",
+      "description": "Improper Control of Generation of Code ('Code Injection') vulnerability in Progress DataDirect Connect for JDBC drivers, Progress DataDirect Open Access JDBC driver and Hybrid Data Pipeline allows Remote Code Inclusion.\n\n\nThe SpyAttribute connection option implemented by the DataDirect Connect for JDBC drivers, DataDirect Hybrid Data Pipeline JDBC driver and the DataDirect OpenAccess JDBC driver supports an undocumented syntax construct for the option value that if discovered can be used by an attacker.  If an application allows an end user to specify a value for the SpyAttributes connection option then an attacker can use the undocumented syntax to cause the driver to load an arbitrary class on the class path and execute a constructor on that class.  \n\n\nThis issue affects:\n\nDataDirect Connect for JDBC for Amazon Redshift: through 6.0.0.001392, fixed in 6.0.0.001541\n\nDataDirect Connect for JDBC for Apache Cassandra: through 6.0.0.000805, fixed in 6.0.0.000833\n\nDataDirect Connect for JDBC for Hive: through 6.0.1.001499, fixed in 6.0.1.001628\n\nDataDirect Connect for JDBC for Apache Impala: through 6.0.0.001155, fixed in 6.0.0.001279\n\nDataDirect Connect for JDBC for Apache SparkSQL: through 6.0.1.001222, fixed in 6.0.1.001344\n\nDataDirect Connect for JDBC Autonomous REST Connector: through 6.0.1.006961, fixed in 6.0.1.007063\n\nDataDirect Connect for JDBC for DB2: through 6.0.0.000717, fixed in 6.0.0.000964\n\nDataDirect Connect for JDBC for Google Analytics 4: through 6.0.0.000454, fixed in 6.0.0.000525\n\nDataDirect Connect for JDBC for Google BigQuery: through 6.0.0.002279, fixed in 6.0.0.002410\nDataDirect Connect for JDBC for Greenplum: through 6.0.0.001712, fixed in 6.0.0.001727\nDataDirect Connect for JDBC for Informix: through 6.0.0.000690, fixed in 6.0.0.0851\n\n\nDataDirect Connect for JDBC for Microsoft Dynamics 365: through 6.0.0.003161, fixed in 6.0.0.3198\n\nDataDirect Connect for JDBC for Microsoft SQLServer: through 6.0.0.001936, fixed in 6.0.0.001957\n\nDataDirect Connect for JDBC for Microsoft Sharepoint: through 6.0.0.001559, fixed in 6.0.0.001587\n\nDataDirect Connect for JDBC for MongoDB: through 6.1.0.001654, fixed in 6.1.0.001669\n\nDataDirect Connect for JDBC for MySQL: through 5.1.4.000330, fixed in 5.1.4.000364\n\nDataDirect Connect for JDBC for Oracle Database: through 6.0.0.001747, fixed in 6.0.0.001776\n\nDataDirect Connect for JDBC for Oracle Eloqua: through 6.0.0.001438, fixed in 6.0.0.001458\n\nDataDirect Connect for JDBC for Oracle Sales Cloud: through 6.0.0.001225, fixed in 6.0.0.001316\n\nDataDirect Connect for JDBC for Oracle Service Cloud: through 5.1.4.000298, fixed in 5.1.4.000309\nDataDirect Connect for JDBC for PostgreSQL: through 6.0.0.001843, fixed in 6.0.0.001856\n\nDataDirect Connect for JDBC for Progress OpenEdge: through 5.1.4.000187, fixed in 5.1.4.000189\n\nDataDirect Connect for JDBC for Salesforce: through 6.0.0.003020, fixed in 6.0.0.003125\nDataDirect Connect for JDBC for SAP HANA: through 6.0.0.000879, product retired\n\nDataDirect Connect for JDBC for SAP S/4 HANA: through 6.0.1.001818, fixed in 6.0.1.001858\n\nDataDirect Connect for JDBC for Sybase ASE: through 5.1.4.000161, fixed in 5.1.4.000162\n\nDataDirect Connect for JDBC for Snowflake: through 6.0.1.001821, fixed in 6.0.1.001856\n\nDataDirect Hybrid Data Pipeline Server: through 4.6.2.3309, fixed in 4.6.2.3430\n\nDataDirect Hybrid Data Pipeline JDBC Driver: through 4.6.2.0607, fixed in 4.6.2.1023\n\nDataDirect Hybrid Data Pipeline On Premises Connector: through 4.6.2.1223, fixed in 4.6.2.1339\nDataDirect Hybrid Data Pipeline Docker: through 4.6.2.3316, fixed in 4.6.2.3430\n\nDataDirect OpenAccess JDBC Driver: through 8.1.0.0177, fixed in 8.1.0.0183\n\nDataDirect OpenAccess JDBC Driver: through 9.0.0.0019, fixed in 9.0.0.0022",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-10702",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-10702"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Brecht Snijders",
+      "label": "CVE-2025-10703",
+      "description": "Improper Control of Generation of Code ('Code Injection') vulnerability in Progress DataDirect Connect for JDBC drivers, Progress DataDirect Open Access JDBC driver and Hybrid Data Pipeline allows Remote Code Inclusion.\n\nThe SpyAttribute connection option implemented by the DataDirect Connect for JDBC drivers, DataDirect Hybrid Data Pipeline JDBC driver and the DataDirect OpenAccess JDBC driver log=(file) construct allows the user to specify an arbitrary file for the JDBC driver to write its log information to.  If an application allows an end user to specify a value for the SpyAttributes connection option then an attacker could cause java script to be written to a log file.  If the log file was in the correct location with the correct extension, an application server could see that log file as a resource to be served.  The attacker could fetch the resource from the server causing the java script to be executed.\n\n\n\n\n\nThis issue affects:\n\n\n\nDataDirect Connect for JDBC for Amazon Redshift: through 6.0.0.001392, fixed in 6.0.0.001541\n\nDataDirect Connect for JDBC for Apache Cassandra: through 6.0.0.000805, fixed in 6.0.0.000833\n\nDataDirect Connect for JDBC for Hive: through 6.0.1.001499, fixed in 6.0.1.001628\n\nDataDirect Connect for JDBC for Apache Impala: through 6.0.0.001155, fixed in 6.0.0.001279\n\nDataDirect Connect for JDBC for Apache SparkSQL: through 6.0.1.001222, fixed in 6.0.1.001344\n\nDataDirect Connect for JDBC Autonomous REST Connector: through 6.0.1.006961, fixed in 6.0.1.007063\n\nDataDirect Connect for JDBC for DB2: through 6.0.0.000717, fixed in 6.0.0.000964\n\nDataDirect Connect for JDBC for Google Analytics 4: through 6.0.0.000454, fixed in 6.0.0.000525\n\nDataDirect Connect for JDBC for Google BigQuery: through 6.0.0.002279, fixed in 6.0.0.002410\nDataDirect Connect for JDBC for Greenplum: through 6.0.0.001712, fixed in 6.0.0.001727\nDataDirect Connect for JDBC for Informix: through 6.0.0.000690, fixed in 6.0.0.0851\n\n\nDataDirect Connect for JDBC for Microsoft Dynamics 365: through 6.0.0.003161, fixed in 6.0.0.3198\n\nDataDirect Connect for JDBC for Microsoft SQLServer: through 6.0.0.001936, fixed in 6.0.0.001957\n\nDataDirect Connect for JDBC for Microsoft Sharepoint: through 6.0.0.001559, fixed in 6.0.0.001587\n\nDataDirect Connect for JDBC for MongoDB: through 6.1.0.001654, fixed in 6.1.0.001669\n\nDataDirect Connect for JDBC for MySQL: through 5.1.4.000330, fixed in 5.1.4.000364\n\nDataDirect Connect for JDBC for Oracle Database: through 6.0.0.001747, fixed in 6.0.0.001776\n\nDataDirect Connect for JDBC for Oracle Eloqua: through 6.0.0.001438, fixed in 6.0.0.001458\n\nDataDirect Connect for JDBC for Oracle Sales Cloud: through 6.0.0.001225, fixed in 6.0.0.001316\n\nDataDirect Connect for JDBC for Oracle Service Cloud: through 5.1.4.000298, fixed in 5.1.4.000309\nDataDirect Connect for JDBC for PostgreSQL: through 6.0.0.001843, fixed in 6.0.0.001856\n\n\nDataDirect Connect for JDBC for Progress OpenEdge: through 5.1.4.000187, fixed in 5.1.4.000189\n\nDataDirect Connect for JDBC for Salesforce: through 6.0.0.003020, fixed in 6.0.0.003125\nDataDirect Connect for JDBC for SAP HANA: through 6.0.0.000879, product retired\n\nDataDirect Connect for JDBC for SAP S/4 HANA: through 6.0.1.001818, fixed in 6.0.1.001858\n\nDataDirect Connect for JDBC for Sybase ASE: through 5.1.4.000161, fixed in 5.1.4.000162\n\nDataDirect Connect for JDBC for Snowflake: through 6.0.1.001821, fixed in 6.0.1.001856\n\nDataDirect Hybrid Data Pipeline Server: through 4.6.2.3309, fixed in 4.6.2.3430\n\nDataDirect Hybrid Data Pipeline JDBC Driver: through 4.6.2.0607, fixed in 4.6.2.1023\n\nDataDirect Hybrid Data Pipeline On Premises Connector: through 4.6.2.1223, fixed in 4.6.2.1339\nDataDirect Hybrid Data Pipeline Docker: through 4.6.2.3316, fixed in 4.6.2.3430\n\nDataDirect OpenAccess JDBC Driver: through 8.1.0.0177, fixed in 8.1.0.0183\n\nDataDirect OpenAccess JDBC Driver: through 9.0.0.0019, fixed in 9.0.0.0022",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-10703",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-10703"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Brecht Snijders",
+      "label": "CVE-2025-2272",
+      "description": "Uncontrolled Search Path Element vulnerability in Forcepoint FIE Endpoint allows Privilege Escalation, Code Injection, Hijacking a privileged process.This issue affects FIE Endpoint: before 25.05.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-2272",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-2272"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Maxim Kosenko",
+  "last-updated": "2026-11-15T23:15:08Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 1,
+    "assessors": 1,
+    "with-evidence": 1,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 1,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Maxim Kosenko",
+      "label": "CVE-2025-40927",
+      "description": "CGI::Simple versions before 1.282 for Perl has a HTTP response splitting flaw\nThis vulnerability is a confirmed HTTP response splitting flaw in CGI::Simple that allows HTTP response header injection, which can be used for reflected XSS or open redirect under certain conditions.\n\nAlthough some validation exists, it can be bypassed using URL-encoded values, allowing an attacker to inject untrusted content into the response via query parameters.\n\n\n\nAs a result, an attacker can inject a line break (e.g. %0A) into the parameter value, causing the server to split the HTTP response and inject arbitrary headers or even an HTML/JavaScript body, leading to reflected cross-site scripting (XSS), open redirect or other attacks.\n\nThe issue documented in CVE-2010-4410 https://www.cve.org/CVERecord?id=CVE-2010-4410 is related but the fix was incomplete.\n\nImpact\n\nBy injecting %0A (newline) into a query string parameter, an attacker can:\n\n  *  Break the current HTTP header\n  *  Inject a new header or entire body\n  *  Deliver a script payload that is reflected in the server’s response\nThat can lead to the following attacks:\n\n  *  reflected XSS\n  *  open redirect\n  *  cache poisoning\n  *  header manipulation",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-40927",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-40927"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

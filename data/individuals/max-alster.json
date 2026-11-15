@@ -1,0 +1,152 @@
+{
+  "name": "Max Alster",
+  "last-updated": "2026-11-15T23:15:08Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 1,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Max Alster",
+      "label": "CVE-2025-11489",
+      "description": "A security vulnerability has been detected in wonderwhy-er DesktopCommanderMCP up to 0.2.13. This vulnerability affects the function isPathAllowed of the file src/tools/filesystem.ts. The manipulation leads to symlink following. The attack can only be performed from a local environment. The attack's complexity is rated as high. It is stated that the exploitability is difficult. The exploit has been disclosed publicly and may be used. The vendor explains: \"Our restriction features are designed as guardrails for LLMs to help them stay closer to what users want, rather than hardened security boundaries. (...) For users where security is a top priority, we continue to recommend using Desktop Commander with Docker, which provides actual isolation. (...) We'll keep this issue open for future consideration if we receive more user demand for improved restrictions.\" This vulnerability only affects products that are no longer supported by the maintainer.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 3.1, 4.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11489",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11489"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Max Alster",
+      "label": "CVE-2025-11490",
+      "description": "A vulnerability has been found in wonderwhy-er DesktopCommanderMCP up to 0.2.13. The affected element is the function extractBaseCommand of the file src/command-manager.ts of the component Absolute Path Handler. Such manipulation leads to os command injection. The attack may be performed from remote. The exploit has been disclosed to the public and may be used. The vendor explains: \"The usual use case is that AI is asked to do something, picks commands itself, and typically uses simple command names without absolute paths. It's curious why a user would ask the model to bypass restrictions this way. (...) This could potentially be a problem, but we are yet to hear reports of this being an issue in actual workflows. We'll leave this issue open for situations where people may report this as a problem for the long term.\"",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: UNKNOWN (CVSS 2.0, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11490",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11490"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "cyber-defense",
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "cyber-defense": [],
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Max Alster",
+      "label": "CVE-2025-11491",
+      "description": "A vulnerability was found in wonderwhy-er DesktopCommanderMCP up to 0.2.13. The impacted element is the function CommandManager of the file src/command-manager.ts. Performing manipulation results in os command injection. It is possible to initiate the attack remotely. The exploit has been made public and could be used.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: UNKNOWN (CVSS 2.0, 6.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-11491",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-11491"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

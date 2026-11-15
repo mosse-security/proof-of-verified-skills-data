@@ -1,0 +1,150 @@
+{
+  "name": "Matteo Memelli",
+  "last-updated": "2026-11-15T23:15:08Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 3,
+    "assessors": 1,
+    "with-evidence": 3,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 3,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Matteo Memelli",
+      "label": "CVE-2024-21598",
+      "description": "An Improper Validation of Syntactic Correctness of Input vulnerability in the Routing Protocol Daemon (rpd) of Juniper Networks Junos OS and Junos OS Evolved allows a network-based, unauthenticated attacker to cause a Denial of Service (DoS).\n\nIf a BGP update is received over an established BGP session which contains a tunnel encapsulation attribute with a specifically malformed TLV, rpd will crash and restart.\n\nThis issue affects Juniper Networks\nJunos OS:\n  *  20.4 versions 20.4R1 and later versions earlier than 20.4R3-S9;\n  *  21.2 versions earlier than 21.2R3-S7;\n  *  21.3 versions earlier than 21.3R3-S5;\n  *  21.4 versions earlier than 21.4R3-S5;\n  *  22.1 versions earlier than 22.1R3-S4;\n  *  22.2 versions earlier than 22.2R3-S3;\n  *  22.3 versions earlier than 22.3R3-S1;\n  *  22.4 versions earlier than 22.4R3;\n  *  23.2 versions earlier than 23.2R1-S2, 23.2R2;\n\n\n\nJunos OS Evolved:\n  *  20.4-EVO versions 20.4R1-EVO and later versions earlier than 20.4R3-S9-EVO;\n  *  21.2-EVO versions earlier than 21.2R3-S7-EVO;\n  *  21.3-EVO versions earlier than 21.3R3-S5-EVO;\n  *  21.4-EVO versions earlier than 21.4R3-S5-EVO;\n  *  22.1-EVO versions earlier than 22.1R3-S4-EVO;\n  *  22.2-EVO versions earlier than 22.2R3-S3-EVO;\n  *  22.3-EVO versions earlier than 22.3R3-S1-EVO;\n  *  22.4-EVO versions earlier than 22.4R3-EVO;\n  *  23.2-EVO versions earlier than 23.2R1-S2-EVO, 23.2R2-EVO;\n\n\n\nThis issue does not affect Juniper Networks\n  *  Junos OS versions earlier than 20.4R1;\n  *  Junos OS Evolved versions earlier than 20.4R1-EVO.\n\n\n\nThis is a related but separate issue than the one described in JSA79095.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-21598",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-21598"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Matteo Memelli",
+      "label": "CVE-2024-30395",
+      "description": "An Improper Validation of Specified Type of Input vulnerability in Routing Protocol Daemon (RPD) of Junos OS and Junos OS Evolved allows an unauthenticated, network-based attacker to cause Denial of Service (DoS).\n\nIf a BGP update is received over an established BGP session which contains a tunnel encapsulation attribute with a specifically malformed TLV, rpd will crash and restart.\nThis issue affects:\n\nJunos OS:\n\n\n\n  *  all versions before 21.2R3-S7, \n\n  *  from 21.3 before 21.3R3-S5, \n\n  *  from 21.4 before 21.4R3-S5, \n\n  *  from 22.1 before 22.1R3-S5, \n\n  *  from 22.2 before 22.2R3-S3, \n\n  *  from 22.3 before 22.3R3-S2, \n\n  *  from 22.4 before 22.4R3, \n\n  *  from 23.2 before 23.2R1-S2, 23.2R2.\n\n\n\n\n\nJunos OS Evolved:\n\n\n\n  *  all versions before 21.2R3-S7-EVO, \n\n  *  from 21.3-EVO before 21.3R3-S5-EVO, \n\n  *  from 21.4-EVO before 21.4R3-S5-EVO, \n  *  from 22.2-EVO before 22.2R3-S3-EVO, \n\n  *  from 22.3-EVO before 22.3R3-S2-EVO, \n\n  *  from 22.4-EVO before 22.4R3-EVO, \n\n  *  from 23.2-EVO before 23.2R1-S2-EVO, 23.2R2-EVO.\n\n\n\nThis is a related but separate issue than the one described in JSA75739",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2024-30395",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-30395"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2024,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Matteo Memelli",
+      "label": "CVE-2025-21590",
+      "description": "An Improper Isolation or Compartmentalization vulnerability in the kernel of Juniper Networks Junos OS allows a local attacker with high privileges to compromise the integrity of the device.\n\nA local attacker with access to the shell is able to inject arbitrary code which can compromise an affected device.\nThis issue is not exploitable from the Junos CLI.\nThis issue affects Junos OS: \n\n\n\n  *  All versions before 21.2R3-S9,\n  *  21.4 versions before 21.4R3-S10, \n  *  22.2 versions before 22.2R3-S6, \n  *  22.4 versions before 22.4R3-S6, \n  *  23.2 versions before 23.2R2-S3, \n  *  23.4 versions before 23.4R2-S4,\n  *  24.2 versions before 24.2R1-S2, 24.2R2.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-21590",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-21590"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1008 @@
+{
+  "name": "Hannah Green",
+  "last-updated": "2026-11-15T23:15:00Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 25,
+    "assessors": 1,
+    "with-evidence": 25,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 25,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34396",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAINFY.DLL from its application directo without sufficient integrity validation or secure search order. If the DLL is missing or attacker-writable locations in the search path are used, a local attacker with write permissions to the directory can plant a malicious MEAINFY.DLL. When the executable is launched, it loads the attacker-controlled library and executes code with the privileges of the process, enabling local privilege escalation when run with elevated rights.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34396",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34396"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34397",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the Message parameter of /Mobile/Compose.aspx. The Message value is not properly sanitized when processed via a GET request and is reflected into a JavaScript context in the response. By supplying a crafted payload that terminates the existing script block/function, injects attacker-controlled JavaScript, and comments out the remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser when the victim opens the crafted reply URL. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34397",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34397"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34398",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the AddressesBcc parameter of /Mondo/lang/sys/Forms/AddressBook.aspx. The AddressesBcc value is not properly sanitized when processed via a GET request and is reflected within a <script> block in the JavaScript variable var sAddrBcc. By supplying a crafted payload that terminates the existing LoadCurAddresses() function, inserts attacker-controlled script, and comments out remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser when the victim attempts to send an email. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34398",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34398"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34399",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the AddressesCc parameter of /Mondo/lang/sys/Forms/AddressBook.aspx. The AddressesCc value is not properly sanitized when processed via a GET request and is reflected within a <script> block in the JavaScript variable var sAddrCc. By supplying a crafted payload that terminates the existing LoadCurAddresses() function, inserts attacker-controlled script, and comments out remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser when the victim attempts to send an email. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34399",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34399"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34400",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the AddressesTo parameter of /Mondo/lang/sys/Forms/AddressBook.aspx. The AddressesTo value is not properly sanitized when processed via a GET request and is reflected within a <script> block in the response. By supplying a crafted payload that terminates the existing JavaScript function, inserts attacker-controlled script, and comments out remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser when the victim attempts to send an email. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34400",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34400"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34401",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the FieldBcc parameter of /Mondo/lang/sys/Forms/AddressBook.aspx. The FieldBcc value is not properly sanitized when processed via a GET request and is reflected inside a <script> block in the JavaScript variable var BCCFieldProvided. By supplying a crafted payload that terminates the existing LoadCurAddresses() function, inserts attacker-controlled script, and comments out remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser during normal email composition. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34401",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34401"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34402",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the FieldCc parameter of /Mondo/lang/sys/Forms/AddressBook.aspx. The FieldCc value is not properly sanitized when processed via a GET request and is reflected inside a <script> block in the JavaScript variable var CCFieldProvided. By supplying a crafted payload that terminates the existing LoadCurAddresses() function, inserts attacker-controlled script, and comments out remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser when the victim attempts to send an email. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34402",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34402"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34403",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the FieldTo parameter of /Mondo/lang/sys/Forms/AddressBook.aspx. The FieldTo value is not properly sanitized when processed via a GET request and is reflected inside a <script> block in the JavaScript variable var fieldTo. By supplying a crafted payload that terminates the existing Finish() function, inserts attacker-controlled script, and comments out remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser when the victim attempts to send an email. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34403",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34403"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34404",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the InstanceScope parameter of /Mondo/lang/sys/Forms/CAL/compose.aspx. The InstanceScope value is not properly sanitized when processed via a GET request and is reflected inside a <script> block in the JavaScript variable var gInstanceScope. By supplying a crafted payload that terminates the existing PageLoad() function, inserts attacker-controlled script, and comments out remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34404",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34404"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34406",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the Id parameter of /Mobile/ContactDetails.aspx. The Id value is not properly sanitized when processed via a GET request and is reflected within a <script> block in the response. By supplying a crafted payload that terminates an existing JavaScript function, inserts attacker-controlled script, and comments out remaining code, a remote attacker can execute arbitrary JavaScript in a victim’s browser when the victim opens a malicious link. Successful exploitation can redirect victims to malicious sites, steal cookies not protected by HttpOnly, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34406",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34406"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34407",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the theme parameter of /Mondo/lang/sys/Forms/Statistics.aspx. The theme value is insufficiently sanitized when processed via a GET request and is reflected in the response, allowing an attacker to break out of an existing iframe context and inject arbitrary script. A remote attacker can supply a crafted payload that closes the iframe tag, inserts attacker-controlled JavaScript, and comments out remaining code, leading to script execution in a victim’s browser when the victim visits a malicious link. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34407",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34407"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34408",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the Added parameter of /Mondo/lang/sys/Forms/MAI/AddRecipientsResult.aspx. The Added value is not properly sanitized when processed via a GET request and is reflected in the response, allowing an attacker to break out of existing markup and inject arbitrary script. A remote attacker can supply a crafted payload that closes an existing HTML list element, inserts attacker-controlled JavaScript, and comments out remaining code, leading to script execution in a victim’s browser when the victim visits a malicious link. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34408",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34408"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34409",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the Failed parameter of /Mondo/lang/sys/Forms/MAI/AddRecipientsResult.aspx. The Failed value is not properly sanitized when processed via a GET request and is reflected in the response, allowing an attacker to break out of existing markup and inject arbitrary script. A remote attacker can supply a crafted payload that closes an existing HTML list element, inserts attacker-controlled JavaScript, and comments out remaining code, leading to script execution in a victim’s browser when the victim visits a malicious link. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34409",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34409"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34416",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAIPO.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAIPO.DLL, which is then loaded when the executable starts, resulting in execution of attacker-controlled code with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34416",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34416"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34417",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAISO.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAISO.DLL, which is then loaded when the executable starts, resulting in execution of attacker-controlled code with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34417",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34417"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34418",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAIMF.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAIMF.DLL, which is then loaded when the executable starts, resulting in execution of attacker-controlled code with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34418",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34418"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34419",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAISM.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAISM.DLL, which is then loaded when the executable starts, resulting in execution of attacker-controlled code with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34419",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34419"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34420",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAIAM.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAIAM.DLL, which is then loaded on execution, resulting in attacker-controlled code running with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34420",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34420"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34421",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAISP.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAISP.DLL, which is then loaded on execution, resulting in attacker-controlled code running with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34421",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34421"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34422",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAIPC.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAIPC.DLL, which is then loaded on execution, resulting in attacker-controlled code running with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34422",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34422"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34423",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAIAU.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAIAU.DLL, which is then loaded on execution, resulting in attacker-controlled code running with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34423",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34423"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34424",
+      "description": "MailEnable versions prior to 10.54 contain an unsafe DLL loading vulnerability that can lead to local arbitrary code execution. The MailEnable administrative executable attempts to load MEAIDP.DLL from its installation directory without sufficient integrity validation or a secure search order. A local attacker with write access to that directory can plant a malicious MEAIDP.DLL, which is then loaded on execution, resulting in attacker-controlled code running with the privileges of the process.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.5)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34424",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34424"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34425",
+      "description": "MailEnable versions prior to 10.54 contain a reflected cross-site scripting (XSS) vulnerability in the WindowContext parameter of /Mondo/lang/sys/Forms/MAI/compose.aspx. The WindowContext value is not properly sanitized when processed via a GET request and is reflected within a <script> context in the JavaScript variable window.location, allowing an attacker to break out of the existing script and inject arbitrary JavaScript. A remote attacker can supply a crafted payload that terminates the existing ProcessContextSwitchResult() function, inserts attacker-controlled script, and comments out remaining code, leading to script execution in a victim’s browser when the victim visits a malicious link or attempts to send an email. Successful exploitation can redirect victims to malicious sites, steal non-HttpOnly cookies, inject arbitrary HTML or CSS, and perform actions as the authenticated user.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 5.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34425",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34425"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34427",
+      "description": "MailEnable versions prior to 10.54 contain a cleartext storage of credentials vulnerability that can lead to local credential compromise and account takeover. The product stores user and administrative passwords in plaintext within AUTH.TAB with overly permissive filesystem access. A local authenticated user with read access to this file can recover all user passwords and super-admin credentials, then use them to authenticate to MailEnable services such as POP3, SMTP, or the webmail interface, enabling unauthorized mailbox access and administrative control.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34427",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34427"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Hannah Green",
+      "label": "CVE-2025-34428",
+      "description": "MailEnable versions prior to 10.54 contain a cleartext storage of credentials vulnerability that can lead to local credential compromise and account takeover. The product stores user and administrative passwords in plaintext within AUTH.SAV with overly permissive filesystem access. A local authenticated user with read access to this file can recover all user passwords and super-admin credentials, then use them to authenticate to MailEnable services such as POP3, SMTP, or the webmail interface, enabling unauthorized mailbox access and administrative control.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 8.4)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-34428",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-34428"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}

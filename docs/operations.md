@@ -51,25 +51,7 @@ root.
 
 ## CVE processing
 
-The CVE repository is processed from its current working tree; its JSON files
-are never copied into this repository. Process one year at a time to keep the
-working tree and temporary output bounded:
-
-```powershell
-git -C external/cvelistV5 restore --source=HEAD -- cves/2026
-C:\Python312\python.exe -m scrapers --assessor mitre --scraper cve-records `
-  --cve-year 2026 --overwrite --workers 1 --max-pages 0
-Remove-Item external/cvelistV5/cves/2026 -Recurse -Force
-```
-
-The parser records completed relative paths in
-`tmp/mitre/processed-cves-2026.txt`. The JSON staging collection is used to
-build assessor-local individual files. Completed historical years are
-compressed to `data/archives/cve/cve-records-YYYY.zip` and the uncompressed
-JSON is removed. If a year is resumed, the scraper reads that durable ZIP and
-recreates the temporary JSON only while processing. The current year remains
-unarchived so it can be refreshed normally.
-
-The yearly ZIP files are durable source archives and should be committed. The
-generated assessor-local individual files remain ignored, while canonical
-records are built from them.
+See [`cve.md`](cve.md) for the CVE data model and
+[`cve-operations.md`](cve-operations.md) for yearly processing, resumability,
+the unattended 1999-2025 runner, verification, and disk cleanup. 2026 is
+currently excluded.

@@ -1,0 +1,189 @@
+{
+  "name": "Liv Matan",
+  "last-updated": "2026-11-15T23:15:06Z",
+  "biography": "",
+  "contact": [],
+  "stats": {
+    "endorsements": 4,
+    "assessors": 1,
+    "with-evidence": 4,
+    "without-evidence": 0,
+    "by-domain": {
+      "cloud-security": 0,
+      "cyber-defense": 0,
+      "devsecops": 0,
+      "digital-forensics": 0,
+      "grc": 0,
+      "incident-response": 0,
+      "open-source-intelligence": 0,
+      "penetration-testing": 0,
+      "red-teaming": 0,
+      "reverse-engineering": 0,
+      "vulnerability-research": 4,
+      "identity-and-access-management": 0,
+      "iot-security": 0,
+      "operational-technology-security": 0,
+      "threat-hunting": 0,
+      "cybercrime-and-fraud": 0,
+      "unknown": 0
+    }
+  },
+  "endorsements": [
+    {
+      "name": "Liv Matan",
+      "label": "CVE-2025-12397",
+      "description": "A SQL injection vulnerability was found in Looker Studio.\n\nA Looker Studio user with report view access could inject malicious SQL that would execute with the report owner's permissions. The vulnerability affected to reports with BigQuery as the data source.\n\nThis vulnerability was patched on 21 July 2025, and no customer action is needed.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-12397",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-12397"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Liv Matan",
+      "label": "CVE-2025-12405",
+      "description": "An improper privilege management vulnerability was found in Looker Studio. It impacted all JDBC-based connectors.\n\nA Looker Studio user with report view access could make a copy of the report and execute arbitrary SQL that would run on the data source database due to the stored credentials attached to the report.\n\nThis vulnerability was patched on 21 July 2025, and no customer action is needed.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.7)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-12405",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-12405"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Liv Matan",
+      "label": "CVE-2025-12409",
+      "description": "A SQL injection vulnerability was discovered in Looker Studio that allowed for data exfiltration from BigQuery data sources.\n \nBy creating a malicious report with native functions enabled, and having the victim access the report, an attacker could execute injected SQL queries with the victim's permissions in BigQuery.\n\nThis vulnerability was patched on 07 July 2025, and no customer action is needed.",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: HIGH (CVSS 4.0, 7.3)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-12409",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-12409"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    },
+    {
+      "name": "Liv Matan",
+      "label": "CVE-2025-12743",
+      "description": "The Looker endpoint for generating new projects from database connections allows users to specify \"looker\" as a connection name, which is a reserved internal name for Looker's internal MySQL database. The schemas parameter is vulnerable to SQL injection, enabling attackers to manipulate SELECT queries that are constructed and executed against the internal MySQL database. This vulnerability allows users with developer permissions to extract data from Looker's internal MySQL database.\n\nLooker-hosted and Self-hosted were found to be vulnerable.\nThis issue has already been mitigated for Looker-hosted instances. No user action is required for these.\n\n\nSelf-hosted instances must be upgraded as soon as possible. This vulnerability has been patched in all supported versions of Self-hosted.\nThe versions below have all been updated to protect against this vulnerability. You can download these versions at the Looker download page  https://download.looker.com/ :\n  *  24.12.106\n  *  24.18.198+\n  *  25.0.75\n  *  25.6.63+\n  *  25.8.45+\n  *  25.10.33+\n  *  25.12.1+\n  *  25.14+",
+      "type": "vulnerability_discovery",
+      "assessor": "MITRE CVE Program",
+      "assessor-id": "mitre",
+      "assessor-category": "vulnerability_database",
+      "assessor-rigor-level": "high",
+      "reviewType": "committee_review",
+      "subtitle": "CVE · Severity: MEDIUM (CVSS 4.0, 6)",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2025-12743",
+      "evidence-links": [
+        {
+          "title": "CVE record",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-12743"
+        }
+      ],
+      "evidence": true,
+      "povs": {
+        "milestones": {
+          "verifiable": true,
+          "defended": true,
+          "recognized": true,
+          "trusted": true
+        },
+        "level": 4,
+        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
+      },
+      "year": 2025,
+      "domains": [
+        "vulnerability-research"
+      ],
+      "subspecialties": {
+        "vulnerability-research": [
+          "cve-analysis-and-vulnerability-disclosure"
+        ]
+      }
+    }
+  ]
+}
