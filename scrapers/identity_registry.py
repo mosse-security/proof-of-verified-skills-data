@@ -20,7 +20,13 @@ _PERSON_TITLE_PREFIX = re.compile(
 _QUOTED_ALIAS = re.compile(r"(?:\"[^\"]*\"|'[^']*'|“[^”]*”|‘[^’]*’)")
 _PAREN_ALIAS = re.compile(r"\s*\([^)]*\)")
 _AKA_ALIAS = re.compile(r"\s+(?:a\.k\.a\.?|aka)\b.*$", re.IGNORECASE)
-_MOJIBAKE_MARKERS = ("\ufffd", "Ã", "Â", "â", "ƒ")
+_MOJIBAKE_MARKERS = (
+    "\ufffd",
+    "\u00c3\u0192",
+    "\u00c3\u201a",
+    "\u00c3\u00a2",
+    "\u00c6\u0192",
+)
 
 
 def clean_person_name(value: str) -> str:
@@ -207,4 +213,6 @@ class IdentityRegistry:
 def _is_automatically_blacklisted(value: str) -> bool:
     """Identify obvious non-person fragments before manual review."""
 
-    return len(value.split()) == 1 or "(" in value or ")" in value
+    if len(value.split()) == 1 or "(" in value or ")" in value or "&" in value:
+        return True
+    return bool(re.search(r"\b(?:AG|GmbH|BV|Oy|OÜ|Pty|SA|SAS|PLC|LLP|Inc\.?|Ltd\.?|LLC|Corp\.?)\s*$", value, re.IGNORECASE))
