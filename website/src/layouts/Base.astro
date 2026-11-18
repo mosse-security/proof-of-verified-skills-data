@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+const { title, description = 'Public directory of verified cybersecurity skills and conference endorsements.', home = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.toString()} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class:list={['app-header', home && 'home-header']}>
+        <a href="/" class="brand" aria-label="Proof of Verified Skills">
+          <img src="/vct-logo.png" alt="Proof of Verified Skills" class="brand-logo" />
+          {!home && <span class="registry-label">Public registry of verified cyber professionals</span>}
+        </a>
+      </header>
+      <main><slot /></main>
+      <footer class="site-footer">
+        <span>(c) Mosse Cyber Security Institute</span>
+        <span class="footer-links">
+          <a href="https://www.mosse-institute.com/" target="_blank" rel="noreferrer">Mosse Institute</a>
+          <a href="https://github.com/mosse-security/proof-of-verified-skills-data" target="_blank" rel="noreferrer">Open-source data on GitHub</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

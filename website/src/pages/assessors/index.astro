@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import { listProfiles } from '../../lib/records';
+const people = listProfiles();
+const assessors = [...new Set(people.flatMap((person) => person.assessors))].sort((a, b) => a.localeCompare(b));
+const individualCount = (assessor: string) => people.filter((person) => person.assessors.includes(assessor)).length;
+---
+<Base home title="Assessors | Proof of Verified Skills">
+  <div class="directory-intro domain-intro"><h1>Search by assessor</h1><p class="muted">Choose an assessor to see the people and endorsements they recognize.</p></div>
+  <section class="directory-table assessor-table" aria-label="Assessors">
+    <div class="assessor-row assessor-header" aria-hidden="true"><span>Assessor</span><span>Individuals endorsed</span></div>
+    {assessors.map((assessor) => <a class="assessor-row" href={`/assessors/${encodeURIComponent(assessor)}/`}><strong>{assessor}</strong><span>{individualCount(assessor).toLocaleString()} individuals <b>→</b></span></a>)}
+  </section>
+</Base>

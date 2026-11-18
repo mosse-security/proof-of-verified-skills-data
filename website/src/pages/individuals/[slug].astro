@@ -1,0 +1,158 @@
+---
+import Base from '../../layouts/Base.astro';
+import {
+  endorsementDomains,
+  formatDomain,
+  formatLabel,
+  getProfile,
+  highestLevel,
+  levelBand,
+  listProfiles,
+  safeExternalUrl,
+} from '../../lib/records';
+
+export function getStaticPaths() {
+  return listProfiles().map((profile) => ({ params: { slug: profile.slug } }));
+}
+
+const slug = Astro.params.slug!;
+const person = getProfile(slug);
+const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
+  const level = (b.povs?.level ?? 0) - (a.povs?.level ?? 0);
+  return level || (b.year ?? 0) - (a.year ?? 0);
+});
+const endorsers = [...new Set(endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort((a, b) => a.localeCompare(b));
+const level = highestLevel(person);
+const milestones = ['verifiable', 'defended', 'recognized', 'trusted'];
+const titleFor = (item: typeof endorsements[number]) => item.label || item.description || 'Endorsement';
+const dateFor = (item: typeof endorsements[number]) => item.year ? String(item.year) : 'Date not specified';
+const descriptionFor = (item: typeof endorsements[number]) => item.description?.trim();
+const criticalityFor = (item: typeof endorsements[number]) => {
+  const match = item.subtitle?.match(/Severity:\s*([A-Za-z]+)(?:\s*\(CVSS\s+[^,]+,\s*([0-9.]+)\))?/i);
+  if (!match) return undefined;
+  return `${formatLabel(match[1])}${match[2] ? ` · CVSS ${match[2]}` : ''}`;
+};
+const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulnerability_discovery' ? item.description?.replace(/\s+/g, ' ').trim() : undefined;
+---
+
+<Base title={`${person.name} | Proof of Verified Skills`} description={person.biography || `Public endorsement record for ${person.name}.`}>
+  <section class="registry-record profile-record">
+    <div class="record-header">
+      <div>
+        <h1>{person.name}</h1>
+        {person.biography && <p>{person.biography}</p>}
+        <div class="profile-meta-line">
+          <span>Highest verified: <strong>{level ? `Level ${level} - ${levelBand(level)}` : 'Not yet rated'}</strong></span>
+          <span>{person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size} assessors</span>
+        </div>
+        {person.contact && person.contact.length > 0 && <div class="contact-row">
+          {person.contact.map((contact) => <span>{contact.label || contact.url}</span>)}
+        </div>}
+      </div>
+    </div>
+  </section>
+
+  <section class="section evidence-section" id="evidence">
+    <div class="section-head">
+      <h2>Proof of Skills</h2>
+      <p>{endorsements.length} matching records.</p>
+    </div>
+    <div class="evidence-controls">
+      <div class="area-pills">
+        <button type="button" class="active" data-assessor-filter="all" aria-pressed="true">All Endorsements <span>{endorsements.length}</span></button>
+        {endorsers.map((assessor) => <button type="button" data-assessor-filter={assessor} aria-pressed="false">{assessor} <span>{endorsements.filter((item) => item.assessor === assessor).length}</span></button>)}
+      </div>
+    </div>
+    <div class="evidence-list">
+      {endorsements.length ? endorsements.map((item, index) => <button type="button" class="evidence-row" data-open-id={`endorsement-${index}`} data-assessor={item.assessor || ''}>
+        <span class="domain-badge" title={formatDomain(endorsementDomains(item)[0] || 'Unclassified')}>{formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
+        <span class="row-main"><span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>{cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}<small class="endorser">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong></small></span>
+        <span class="row-context"><strong>{item.povs?.level ? `Level ${item.povs.level}` : 'Unrated'}</strong><small>{dateFor(item)}</small></span>
+      </button>) : <div class="empty-state"><strong>No proof records match this view.</strong><span>There are no public endorsements for this individual yet.</span></div>}
+      {endorsements.length > 0 && <div class="empty-state" data-filter-empty hidden><strong>No proof records in this domain.</strong><span>Choose another domain to see more evidence.</span></div>}
+    </div>
+  </section>
+
+  <div class="drawer-scrim" data-close-drawer></div>
+  <aside class="drawer" aria-hidden="true" aria-label="Endorsement details">
+    <div class="drawer-head">
+      <div><span>Proof of skills</span><h2 data-drawer-title>Endorsement</h2><p>Public evidence record</p></div>
+      <button type="button" class="drawer-close" data-close-drawer aria-label="Close">×</button>
+    </div>
+    <div class="drawer-body">
+      {endorsements.map((item, index) => <article class="drawer-record" data-panel-id={`endorsement-${index}`} hidden>
+        <div class="drawer-meta">
+          {item.subtitle && <p class="drawer-subtitle"><span>{item.type === 'presentation' ? 'Conference' : item.type === 'vulnerability_discovery' ? 'Criticality' : 'Context'}</span>{item.subtitle}</p>}
+          <p class="drawer-byline">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong></p>
+        </div>
+        {descriptionFor(item) && descriptionFor(item) !== titleFor(item).trim() && <section class="record-description"><h3>{item.type === 'presentation' ? 'Abstract' : item.type === 'vulnerability_discovery' ? 'Details' : 'Description'}</h3><p>{descriptionFor(item)}</p></section>}
+        <section class:list={['plain-explainer', !item.povs?.level && 'unrated']}><span class="row-score large">{item.povs?.level ? `L${item.povs.level}` : '-'}</span><div><h3>{item.povs?.level ? `${levelBand(item.povs.level)} proof` : 'Not yet rated'}</h3>{item.povs?.explanation && <p>{item.povs.explanation}</p>}</div></section>
+        <h3 class="facts-heading">Record details</h3>
+        <dl class="facts">
+          <div><dt>Milestones</dt><dd>{milestones.filter((milestone) => item.povs?.milestones?.[milestone]).map((milestone) => <span class="milestone">{milestone}</span>)}{!milestones.some((milestone) => item.povs?.milestones?.[milestone]) && 'Not recorded'}</dd></div>
+          <div><dt>POVS rating</dt><dd>{item.povs?.level ? `Level ${item.povs.level} - ${levelBand(item.povs.level)}` : 'Not rated'}</dd></div>
+          <div><dt>Assessor</dt><dd>{item.assessor || 'Not specified'}</dd></div>
+          <div><dt>Public verifier</dt><dd>{formatLabel(item.reviewType || item['assessor-rigor-level'])}</dd></div>
+          <div><dt>Record type</dt><dd>{formatLabel(item.type)}</dd></div>
+          <div><dt>Cyber domain</dt><dd>{endorsementDomains(item).map(formatDomain).join(', ') || 'Not classified'}</dd></div>
+          <div><dt>Sub-specialty</dt><dd>{Object.values(item.subspecialties ?? {}).flat().map(formatDomain).join(', ') || 'Not specified'}</dd></div>
+          <div><dt>Date</dt><dd>{dateFor(item)}</dd></div>
+        </dl>
+        {(safeExternalUrl(item.url) || (item['evidence-links']?.length ?? 0) > 0) && <section class="drawer-section"><h4>Source records</h4><div class="external-links">
+          {safeExternalUrl(item.url) && <a href={safeExternalUrl(item.url)} target="_blank" rel="noopener noreferrer"><span>Source</span><strong>{item.url}</strong></a>}
+          {item['evidence-links']?.filter((link) => safeExternalUrl(link.url) !== safeExternalUrl(item.url)).map((link) => safeExternalUrl(link.url) && <a href={safeExternalUrl(link.url)} target="_blank" rel="noopener noreferrer"><span>Proof</span><strong>{link.title || link.url}</strong></a>)}
+        </div></section>}
+      </article>)}
+    </div>
+  </aside>
+</Base>
+
+<script>
+  const drawer = document.querySelector('.drawer');
+  const scrim = document.querySelector('.drawer-scrim');
+  const title = document.querySelector('[data-drawer-title]');
+  const rows = document.querySelectorAll('[data-open-id]');
+  const closeElements = document.querySelectorAll('[data-close-drawer]');
+  const filterButtons = document.querySelectorAll('[data-assessor-filter]');
+  const filterEmpty = document.querySelector('[data-filter-empty]');
+
+  filterButtons.forEach((button) => button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const assessor = button.getAttribute('data-assessor-filter') || 'all';
+    let visible = 0;
+    filterButtons.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+    rows.forEach((row) => {
+      const rowAssessor = row.getAttribute('data-assessor') || '';
+      const show = assessor === 'all' || rowAssessor === assessor;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+    if (filterEmpty) filterEmpty.hidden = visible > 0;
+  }));
+
+  function closeDrawer() {
+    drawer?.classList.remove('open');
+    scrim?.classList.remove('open');
+    drawer?.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('drawer-open');
+    document.querySelectorAll('[data-panel-id]').forEach((panel) => { panel.hidden = true; });
+  }
+
+  rows.forEach((row) => row.addEventListener('click', () => {
+    const id = row.getAttribute('data-open-id');
+    const panel = id ? document.querySelector(`[data-panel-id="${id}"]`) : null;
+    if (!panel || !drawer || !scrim) return;
+    document.querySelectorAll('[data-panel-id]').forEach((item) => { item.hidden = item !== panel; });
+    if (title) title.textContent = row.querySelector('strong')?.textContent || 'Endorsement';
+    drawer.classList.add('open');
+    scrim.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('drawer-open');
+  }));
+  closeElements.forEach((element) => element.addEventListener('click', closeDrawer));
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeDrawer(); });
+</script>

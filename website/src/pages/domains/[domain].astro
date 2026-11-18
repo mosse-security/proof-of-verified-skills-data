@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import { formatDomain, listProfiles } from '../../lib/records';
+
+export function getStaticPaths() {
+  const allPeople = listProfiles();
+  return [...new Set(allPeople.flatMap((person) => person.domains))].map((domain) => ({ params: { domain }, props: { domain } }));
+}
+
+const allPeople = listProfiles();
+const domain = Astro.props.domain as string;
+const people = allPeople.filter((person) => (person.domainCounts[domain] ?? 0) > 0).sort((a, b) => (b.domainCounts[domain] ?? 0) - (a.domainCounts[domain] ?? 0) || a.name.localeCompare(b.name));
+const mixTotal = (person: typeof people[number]) => Object.values(person.levelCounts).reduce((sum, count) => sum + count, 0);
+const mixWidth = (count: number, person: typeof people[number]) => `${mixTotal(person) ? (count / mixTotal(person)) * 100 : 0}%`;
+---
+<Base home title={`${formatDomain(domain)} | Proof of Verified Skills`}>
+  <div class="directory-intro domain-intro"><span class="section-kicker">Cyber domain</span><h1>{formatDomain(domain)}</h1><p class="muted">{people.length.toLocaleString()} people with endorsements in this domain.</p></div>
+  <section class="directory-table" aria-label={`${formatDomain(domain)} individuals`}>
+    <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsements</span><span>Endorsers</span><span>Proof mix</span></div>
+    {people.map((person) => <a class="directory-row" data-domain-row href={`/individuals/${encodeURIComponent(person.slug)}/`}><span class="directory-name"><strong>{person.name}</strong></span><span class="directory-number directory-endorsements">{(person.domainCounts[domain] ?? 0).toLocaleString()}</span><span class="directory-number directory-endorsers">{person.endorsers.toLocaleString()}</span><span class="directory-mix" title={`${person.levelCounts.synthetic} synthetic, ${person.levelCounts.productionLike} production-like, ${person.levelCounts.expert} expert, ${person.levelCounts.unrated} unrated`}><span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(person.levelCounts.synthetic, person)}`}></i><i class="level-production" style={`width:${mixWidth(person.levelCounts.productionLike, person)}`}></i><i class="level-expert" style={`width:${mixWidth(person.levelCounts.expert, person)}`}></i><i class="level-unrated" style={`width:${mixWidth(person.levelCounts.unrated, person)}`}></i></span><span class="level-stack-labels"><b>Synthetic: {person.levelCounts.synthetic}</b><b>Production-like: {person.levelCounts.productionLike}</b><b>Expert: {person.levelCounts.expert}</b><b>Unrated: {person.levelCounts.unrated}</b></span></span></a>)}
+  </section>
+  <div class="directory-pagination pagination"><button type="button" data-domain-prev disabled>← Previous</button><span data-domain-page>Page 1</span><button type="button" data-domain-next>Next →</button></div>
+</Base>
+
+<script>
+  const domainRows = [...document.querySelectorAll('[data-domain-row]')];
+  const pageSize = 100;
+  const pages = Math.max(1, Math.ceil(domainRows.length / pageSize));
+  let page = 1;
+  const status = document.querySelector('[data-domain-page]');
+  const previous = document.querySelector('[data-domain-prev]');
+  const next = document.querySelector('[data-domain-next]');
+  function renderDomainPage() {
+    domainRows.forEach((row, index) => { row.hidden = index < (page - 1) * pageSize || index >= page * pageSize; });
+    if (status) status.textContent = `Page ${page} of ${pages}`;
+    if (previous) previous.disabled = page === 1;
+    if (next) next.disabled = page === pages;
+  }
+  previous?.addEventListener('click', () => { if (page > 1) { page -= 1; renderDomainPage(); } });
+  next?.addEventListener('click', () => { if (page < pages) { page += 1; renderDomainPage(); } });
+  renderDomainPage();
+</script>
