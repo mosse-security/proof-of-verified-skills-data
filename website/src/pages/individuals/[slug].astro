@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { listChallenges } from '../../lib/challenges';
 import {
   endorsementDomains,
   formatDomain,
@@ -17,6 +18,8 @@ export function getStaticPaths() {
 
 const slug = Astro.params.slug!;
 const person = getProfile(slug);
+const achievements = listChallenges()
+  .filter((challenge) => challenge.matches.some((match) => match.personSlug === slug));
 const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
   const year = (b.year ?? 0) - (a.year ?? 0);
   return year || (b.povs?.level ?? 0) - (a.povs?.level ?? 0);
@@ -63,7 +66,7 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
         <h1>{person.name}</h1>
         {person.biography && <p>{person.biography}</p>}
         <div class="profile-meta-line">
-          <span>Highest verified: <strong>{level ? `Level ${level} - ${levelBand(level)}` : 'Not yet rated'}</strong></span>
+          <span>Highest verified: <strong>{level ? levelBand(level) : 'Not yet rated'}</strong></span>
           <span>{person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size} assessors</span>
         </div>
         <div class="profile-level-mix" title={`${levelCounts.synthetic} synthetic, ${levelCounts.productionLike} production-like, ${levelCounts.expert} expert, ${levelCounts.unrated} Not Verified`}>
@@ -76,6 +79,19 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
       </div>
     </div>
   </section>
+
+  {achievements.length > 0 && <section class="section profile-achievements" aria-labelledby="profile-achievements-title">
+    <div class="section-head">
+      <h2 id="profile-achievements-title">Achievements</h2>
+      <p>{achievements.length} {achievements.length === 1 ? 'achievement' : 'achievements'} obtained.</p>
+    </div>
+    <div class="profile-achievement-list">
+      {achievements.map((achievement) => <div class="profile-achievement">
+        <span><strong>{achievement.title}</strong><small>{achievement.description}</small></span>
+        <b class:list={['challenge-band', `challenge-band-${achievement.band.toLocaleLowerCase().replaceAll(' ', '-')}`]}>{achievement.band}</b>
+      </div>)}
+    </div>
+  </section>}
 
   <section class="section evidence-section" id="evidence">
     <div class="section-head">
@@ -115,7 +131,7 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
         <h3 class="facts-heading">Record details</h3>
         <dl class="facts">
           <div><dt>Milestones</dt><dd>{milestones.filter((milestone) => item.povs?.milestones?.[milestone]).map((milestone) => <span class="milestone">{milestone}</span>)}{!milestones.some((milestone) => item.povs?.milestones?.[milestone]) && 'Not recorded'}</dd></div>
-          <div><dt>POVS rating</dt><dd>{item.povs?.level ? `Level ${item.povs.level} - ${levelBand(item.povs.level)}` : 'Not rated'}</dd></div>
+          <div><dt>POVS rating</dt><dd>{item.povs?.level ? levelBand(item.povs.level) : 'Not rated'}</dd></div>
           <div><dt>Assessor</dt><dd>{item.assessor || 'Not specified'}</dd></div>
           <div><dt>Public verifier</dt><dd>{formatLabel(item.reviewType || item['assessor-rigor-level'])}</dd></div>
           <div><dt>Record type</dt><dd>{formatLabel(item.type)}</dd></div>

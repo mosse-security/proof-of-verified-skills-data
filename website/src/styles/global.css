@@ -194,6 +194,13 @@ h2 { margin-bottom: 8px; font-size: 24px; letter-spacing: -.03em; }
 .achievement-letters { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0; }
 .achievement-letters a { min-width: 34px; padding: 7px 9px; border: 1px solid var(--rule); border-radius: 7px; color: var(--ink-2); text-align: center; }
 .achievement-letters a:hover, .achievement-letters a.selected { border-color: var(--accent); color: var(--accent-ink); background: var(--accent-soft); }
+.profile-achievements { margin-bottom: 18px; }
+.profile-achievement-list { overflow: hidden; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+.profile-achievement { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--rule); }
+.profile-achievement:last-child { border-bottom: 0; }
+.profile-achievement > span:first-child { display: grid; gap: 3px; min-width: 0; }
+.profile-achievement strong { color: var(--ink); }
+.profile-achievement small { overflow: hidden; color: var(--muted); text-overflow: ellipsis; white-space: nowrap; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .drawer-scrim { position: fixed; inset: 0; z-index: 80; pointer-events: none; background: rgba(17,24,39,.44); opacity: 0; transition: opacity .28s ease; }
 .drawer-scrim.open { pointer-events: auto; opacity: 1; }
