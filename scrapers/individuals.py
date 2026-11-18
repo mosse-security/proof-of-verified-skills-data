@@ -18,6 +18,7 @@ from typing import Any
 from .schema import AssessorMetadata, is_non_endorsement_session, validate_endorsement_record
 from .domains import ALLOWED_DOMAINS
 from .identity_registry import IdentityRegistry, clean_person_name
+from .tag_individuals import tags_for_person
 
 
 @dataclass(frozen=True, slots=True)
@@ -166,6 +167,7 @@ def merge_canonical_individuals(
             "last-updated": "",
             "biography": "",
             "contact": [],
+            "tags": tags_for_person(records, previous.get(identity, {}).get("tags", [])),
             "stats": _individual_stats(records),
             "endorsements": records,
         }
@@ -360,6 +362,7 @@ def merge_endorsements(
             "last-updated": "",
             "biography": "",
             "contact": _merged_contacts(person.get("profiles", [])),
+            "tags": tags_for_person(records, previous_output.get(identity, {}).get("tags", [])),
             "stats": _individual_stats(records),
             "endorsements": records,
         }
@@ -419,6 +422,8 @@ def _validate_individual(
         # Accept pre-existing snapshots during migration; new local output
         # omits the field entirely.
         expected.add("last-updated")
+    if "tags" in document:
+        expected.add("tags")
     if set(document) != expected:
         raise IndividualMergeError(f"{source} must contain exactly {sorted(expected)}")
     if not isinstance(document["name"], str) or not document["name"].strip():
@@ -429,6 +434,11 @@ def _validate_individual(
         )
     if not isinstance(document["biography"], str):
         raise IndividualMergeError(f"{source}.biography must be a string")
+    if "tags" in document and (
+        not isinstance(document["tags"], list)
+        or any(not isinstance(tag, str) or not tag.strip() for tag in document["tags"])
+    ):
+        raise IndividualMergeError(f"{source}.tags must be an array of non-empty strings")
     if not isinstance(document["contact"], list):
         raise IndividualMergeError(f"{source}.contact must be an array")
     if not isinstance(document["endorsements"], list):
@@ -591,6 +601,7 @@ def _rebuild_assessor_outputs(
                 "name": person["name"],
                 "biography": "",
                 "contact": [],
+                "tags": tags_for_person(person["records"], []),
                 "stats": _individual_stats(person["records"]),
                 "endorsements": sorted(person["records"], key=_endorsement_sort_key),
             }
@@ -625,6 +636,7 @@ def _rebuild_assessor_outputs(
             "last-updated": "",
             "biography": "",
             "contact": [],
+            "tags": tags_for_person(records, previous_canonical.get(identity, {}).get("tags", [])),
             "stats": _individual_stats(records),
             "endorsements": records,
         }

@@ -31,6 +31,7 @@ export interface Endorsement {
 export interface Person {
   name: string;
   biography?: string;
+  tags?: string[];
   contact?: Array<{ label?: string; url?: string }>;
   endorsements?: Endorsement[];
   stats?: { endorsements?: number; assessors?: number; 'by-domain'?: Record<string, number> };

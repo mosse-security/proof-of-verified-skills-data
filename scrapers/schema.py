@@ -318,7 +318,6 @@ def validate_endorsement_record(
             raise EndorsementSchemaError(
                 f"{source}.subtitle must be a non-empty string when present"
             )
-
     year = record["year"]
     if isinstance(year, bool) or not isinstance(year, int) or not 1000 <= year <= 9999:
         raise EndorsementSchemaError(

@@ -4,6 +4,8 @@
   
   "biography": "",
 
+  "tags": [],
+
   "contact": [
     {
       "label": "website",

@@ -146,6 +146,12 @@ def _element_entries(element) -> list[tuple[str, list[str]]]:
     if bold is not None and ":" in text:
         award = text.split(":", 1)[0].strip()
         return [(award, _split_names(bold.get_text(" ", strip=True)))]
+    if bold is not None:
+        award = bold.get_text(" ", strip=True)
+        if re.fullmatch(r"(?:Super )?Honorable Mentions", award, flags=re.IGNORECASE):
+            strings = [value.strip() for value in element.stripped_strings]
+            names = [name.strip() for value in strings[1:] for name in re.split(r"\s*\n\s*", value) if name.strip()]
+            return [(award, names)]
     if re.fullmatch(r"(?:Super )?Honorable Mentions:?", text, flags=re.IGNORECASE):
         return [(text.rstrip(":").strip(), [])]
     return [(_award_and_names(text)[0], _split_names(_award_and_names(text)[1]))]
@@ -163,7 +169,7 @@ def _split_names(value: str) -> list[str]:
     value = value.strip(" .:-")
     if not value:
         return []
-    parts = re.split(r"\s+(?:and|&|/|,\s+and)\s+", value, flags=re.IGNORECASE)
+    parts = re.split(r"\s+(?:and|&)\s+|\s*/\s*|,\s+and\s+", value, flags=re.IGNORECASE)
     result: list[str] = []
     for part in parts:
         part = re.sub(r"\s+\|.*$", "", part).strip(" .:-")
