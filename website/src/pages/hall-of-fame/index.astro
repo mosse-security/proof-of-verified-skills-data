@@ -1,10 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { formatDomain, listProfiles } from '../../lib/records';
+import { sitePath } from '../../lib/site';
 const people = listProfiles();
 const domains = [...new Set(people.flatMap((person) => person.domains))].sort((a, b) => formatDomain(a).localeCompare(formatDomain(b)));
 ---
-<Base home title="Hall of Fame | Proof of Verified Skills">
-  <div class="directory-intro"><span class="section-kicker">Recognized leaders</span><h1>Hall of Fame</h1><p class="muted">Choose a cyber domain to see its top 1,000 people by endorsement count.</p></div>
-  <div class="simple-link-grid">{domains.map((domain) => <a class="simple-link-card" href={`/hall-of-fame/${encodeURIComponent(domain)}/`}><strong>{formatDomain(domain)}</strong><span>Top 1,000 people <b>→</b></span></a>)}</div>
+<Base home title="Hall of Fame by Cyber Domain | Proof of Verified Skills">
+  <div class="directory-intro directory-intro-large domain-intro"><span class="section-kicker">Hall of Fame by Cyber Domain</span><h1>Hall of Fame</h1><p class="muted">Choose a cyber domain to see its top 1,000 people by endorsement count.</p></div>
+  <section class="domain-table" aria-label="Hall of Fame cyber domains">
+    <div class="domain-row domain-header" aria-hidden="true"><span>Cyber domain</span><span>Rankings</span><span></span></div>
+    {domains.map((domain) => <a class="domain-row" href={sitePath(`/hall-of-fame/${encodeURIComponent(domain)}/`)}><strong>{formatDomain(domain)}</strong><span>Top 1,000 people</span><span class="domain-arrow" aria-hidden="true">→</span></a>)}
+  </section>
 </Base>

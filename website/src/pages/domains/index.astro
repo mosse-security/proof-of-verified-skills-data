@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { formatDomain, listProfiles } from '../../lib/records';
+import { sitePath } from '../../lib/site';
 const people = listProfiles();
 const domains = [...new Set(people.flatMap((person) => person.domains))].sort((a, b) => formatDomain(a).localeCompare(formatDomain(b)));
 const totalFor = (domain: string) => people.reduce((sum, person) => sum + (person.domainCounts[domain] ?? 0), 0);
@@ -9,6 +10,6 @@ const totalFor = (domain: string) => people.reduce((sum, person) => sum + (perso
   <div class="directory-intro domain-intro"><h1>Search by Cyber Domain</h1><p class="muted">Choose a specialty to see the people and evidence connected to it.</p></div>
   <section class="domain-table" aria-label="Cyber domains">
     <div class="domain-row domain-header" aria-hidden="true"><span>Cyber domain</span><span>Endorsements</span><span></span></div>
-    {domains.map((domain) => <a class="domain-row" href={`/domains/${encodeURIComponent(domain)}/`}><strong>{formatDomain(domain)}</strong><span>{totalFor(domain).toLocaleString()} endorsements</span><span class="domain-arrow" aria-hidden="true">→</span></a>)}
+    {domains.map((domain) => <a class="domain-row" href={sitePath(`/domains/${encodeURIComponent(domain)}/`)}><strong>{formatDomain(domain)}</strong><span>{totalFor(domain).toLocaleString()} endorsements</span><span class="domain-arrow" aria-hidden="true">→</span></a>)}
   </section>
 </Base>

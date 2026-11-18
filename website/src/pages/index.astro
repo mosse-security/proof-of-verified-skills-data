@@ -1,14 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
+import { sitePath } from '../lib/site';
 ---
 <Base home title="Proof of Verified Skills">
   <section class="simple-home">
     <h1>Discover vetted cyber professionals</h1>
     <div class="simple-home-actions">
-      <a class="simple-home-card simple-home-card-primary" href="/directory/"><span class="simple-home-icon">⌕</span><strong>Find a person</strong><small>Search the directory by name.</small><b>Search by name →</b></a>
-      <a class="simple-home-card" href="/domains/"><span class="simple-home-icon">◈</span><strong>Browse by cyber domain</strong><small>Choose a cybersecurity specialty.</small><b>Search by cyber domain →</b></a>
-      <a class="simple-home-card" href="/assessors/"><span class="simple-home-icon">◎</span><strong>Search by assessor</strong><small>Find people recognized by a specific assessor.</small><b>Search by assessor →</b></a>
-      <a class="simple-home-card" href="/hall-of-fame/"><span class="simple-home-icon">★</span><strong>Hall of Fame</strong><small>See the top 1,000 in each domain.</small><b>See the leaders →</b></a>
+      <a class="simple-home-card simple-home-card-primary" href={sitePath('/directory/')}><span class="simple-home-icon">⌕</span><strong>Find a person</strong><small>Search the directory by name.</small><b>Search by name →</b></a>
+      <a class="simple-home-card" href={sitePath('/domains/')}><span class="simple-home-icon">◈</span><strong>Browse by cyber domain</strong><small>Choose a cybersecurity specialty.</small><b>Search by cyber domain →</b></a>
+      <a class="simple-home-card" href={sitePath('/assessors/')}><span class="simple-home-icon">◎</span><strong>Search by assessor</strong><small>Find people recognized by a specific assessor.</small><b>Search by assessor →</b></a>
+      <a class="simple-home-card" href={sitePath('/hall-of-fame/')}><span class="simple-home-icon">★</span><strong>Hall of Fame</strong><small>See the top 1,000 in each domain.</small><b>See the leaders →</b></a>
+      <a class="simple-home-card" href={sitePath('/most-vetted/')}><span class="simple-home-icon">✦</span><strong>The Most Vetted</strong><small>Find the people reviewed by the most assessors.</small><b>See the most vetted →</b></a>
+      <a class="simple-home-card" href={sitePath('/most-endorsements/')}><span class="simple-home-icon">◆</span><strong>The Most Endorsements</strong><small>See the top 1,000 people by endorsement count.</small><b>See the leaders →</b></a>
     </div>
   </section>
 </Base>

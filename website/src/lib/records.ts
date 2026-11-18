@@ -45,6 +45,8 @@ export interface Summary {
   domains: string[];
   domainCounts: Record<string, number>;
   assessors: string[];
+  assessorIds: string[];
+  assessorNames: Record<string, string>;
 }
 
 let summaries: Summary[] | undefined;
@@ -55,6 +57,8 @@ export function listProfiles(): Summary[] {
     .map((file) => {
       const p = JSON.parse(readFileSync(join(dataDir, file), 'utf8')) as Person;
       const assessors = [...new Set((p.endorsements ?? []).map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort();
+      const assessorNames = Object.fromEntries((p.endorsements ?? []).filter((item): item is Endorsement & { 'assessor-id': string; assessor: string } => Boolean(item['assessor-id'] && item.assessor)).map((item) => [item['assessor-id'], item.assessor]));
+      const assessorIds = [...new Set((p.endorsements ?? []).map((item) => item['assessor-id']).filter((assessorId): assessorId is string => Boolean(assessorId)))].sort();
       return {
         slug: file.slice(0, -5),
         name: p.name,
@@ -72,6 +76,8 @@ export function listProfiles(): Summary[] {
           .filter(([, count]) => count > 0).map(([domain]) => domain),
         domainCounts: Object.fromEntries(Object.entries(p.stats?.['by-domain'] ?? {}).filter(([, count]) => count > 0)),
         assessors,
+        assessorIds,
+        assessorNames,
       };
     })
     .sort((a, b) => a.name.localeCompare(b.name));

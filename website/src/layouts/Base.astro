@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { sitePath } from '../lib/site';
 const { title, description = 'Public directory of verified cybersecurity skills and conference endorsements.', home = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -15,8 +16,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <body>
     <div class="page">
       <header class:list={['app-header', home && 'home-header']}>
-        <a href="/" class="brand" aria-label="Proof of Verified Skills">
-          <img src="/vct-logo.png" alt="Proof of Verified Skills" class="brand-logo" />
+        <a href={sitePath('/')} class="brand" aria-label="Proof of Verified Skills">
+          <img src={sitePath('/vct-logo.png')} alt="Proof of Verified Skills" class="brand-logo" />
           {!home && <span class="registry-label">Public registry of verified cyber professionals</span>}
         </a>
       </header>

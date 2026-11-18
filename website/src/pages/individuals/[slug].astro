@@ -18,13 +18,24 @@ export function getStaticPaths() {
 const slug = Astro.params.slug!;
 const person = getProfile(slug);
 const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
-  const level = (b.povs?.level ?? 0) - (a.povs?.level ?? 0);
-  return level || (b.year ?? 0) - (a.year ?? 0);
+  const year = (b.year ?? 0) - (a.year ?? 0);
+  return year || (b.povs?.level ?? 0) - (a.povs?.level ?? 0);
 });
 const endorsers = [...new Set(endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort((a, b) => a.localeCompare(b));
 const level = highestLevel(person);
 const milestones = ['verifiable', 'defended', 'recognized', 'trusted'];
 const titleFor = (item: typeof endorsements[number]) => item.label || item.description || 'Endorsement';
+const assessorLabelFor = (assessor: string) => {
+  const words = assessor.trim().split(/\s+/);
+  return words.length > 4 ? `${words.slice(0, 4).join(' ')}...` : assessor;
+};
+const levelChipClass = (item: typeof endorsements[number]) => {
+  const level = item.povs?.level;
+  if (!level) return 'level-chip-unrated';
+  if (level <= 2) return 'level-chip-blue';
+  if (level <= 4) return 'level-chip-orange';
+  return 'level-chip-green';
+};
 const dateFor = (item: typeof endorsements[number]) => item.year ? String(item.year) : 'Date not specified';
 const descriptionFor = (item: typeof endorsements[number]) => item.description?.trim();
 const criticalityFor = (item: typeof endorsements[number]) => {
@@ -60,14 +71,14 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
     <div class="evidence-controls">
       <div class="area-pills">
         <button type="button" class="active" data-assessor-filter="all" aria-pressed="true">All Endorsements <span>{endorsements.length}</span></button>
-        {endorsers.map((assessor) => <button type="button" data-assessor-filter={assessor} aria-pressed="false">{assessor} <span>{endorsements.filter((item) => item.assessor === assessor).length}</span></button>)}
+        {endorsers.map((assessor) => <button type="button" title={assessor} data-assessor-filter={assessor} aria-pressed="false">{assessorLabelFor(assessor)} <span>{endorsements.filter((item) => item.assessor === assessor).length}</span></button>)}
       </div>
     </div>
     <div class="evidence-list">
       {endorsements.length ? endorsements.map((item, index) => <button type="button" class="evidence-row" data-open-id={`endorsement-${index}`} data-assessor={item.assessor || ''}>
         <span class="domain-badge" title={formatDomain(endorsementDomains(item)[0] || 'Unclassified')}>{formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
         <span class="row-main"><span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>{cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}<small class="endorser">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong></small></span>
-        <span class="row-context"><strong>{item.povs?.level ? `Level ${item.povs.level}` : 'Unrated'}</strong><small>{dateFor(item)}</small></span>
+        <span class="row-context"><strong class={`level-chip ${levelChipClass(item)}`}>{item.povs?.level ? `Level ${item.povs.level}` : 'Unrated'}</strong><small>{dateFor(item)}</small></span>
       </button>) : <div class="empty-state"><strong>No proof records match this view.</strong><span>There are no public endorsements for this individual yet.</span></div>}
       {endorsements.length > 0 && <div class="empty-state" data-filter-empty hidden><strong>No proof records in this domain.</strong><span>Choose another domain to see more evidence.</span></div>}
     </div>
@@ -86,7 +97,7 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
           <p class="drawer-byline">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong></p>
         </div>
         {descriptionFor(item) && descriptionFor(item) !== titleFor(item).trim() && <section class="record-description"><h3>{item.type === 'presentation' ? 'Abstract' : item.type === 'vulnerability_discovery' ? 'Details' : 'Description'}</h3><p>{descriptionFor(item)}</p></section>}
-        <section class:list={['plain-explainer', !item.povs?.level && 'unrated']}><span class="row-score large">{item.povs?.level ? `L${item.povs.level}` : '-'}</span><div><h3>{item.povs?.level ? `${levelBand(item.povs.level)} proof` : 'Not yet rated'}</h3>{item.povs?.explanation && <p>{item.povs.explanation}</p>}</div></section>
+        <section class:list={['plain-explainer', !item.povs?.level && 'unrated']}><span class:list={['row-score', 'large', levelChipClass(item)]}>{item.povs?.level ? `L${item.povs.level}` : '-'}</span><div><h3>{item.povs?.level ? `${levelBand(item.povs.level)} proof` : 'Not yet rated'}</h3>{item.povs?.explanation && <p>{item.povs.explanation}</p>}</div></section>
         <h3 class="facts-heading">Record details</h3>
         <dl class="facts">
           <div><dt>Milestones</dt><dd>{milestones.filter((milestone) => item.povs?.milestones?.[milestone]).map((milestone) => <span class="milestone">{milestone}</span>)}{!milestones.some((milestone) => item.povs?.milestones?.[milestone]) && 'Not recorded'}</dd></div>

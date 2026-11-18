@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { listProfiles } from '../../lib/records';
+import { sitePath } from '../../lib/site';
+
+const people = listProfiles()
+  .sort((a, b) => b.endorsers - a.endorsers || b.endorsements - a.endorsements || a.name.localeCompare(b.name))
+  .slice(0, 100);
+const mixTotal = (person: typeof people[number]) => Object.values(person.levelCounts).reduce((sum, count) => sum + count, 0);
+const mixWidth = (count: number, person: typeof people[number]) => `${mixTotal(person) ? (count / mixTotal(person)) * 100 : 0}%`;
+---
+
+<Base home title="The Most Vetted | Proof of Verified Skills">
+  <div class="directory-intro directory-intro-large domain-intro">
+    <span class="section-kicker">Many independent reviews</span>
+    <h1>The Most Vetted</h1>
+    <p class="muted">The top 100 individuals reviewed by the most assessors.</p>
+  </div>
+
+  <div class="directory-table most-vetted-table" aria-label="The Most Vetted">
+    <div class="directory-row directory-header"><span>Name</span><span>Assessors</span><span>Endorsements</span><span>Proof mix</span></div>
+    {people.map((person, index) => <a class="directory-row" href={sitePath(`/individuals/${encodeURIComponent(person.slug)}/`)}><span class="directory-name"><strong><span class="directory-rank">{index + 1}</span>{person.name}</strong></span><span class="directory-number directory-endorsers">{person.endorsers.toLocaleString()}</span><span class="directory-number directory-endorsements">{person.endorsements.toLocaleString()}</span><span class="directory-mix"><span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(person.levelCounts.synthetic, person)}`}></i><i class="level-production" style={`width:${mixWidth(person.levelCounts.productionLike, person)}`}></i><i class="level-expert" style={`width:${mixWidth(person.levelCounts.expert, person)}`}></i><i class="level-unrated" style={`width:${mixWidth(person.levelCounts.unrated, person)}`}></i></span><span class="level-stack-labels"><b>Synthetic: {person.levelCounts.synthetic}</b><b>Production-like: {person.levelCounts.productionLike}</b><b>Expert: {person.levelCounts.expert}</b><b>Unrated: {person.levelCounts.unrated}</b></span></span></a>)}
+  </div>
+</Base>

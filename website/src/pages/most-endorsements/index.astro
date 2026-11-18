@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import { listProfiles } from '../../lib/records';
+import { sitePath } from '../../lib/site';
+
+const people = listProfiles()
+  .sort((a, b) => b.endorsements - a.endorsements || b.endorsers - a.endorsers || a.name.localeCompare(b.name))
+  .slice(0, 1000);
+const mixTotal = (person: typeof people[number]) => Object.values(person.levelCounts).reduce((sum, count) => sum + count, 0);
+const mixWidth = (count: number, person: typeof people[number]) => `${mixTotal(person) ? (count / mixTotal(person)) * 100 : 0}%`;
+---
+
+<Base home title="The Most Endorsements | Proof of Verified Skills">
+  <div class="directory-intro directory-intro-large domain-intro">
+    <span class="section-kicker">Most recognized</span>
+    <h1>The Most Endorsements</h1>
+    <p class="muted">The top 1,000 individuals ranked by endorsement count.</p>
+  </div>
+
+  <section class="directory-table" aria-label="The Most Endorsements">
+    <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsements</span><span>Endorsers</span><span>Proof mix</span></div>
+    {people.map((person, index) => <a class="directory-row" data-endorsement-row href={sitePath(`/individuals/${encodeURIComponent(person.slug)}/`)}><span class="directory-name"><strong><span class="directory-rank">{index + 1}</span>{person.name}</strong></span><span class="directory-number directory-endorsements">{person.endorsements.toLocaleString()}</span><span class="directory-number directory-endorsers">{person.endorsers.toLocaleString()}</span><span class="directory-mix"><span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(person.levelCounts.synthetic, person)}`}></i><i class="level-production" style={`width:${mixWidth(person.levelCounts.productionLike, person)}`}></i><i class="level-expert" style={`width:${mixWidth(person.levelCounts.expert, person)}`}></i><i class="level-unrated" style={`width:${mixWidth(person.levelCounts.unrated, person)}`}></i></span><span class="level-stack-labels"><b>Synthetic: {person.levelCounts.synthetic}</b><b>Production-like: {person.levelCounts.productionLike}</b><b>Expert: {person.levelCounts.expert}</b><b>Unrated: {person.levelCounts.unrated}</b></span></span></a>)}
+  </section>
+  <div class="directory-pagination pagination"><button type="button" data-endorsement-prev disabled>← Previous</button><span data-endorsement-page>Page 1</span><button type="button" data-endorsement-next>Next →</button></div>
+</Base>
+
+<script>
+  const endorsementRows = [...document.querySelectorAll('[data-endorsement-row]')];
+  const pageSize = 100;
+  const pages = Math.max(1, Math.ceil(endorsementRows.length / pageSize));
+  let page = 1;
+  const status = document.querySelector('[data-endorsement-page]');
+  const previous = document.querySelector('[data-endorsement-prev]');
+  const next = document.querySelector('[data-endorsement-next]');
+  function renderEndorsementPage() {
+    endorsementRows.forEach((row, index) => { row.hidden = index < (page - 1) * pageSize || index >= page * pageSize; });
+    if (status) status.textContent = `Page ${page} of ${pages}`;
+    if (previous) previous.disabled = page === 1;
+    if (next) next.disabled = page === pages;
+  }
+  previous?.addEventListener('click', () => { if (page > 1) { page -= 1; renderEndorsementPage(); } });
+  next?.addEventListener('click', () => { if (page < pages) { page += 1; renderEndorsementPage(); } });
+  renderEndorsementPage();
+</script>
