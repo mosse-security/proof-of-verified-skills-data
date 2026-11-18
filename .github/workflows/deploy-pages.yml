@@ -28,7 +28,10 @@ jobs:
           cache-dependency-path: website/package-lock.json
       - name: Install website dependencies
         working-directory: website
-        run: npm ci
+        # npm install resolves Astro/Rollup's platform-specific optional native
+        # bindings on the Ubuntu runner; npm ci can omit them from a lockfile
+        # generated on Windows.
+        run: npm install --include=optional
       - name: Build website
         working-directory: website
         run: npm run build
