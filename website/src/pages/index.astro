@@ -5,6 +5,13 @@ import { sitePath } from '../lib/site';
 <Base home title="Proof of Verified Skills">
   <section class="simple-home">
     <h1>Discover vetted cyber professionals</h1>
+    <form class="homepage-search" action={sitePath('/search/')} method="get">
+      <label for="homepage-search-input">Search the registry</label>
+      <div class="homepage-search-row">
+        <input id="homepage-search-input" name="q" type="search" placeholder="Search by name, assessor, endorsement, or domain" autocomplete="off" />
+        <button type="submit">Search</button>
+      </div>
+    </form>
     <div class="simple-home-actions">
       <a class="simple-home-card simple-home-card-primary" href={sitePath('/directory/')}><span class="simple-home-icon">⌕</span><strong>Find a person</strong><small>Search the directory by name.</small><b>Search by name →</b></a>
       <a class="simple-home-card" href={sitePath('/domains/')}><span class="simple-home-icon">◈</span><strong>Browse by cyber domain</strong><small>Choose a cybersecurity specialty.</small><b>Search by cyber domain →</b></a>

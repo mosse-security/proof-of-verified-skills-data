@@ -20,8 +20,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           <img src={sitePath('/vct-logo.png')} alt="Proof of Verified Skills" class="brand-logo" />
           {!home && <span class="registry-label">Public registry of verified cyber professionals</span>}
         </a>
+        {!home && <a class="header-search-link" href={sitePath('/search/')}>Search</a>}
       </header>
-      <main><slot /></main>
+      <main data-pagefind-body><slot /></main>
       <footer class="site-footer">
         <span>(c) Mosse Cyber Security Institute</span>
         <span class="footer-links">

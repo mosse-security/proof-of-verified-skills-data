@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { sitePath } from '../../lib/site';
+const query = Astro.url.searchParams.get('q') ?? '';
+---
+<Base home title="Search | Proof of Verified Skills" description="Search the public registry of verified cybersecurity professionals and endorsements.">
+  <div class="directory-intro directory-intro-large search-intro">
+    <span class="section-kicker">Registry search</span>
+    <h1>Search the registry</h1>
+    <p class="muted">Find individuals, endorsements, assessors, and cyber domains.</p>
+  </div>
+  <section class="search-panel" aria-label="Search the registry">
+    <form class="registry-search-form" action={sitePath('/search/')} method="get">
+      <label for="registry-search-input">Search the registry</label>
+      <div class="registry-search-row">
+        <input id="registry-search-input" name="q" type="search" value={query} placeholder="Search by name, assessor, endorsement, or domain" autocomplete="off" />
+        <button type="submit">Search</button>
+      </div>
+    </form>
+    <link rel="stylesheet" href={sitePath('/pagefind/pagefind-ui.css')} />
+    <div id="pagefind-search"></div>
+  </section>
+  <script is:inline src={sitePath('/pagefind/pagefind-ui.js')}></script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.PagefindUI) {
+        new window.PagefindUI({ element: '#pagefind-search', showSubResults: true, showImages: false, urlParam: 'q' });
+      }
+    });
+  </script>
+</Base>
