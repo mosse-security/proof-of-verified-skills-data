@@ -123,7 +123,7 @@ export function formatLabel(value?: string): string {
 }
 
 export function levelBand(level?: number): string {
-  if (!level) return 'Unrated';
+  if (!level) return 'Not Verified';
   if (level <= 2) return 'Synthetic';
   if (level <= 4) return 'Production-like';
   return 'Expert';

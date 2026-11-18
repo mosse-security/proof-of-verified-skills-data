@@ -66,9 +66,9 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
           <span>Highest verified: <strong>{level ? `Level ${level} - ${levelBand(level)}` : 'Not yet rated'}</strong></span>
           <span>{person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size} assessors</span>
         </div>
-        <div class="profile-level-mix" title={`${levelCounts.synthetic} synthetic, ${levelCounts.productionLike} production-like, ${levelCounts.expert} expert, ${levelCounts.unrated} unrated`}>
+        <div class="profile-level-mix" title={`${levelCounts.synthetic} synthetic, ${levelCounts.productionLike} production-like, ${levelCounts.expert} expert, ${levelCounts.unrated} Not Verified`}>
           <span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(levelCounts.synthetic)}`}></i><i class="level-production" style={`width:${mixWidth(levelCounts.productionLike)}`}></i><i class="level-expert" style={`width:${mixWidth(levelCounts.expert)}`}></i><i class="level-unrated" style={`width:${mixWidth(levelCounts.unrated)}`}></i></span>
-          <span class="level-stack-labels"><b>Synthetic: {levelCounts.synthetic}</b><b>Production-like: {levelCounts.productionLike}</b><b>Expert: {levelCounts.expert}</b><b>Unrated: {levelCounts.unrated}</b></span>
+          <span class="level-stack-labels"><b>Synthetic: {levelCounts.synthetic}</b><b>Production-like: {levelCounts.productionLike}</b><b>Expert: {levelCounts.expert}</b><b>Not Verified: {levelCounts.unrated}</b></span>
         </div>
         {person.contact && person.contact.length > 0 && <div class="contact-row">
           {person.contact.map((contact) => <span>{contact.label || contact.url}</span>)}
@@ -92,7 +92,7 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
       {endorsements.length ? endorsements.map((item, index) => <button type="button" class="evidence-row" data-open-id={`endorsement-${index}`} data-assessor={item.assessor || ''}>
         <span class="domain-badge" title={formatDomain(endorsementDomains(item)[0] || 'Unclassified')}>{formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
         <span class="row-main"><span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>{cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}<small class="endorser">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong></small></span>
-        <span class="row-context"><strong class={`level-chip ${levelChipClass(item)}`}>{item.povs?.level ? `Level ${item.povs.level}` : 'Unrated'}</strong><small>{dateFor(item)}</small></span>
+        <span class="row-context"><strong class={`level-chip ${levelChipClass(item)}`}>{item.povs?.level ? `Level ${item.povs.level}` : 'Not Verified'}</strong><small>{dateFor(item)}</small></span>
       </button>) : <div class="empty-state"><strong>No proof records match this view.</strong><span>There are no public endorsements for this individual yet.</span></div>}
       {endorsements.length > 0 && <div class="empty-state" data-filter-empty hidden><strong>No proof records in this domain.</strong><span>Choose another domain to see more evidence.</span></div>}
     </div>
