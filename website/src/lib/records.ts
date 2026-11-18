@@ -55,16 +55,17 @@ export function listProfiles(): Summary[] {
   summaries = readdirSync(dataDir)
     .filter((file) => file.endsWith('.json'))
     .map((file) => {
-      const p = JSON.parse(readFileSync(join(dataDir, file), 'utf8')) as Person;
-      const assessors = [...new Set((p.endorsements ?? []).map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort();
-      const assessorNames = Object.fromEntries((p.endorsements ?? []).filter((item): item is Endorsement & { 'assessor-id': string; assessor: string } => Boolean(item['assessor-id'] && item.assessor)).map((item) => [item['assessor-id'], item.assessor]));
-      const assessorIds = [...new Set((p.endorsements ?? []).map((item) => item['assessor-id']).filter((assessorId): assessorId is string => Boolean(assessorId)))].sort();
+      const raw = JSON.parse(readFileSync(join(dataDir, file), 'utf8')) as Person;
+      const p = raw;
+      const assessors = [...new Set(p.endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort();
+      const assessorNames = Object.fromEntries(p.endorsements.filter((item): item is Endorsement & { 'assessor-id': string; assessor: string } => Boolean(item['assessor-id'] && item.assessor)).map((item) => [item['assessor-id'], item.assessor]));
+      const assessorIds = [...new Set(p.endorsements.map((item) => item['assessor-id']).filter((assessorId): assessorId is string => Boolean(assessorId)))].sort();
       return {
         slug: file.slice(0, -5),
         name: p.name,
-        endorsements: p.stats?.endorsements ?? p.endorsements?.length ?? 0,
-        endorsers: p.stats?.assessors ?? new Set((p.endorsements ?? []).map((item) => item['assessor-id'] || item.assessor).filter(Boolean)).size,
-        levelCounts: (p.endorsements ?? []).reduce((counts, endorsement) => {
+        endorsements: p.stats?.endorsements ?? p.endorsements.length,
+        endorsers: p.stats?.assessors ?? new Set(p.endorsements.map((item) => item['assessor-id'] || item.assessor).filter(Boolean)).size,
+        levelCounts: p.endorsements.reduce((counts, endorsement) => {
           const level = endorsement.povs?.level ?? 0;
           if (level <= 2 && level > 0) counts.synthetic += 1;
           else if (level <= 4 && level > 0) counts.productionLike += 1;

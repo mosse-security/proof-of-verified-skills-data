@@ -141,9 +141,13 @@ class AssessorMetadata:
         return metadata
 
     def povs_for_evidence(self, evidence: bool) -> dict[str, Any]:
-        if not evidence or not self.pov_policy:
+        if not self.pov_policy:
             return _povs_for_evidence(evidence)
         policy = self.pov_policy
+        if not evidence and not policy.get("applyWithoutEvidence", False):
+            return _povs_for_evidence(evidence)
+        if not isinstance(policy.get("applyWithoutEvidence", False), bool):
+            raise EndorsementSchemaError(f"Invalid applyWithoutEvidence in assessor metadata for {self.id}")
         milestones = policy.get("milestones") if isinstance(policy, dict) else None
         if (
             not isinstance(milestones, dict)

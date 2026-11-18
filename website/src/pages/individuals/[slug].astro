@@ -23,6 +23,16 @@ const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
 });
 const endorsers = [...new Set(endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort((a, b) => a.localeCompare(b));
 const level = highestLevel(person);
+const levelCounts = endorsements.reduce((counts, endorsement) => {
+  const endorsementLevel = endorsement.povs?.level ?? 0;
+  if (endorsementLevel > 0 && endorsementLevel <= 2) counts.synthetic += 1;
+  else if (endorsementLevel <= 4 && endorsementLevel > 0) counts.productionLike += 1;
+  else if (endorsementLevel >= 5) counts.expert += 1;
+  else counts.unrated += 1;
+  return counts;
+}, { synthetic: 0, productionLike: 0, expert: 0, unrated: 0 });
+const mixTotal = Object.values(levelCounts).reduce((sum, count) => sum + count, 0);
+const mixWidth = (count: number) => `${mixTotal ? (count / mixTotal) * 100 : 0}%`;
 const milestones = ['verifiable', 'defended', 'recognized', 'trusted'];
 const titleFor = (item: typeof endorsements[number]) => item.label || item.description || 'Endorsement';
 const assessorLabelFor = (assessor: string) => {
@@ -55,6 +65,10 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
         <div class="profile-meta-line">
           <span>Highest verified: <strong>{level ? `Level ${level} - ${levelBand(level)}` : 'Not yet rated'}</strong></span>
           <span>{person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size} assessors</span>
+        </div>
+        <div class="profile-level-mix" title={`${levelCounts.synthetic} synthetic, ${levelCounts.productionLike} production-like, ${levelCounts.expert} expert, ${levelCounts.unrated} unrated`}>
+          <span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(levelCounts.synthetic)}`}></i><i class="level-production" style={`width:${mixWidth(levelCounts.productionLike)}`}></i><i class="level-expert" style={`width:${mixWidth(levelCounts.expert)}`}></i><i class="level-unrated" style={`width:${mixWidth(levelCounts.unrated)}`}></i></span>
+          <span class="level-stack-labels"><b>Synthetic: {levelCounts.synthetic}</b><b>Production-like: {levelCounts.productionLike}</b><b>Expert: {levelCounts.expert}</b><b>Unrated: {levelCounts.unrated}</b></span>
         </div>
         {person.contact && person.contact.length > 0 && <div class="contact-row">
           {person.contact.map((contact) => <span>{contact.label || contact.url}</span>)}

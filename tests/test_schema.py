@@ -93,6 +93,31 @@ class EndorsementSchemaTests(unittest.TestCase):
             "No evidence discovered for this record therefore it could not be verified",
         )
 
+    def test_assessor_policy_can_assign_level_without_evidence(self) -> None:
+        assessor = AssessorMetadata(
+            id="pwn2own", name="Pwn2Own", category="competition",
+            rigor_level="very_high", review_type="competition_validation",
+            pov_policy={
+                "milestones": {
+                    "verifiable": True,
+                    "defended": True,
+                    "recognized": True,
+                    "trusted": True,
+                },
+                "level": 6,
+                "applyWithoutEvidence": True,
+                "explanation": "Live competition validation.",
+            },
+        )
+        record = build_endorsement_record(
+            name="Alice Example", label="Pwn2Own result", description="Validated exploit.",
+            endorsement_type="competition_result", assessor=assessor,
+            url="https://example.test/result", year=2026, domains=("vulnerability-research",),
+        )
+        self.assertEqual(record["povs"]["level"], 6)
+        self.assertTrue(record["povs"]["milestones"]["trusted"])
+        validate_endorsement_record(record, assessor=assessor)
+
     def test_povs_cannot_disagree_with_evidence(self) -> None:
         assessor = AssessorMetadata(
             id="example", name="Example Conference", category="conference_community",
