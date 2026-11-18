@@ -118,6 +118,26 @@ class EndorsementSchemaTests(unittest.TestCase):
         self.assertTrue(record["povs"]["milestones"]["trusted"])
         validate_endorsement_record(record, assessor=assessor)
 
+    def test_cve_endorsements_are_only_vulnerability_research(self) -> None:
+        assessor = AssessorMetadata(
+            id="mitre", name="MITRE CVE Program", category="vulnerability_database",
+            rigor_level="high", review_type="committee_review",
+        )
+        record = build_endorsement_record(
+            name="Alice Example", label="CVE-2026-1234", description="A published vulnerability.",
+            endorsement_type="vulnerability_discovery", assessor=assessor,
+            url="https://www.cve.org/CVERecord?id=CVE-2026-1234", year=2026,
+            domains=("vulnerability-research",),
+            evidence_links=({"title": "CVE record", "url": "https://www.cve.org/CVERecord?id=CVE-2026-1234"},),
+        )
+        record["domains"] = ["cloud-security", "vulnerability-research"]
+        record["subspecialties"] = {
+            "cloud-security": [],
+            "vulnerability-research": ["cve-analysis-and-vulnerability-disclosure"],
+        }
+        with self.assertRaises(EndorsementSchemaError):
+            validate_endorsement_record(record, assessor=assessor)
+
     def test_povs_cannot_disagree_with_evidence(self) -> None:
         assessor = AssessorMetadata(
             id="example", name="Example Conference", category="conference_community",

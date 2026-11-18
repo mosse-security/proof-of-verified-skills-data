@@ -363,6 +363,11 @@ def validate_endorsement_record(
     )
 
     validate_record_domains(record, source=source)
+    if re.fullmatch(r"CVE-\d{4}-\d+", record["label"], re.IGNORECASE):
+        if record["domains"] != ["vulnerability-research"]:
+            raise EndorsementSchemaError(
+                f"{source}.domains must contain only vulnerability-research for CVE endorsements"
+            )
 
     if assessor is not None:
         expected = {

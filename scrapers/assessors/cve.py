@@ -10,7 +10,6 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Iterator, Mapping
 
-from ..domains import detect_domains
 from ..enrichment import EnrichmentCatalog
 from ..identity_registry import IdentityRegistry, clean_person_name
 from ..schema import AssessorMetadata, build_endorsement_record
@@ -203,7 +202,11 @@ class CveScraper:
                 subtitle=_subtitle(cve),
                 url=url,
                 year=int(match.group("year")),
-                domains=detect_domains(cve_id, description),
+                # A CVE record is a vulnerability-research endorsement even
+                # when its description mentions a product, cloud, identity,
+                # or other affected context. Do not let keyword detection
+                # promote those contexts into additional cyber domains.
+                domains=("vulnerability-research",),
                 evidence_links=({"title": "CVE record", "url": url},),
             )
             found.append(record)
