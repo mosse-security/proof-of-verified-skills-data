@@ -191,6 +191,9 @@ h2 { margin-bottom: 8px; font-size: 24px; letter-spacing: -.03em; }
 .challenge-pagination button { padding: 8px 12px; border: 1px solid var(--rule); border-radius: 8px; color: var(--ink-2); background: var(--surface); cursor: pointer; }
 .challenge-pagination button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent-ink); }
 .challenge-pagination button:disabled { cursor: not-allowed; opacity: .45; }
+.achievement-letters { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0; }
+.achievement-letters a { min-width: 34px; padding: 7px 9px; border: 1px solid var(--rule); border-radius: 7px; color: var(--ink-2); text-align: center; }
+.achievement-letters a:hover, .achievement-letters a.selected { border-color: var(--accent); color: var(--accent-ink); background: var(--accent-soft); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .drawer-scrim { position: fixed; inset: 0; z-index: 80; pointer-events: none; background: rgba(17,24,39,.44); opacity: 0; transition: opacity .28s ease; }
 .drawer-scrim.open { pointer-events: auto; opacity: 1; }

@@ -1,0 +1,17 @@
+---
+import Base from '../../../layouts/Base.astro';
+import AchievementResults from '../../../components/AchievementResults.astro';
+import { achievementPaths, achievementPeople } from '../../../lib/achievement-page';
+import { getChallenge } from '../../../lib/challenges';
+
+export function getStaticPaths() {
+  return achievementPaths();
+}
+
+const challenge = getChallenge(Astro.params.slug!);
+const people = achievementPeople(Astro.params.slug!);
+---
+
+<Base home title={`${challenge.title} | POVS Achievements`} description={challenge.description}>
+  <AchievementResults challenge={challenge} people={people} letter={Astro.params.letter} />
+</Base>

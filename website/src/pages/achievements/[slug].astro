@@ -1,73 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
+import AchievementResults from '../../components/AchievementResults.astro';
+import { achievementPeople } from '../../lib/achievement-page';
 import { getChallenge, listChallenges } from '../../lib/challenges';
-import { listProfiles } from '../../lib/records';
-import { sitePath } from '../../lib/site';
 
 export function getStaticPaths() {
   return listChallenges().map((challenge) => ({ params: { slug: challenge.slug } }));
 }
 
 const challenge = getChallenge(Astro.params.slug!);
-const profiles = new Map(listProfiles().map((person) => [person.slug, person]));
-const people = challenge.matches
-  .map((match) => profiles.get(match.personSlug))
-  .filter((person): person is ReturnType<typeof listProfiles>[number] => Boolean(person));
-const mixTotal = (person: typeof people[number]) => Object.values(person.levelCounts).reduce((sum, count) => sum + count, 0);
-const mixWidth = (count: number, person: typeof people[number]) => `${mixTotal(person) ? (count / mixTotal(person)) * 100 : 0}%`;
+const people = achievementPeople(Astro.params.slug!);
 ---
 
 <Base home title={`${challenge.title} | POVS Achievements`} description={challenge.description}>
-  <div class="challenge-detail-intro">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href={sitePath('/achievements/')}>Achievements</a><span>/</span><span>{challenge.title}</span></nav>
-    <span class="section-kicker">POVS Achievement</span>
-    <div class="challenge-detail-title"><h1>{challenge.title}</h1></div>
-    <p class="muted">{challenge.description}</p>
-    <strong class="challenge-result-count">{people.length.toLocaleString()} matching individuals</strong>
-  </div>
-
-  <section class="section challenge-results" aria-label={`People who have achieved ${challenge.title}`}>
-    <div class="section-head"><div><span class="section-kicker">People directory</span><h2>People who have achieved this</h2></div><p>{people.length.toLocaleString()} people</p></div>
-    {people.length ? <>
-      <div class="challenge-result-controls">
-        <label><span class="sr-only">Search matching people</span><input type="search" placeholder="Search matching people..." data-match-search /></label>
-        <span class="challenge-page-status" data-page-status></span>
-      </div>
-      <div class="directory-table challenge-people-directory">
-        <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsements</span><span>Endorsers</span><span>Proof mix</span></div>
-        {people.map((person) => <a class="directory-row" data-match-row data-search={person.name.toLocaleLowerCase()} href={sitePath(`/individuals/${encodeURIComponent(person.slug)}/`)}>
-          <span class="directory-name"><strong>{person.name}</strong></span>
-          <span class="directory-number directory-endorsements">{person.endorsements.toLocaleString()}</span>
-          <span class="directory-number directory-endorsers">{person.endorsers.toLocaleString()}</span>
-          <span class="directory-mix"><span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(person.levelCounts.synthetic, person)}`}></i><i class="level-production" style={`width:${mixWidth(person.levelCounts.productionLike, person)}`}></i><i class="level-expert" style={`width:${mixWidth(person.levelCounts.expert, person)}`}></i><i class="level-unrated" style={`width:${mixWidth(person.levelCounts.unrated, person)}`}></i></span><span class="level-stack-labels"><b>Synthetic: {person.levelCounts.synthetic}</b><b>Production-like: {person.levelCounts.productionLike}</b><b>Expert: {person.levelCounts.expert}</b><b>Not Verified: {person.levelCounts.unrated}</b></span></span>
-        </a>)}
-      </div>
-      <div class="challenge-pagination" aria-label="Matching people pagination"><button type="button" data-prev disabled>Previous</button><button type="button" data-next>Next</button></div>
-    </> : <div class="empty-state"><strong>No matching individuals found in the current dataset.</strong><span>This achievement remains available as the catalogue grows.</span></div>}
-  </section>
+  <AchievementResults challenge={challenge} people={people} />
 </Base>
-
-<script>
-  const pageSize = 20;
-  const search = document.querySelector('[data-match-search]');
-  const rows = [...document.querySelectorAll('[data-match-row]')];
-  const prev = document.querySelector('[data-prev]');
-  const next = document.querySelector('[data-next]');
-  const status = document.querySelector('[data-page-status]');
-  let page = 1;
-  const update = () => {
-    const term = (search?.value || '').trim().toLowerCase();
-    const filtered = rows.filter((row) => !term || (row.dataset.search || '').includes(term));
-    const pages = Math.max(1, Math.ceil(filtered.length / pageSize));
-    page = Math.min(page, pages);
-    rows.forEach((row) => { row.hidden = true; });
-    filtered.slice((page - 1) * pageSize, page * pageSize).forEach((row) => { row.hidden = false; });
-    if (status) status.textContent = `${filtered.length ? (page - 1) * pageSize + 1 : 0}–${Math.min(page * pageSize, filtered.length)} of ${filtered.length}`;
-    if (prev) prev.disabled = page <= 1;
-    if (next) next.disabled = page >= pages;
-  };
-  search?.addEventListener('input', () => { page = 1; update(); });
-  prev?.addEventListener('click', () => { page -= 1; update(); });
-  next?.addEventListener('click', () => { page += 1; update(); });
-  update();
-</script>

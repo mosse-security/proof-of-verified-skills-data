@@ -3,6 +3,18 @@
 This repository captures conference endorsements, validates individual names,
 and builds canonical individual records.
 
+> **IDENTITY REVIEW RULE — DO NOT AUTOMATE ALLOW-LIST CHANGES**
+>
+> Scraper runs may add newly discovered names only to the relevant assessor's
+> `individuals-not-validated.txt`. They must never edit, append to, or promote
+> names into `data/individuals-enumeration.txt`. The repository owner manually
+> reviews those pending names and is the only person authorized to update the
+> global allow list. False positives in that file become canonical individual
+> records, so preserving this boundary is mandatory.
+
+See [`docs/identity-review-policy.md`](docs/identity-review-policy.md) before
+running parsers or merging individual records.
+
 ## Use the tool
 
 Install dependencies and run the local capture pipeline:

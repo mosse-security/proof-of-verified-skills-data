@@ -165,6 +165,9 @@ class IdentityRegistry:
         return removed
 
     def _record_unknown_locked(self, name: str) -> None:
+        # IMPORTANT: unknown names belong in the assessor-local pending-review
+        # file only. Never promote them to individuals-enumeration.txt here;
+        # the global allow list is maintained manually by the repository owner.
         value = clean_person_name(name)
         if not value:
             return
