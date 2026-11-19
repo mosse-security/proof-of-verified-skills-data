@@ -55,7 +55,22 @@ export interface Summary {
   assessors: string[];
   assessorIds: string[];
   assessorNames: Record<string, string>;
+  achievements: number;
 }
+
+const ACHIEVEMENT_TAGS = new Set([
+  'ctf-participant',
+  'ctf-champion',
+  'cve-researcher',
+  'critical-cve-discovery',
+  'top-conference-speaker',
+  'bounty-hunter',
+  'leaderboard-elite',
+  'academic-researcher',
+  'security-toolsmith',
+  'open-source-contributor',
+  'threat-researcher',
+]);
 
 let summaries: Summary[] | undefined;
 export function listProfiles(): Summary[] {
@@ -87,6 +102,7 @@ export function listProfiles(): Summary[] {
         assessors,
         assessorIds,
         assessorNames,
+        achievements: (p.tags ?? []).filter((tag) => ACHIEVEMENT_TAGS.has(tag)).length,
       };
     })
     .sort((a, b) => a.name.localeCompare(b.name));

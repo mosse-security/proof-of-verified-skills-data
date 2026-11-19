@@ -34,11 +34,12 @@ const letterUrl = (value: string) => sitePath(`/achievements/${challenge.slug}/$
       {letters.map((value) => <a class:list={{ selected: value === selectedLetter }} href={letterUrl(value)}>{value}</a>)}
     </nav>
     {letterPeople.length ? <div class="directory-table challenge-people-directory">
-      <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsements</span><span>Endorsers</span><span>Proof mix</span></div>
+      <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsements</span><span>Endorsers</span><span>POVS Achievements</span><span>Proof mix</span></div>
       {letterPeople.map((person) => <a class="directory-row" href={sitePath(`/individuals/${encodeURIComponent(person.slug)}/`)}>
         <span class="directory-name"><strong>{person.name}</strong></span>
         <span class="directory-number directory-endorsements">{person.endorsements.toLocaleString()}</span>
         <span class="directory-number directory-endorsers">{person.endorsers.toLocaleString()}</span>
+        <span class="directory-number directory-achievements">{person.achievements.toLocaleString()}<small>{person.achievements === 1 ? 'achievement' : 'achievements'}</small></span>
         <span class="directory-mix"><span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(person.levelCounts.synthetic, person)}`}></i><i class="level-production" style={`width:${mixWidth(person.levelCounts.productionLike, person)}`}></i><i class="level-expert" style={`width:${mixWidth(person.levelCounts.expert, person)}`}></i><i class="level-unrated" style={`width:${mixWidth(person.levelCounts.unrated, person)}`}></i></span><span class="level-stack-labels"><b>Synthetic: {person.levelCounts.synthetic}</b><b>Production-like: {person.levelCounts.productionLike}</b><b>Expert: {person.levelCounts.expert}</b><b>Not Verified: {person.levelCounts.unrated}</b></span></span>
       </a>)}
     </div> : <div class="empty-state"><strong>No individuals begin with {selectedLetter}.</strong></div>}
