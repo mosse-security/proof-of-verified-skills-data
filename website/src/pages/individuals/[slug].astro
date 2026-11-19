@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { listChallenges } from '../../lib/challenges';
+import { challengesForTags } from '../../lib/challenges';
 import {
   endorsementDomains,
   formatDomain,
@@ -18,8 +18,7 @@ export function getStaticPaths() {
 
 const slug = Astro.params.slug!;
 const person = getProfile(slug);
-const achievements = listChallenges()
-  .filter((challenge) => challenge.matches.some((match) => match.personSlug === slug));
+const achievements = challengesForTags(person.tags);
 const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
   const year = (b.year ?? 0) - (a.year ?? 0);
   return year || (b.povs?.level ?? 0) - (a.povs?.level ?? 0);

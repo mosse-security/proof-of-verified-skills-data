@@ -82,15 +82,25 @@ const challengeDefinitions: Omit<Challenge, 'matches'>[] = [
   },
 ];
 
+let cachedChallenges: Challenge[] | undefined;
+
+function tagForChallenge(slug: string): string {
+  return slug === 'critical-discovery' ? 'critical-cve-discovery' : slug;
+}
+
+export function challengesForTags(tags: string[] = []) {
+  const tagSet = new Set(tags);
+  return challengeDefinitions.filter((definition) => tagSet.has(tagForChallenge(definition.slug)));
+}
+
 export function listChallenges(): Challenge[] {
+  if (cachedChallenges) return cachedChallenges;
   const grouped = new Map<string, ChallengeMatch[]>();
   for (const definition of challengeDefinitions) grouped.set(definition.slug, []);
   for (const profile of listProfiles()) {
     const person = getProfile(profile.slug);
     for (const definition of challengeDefinitions) {
-      const tag = definition.slug === 'critical-discovery'
-        ? 'critical-cve-discovery'
-        : definition.slug;
+      const tag = tagForChallenge(definition.slug);
       if (person.tags?.includes(tag)) {
         const tagged = [...(person.endorsements ?? [])].sort((a, b) => (b.year ?? 0) - (a.year ?? 0))[0];
         if (!tagged) continue;
@@ -103,10 +113,11 @@ export function listChallenges(): Challenge[] {
       }
     }
   }
-  return challengeDefinitions.map((definition) => ({
+  cachedChallenges = challengeDefinitions.map((definition) => ({
     ...definition,
     matches: (grouped.get(definition.slug) ?? []).sort((a, b) => a.personName.localeCompare(b.personName)),
   }));
+  return cachedChallenges;
 }
 
 export function getChallenge(slug: string): Challenge {
