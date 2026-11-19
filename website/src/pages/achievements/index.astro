@@ -4,7 +4,7 @@ import { sitePath } from '../../lib/site';
 import { listChallenges } from '../../lib/challenges';
 
 const challenges = listChallenges();
-const challengeMeta = challenges.map(({ slug, title, band, description, matches }) => ({ slug, title, band, description, count: matches.length }));
+const challengeMeta = challenges.map(({ slug, title, description, matches }) => ({ slug, title, description, count: matches.length }));
 const matchingChallenges = challenges.filter((challenge) => challenge.matches.length > 0).length;
 const uniquePeople = new Set(challenges.flatMap((challenge) => challenge.matches.map((match) => match.personSlug))).size;
 ---
@@ -24,10 +24,9 @@ const uniquePeople = new Set(challenges.flatMap((challenge) => challenge.matches
 
   <section class="challenge-catalogue" aria-label="POVS achievements">
     <div class="challenge-table">
-      <div class="challenge-table-head"><span>Achievement</span><span>Default POV level</span><span>People</span><span aria-hidden="true"></span></div>
+      <div class="challenge-table-head"><span>Achievement</span><span>People</span><span aria-hidden="true"></span></div>
       {challengeMeta.map((challenge) => <a class="challenge-row" href={sitePath(`/achievements/${challenge.slug}/`)}>
         <span class="challenge-name"><strong>{challenge.title}</strong><small>{challenge.description}</small></span>
-        <span><b class:list={['challenge-band', `challenge-band-${challenge.band.toLocaleLowerCase().replaceAll(' ', '-')}`]}>{challenge.band}</b></span>
         <span class="challenge-count">{challenge.count.toLocaleString()}</span>
         <span class="challenge-arrow" aria-hidden="true">→</span>
       </a>)}

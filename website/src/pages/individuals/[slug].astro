@@ -87,7 +87,6 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
     <div class="profile-achievement-list">
       {achievements.map((achievement) => <div class="profile-achievement">
         <span><strong>{achievement.title}</strong><small>{achievement.description}</small></span>
-        <b class:list={['challenge-band', `challenge-band-${achievement.band.toLocaleLowerCase().replaceAll(' ', '-')}`]}>{achievement.band}</b>
       </div>)}
     </div>
   </section>}
