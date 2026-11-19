@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { sitePath } from '../lib/site';
 const { title, description = 'Public directory of verified cybersecurity skills and conference endorsements.', home = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
 ---
 <!doctype html>
 <html lang="en">
@@ -25,6 +26,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <main data-pagefind-body><slot /></main>
       <footer class="site-footer">
         <span>(c) <a href="https://www.mosse-institute.com/" target="_blank" rel="noreferrer">Mosse Cyber Security Institute</a></span>
+        <span>Alpha · Build {buildTimestamp} UTC</span>
         <span class="footer-links">
           <a href="https://github.com/mosse-security/proof-of-verified-skills-data/blob/main/README.md" target="_blank" rel="noreferrer">Documentation</a>
           <a href="https://github.com/mosse-security/proof-of-verified-skills-data" target="_blank" rel="noreferrer">Open-source data on GitHub</a>
