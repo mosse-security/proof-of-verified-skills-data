@@ -1,5 +1,5 @@
 {
-  "name": "Michael McAtee",
+  "name": "Michael Mcatee",
   "last-updated": "2026-10-18T02:30:03Z",
   "biography": "",
   "contact": [],
@@ -33,7 +33,7 @@
   },
   "endorsements": [
     {
-      "name": "Michael McAtee",
+      "name": "Michael Mcatee",
       "label": "ShareEnum: We Wrapped Samba So You Don’t Have To",
       "description": "CIFS shares can tell you a lot about a network, including file access, local administrator access, password reuse, etc.. Until now most people have relied on add-ons to scanning tools to implement Microsoft’s complicated network APIs. Some tools wrap existing clients, such as smbclient, or use RPC calls; however, this is inefficient. What we need is a scanner that utilizes the closest thing we can get to Microsoft’s SMB libraries to scan network shares efficiently and quietly. ShareEnum uses the underlying Samba client libraries to list shares, permissions, and even recurse down file trees gathering information including what is stored in each directory.",
       "type": "presentation",
@@ -70,7 +70,7 @@
       }
     },
     {
-      "name": "Michael McAtee",
+      "name": "Michael Mcatee",
       "label": "CrackLord: Maximizing Password Cracking Boxes",
       "description": "Over the past several years the world of password cracking has exploded with new tools and techniques. These new techniques have made it easier than ever to reverse captured password hashes. Based on our experience, within the past few years passwords have often become the first step into compromising the entire network. New techniques such as LLMNR/NetBIOS response have reduced the efficacy of pass the hash techniques, again increasing the necessity of actually cracking the hashes. With the addition of powerful techniques, from GPGPU cracking to rainbow tables, it is easier than ever to access the plaintext for fun and profit. Heavy utilization of GPUs has increased the power of these tools exponentially. Many organizations and individuals have built massive GPU password cracking rigs and cloud based services, such as AWS GPU instances, have also placed high performance cracking into the realm of affordability. Although the current tools do an amazing job providing heavy utilization for individual hardware, they have not kept pace with the need for distributed cracking services. Additionally, these tools can often make the sharing of expensive hardware difficult, requiring manual job tracking, GNU screen, or scripts put together to queue cracking jobs. CrackLord attempts to change this by providing a scalable, pluggable, and distributed password cracking system. Better said, CrackLord is a way to load balance the resources, such as GPUs and CPUs, from multiple hardware systems into a single queuing service. CrackLord uses two primary services: the Resource and Queue. The Resource is a service that runs on individual systems, providing access to their underlying hardware. Resources utilize various tools, such as Hashcat, John the Ripper, rcrack, or others, to run jobs and use the local CPU or GPU to crack hashes. The Queue is a service that runs on a single system, providing an interface for users to submit cracking jobs. These jobs are then processed and sent to available Resources to perform the actual crack. Users are able to create, pause, resume, and delete jobs in the Queue which will communicate with the Resource to handle the results. Finally, the system is designed to be extensible providing standard interfaces and libraries allowing new tools, resource types, and management interfaces to be written and added as necessary.",
       "type": "presentation",

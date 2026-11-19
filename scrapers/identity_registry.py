@@ -29,6 +29,32 @@ _MOJIBAKE_MARKERS = (
 )
 
 
+def format_person_name(value: str) -> str:
+    """Apply the repository's display casing convention to a person name.
+
+    Ordinary name parts use an uppercase first letter and lowercase remaining
+    letters. Short all-caps tokens such as ``TK`` remain acronyms, initials
+    such as ``A.P.`` remain initials, and digit-bearing handles are preserved.
+    """
+
+    def format_part(part: str) -> str:
+        if not part:
+            return part
+        if re.fullmatch(r"(?:[A-Za-z]\.){1,}", part):
+            return part.upper()
+        if re.fullmatch(r"[A-Z]{2}", part):
+            return part
+        if any(char.isdigit() for char in part):
+            return part
+        return part[:1].upper() + part[1:].lower()
+
+    result: list[str] = []
+    for token in " ".join(str(value).split()).split(" "):
+        pieces = re.split(r"([\-\u2010\u2011\u2012\u2013\u2014'\u2019])", token)
+        result.append("".join(format_part(piece) if piece not in "-\u2010\u2011\u2012\u2013\u2014'\u2019" else piece for piece in pieces))
+    return " ".join(result)
+
+
 def clean_person_name(value: str) -> str:
     """Normalize whitespace and remove academic honorifics from a name."""
 
@@ -37,7 +63,7 @@ def clean_person_name(value: str) -> str:
     cleaned = _PAREN_ALIAS.sub(" ", cleaned)
     cleaned = _AKA_ALIAS.sub(" ", cleaned)
     cleaned = " ".join(cleaned.split()).strip(" .-:,")
-    return _PERSON_TITLE_PREFIX.sub("", cleaned).strip()
+    return format_person_name(_PERSON_TITLE_PREFIX.sub("", cleaned).strip())
 
 
 def expand_person_names(value: str) -> list[str]:

@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 from scrapers.domains import ALLOWED_DOMAINS
-from scrapers.identity_registry import IdentityRegistry, clean_person_name, expand_person_names
+from scrapers.identity_registry import IdentityRegistry, clean_person_name, expand_person_names, format_person_name
 from scrapers.individuals import (
     _person_identity,
     build_assessor_individuals,
@@ -14,6 +14,17 @@ from scrapers.individuals import (
 
 
 class IdentityRegistryTests(unittest.TestCase):
+    def test_format_person_name_uses_display_casing_without_destroying_initials(self):
+        cases = {
+            "chumian wang": "Chumian Wang",
+            "ABOUMEHDI ABDELHAKIM": "Aboumehdi Abdelhakim",
+            "TK O'CONNOR": "TK O'Connor",
+            "A.P. DELCHI": "A.P. Delchi",
+            "3AlarmLampscooter": "3AlarmLampscooter",
+        }
+        for source, expected in cases.items():
+            self.assertEqual(format_person_name(source), expected)
+
     def test_clean_person_name_removes_aliases(self):
         self.assertEqual(clean_person_name("Rie Helene (Lindy) Hernandez"), "Rie Helene Hernandez")
         self.assertEqual(clean_person_name('Luis "Connection" Santana'), "Luis Santana")
@@ -69,7 +80,7 @@ class IdentityRegistryTests(unittest.TestCase):
             )
             self.assertEqual(
                 (root / "parsing-errors.txt").read_text(encoding="utf-8").splitlines(),
-                ["A-girl", "Alex"],
+                ["A-Girl", "Alex"],
             )
 
     def test_global_whitelist_overrides_auto_blacklist_shape(self):

@@ -1,5 +1,5 @@
 {
-  "name": "Theo DeRaadt",
+  "name": "Theo Deraadt",
   "last-updated": "2026-10-18T02:30:14Z",
   "biography": "",
   "contact": [],
@@ -33,7 +33,7 @@
   },
   "endorsements": [
     {
-      "name": "Theo DeRaadt",
+      "name": "Theo Deraadt",
       "label": "Synthetic Memory Protections - Beyond R, W, and X",
       "description": "The attack method described in \"Smash the Stack For Fun and Profit\" (1996) depended upon the stack being executable. Within a few years, most processors came with MMU capabilities allowing the stack to be marked non-executable. This capability was extended to apply to all memory and named the W^X policy. Attackers then switched to ROP methods instead, which utilize the stack to point at fragments of code (\"gadgets\") which must remain executable. In response, Address Space Randomization to hide the location of the gadgets became commonplace over the next decade. Sadly, other software bugs can produce info-leaks which reveal the gadget locations, so the principle of \"Never Reuse An Address Space\" was introduced (meaning, always fork+execve), but adoption is still slowgoing. A variety of Control-Flow-Integrity mechanisms (such as RETGUARD) were also invented to reduce primary \"function-tail\" gadgets, but X86-style polymorphic gadgets remain a problem. OpenBSD was first to market with each of these responses. This talk will summarize the situation briefly, and then describe new mechanisms being explored in OpenBSD to make ROP exploitation more difficult.",
       "type": "presentation",

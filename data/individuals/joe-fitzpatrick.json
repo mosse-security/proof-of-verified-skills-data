@@ -1,5 +1,5 @@
 {
-  "name": "Joe FitzPatrick",
+  "name": "Joe Fitzpatrick",
   "last-updated": "2026-10-18T02:29:56Z",
   "biography": "",
   "contact": [],
@@ -33,7 +33,7 @@
   },
   "endorsements": [
     {
-      "name": "Joe FitzPatrick",
+      "name": "Joe Fitzpatrick",
       "label": "NSA Playset: PCIe",
       "description": "Hardware hacks tend to focus on low-speed (jtag, uart) and external (network, usb) interfaces, and PCI Express is typically neither. After a crash course in PCIe Architecture, we'll demonstrate a handful of hacks showing how pull PCIe outside of your system case and add PCIe slots to systems without them, including embedded platforms. We'll top it off with a demonstration of SLOTSCREAMER, an inexpensive device we've configured to access memory and IO, cross-platform and transparent to the OS - all by design with no 0-day needed. The open hardware and software framework that we will release will expand your NSA Playset with the ability to tinker with DMA attacks to read memory, bypass software and hardware security measures, and directly attack other hardware devices in the system. Anyone who has installed a graphics card has all the hardware experience necessary to enjoy this talk and start playing NSA at home!",
       "type": "presentation",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "name": "Joe FitzPatrick",
+      "name": "Joe Fitzpatrick",
       "label": "NSA Playset: JTAG Implants",
       "description": "While the NSA ANT team has been busy building the next generation spy toy catalog for the next leak, the NSA Playset team has been busy catching up with more open hardware implementations. GODSURGE is a bit of software that helps to persist malware into a system. It runs on the FLUXBABBIT hardware implant that connects to the depopulated JTAG header of certain models of Dell servers. This talk will introduce SAVIORBURST, our own implementation of a jtag-based malware delivery firmware that will work hand-in-hand with SOLDERPEEK, our custom hardware design for a standalone JTAG attack device. We will demonstrate how to this pair enables the persistent compromise of an implanted system as well as release all the hardware and software necessary to port SAVIORBURST and SOLDERPEEK to your jtag-equipped target of choice. Anyone curious to know more about JTAG, regardless of previous hardware experience, will learn something from this talk.",
       "type": "presentation",
@@ -109,7 +109,7 @@
       }
     },
     {
-      "name": "Joe FitzPatrick",
+      "name": "Joe Fitzpatrick",
       "label": "The Tao of Hardware the Te of Implants",
       "description": "Embedded, IOT, and ICS devices tend to be things we can pick up, see, and touch. They're designed for nontechnical users who think of them as immutable hardware devices. Even software security experts, at some point, consider hardware attacks out of scope. Thankfully, even though a handful of hardware manufacturers are making some basic efforts to harden devices, there's still plenty of cheap and easy ways to subvert hardware. The leaked ANT catalog validated that these cheap hardware attacks are worthwhile. The projects of the NSA Playset have explored what's possible in terms of cheap and easy DIY hardware implants, so I've continued to apply those same techniques to more embedded devices and industrial control systems. I'll show off a handful of simple hardware implants that can 1) Blindly escalate privilege using JTAG 2) Patch kernels via direct memory access on an embedded device without JTAG 3) Enable wireless control of the inputs and outputs of an off-the-shelf PLC 4) Hot-plug a malicious expansion module onto another PLC without even taking the system offline and 5) Subvert a system via a malicious display adapter. Some of these are new applications of previously published implants - others are brand new. I'll conclude with some potential design decisions that could reduce vulnerability to implants, as well as ways of protecting existing hardware systems from tampering.",
       "type": "presentation",
@@ -158,7 +158,7 @@
       }
     },
     {
-      "name": "Joe FitzPatrick",
+      "name": "Joe Fitzpatrick",
       "label": "Secure Tokin' and Doobiekeys: How to roll your own counterfeit hardware security devices",
       "description": "Saturday at 11:00 in Track 2 45 minutes | Demo, Tool Joe FitzPatrick SecuringHardware.com Michael Leibowitz Senior Trouble Maker Let's face it, software security is still in pretty bad shape. We could tell ourselves that everything is fine, but in our hearts, we know the world is on fire. Even as hackers, it's incredibly hard to know whether your computer, phone, or secure messaging app is pwned. Of course, there's a Solution(tm) - hardware security devices. We carry authentication tokens not only to secure our banking and corporate VPN connections, but also to access everything from cloud services to social networking. While we've isolated these 'trusted' hardware components from our potentially pwnd systems so that they might be more reliable, we will present scenarios against two popular hardware tokens where their trust can be easily undermined. After building our modified and counterfeit devices, we can use them to circumvent intended security assumptions made by their designers and users. In addition to covering technical details about our modifications and counterfeit designs, we'll explore a few attack scenarios for each. Sharing is Caring, so after showing off a few demonstration, we'll walk you through the process of rolling your own Secure Tokin' and Doobiekey that you can pass around the circle at your next cryptoparty.",
       "type": "presentation",
@@ -190,7 +190,7 @@
       }
     },
     {
-      "name": "Joe FitzPatrick",
+      "name": "Joe Fitzpatrick",
       "label": "A Measured Response to a Grain of Rice",
       "description": "A Measured Response to a Grain of Rice",
       "type": "presentation",
@@ -227,7 +227,7 @@
       }
     },
     {
-      "name": "Joe FitzPatrick",
+      "name": "Joe Fitzpatrick",
       "label": "Direct Memory, Access Everywhere",
       "description": "DMA vulnerabilities aren't new - but they don't seem to have gone anywhere. In the time software attacks have gone from a single bug to a multi-stage exploit chain, DMA attacks have gone from slipping some hardware into an internal slot of a computer to... plugging in an external device? Despite decades of attacks, tooling, and even mitigations, most systems are still wide open to these attacks because of their perceived difficulty, poor system configuration, and lack of effective testing mechanisms. Epic Erebus is a new tool that tries to address these issues. It's small, portable, and easy to use. It can slip through most systems unless the hardware, bios, and operating system are properly configured (a rarity). Finally, it's an entirely open PCIe implementation that gives you full control over Transaction Layer Packets - allowing you to reverse engineer the PCIe Bus and the DMA mitigations in place (Get it? RE-Bus... Erebus!) You should come away understanding what erebus is capable of, the basics of how to use it, and what to look out for when properly implementing DMA attack mitigations. References: link winlockpwn, Adam Boileau Thunderbolts and Lightning: Very Very Frightening, link link link link link link link",
       "type": "presentation",

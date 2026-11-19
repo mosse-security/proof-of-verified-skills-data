@@ -132,7 +132,7 @@
       }
     },
     {
-      "name": "Chen GONG",
+      "name": "Chen Gong",
       "label": "PrivORL: Differentially Private Synthetic Dataset for Offline Reinforcement Learning",
       "description": "Chen GONG (University of Virginia), Zheng Liu (University of Virginia), Kecen Li (University of Virginia), Tianhao Wang (University of Virginia)",
       "type": "presentation",
@@ -196,7 +196,7 @@
       }
     },
     {
-      "name": "Chen GONG",
+      "name": "Chen Gong",
       "label": "From Easy to Hard++: Promoting Differentially Private Image Synthesis Through Spatial-Frequency Curriculum",
       "description": "Differentially private (DP) synthetic images serve as a critical tool for reducing privacy concerns by mimicking the statistical properties of sensitive data while ensuring privacy guarantees. To improve the quality of synthetic images, most studies have focused on improving the core optimization techniques (e.g., DP-SGD). Recently, we have witnessed a paradigm shift that takes these techniques off the shelf and studies how to use them together to achieve the best results. One notable work is DP-FETA, which proposes using 'central images' for 'warming up' the DP training and then using traditional DP-SGD. Inspired by DP-FETA, we are curious whether there are other such tools we can use together with DP-SGD. We first observe that using 'central images' only works for datasets where there are many samples that look similar. To handle scenarios where images could vary significantly, we propose FETA-Pro, which introduces frequency features as 'training shortcuts.' The complexity of frequency features lies between that of spatial features (captured by 'central images') and full images, allowing for a finer-grained curriculum for DP training. To incorporate these two types of shortcuts together, one challenge is to handle the training discrepancy between spatial and frequency features. To address it, we leverage the pipeline generation property of generative models (instead of having one model trained with multiple features/objectives, we can have multiple models working on different features, then feed the generated results from one model into another) and use a more flexible design. Specifically, FETA-Pro introduces an auxiliary generator to produce images aligned with noisy frequency features. Then, another model is trained with these images, together with spatial features and DP-SGD. Evaluated across five sensitive image datasets, FETA-Pro shows an average of 25.7% higher fidelity and 4.1% greater utility than the best-performing baseline, under a privacy budget ε = 1.",
       "type": "presentation",
