@@ -12,6 +12,12 @@ const dataDir = [
 
 if (!dataDir) throw new Error('Could not locate the data/individuals directory.');
 
+const contactInfoDir = [
+  resolve(process.cwd(), 'data/contact-information'),
+  resolve(process.cwd(), '../data/contact-information'),
+  resolve(process.cwd(), '../../data/contact-information'),
+].find((candidate) => existsSync(candidate));
+
 export interface Endorsement {
   name?: string;
   label?: string;
@@ -39,7 +45,7 @@ export interface Person {
   name: string;
   biography?: string;
   tags?: string[];
-  contact?: Array<{ label?: string; url?: string }>;
+  contact?: Array<{ label?: string; url?: string; email?: string }>;
   endorsements?: Endorsement[];
   stats?: { endorsements?: number; assessors?: number; 'by-domain'?: Record<string, number> };
   'last-updated'?: string;
@@ -114,7 +120,15 @@ export function getProfile(slug: string): Person {
   if (!listProfiles().some((record) => record.slug === slug)) {
     throw new Error(`Unknown individual slug: ${slug}`);
   }
-  return JSON.parse(readFileSync(join(dataDir, `${slug}.json`), 'utf8')) as Person;
+  const profile = JSON.parse(readFileSync(join(dataDir, `${slug}.json`), 'utf8')) as Person;
+  if (contactInfoDir) {
+    const contactPath = join(contactInfoDir, `${slug}.json`);
+    if (existsSync(contactPath)) {
+      const recovered = JSON.parse(readFileSync(contactPath, 'utf8')) as Pick<Person, 'contact'>;
+      if (recovered.contact?.length) profile.contact = recovered.contact;
+    }
+  }
+  return profile;
 }
 
 export const PER_PAGE = 100;

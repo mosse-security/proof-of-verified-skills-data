@@ -68,8 +68,13 @@ h2 { margin-bottom: 8px; font-size: 24px; letter-spacing: -.03em; }
 .domain-summary > div { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .domain-summary b, .domain-badge, .milestone { padding: 5px 8px; border: 1px solid rgba(15,204,208,.45); border-radius: 999px; color: var(--accent-ink); background: var(--accent-soft); font-size: 12px; font-weight: 800; }
 .domain-badge { display: grid; place-items: center; width: 142px; max-width: 100%; min-width: 0; height: 44px; justify-self: center; overflow: hidden; padding: 7px 10px; text-align: center; line-height: 1.2; }
-.contact-row { flex-wrap: wrap; gap: 6px; color: var(--muted); font-size: 12px; }
-.contact-row span { padding: 4px 8px; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface-soft); }
+.contact-row { flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--rule); }
+.contact-row::before { content: 'Connect'; margin-right: 3px; color: var(--muted); font: 800 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.contact-link { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--rule); border-radius: 9px; color: var(--ink-2); background: var(--surface-soft); transition: border-color .18s ease, color .18s ease, background .18s ease, transform .18s ease; }
+.contact-link:hover { border-color: var(--accent); color: var(--accent-ink); background: var(--accent-soft); transform: translateY(-1px); }
+.contact-icon { display: grid; place-items: center; width: 20px; height: 20px; font-size: 15px; font-weight: 850; line-height: 1; }
+.contact-link-github .contact-icon { font-size: 11px; letter-spacing: -.04em; }
+.contact-link-twitter .contact-icon { font-size: 17px; }
 .record-verdict { padding: 8px 0 0; }
 .verified-pill { display: inline-flex; padding: 5px 9px; border-radius: 999px; color: var(--accent-ink); background: var(--accent-soft); font-size: 12px; font-weight: 850; }
 .record-verdict h2 { margin-top: 14px; }

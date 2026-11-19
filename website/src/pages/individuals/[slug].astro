@@ -56,6 +56,16 @@ const criticalityFor = (item: typeof endorsements[number]) => {
   return `${formatLabel(match[1])}${match[2] ? ` · CVSS ${match[2]}` : ''}`;
 };
 const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulnerability_discovery' ? item.description?.replace(/\s+/g, ' ').trim() : undefined;
+const contactLinks = (person.contact ?? []).flatMap((contact) => {
+  const url = safeExternalUrl(contact.url);
+  const email = contact.email?.trim();
+  const href = url || (email ? `mailto:${email}` : undefined);
+  if (!href) return [];
+  const label = contact.label?.trim() || (email ? 'Email' : 'Website');
+  const normalized = label.toLowerCase();
+  const kind = normalized.includes('linkedin') ? 'linkedin' : normalized.includes('github') ? 'github' : normalized.includes('twitter') || normalized === 'x' ? 'twitter' : email ? 'email' : normalized.includes('website') || normalized.includes('web') ? 'website' : 'link';
+  return [{ href, label, kind, external: Boolean(url) }];
+});
 ---
 
 <Base title={`${person.name} | Proof of Verified Skills`} description={person.biography || `Public endorsement record for ${person.name}.`}>
@@ -72,9 +82,11 @@ const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulner
           <span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(levelCounts.synthetic)}`}></i><i class="level-production" style={`width:${mixWidth(levelCounts.productionLike)}`}></i><i class="level-expert" style={`width:${mixWidth(levelCounts.expert)}`}></i><i class="level-unrated" style={`width:${mixWidth(levelCounts.unrated)}`}></i></span>
           <span class="level-stack-labels"><b>Synthetic: {levelCounts.synthetic}</b><b>Production: {levelCounts.productionLike}</b><b>Expert: {levelCounts.expert}</b><b>Not Verified: {levelCounts.unrated}</b></span>
         </div>
-        {person.contact && person.contact.length > 0 && <div class="contact-row">
-          {person.contact.map((contact) => <span>{contact.label || contact.url}</span>)}
-        </div>}
+        {contactLinks.length > 0 && <nav class="contact-row" aria-label={`Contact links for ${person.name}`}>
+          {contactLinks.map((contact) => <a class:list={['contact-link', `contact-link-${contact.kind}`]} href={contact.href} title={contact.label} aria-label={`${contact.label} for ${person.name}`} target={contact.external ? '_blank' : undefined} rel={contact.external ? 'noopener noreferrer' : undefined}>
+            <span class="contact-icon" aria-hidden="true">{contact.kind === 'linkedin' ? 'in' : contact.kind === 'github' ? 'GH' : contact.kind === 'twitter' ? '𝕏' : contact.kind === 'email' ? '@' : contact.kind === 'website' ? '◎' : '↗'}</span>
+          </a>)}
+        </nav>}
       </div>
     </div>
   </section>
