@@ -1,5 +1,7 @@
 # Documentation
 
+- [HOWTO](HOWTO.md) — run and maintain the capture, merge, contact, and name-normalization pipeline.
+
 - [CVE data pipeline](cve.md) - source, identity decisions, evidence records, and durable outputs.
 - [CVE operations](cve-operations.md) - yearly processing, unattended runs, verification, and disk cleanup.
 
