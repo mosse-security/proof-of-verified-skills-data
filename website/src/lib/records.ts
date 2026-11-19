@@ -1,9 +1,16 @@
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
-// Astro relocates server modules into dist/ during static generation. Resolve
-// from the workspace instead of the compiled module location.
-const dataDir = resolve(process.cwd(), '../data/individuals');
+// Astro can run generation from the repository root, website directory, or a
+// relocated build directory. Select the first workspace-relative data path
+// that actually exists instead of assuming a single current working directory.
+const dataDir = [
+  resolve(process.cwd(), 'data/individuals'),
+  resolve(process.cwd(), '../data/individuals'),
+  resolve(process.cwd(), '../../data/individuals'),
+].find((candidate) => existsSync(candidate));
+
+if (!dataDir) throw new Error('Could not locate the data/individuals directory.');
 
 export interface Endorsement {
   name?: string;

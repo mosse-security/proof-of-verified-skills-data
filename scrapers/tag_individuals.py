@@ -13,6 +13,21 @@ from pathlib import Path
 
 CVE_RE = re.compile(r"^CVE-\d{4}-\d+$", re.IGNORECASE)
 WINNING_AWARD_RE = re.compile(r"grand prize|winner|best\s|runner", re.IGNORECASE)
+ACADEMIC_JOURNAL_ASSESSOR_IDS = {
+    "computers-and-security",
+    "ieee-tifs",
+    "journal-of-cybersecurity",
+}
+ACADEMIC_ASSESSOR_CATEGORIES = {
+    "academic_journal",
+    "conference_academic",
+}
+THREAT_RESEARCH_DOMAINS = {
+    "digital-forensics",
+    "incident-response",
+    "threat-hunting",
+    "cybercrime-and-fraud",
+}
 
 
 def tags_for_person(endorsements: list[dict], existing: list[str] | None = None) -> list[str]:
@@ -39,6 +54,18 @@ def tags_for_person(endorsements: list[dict], existing: list[str] | None = None)
 
         if endorsement.get("type") == "presentation":
             tags.add("top-conference-speaker")
+
+        if (
+            endorsement.get("assessor-id") in ACADEMIC_JOURNAL_ASSESSOR_IDS
+            or endorsement.get("assessor-category") in ACADEMIC_ASSESSOR_CATEGORIES
+        ):
+            tags.add("academic-researcher")
+
+        if endorsement.get("assessor-id") == "pwn2own":
+            tags.add("leaderboard-elite")
+
+        if THREAT_RESEARCH_DOMAINS.intersection(endorsement.get("domains", [])):
+            tags.add("threat-researcher")
 
     return sorted(tags)
 

@@ -51,17 +51,12 @@ const challengeDefinitions: Omit<Challenge, 'matches'>[] = [
     requirements: 'Have a bug-bounty record that explicitly confirms a bounty payment. Hall of Fame recognition alone is insufficient.',
   },
   {
-    slug: 'leaderboard-elite', title: 'Leaderboard Elite', band: 'Expert candidate',
-    description: 'Earned a recognized bug-bounty leaderboard ranking.',
-    requirements: 'Have a recognition record naming a bug-bounty leaderboard and an explicit ranking.',
+    slug: 'leaderboard-elite', title: 'Leaderboard Elite', band: 'Expert',
+    description: 'Earned a recognized bug-bounty leaderboard ranking or won an actual Pwn2Own competition or category.',
+    requirements: 'Have a recognition record naming a bug-bounty leaderboard and an explicit ranking, or a Pwn2Own competition-result record that explicitly confirms an actual competition or category victory. Participation, demonstrations, and Master of Pwn points do not qualify.',
   },
   {
-    slug: 'pwn2own-champion', title: 'Pwn2Own Champion', band: 'Expert',
-    description: 'Won an actual Pwn2Own competition or category.',
-    requirements: 'Have a Pwn2Own competition-result record whose description explicitly confirms an actual competition or category victory. Participation, demonstrations, and Master of Pwn points do not qualify.',
-  },
-  {
-    slug: 'academic-researcher', title: 'Academic Researcher', band: 'Production',
+    slug: 'academic-researcher', title: 'Academic Researcher', band: 'Synthetic',
     description: 'Presented accepted academic security research.',
     requirements: 'Have a conference-academic presentation record that establishes an accepted research paper.',
   },
@@ -82,6 +77,17 @@ const challengeDefinitions: Omit<Challenge, 'matches'>[] = [
   },
 ];
 
+const challengeBandOrder: Record<ChallengeBand, number> = {
+  Synthetic: 0,
+  Production: 1,
+  'Expert candidate': 2,
+  Expert: 3,
+};
+
+const orderedChallengeDefinitions = [...challengeDefinitions].sort(
+  (a, b) => challengeBandOrder[a.band] - challengeBandOrder[b.band],
+);
+
 let cachedChallenges: Challenge[] | undefined;
 
 function tagForChallenge(slug: string): string {
@@ -90,16 +96,16 @@ function tagForChallenge(slug: string): string {
 
 export function challengesForTags(tags: string[] = []) {
   const tagSet = new Set(tags);
-  return challengeDefinitions.filter((definition) => tagSet.has(tagForChallenge(definition.slug)));
+  return orderedChallengeDefinitions.filter((definition) => tagSet.has(tagForChallenge(definition.slug)));
 }
 
 export function listChallenges(): Challenge[] {
   if (cachedChallenges) return cachedChallenges;
   const grouped = new Map<string, ChallengeMatch[]>();
-  for (const definition of challengeDefinitions) grouped.set(definition.slug, []);
+  for (const definition of orderedChallengeDefinitions) grouped.set(definition.slug, []);
   for (const profile of listProfiles()) {
     const person = getProfile(profile.slug);
-    for (const definition of challengeDefinitions) {
+    for (const definition of orderedChallengeDefinitions) {
       const tag = tagForChallenge(definition.slug);
       if (person.tags?.includes(tag)) {
         const tagged = [...(person.endorsements ?? [])].sort((a, b) => (b.year ?? 0) - (a.year ?? 0))[0];
@@ -113,7 +119,7 @@ export function listChallenges(): Challenge[] {
       }
     }
   }
-  cachedChallenges = challengeDefinitions.map((definition) => ({
+  cachedChallenges = orderedChallengeDefinitions.map((definition) => ({
     ...definition,
     matches: (grouped.get(definition.slug) ?? []).sort((a, b) => a.personName.localeCompare(b.personName)),
   }));

@@ -24,7 +24,7 @@ const uniquePeople = new Set(challenges.flatMap((challenge) => challenge.matches
 
   <section class="challenge-catalogue" aria-label="POVS achievements">
     <div class="challenge-table">
-      <div class="challenge-table-head"><span>Achievement</span><span>POVS level</span><span>People</span><span aria-hidden="true"></span></div>
+      <div class="challenge-table-head"><span>Achievement</span><span>Default POV level</span><span>People</span><span aria-hidden="true"></span></div>
       {challengeMeta.map((challenge) => <a class="challenge-row" href={sitePath(`/achievements/${challenge.slug}/`)}>
         <span class="challenge-name"><strong>{challenge.title}</strong><small>{challenge.description}</small></span>
         <span><b class:list={['challenge-band', `challenge-band-${challenge.band.toLocaleLowerCase().replaceAll(' ', '-')}`]}>{challenge.band}</b></span>
