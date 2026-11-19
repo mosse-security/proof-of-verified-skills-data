@@ -23,9 +23,12 @@ const query = Astro.url.searchParams.get('q') ?? '';
   <script is:inline src={sitePath('/pagefind/pagefind-ui.js')}></script>
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-      if (window.PagefindUI) {
-        new window.PagefindUI({ element: '#pagefind-search', showSubResults: true, showImages: false, urlParam: 'q' });
-      }
+      const query = new URLSearchParams(window.location.search).get('q')?.trim() || '';
+      const input = document.querySelector('#registry-search-input');
+      if (input && query) input.value = query;
+      if (!window.PagefindUI) return;
+      const pagefind = new window.PagefindUI({ element: '#pagefind-search', showSubResults: true, showImages: false });
+      if (query && typeof pagefind.triggerSearch === 'function') pagefind.triggerSearch(query);
     });
   </script>
 </Base>
