@@ -1,0 +1,64 @@
+"""Extract portraits from the Black Hat MEA 2026 event-briefings carousel."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from urllib.parse import urljoin
+
+from bs4 import BeautifulSoup
+
+from scrapers.identity_registry import IdentityRegistry
+
+SOURCE_URL = "https://blackhatmea.com/conferences/event-briefings"
+CONFERENCE = "Black Hat MEA"
+YEAR = 2026
+REGION = "middle-east"
+ALLOWLIST_PATH = Path("data/individuals-enumeration.txt")
+
+
+def parse_portraits(html: bytes | str, source_url: str = SOURCE_URL) -> dict[str, str]:
+    soup = BeautifulSoup(html, "html.parser")
+    portraits: dict[str, str] = {}
+    for row in soup.select("#speaker-carousal .views-row"):
+        link = row.select_one(".views-field-title a")
+        image = row.select_one(".speaker-img img[src], .speaker-img img[data-src]")
+        if not link or not image:
+            continue
+        name = link.get_text(" ", strip=True)
+        alt = image.get("alt", "").strip()
+        image_url = image.get("src") or image.get("data-src")
+        if not name or not image_url or IdentityRegistry.normalize(name) != IdentityRegistry.normalize(alt):
+            continue
+        portraits.setdefault(name, urljoin(source_url, image_url))
+    return portraits
+
+
+def update_contact_information(portraits: dict[str, str], contact_directory: Path = Path("data/contact-information")) -> int:
+    allowlist: dict[str, Path] = {}
+    for path in Path(contact_directory).glob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        name = document.get("name")
+        if isinstance(name, str):
+            allowlist[IdentityRegistry.normalize(name)] = path
+    changed = 0
+    allowed = {
+        IdentityRegistry.normalize(line.strip())
+        for line in ALLOWLIST_PATH.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    }
+    for name, image_url in portraits.items():
+        if IdentityRegistry.normalize(name) not in allowed:
+            continue
+        path = allowlist.get(IdentityRegistry.normalize(name))
+        if not path:
+            continue
+        document = json.loads(path.read_text(encoding="utf-8"))
+        if document.get("image"):
+            continue
+        document["image"] = {"url": image_url, "source_url": SOURCE_URL, "source_type": "conference", "conference": CONFERENCE, "year": YEAR, "region": REGION, "verified": True}
+        path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        changed += 1
+    return changed

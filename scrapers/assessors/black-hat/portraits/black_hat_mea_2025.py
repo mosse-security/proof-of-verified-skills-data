@@ -1,0 +1,77 @@
+"""Extract portraits from the Black Hat MEA 2025 speaker directory.
+
+This parser intentionally handles only ``/speakers-2025``.  The repository's
+explicit ``data/individuals-enumeration.txt`` allowlist is authoritative: no
+unknown person is persisted, no new contact record is created, and existing
+images are never replaced.
+"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from urllib.parse import urljoin
+
+from bs4 import BeautifulSoup
+
+from scrapers.identity_registry import IdentityRegistry
+
+SOURCE_URL = "https://blackhatmea.com/speakers-2025"
+CONFERENCE = "Black Hat MEA"
+YEAR = 2025
+REGION = "middle-east"
+ALLOWLIST_PATH = Path("data/individuals-enumeration.txt")
+
+
+def parse_portraits(html: bytes | str, source_url: str = SOURCE_URL) -> dict[str, str]:
+    soup = BeautifulSoup(html, "html.parser")
+    portraits: dict[str, str] = {}
+    for card in soup.select(".speak-card"):
+        link = card.select_one(".spkr-name a")
+        image = card.select_one(".spkr-img img[src], .spkr-img img[data-src]")
+        if not link or not image:
+            continue
+        name = link.get_text(" ", strip=True)
+        alt = image.get("alt", "").strip()
+        image_url = image.get("src") or image.get("data-src")
+        if not name or not image_url or IdentityRegistry.normalize(name) != IdentityRegistry.normalize(alt):
+            continue
+        portraits.setdefault(name, urljoin(source_url, image_url))
+    return portraits
+
+
+def update_contact_information(
+    portraits: dict[str, str],
+    contact_directory: Path = Path("data/contact-information"),
+) -> int:
+    return _update_existing_contacts(portraits, contact_directory)
+
+
+def _update_existing_contacts(portraits: dict[str, str], contact_directory: Path) -> int:
+    allowlist: dict[str, Path] = {}
+    for path in Path(contact_directory).glob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        name = document.get("name")
+        if isinstance(name, str):
+            allowlist[IdentityRegistry.normalize(name)] = path
+    changed = 0
+    allowed = {
+        IdentityRegistry.normalize(line.strip())
+        for line in ALLOWLIST_PATH.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    }
+    for name, image_url in portraits.items():
+        if IdentityRegistry.normalize(name) not in allowed:
+            continue
+        path = allowlist.get(IdentityRegistry.normalize(name))
+        if not path:
+            continue
+        document = json.loads(path.read_text(encoding="utf-8"))
+        if document.get("image"):
+            continue
+        document["image"] = {"url": image_url, "source_url": SOURCE_URL, "source_type": "conference", "conference": CONFERENCE, "year": YEAR, "region": REGION, "verified": True}
+        path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        changed += 1
+    return changed

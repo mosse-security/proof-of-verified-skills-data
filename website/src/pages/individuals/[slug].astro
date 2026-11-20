@@ -63,15 +63,19 @@ const contactLinks = (person.contact ?? []).flatMap((contact) => {
   if (!href) return [];
   const label = contact.label?.trim() || (email ? 'Email' : 'Website');
   const normalized = label.toLowerCase();
-  const kind = normalized.includes('linkedin') ? 'linkedin' : normalized.includes('github') ? 'github' : normalized.includes('twitter') || normalized === 'x' ? 'twitter' : email ? 'email' : normalized.includes('website') || normalized.includes('web') ? 'website' : 'link';
+  const kind = normalized.includes('linkedin') ? 'linkedin' : normalized.includes('github') ? 'github' : normalized.includes('youtube') || href.includes('youtube.com') || href.includes('youtu.be') ? 'youtube' : normalized.includes('twitter') || normalized === 'x' ? 'twitter' : email ? 'email' : 'website';
   return [{ href, label, kind, external: Boolean(url) }];
 });
+const profileImageUrl = safeExternalUrl(person.image?.url);
 ---
 
 <Base title={`${person.name} | Proof of Verified Skills`} description={person.biography || `Public endorsement record for ${person.name}.`}>
   <section class="registry-record profile-record">
     <div class="record-header">
-      <div>
+      {profileImageUrl && <figure class="profile-photo" data-profile-photo hidden>
+        <img src={profileImageUrl} alt={`${person.name} profile`} loading="eager" decoding="async" />
+      </figure>}
+      <div class="profile-header-content">
         <h1>{person.name}</h1>
         {person.biography && <p>{person.biography}</p>}
         <div class="profile-meta-line">
@@ -84,7 +88,9 @@ const contactLinks = (person.contact ?? []).flatMap((contact) => {
         </div>
         {contactLinks.length > 0 && <nav class="contact-row" aria-label={`Contact links for ${person.name}`}>
           {contactLinks.map((contact) => <a class:list={['contact-link', `contact-link-${contact.kind}`]} href={contact.href} title={contact.label} aria-label={`${contact.label} for ${person.name}`} target={contact.external ? '_blank' : undefined} rel={contact.external ? 'noopener noreferrer' : undefined}>
-            <span class="contact-icon" aria-hidden="true">{contact.kind === 'linkedin' ? 'in' : contact.kind === 'github' ? 'GH' : contact.kind === 'twitter' ? '𝕏' : contact.kind === 'email' ? '@' : contact.kind === 'website' ? '◎' : '↗'}</span>
+            <span class="contact-icon" aria-hidden="true">
+              {contact.kind === 'youtube' ? <svg viewBox="0 0 24 24" role="img"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.8V8.2l6.5 3.8-6.5 3.8Z" /></svg> : contact.kind === 'website' ? <svg viewBox="0 0 24 24" role="img"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z" /></svg> : contact.kind === 'linkedin' ? 'in' : contact.kind === 'github' ? 'GH' : contact.kind === 'twitter' ? '𝕏' : '@'}
+            </span>
           </a>)}
         </nav>}
       </div>
@@ -206,4 +212,24 @@ const contactLinks = (person.contact ?? []).flatMap((contact) => {
   }));
   closeElements.forEach((element) => element.addEventListener('click', closeDrawer));
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeDrawer(); });
+</script>
+
+<script>
+  document.querySelectorAll('[data-profile-photo]').forEach((figure) => {
+    const image = figure.querySelector('img');
+    if (!(image instanceof HTMLImageElement)) return;
+    const header = figure.closest('.record-header');
+    const show = () => {
+      if (image.naturalWidth > 0) {
+        header?.classList.add('profile-header-with-image');
+        figure.removeAttribute('hidden');
+      }
+    };
+    image.addEventListener('load', show, { once: true });
+    image.addEventListener('error', () => {
+      figure.remove();
+      header?.classList.remove('profile-header-with-image');
+    }, { once: true });
+    if (image.complete) show();
+  });
 </script>

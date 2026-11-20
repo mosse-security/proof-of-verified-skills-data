@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable
 from urllib.parse import urljoin, urlsplit
@@ -14,7 +15,7 @@ from ..http import HttpClient
 from ..models import Request
 from ..schema import AssessorMetadata, build_endorsement_record
 from ..enrichment import EnrichmentCatalog
-from ..identity_registry import clean_person_name
+from ..identity_registry import IdentityRegistry, clean_person_name
 
 
 @dataclass(frozen=True, slots=True)
@@ -37,6 +38,7 @@ class BlackHatScraper:
         html_directory: Path = Path("data/archives/html/black-hat.zip"),
         output_directory: Path = Path("tmp/endorsements/black-hat"),
         profile_directory: Path = Path("tmp/profiles/black-hat"),
+        contact_information_directory: Path = Path("data/contact-information"),
         fetch: Callable[[Request], object] | None = None,
         overwrite: bool = True,
         timeout: float = 30,
@@ -51,6 +53,7 @@ class BlackHatScraper:
         self.html_directory = html_directory
         self.output_directory = output_directory
         self.profile_directory = profile_directory
+        self.contact_information_directory = contact_information_directory
         self.overwrite = overwrite
         if fetch is None:
             fetch = HttpClient(
@@ -108,6 +111,7 @@ class BlackHatScraper:
                 output.parent.mkdir(parents=True, exist_ok=True)
                 output.write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             self._write_profiles(rows, year, region)
+            merge_black_hat_images(rows, self.contact_information_directory, year, region)
             results.append(BlackHatResult(year, region, len(records), cache, output))
         return results
 
@@ -118,7 +122,6 @@ class BlackHatScraper:
             output.parent.mkdir(parents=True, exist_ok=True)
             output.write_text(json.dumps(profiles, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-
 @dataclass(frozen=True, slots=True)
 class BlackHatEndorsement:
     name: str
@@ -128,6 +131,8 @@ class BlackHatEndorsement:
     year: int
     subtitle: str
     evidence_links: tuple[dict[str, str], ...] = ()
+    image_url: str | None = None
+    image_source_url: str | None = None
 
     def to_record(self, assessor: AssessorMetadata, enrichment_catalog: EnrichmentCatalog | None = None) -> dict[str, object]:
         return build_endorsement_record(
@@ -142,6 +147,66 @@ class BlackHatEndorsement:
             domains=(),
             evidence_links=self.evidence_links or (enrichment_catalog.links_for(assessor_id=assessor.id, label=self.title, subtitle=self.subtitle) if enrichment_catalog else ()),
         )
+
+
+def merge_black_hat_images(
+    rows: list[BlackHatEndorsement],
+    contact_information_directory: Path,
+    year: int,
+    region: str,
+    *,
+    verified_at: str | None = None,
+) -> int:
+    """Merge Black Hat images into existing contact-information records.
+
+    This never creates a new profile file and never replaces an existing image.
+    Ambiguous or unmatched names are skipped instead of being guessed.
+    """
+
+    contact_information_directory = Path(contact_information_directory)
+    by_identity: dict[str, Path] = {}
+    ambiguous: set[str] = set()
+    for path in contact_information_directory.glob("*.json"):
+        try:
+            document = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        name = document.get("name")
+        if not isinstance(name, str):
+            continue
+        identity = IdentityRegistry.normalize(name)
+        if identity in by_identity:
+            ambiguous.add(identity)
+        else:
+            by_identity[identity] = path
+
+    timestamp = verified_at or datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    changed = 0
+    seen: set[tuple[str, str]] = set()
+    for row in rows:
+        if not row.image_url or not row.image_source_url:
+            continue
+        identity = IdentityRegistry.normalize(row.name)
+        path = by_identity.get(identity)
+        if not path or identity in ambiguous or (identity, row.image_url) in seen:
+            continue
+        seen.add((identity, row.image_url))
+        document = json.loads(path.read_text(encoding="utf-8"))
+        if document.get("image"):
+            continue
+        document["image"] = {
+            "url": row.image_url,
+            "source_url": row.image_source_url,
+            "source_type": "conference",
+            "conference": "Black Hat",
+            "year": year,
+            "region": region,
+            "verified": True,
+            "verified_at": timestamp,
+        }
+        path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        changed += 1
+    return changed
 
 
 def parse_black_hat_page(html: bytes | str, source_url: str, year: int, region: str) -> list[BlackHatEndorsement]:
@@ -166,7 +231,16 @@ def _parse_modern(soup: BeautifulSoup, source_url: str, year: int, region: str) 
         link = urljoin(source_url, title.get("href", ""))
         for speaker in speakers:
             for name in _speaker_names(speaker.get_text(" ", strip=True)):
-                rows.append(BlackHatEndorsement(name, talk, desc, link, year, f"Black Hat {region.title()} {year}"))
+                rows.append(BlackHatEndorsement(
+                    name,
+                    talk,
+                    desc,
+                    link,
+                    year,
+                    f"Black Hat {region.title()} {year}",
+                    image_url=_black_hat_speaker_image(speaker, source_url),
+                    image_source_url=source_url,
+                ))
     return rows
 
 
@@ -188,7 +262,16 @@ def _parse_legacy(soup: BeautifulSoup, source_url: str, year: int, region: str) 
         for speaker in names:
             value = speaker.get_text(" ", strip=True) if isinstance(speaker, Tag) else str(speaker)
             for name in _speaker_names(value):
-                rows.append(BlackHatEndorsement(name, title, description, link, year, f"Black Hat {region.title()} {year}"))
+                rows.append(BlackHatEndorsement(
+                    name,
+                    title,
+                    description,
+                    link,
+                    year,
+                    f"Black Hat {region.title()} {year}",
+                    image_url=_black_hat_speaker_image(speaker, source_url) if isinstance(speaker, Tag) else None,
+                    image_source_url=source_url if isinstance(speaker, Tag) else None,
+                ))
     for block in soup.select("div.span-13, div.span-14"):
         heading = block.select_one("h2 a, h2")
         if not heading:
@@ -202,7 +285,16 @@ def _parse_legacy(soup: BeautifulSoup, source_url: str, year: int, region: str) 
         speakers = sibling.select("a") if sibling else []
         for speaker in speakers:
             for name in _speaker_names(speaker.get_text(" ", strip=True)):
-                rows.append(BlackHatEndorsement(name, title, description, link, year, f"Black Hat {region.title()} {year}"))
+                rows.append(BlackHatEndorsement(
+                    name,
+                    title,
+                    description,
+                    link,
+                    year,
+                    f"Black Hat {region.title()} {year}",
+                    image_url=_black_hat_speaker_image(speaker, source_url),
+                    image_source_url=source_url,
+                ))
     return rows
 
 
@@ -214,6 +306,22 @@ def _speaker_names(value: str) -> list[str]:
         for part in re.split(r"\s*,\s*", value)
         if (cleaned := clean_person_name(part))
     ]
+
+
+def _black_hat_speaker_image(speaker: Tag, source_url: str) -> str | None:
+    """Return an image only when it is nested in Black Hat's speaker node."""
+
+    image = speaker.find("img", recursive=True)
+    if image is None:
+        return None
+    value = next((image.get(attribute) for attribute in ("src", "data-src", "data-lazy-src") if image.get(attribute)), None)
+    if not isinstance(value, str) or not value.strip():
+        return None
+    alt = image.get("alt")
+    speaker_name = clean_person_name(speaker.get_text(" ", strip=True))
+    if isinstance(alt, str) and alt.strip() and clean_person_name(alt) != speaker_name:
+        return None
+    return urljoin(source_url, value.strip())
 
 
 def _event_identity(url: str) -> tuple[int, str]:

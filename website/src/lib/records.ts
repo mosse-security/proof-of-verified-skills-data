@@ -46,6 +46,7 @@ export interface Person {
   biography?: string;
   tags?: string[];
   contact?: Array<{ label?: string; url?: string; email?: string }>;
+  image?: { url?: string; source_url?: string; source_type?: string; conference?: string; year?: number; region?: string; verified?: boolean; verified_at?: string };
   endorsements?: Endorsement[];
   stats?: { endorsements?: number; assessors?: number; 'by-domain'?: Record<string, number> };
   'last-updated'?: string;
@@ -124,8 +125,9 @@ export function getProfile(slug: string): Person {
   if (contactInfoDir) {
     const contactPath = join(contactInfoDir, `${slug}.json`);
     if (existsSync(contactPath)) {
-      const recovered = JSON.parse(readFileSync(contactPath, 'utf8')) as Pick<Person, 'contact'>;
+      const recovered = JSON.parse(readFileSync(contactPath, 'utf8')) as Pick<Person, 'contact' | 'image'>;
       if (recovered.contact?.length) profile.contact = recovered.contact;
+      if (recovered.image?.url) profile.image = recovered.image;
     }
   }
   return profile;
