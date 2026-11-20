@@ -130,6 +130,24 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
     </div>
   </section>
 
+  {(levelCounts.synthetic > 0 || levelCounts.unrated > 0) && <details class="profile-verification-note" aria-label="Questions about these records">
+    <summary><span>About record statuses</span><b>Questions and corrections</b></summary>
+    <div class="profile-verification-note-panel">
+      {levelCounts.synthetic > 0 && <details>
+        <summary>What is a Synthetic record?</summary>
+        <p>It describes work that has not been verified as used on production systems. It may be conceptual, completed in a lab, or done during training; it is a distinct category, not a judgment that the work has no value.</p>
+      </details>}
+      {levelCounts.unrated > 0 && <details>
+        <summary>What is a Not Verified record?</summary>
+        <p>A public record exists, but independently verifiable evidence has not yet been found or confirmed.</p>
+      </details>}
+      <details>
+        <summary>How can I correct or upgrade the record?</summary>
+        <p>If you know of a recording or other public evidence, or can help us verify that work was used in production, please <a href="mailto:contact@vetted-cyber-talent.com">contact us</a>. Verified evidence may allow us to upgrade the record.</p>
+      </details>
+    </div>
+  </details>}
+
   <div class="drawer-scrim" data-close-drawer></div>
   <aside class="drawer" aria-hidden="true" aria-label="Endorsement details">
     <div class="drawer-head">
