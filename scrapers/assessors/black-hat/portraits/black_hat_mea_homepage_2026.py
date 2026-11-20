@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from pathlib import Path
 from urllib.parse import urljoin
 
@@ -34,7 +36,7 @@ def parse_portraits(html: bytes | str, source_url: str = SOURCE_URL) -> dict[str
 
 
 def update_contact_information(portraits: dict[str, str], contact_directory: Path = Path("data/contact-information")) -> int:
-    allowlist: dict[str, Path] = {}
+    contact_paths: dict[str, Path] = {}
     for path in Path(contact_directory).glob("*.json"):
         try:
             document = json.loads(path.read_text(encoding="utf-8"))
@@ -42,23 +44,29 @@ def update_contact_information(portraits: dict[str, str], contact_directory: Pat
             continue
         name = document.get("name")
         if isinstance(name, str):
-            allowlist[IdentityRegistry.normalize(name)] = path
+            contact_paths[IdentityRegistry.normalize(name)] = path
     changed = 0
     allowed = {
-        IdentityRegistry.normalize(line.strip())
+        IdentityRegistry.normalize(line.strip()): line.strip()
         for line in ALLOWLIST_PATH.read_text(encoding="utf-8").splitlines()
         if line.strip() and not line.lstrip().startswith("#")
     }
     for name, image_url in portraits.items():
-        if IdentityRegistry.normalize(name) not in allowed:
+        identity = IdentityRegistry.normalize(name)
+        if identity not in allowed:
             continue
-        path = allowlist.get(IdentityRegistry.normalize(name))
-        if not path:
-            continue
-        document = json.loads(path.read_text(encoding="utf-8"))
+        path = contact_paths.get(identity) or contact_directory / f"{_slug(name)}.json"
+        document = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {
+            "name": allowed[identity], "contact": [], "biography": ""
+        }
         if document.get("image"):
             continue
         document["image"] = {"url": image_url, "source_url": SOURCE_URL, "source_type": "conference", "conference": CONFERENCE, "year": YEAR, "region": REGION, "verified": True}
         path.write_text(json.dumps(document, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         changed += 1
     return changed
+
+
+def _slug(name: str) -> str:
+    value = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-") or "individual"

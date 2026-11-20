@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { sitePath } from '../../lib/site';
+---
+
+<Base title="Contribute | Proof of Verified Skills" description="Help improve the public, open-source Proof of Verifiable Skills database.">
+  <section class="contribute-page">
+    <div class="contribute-hero">
+      <span class="section-kicker">Open project</span>
+      <h1>Contribute</h1>
+      <p class="contribute-lede">POVS is public and open source. If you see something that could be clearer, more complete, or more useful, you are welcome to help us improve it.</p>
+    </div>
+    <div class="contribute-grid">
+      <section class="contribute-card">
+        <span class="contribute-card-index">01</span>
+        <h2>Add an assessor</h2>
+        <p>Would you like to suggest an organisation whose endorsements should be represented in POVS? We welcome thoughtful suggestions.</p>
+        <p>Please first review the <a href="https://github.com/mosse-security/proof-of-verified-skills-data/blob/main/README.md" target="_blank" rel="noreferrer">documentation and endorsement rules</a>. They explain the evidence and verification standards an assessor must meet.</p>
+      </section>
+      <section class="contribute-card">
+        <span class="contribute-card-index">02</span>
+        <h2>Help us correct the record</h2>
+        <p>Data work is a shared effort. If you notice a profile error, a missing endorsement, or a categorisation that needs another look, please tell us.</p>
+        <a class="contribute-link" href="mailto:contact@vetted-cyber-talent.com">contact@vetted-cyber-talent.com</a>
+      </section>
+      <section class="contribute-card">
+        <span class="contribute-card-index">03</span>
+        <h2>Share an idea or a bug</h2>
+        <p>You can also use the same address for questions, contributions, source suggestions, or anything that would make the project more useful to you.</p>
+        <a class="contribute-link" href="mailto:contact@vetted-cyber-talent.com">Get in touch</a>
+      </section>
+    </div>
+    <section class="contribute-alpha">
+      <span class="section-kicker">Alpha</span>
+      <h2>A useful beginning, still being built</h2>
+      <p>This site is currently in Alpha. We know that POVS does not yet contain all of the industry's data, and we do not want to pretend otherwise. Building a careful public record takes time: sources must be found, checked, parsed, and reviewed.</p>
+      <p>We will continue to expand the database steadily. Your corrections, suggestions, and patience help us make it more accurate and more valuable for everyone who relies on it.</p>
+    </section>
+    <p class="contribute-back"><a href={sitePath('/')}>Return to the registry</a></p>
+  </section>
+</Base>
