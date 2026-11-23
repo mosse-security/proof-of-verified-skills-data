@@ -18,6 +18,21 @@ const contactInfoDir = [
   resolve(process.cwd(), '../../data/contact-information'),
 ].find((candidate) => existsSync(candidate));
 
+export const bands = ['indirect', 'observable', 'independently-reviewed'] as const;
+export type EvidenceBand = typeof bands[number];
+export type EvidenceCounts = Record<EvidenceBand, number>;
+export const bandLabels: Record<EvidenceBand, string> = {
+  indirect: 'Indirect', observable: 'Observable', 'independently-reviewed': 'Independently reviewed',
+};
+type PropertyValue = boolean | 'unknown';
+interface Taxonomy {
+  evidence: EvidenceBand;
+  trusted: PropertyValue;
+  production: PropertyValue;
+  competition: PropertyValue;
+  verifiable: PropertyValue;
+  explanation: string;
+}
 export interface Endorsement {
   name?: string;
   label?: string;
@@ -33,13 +48,8 @@ export interface Endorsement {
   domains?: string[];
   subspecialties?: Record<string, string[]>;
   url?: string;
-  evidence?: boolean;
   'evidence-links'?: Array<{ title?: string; url?: string }>;
-  povs?: {
-    level?: number;
-    milestones?: Record<string, boolean>;
-    explanation?: string;
-  };
+  'povs-taxonomy': Taxonomy;
 }
 export interface Person {
   name: string;
@@ -56,7 +66,7 @@ export interface Summary {
   name: string;
   endorsements: number;
   endorsers: number;
-  levelCounts: { synthetic: number; productionLike: number; expert: number; unrated: number };
+  evidenceCounts: EvidenceCounts;
   domains: string[];
   domainCounts: Record<string, number>;
   assessors: string[];
@@ -95,14 +105,7 @@ export function listProfiles(): Summary[] {
         name: p.name,
         endorsements: p.stats?.endorsements ?? p.endorsements.length,
         endorsers: p.stats?.assessors ?? new Set(p.endorsements.map((item) => item['assessor-id'] || item.assessor).filter(Boolean)).size,
-        levelCounts: p.endorsements.reduce((counts, endorsement) => {
-          const level = endorsement.povs?.level ?? 0;
-          if (level <= 2 && level > 0) counts.synthetic += 1;
-          else if (level <= 4 && level > 0) counts.productionLike += 1;
-          else if (level >= 5) counts.expert += 1;
-          else counts.unrated += 1;
-          return counts;
-        }, { synthetic: 0, productionLike: 0, expert: 0, unrated: 0 }),
+        evidenceCounts: countEvidence(p.endorsements ?? []),
         domains: Object.entries(p.stats?.['by-domain'] ?? {})
           .filter(([, count]) => count > 0).map(([domain]) => domain),
         domainCounts: Object.fromEntries(Object.entries(p.stats?.['by-domain'] ?? {}).filter(([, count]) => count > 0)),
@@ -162,19 +165,14 @@ export function formatLabel(value?: string): string {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
-export function levelBand(level?: number): string {
-  if (!level) return 'Not Verified';
-  if (level <= 2) return 'Synthetic';
-  if (level <= 4) return 'Production';
-  return 'Expert';
-}
-
-export function highestLevel(person: Person): number {
-  return Math.max(0, ...(person.endorsements ?? []).map((item) => item.povs?.level ?? 0));
+export function countEvidence(items: Endorsement[]): EvidenceCounts {
+  const counts = { indirect: 0, observable: 0, 'independently-reviewed': 0 };
+  for (const item of items) counts[item['povs-taxonomy'].evidence]++;
+  return counts;
 }
 
 export function evidenceCount(person: Person): number {
-  return (person.endorsements ?? []).filter((item) => item.evidence || (item['evidence-links']?.length ?? 0) > 0).length;
+  return (person.endorsements ?? []).filter((item) => (item['evidence-links']?.length ?? 0) > 0).length;
 }
 
 export function endorsementDomains(item: Endorsement): string[] {

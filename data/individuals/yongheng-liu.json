@@ -52,17 +52,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2024-3653"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2024,
       "domains": [
         "vulnerability-research"
@@ -71,13 +60,21 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
       "name": "Yongheng Liu",
       "label": "Wormholes in the File System: Understanding the Misunderstanding of Symlinks",
       "description": "Symlinks, a file system feature supported at the operating system level for more than four decades, are deeply integrated across the software stack, making them an indispensable component of modern computing environments. The symlink mechanism is highly flexible, allowing references to nearly any location in the file system and enabling complex resolution behaviors. However, this flexibility also introduces significant misunderstandings for developers, which has led to widespread misuse and become a primary vector for critical security vulnerabilities in file-handling software, e.g., arbitrary file write and code execution. In this paper, we present the first systematic study of how symlinks are incorrectly handled and the substantial security risks. Specifically, we study how programming language standard libraries improperly utilize symlink-related system calls, and how such misuse and misunderstanding propagates to downstream applications which results in various inadequate path validations. To further understand whether these inadequate path validations could be exploited in real world, we design and implement five path validation bypass schemes and three arbitrary write methods. Our evaluation across 85 projects uncovered 16 arbitrary file write vulnerabilities, two of which have been assigned high-severity CVEs. We also demonstrate their severe impacts in real-world scenarios and propose multiple mitigation strategies. We have responsibly disclosed these issues to the affected vendors.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -86,23 +83,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/liu-yongheng",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

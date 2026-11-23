@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .taxonomy import apply_evidence_floor, upgrade_legacy_endorsement
 from .schema import AssessorMetadata, is_non_endorsement_session, validate_endorsement_record
 from .domains import ALLOWED_DOMAINS
 from .identity_registry import IdentityRegistry, clean_person_name
@@ -77,6 +78,7 @@ def build_assessor_individuals(
         for index, record in enumerate(records):
             if not isinstance(record, dict):
                 raise IndividualMergeError(f"{source_name}[{index}] must be a JSON object")
+            upgrade_legacy_endorsement(record)
             validate_endorsement_record(
                 record,
                 source=f"{source_name}[{index}]",
@@ -154,6 +156,8 @@ def merge_canonical_individuals(
             continue
         for path in sorted(individual_directory.glob("*.json")):
             document = json.loads(path.read_text(encoding="utf-8"))
+            for record in document["endorsements"]:
+                upgrade_legacy_endorsement(record)
             _validate_individual(document, source=str(path), require_timestamp=False)
             identity = _person_identity(document["name"])
             person = aggregate.setdefault(identity, {"name": document["name"], "records": []})
@@ -229,7 +233,8 @@ def apply_enrichments_to_assessor_individuals(
                 merged = [existing[key] for key in sorted(existing)]
                 if merged != record.get("evidence-links", []):
                     record["evidence-links"] = merged
-                    record["evidence"] = bool(merged)
+                    upgrade_legacy_endorsement(record)
+                    apply_evidence_floor(record)
                     changed = True
             if changed:
                 document["stats"] = _individual_stats(document["endorsements"])
@@ -291,6 +296,7 @@ def merge_endorsements(
             if not isinstance(record, dict):
                 raise IndividualMergeError(f"{source_path}[{index}] must be a JSON object")
             try:
+                upgrade_legacy_endorsement(record)
                 validate_endorsement_record(record, source=f"{source_path}[{index}]")
             except ValueError as exc:
                 raise IndividualMergeError(str(exc)) from exc
@@ -473,7 +479,7 @@ def _individual_stats(records: list[dict[str, Any]]) -> dict[str, Any]:
         assessor_id = record.get("assessor-id")
         if isinstance(assessor_id, str) and assessor_id:
             assessors.add(assessor_id)
-        if record.get("evidence") is True:
+        if record.get("evidence-links"):
             with_evidence += 1
         for domain in record["domains"]:
             by_domain[domain] += 1

@@ -37,7 +37,7 @@
       "name": "Adithya Bhat",
       "label": "Ira: Efficient Transaction Replay for Distributed Systems",
       "description": "In primary-backup replication, the consensus latency is bounded by the time for backup nodes to replay (re-execute) transactions proposed by the primary. Our key insight is that the primary, having already executed transactions, possesses knowledge of future access patterns which is the information needed for optimal replay by the backups. In this work, we present Ira, a framework to accelerate backup replay by transmitting compact hints alongside transaction batches. We use Ethereum for our case study and present a concrete protocol, Ira-L, within our framework to improve cache management of Ethereum block execution. The primaries implementing Ira-L provide hints that consist of the working set of keys used in an Ethereum block and one byte of metadata per key indicating the table to read from, and backups use these hints for efficient block replay. We evaluated Ira-L against the state-of-the-art Ethereum client reth over two weeks of Ethereum blocks (100,800) blocks, 24 million transactions). Our hint generation adds 10.9% overhead to primary execution time. On the backup, our hint-driven prefetching speeds up aggregate replay by 5.2× with a single prefetch thread, and by 23.6× with 16 threads. Our hints add a median of 47 KB compressed metadata per block (∼5%) of block payload).",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -46,23 +46,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/bhat",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "unknown"
       ],
       "subspecialties": {
         "unknown": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

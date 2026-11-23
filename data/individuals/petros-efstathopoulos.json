@@ -46,30 +46,27 @@
       "subtitle": "RSA Conference 2026",
       "url": "https://path.rsaconference.com/flow/rsac/us26/FullAgenda/page/catalog/session/1769626504237001I2tf",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "unknown"
       ],
       "subspecialties": {
         "unknown": []
+      },
+      "povs-taxonomy": {
+        "evidence": "indirect",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The conference listing credits the individual with a place on the programme."
       }
     },
     {
       "name": "Petros Efstathopoulos",
       "label": "When AIOps Become \"AI Oops\": Subverting LLM-driven IT Operations via Telemetry Manipulation",
       "description": "AI for IT Operations (AIOps) is transforming how organizations manage complex software systems by automating anomaly detection, incident diagnosis, and remediation. Modern AIOps solutions increasingly rely on autonomous LLM-based agents to interpret telemetry data and take corrective actions with minimal human intervention, promising faster response times and operational cost savings. In this work, we perform the first security analysis of AIOps solutions, showing that, once again, AI-driven automation comes with a profound security cost. We demonstrate that adversaries can manipulate system telemetry to mislead AIOps agents into taking actions that compromise the integrity of the infrastructure they manage. We introduce techniques to reliably inject telemetry data using error-inducing requests that influence agent behavior through a form of adversarial reward-hacking; plausible but incorrect system error interpretations that steer the agent's decision-making. Our attack methodology, AIOpsDoom, is fully automated–combining reconnaissance, fuzzing, and LLM-driven adversarial input generation–and operates without any prior knowledge of the target system. To counter this threat, we propose AIOpsShield, a defense mechanism that sanitizes telemetry data by exploiting its structured nature and the minimal role of user-generated content. Our experiments show that AIOpsShield reliably blocks telemetry-based attacks without affecting normal agent performance. Ultimately, this work exposes AIOps as an emerging attack vector for system compromise and underscores the urgent need for security-aware AIOps design.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -78,17 +75,6 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/pasquini",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "cyber-defense",
@@ -101,6 +87,14 @@
         "vulnerability-research": [
           "fuzzing-and-automated-testing"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

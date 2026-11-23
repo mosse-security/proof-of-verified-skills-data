@@ -37,7 +37,7 @@
       "name": "Anna Yoo Jeong Ha",
       "label": "Identifying Provenance of Generative Text-to-Image Models",
       "description": "Fine-tuning provides a fast and cheap way to produce new text-to-image models that are often indistinguishable from ones trained from scratch. Unfortunately, misrepresentation of fine-tuned models creates problems for AI companies and users alike, by disincentivizing competition and misleading users on model quality and ethics of its training process. In this paper, we propose a model provenance system that identifies models produced by fine-tuning on existing text-to-image models, using only black-box query access. Our design is informed by analysis showing that one can quantify the feature space difference between text-to-image models by analyzing their responses to detailed prompts. Our system analyzes model output, extracts visual features using a generic feature extractor, and compares their distributions against those from a reference pool of base models using Jensen-Shannon divergence. Applying statistical hypothesis testing then determines if a target model is trained from scratch or fine-tuned, and if the latter, the likely base (parent) model. We evaluate our system across seven widely used diffusion models and numerous fine-tuned variants. Our results show high accuracy in attributing model lineage, even under adversarial conditions such as image post-processing or weight perturbations. Finally, we demonstrate real world efficacy of our system by tracing provenance of in-the-wild models from popular online platforms.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -46,23 +46,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/ha",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "cyber-defense"
       ],
       "subspecialties": {
         "cyber-defense": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

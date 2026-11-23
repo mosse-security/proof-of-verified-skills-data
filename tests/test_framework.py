@@ -109,12 +109,8 @@ class GroupedScraper(BaseCollectionScraper):
                     "reviewType": "community_review",
                     "url": f"https://example.test/{index}",
                     "evidence-links": [],
-                    "evidence": False,
-                    "povs": {
-                        "milestones": {"verifiable": False, "defended": False, "recognized": False, "trusted": False},
-                        "level": 0,
-                        "explanation": "No evidence discovered for this record therefore it could not be verified",
-                    },
+                    "povs-taxonomy": {"evidence": "indirect", "trusted": "unknown", "production": "unknown",
+                    "competition": False, "verifiable": "unknown", "explanation": "Programme listing."},
                     "year": 2026,
                     "domains": ["unknown"],
                 }

@@ -4,6 +4,8 @@ This is the maintainer and operator guide for capturing assessor records,
 validating identities, rebuilding individual records, and checking changes.
 For an explanation of POVS itself, start with the repository [README](../README.md).
 
+When adding or enriching endorsements, follow the [endorsement data contract](data-contracts.md#endorsements) for evidence links, bands and properties.
+
 ## Identity review policy
 
 > **IDENTITY REVIEW RULE — DO NOT AUTOMATE ALLOW-LIST CHANGES**

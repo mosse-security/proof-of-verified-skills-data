@@ -45,17 +45,6 @@
       "subtitle": "BlueHat 2023",
       "url": "https://www.microsoft.com/en-us/msrc/blog/2023/02/bluehat-2023-connecting-the-security-research-community-with-microsoft",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2023,
       "domains": [
         "cloud-security",
@@ -66,6 +55,14 @@
         "vulnerability-research": [
           "bug-bounty-research"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "indirect",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The conference listing credits the individual with a place on the programme."
       }
     },
     {
@@ -86,23 +83,20 @@
           "title": "Google Bug Hunters leaderboard"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A Google VRP leaderboard entry represents a researcher publicly credited after Google reviewed and accepted their vulnerability report through its vulnerability-reward process, providing evidence of validation, defense, recognition, and trust."
-      },
       "year": 2023,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": true,
+        "production": true,
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The bounty programme reviewed and accepted the finding. POVS treats bounty awards as trusted production work."
       }
     }
   ]

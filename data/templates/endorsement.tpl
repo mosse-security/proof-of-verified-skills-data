@@ -10,36 +10,41 @@
   "reviewType": "reviewType of the assessor in the data folder",
   "subtitle": "Optional field to specify additional information like conference year",
   "url": "URL to verify the record",
+  
   "evidence-links": [
     {
       "title": "Related recording",
       "url": "https://example.com/recording"
     }
   ],
-  "evidence": true,
-  "povs": {
-    "milestones": {
-      "verifiable": true,
-      "defended": true,
-      "recognized": true,
-      "trusted": false
-    },
-    "level": 2,
-    "explanation": "The speaker’s proposal was accepted through the conference’s independent review process. They publicly presented and defended the work at the event, providing verifiable and recognized evidence of the endorsement. We could not verify whether the work is used in industry in situations of real consequence."
+
+  "povs-taxonomy": {
+    "evidence": "indirect|observable|independently-reviewed",
+    "trusted": "true|false|unknown",
+    "production": "true|false|unknown",
+    "competition": "true|false|unknown",
+    "verifiable": "true|false|unknown",
+    "explanation": "The conference recording identifies the speaker and shows the presentation. A reader can watch it and assess the explanation. Production use is unknown."
   },
+
   "year": "Year of the record",
   
   "domains": [
     "penetration-testing",
-    "vulnerability-research"
+    "vulnerability-research",
+    ...
   ],
+
   "subspecialties": {
     "penetration-testing": [
       "web-application-penetration-testing",
-      "api-penetration-testing"
+      "api-penetration-testing",
+      ...
     ],
+
     "vulnerability-research": [
-      "vulnerability-discovery"
+      "vulnerability-discovery",
+      ...
     ]
   }
 }

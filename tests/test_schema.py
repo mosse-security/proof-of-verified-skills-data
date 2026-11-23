@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -17,7 +18,7 @@ from scrapers import (
 class EndorsementSchemaTests(unittest.TestCase):
     def test_library_contract_matches_endorsement_template(self) -> None:
         template = json.loads(
-            Path("data/templates/endorsement.tpl").read_text(encoding="utf-8")
+            re.sub(r",\s*\.\.\.", "", Path("data/templates/endorsement.tpl").read_text(encoding="utf-8"))
         )
 
         self.assertEqual(set(ENDORSEMENT_FIELDS), set(template))
@@ -40,7 +41,7 @@ class EndorsementSchemaTests(unittest.TestCase):
             url="https://example.test/talk",
             year=2026,
             domains=("vulnerability-research",),
-            evidence_links=({"title": "Recording", "url": "https://example.test/video"},),
+            evidence_links=({"title": "Example Conference - Talk", "url": "https://www.youtube.com/watch?v=abc123"},),
         )
 
         self.assertEqual(set(record), set(ENDORSEMENT_FIELDS))
@@ -77,46 +78,90 @@ class EndorsementSchemaTests(unittest.TestCase):
             name="Alice Example", label="Talk", description="Detailed talk abstract.",
             endorsement_type="presentation", assessor=assessor, url="https://example.test/talk",
             year=2026, domains=("vulnerability-research",),
-            evidence_links=({"title": "Recording", "url": "https://example.test/video"},),
+            evidence_links=({"title": "Example Conference - Talk", "url": "https://www.youtube.com/watch?v=abc123"},),
         )
-        self.assertEqual(with_evidence["povs"]["level"], 2)
-        self.assertTrue(with_evidence["povs"]["milestones"]["verifiable"])
-        self.assertIn("real consequence", with_evidence["povs"]["explanation"])
+        self.assertEqual(with_evidence["povs-taxonomy"]["evidence"], "observable")
+        self.assertIs(with_evidence["povs-taxonomy"]["verifiable"], True)
         without_evidence = build_endorsement_record(
             name="Alice Example", label="Talk", description="Detailed talk abstract.",
             endorsement_type="presentation", assessor=assessor, url="https://example.test/talk",
             year=2026, domains=("vulnerability-research",),
         )
-        self.assertEqual(without_evidence["povs"]["level"], 0)
-        self.assertEqual(
-            without_evidence["povs"]["explanation"],
-            "No evidence discovered for this record therefore it could not be verified",
-        )
+        self.assertEqual(without_evidence["povs-taxonomy"]["evidence"], "indirect")
 
-    def test_assessor_policy_can_assign_level_without_evidence(self) -> None:
+    def test_judged_result_is_independently_reviewed(self) -> None:
         assessor = AssessorMetadata(
             id="pwn2own", name="Pwn2Own", category="competition",
             rigor_level="very_high", review_type="competition_validation",
-            pov_policy={
-                "milestones": {
-                    "verifiable": True,
-                    "defended": True,
-                    "recognized": True,
-                    "trusted": True,
-                },
-                "level": 6,
-                "applyWithoutEvidence": True,
-                "explanation": "Live competition validation.",
-            },
         )
         record = build_endorsement_record(
             name="Alice Example", label="Pwn2Own result", description="Validated exploit.",
             endorsement_type="competition_result", assessor=assessor,
             url="https://example.test/result", year=2026, domains=("vulnerability-research",),
         )
-        self.assertEqual(record["povs"]["level"], 6)
-        self.assertTrue(record["povs"]["milestones"]["trusted"])
+        self.assertEqual(record["povs-taxonomy"]["evidence"], "independently-reviewed")
+        self.assertTrue(record["povs-taxonomy"]["competition"])
         validate_endorsement_record(record, assessor=assessor)
+
+    def test_academic_paper_and_linked_video(self) -> None:
+        assessor = AssessorMetadata("ieee-sp", "IEEE S&P", "conference_academic",
+                                    "very_high", "double_blind")
+        fields = dict(name="Alice Example", label="Systems Research", description="Research paper.",
+                      endorsement_type="presentation", url="https://example.test/program",
+                      year=2026, domains=("unknown",))
+        paper = build_endorsement_record(assessor=assessor, **fields)
+        self.assertEqual(paper["type"], "paper")
+        self.assertEqual(paper["povs-taxonomy"]["evidence"], "independently-reviewed")
+        self.assertIs(paper["povs-taxonomy"]["verifiable"], True)
+
+        conference = AssessorMetadata("example", "Example", "conference_community",
+                                      "medium", "community_review")
+        talk = build_endorsement_record(assessor=conference, **fields,
+            evidence_links=[{"title": "Conference recording", "url": "https://youtu.be/other"}])
+        self.assertEqual(talk["povs-taxonomy"]["evidence"], "observable")
+
+    def test_work_link_floor_applies_across_types_and_preserves_review(self) -> None:
+        from scrapers.taxonomy import apply_evidence_floor
+
+        for title, url in [
+            ("Source", "https://github.com/example/tool"),
+            ("Read", "https://example.test/paper.pdf"),
+            ("Paper", "https://example.test/article"),
+            ("Session replay", "https://www.youtube.com/watch?v=123"),
+        ]:
+            for initial, expected in [("indirect", "observable"), ("independently-reviewed", "independently-reviewed")]:
+                with self.subTest(url=url, initial=initial):
+                    taxonomy = {"evidence": initial, "verifiable": "unknown", "trusted": True}
+                    record = {"type": "tool", "url": "https://example.test/awards",
+                              "evidence-links": [{"title": title, "url": url}], "povs-taxonomy": taxonomy}
+                    apply_evidence_floor(record)
+                    self.assertEqual(taxonomy["evidence"], expected)
+                    self.assertIs(taxonomy["verifiable"], True)
+                    self.assertIs(taxonomy["trusted"], True)
+
+    def test_recognition_link_alone_is_indirect(self) -> None:
+        from scrapers.taxonomy import links_to_work
+
+        self.assertFalse(links_to_work({"title": "Leaderboard", "url": "https://example.test/winners"}))
+
+    def test_bug_bounty_requires_award_credit_on_rankings(self) -> None:
+        for kind, issuer, description, awarded in [
+            ("bug_bounty", "mozilla-security", "Bounty Hall of Fame credit.", True),
+            ("recognition", "google-security-rewards", "Public profile records 3 awards.", True),
+            ("recognition", "google-security-rewards", "Public profile records 0 awards.", False),
+            ("recognition", "another-programme", "Public profile records 3 awards.", False),
+        ]:
+            with self.subTest(issuer=issuer, description=description):
+                record = build_endorsement_record(
+                    name="Alice Example", label="Programme credit", description=description,
+                    endorsement_type=kind, assessor=AssessorMetadata(issuer, issuer, "vendor", "high", "internal_review"),
+                    url="https://example.test/credit", year=2026, domains=("unknown",),
+                )
+                taxonomy = record["povs-taxonomy"]
+                self.assertEqual(taxonomy["evidence"], "independently-reviewed" if awarded else "indirect")
+                for key in ("trusted", "production"):
+                    self.assertEqual(taxonomy[key], True if awarded else "unknown")
+                self.assertEqual(taxonomy["verifiable"], "unknown")
 
     def test_cve_endorsements_are_only_vulnerability_research(self) -> None:
         assessor = AssessorMetadata(
@@ -148,7 +193,7 @@ class EndorsementSchemaTests(unittest.TestCase):
             endorsement_type="presentation", assessor=assessor, url="https://example.test/talk",
             year=2026, domains=("vulnerability-research",),
         )
-        record["povs"]["level"] = 2
+        record["povs-taxonomy"]["evidence"] = "observable"
         with self.assertRaises(EndorsementSchemaError):
             validate_endorsement_record(record, assessor=assessor)
 

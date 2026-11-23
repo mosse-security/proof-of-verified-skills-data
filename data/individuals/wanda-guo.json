@@ -37,7 +37,7 @@
       "name": "Wanda Guo",
       "label": "Semantics Over Syntax: Uncovering Pre-Authentication 5G Baseband Vulnerabilities",
       "description": "Modern 5G user equipment (UE) processes Radio Resource Control (RRC) configuration messages during early control-plane exchanges, before authentication and integrity protection are established. Prior work for testing 5G UEs has largely focused on constructing syntactically invalid inputs. In contrast, we show that syntactically valid but semantically inconsistent messages, which violate specification-level field constraints or cross-field dependencies, can drive baseband implementations into invalid states, triggering assertion failures or modem crashes. These findings reveal semantic inconsistencies in pre-authentication signaling as a critical yet underexplored attack surface in 5G UE implementations. To address this gap, we present Constraint-Guided Semantic Testing (CONSET), a framework that systematically extracts specification-level constraints and leverages them to generate targeted semantic violations for testing 5G UEs. CONSET decodes RRC messages into structured fields, derives schema-based rules, infers cross-field dependencies using a Large Language Model (LLM) in an evidence-bounded manner, and produces syntactically valid test cases that intentionally violate semantic constraints. We evaluate CONSET on both commercial and open-source 5G UEs. On commercial smartphones, it uncovers 7 previously unknown vulnerabilities through responsible disclosure, including 3 high-severity CVEs, affecting 64 chipset models and over 542 commercially available smartphone models. On the open-source OAI UE, CONSET additionally triggers 46 distinct crash sites.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -46,17 +46,6 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/huang-qiqing",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "cyber-defense",
@@ -67,6 +56,14 @@
           "ai-for-security-operations"
         ],
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

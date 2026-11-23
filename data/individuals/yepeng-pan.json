@@ -53,17 +53,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2023-52881"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2023,
       "domains": [
         "vulnerability-research"
@@ -72,6 +61,14 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": true,
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
@@ -92,17 +89,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2024-2169"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2024,
       "domains": [
         "vulnerability-research"
@@ -111,13 +97,21 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
       "name": "Yepeng Pan",
       "label": "FRAGJAM: DoS Attacks Using IP Reassembly Congestion",
       "description": "UDP, one of the major transport protocols for multiple popular services such as DNS and video conferencing, is an important component of today's network. Its reliance on IP fragmentation is known to cause both security and reliability issues. To avoid fragmentation, UDP-based applications hence usually limit the payload size. Currently, Linux's IP fragment reassembling algorithm relies on a per-network-namespace buffer size limit. That is, a classic resource-exhaustion DoS attack against UDP services relying on IP fragmentation is possible. However, the fragility of present real-world services has not yet been thoroughly researched. In this paper, we examine the practicability of such an IP-fragmentation-based DoS attack against real-world providers of popular UDP-based services, including VPN, video conferencing, and RADIUS. We assess the attack from both the client and service provider perspectives. On the server side, we observe that many real-world service providers fragment the server-to-client traffic with respect to artificially small path MTUs when receiving attacker forged ICMP Fragmentation Needed messages. On the client side, we show the chance of dropping server-to-client fragmented traffic by flooding Linux-based NAT gateways with bogus fragments. Through simulated attacks, we demonstrate that the fragmentation-based DoS attack is realistic, affecting various providers such as Zoom and ExpressVPN. We conduct a comprehensive disclosure to affected parties and suggest possible mitigations.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -126,23 +120,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/pan",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

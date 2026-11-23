@@ -1,4 +1,5 @@
 ---
+import EvidenceMix from '../../components/EvidenceMix.astro';
 import Base from '../../layouts/Base.astro';
 import { challengesForTags } from '../../lib/challenges';
 import {
@@ -6,8 +7,9 @@ import {
   formatDomain,
   formatLabel,
   getProfile,
-  highestLevel,
-  levelBand,
+  bands,
+  bandLabels,
+  countEvidence,
   listProfiles,
   safeExternalUrl,
 } from '../../lib/records';
@@ -21,33 +23,20 @@ const person = getProfile(slug);
 const achievements = challengesForTags(person.tags);
 const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
   const year = (b.year ?? 0) - (a.year ?? 0);
-  return year || (b.povs?.level ?? 0) - (a.povs?.level ?? 0);
+  return year || bands.indexOf(b['povs-taxonomy'].evidence) - bands.indexOf(a['povs-taxonomy'].evidence);
 });
 const endorsers = [...new Set(endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort((a, b) => a.localeCompare(b));
-const level = highestLevel(person);
-const levelCounts = endorsements.reduce((counts, endorsement) => {
-  const endorsementLevel = endorsement.povs?.level ?? 0;
-  if (endorsementLevel > 0 && endorsementLevel <= 2) counts.synthetic += 1;
-  else if (endorsementLevel <= 4 && endorsementLevel > 0) counts.productionLike += 1;
-  else if (endorsementLevel >= 5) counts.expert += 1;
-  else counts.unrated += 1;
-  return counts;
-}, { synthetic: 0, productionLike: 0, expert: 0, unrated: 0 });
-const mixTotal = Object.values(levelCounts).reduce((sum, count) => sum + count, 0);
-const mixWidth = (count: number) => `${mixTotal ? (count / mixTotal) * 100 : 0}%`;
-const milestones = ['verifiable', 'defended', 'recognized', 'trusted'];
+const counts = countEvidence(endorsements);
+const properties = { trusted: 'Trusted', production: 'Production', competition: 'Competition', verifiable: 'Independently verifiable' } as const;
+const propertyKeys = Object.keys(properties) as (keyof typeof properties)[];
 const titleFor = (item: typeof endorsements[number]) => item.label || item.description || 'Endorsement';
 const assessorLabelFor = (assessor: string) => {
   const words = assessor.trim().split(/\s+/);
   return words.length > 4 ? `${words.slice(0, 4).join(' ')}...` : assessor;
 };
-const levelChipClass = (item: typeof endorsements[number]) => {
-  const level = item.povs?.level;
-  if (!level) return 'level-chip-unrated';
-  if (level <= 2) return 'level-chip-blue';
-  if (level <= 4) return 'level-chip-orange';
-  return 'level-chip-green';
-};
+const chipClasses = { indirect: 'level-chip-blue', observable: 'level-chip-orange', 'independently-reviewed': 'level-chip-green' };
+const reviewTypeLabel = (value: string) =>
+  value === 'double_blind' ? 'Double-blind peer review' : formatLabel(value);
 const dateFor = (item: typeof endorsements[number]) => item.year ? String(item.year) : 'Date not specified';
 const descriptionFor = (item: typeof endorsements[number]) => item.description?.trim();
 const criticalityFor = (item: typeof endorsements[number]) => {
@@ -79,13 +68,10 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
         <h1>{person.name}</h1>
         {person.biography && <p>{person.biography}</p>}
         <div class="profile-meta-line">
-          <span>Highest verified: <strong>{level ? levelBand(level) : 'Not yet rated'}</strong></span>
+          <span>{endorsements.length} endorsements</span>
           <span>{person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size} assessors</span>
         </div>
-        <div class="profile-level-mix" title={`${levelCounts.synthetic} synthetic, ${levelCounts.productionLike} production-like, ${levelCounts.expert} expert, ${levelCounts.unrated} Not Verified`}>
-          <span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(levelCounts.synthetic)}`}></i><i class="level-production" style={`width:${mixWidth(levelCounts.productionLike)}`}></i><i class="level-expert" style={`width:${mixWidth(levelCounts.expert)}`}></i><i class="level-unrated" style={`width:${mixWidth(levelCounts.unrated)}`}></i></span>
-          <span class="level-stack-labels"><b>Synthetic: {levelCounts.synthetic}</b><b>Production: {levelCounts.productionLike}</b><b>Expert: {levelCounts.expert}</b><b>Not Verified: {levelCounts.unrated}</b></span>
-        </div>
+        <div class="profile-level-mix"><EvidenceMix counts={counts} /></div>
         {contactLinks.length > 0 && <nav class="contact-row" aria-label={`Contact links for ${person.name}`}>
           {contactLinks.map((contact) => <a class:list={['contact-link', `contact-link-${contact.kind}`]} href={contact.href} title={contact.label} aria-label={`${contact.label} for ${person.name}`} target={contact.external ? '_blank' : undefined} rel={contact.external ? 'noopener noreferrer' : undefined}>
             <span class="contact-icon" aria-hidden="true">
@@ -123,24 +109,24 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
     <div class="evidence-list">
       {endorsements.length ? endorsements.map((item, index) => <button type="button" class="evidence-row" data-open-id={`endorsement-${index}`} data-assessor={item.assessor || ''}>
         <span class="domain-badge" title={endorsementDomains(item).map(formatDomain).join(', ') || 'Unclassified'}>{endorsementDomains(item).length > 1 ? 'Multiple domains' : formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
-        <span class="row-main"><span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>{cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}<small class="endorser">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong></small></span>
-        <span class="row-context"><strong class={`level-chip ${levelChipClass(item)}`}>{item.povs?.level ? levelBand(item.povs.level) : 'Not Verified'}</strong><small>{dateFor(item)}</small></span>
+        <span class="row-main"><span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>{cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}<small class="endorser">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong>{item.reviewType && <> · {reviewTypeLabel(item.reviewType)}</>}</small></span>
+        <span class="row-context"><strong class={`level-chip ${chipClasses[item['povs-taxonomy'].evidence]}`}>{bandLabels[item['povs-taxonomy'].evidence]}</strong><small>{dateFor(item)}</small></span>
       </button>) : <div class="empty-state"><strong>No proof records match this view.</strong><span>There are no public endorsements for this individual yet.</span></div>}
       {endorsements.length > 0 && <div class="empty-state" data-filter-empty hidden><strong>No proof records in this domain.</strong><span>Choose another domain to see more evidence.</span></div>}
     </div>
   </section>
 
-  {(levelCounts.synthetic > 0 || levelCounts.unrated > 0) && <details class="profile-verification-note" aria-label="Questions about these records">
-    <summary><span>About record statuses</span><b>Questions and corrections</b></summary>
+  {endorsements.length > 0 && <details class="profile-verification-note" aria-label="Questions about these records">
+    <summary><span>About the evidence</span><b>Questions and corrections</b></summary>
     <div class="profile-verification-note-panel">
-      {levelCounts.synthetic > 0 && <details>
-        <summary>What is a Synthetic record?</summary>
-        <p>It describes work that has not been verified as used on production systems. It may be conceptual, completed in a lab, or done during training; it is a distinct category, not a judgment that the work has no value.</p>
-      </details>}
-      {levelCounts.unrated > 0 && <details>
-        <summary>What is a Not Verified record?</summary>
-        <p>A public record exists, but independently verifiable evidence has not yet been found or confirmed.</p>
-      </details>}
+      <details>
+        <summary>What do the evidence bands mean?</summary>
+        <p>Indirect evidence credits someone with an achievement. Observable work is available to inspect. Independently reviewed work underwent formal assessment.</p>
+      </details>
+      <details>
+        <summary>What does Unknown mean?</summary>
+        <p>The available record leaves that property open.</p>
+      </details>
       <details>
         <summary>How can I correct or upgrade the record?</summary>
         <p>If you know of a recording or other public evidence, or can help us verify that work was used in production, please <a href="mailto:contact@vetted-cyber-talent.com">contact us</a>. Verified evidence may allow us to upgrade the record.</p>
@@ -161,13 +147,12 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
           <p class="drawer-byline">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong></p>
         </div>
         {descriptionFor(item) && descriptionFor(item) !== titleFor(item).trim() && <section class="record-description"><h3>{item.type === 'presentation' ? 'Abstract' : item.type === 'vulnerability_discovery' ? 'Details' : 'Description'}</h3><p>{descriptionFor(item)}</p></section>}
-        <section class:list={['plain-explainer', !item.povs?.level && 'unrated']}><span class:list={['row-score', 'large', levelChipClass(item)]}>{item.povs?.level ? `L${item.povs.level}` : '-'}</span><div><h3>{item.povs?.level ? `${levelBand(item.povs.level)} proof` : 'Not yet rated'}</h3>{item.povs?.explanation && <p>{item.povs.explanation}</p>}</div></section>
+        <section class="plain-explainer"><div><h3>{bandLabels[item['povs-taxonomy'].evidence]}</h3><p>{item['povs-taxonomy'].explanation}</p></div></section>
         <h3 class="facts-heading">Record details</h3>
         <dl class="facts">
-          <div><dt>Milestones</dt><dd>{milestones.filter((milestone) => item.povs?.milestones?.[milestone]).map((milestone) => <span class="milestone">{milestone}</span>)}{!milestones.some((milestone) => item.povs?.milestones?.[milestone]) && 'Not recorded'}</dd></div>
-          <div><dt>POVS rating</dt><dd>{item.povs?.level ? levelBand(item.povs.level) : 'Not rated'}</dd></div>
+          {propertyKeys.map(key => <div><dt>{properties[key]}</dt><dd>{item['povs-taxonomy'][key] === 'unknown' ? 'Unknown' : item['povs-taxonomy'][key] ? 'Yes' : 'No'}</dd></div>)}
           <div><dt>Assessor</dt><dd>{item.assessor || 'Not specified'}</dd></div>
-          <div><dt>Public verifier</dt><dd>{formatLabel(item.reviewType || item['assessor-rigor-level'])}</dd></div>
+          <div><dt>Review type</dt><dd>{item.reviewType ? reviewTypeLabel(item.reviewType) : 'Not specified'}</dd></div>
           <div><dt>Record type</dt><dd>{formatLabel(item.type)}</dd></div>
           <div><dt>Cyber domain</dt><dd>{endorsementDomains(item).map(formatDomain).join(', ') || 'Not classified'}</dd></div>
           <div><dt>Sub-specialty</dt><dd>{Object.values(item.subspecialties ?? {}).flat().map(formatDomain).join(', ') || 'Not specified'}</dd></div>

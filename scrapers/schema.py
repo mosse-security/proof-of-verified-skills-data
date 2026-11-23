@@ -9,6 +9,7 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from .domains import detect_domains, detect_subspecialties, normalize_domains, normalize_subspecialties, validate_record_domains
+from .taxonomy import BANDS, PROPERTIES, apply_taxonomy, has_work_link
 from .identity_registry import clean_person_name
 
 
@@ -24,8 +25,7 @@ REQUIRED_ENDORSEMENT_FIELDS = (
     "reviewType",
     "url",
     "evidence-links",
-    "evidence",
-    "povs",
+    "povs-taxonomy",
     "year",
     "domains",
 )
@@ -92,7 +92,6 @@ class AssessorMetadata:
     category: str
     rigor_level: str
     review_type: str
-    pov_policy: dict[str, Any] | None = None
 
     @classmethod
     def from_file(cls, path: Path) -> AssessorMetadata:
@@ -120,13 +119,11 @@ class AssessorMetadata:
                 if isinstance(peer_review, dict)
                 else None
             ),
-            "pov_policy": document.get("povPolicy"),
         }
         invalid = [
             label
             for label, value in values.items()
-            if label != "pov_policy"
-            and (not isinstance(value, str) or not value.strip())
+            if (not isinstance(value, str) or not value.strip())
         ]
         if invalid:
             raise EndorsementSchemaError(
@@ -139,28 +136,6 @@ class AssessorMetadata:
                 f"Assessor file {path.name!r} contains id {metadata.id!r}"
             )
         return metadata
-
-    def povs_for_evidence(self, evidence: bool) -> dict[str, Any]:
-        if not self.pov_policy:
-            return _povs_for_evidence(evidence)
-        policy = self.pov_policy
-        if not evidence and not policy.get("applyWithoutEvidence", False):
-            return _povs_for_evidence(evidence)
-        if not isinstance(policy.get("applyWithoutEvidence", False), bool):
-            raise EndorsementSchemaError(f"Invalid applyWithoutEvidence in assessor metadata for {self.id}")
-        milestones = policy.get("milestones") if isinstance(policy, dict) else None
-        if (
-            not isinstance(milestones, dict)
-            or set(milestones) != {"verifiable", "defended", "recognized", "trusted"}
-            or any(not isinstance(value, bool) for value in milestones.values())
-        ):
-            raise EndorsementSchemaError(f"Invalid povPolicy in assessor metadata for {self.id}")
-        return {
-            "milestones": dict(milestones),
-            "level": int(policy.get("level", 0)),
-            "explanation": str(policy.get("explanation", "")),
-        }
-
 
 def build_endorsement_record(
     *,
@@ -204,77 +179,28 @@ def build_endorsement_record(
         {
             "url": url,
             "evidence-links": normalized_evidence_links,
-            "evidence": bool(normalized_evidence_links),
-            "povs": assessor.povs_for_evidence(bool(normalized_evidence_links)),
             "year": year,
             "domains": list(detected_domains),
             "subspecialties": {domain: list(names) for domain, names in normalize_subspecialties(specialty_values, domains=detected_domains).items()},
         }
     )
+    apply_taxonomy(record)
     validate_endorsement_record(record, assessor=assessor)
     return record
 
 
-POVS_NO_EVIDENCE_EXPLANATION = (
-    "No evidence discovered for this record therefore it could not be verified"
-)
-POVS_CONFERENCE_EXPLANATION = (
-    "The speaker’s proposal was accepted through the conference’s independent review "
-    "process. They publicly presented and defended the work at the event, providing "
-    "verifiable and recognized evidence of the endorsement. We could not verify "
-    "whether the work is used in industry in situations of real consequence."
-)
-
-
-def _povs_for_evidence(evidence: bool) -> dict[str, Any]:
-    if not evidence:
-        return {
-            "milestones": {
-                "verifiable": False,
-                "defended": False,
-                "recognized": False,
-                "trusted": False,
-            },
-            "level": 0,
-            "explanation": POVS_NO_EVIDENCE_EXPLANATION,
-        }
-    return {
-        "milestones": {
-            "verifiable": True,
-            "defended": True,
-            "recognized": True,
-            "trusted": False,
-        },
-        "level": 2,
-        "explanation": POVS_CONFERENCE_EXPLANATION,
-    }
-
-
-def _validate_povs(
-    value: Any,
-    *,
-    evidence: bool,
-    source: str,
-    expected: dict[str, Any] | None = None,
-) -> None:
-    if not isinstance(value, dict) or set(value) != {"milestones", "level", "explanation"}:
-        raise EndorsementSchemaError(
-            f"{source}.povs must contain exactly milestones, level, and explanation"
-        )
-    milestones = value["milestones"]
-    expected = expected or _povs_for_evidence(evidence)
-    if not isinstance(milestones, dict) or set(milestones) != {"verifiable", "defended", "recognized", "trusted"}:
-        raise EndorsementSchemaError(f"{source}.povs.milestones has invalid fields")
-    if any(not isinstance(milestones[key], bool) for key in milestones):
-        raise EndorsementSchemaError(f"{source}.povs.milestones values must be booleans")
-    if isinstance(value["level"], bool) or not isinstance(value["level"], int):
-        raise EndorsementSchemaError(f"{source}.povs.level must be an integer")
+def validate_taxonomy(value: Any, source: str) -> None:
+    if not isinstance(value, dict) or set(value) != {"evidence", "explanation", *PROPERTIES}:
+        raise EndorsementSchemaError(f"{source}.povs-taxonomy contains invalid fields")
+    if value["evidence"] not in BANDS:
+        raise EndorsementSchemaError(f"{source}.povs-taxonomy.evidence has an invalid band")
+    for key in PROPERTIES:
+        if not isinstance(value[key], bool) and value[key] != "unknown":
+            raise EndorsementSchemaError(f"{source}.povs-taxonomy.{key} must be true, false or unknown")
+    if value["evidence"] == "observable" and value["verifiable"] is not True:
+        raise EndorsementSchemaError(f"{source}: observable work must be verifiable")
     if not isinstance(value["explanation"], str) or not value["explanation"].strip():
-        raise EndorsementSchemaError(f"{source}.povs.explanation must be non-empty")
-    if value != expected:
-        raise EndorsementSchemaError(
-            f"{source}.povs does not match the evidence state; expected {_povs_for_evidence(evidence)!r}"
-        )
+        raise EndorsementSchemaError(f"{source}.povs-taxonomy.explanation must be non-empty")
 
 
 def validate_endorsement_record(
@@ -348,18 +274,10 @@ def validate_endorsement_record(
             raise EndorsementSchemaError(
                 f"{source}.evidence-links[{index}].url must be an absolute HTTP(S) URL"
             )
-    if not isinstance(record["evidence"], bool):
-        raise EndorsementSchemaError(f"{source}.evidence must be a boolean")
-    if record["evidence"] != bool(links):
-        raise EndorsementSchemaError(
-            f"{source}.evidence must be true exactly when evidence-links is non-empty"
-        )
-
-    expected_povs = assessor.povs_for_evidence(record["evidence"]) if assessor else None
-    _validate_povs(
-        record["povs"], evidence=record["evidence"], source=source,
-        expected=expected_povs,
-    )
+    taxonomy = record["povs-taxonomy"]
+    validate_taxonomy(taxonomy, source)
+    if has_work_link(record) and (taxonomy["evidence"] == "indirect" or taxonomy["verifiable"] is not True):
+        raise EndorsementSchemaError(f"{source}: a link to the work requires observable or reviewed, verifiable evidence")
 
     validate_record_domains(record, source=source)
     if re.fullmatch(r"CVE-\d{4}-\d+", record["label"], re.IGNORECASE):

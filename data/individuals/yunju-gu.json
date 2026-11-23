@@ -37,7 +37,7 @@
       "name": "Yunju Gu",
       "label": "XCFI: Comprehensive Control-Flow Integrity for Arm TrustZone-M",
       "description": "Arm TrustZone-M (TZ-M) provides hardware-based isolation for tiny embedded systems by partitioning execution into secure and non-secure states. However, despite this isolation, memory vulnerabilities in software running within either state can still be exploited to perform control-flow hijacking attacks. To mitigate these threats, numerous control-flow integrity (CFI) studies have been proposed for embedded systems, but they have several limitations: many neglect the secure state, fail to protect control-flow events during TZ-M security state transitions, or incur prohibitive performance overhead. In this paper, we present XCFI, a comprehensive CFI mechanism for TZ-M. XCFI employs a 32-bit control-flow identifier (CID) based protection to uniformly enforce fine-grained CFI across both secure and non-secure states, covering all control-flow events, including indirect branches, returns, and exceptions. Crucially, XCFI extends CFI enforcement to cross-state control-flow events in TZ-M, which have not been protected by prior work. Overall, XCFI provides comprehensive control-flow protection across all TZ-M execution contexts while incurring only modest runtime overhead.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -46,23 +46,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/gu-yunju",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

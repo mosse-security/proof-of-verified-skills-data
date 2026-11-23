@@ -122,7 +122,7 @@ h2 { margin-bottom: 8px; font-size: 24px; letter-spacing: -.03em; }
 .criticality-medium { color: #7a6400; background: #fffbe3; }
 .criticality-low { color: #28664a; background: #edf9f1; }
 .row-context { align-content: start; justify-items: end; text-align: right; }
-.row-context strong { padding: 5px 8px; border-radius: 999px; font-size: 12px; }
+.row-context strong { padding: 5px 8px; border-radius: 999px; font-size: 12px; text-align: center; }
 .level-chip-blue { color: #2447a8; background: #e9efff; }
 .level-chip-orange { color: #9a5700; background: #fff0d8; }
 .level-chip-green { color: #26734d; background: #e8f7ed; }
@@ -296,11 +296,11 @@ body.drawer-open { overflow: hidden; }
 .directory-mix { display: grid; gap: 7px; min-width: 0; }
 .level-stack { display: flex; width: 100%; height: 10px; overflow: hidden; border-radius: 999px; background: var(--rule); }
 .level-stack i { display: block; min-width: 0; height: 100%; }
-.level-synthetic { background: #8b9cff; }
-.level-production { background: var(--accent); }
-.level-expert { background: #f2b84b; }
+.level-indirect { background: #8b9cff; }
+.level-observable { background: var(--accent); }
+.level-independently-reviewed { background: #f2b84b; }
 .level-unrated { background: #b8c1cc; }
-.level-stack-labels { display: flex; flex-wrap: nowrap; gap: 6px; color: var(--muted); font-size: 9px; font-weight: 750; line-height: 1.2; white-space: nowrap; }
+.level-stack-labels { display: flex; flex-wrap: wrap; gap: 6px; color: var(--muted); font-size: 9px; font-weight: 750; line-height: 1.2; white-space: nowrap; }
 .level-stack-labels b { flex: 0 0 auto; font-weight: 750; }
 .level-stack-labels b { white-space: nowrap; }
 .level-stack-labels b { font-weight: 750; }

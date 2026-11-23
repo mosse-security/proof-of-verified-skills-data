@@ -37,7 +37,7 @@
       "name": "Jianxin Wei",
       "label": "CTA: Clip-then-Aggregate, a Differentially Private Learning Algorithm for Graph Data",
       "description": "Graph learning has become a fundamental tool for modeling relational data in applications such as social networks and recommender systems, yet it often involves individuals' private features or interactions. Differential privacy (DP) provides a rigorous framework for protecting sensitive data, but its application to graph learning is challenging due to complex inter-node dependencies induced by message aggregation. Despite this broad influence, the per-neighbor impact of a node is typically small. Nevertheless, most existing private graph learning methods are built upon the DP-SGD framework, whose reliance on global gradient clipping prevents the precise capture of these influences and overestimates the true gradient sensitivity. To address these challenges, we propose CTA, a differentially private graph learning algorithm that enables end-to-end training while perturbing only model gradients with tightly characterized sensitivity. CTA adopts a clip-then-aggregate design in both the forward and backward passes of model training. In the forward pass, CTA clips node embeddings before aggregation. Crucially, in the backward pass, instead of clipping each gradient as a whole, CTA separately clips and bounds two gradient components and then aggregates them to form the final model gradients. This design allows CTA to capture fine-grained gradient variations induced by graph aggregation and derive tighter gradient sensitivity bounds. Extensive experiments on real-world datasets demonstrate that CTA consistently outperforms existing private graph learning methods across a wide range of settings.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -46,23 +46,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/wei-jianxin",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "unknown"
       ],
       "subspecialties": {
         "unknown": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

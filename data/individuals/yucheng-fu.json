@@ -37,7 +37,7 @@
       "name": "Yucheng Fu",
       "label": "Distributed Synthesis of Differentially Private Tabular Datasets",
       "description": "Differentially private synthetic data generation has emerged as a powerful tool for sharing data while protecting individuals' privacy. However, when the attributes of sensitive data are distributed across multiple entities such as hospitals, companies, or government agencies, accurately generating synthetic data becomes challenging. In particular, it is difficult to capture informative statistical correlations and use them to guide data synthesis without gathering the entire private dataset. In response to this challenge, we propose a secure multi-party computation protocol for differentially private tabular data synthesis in the distributed setting. Our protocol contains two new primitives. The first is a protocol that exploits distributed point functions to efficiently estimate two-way marginals (pairwise joint distributions of attributes) across vertically distributed data. The second is a protocol for generating noise via batched lookups in the cumulative distribution function table. As a concrete demonstration, we build a distributed version of AIM, a state-of-the-art DP data-synthesis algorithm. Our implementation achieves the same utility as its centralized version while reducing end-to-end runtime by orders of magnitude compared with prior work. For example, we can synthesize the \"Adult\" dataset in 24 minutes in a real-world WAN setting, whereas the existing protocol is estimated to take 57 days.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -46,23 +46,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/fu",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

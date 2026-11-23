@@ -96,9 +96,9 @@ def count_evidence(output_directory: Path) -> tuple[int, int]:
         for record in records:
             if not isinstance(record, dict):
                 continue
-            if record.get("evidence") is True:
+            if record.get("evidence-links"):
                 with_links += 1
-            elif record.get("evidence") is False:
+            elif record.get("evidence-links") == []:
                 without_links += 1
     return with_links, without_links
 
@@ -132,9 +132,9 @@ def summarize_output(
             name = record.get("name")
             if isinstance(name, str):
                 names.add(" ".join(name.split()).casefold())
-            if record.get("evidence") is True:
+            if record.get("evidence-links"):
                 with_links += 1
-            elif record.get("evidence") is False:
+            elif record.get("evidence-links") == []:
                 without_links += 1
             domains = record.get("domains", [])
             if not isinstance(domains, list):

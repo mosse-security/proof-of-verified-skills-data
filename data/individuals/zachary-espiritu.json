@@ -37,7 +37,7 @@
       "name": "Zachary Espiritu",
       "label": "Snapshots of TEE-Based Encrypted Databases Leak Plaintext Histograms via Dendrochronology",
       "description": "Snapshots of TEE-Based Encrypted Databases Leak Plaintext Histograms via Dendrochronology",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "ACM Conference on Computer and Communications Security (CCS)",
       "assessor-id": "acm-ccs",
       "assessor-category": "conference_academic",
@@ -46,30 +46,27 @@
       "subtitle": "ACM CCS 2026",
       "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "unknown"
       ],
       "subspecialties": {
         "unknown": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     },
     {
       "name": "Zachary Espiritu",
       "label": "Leafblower: a Leakage Attack Against TEE-Based Encrypted Databases",
       "description": "Leafblower: a Leakage Attack Against TEE-Based Encrypted Databases",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "IEEE Symposium on Security and Privacy (S&P)",
       "assessor-id": "ieee-sp",
       "assessor-category": "conference_academic",
@@ -78,30 +75,27 @@
       "subtitle": "IEEE S&P 2026",
       "url": "https://sp2026.ieee-security.org/accepted-papers.html",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": true,
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     },
     {
       "name": "Zachary Espiritu",
       "label": "Plaintext Recovery Against Post-Filtering Access Control",
       "description": "Fine-grained access control (FGAC) mechanisms such as row-level security (RLS) and document-level security (DLS) are widely deployed in databases to restrict access to data stored in physical indexing structures shared by multiple users (e.g., in multi-tenant databases, or in the implementation of least-privilege within an organization). FGAC implementations often use post-filtering where untrusted queries run over all data and private results are redacted afterwards. Prior work shows this approach can lead to side-channels that enable attackers to test if a chosen value exists in unseen data. While damaging, prior attacks do not enable the efficient recovery of rich, high-entropy data like full records or text documents. We show these side-channels are more damaging than previously thought. Using rich query interfaces (e.g., range, prefix, and conjunctive predicates), we amplify existence leakage into reconstruction attacks. We do this in two settings: PostgreSQL (RLS timing). We exploit a timing side-channel and expressive SQL queries (e.g., ranges, conjunctions) to enumerate unknown attribute values and, in turn, full records via binary search over large domains. Elasticsearch/OpenSearch (DLS scoring). We exploit scoring and prefix-expansion side-channels to recover indexed terms from documents. In some cases, we can extract n-grams in the corpus to recover approximate text. Our results show that FGAC side-channels must be evaluated in the presence of rich predicates, which can turn membership tests into scalable reconstruction of high-entropy records.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -110,17 +104,6 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/espiritu",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "cloud-security",
@@ -131,6 +114,14 @@
         "vulnerability-research": [
           "cryptographic-attacks"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

@@ -37,7 +37,7 @@
       "name": "Akshaya Kumar",
       "label": "Security and Privacy Analysis of Tile's Location Tracking Protocol",
       "description": "We conduct the first comprehensive security analysis of Tile, the second most popular crowd-sourced location-tracking service behind Apple's AirTags. We identify several exploitable vulnerabilities and design flaws, disproving many of the platform's claimed security and privacy guarantees: Tile's servers can persistently learn the location of all users and tags, unprivileged adversaries can track users through Bluetooth advertisements emitted by Tile's devices, and Tile's anti-theft mode is easily subverted. Despite its wide deployment—millions of users, devices, and purpose-built hardware tags—Tile provides no formal description of its protocol or threat model. Worse, Tile intentionally weakens its antistalking features to support an antitheft use-case, and relies on a novel \"accountability\" mechanism to punish those abusing the system to stalk victims. We examine Tile's accountability mechanism, a unique feature of independent interest; no other provider attempts to guarantee accountability. While an ideal accountability mechanism may disincentivize abuse in crowd-sourced location tracking protocols, we show that Tile's implementation is subvertible and introduces new exploitable vulnerabilities. We conclude with a discussion on the need for new, formal definitions of accountability in this setting.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -46,23 +46,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/kumar-akshaya",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

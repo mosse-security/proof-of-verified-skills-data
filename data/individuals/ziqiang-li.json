@@ -37,7 +37,7 @@
       "name": "Ziqiang Li",
       "label": "BadGraph: Structural Knowledge Isolation Attacks against Graph Retrieval-Augmented Generation",
       "description": "Graph Retrieval-Augmented Generation (GraphRAG) improves cross-document reasoning by introducing graph structures into retrieval. However, these graph structures also expose an under-studied topological attack surface. Existing research on GraphRAG attacks primarily focuses on targeted attacks based on text or relation manipulation, which induce the model to generate specific incorrect answers by injecting factual errors. These attacks often rely on explicit false-answer payloads, poisoned relations, or corpus rewriting, and their documents can be easier to flag during content auditing. In this paper, we propose a targeted availability attack against GraphRAG: Structural Knowledge Isolation. Unlike traditional wrong-answer manipulation attacks, this attack targets the system's availability by degrading retrieval of critical evidence through topological manipulation. The resulting context can lack the evidence needed for grounded answer generation. We first mathematically analyze three topological vulnerabilities of graph algorithms used in GraphRAG systems when subjected to topological perturbations. Based on this analysis, we propose the BadGraph attack framework. By injecting a small amount of semantically neutral text, it generates adversarial subgraphs in the knowledge graph and reduces the visibility of target evidence in top-ranked retrieval contexts. Experiments show that with a small document injection budget (49 documents on HotpotQA and 30 on 2WikiMultiHopQA), BadGraph consistently lowers source recall and end-to-end QA F1 on three mainstream GraphRAG systems (MS-GraphRAG, LightRAG, and FastGraphRAG), while using neutral linker documents.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -46,23 +46,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/yan-leiming",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

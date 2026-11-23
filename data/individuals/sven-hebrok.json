@@ -52,17 +52,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2025-23048"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2025,
       "domains": [
         "vulnerability-research"
@@ -71,6 +60,14 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": true,
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
@@ -91,17 +88,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2025-23419"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2025,
       "domains": [
         "vulnerability-research"
@@ -110,6 +96,14 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
@@ -130,17 +124,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2025-49812"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2025,
       "domains": [
         "vulnerability-research"
@@ -149,6 +132,14 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": true,
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
@@ -169,17 +160,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2025-66614"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2025,
       "domains": [
         "vulnerability-research"
@@ -188,13 +168,21 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": true,
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
       "name": "Sven Hebrok",
       "label": "Opossum Attack: Application Layer Desynchronization using Opportunistic TLS",
       "description": "Many protocols, like HTTP, FTP, POP3, and SMTP, were originally designed as synchronous plaintext protocols – commands and data are sent in the clear, and the client waits for the response to a pending request before sending the next one. Later, two main solutions were introduced to retrofit these protocols with TLS protection. (1) Implicit TLS: Designate a new, well-known TCP port for each protocol-over-TLS, and start with TLS immediately. (2) Opportunistic TLS: Keep the original well-known port and start with the plaintext protocol, then switch to TLS in response to a command like STARTTLS. In this work, we present a novel weakness in the way TLS is integrated into popular application layer protocols through implicit and opportunistic TLS. This weakness breaks authentication, even in modern TLS implementations if both implicit TLS and opportunistic TLS are supported at the same time. This authentication flaw can then be utilized to influence the exchanged messages after the TLS handshake from a pure MitM position.In contrast to previous attacks on opportunistic TLS, this attack class does not rely on bugs in the implementations and only requires one of the peers to support opportunistic TLS. We analyze popular application layer protocols that support opportunistic TLS regarding their vulnerability to the attack. To demonstrate the practical impact of the attack, we analyze exploitation techniques for HTTP (RFC 2817) in detail, and show four different exploit directions. To estimate the impact of the attack on deployed servers, we conducted a series of IPv4-wide scans over multiple protocols and ports to check for support of opportunistic TLS. We found that support for opportunistic TLS is still widespread for many application protocols, with over 3 million servers supporting both, implicit and opportunistic TLS at the same time. In the case of HTTP, we found 20,121 servers that support opportunistic HTTP across 35 ports, with 2,268 of these servers also supporting HTTPS and 539 using the same domain names for implicit HTTPS, presenting an exploitable scenario.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -203,23 +191,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/merget",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

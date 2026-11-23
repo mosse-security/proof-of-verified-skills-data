@@ -3,7 +3,10 @@
 Enrichers are plugins under `scrapers/enrichers/`. Each writes a JSON array as
 `data.json` inside `data/enrichments/<enricher-id>/data.zip`. Endorsement
 builders load these local catalogs and attach matched recordings as
-`evidence-links`.
+`evidence-links`. Adding a link to the work raises an indirect endorsement to
+observable. Independently reviewed endorsements retain their band. The
+record can become independently verifiable in either case. See the
+[endorsement data contract](data-contracts.md#endorsements).
 
 YouTube collection uses `yt-dlp` and may require network access. It is an
 optional external refresh, not part of local archive parsing. Existing local

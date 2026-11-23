@@ -51,30 +51,27 @@
           "title": "Google Bug Hunters leaderboard"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A Google VRP leaderboard entry represents a researcher publicly credited after Google reviewed and accepted their vulnerability report through its vulnerability-reward process, providing evidence of validation, defense, recognition, and trust."
-      },
       "year": 2023,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": true,
+        "production": true,
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The bounty programme reviewed and accepted the finding. POVS treats bounty awards as trusted production work."
       }
     },
     {
       "name": "Ali Ranjbar",
       "label": "VUPER: Verified ASN.1 UPER Parser",
       "description": "VUPER: Verified ASN.1 UPER Parser",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "ACM Conference on Computer and Communications Security (CCS)",
       "assessor-id": "acm-ccs",
       "assessor-category": "conference_academic",
@@ -83,30 +80,27 @@
       "subtitle": "ACM CCS 2026",
       "url": "https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "unknown"
       ],
       "subspecialties": {
         "unknown": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     },
     {
       "name": "Ali Ranjbar",
       "label": "Invariant-Guided Logical Testing of Open RAN Controllers",
       "description": "Open RAN (O-RAN) represents a fundamental shift in mobile network architecture, advancing interoperability and flexibility through open interfaces and software-driven components. While enabling programmability and innovation, this shift also makes the logical correctness of O-RAN components essential for the secure and reliable operation of the network. However, validating O-RAN's semantic correctness remains challenging due to system complexity, implementation diversity, and the absence of explicit correctness oracles. We present InvaRAN , a systematic testing framework for detecting logical flaws in O-RAN implementations using dynamically inferred program invariants as proxies for expected behavior. To reduce false positives and focus on semantically meaningful behaviors, InvaRAN classifies invariants into critical and non-critical categories based on their impact on program logic. Beyond traditional template-based invariant inference approaches that infer only limited semantic relations, InvaRAN captures inter-variable correlations across execution traces to discover more expressive semantic linkage. We evaluate InvaRAN on both platform components and xApps of two production-grade O-RAN controllers. InvaRAN uncovers nine previously unknown issues, including seven logical and two memory vulnerabilities, demonstrating the effectiveness of invariant-guided testing in exposing subtle, specification-silent bugs in O-RAN systems.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -115,23 +109,20 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/yang-tianchang",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
       ],
       "subspecialties": {
         "vulnerability-research": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

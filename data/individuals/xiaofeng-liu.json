@@ -52,17 +52,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2021-3720"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2021,
       "domains": [
         "vulnerability-research"
@@ -71,13 +60,21 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
       "name": "Xiaofeng Liu",
       "label": "ProtocolGuard: Detecting Protocol Non-compliance Bugs via LLM-guided Static Analysis and Dynamic Verification",
       "description": "Xiangpu Song (School of Cyber Science and Technology, Shandong University), Longjia Pei (School of Cyber Science and Technology, Shandong University), Jianliang Wu (Simon Fraser University), Yingpei Zeng (Hangzhou Dianzi University), Gaoshuo He (School of Cyber Science and Technology, Shandong University), Chaoshun Zuo (Independent Researcher), Xiaofeng Liu (School of Cyber Science and Technology, Shandong University), Qingchuan Zhao (City University of Hong Kong), Shanqing Guo (School of Cyber Science and Technology, Shandong University, Shandong Key Laboratory of Artificial Intelligence Security and State Key Laboratory of Cryptography and Digital Economy Security, Shandong University)",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "Network and Distributed System Security Symposium (NDSS)",
       "assessor-id": "ndss",
       "assessor-category": "conference_academic",
@@ -86,17 +83,6 @@
       "subtitle": "NDSS 2026",
       "url": "https://www.ndss-symposium.org/ndss-paper/protocolguard-detecting-protocol-non-compliance-bugs-via-llm-guided-static-analysis-and-dynamic-verification/",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "cyber-defense"
@@ -105,13 +91,21 @@
         "cyber-defense": [
           "ai-for-security-operations"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     },
     {
       "name": "Xiaofeng Liu",
       "label": "\"Tap\" Without Tapping: A Tag Discovery Forgery Attack on Android NFC",
       "description": "Tap-to-X, such as tap-to-pay, which uses an NFC tag tap to trigger the logic flow, is widely used today. Tap-to-X apps treat the tap as proof of user proximity and intent, i.e., the tap is assumed to be intentional and user-aware. On Android, the OS reads data from the tag and eventually dispatches the data to an expected app, yet the security of this post-discovery dispatch process remains under-investigated. In this paper, we analyze Android's post-tap tag dispatch and identify two OS-level design weaknesses that create a semantic origin gap, allowing a local malicious app to mimic a physical tap without any NFC interaction. Exploiting these weaknesses, we develop the tag-dispatch forgery attack (TDFA) and demonstrate that TDFA affects several real-world apps, including Alipay, Huawei AI Life, and Samsung Galaxy Wearable. To measure the impact of TDFA at ecosystem scale, we conduct a large-scale analysis of 76,333 Google Play apps, identify 601 potentially affected apps with externally startable RW handlers, and confirm successful forged delivery in 498 of 597 installable and testable apps through on-device validation. We propose an OS-level fix to fundamentally mitigate TDFA and provide suggestions for app developers while the OS-level mitigation is unavailable. We responsibly reported our findings to relevant stakeholders, including the Android Security team, Alipay, and Huawei. They confirmed and acknowledged the corresponding findings and awarded us 7,000, ¥2,000 (∼300), and ¥4,000 (∼$600) as bug bounties, respectively. Google assigned CVE-2026-0081 to the Android vulnerability.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -120,17 +114,6 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/li-yilin",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "cyber-defense",
@@ -143,6 +126,14 @@
           "mobile-vulnerabilities",
           "mobile-platform-security"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

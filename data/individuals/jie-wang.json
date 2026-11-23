@@ -52,17 +52,6 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2023-7094"
         }
       ],
-      "evidence": true,
-      "povs": {
-        "milestones": {
-          "verifiable": true,
-          "defended": true,
-          "recognized": true,
-          "trusted": true
-        },
-        "level": 4,
-        "explanation": "A published CVE record provides public, independently verifiable recognition of the credited vulnerability disclosure."
-      },
       "year": 2023,
       "domains": [
         "vulnerability-research"
@@ -71,13 +60,21 @@
         "vulnerability-research": [
           "cve-analysis-and-vulnerability-disclosure"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The CVE endorsement credits this individual with a reviewed vulnerability finding."
       }
     },
     {
       "name": "Jie Wang",
       "label": "Are LLM-Enhanced Graph Neural Networks Robust against Poisoning Attacks?",
       "description": "Are LLM-Enhanced Graph Neural Networks Robust against Poisoning Attacks?",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "IEEE Symposium on Security and Privacy (S&P)",
       "assessor-id": "ieee-sp",
       "assessor-category": "conference_academic",
@@ -86,17 +83,6 @@
       "subtitle": "IEEE S&P 2026",
       "url": "https://sp2026.ieee-security.org/accepted-papers.html",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "cyber-defense"
@@ -105,13 +91,21 @@
         "cyber-defense": [
           "ai-for-security-operations"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": true,
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     },
     {
       "name": "Jie Wang",
       "label": "CAT: Can Trust be Predicted with Context-Awareness in Dynamic Heterogeneous Networks?",
       "description": "Jie Wang (State Key Laboratory of Integrated Services Networks, School of Cyber Engineering, Xidian University), Zheng Yan (State Key Laboratory of Integrated Services Networks, School of Cyber Engineering, Xidian University and Hangzhou Institute of Technology, Xidian University), Jiahe Lan (State Key Laboratory of Integrated Services Networks, School of Cyber Engineering, Xidian University), Xuyan Li (Hangzhou Institute of Technology, Xidian University), Elisa Bertino (Department of Computer Science, Purdue University)",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "Network and Distributed System Security Symposium (NDSS)",
       "assessor-id": "ndss",
       "assessor-category": "conference_academic",
@@ -120,30 +114,27 @@
       "subtitle": "NDSS 2026",
       "url": "https://www.ndss-symposium.org/ndss-paper/cat-can-trust-be-predicted-with-context-awareness-in-dynamic-heterogeneous-networks/",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "unknown"
       ],
       "subspecialties": {
         "unknown": []
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     },
     {
       "name": "Jie Wang",
       "label": "Fuzzing Open-Source GPU Hardware with SIMT Program Generation",
       "description": "GPUs have become critical components in computing systems. In the post-Moore's Law era, the demand for performance is driving increasing GPU microarchitectural complexity, which in turn gives rise to new vulnerabilities. In this paper, we present the first framework for fuzzing GPU hardware designs at the Register Transfer Level (RTL) to automatically discover vulnerabilities. At the core of FuzzGPU is a novel generator that randomly constructs valid SIMT test programs with complex data and control flow, explicitly exercising the GPU execution model and thereby triggering diverse hardware behaviors. This bridges a key gap: prior processor fuzzers predominantly target CPUs and largely ignore GPU hardware. FuzzGPU further implements a GPU-specific differential testing harness. It tackles microarchitectural non-determinism (e.g., caches and memory timing) and enables trace-driven differential testing against an ISA-level oracle. This technique unlocks vulnerability detection and localization with instruction-level precision. We evaluated FuzzGPU on two real-world open-source GPUs, Vortex and Ventus OpenGPGPU, uncovering 20 previously unknown bugs, including 17 RTL bugs and 3 ISS bugs, 10 of which were assigned CVE identifiers.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -152,17 +143,6 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/gao-zibo",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
@@ -171,6 +151,14 @@
         "vulnerability-research": [
           "fuzzing-and-automated-testing"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

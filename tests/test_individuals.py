@@ -30,12 +30,8 @@ def endorsement(name: str, label: str, year: int = 2026) -> dict[str, object]:
         "subtitle": "Example 2026",
         "url": f"https://example.test/{label.replace(' ', '-')}",
         "evidence-links": [],
-        "evidence": False,
-        "povs": {
-            "milestones": {"verifiable": False, "defended": False, "recognized": False, "trusted": False},
-            "level": 0,
-            "explanation": "No evidence discovered for this record therefore it could not be verified",
-        },
+        "povs-taxonomy": {"evidence": "indirect", "trusted": "unknown", "production": "unknown",
+                    "competition": False, "verifiable": "unknown", "explanation": "Programme listing."},
         "year": year,
         "domains": ["unknown"],
     }

@@ -1,4 +1,4 @@
-"""Assign POVS levels to endorsements whose matched YouTube transcripts exist."""
+"""Assess the POVS taxonomy to endorsements whose matched YouTube transcripts exist."""
 from __future__ import annotations
 
 import argparse
@@ -11,6 +11,7 @@ import zipfile
 from pathlib import Path
 from typing import Any
 
+from .schema import validate_taxonomy
 from .logging_config import configure_logging
 
 
@@ -68,12 +69,9 @@ def _prompt(transcript: str) -> str:
 
 
 def _validate_analysis(result: dict[str, Any], transcript: str) -> dict[str, Any]:
-    if set(result) != {"level", "insufficient_evidence", "explanation", "citations"}:
+    if set(result) != {"povs-taxonomy", "citations"}:
         raise ValueError("analysis output has unexpected keys")
-    if not isinstance(result["level"], int) or not 1 <= result["level"] <= 6:
-        raise ValueError("level must be an integer from 1 through 6")
-    if not isinstance(result["insufficient_evidence"], bool) or not isinstance(result["explanation"], str):
-        raise ValueError("invalid analysis scalar fields")
+    validate_taxonomy(result["povs-taxonomy"], "transcript analysis")
     lines = {index: line for index, line in enumerate(transcript.splitlines(), 1)}
     seen: set[tuple[int, int]] = set()
     for citation in result["citations"]:
@@ -139,11 +137,11 @@ def analyze_assessor(
             continue
         response = client.chat.completions.create(model=model, temperature=0, seed=0, response_format={"type": "json_object"}, messages=[{"role": "user", "content": _prompt(transcript)}])
         analysis = _validate_analysis(json.loads(response.choices[0].message.content), transcript)
-        results.append({**base, "status": "analyzed", "povs-level": analysis["level"], "analysis": analysis})
+        results.append({**base, "status": "analyzed", "analysis": analysis})
         analyzed += 1
     output_directory.joinpath(f"{assessor_id}-youtube-recordings").mkdir(parents=True, exist_ok=True)
     payload = {
-        "schema-version": "1",
+        "schema-version": "2",
         "assessor-id": assessor_id,
         "results": sorted(results, key=lambda item: item["endorsement-key"]),
         "pending": sorted(pending_records, key=lambda item: item["endorsement-key"]),

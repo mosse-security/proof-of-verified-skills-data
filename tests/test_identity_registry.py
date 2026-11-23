@@ -206,8 +206,8 @@ class IdentityRegistryTests(unittest.TestCase):
                 "reviewType": "community_review",
                 "subtitle": "Example 2026",
                 "url": "https://example.test/talk",
-                "evidence-links": [], "evidence": False,
-                "povs": {"milestones": {"verifiable": False, "defended": False, "recognized": False, "trusted": False}, "level": 0, "explanation": "No evidence discovered for this record therefore it could not be verified"},
+                "evidence-links": [], "povs-taxonomy": {"evidence": "indirect", "trusted": "unknown", "production": "unknown",
+                    "competition": False, "verifiable": "unknown", "explanation": "Programme listing."},
                 "year": 2026, "domains": ["unknown"],
             }
             source.joinpath("records.json").write_text(json.dumps([record]), encoding="utf-8")
@@ -227,8 +227,8 @@ class IdentityRegistryTests(unittest.TestCase):
                 "type": "presentation", "assessor": "Example", "assessor-id": "example",
                 "assessor-category": "conference_community", "assessor-rigor-level": "medium",
                 "reviewType": "community_review", "subtitle": "Example 2026",
-                "url": "https://example.test/talk", "evidence-links": [], "evidence": False,
-                "povs": {"milestones": {"verifiable": False, "defended": False, "recognized": False, "trusted": False}, "level": 0, "explanation": "No evidence discovered for this record therefore it could not be verified"},
+                "url": "https://example.test/talk", "evidence-links": [], "povs-taxonomy": {"evidence": "indirect", "trusted": "unknown", "production": "unknown",
+                    "competition": False, "verifiable": "unknown", "explanation": "Programme listing."},
                 "year": 2026, "domains": ["unknown"],
             }
             source.joinpath("records.json").write_text(json.dumps([record]), encoding="utf-8")
@@ -295,10 +295,8 @@ class IdentityRegistryTests(unittest.TestCase):
                 "assessor-category": "conference_community",
                 "assessor-rigor-level": "medium", "reviewType": "community_review",
                 "subtitle": "Example 2026", "url": "https://example.test/talk",
-                "evidence-links": [], "evidence": False,
-                "povs": {"milestones": {"verifiable": False, "defended": False,
-                    "recognized": False, "trusted": False}, "level": 0,
-                    "explanation": "No evidence discovered for this record therefore it could not be verified"},
+                "evidence-links": [], "povs-taxonomy": {"evidence": "indirect", "trusted": "unknown", "production": "unknown",
+                    "competition": False, "verifiable": "unknown", "explanation": "Programme listing."},
                 "year": 2026, "domains": ["unknown"],
             }
             source.joinpath("records.json").write_text(json.dumps([record]), encoding="utf-8")

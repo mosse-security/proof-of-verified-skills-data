@@ -1,0 +1,12 @@
+---
+import { bands, bandLabels, type EvidenceCounts } from '../lib/records';
+interface Props { counts: EvidenceCounts }
+const { counts } = Astro.props;
+const total = Object.values(counts).reduce((sum, count) => sum + count, 0);
+---
+<span class="level-stack" aria-hidden="true">
+  {bands.map(band => <i class={`level-${band}`} style={`width:${total ? counts[band] / total * 100 : 0}%`}></i>)}
+</span>
+<span class="level-stack-labels">
+  {bands.map(band => <b>{bandLabels[band]}: {counts[band]}</b>)}
+</span>

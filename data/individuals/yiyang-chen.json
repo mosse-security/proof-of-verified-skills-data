@@ -37,7 +37,7 @@
       "name": "Yiyang Chen",
       "label": "TrigFuzz: Triggering Conditions Guided Directed Fuzzing",
       "description": "TrigFuzz: Triggering Conditions Guided Directed Fuzzing",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "IEEE Symposium on Security and Privacy (S&P)",
       "assessor-id": "ieee-sp",
       "assessor-category": "conference_academic",
@@ -46,17 +46,6 @@
       "subtitle": "IEEE S&P 2026",
       "url": "https://sp2026.ieee-security.org/accepted-papers.html",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "vulnerability-research"
@@ -65,13 +54,21 @@
         "vulnerability-research": [
           "fuzzing-and-automated-testing"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": true,
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     },
     {
       "name": "Yiyang Chen",
       "label": "Bulbasaur: Branch-Guided Online Mutator Generation for Greybox Fuzzing",
       "description": "Coverage-guided greybox fuzzing (CGF) hinges on generating inputs that satisfy branch constraints in order to explore deep code regions. Existing CGF techniques propose various approaches to improve the probability of solving such constraints. However, they still rely on general-purpose mutators, which lack the ability to precisely manipulate relevant input bytes to satisfy complex constraints. Our analysis reveals that LLMs can more accurately solve branch constraints by generating tailored mutators. These mutators enable the fuzzer to perform localized and reusable modifications on inputs that reach target branches, producing precise mutations to satisfy target constraints. To achieve this, we propose Bulbasaur, a branch-guided framework for online LLM-based mutator generation. Bulbasaur employs hard frontier-guided branch selection to identify critical branches, continuously collects and organizes relevant static and dynamic context to support high-quality mutator generation, and adopts an efficient and adaptive strategy to apply generated mutators during fuzzing. We evaluate Bulbasaur on the FuzzBench and UniFuzz benchmarks. The results show that Bulbasaur improves line and branch coverage by up to 23.18% and 24.46%, respectively, over state-of-the-art fuzzers, discovers 21 vulnerabilities missed by all baselines, and identifies 15 previously unknown vulnerabilities on OSS-Fuzz, all of which have been assigned CVE identifiers.",
-      "type": "presentation",
+      "type": "paper",
       "assessor": "USENIX Security Symposium",
       "assessor-id": "usenix-security",
       "assessor-category": "conference_academic",
@@ -80,17 +77,6 @@
       "subtitle": "USENIX Security '26",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/wang-yiyi",
       "evidence-links": [],
-      "evidence": false,
-      "povs": {
-        "milestones": {
-          "verifiable": false,
-          "defended": false,
-          "recognized": false,
-          "trusted": false
-        },
-        "level": 0,
-        "explanation": "No evidence discovered for this record therefore it could not be verified"
-      },
       "year": 2026,
       "domains": [
         "cyber-defense",
@@ -103,6 +89,14 @@
         "vulnerability-research": [
           "fuzzing-and-automated-testing"
         ]
+      },
+      "povs-taxonomy": {
+        "evidence": "independently-reviewed",
+        "trusted": "unknown",
+        "production": "unknown",
+        "competition": false,
+        "verifiable": "unknown",
+        "explanation": "The proceedings credit this individual as an author of a peer-reviewed paper."
       }
     }
   ]

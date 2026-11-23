@@ -1,4 +1,5 @@
 ---
+import EvidenceMix from '../../components/EvidenceMix.astro';
 import Base from '../../layouts/Base.astro';
 import { listProfiles } from '../../lib/records';
 import { sitePath } from '../../lib/site';
@@ -14,14 +15,12 @@ const allPeople = listProfiles();
 const assessorId = Astro.props.assessorId as string;
 const assessor = Astro.props.assessor as string;
 const people = allPeople.filter((person) => person.assessorIds.includes(assessorId)).sort((a, b) => b.endorsements - a.endorsements || a.name.localeCompare(b.name));
-const mixTotal = (person: typeof people[number]) => Object.values(person.levelCounts).reduce((sum, count) => sum + count, 0);
-const mixWidth = (count: number, person: typeof people[number]) => `${mixTotal(person) ? (count / mixTotal(person)) * 100 : 0}%`;
 ---
 <Base home title={`${assessor} | Proof of Verified Skills`}>
   <div class="directory-intro domain-intro"><span class="section-kicker">Assessor</span><h1>{assessor}</h1><p class="muted">{people.length.toLocaleString()} people recognized by this assessor.</p></div>
   <section class="directory-table" aria-label={`${assessor} individuals`}>
-    <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsements</span><span>Endorsers</span><span>POVS Achievements</span><span>Proof mix</span></div>
-    {people.map((person) => <a class="directory-row" data-assessor-row href={sitePath(`/individuals/${encodeURIComponent(person.slug)}/`)}><span class="directory-name"><strong>{person.name}</strong></span><span class="directory-number directory-endorsements">{person.endorsements.toLocaleString()}</span><span class="directory-number directory-endorsers">{person.endorsers.toLocaleString()}</span><span class="directory-number directory-achievements">{person.achievements.toLocaleString()}<small>{person.achievements === 1 ? 'achievement' : 'achievements'}</small></span><span class="directory-mix"><span class="level-stack" aria-hidden="true"><i class="level-synthetic" style={`width:${mixWidth(person.levelCounts.synthetic, person)}`}></i><i class="level-production" style={`width:${mixWidth(person.levelCounts.productionLike, person)}`}></i><i class="level-expert" style={`width:${mixWidth(person.levelCounts.expert, person)}`}></i><i class="level-unrated" style={`width:${mixWidth(person.levelCounts.unrated, person)}`}></i></span><span class="level-stack-labels"><b>Synthetic: {person.levelCounts.synthetic}</b><b>Production-like: {person.levelCounts.productionLike}</b><b>Expert: {person.levelCounts.expert}</b><b>Not Verified: {person.levelCounts.unrated}</b></span></span></a>)}
+    <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsements</span><span>Endorsers</span><span>POVS Achievements</span><span>Evidence mix</span></div>
+    {people.map((person) => <a class="directory-row" data-assessor-row href={sitePath(`/individuals/${encodeURIComponent(person.slug)}/`)}><span class="directory-name"><strong>{person.name}</strong></span><span class="directory-number directory-endorsements">{person.endorsements.toLocaleString()}</span><span class="directory-number directory-endorsers">{person.endorsers.toLocaleString()}</span><span class="directory-number directory-achievements">{person.achievements.toLocaleString()}<small>{person.achievements === 1 ? 'achievement' : 'achievements'}</small></span><span class="directory-mix"><EvidenceMix counts={person.evidenceCounts} /></span></a>)}
   </section>
   <div class="directory-pagination pagination"><button type="button" data-assessor-prev disabled>← Previous</button><span data-assessor-page>Page 1</span><button type="button" data-assessor-next>Next →</button></div>
 </Base>

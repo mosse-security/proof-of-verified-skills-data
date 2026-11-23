@@ -53,69 +53,56 @@ asymmetry between participants in the cybersecurity market.
 The basic unit is an endorsement: a public record from an assessor that names
 a person and describes a specific piece of work or recognition.
 
-Each endorsement can include:
+POVS records the contribution, the assessor, the source, and any links to the
+work. Each endorsement receives one evidence band and four properties. A person
+can have endorsements in several bands for different contributions.
 
-- the person and assessor;
-- a source URL and description;
-- the type of record, such as a presentation, CVE, bounty, or competition result;
-- cybersecurity domains and sub-specialties;
-- evidence links; and
-- a POVS level when the available evidence supports one.
+## Evidence bands
 
-The same person can have many endorsements from different assessors.
+Select the highest band supported for the achievement the assessor credits to
+the individual.
 
-## Synthetic, production, and expert
+| Band | Meaning | Example |
+|---|---|---|
+| 1 · Indirect | An independent source credits the person with an achievement. The underlying work may be unavailable. | A programme names an award recipient. |
+| 2 · Observable | A reader can inspect the attributed work or a sufficiently detailed record of it. | A conference recording, the full paper, or a repository containing the code. |
+| 3 · Independently reviewed | A qualified independent party formally assessed the work. | A peer-reviewed paper, a validated vulnerability finding, or a judged competition attempt. |
 
-POVS is a taxonomy for codifying distinctions that the cybersecurity industry
-already uses, understands, and recognizes when evaluating the significance of
-technical work. These categories describe the environment and recognition
-associated with the work; they are not a single linear scale of human worth or
-potential.
+A link to the work itself establishes **at least Observable**. A public copy
+of a peer-reviewed paper therefore remains Independently reviewed. A conference
+schedule can substantiate selection to present. A recording lets readers
+observe the delivery. The band describes the evidence for that contribution.
+For a judged attempt, the organiser's recorded result tells readers how the
+attempt went.
 
-### Synthetic
+## Endorsement properties
 
-Synthetic describes work that has not been performed on, or used by, production
-systems. This includes conceptual work, laboratory research, controlled
-experiments, training exercises, simulations, and work performed in other
-non-production environments.
+Each property can be **Yes**, **No**, or **Unknown**. Unknown means the
+available record leaves the question open.
 
-Synthetic is a neutral category, not a negative judgment and not a lesser form
-of production work. It identifies a distinct type of evidence: work that may be
-technically valuable, but has not yet been demonstrated in production use.
+| Property | Question |
+|---|---|
+| Trusted | Did a third party rely on the work in a documented decision or action, such as issuing a fix? |
+| Production | Was the work performed on production systems or released production software, or subsequently used in production? |
+| Competition | Was the endorsed activity part of an organised contest? |
+| Independently verifiable | Can a reader inspect the work and judge the endorsed claim for themselves? |
 
-### Production
+POVS classifies a bug bounty award as independently reviewed, trusted production
+work. The issuing programme reviewed the finding and acted on it by granting
+the award. Readers can independently verify the technical work when they can
+inspect the finding itself.
 
-Production describes work that has been used in a production environment. This
-includes work performed on production software, production infrastructure,
-production networks, or systems serving real users or organizations.
-
-The category is concerned with actual operational use, not with whether a work
-is described as practical, realistic, or production-like. A proposal,
-demonstration, laboratory exercise, or controlled test remains synthetic unless
-the evidence establishes production use.
-
-### Expert
-
-Expert describes production work that has received the highest available forms
-of recognition or acclaim appropriate to its context. It is therefore a
-recognized subset of production work, not a separate environment.
-
-The expert category requires both demonstrated production use and exceptional
-external recognition. Seniority, confidence, technical complexity, or a job
-title alone is insufficient to establish expert status.
+A privately judged submission can receive band 3 even when readers cannot
+inspect it. The evidence mix on a profile counts endorsements in each band.
 
 ## Endorsement eligibility criteria
 
-An endorsement may be included in the POVS database only when it satisfies all
-of the following criteria:
+1. **Specific achievement.** The source must credit a person with identifiable
+   work, participation or recognition.
+2. **Independent attribution.** A reader must be able to check that an
+   independent assessor issued the endorsement. A source that documents only
+   recognition can support an Indirect endorsement.
 
-1. **Peer-reviewed work.** The endorsement must concern a specific piece of
-   work that has undergone peer review, or an equivalent assessment process in
-   which qualified peers evaluate the work before recognition is issued.
-2. **Independent verifiability.** The endorsement must be supported by public
-   evidence that can be independently verified. Records that cannot be
-   independently verified may be retained for completeness, but must be
-   classified as **Not Verified** and must not be treated as verified evidence.
 3. **Assessor accountability.** The assessor - the organization issuing the
    endorsement - must face meaningful consequences for issuing weak or
    inaccurate endorsements. Its incentives, reputation, or institutional
