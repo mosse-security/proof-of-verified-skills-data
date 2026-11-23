@@ -43,6 +43,28 @@ const propertyTitle = (property: keyof typeof propertyCounts) => {
 };
 const properties = { trusted: 'Trusted', production: 'Production', competition: 'Competition', verifiable: 'Independently verifiable' } as const;
 const propertyKeys = Object.keys(properties) as (keyof typeof properties)[];
+type DomainSummary = { domain: string; count: number; subspecialties: Map<string, number> };
+const domainSummariesByName = new Map<string, DomainSummary>();
+for (const endorsement of endorsements) {
+  const domains = [...new Set(endorsementDomains(endorsement).filter((domain) => domain !== 'unknown'))];
+  for (const domain of domains) {
+    const summary = domainSummariesByName.get(domain) ?? { domain, count: 0, subspecialties: new Map<string, number>() };
+    summary.count++;
+    domainSummariesByName.set(domain, summary);
+    for (const subspecialty of new Set(endorsement.subspecialties?.[domain] ?? [])) {
+      summary.subspecialties.set(subspecialty, (summary.subspecialties.get(subspecialty) ?? 0) + 1);
+    }
+  }
+}
+const domainSummaries = [...domainSummariesByName.values()]
+  .sort((left, right) => right.count - left.count || left.domain.localeCompare(right.domain))
+  .map((summary) => ({
+    ...summary,
+    subspecialties: [...summary.subspecialties.entries()]
+      .map(([subspecialty, count]) => ({ subspecialty, count }))
+      .sort((left, right) => right.count - left.count || left.subspecialty.localeCompare(right.subspecialty)),
+  }));
+const largestDomainCount = Math.max(...domainSummaries.map((summary) => summary.count), 1);
 const titleFor = (item: typeof endorsements[number]) => item.label || item.description || 'Endorsement';
 const assessorLabelFor = (assessor: string) => {
   const words = assessor.trim().split(/\s+/);
@@ -146,6 +168,29 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
       {endorsements.length > 0 && <div class="empty-state" data-filter-empty hidden><strong>No proof records in this domain.</strong><span>Choose another domain to see more evidence.</span></div>}
     </div>
   </section>
+
+  {domainSummaries.length > 0 && <section class="section cyber-domains" aria-labelledby="cyber-domains-title">
+    <div class="section-head cyber-domains-head">
+      <div><h2 id="cyber-domains-title">Cyber Domains</h2><p>Domains and subspecialties detected across this profile’s endorsements.</p></div>
+      <p>{domainSummaries.length} {domainSummaries.length === 1 ? 'domain' : 'domains'} identified.</p>
+    </div>
+    <div class="domain-chart">
+      {domainSummaries.map((summary) => <div class="domain-chart-group">
+        <div class="domain-chart-row">
+          <strong>{formatDomain(summary.domain)}</strong>
+          <span class="domain-bar" aria-label={`${summary.count} ${summary.count === 1 ? 'record' : 'records'}`}><span style={`width:${summary.count / largestDomainCount * 100}%`}></span></span>
+          <small>{summary.count}</small>
+        </div>
+        {summary.subspecialties.length > 0 && <div class="domain-subchart">
+          {summary.subspecialties.map((subspecialty) => <div class="domain-subchart-row">
+            <span>{formatDomain(subspecialty.subspecialty)}</span>
+            <span class="subspecialty-bar" aria-label={`${subspecialty.count} ${subspecialty.count === 1 ? 'record' : 'records'}`}><span style={`width:${subspecialty.count / summary.count * 100}%`}></span></span>
+            <small>{subspecialty.count}</small>
+          </div>)}
+        </div>}
+      </div>)}
+    </div>
+  </section>}
 
   {endorsements.length > 0 && <details class="profile-verification-note" aria-label="Questions about these records">
     <summary><span>About the evidence</span><b>Questions and corrections</b></summary>
