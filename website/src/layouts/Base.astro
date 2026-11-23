@@ -19,7 +19,7 @@ const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
       <header class:list={['app-header', home && 'home-header']}>
         <a href={sitePath('/')} class="brand" aria-label="Proof of Verified Skills">
           <img src={sitePath('/vct-logo.png')} alt="Proof of Verified Skills" class="brand-logo" />
-          {!home && <span class="registry-label">Public registry of verified cyber professionals</span>}
+          {!home && <span class="registry-label">Public registry of vetted cyber professionals</span>}
         </a>
         {!home && <a class="header-search-link" href={sitePath('/search/')}>Search</a>}
       </header>

@@ -27,6 +27,20 @@ const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
 });
 const endorsers = [...new Set(endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort((a, b) => a.localeCompare(b));
 const counts = countEvidence(endorsements);
+const propertyCounts = {
+  trusted: endorsements.filter((item) => item['povs-taxonomy'].trusted === true).length,
+  production: endorsements.filter((item) => item['povs-taxonomy'].production === true).length,
+};
+const propertySummary = (property: keyof typeof propertyCounts) => {
+  const count = propertyCounts[property];
+  const label = property === 'trusted' ? 'Trusted' : 'Production';
+  return `${count} ${label.toLowerCase()}`;
+};
+const propertyTitle = (property: keyof typeof propertyCounts) => {
+  const count = propertyCounts[property];
+  const label = property === 'trusted' ? 'trusted' : 'production';
+  return `${count} ${label} ${count === 1 ? 'record' : 'records'}`;
+};
 const properties = { trusted: 'Trusted', production: 'Production', competition: 'Competition', verifiable: 'Independently verifiable' } as const;
 const propertyKeys = Object.keys(properties) as (keyof typeof properties)[];
 const titleFor = (item: typeof endorsements[number]) => item.label || item.description || 'Endorsement';
@@ -70,8 +84,12 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
         <div class="profile-meta-line">
           <span>{endorsements.length} endorsements</span>
           <span>{person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size} assessors</span>
+          {(propertyCounts.trusted > 0 || propertyCounts.production > 0) && <span class="profile-signal-summary" role="group" aria-label="Verified record properties">
+            {propertyCounts.trusted > 0 && <span class="property-marker property-marker-trusted" title={propertyTitle('trusted')}>{propertySummary('trusted')}</span>}
+            {propertyCounts.production > 0 && <span class="property-marker property-marker-production" title={propertyTitle('production')}>{propertySummary('production')}</span>}
+          </span>}
         </div>
-        <div class="profile-level-mix"><EvidenceMix counts={counts} /></div>
+        <div class="profile-level-mix"><EvidenceMix counts={counts} interactive /></div>
         {contactLinks.length > 0 && <nav class="contact-row" aria-label={`Contact links for ${person.name}`}>
           {contactLinks.map((contact) => <a class:list={['contact-link', `contact-link-${contact.kind}`]} href={contact.href} title={contact.label} aria-label={`${contact.label} for ${person.name}`} target={contact.external ? '_blank' : undefined} rel={contact.external ? 'noopener noreferrer' : undefined}>
             <span class="contact-icon" aria-hidden="true">
@@ -109,8 +127,21 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
     <div class="evidence-list">
       {endorsements.length ? endorsements.map((item, index) => <button type="button" class="evidence-row" data-open-id={`endorsement-${index}`} data-assessor={item.assessor || ''}>
         <span class="domain-badge" title={endorsementDomains(item).map(formatDomain).join(', ') || 'Unclassified'}>{endorsementDomains(item).length > 1 ? 'Multiple domains' : formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
-        <span class="row-main"><span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>{cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}<small class="endorser">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong>{item.reviewType && <> · {reviewTypeLabel(item.reviewType)}</>}</small></span>
-        <span class="row-context"><strong class={`level-chip ${chipClasses[item['povs-taxonomy'].evidence]}`}>{bandLabels[item['povs-taxonomy'].evidence]}</strong><small>{dateFor(item)}</small></span>
+        <span class="row-main">
+          <span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>
+          {cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}
+          <small class="endorser">
+            Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong>{item.reviewType && <> · {reviewTypeLabel(item.reviewType)}</>}
+            {(item['povs-taxonomy'].trusted === true || item['povs-taxonomy'].production === true) && <span class="property-markers" role="group" aria-label="Verified record properties">
+              {item['povs-taxonomy'].trusted === true && <span class="property-marker property-marker-trusted">Trusted</span>}
+              {item['povs-taxonomy'].production === true && <span class="property-marker property-marker-production">Production</span>}
+            </span>}
+          </small>
+        </span>
+        <span class="row-context">
+          <strong class={`level-chip ${chipClasses[item['povs-taxonomy'].evidence]}`}>{bandLabels[item['povs-taxonomy'].evidence]}</strong>
+          <small>{dateFor(item)}</small>
+        </span>
       </button>) : <div class="empty-state"><strong>No proof records match this view.</strong><span>There are no public endorsements for this individual yet.</span></div>}
       {endorsements.length > 0 && <div class="empty-state" data-filter-empty hidden><strong>No proof records in this domain.</strong><span>Choose another domain to see more evidence.</span></div>}
     </div>

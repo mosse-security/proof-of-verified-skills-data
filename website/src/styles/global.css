@@ -68,6 +68,16 @@ h2 { margin-bottom: 8px; font-size: 24px; letter-spacing: -.03em; }
 .record-header p { margin-bottom: 12px; }
 .profile-meta-line { flex-wrap: wrap; gap: 14px; margin: 10px 0 18px; color: var(--muted); font-size: 12px; }
 .profile-meta-line strong { color: var(--accent-ink); }
+.profile-signal-summary { display: flex; flex-wrap: wrap; gap: 7px; }
+.property-markers { display: flex; flex-wrap: wrap; justify-content: end; gap: 4px; }
+.endorser .property-markers { display: inline-flex; margin-left: 7px; vertical-align: middle; }
+.endorser .property-marker { min-height: 18px; padding: 2px 6px; }
+.property-marker { display: inline-flex; align-items: center; gap: 5px; min-height: 20px; padding: 3px 7px; border-radius: 999px; font-size: 10px; font-weight: 800; line-height: 1; white-space: nowrap; }
+.property-marker::before { width: 6px; height: 6px; border-radius: 50%; content: ''; }
+.property-marker-trusted { color: #26734d; background: #e8f7ed; }
+.property-marker-trusted::before { background: #4baf75; }
+.property-marker-production { color: #24548b; background: #e9efff; }
+.property-marker-production::before { background: #5d8bc7; }
 .profile-level-mix { display: grid; gap: 7px; width: 100%; margin-top: 2px; }
 .domain-summary { margin-bottom: 16px; color: var(--muted); font-size: 12px; }
 .domain-summary > div { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
@@ -124,7 +134,7 @@ h2 { margin-bottom: 8px; font-size: 24px; letter-spacing: -.03em; }
 .row-context { align-content: start; justify-items: end; text-align: right; }
 .row-context strong { padding: 5px 8px; border-radius: 999px; font-size: 12px; text-align: center; }
 .level-chip-blue { color: #2447a8; background: #e9efff; }
-.level-chip-orange { color: #9a5700; background: #fff0d8; }
+.level-chip-orange { color: #a85d00; background: #fff0d8; }
 .level-chip-green { color: #26734d; background: #e8f7ed; }
 .level-chip-unrated { color: #687587; background: #edf0f3; }
 .inline-detail { margin: 0 13px 13px; padding-top: 13px; border-top: 1px solid var(--rule); }
@@ -296,9 +306,20 @@ body.drawer-open { overflow: hidden; }
 .directory-mix { display: grid; gap: 7px; min-width: 0; }
 .level-stack { display: flex; width: 100%; height: 10px; overflow: hidden; border-radius: 999px; background: var(--rule); }
 .level-stack i { display: block; min-width: 0; height: 100%; }
-.level-indirect { background: #8b9cff; }
-.level-observable { background: var(--accent); }
-.level-independently-reviewed { background: #f2b84b; }
+.level-stack-interactive { position: relative; overflow: visible; }
+.level-segment { position: relative; display: block; min-width: 0; height: 10px; padding: 0; border: 0; cursor: help; }
+.level-segment:first-child { border-radius: 999px 0 0 999px; }
+.level-segment:last-child { border-radius: 0 999px 999px 0; }
+.level-segment:focus-visible { z-index: 1; outline: 2px solid var(--ink); outline-offset: 2px; }
+.level-stack-tooltip { position: absolute; z-index: 3; bottom: calc(100% + 9px); left: 50%; width: max-content; max-width: min(280px, calc(100vw - 32px)); padding: 7px 9px; border-radius: 6px; color: #fff; background: var(--ink); font-size: 11px; font-weight: 700; line-height: 1.25; opacity: 0; pointer-events: none; text-align: center; transform: translate(-50%, 4px); transition: opacity .15s ease, transform .15s ease; }
+.level-stack-tooltip::after { position: absolute; top: 100%; left: 50%; width: 7px; height: 7px; background: var(--ink); content: ''; transform: translate(-50%, -4px) rotate(45deg); }
+.level-segment:hover .level-stack-tooltip, .level-segment:focus-visible .level-stack-tooltip { opacity: 1; transform: translate(-50%, 0); }
+.level-segment:first-child .level-stack-tooltip { left: 0; text-align: left; transform: translate(0, 4px); }
+.level-segment:first-child .level-stack-tooltip::after { left: 12px; }
+.level-segment:first-child:hover .level-stack-tooltip, .level-segment:first-child:focus-visible .level-stack-tooltip { transform: translate(0, 0); }
+.level-indirect { background: #9fb9ea; }
+.level-observable { background: #ffb45d; }
+.level-independently-reviewed { background: #86c7a2; }
 .level-unrated { background: #b8c1cc; }
 .level-stack-labels { display: flex; flex-wrap: wrap; gap: 6px; color: var(--muted); font-size: 9px; font-weight: 750; line-height: 1.2; white-space: nowrap; }
 .level-stack-labels b { flex: 0 0 auto; font-weight: 750; }

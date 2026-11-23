@@ -1,11 +1,25 @@
 ---
 import { bands, bandLabels, type EvidenceCounts } from '../lib/records';
-interface Props { counts: EvidenceCounts }
-const { counts } = Astro.props;
+interface Props { counts: EvidenceCounts; interactive?: boolean }
+const { counts, interactive = false } = Astro.props;
 const total = Object.values(counts).reduce((sum, count) => sum + count, 0);
+const tooltipFor = (band: typeof bands[number]) => {
+  const count = counts[band];
+  const record = count === 1 ? 'record' : 'records';
+  const qualifier = band === 'observable'
+    ? 'independently observable'
+    : band === 'independently-reviewed'
+      ? 'independently reviewed'
+      : 'indirect';
+  return `${count} ${qualifier} ${record} evidence of competence`;
+};
 ---
-<span class="level-stack" aria-hidden="true">
-  {bands.map(band => <i class={`level-${band}`} style={`width:${total ? counts[band] / total * 100 : 0}%`}></i>)}
+<span class:list={['level-stack', { 'level-stack-interactive': interactive }]} role="group" aria-label="Evidence mix">
+  {interactive
+    ? bands.filter((band) => counts[band] > 0).map((band) => <button type="button" class={`level-segment level-${band}`} style={`width:${total ? counts[band] / total * 100 : 0}%`} aria-label={tooltipFor(band)}>
+        <span class="level-stack-tooltip" role="tooltip">{tooltipFor(band)}</span>
+      </button>)
+    : bands.map((band) => <i class={`level-${band}`} style={`width:${total ? counts[band] / total * 100 : 0}%`}></i>)}
 </span>
 <span class="level-stack-labels">
   {bands.map(band => <b>{bandLabels[band]}: {counts[band]}</b>)}
