@@ -148,8 +148,9 @@ export function initials(name: string): string {
 }
 
 export function formatDomain(domain: string): string {
-  const formatted = domain.replaceAll('-', ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
   const normalized = domain.replaceAll('_', '-').toLocaleLowerCase();
+  if (normalized === 'unknown' || normalized === 'unclassified') return 'Cyber domain not classified';
+  const formatted = domain.replaceAll('-', ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
   if (normalized === 'grc') return 'GRC';
   if (normalized === 'devsecops' || normalized === 'dev-sec-ops') return 'DevSecOps';
   return formatted;

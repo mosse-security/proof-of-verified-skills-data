@@ -43,6 +43,18 @@ const propertyTitle = (property: keyof typeof propertyCounts) => {
 };
 const properties = { trusted: 'Trusted', production: 'Production', competition: 'Competition', verifiable: 'Independently verifiable' } as const;
 const propertyKeys = Object.keys(properties) as (keyof typeof properties)[];
+const factHelp = {
+  trusted: 'Someone relied on this work when making a real decision or taking action.',
+  production: 'The work was done on, or later used in, a live production system.',
+  competition: 'The work was part of an organised competition.',
+  verifiable: 'A reader can inspect enough public material to judge the specific claim.',
+  assessor: 'The independent organisation or programme that credited the person.',
+  reviewType: 'The process the assessor used to evaluate the work or result.',
+  recordType: 'The kind of work or recognition this record describes.',
+  cyberDomain: 'The cybersecurity discipline detected from the record.',
+  subspecialty: 'A more specific area within the detected cyber domain.',
+  date: 'The year reported by the source record.',
+} as const;
 type DomainSummary = { domain: string; count: number; subspecialties: Map<string, number> };
 const domainSummariesByName = new Map<string, DomainSummary>();
 for (const endorsement of endorsements) {
@@ -70,6 +82,8 @@ const assessorLabelFor = (assessor: string) => {
   const words = assessor.trim().split(/\s+/);
   return words.length > 4 ? `${words.slice(0, 4).join(' ')}...` : assessor;
 };
+const hasClassifiedDomain = (item: typeof endorsements[number]) =>
+  endorsementDomains(item).some((domain) => !['unknown', 'unclassified'].includes(domain.toLocaleLowerCase()));
 const chipClasses = { indirect: 'level-chip-blue', observable: 'level-chip-orange', 'independently-reviewed': 'level-chip-green' };
 const reviewTypeLabel = (value: string) =>
   value === 'double_blind' ? 'Double-blind peer review' : formatLabel(value);
@@ -81,6 +95,21 @@ const criticalityFor = (item: typeof endorsements[number]) => {
   return `${formatLabel(match[1])}${match[2] ? ` · CVSS ${match[2]}` : ''}`;
 };
 const cveTitleFor = (item: typeof endorsements[number]) => item.type === 'vulnerability_discovery' ? item.description?.replace(/\s+/g, ' ').trim() : undefined;
+const youtubeEmbedFor = (item: typeof endorsements[number]) => {
+  for (const link of item['evidence-links'] ?? []) {
+    const value = safeExternalUrl(link.url);
+    if (!value) continue;
+    const url = new URL(value);
+    const host = url.hostname.replace(/^www\./, '').toLocaleLowerCase();
+    let videoId: string | null = null;
+    if (host === 'youtu.be') videoId = url.pathname.split('/').filter(Boolean)[0] ?? null;
+    if (host === 'youtube.com' || host === 'm.youtube.com' || host === 'youtube-nocookie.com') {
+      videoId = url.pathname === '/watch' ? url.searchParams.get('v') : url.pathname.match(/^\/(?:embed|shorts|live)\/([^/?#]+)/)?.[1] ?? null;
+    }
+    if (videoId && /^[A-Za-z0-9_-]{11}$/.test(videoId)) return `https://www.youtube-nocookie.com/embed/${videoId}`;
+  }
+  return undefined;
+};
 const contactLinks = (person.contact ?? []).flatMap((contact) => {
   const url = safeExternalUrl(contact.url);
   const email = contact.email?.trim();
@@ -148,15 +177,16 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
     </div>
     <div class="evidence-list">
       {endorsements.length ? endorsements.map((item, index) => <button type="button" class="evidence-row" data-open-id={`endorsement-${index}`} data-assessor={item.assessor || ''}>
-        <span class="domain-badge" title={endorsementDomains(item).map(formatDomain).join(', ') || 'Unclassified'}>{endorsementDomains(item).length > 1 ? 'Multiple domains' : formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
+        <span class:list={['domain-badge', !hasClassifiedDomain(item) && 'domain-badge-unclassified']} title={endorsementDomains(item).map(formatDomain).join(', ') || 'Cyber domain not classified'}>{endorsementDomains(item).length > 1 ? 'Multiple domains' : formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
         <span class="row-main">
           <span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>
           {cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}
           <small class="endorser">
             Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong>{item.reviewType && <> · {reviewTypeLabel(item.reviewType)}</>}
-            {(item['povs-taxonomy'].trusted === true || item['povs-taxonomy'].production === true) && <span class="property-markers" role="group" aria-label="Verified record properties">
+            {(item['povs-taxonomy'].trusted === true || item['povs-taxonomy'].production === true || youtubeEmbedFor(item)) && <span class="property-markers" role="group" aria-label="Record highlights">
               {item['povs-taxonomy'].trusted === true && <span class="property-marker property-marker-trusted">Trusted</span>}
               {item['povs-taxonomy'].production === true && <span class="property-marker property-marker-production">Production</span>}
+              {youtubeEmbedFor(item) && <span class="property-marker property-marker-video" title="A video recording is available in this record.">Video available</span>}
             </span>}
           </small>
         </span>
@@ -222,22 +252,23 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
           {item.subtitle && <p class="drawer-subtitle"><span>{item.type === 'presentation' ? 'Conference' : item.type === 'vulnerability_discovery' ? 'Criticality' : 'Context'}</span>{item.subtitle}</p>}
           <p class="drawer-byline">Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong></p>
         </div>
+        {youtubeEmbedFor(item) && <section class="video-evidence" aria-label="Video evidence"><iframe src={youtubeEmbedFor(item)} data-video-src={youtubeEmbedFor(item)} title={`Video evidence for ${titleFor(item)}`} loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>}
         {descriptionFor(item) && descriptionFor(item) !== titleFor(item).trim() && <section class="record-description"><h3>{item.type === 'presentation' ? 'Abstract' : item.type === 'vulnerability_discovery' ? 'Details' : 'Description'}</h3><p>{descriptionFor(item)}</p></section>}
         <section class="plain-explainer"><div><h3>{bandLabels[item['povs-taxonomy'].evidence]}</h3><p>{item['povs-taxonomy'].explanation}</p></div></section>
-        <h3 class="facts-heading">Record details</h3>
-        <dl class="facts">
-          {propertyKeys.map(key => <div><dt>{properties[key]}</dt><dd>{item['povs-taxonomy'][key] === 'unknown' ? 'Unknown' : item['povs-taxonomy'][key] ? 'Yes' : 'No'}</dd></div>)}
-          <div><dt>Assessor</dt><dd>{item.assessor || 'Not specified'}</dd></div>
-          <div><dt>Review type</dt><dd>{item.reviewType ? reviewTypeLabel(item.reviewType) : 'Not specified'}</dd></div>
-          <div><dt>Record type</dt><dd>{formatLabel(item.type)}</dd></div>
-          <div><dt>Cyber domain</dt><dd>{endorsementDomains(item).map(formatDomain).join(', ') || 'Not classified'}</dd></div>
-          <div><dt>Sub-specialty</dt><dd>{Object.values(item.subspecialties ?? {}).flat().map(formatDomain).join(', ') || 'Not specified'}</dd></div>
-          <div><dt>Date</dt><dd>{dateFor(item)}</dd></div>
-        </dl>
         {(safeExternalUrl(item.url) || (item['evidence-links']?.length ?? 0) > 0) && <section class="drawer-section"><h4>Source records</h4><div class="external-links">
           {safeExternalUrl(item.url) && <a href={safeExternalUrl(item.url)} target="_blank" rel="noopener noreferrer"><span>Source</span><strong>{item.url}</strong></a>}
           {item['evidence-links']?.filter((link) => safeExternalUrl(link.url) !== safeExternalUrl(item.url)).map((link) => safeExternalUrl(link.url) && <a href={safeExternalUrl(link.url)} target="_blank" rel="noopener noreferrer"><span>Proof</span><strong>{link.title || link.url}</strong></a>)}
         </div></section>}
+        <h3 class="facts-heading">Record details</h3>
+        <dl class="facts">
+          {propertyKeys.map(key => <div><dt>{properties[key]}<span class="fact-help" tabindex="0" aria-label={factHelp[key]}><span class="fact-help-icon" aria-hidden="true">?</span><span class="fact-help-tooltip" role="tooltip">{factHelp[key]}</span></span></dt><dd>{item['povs-taxonomy'][key] === 'unknown' ? 'Unknown' : item['povs-taxonomy'][key] ? 'Yes' : 'No'}</dd></div>)}
+          <div><dt>Assessor<span class="fact-help" tabindex="0" aria-label={factHelp.assessor}><span class="fact-help-icon" aria-hidden="true">?</span><span class="fact-help-tooltip" role="tooltip">{factHelp.assessor}</span></span></dt><dd>{item.assessor || 'Not specified'}</dd></div>
+          <div><dt>Review type<span class="fact-help" tabindex="0" aria-label={factHelp.reviewType}><span class="fact-help-icon" aria-hidden="true">?</span><span class="fact-help-tooltip" role="tooltip">{factHelp.reviewType}</span></span></dt><dd>{item.reviewType ? reviewTypeLabel(item.reviewType) : 'Not specified'}</dd></div>
+          <div><dt>Record type<span class="fact-help" tabindex="0" aria-label={factHelp.recordType}><span class="fact-help-icon" aria-hidden="true">?</span><span class="fact-help-tooltip" role="tooltip">{factHelp.recordType}</span></span></dt><dd>{formatLabel(item.type)}</dd></div>
+          <div><dt>Cyber domain<span class="fact-help" tabindex="0" aria-label={factHelp.cyberDomain}><span class="fact-help-icon" aria-hidden="true">?</span><span class="fact-help-tooltip" role="tooltip">{factHelp.cyberDomain}</span></span></dt><dd>{endorsementDomains(item).map(formatDomain).join(', ') || 'Not classified'}</dd></div>
+          <div><dt>Sub-specialty<span class="fact-help" tabindex="0" aria-label={factHelp.subspecialty}><span class="fact-help-icon" aria-hidden="true">?</span><span class="fact-help-tooltip" role="tooltip">{factHelp.subspecialty}</span></span></dt><dd>{Object.values(item.subspecialties ?? {}).flat().map(formatDomain).join(', ') || 'Not specified'}</dd></div>
+          <div><dt>Date<span class="fact-help" tabindex="0" aria-label={factHelp.date}><span class="fact-help-icon" aria-hidden="true">?</span><span class="fact-help-tooltip" role="tooltip">{factHelp.date}</span></span></dt><dd>{dateFor(item)}</dd></div>
+        </dl>
       </article>)}
     </div>
   </aside>
@@ -271,6 +302,9 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
   }));
 
   function closeDrawer() {
+    document.querySelectorAll('.video-evidence iframe').forEach((element) => {
+      if (element instanceof HTMLIFrameElement) element.removeAttribute('src');
+    });
     drawer?.classList.remove('open');
     scrim?.classList.remove('open');
     drawer?.setAttribute('aria-hidden', 'true');
@@ -283,6 +317,11 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
     const panel = id ? document.querySelector(`[data-panel-id="${id}"]`) : null;
     if (!panel || !drawer || !scrim) return;
     document.querySelectorAll('[data-panel-id]').forEach((item) => { item.hidden = item !== panel; });
+    panel.querySelectorAll('.video-evidence iframe').forEach((element) => {
+      if (element instanceof HTMLIFrameElement && !element.getAttribute('src') && element.dataset.videoSrc) {
+        element.src = element.dataset.videoSrc;
+      }
+    });
     if (title) title.textContent = row.querySelector('strong')?.textContent || 'Endorsement';
     drawer.classList.add('open');
     scrim.classList.add('open');
