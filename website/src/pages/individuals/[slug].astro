@@ -26,6 +26,7 @@ const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
   return year || bands.indexOf(b['povs-taxonomy'].evidence) - bands.indexOf(a['povs-taxonomy'].evidence);
 });
 const endorsers = [...new Set(endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort((a, b) => a.localeCompare(b));
+const assessorCount = person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size;
 const counts = countEvidence(endorsements);
 const propertyCounts = {
   trusted: endorsements.filter((item) => item['povs-taxonomy'].trusted === true).length,
@@ -133,8 +134,7 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
         <h1>{person.name}</h1>
         {person.biography && <p>{person.biography}</p>}
         <div class="profile-meta-line">
-          <span>{endorsements.length} endorsements</span>
-          <span>{person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size} assessors</span>
+          <span class="profile-evidence-summary">{endorsements.length} public {endorsements.length === 1 ? 'record' : 'records'} of work, assessed by {assessorCount} independent {assessorCount === 1 ? 'organization' : 'organizations'}.<span class="fact-help profile-evidence-help" tabindex="0" aria-label="POVS does not give people a score. It documents public records of work and the organisation and review process behind each record."><span class="fact-help-icon" aria-hidden="true">?</span><span class="fact-help-tooltip" role="tooltip">POVS does not give people a score. It documents public records of work and the organisation and review process behind each record.</span></span></span>
           {(propertyCounts.trusted > 0 || propertyCounts.production > 0) && <span class="profile-signal-summary" role="group" aria-label="Verified record properties">
             {propertyCounts.trusted > 0 && <span class="property-marker property-marker-trusted" title={propertyTitle('trusted')}>{propertySummary('trusted')}</span>}
             {propertyCounts.production > 0 && <span class="property-marker property-marker-production" title={propertyTitle('production')}>{propertySummary('production')}</span>}
@@ -232,8 +232,8 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
         <p>Indirect evidence credits someone with an achievement. Observable work is available to inspect. Independently reviewed work underwent formal assessment.</p>
       </details>
       <details>
-        <summary>What does Unknown mean?</summary>
-        <p>The available record leaves that property open.</p>
+        <summary>Is this a subjective vetting score?</summary>
+        <p>No. POVS does not give people a score or decide whether someone is “good” at cybersecurity. It documents public records of work—such as peer-reviewed papers, conference presentations, or named vulnerability credits—and identifies the organisation and review process behind each record.</p>
       </details>
       <details>
         <summary>How can I correct or upgrade the record?</summary>
