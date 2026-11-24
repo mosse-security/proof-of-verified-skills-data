@@ -55,7 +55,7 @@ export interface Person {
   name: string;
   biography?: string;
   tags?: string[];
-  contact?: Array<{ label?: string; url?: string; email?: string }>;
+  contact?: Array<{ label?: string; url?: string; email?: string; source?: string }>;
   image?: { url?: string; source_url?: string; source_type?: string; conference?: string; year?: number; region?: string; verified?: boolean; verified_at?: string };
   endorsements?: Endorsement[];
   stats?: { endorsements?: number; assessors?: number; 'by-domain'?: Record<string, number> };

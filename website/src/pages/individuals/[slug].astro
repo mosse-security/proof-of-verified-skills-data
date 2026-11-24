@@ -123,6 +123,7 @@ const contactLinks = (person.contact ?? []).flatMap((contact) => {
   return [{ href, label, kind, external: Boolean(url) }];
 });
 const profileImageUrl = safeExternalUrl(person.image?.url);
+const correctionMessage = `To: contact@vetted-cyber-talent.com\nSubject: Profile correction: ${person.name}\n\nI would like to report a correction for ${person.name}'s public profile:\nhttps://vetted-cyber-talent.com/individuals/${slug}/\n\nDetails:\n`;
 ---
 
 <Base title={`${person.name} | Proof of Verified Skills`} description={person.biography || `Public endorsement record for ${person.name}.`}>
@@ -224,8 +225,9 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
     </div>
   </section>}
 
-  {endorsements.length > 0 && <details class="profile-verification-note" aria-label="Questions about these records">
-    <summary><span>About the evidence</span><b>Questions and corrections</b></summary>
+  {endorsements.length > 0 && <div class="profile-evidence-footer">
+    <details class="profile-verification-note" aria-label="Questions about these records">
+      <summary><span>About the evidence</span><b>Questions and corrections</b></summary>
     <div class="profile-verification-note-panel">
       <details>
         <summary>What do the evidence bands mean?</summary>
@@ -241,11 +243,33 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
         <p>No. POVS does not give people a score or decide whether someone is “good” at cybersecurity. It documents public records of work—such as peer-reviewed papers, conference presentations, or named vulnerability credits—and identifies the organisation and review process behind each record.</p>
       </details>
       <details>
+        <summary>Can I compare people using these profiles?</summary>
+        <p>No. POVS is not a leaderboard, and record counts should not be used to compare people’s performance.</p>
+        <p>Consider two researchers who spend the same amount of time testing the same software. One happens to find a critical vulnerability; the other finds a low-risk issue. Their results differ, but that alone cannot tell us who is more skilled. Opportunity and luck can influence what work becomes visible, even when two people work in the same field.</p>
+        <p>Comparisons become even less meaningful across different kinds of work. What would it mean to compare 100 vulnerability records with a series of presentations on cyber law?</p>
+        <p>POVS has a different purpose: to show public records of work, who credited or assessed them, and how that assessment was conducted. Where possible, it also links to the work so you can inspect it yourself. These records can help you understand someone’s areas of competence, but they are not a complete picture of their skills.</p>
+        <p>A person may have capabilities they have never demonstrated publicly, or skills they can transfer to another domain. For example, a researcher with web application CVEs may also be capable of testing cloud services.</p>
+      </details>
+      <details>
         <summary>How can I correct or upgrade the record?</summary>
         <p>If you know of a recording or other public evidence, or can help us verify that work was used in production, please <a href="mailto:contact@vetted-cyber-talent.com">contact us</a>. Verified evidence may allow us to upgrade the record.</p>
       </details>
     </div>
-  </details>}
+    </details>
+    <button type="button" class="profile-correction-link" data-correction-open>Report a profile error</button>
+  </div>}
+
+  <dialog class="correction-dialog" aria-labelledby="correction-title" data-correction-dialog>
+    <div class="correction-dialog-head">
+      <h2 id="correction-title">Report a profile error</h2>
+      <button type="button" class="correction-close" aria-label="Close" data-correction-close>×</button>
+    </div>
+    <p>Copy these details into an email and tell us what needs correcting.</p>
+    <label for="correction-message">Email details</label>
+    <textarea id="correction-message" rows="8" readonly data-correction-message>{correctionMessage}</textarea>
+    <button type="button" class="correction-copy" data-correction-copy>Copy email details</button>
+    <span class="correction-copy-status" aria-live="polite" data-correction-status></span>
+  </dialog>
 
   <div class="drawer-scrim" data-close-drawer></div>
   <aside class="drawer" aria-hidden="true" aria-label="Endorsement details">
@@ -282,6 +306,27 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
 </Base>
 
 <script>
+  const correctionDialog = document.querySelector('[data-correction-dialog]');
+  const correctionMessage = document.querySelector('[data-correction-message]');
+  const correctionStatus = document.querySelector('[data-correction-status]');
+  document.querySelector('[data-correction-open]')?.addEventListener('click', () => {
+    if (correctionDialog instanceof HTMLDialogElement) correctionDialog.showModal();
+  });
+  document.querySelector('[data-correction-close]')?.addEventListener('click', () => {
+    if (correctionDialog instanceof HTMLDialogElement) correctionDialog.close();
+  });
+  document.querySelector('[data-correction-copy]')?.addEventListener('click', async () => {
+    if (!(correctionMessage instanceof HTMLTextAreaElement)) return;
+    try {
+      await navigator.clipboard.writeText(correctionMessage.value);
+      if (correctionStatus) correctionStatus.textContent = 'Copied to clipboard.';
+    } catch {
+      correctionMessage.focus();
+      correctionMessage.select();
+      if (correctionStatus) correctionStatus.textContent = 'Select and copy the highlighted text.';
+    }
+  });
+
   const drawer = document.querySelector('.drawer');
   const scrim = document.querySelector('.drawer-scrim');
   const title = document.querySelector('[data-drawer-title]');
