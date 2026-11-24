@@ -164,3 +164,24 @@ process rather than a claim of perfect completeness or accuracy.
 For profile corrections, new endorsement submissions, general inquiries,
 contributions, or bug reports, contact
 [contact@vetted-cyber-talent.com](mailto:contact@vetted-cyber-talent.com).
+
+## License and attribution
+
+The project uses a split license so that software and research material can be
+reused appropriately:
+
+- **Code** is licensed under the [Apache License 2.0](LICENSE.md#code).
+- The **POVS taxonomy, documentation, and original dataset contributions** are
+  licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE.md#taxonomy-documentation-and-original-data).
+
+You may use, adapt, distribute, and build on the licensed material, including
+for commercial purposes. Attribution must credit **Benjamin Mosse and Duane
+Dunston**, identify the work as *Proof of Verified Skills (POVS)*, and link to
+this repository where reasonably practical. The required Apache attribution
+notice is in [NOTICE](NOTICE).
+
+The project does not claim rights over third-party source material, including
+conference pages, papers, videos, logos, portraits, and externally hosted
+images. Those materials remain subject to their original terms. The CC BY 4.0
+license applies only to the project's original taxonomy, documentation,
+curation, structure, and original dataset contributions.
