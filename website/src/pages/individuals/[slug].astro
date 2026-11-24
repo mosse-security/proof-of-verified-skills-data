@@ -177,7 +177,6 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
     </div>
     <div class="evidence-list">
       {endorsements.length ? endorsements.map((item, index) => <button type="button" class="evidence-row" data-open-id={`endorsement-${index}`} data-assessor={item.assessor || ''}>
-        <span class:list={['domain-badge', !hasClassifiedDomain(item) && 'domain-badge-unclassified']} title={endorsementDomains(item).map(formatDomain).join(', ') || 'Cyber domain not classified'}>{endorsementDomains(item).length > 1 ? 'Multiple domains' : formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
         <span class="row-main">
           <span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>
           {cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}
@@ -190,9 +189,12 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
             </span>}
           </small>
         </span>
-        <span class="row-context">
-          <strong class={`level-chip ${chipClasses[item['povs-taxonomy'].evidence]}`}>{bandLabels[item['povs-taxonomy'].evidence]}</strong>
-          <small>{dateFor(item)}</small>
+        <span class="evidence-meta">
+          <span class:list={['domain-badge', !hasClassifiedDomain(item) && 'domain-badge-unclassified']} title={endorsementDomains(item).map(formatDomain).join(', ') || 'Cyber domain not classified'}>{endorsementDomains(item).length > 1 ? 'Multiple domains' : formatDomain(endorsementDomains(item)[0] || 'Unclassified')}</span>
+          <span class="row-context">
+            <strong class={`level-chip ${chipClasses[item['povs-taxonomy'].evidence]}`}>{bandLabels[item['povs-taxonomy'].evidence]}</strong>
+            <small>{dateFor(item)}</small>
+          </span>
         </span>
       </button>) : <div class="empty-state"><strong>No proof records match this view.</strong><span>There are no public endorsements for this individual yet.</span></div>}
       {endorsements.length > 0 && <div class="empty-state" data-filter-empty hidden><strong>No proof records in this domain.</strong><span>Choose another domain to see more evidence.</span></div>}
