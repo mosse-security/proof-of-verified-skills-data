@@ -13,6 +13,12 @@ const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.toString()} />
     <title>{title}</title>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+    </script>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TLHRV37K"></script>
   </head>
   <body>
     <div class="page">
