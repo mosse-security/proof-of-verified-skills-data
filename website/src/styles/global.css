@@ -502,8 +502,17 @@ body.drawer-open { overflow: hidden; }
 .domain-row strong { font-size: 18px; }
 .domain-row span { color: var(--muted); }
 .domain-arrow { color: var(--accent-ink) !important; font-size: 22px; text-align: right; }
-.assessor-table { overflow: hidden; }
-.assessor-row { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: center; min-height: 68px; padding: 15px 22px; border-bottom: 1px solid var(--rule); }
+.assessor-table { overflow: visible; }
+.assessor-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, .45fr) 200px; gap: 24px; align-items: center; min-height: 68px; padding: 15px 22px; border-bottom: 1px solid var(--rule); }
+.assessor-process { font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.assessor-process-label { display: none; }
+.assessor-name { color: var(--ink); }
+.assessor-count { color: var(--muted); }
+.assessor-help { position: relative; display: inline-flex; margin-left: 7px; vertical-align: middle; cursor: help; }
+.assessor-help-icon { display: grid; place-items: center; width: 15px; height: 15px; border: 1px solid #a6b2bd; border-radius: 50%; color: #84929f !important; font-size: 10px; font-weight: 700; }
+.assessor-help-tooltip { position: absolute; z-index: 10; left: 50%; bottom: calc(100% + 8px); width: min(300px, calc(100vw - 48px)); padding: 9px 11px; border-radius: 6px; background: var(--ink); color: white !important; font-size: 12px; line-height: 1.45; opacity: 0; visibility: hidden; transform: translateX(-50%); pointer-events: none; }
+.assessor-help:hover .assessor-help-tooltip, .assessor-help:focus .assessor-help-tooltip { opacity: 1; visibility: visible; }
+.assessor-help:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 50%; }
 .assessor-row:last-child { border-bottom: 0; }
 .assessor-row:not(.assessor-header):hover { background: var(--accent-soft); }
 .assessor-header { min-height: 44px; color: var(--muted); background: var(--surface-soft); font: 800 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
@@ -524,6 +533,7 @@ body.drawer-open { overflow: hidden; }
 @media (max-width: 720px) { .simple-link-grid { grid-template-columns: 1fr; } .simple-results a { grid-template-columns: 36px minmax(0, 1fr); } .simple-results a > span:last-child { grid-column: 2; text-align: left; } }
 @media (max-width: 720px) { .profile-evidence-summary { white-space: normal; } }
 @media (max-width: 720px) { .profile-photo { max-height: 160px; } }
+@media (max-width: 720px) { .assessor-row .assessor-process { grid-column: 1 / -1; grid-row: 2; } .assessor-process-label { display: inline; font-weight: 700; } .assessor-help-tooltip { left: 0; transform: none; width: min(260px, calc(100vw - 90px)); } }
 @media (max-width: 720px) { .simple-home { margin: 52px auto 40px; } .simple-home h1 { font-size: 44px; } .simple-home-actions { grid-template-columns: 1fr; } .simple-home-card { min-height: 190px; } }
 @media (max-width: 520px) { .homepage-search-row { flex-direction: column; } .homepage-search button { width: 100%; } }
 @media (max-width: 520px) { .registry-search-row { flex-direction: column; } .registry-search-row button { width: 100%; } }

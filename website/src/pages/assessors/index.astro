@@ -1,17 +1,32 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { listProfiles } from '../../lib/records';
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve, join } from 'node:path';
+import { formatLabel, listProfiles } from '../../lib/records';
 import { sitePath } from '../../lib/site';
 const people = listProfiles();
 const assessorMap = new Map<string, string>();
 people.forEach((person) => Object.entries(person.assessorNames).forEach(([id, name]) => assessorMap.set(id, name)));
 const assessors = [...assessorMap.entries()].sort((a, b) => a[1].localeCompare(b[1]));
 const individualCount = (assessorId: string) => people.filter((person) => person.assessorIds.includes(assessorId)).length;
+const assessorDataDir = [resolve(process.cwd(), 'data/assessors'), resolve(process.cwd(), '../data/assessors'), resolve(process.cwd(), '../../data/assessors')].find(existsSync);
+const reviewProcess = (assessorId: string) => {
+  if (!assessorDataDir || !/^[a-z0-9-]+$/i.test(assessorId)) return { label: 'Not specified', description: '' };
+  const path = join(assessorDataDir, assessorId, `${assessorId}.json`);
+  if (!existsSync(path)) return { label: 'Not specified', description: '' };
+  const data = JSON.parse(readFileSync(path, 'utf8')) as { peerReview?: { reviewType?: string; processDescription?: string } };
+  const type = data.peerReview?.reviewType;
+  return { label: type === 'double_blind' ? 'Double-blind peer review' : type ? formatLabel(type) : 'Not specified', description: data.peerReview?.processDescription?.trim() || '' };
+};
 ---
 <Base home title="Assessors | Proof of Verified Skills">
   <div class="directory-intro domain-intro"><h1>Search by assessor</h1><p class="muted">Choose an assessor to see the people and endorsements they recognize.</p></div>
   <section class="directory-table assessor-table" aria-label="Assessors">
-    <div class="assessor-row assessor-header" aria-hidden="true"><span>Assessor</span><span>Individuals endorsed</span></div>
-    {assessors.map(([assessorId, assessor]) => <a class="assessor-row" href={sitePath(`/assessors/${assessorId.toLocaleLowerCase()}/`)}><strong>{assessor}</strong><span>{individualCount(assessorId).toLocaleString()} individuals <b>→</b></span></a>)}
+    <div class="assessor-row assessor-header" aria-hidden="true"><span>Assessor</span><span>Review process</span><span>Individuals endorsed</span></div>
+    {assessors.map(([assessorId, assessor]) => {
+      const process = reviewProcess(assessorId);
+      const href = sitePath(`/assessors/${assessorId.toLocaleLowerCase()}/`);
+      return <div class="assessor-row"><a class="assessor-name" href={href}><strong>{assessor}</strong></a><span class="assessor-process"><span class="assessor-process-label">Review process: </span>{process.label}{process.description && <span class="assessor-help" tabindex="0" aria-label={`About ${assessor}'s review process: ${process.description}`}><span class="assessor-help-icon" aria-hidden="true">?</span><span class="assessor-help-tooltip" role="tooltip">{process.description}</span></span>}</span><a class="assessor-count" href={href} aria-label={`${individualCount(assessorId).toLocaleString()} individuals endorsed by ${assessor}`}>{individualCount(assessorId).toLocaleString()} individuals <b aria-hidden="true">→</b></a></div>;
+    })}
   </section>
 </Base>

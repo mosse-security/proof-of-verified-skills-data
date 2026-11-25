@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
+import { siteUrl } from './site-config.mjs';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://www.vetted-cyber-talent.com/',
+  site: siteUrl,
   base: '/',
 });
