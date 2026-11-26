@@ -87,6 +87,18 @@ the provider reported exhausted credits. It added 19 links; inspect
 credits, rerun the 1,000-person command above to continue; the recalculated
 cohort may differ from the original selection.
 
+To find further leads without spending search credits, compare saved results
+with other named results in the same audit:
+
+```powershell
+python scripts/review_public_contact_candidates.py tmp/public-contacts-black-hat-1000.json --output tmp/public-contact-corroboration-queue.json
+```
+
+Shared terms are clues, not verified identities: the queue can contain
+namesakes, reposts, generic terms, and incorrectly attributed biographies.
+Manually corroborate the person, account, and organization against reliable
+sources before writing any of these candidates into contact records.
+
 ### Older LinkedIn-only workflow
 
 LinkedIn links are optional profile contact information, not evidence. The
