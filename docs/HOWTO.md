@@ -62,6 +62,11 @@ To merge assessor contact links into that store:
 python scripts/import_assessor_contacts.py
 ```
 
+Automatically discovered LinkedIn links include a contact-level
+`"source": "povs-linkedin-discovery"` marker. See
+[operations](operations.md#public-contact-discovery) for the conservative discovery
+and write workflow.
+
 To apply the repository's display-name casing convention to generated records:
 
 ```powershell
