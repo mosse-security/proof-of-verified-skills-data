@@ -5,6 +5,7 @@ import { MIN_SOCIAL_CARD_ENDORSEMENTS } from '../../lib/social-card.mjs';
 import { challengesForTags } from '../../lib/challenges';
 import {
   endorsementDomains,
+  displayEndorsementLocation,
   formatDomain,
   formatLabel,
   getProfile,
@@ -185,7 +186,7 @@ const correctionMessage = `To: contact@vetted-cyber-talent.com\nSubject: Profile
           <span class="row-title-line"><strong>{titleFor(item)}</strong>{criticalityFor(item) && <small class={`criticality criticality-${criticalityFor(item)?.split(' ')[0].toLowerCase()}`}>{criticalityFor(item)}</small>}</span>
           {cveTitleFor(item) && <small class="cve-title">{cveTitleFor(item)}</small>}
           <small class="endorser">
-            Endorsed by <strong>{item.assessor || 'Assessor not specified'}</strong>{item.year && <> in {item.year}</>}{item.reviewType && <> · {reviewTypeLabel(item.reviewType)}</>}
+            <span class="endorser-prefix">Endorsed by</span><strong class="endorser-name" title={item.assessor || 'Assessor not specified'}>{item.assessor || 'Assessor not specified'}</strong>{item.year && <span class="endorser-year">in {item.year}</span>}{displayEndorsementLocation(item.location) && <span class="endorsement-location" aria-label={`Event location: ${displayEndorsementLocation(item.location)}`}>· <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>{displayEndorsementLocation(item.location)}</span>}{item.reviewType && <span class="endorser-review" title={reviewTypeLabel(item.reviewType)}>· {reviewTypeLabel(item.reviewType)}</span>}
             {(item['povs-taxonomy'].trusted === true || item['povs-taxonomy'].production === true || youtubeEmbedFor(item)) && <span class="property-markers" role="group" aria-label="Record highlights">
               {item['povs-taxonomy'].trusted === true && <span class="property-marker property-marker-trusted">Trusted</span>}
               {item['povs-taxonomy'].production === true && <span class="property-marker property-marker-production">Production</span>}

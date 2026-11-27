@@ -11,6 +11,7 @@ from urllib.parse import urlsplit
 from .domains import detect_domains, detect_subspecialties, normalize_domains, normalize_subspecialties, validate_record_domains
 from .taxonomy import BANDS, PROPERTIES, apply_taxonomy, has_work_link
 from .identity_registry import clean_person_name
+from .locations import endorsement_location
 
 
 REQUIRED_ENDORSEMENT_FIELDS = (
@@ -29,7 +30,7 @@ REQUIRED_ENDORSEMENT_FIELDS = (
     "year",
     "domains",
 )
-OPTIONAL_ENDORSEMENT_FIELDS = ("subtitle", "subspecialties")
+OPTIONAL_ENDORSEMENT_FIELDS = ("subtitle", "subspecialties", "location")
 ENDORSEMENT_FIELDS = (*REQUIRED_ENDORSEMENT_FIELDS, *OPTIONAL_ENDORSEMENT_FIELDS)
 
 
@@ -162,6 +163,7 @@ def build_endorsement_record(
     evidence_links: Iterable[Mapping[str, str]] = (),
     subspecialties: Mapping[str, Iterable[str]] | None = None,
     subtitle: str | None = None,
+    location: str | None = None,
 ) -> dict[str, Any]:
     """Build and validate one record matching data/templates/endorsement.tpl."""
 
@@ -180,6 +182,8 @@ def build_endorsement_record(
     }
     if subtitle is not None:
         record["subtitle"] = subtitle
+    location = location if location is not None else endorsement_location(assessor.id, url, subtitle, year, assessor.countries)
+    record["location"] = location or "Unknown"
     domain_values = tuple(domains)
     detected_domains = normalize_domains(domain_values)
     if not domain_values or detected_domains == ("unknown",):
@@ -256,6 +260,8 @@ def validate_endorsement_record(
             raise EndorsementSchemaError(
                 f"{source}.subtitle must be a non-empty string when present"
             )
+    if "location" in record and (not isinstance(record["location"], str) or not record["location"].strip() or record["location"] != record["location"].strip()):
+        raise EndorsementSchemaError(f"{source}.location must be a non-empty country name or Worldwide")
     year = record["year"]
     if isinstance(year, bool) or not isinstance(year, int) or not 1000 <= year <= 9999:
         raise EndorsementSchemaError(

@@ -44,6 +44,7 @@ export interface Endorsement {
   'assessor-rigor-level'?: string;
   reviewType?: string;
   subtitle?: string;
+  location?: string;
   year?: number;
   domains?: string[];
   subspecialties?: Record<string, string[]>;
@@ -53,6 +54,7 @@ export interface Endorsement {
 }
 export interface Person {
   name: string;
+  countries?: string[];
   biography?: string;
   tags?: string[];
   contact?: Array<{ label?: string; url?: string; email?: string; source?: string }>;
@@ -72,6 +74,8 @@ export interface Summary {
   assessors: string[];
   assessorIds: string[];
   assessorNames: Record<string, string>;
+  countries: string[];
+  locationEvidence: Record<string, Record<string, { records: number; domains: Record<string, number> }>>;
   achievements: number;
 }
 
@@ -100,6 +104,18 @@ export function listProfiles(): Summary[] {
       const assessors = [...new Set(p.endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort();
       const assessorNames = Object.fromEntries(p.endorsements.filter((item): item is Endorsement & { 'assessor-id': string; assessor: string } => Boolean(item['assessor-id'] && item.assessor)).map((item) => [item['assessor-id'], item.assessor]));
       const assessorIds = [...new Set(p.endorsements.map((item) => item['assessor-id']).filter((assessorId): assessorId is string => Boolean(assessorId)))].sort();
+      const locationEvidence: Summary['locationEvidence'] = {};
+      for (const item of p.endorsements ?? []) {
+        const id = item['assessor-id'];
+        const location = item.location?.trim();
+        if (!id || !location || location.toLowerCase() === 'unknown') continue;
+        const byAssessor = locationEvidence[location] ??= {};
+        const evidence = byAssessor[id] ??= { records: 0, domains: {} };
+        evidence.records++;
+        for (const domain of new Set(item.domains ?? [])) {
+          if (!['unknown', 'unclassified'].includes(domain.toLowerCase())) evidence.domains[domain] = (evidence.domains[domain] ?? 0) + 1;
+        }
+      }
       return {
         slug: file.slice(0, -5),
         name: p.name,
@@ -112,6 +128,8 @@ export function listProfiles(): Summary[] {
         assessors,
         assessorIds,
         assessorNames,
+        countries: Array.isArray(p.countries) ? p.countries.filter((country): country is string => typeof country === 'string' && !!country.trim() && country !== 'Worldwide') : [],
+        locationEvidence,
         achievements: (p.tags ?? []).filter((tag) => ACHIEVEMENT_TAGS.has(tag)).length,
       };
     })
@@ -154,6 +172,11 @@ export function formatDomain(domain: string): string {
   if (normalized === 'grc') return 'GRC';
   if (normalized === 'devsecops' || normalized === 'dev-sec-ops') return 'DevSecOps';
   return formatted;
+}
+
+export function displayEndorsementLocation(location?: string): string | undefined {
+  const value = location?.trim();
+  return value && !['unknown', 'worldwide'].includes(value.toLowerCase()) ? value : undefined;
 }
 
 export function formatLabel(value?: string): string {

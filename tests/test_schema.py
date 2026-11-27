@@ -61,6 +61,7 @@ class EndorsementSchemaTests(unittest.TestCase):
             endorsement_type="presentation",
             assessor=assessor,
             subtitle="Example Conference 2026",
+            location="Canada",
             url="https://example.test/talk",
             year=2026,
             domains=("vulnerability-research",),

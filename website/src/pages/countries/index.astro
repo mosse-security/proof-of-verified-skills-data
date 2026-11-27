@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import { listCountries } from '../../lib/countries';
+import { sitePath } from '../../lib/site';
+const all = listCountries();
+const countries = all.filter((country) => country.name !== 'Worldwide' && country.people.length > 0);
+const worldwide = all.find((country) => country.name === 'Worldwide' && country.people.length > 0);
+---
+<Base home title="Search Cybersecurity Work by Country | Vetted Cyber Talent" description="Explore publicly documented cybersecurity work by the countries associated with its assessors.">
+  <div class="directory-intro domain-intro country-intro"><span class="section-kicker">Explore by location</span><h1>Search by country</h1><p class="muted">Explore public work connected to assessors in each country.</p></div>
+  <div class="country-explainer"><span class="country-explainer-icon" aria-hidden="true">◎</span><p>Locations describe the event or program associated with each record. They do not necessarily indicate where a person lives. Worldwide programs are listed separately.</p></div>
+  <section class="country-list" aria-label="Countries">
+    <div class="country-list-head"><div><h2>Countries</h2><p>{countries.length.toLocaleString()} locations to explore</p></div><span>Assessors</span><span>People with public records</span><span aria-hidden="true"></span></div>
+    {countries.map((country) => <a class="country-list-row" href={sitePath(`/countries/${country.slug}/`)}><span class="country-list-name"><span class="country-list-dot" aria-hidden="true"></span><strong>{country.name}</strong></span><span class="country-list-metrics"><span class="country-list-count"><strong>{country.assessors.toLocaleString()}</strong> <span>{country.assessors === 1 ? 'assessor' : 'assessors'}</span></span><span class="country-list-count"><strong>{country.people.length.toLocaleString()}</strong> <span>people</span></span></span><span class="country-list-arrow" aria-hidden="true">→</span></a>)}
+  </section>
+  {worldwide && <a class="country-worldwide" href={sitePath('/countries/worldwide/')}><span class="country-worldwide-icon" aria-hidden="true">◎</span><span><strong>Worldwide programs</strong><small>Explore records from assessors that operate globally.</small></span><span class="country-worldwide-count">{worldwide.people.length.toLocaleString()} people <b aria-hidden="true">→</b></span></a>}
+</Base>

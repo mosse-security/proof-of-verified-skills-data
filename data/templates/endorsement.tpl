@@ -9,6 +9,7 @@
   "assessor-rigor-level": "rigorLevel of the assessor in the data folder",
   "reviewType": "reviewType of the assessor in the data folder",
   "subtitle": "Optional field to specify additional information like conference year",
+  "location": "Country of the particular event, Worldwide for a global program, or Unknown",
   "url": "URL to verify the record",
   
   "evidence-links": [

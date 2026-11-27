@@ -16,6 +16,28 @@ For examples of source material, see the [ACM CCS event history](https://www.sig
 the [HITB conference archive](https://conference.hitb.org/), and the
 [National Cyber League eligibility rules](https://nationalcyberleague.org/competition/rules).
 
+An endorsement has a `location` string identifying its specific event's country,
+`"Worldwide"` for a global program, or `"Unknown"` when not established. Legacy
+records without the field are treated as unknown. It is independent of the assessor's broader `countries`
+array: a multi-country conference does not put every record in every country.
+The website's country search uses endorsement `location`; the domain filter
+counts matching records from that location and domain. `Worldwide` is a
+separate category, not a match for every country. These matches do not identify
+where a person lives. The website also supports a future explicitly recorded individual
+`countries` array; adding that field to canonical individual records requires a
+separate change to their data contract and collection pipeline.
+
+`scrapers/locations.py` contains the conservative event rules used by the
+endorsement builder. Run `python -m scripts.backfill_endorsement_locations` for
+a dry run, then add `--apply` to update canonical individuals and existing
+assessor-local snapshots. The backfill preserves known locations, can upgrade
+`"Unknown"` when new evidence is added, validates
+changed endorsements, refreshes changed canonical timestamps, and is safe to
+rerun after interruption. Unmatched events remain unset. Verify event editions
+before expanding the rules; the event's assessor may operate in many countries.
+For example, Black Hat Europe [2015 was in the Netherlands](https://blackhat.com/archive/europe/2015/resources.html),
+while [2024 was in the United Kingdom](https://blackhat.com/archive/europe/2024/).
+
 ## Canonical individual
 
 Each `data/individuals/*.json` contains exactly:

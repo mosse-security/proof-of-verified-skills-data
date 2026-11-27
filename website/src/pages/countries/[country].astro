@@ -1,0 +1,148 @@
+---
+import Base from '../../layouts/Base.astro';
+import { listCountries } from '../../lib/countries';
+import { formatDomain } from '../../lib/records';
+import { sitePath } from '../../lib/site';
+
+export function getStaticPaths() {
+  return listCountries().map((country) => ({ params: { country: country.slug }, props: { country } }));
+}
+const country = Astro.props.country;
+const isWorldwide = country.name === 'Worldwide';
+const domains = Object.keys(country.domains).sort((a, b) => formatDomain(a).localeCompare(formatDomain(b)));
+---
+<Base home title={`${country.name} | Cybersecurity Work Records | Vetted Cyber Talent`} description={`Explore public cybersecurity work connected to ${isWorldwide ? 'worldwide assessors' : `assessors in ${country.name}`}.`}>
+  <div class="country-detail-intro"><a class="country-back" href={sitePath('/countries/')}>← All countries</a><span class="section-kicker">{isWorldwide ? 'Global programs' : 'Record location'}</span><h1>{country.name}</h1><p>{isWorldwide ? 'Public work connected to worldwide programs.' : `Public work connected to events and programs in ${country.name}.`}</p></div>
+  <section class="country-stats" aria-label="Overview">
+    <div><span>People</span><strong>{country.people.length.toLocaleString()}</strong><small>with matching records</small></div>
+    <div><span>Records</span><strong>{country.records.toLocaleString()}</strong><small>connected to this location</small></div>
+    <div><span>Assessors</span><strong>{country.assessors.toLocaleString()}</strong><small>with matching records</small></div>
+    <div><span>Cyber domains</span><strong>{domains.length.toLocaleString()}</strong><small>identified in matching work</small></div>
+  </section>
+  <div class="country-explainer"><span class="country-explainer-icon" aria-hidden="true">◎</span><p>{isWorldwide ? 'Worldwide programs are shown separately from individual countries.' : 'A record’s event location does not necessarily indicate where a person lives. Worldwide programs are shown separately.'} Records without a verified location are excluded.</p></div>
+  <section class="country-assessors" aria-labelledby="country-assessors-heading">
+    <div class="country-assessors-heading"><div><span class="section-kicker">Who assessed the work</span><h2 id="country-assessors-heading">Assessors</h2><p>{isWorldwide ? 'Global programs with matching records.' : `Organizations with records from events and programs in ${country.name}.`}</p></div><span class="country-assessors-total">{country.assessors.toLocaleString()} {country.assessors === 1 ? 'assessor' : 'assessors'}</span></div>
+    {country.assessorList.length > 0 ? <div class="country-assessor-list">{country.assessorList.map((assessor) => <a class="country-assessor-link" href={sitePath(`/assessors/${encodeURIComponent(assessor.id)}/`)}><span>{assessor.name}</span><small>{assessor.people.toLocaleString()} {assessor.people === 1 ? 'person' : 'people'}</small><b aria-hidden="true">→</b></a>)}</div> : <p class="country-assessors-empty">No assessor records are available for this location yet.</p>}
+  </section>
+  <section class="country-search" data-country-search data-people-url={sitePath(`/countries/${country.slug}/people.json`)} data-profile-base={sitePath('/individuals/')}>
+    <div class="country-search-heading"><div><span class="section-kicker">Explore the evidence</span><h2>Find people</h2><p>Search by name or choose a cyber domain. The table shows each person’s overall profile totals; the matching-record count reflects this location and filter.</p></div></div>
+    <div class="country-search-controls"><label>Search by name<input type="search" data-country-name placeholder="Enter a name" autocomplete="off" /></label><label>Cyber domain<select data-country-domain><option value="">All cyber domains</option>{domains.map((domain) => <option value={domain}>{formatDomain(domain)}</option>)}</select></label></div>
+    <label class="country-sort-mobile">Sort results<select data-country-sort><option value="name:asc">Name (A–Z)</option><option value="name:desc">Name (Z–A)</option><option value="totalRecords:desc">Endorsements (most first)</option><option value="totalRecords:asc">Endorsements (fewest first)</option><option value="endorsers:desc">Endorsers (most first)</option><option value="endorsers:asc">Endorsers (fewest first)</option><option value="achievements:desc">POVS achievements (most first)</option><option value="achievements:asc">POVS achievements (fewest first)</option></select></label>
+    <p class="country-results-status" data-country-status role="status">Loading people…</p>
+    <div class="directory-table country-directory-table" aria-label="People with matching records">
+      <div class="directory-row directory-header"><span><button type="button" class="country-sort-button" data-sort-key="name" aria-pressed="true" aria-label="Sort by name, currently ascending">Name <span data-sort-icon aria-hidden="true">↑</span></button></span><span><button type="button" class="country-sort-button" data-sort-key="totalRecords" aria-pressed="false" aria-label="Sort by endorsements">Endorsements <span data-sort-icon aria-hidden="true">↕</span></button></span><span><button type="button" class="country-sort-button" data-sort-key="endorsers" aria-pressed="false" aria-label="Sort by endorsers">Endorsers <span data-sort-icon aria-hidden="true">↕</span></button></span><span><button type="button" class="country-sort-button" data-sort-key="achievements" aria-pressed="false" aria-label="Sort by POVS achievements">POVS achievements <span data-sort-icon aria-hidden="true">↕</span></button></span><span>Evidence mix</span></div>
+      <div data-country-results></div>
+    </div>
+    <nav class="directory-pagination pagination" data-country-pagination aria-label="Results pages" hidden><button type="button" data-country-prev>← Previous</button><span data-country-page></span><button type="button" data-country-next>Next →</button></nav>
+    <noscript>Enable JavaScript to search this country’s people.</noscript>
+  </section>
+</Base>
+
+<script>
+  import { sortCountryPeople } from '../../lib/country-sort.mjs';
+  type EvidenceBand = 'indirect' | 'observable' | 'independently-reviewed';
+  type PersonResult = { slug: string; name: string; records: number; domains: Record<string, number>; totalRecords: number; endorsers: number; achievements: number; evidenceCounts: Record<EvidenceBand, number> };
+  type SortKey = 'name' | 'totalRecords' | 'endorsers' | 'achievements';
+  type SortDirection = 'asc' | 'desc';
+  const bands: Array<{ key: EvidenceBand; label: string }> = [{ key: 'indirect', label: 'Indirect' }, { key: 'observable', label: 'Observable' }, { key: 'independently-reviewed', label: 'Independently reviewed' }];
+  const root = document.querySelector<HTMLElement>('[data-country-search]');
+  if (root) {
+    const nameInput = root.querySelector<HTMLInputElement>('[data-country-name]')!;
+    const domainInput = root.querySelector<HTMLSelectElement>('[data-country-domain]')!;
+    const results = root.querySelector<HTMLElement>('[data-country-results]')!;
+    const status = root.querySelector<HTMLElement>('[data-country-status]')!;
+    const pagination = root.querySelector<HTMLElement>('[data-country-pagination]')!;
+    const pageLabel = root.querySelector<HTMLElement>('[data-country-page]')!;
+    const previous = root.querySelector<HTMLButtonElement>('[data-country-prev]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-country-next]')!;
+    const sortSelect = root.querySelector<HTMLSelectElement>('[data-country-sort]')!;
+    const sortButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-sort-key]')];
+    let people: PersonResult[] = [];
+    let page = 1;
+    let sortKey: SortKey = 'name';
+    let sortDirection: SortDirection = 'asc';
+    const pageSize = 50;
+    function render() {
+      const query = nameInput.value.trim().toLocaleLowerCase();
+      const domain = domainInput.value;
+      const matched = sortCountryPeople(people.filter((person) => (!query || person.name.toLocaleLowerCase().includes(query)) && (!domain || (person.domains[domain] ?? 0) > 0)), sortKey, sortDirection) as PersonResult[];
+      sortSelect.value = `${sortKey}:${sortDirection}`;
+      for (const button of sortButtons) {
+        const selected = button.dataset.sortKey === sortKey;
+        const label = button.dataset.sortKey === 'totalRecords' ? 'endorsements' : button.dataset.sortKey === 'achievements' ? 'POVS achievements' : button.dataset.sortKey;
+        button.setAttribute('aria-pressed', String(selected));
+        button.setAttribute('aria-label', `Sort by ${label}${selected ? `, currently ${sortDirection === 'asc' ? 'ascending' : 'descending'}` : ''}`);
+        button.querySelector<HTMLElement>('[data-sort-icon]')!.textContent = selected ? (sortDirection === 'asc' ? '↑' : '↓') : '↕';
+      }
+      const pages = Math.max(1, Math.ceil(matched.length / pageSize));
+      page = Math.min(page, pages);
+      status.textContent = `${matched.length.toLocaleString()} ${matched.length === 1 ? 'person' : 'people'} found`;
+      const fragment = document.createDocumentFragment();
+      for (const person of matched.slice((page - 1) * pageSize, page * pageSize)) {
+        const link = document.createElement('a');
+        link.className = 'directory-row';
+        link.href = `${root!.dataset.profileBase}${encodeURIComponent(person.slug)}/`;
+        const name = document.createElement('span');
+        name.className = 'directory-name';
+        const nameText = document.createElement('strong');
+        nameText.textContent = person.name;
+        const count = document.createElement('small');
+        count.className = 'domain-endorsement-chip';
+        const number = domain ? person.domains[domain] : person.records;
+        count.textContent = `${number.toLocaleString()} matching ${number === 1 ? 'record' : 'records'}`;
+        name.append(nameText, count);
+        const records = document.createElement('span');
+        records.className = 'directory-number directory-endorsements';
+        records.textContent = person.totalRecords.toLocaleString();
+        const endorsers = document.createElement('span');
+        endorsers.className = 'directory-number directory-endorsers';
+        endorsers.textContent = person.endorsers.toLocaleString();
+        const achievements = document.createElement('span');
+        achievements.className = 'directory-number directory-achievements';
+        achievements.textContent = person.achievements.toLocaleString();
+        const achievementLabel = document.createElement('small');
+        achievementLabel.textContent = person.achievements === 1 ? 'achievement' : 'achievements';
+        achievements.append(achievementLabel);
+        const mix = document.createElement('span');
+        mix.className = 'directory-mix';
+        const stack = document.createElement('span');
+        stack.className = 'level-stack';
+        stack.setAttribute('role', 'group');
+        stack.setAttribute('aria-label', 'Evidence mix');
+        const labels = document.createElement('span');
+        labels.className = 'level-stack-labels';
+        const total = bands.reduce((sum, band) => sum + person.evidenceCounts[band.key], 0);
+        for (const band of bands) {
+          const segment = document.createElement('i');
+          segment.className = `level-${band.key}`;
+          segment.style.width = `${total ? person.evidenceCounts[band.key] / total * 100 : 0}%`;
+          stack.append(segment);
+          const label = document.createElement('b');
+          label.textContent = `${band.label}: ${person.evidenceCounts[band.key]}`;
+          labels.append(label);
+        }
+        mix.append(stack, labels);
+        link.append(name, records, endorsers, achievements, mix);
+        fragment.append(link);
+      }
+      results.replaceChildren(fragment);
+      pagination.hidden = matched.length <= pageSize;
+      pageLabel.textContent = `Page ${page} of ${pages}`;
+      previous.disabled = page === 1;
+      next.disabled = page === pages;
+    }
+    nameInput.addEventListener('input', () => { page = 1; render(); });
+    domainInput.addEventListener('change', () => { page = 1; render(); });
+    sortSelect.addEventListener('change', () => { const [key, direction] = sortSelect.value.split(':') as [SortKey, SortDirection]; sortKey = key; sortDirection = direction; page = 1; render(); });
+    for (const button of sortButtons) button.addEventListener('click', () => {
+      const key = button.dataset.sortKey as SortKey;
+      sortDirection = key === sortKey ? (sortDirection === 'asc' ? 'desc' : 'asc') : (key === 'name' ? 'asc' : 'desc');
+      sortKey = key;
+      page = 1;
+      render();
+    });
+    previous.addEventListener('click', () => { if (page > 1) { page--; render(); } });
+    next.addEventListener('click', () => { page++; render(); });
+    fetch(root.dataset.peopleUrl!).then((response) => { if (!response.ok) throw new Error('Unable to load'); return response.json(); }).then((data: PersonResult[]) => { people = data; render(); }).catch(() => { status.textContent = 'Unable to load people. Please refresh the page and try again.'; });
+  }
+</script>
