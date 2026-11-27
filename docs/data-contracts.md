@@ -1,5 +1,21 @@
 # Data contracts
 
+## Assessor geography
+
+Each `data/assessors/<id>/<id>.json` has a `countries` array. For in-person
+conferences, list the countries in which the event has been held; for global
+online or international programs, use `["Worldwide"]`. Use full English country
+names, with `"United States"` and `"United Kingdom"` rather than abbreviations.
+Place the primary or most representative location first; the website displays
+it before the other entries. Country lists record known locations and may need
+updating as events move or additional historical locations are verified.
+Use `[]` when coverage is not yet established; it does not mean worldwide. Do
+not combine `"Worldwide"` with country names. The field describes the assessor,
+not the location or nationality of an individual or a particular endorsement.
+For examples of source material, see the [ACM CCS event history](https://www.sigsac.org/ccs/ccs-history.html),
+the [HITB conference archive](https://conference.hitb.org/), and the
+[National Cyber League eligibility rules](https://nationalcyberleague.org/competition/rules).
+
 ## Canonical individual
 
 Each `data/individuals/*.json` contains exactly:

@@ -10,23 +10,25 @@ people.forEach((person) => Object.entries(person.assessorNames).forEach(([id, na
 const assessors = [...assessorMap.entries()].sort((a, b) => a[1].localeCompare(b[1]));
 const individualCount = (assessorId: string) => people.filter((person) => person.assessorIds.includes(assessorId)).length;
 const assessorDataDir = [resolve(process.cwd(), 'data/assessors'), resolve(process.cwd(), '../data/assessors'), resolve(process.cwd(), '../../data/assessors')].find(existsSync);
-const reviewProcess = (assessorId: string) => {
-  if (!assessorDataDir || !/^[a-z0-9-]+$/i.test(assessorId)) return { label: 'Not specified', description: '' };
+const assessorDetails = (assessorId: string) => {
+  const fallback = { label: 'Not specified', description: '', countries: [] as string[] };
+  if (!assessorDataDir || !/^[a-z0-9-]+$/i.test(assessorId)) return fallback;
   const path = join(assessorDataDir, assessorId, `${assessorId}.json`);
-  if (!existsSync(path)) return { label: 'Not specified', description: '' };
-  const data = JSON.parse(readFileSync(path, 'utf8')) as { peerReview?: { reviewType?: string; processDescription?: string } };
+  if (!existsSync(path)) return fallback;
+  const data = JSON.parse(readFileSync(path, 'utf8')) as { countries?: string[]; peerReview?: { reviewType?: string; processDescription?: string } };
   const type = data.peerReview?.reviewType;
-  return { label: type === 'double_blind' ? 'Double-blind peer review' : type ? formatLabel(type) : 'Not specified', description: data.peerReview?.processDescription?.trim() || '' };
+  return { label: type === 'double_blind' ? 'Double-blind peer review' : type ? formatLabel(type) : 'Not specified', description: data.peerReview?.processDescription?.trim() || '', countries: Array.isArray(data.countries) ? data.countries.filter((country): country is string => typeof country === 'string' && !!country.trim()) : [] };
 };
 ---
 <Base home title="Cybersecurity Assessors and Review Processes | Vetted Cyber Talent" description="Browse organizations that credit or assess cybersecurity work, and learn about their review processes.">
   <div class="directory-intro domain-intro"><h1>Search by assessor</h1><p class="muted">Choose an assessor to see the people and endorsements they recognize.</p></div>
   <section class="directory-table assessor-table" aria-label="Assessors">
-    <div class="assessor-row assessor-header" aria-hidden="true"><span>Assessor</span><span>Review process</span><span>Individuals endorsed</span></div>
+    <div class="assessor-row assessor-header" aria-hidden="true"><span>Assessor</span><span>Location</span><span>Review process</span><span>Individuals endorsed</span></div>
     {assessors.map(([assessorId, assessor]) => {
-      const process = reviewProcess(assessorId);
+      const process = assessorDetails(assessorId);
+      const [primaryCountry, ...otherCountries] = process.countries;
       const href = sitePath(`/assessors/${assessorId.toLocaleLowerCase()}/`);
-      return <div class="assessor-row"><a class="assessor-name" href={href}><strong>{assessor}</strong></a><span class="assessor-process"><span class="assessor-process-label">Review process: </span>{process.label}{process.description && <span class="assessor-help" tabindex="0" aria-label={`About ${assessor}'s review process: ${process.description}`}><span class="assessor-help-icon" aria-hidden="true">?</span><span class="assessor-help-tooltip" role="tooltip">{process.description}</span></span>}</span><a class="assessor-count" href={href} aria-label={`${individualCount(assessorId).toLocaleString()} individuals endorsed by ${assessor}`}>{individualCount(assessorId).toLocaleString()} individuals <b aria-hidden="true">→</b></a></div>;
+      return <div class="assessor-row"><a class="assessor-name" href={href}><strong>{assessor}</strong></a><span class="assessor-location"><span class="assessor-location-label">Location: </span>{primaryCountry || 'Not specified'}{otherCountries.length > 0 && <span class="assessor-location-more"><button type="button" aria-label={`Other locations for ${assessor}: ${otherCountries.join(', ')}`}>+{otherCountries.length}</button><span class="assessor-location-tooltip" role="tooltip">{otherCountries.join(', ')}</span></span>}</span><span class="assessor-process"><span class="assessor-process-label">Review process: </span>{process.label}{process.description && <span class="assessor-help" tabindex="0" aria-label={`About ${assessor}'s review process: ${process.description}`}><span class="assessor-help-icon" aria-hidden="true">?</span><span class="assessor-help-tooltip" role="tooltip">{process.description}</span></span>}</span><a class="assessor-count" href={href} aria-label={`${individualCount(assessorId).toLocaleString()} individuals endorsed by ${assessor}`}><span><strong>{individualCount(assessorId).toLocaleString()}</strong> individuals</span><b aria-hidden="true">→</b></a></div>;
     })}
   </section>
 </Base>

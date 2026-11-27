@@ -85,13 +85,14 @@ def validate_profile_record(record: Mapping[str, Any], *, source: str = "profile
 
 @dataclass(frozen=True, slots=True)
 class AssessorMetadata:
-    """Assessor fields copied into every endorsement template record."""
+    """Assessor metadata; geographic coverage remains on the assessor record."""
 
     id: str
     name: str
     category: str
     rigor_level: str
     review_type: str
+    countries: tuple[str, ...] = ()
 
     @classmethod
     def from_file(cls, path: Path) -> AssessorMetadata:
@@ -130,6 +131,17 @@ class AssessorMetadata:
                 f"{path} is missing non-empty assessor field(s): "
                 + ", ".join(invalid)
             )
+        countries = document.get("countries", [])
+        if (
+            not isinstance(countries, list)
+            or any(not isinstance(country, str) or not country.strip() or country != country.strip() for country in countries)
+            or len(set(countries)) != len(countries)
+            or ("Worldwide" in countries and len(countries) != 1)
+        ):
+            raise EndorsementSchemaError(
+                f'{path}.countries must be an array of distinct non-empty country names, or ["Worldwide"]'
+            )
+        values["countries"] = tuple(countries)
         metadata = cls(**values)
         if path.stem != metadata.id:
             raise EndorsementSchemaError(

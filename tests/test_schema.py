@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -16,6 +17,28 @@ from scrapers import (
 
 
 class EndorsementSchemaTests(unittest.TestCase):
+    def test_assessor_countries_validate_and_preserve_order(self) -> None:
+        document = {"id": "example", "name": "Example", "category": "conference_community", "peerReview": {"rigorLevel": "medium", "reviewType": "community_review"}}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "example.json"
+            for countries in ([], ["Worldwide"], ["United States", "Canada"]):
+                document["countries"] = countries
+                path.write_text(json.dumps(document), encoding="utf-8")
+                self.assertEqual(AssessorMetadata.from_file(path).countries, tuple(countries))
+            for countries in ("Worldwide", ["Worldwide", "Canada"], ["Canada", "Canada"], [""], [42]):
+                document["countries"] = countries
+                path.write_text(json.dumps(document), encoding="utf-8")
+                with self.assertRaises(EndorsementSchemaError):
+                    AssessorMetadata.from_file(path)
+
+    def test_existing_assessor_countries_are_valid(self) -> None:
+        files = [path / f"{path.name}.json" for path in Path("data/assessors").iterdir() if path.is_dir() and (path / f"{path.name}.json").is_file()]
+        self.assertTrue(files)
+        for path in files:
+            with self.subTest(path=path):
+                self.assertIn("countries", json.loads(path.read_text(encoding="utf-8")))
+                AssessorMetadata.from_file(path)
+
     def test_library_contract_matches_endorsement_template(self) -> None:
         template = json.loads(
             re.sub(r",\s*\.\.\.", "", Path("data/templates/endorsement.tpl").read_text(encoding="utf-8"))
