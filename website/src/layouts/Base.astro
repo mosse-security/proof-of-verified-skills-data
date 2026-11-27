@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { sitePath } from '../lib/site';
-const { title, description = 'Explore public records of cybersecurity work, the organizations that credited them, and their review processes.', home = false, socialImage = '/social/default.jpg', socialImageAlt = 'Vetted Cyber Talent' } = Astro.props;
+const { title, description = 'Explore public records of cybersecurity work, the organizations that credited them, and their review processes.', home = false, socialImage = '/social/default.jpg', socialImageAlt = 'Vetted Cyber Talent: Proof of Verified Cybersecurity Skills' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const imageUrl = new URL(sitePath(socialImage), Astro.site).toString();
 const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');

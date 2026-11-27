@@ -1,0 +1,1 @@
+export const MIN_SOCIAL_CARD_ENDORSEMENTS = 3;

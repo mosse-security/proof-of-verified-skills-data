@@ -1,6 +1,7 @@
 ---
 import EvidenceMix from '../../components/EvidenceMix.astro';
 import Base from '../../layouts/Base.astro';
+import { MIN_SOCIAL_CARD_ENDORSEMENTS } from '../../lib/social-card.mjs';
 import { challengesForTags } from '../../lib/challenges';
 import {
   endorsementDomains,
@@ -127,7 +128,7 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
 const correctionMessage = `To: contact@vetted-cyber-talent.com\nSubject: Profile correction: ${person.name}\n\nI would like to report a correction for ${person.name}'s public profile:\nhttps://vetted-cyber-talent.com/individuals/${slug}/\n\nDetails:\n`;
 ---
 
-<Base title={`${person.name} — Cybersecurity Work & Endorsements | POVS`} description={profileDescription} socialImage={`/social/${encodeURIComponent(slug)}.jpg`} socialImageAlt={`Vetted Cyber Talent profile for ${person.name}`}>
+<Base title={`${person.name} — Cybersecurity Work & Endorsements | POVS`} description={profileDescription} socialImage={endorsements.length >= MIN_SOCIAL_CARD_ENDORSEMENTS ? `/social/${encodeURIComponent(slug)}.jpg` : '/social/default.jpg'} socialImageAlt={endorsements.length >= MIN_SOCIAL_CARD_ENDORSEMENTS ? `Vetted Cyber Talent profile for ${person.name}` : 'Vetted Cyber Talent: Proof of Verified Cybersecurity Skills'}>
   <section class="registry-record profile-record">
     <div class="record-header">
       {profileImageUrl && <figure class="profile-photo" data-profile-photo hidden>

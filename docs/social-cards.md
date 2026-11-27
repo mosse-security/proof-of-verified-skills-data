@@ -1,6 +1,6 @@
 # Social preview cards
 
-The GitHub Pages workflow generates a 1200 × 630 JPEG for each individual in `dist/social/`, plus a default card. Cards use the same record and assessor counts as the profile. A normal local website build does not generate cards.
+The GitHub Pages workflow generates a 1200 × 630 JPEG for each individual with at least three endorsements in `dist/social/`, plus a shared default card for all other profiles. Cards use the same record and assessor counts as the profile. A normal local website build does not generate personalized cards.
 
 The deployment workflow checks the size of the complete output against the 1 GB GitHub Pages published-site limit. Image size varies with the name and summary, so check the build's reported size as the directory grows. A successful size check does not guarantee deployment time or artifact limits will be met.
 
