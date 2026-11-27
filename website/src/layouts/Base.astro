@@ -1,8 +1,9 @@
 ---
 import '../styles/global.css';
 import { sitePath } from '../lib/site';
-const { title, description = 'Explore public records of cybersecurity work, the organizations that credited them, and their review processes.', home = false } = Astro.props;
+const { title, description = 'Explore public records of cybersecurity work, the organizations that credited them, and their review processes.', home = false, socialImage = '/social/default.jpg', socialImageAlt = 'Vetted Cyber Talent' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const imageUrl = new URL(sitePath(socialImage), Astro.site).toString();
 const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
 ---
 <!doctype html>
@@ -18,6 +19,15 @@ const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.toString()} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <title>{title}</title>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];

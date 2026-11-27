@@ -127,7 +127,7 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
 const correctionMessage = `To: contact@vetted-cyber-talent.com\nSubject: Profile correction: ${person.name}\n\nI would like to report a correction for ${person.name}'s public profile:\nhttps://vetted-cyber-talent.com/individuals/${slug}/\n\nDetails:\n`;
 ---
 
-<Base title={`${person.name} — Cybersecurity Work & Endorsements | POVS`} description={profileDescription}>
+<Base title={`${person.name} — Cybersecurity Work & Endorsements | POVS`} description={profileDescription} socialImage={`/social/${encodeURIComponent(slug)}.jpg`} socialImageAlt={`Vetted Cyber Talent profile for ${person.name}`}>
   <section class="registry-record profile-record">
     <div class="record-header">
       {profileImageUrl && <figure class="profile-photo" data-profile-photo hidden>
