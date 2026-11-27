@@ -13,7 +13,7 @@ const allPeople = listProfiles();
 const domain = Astro.props.domain as string;
 const people = allPeople.filter((person) => (person.domainCounts[domain] ?? 0) > 0).sort((a, b) => (b.domainCounts[domain] ?? 0) - (a.domainCounts[domain] ?? 0) || a.name.localeCompare(b.name));
 ---
-<Base home title={`${formatDomain(domain)} | Proof of Verified Skills`}>
+<Base home title={`${formatDomain(domain)} Professionals | Vetted Cyber Talent`} description={`Explore ${people.length.toLocaleString()} profiles with public work records classified under ${formatDomain(domain)}. View their endorsements and supporting evidence.`}>
   <div class="directory-intro domain-intro"><span class="section-kicker">Cyber domain</span><h1>{formatDomain(domain)}</h1><p class="muted">{people.length.toLocaleString()} people with endorsements in this domain.</p></div>
   <section class="directory-table domain-directory-table" aria-label={`${formatDomain(domain)} individuals`}>
     <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsers</span><span>POVS Achievements</span><span>Evidence mix</span></div>

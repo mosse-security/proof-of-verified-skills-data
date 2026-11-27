@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { sitePath } from '../lib/site';
-const { title, description = 'Public directory of verified cybersecurity skills and conference endorsements.', home = false } = Astro.props;
+const { title, description = 'Explore public records of cybersecurity work, the organizations that credited them, and their review processes.', home = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
 ---
@@ -12,6 +12,12 @@ const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.toString()} />
+    <link rel="icon" type="image/x-icon" href={`${sitePath('/favicon.ico')}?v=1`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vetted Cyber Talent" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.toString()} />
     <title>{title}</title>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -22,7 +28,7 @@ const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
   </head>
   <body>
     <div class="page">
-      <header class:list={['app-header', home && 'home-header']}>
+      <header class:list={['app-header', home && 'home-header']} data-nosnippet>
         <a href={sitePath('/')} class="brand" aria-label="Proof of Verified Skills">
           <img src={sitePath('/vct-logo.png')} alt="Proof of Verified Skills" class="brand-logo" />
           {!home && <span class="registry-label">Public registry of vetted cyber professionals</span>}
@@ -30,7 +36,7 @@ const buildTimestamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
         {!home && <a class="header-search-link" href={sitePath('/search/')}>Search</a>}
       </header>
       <main data-pagefind-body><slot /></main>
-      <footer class="site-footer">
+      <footer class="site-footer" data-nosnippet>
         <span>(c) <a href="https://www.mosse-institute.com/" target="_blank" rel="noreferrer">Mosse Cyber Security Institute</a></span>
         <a href="https://abr.business.gov.au/ABN/View?abn=89145033441" target="_blank" rel="noreferrer">ABN 89 145 033 441</a>
         <span>Alpha · Build {buildTimestamp} UTC</span>

@@ -16,7 +16,7 @@ const assessorId = Astro.props.assessorId as string;
 const assessor = Astro.props.assessor as string;
 const people = allPeople.filter((person) => person.assessorIds.includes(assessorId)).sort((a, b) => b.endorsements - a.endorsements || a.name.localeCompare(b.name));
 ---
-<Base home title={`${assessor} | Proof of Verified Skills`}>
+<Base home title={`${assessor} Endorsements | Vetted Cyber Talent`} description={`Explore ${people.length.toLocaleString()} people with public records credited by ${assessor}, including their work and available evidence.`}>
   <div class="directory-intro domain-intro"><span class="section-kicker">Assessor</span><h1>{assessor}</h1><p class="muted">{people.length.toLocaleString()} people recognized by this assessor.</p></div>
   <section class="directory-table" aria-label={`${assessor} individuals`}>
     <div class="directory-row directory-header" aria-hidden="true"><span>Name</span><span>Endorsements</span><span>Endorsers</span><span>POVS Achievements</span><span>Evidence mix</span></div>

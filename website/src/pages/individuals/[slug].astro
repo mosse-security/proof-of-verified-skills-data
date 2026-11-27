@@ -27,6 +27,7 @@ const endorsements = (person.endorsements ?? []).slice().sort((a, b) => {
 });
 const endorsers = [...new Set(endorsements.map((item) => item.assessor).filter((assessor): assessor is string => Boolean(assessor)))].sort((a, b) => a.localeCompare(b));
 const assessorCount = person.stats?.assessors ?? new Set(endorsements.map((item) => item['assessor-id'] || item.assessor)).size;
+const profileDescription = `Explore ${person.name}'s ${endorsements.length} public ${endorsements.length === 1 ? 'record' : 'records'} of cybersecurity work, credited or assessed by ${assessorCount} independent ${assessorCount === 1 ? 'organization' : 'organizations'}.${endorsers.length ? ` Includes records from ${endorsers.slice(0, 2).join(' and ')}.` : ''}`;
 const counts = countEvidence(endorsements);
 const propertyCounts = {
   trusted: endorsements.filter((item) => item['povs-taxonomy'].trusted === true).length,
@@ -126,7 +127,7 @@ const profileImageUrl = safeExternalUrl(person.image?.url);
 const correctionMessage = `To: contact@vetted-cyber-talent.com\nSubject: Profile correction: ${person.name}\n\nI would like to report a correction for ${person.name}'s public profile:\nhttps://vetted-cyber-talent.com/individuals/${slug}/\n\nDetails:\n`;
 ---
 
-<Base title={`${person.name} | Proof of Verified Skills`} description={person.biography || `Public endorsement record for ${person.name}.`}>
+<Base title={`${person.name} — Cybersecurity Work & Endorsements | POVS`} description={profileDescription}>
   <section class="registry-record profile-record">
     <div class="record-header">
       {profileImageUrl && <figure class="profile-photo" data-profile-photo hidden>

@@ -13,7 +13,7 @@ const letters = Array.from({ length: 26 }, (_, index) => String.fromCharCode(65 
 const letter = (Astro.params.page ?? 'A').toLocaleUpperCase();
 const people = listProfiles().filter((person) => person.name.trim().charAt(0).toLocaleUpperCase() === letter);
 ---
-<Base title={`${letter} individuals | Proof of Verified Skills`}>
+<Base title={`Cybersecurity Professionals: ${letter} | Vetted Cyber Talent`} description={`Browse cybersecurity professionals whose names start with ${letter}. Explore public records, endorsing organizations, and review processes.`}>
   <div class="directory-intro"><h1>Individual directory</h1></div>
   <nav class="alphabet-nav" aria-label="Search by first name">{letters.map((item) => <a class:active={item === letter} aria-current={item === letter ? 'page' : undefined} href={sitePath(`/directory/${item.toLocaleLowerCase()}/`)}>{item}</a>)}</nav>
   <section class="directory-table" aria-label={`Individuals starting with ${letter}`}>

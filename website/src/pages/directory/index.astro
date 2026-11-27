@@ -6,7 +6,7 @@ import { sitePath } from '../../lib/site';
 const people = listProfiles().filter((person) => person.name.trim().charAt(0).toLocaleUpperCase() === 'A');
 const letters = Array.from({ length: 26 }, (_, index) => String.fromCharCode(65 + index));
 ---
-<Base title="Individual directory | Proof of Verified Skills">
+<Base title="Cybersecurity Professionals Directory | Vetted Cyber Talent" description="Browse cybersecurity professionals by name and explore public records of their work and the organizations that assessed them.">
   <div class="directory-intro"><h1>Individual directory</h1></div>
   <nav class="alphabet-nav" aria-label="Search by first name">{letters.map((letter) => <a class:active={letter === 'A'} aria-current={letter === 'A' ? 'page' : undefined} href={sitePath(`/directory/${letter.toLocaleLowerCase()}/`)}>{letter}</a>)}</nav>
   <section class="directory-table" aria-label="Individuals starting with A">

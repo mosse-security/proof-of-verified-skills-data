@@ -19,7 +19,7 @@ const reviewProcess = (assessorId: string) => {
   return { label: type === 'double_blind' ? 'Double-blind peer review' : type ? formatLabel(type) : 'Not specified', description: data.peerReview?.processDescription?.trim() || '' };
 };
 ---
-<Base home title="Assessors | Proof of Verified Skills">
+<Base home title="Cybersecurity Assessors and Review Processes | Vetted Cyber Talent" description="Browse organizations that credit or assess cybersecurity work, and learn about their review processes.">
   <div class="directory-intro domain-intro"><h1>Search by assessor</h1><p class="muted">Choose an assessor to see the people and endorsements they recognize.</p></div>
   <section class="directory-table assessor-table" aria-label="Assessors">
     <div class="assessor-row assessor-header" aria-hidden="true"><span>Assessor</span><span>Review process</span><span>Individuals endorsed</span></div>
