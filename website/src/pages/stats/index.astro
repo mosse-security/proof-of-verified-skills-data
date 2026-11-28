@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import { listAssessorStats } from '../../lib/assessor-stats';
+import { sitePath } from '../../lib/site';
+
+const assessors = listAssessorStats().filter((assessor) => assessor.records > 0);
+const totalRecords = assessors.reduce((sum, assessor) => sum + assessor.records, 0);
+const noDomain = assessors.reduce((sum, assessor) => sum + assessor.unknownDomain, 0);
+const noLocation = assessors.reduce((sum, assessor) => sum + assessor.unknownLocation, 0);
+const percent = (count: number, total: number) => total ? `${Math.round(count / total * 100)}%` : '—';
+---
+<Base home title="Assessor Data Coverage | Vetted Cyber Talent" description="Explore assessor coverage and gaps in public cybersecurity records.">
+  <div class="directory-intro domain-intro"><span class="section-kicker">Registry statistics</span><h1>Data coverage</h1><p class="muted">Explore what we have collected and where records need more information.</p></div>
+  <section class="stats-overview" aria-label="Coverage overview">
+    <div><span>Assessors</span><strong>{assessors.length.toLocaleString()}</strong><small>with published records</small></div>
+    <div><span>Endorsements</span><strong>{totalRecords.toLocaleString()}</strong><small>one per person credited</small></div>
+    <div><span>Domain not classified</span><strong>{noDomain.toLocaleString()}</strong><small>{percent(noDomain, totalRecords)} of records</small></div>
+    <div><span>Location unknown</span><strong>{noLocation.toLocaleString()}</strong><small>{percent(noLocation, totalRecords)} of records</small></div>
+  </section>
+  <div class="country-explainer"><span class="country-explainer-icon" aria-hidden="true">◎</span><p>These counts describe the records currently in POVS, not everything an assessor has published. One work credited to multiple people is counted once per person. Records without additional evidence links may still link to the source page. Additional evidence can include videos, papers, or other supporting material.</p></div>
+  <section class="stats-panel" data-stats-list>
+    <div class="stats-panel-heading"><div><span class="section-kicker">Explore the data</span><h2>Assessor coverage</h2><p>Choose an assessor to see the details and yearly breakdown.</p></div></div>
+    <div class="stats-controls"><label>Find an assessor<input type="search" data-stats-query placeholder="Search by name" autocomplete="off" /></label><label>Show<select data-stats-filter><option value="all">All assessors</option><option value="no-domain">Domain not classified</option><option value="no-location">Location unknown</option><option value="no-link">No additional evidence links</option><option value="review">Names awaiting review</option><option value="failed">Last capture failed</option></select></label></div>
+    <p class="stats-result-count" data-stats-count role="status">{assessors.length.toLocaleString()} assessors</p>
+    <div class="stats-table" aria-label="Assessor coverage statistics">
+      <div class="stats-table-row stats-table-header" aria-hidden="true"><span>Assessor</span><span>Endorsements</span><span></span></div>
+      {assessors.map((assessor) => <a class="stats-table-row" href={sitePath(`/stats/${encodeURIComponent(assessor.id)}/`)} data-stats-row data-name={assessor.name.toLowerCase()} data-no-records={assessor.records === 0 ? 'yes' : 'no'} data-no-domain={assessor.unknownDomain > 0 ? 'yes' : 'no'} data-no-location={assessor.unknownLocation > 0 ? 'yes' : 'no'} data-no-link={assessor.noWorkLink > 0 ? 'yes' : 'no'} data-review={(assessor.reviewNames ?? 0) > 0 ? 'yes' : 'no'} data-failed={assessor.captureStatus === 'failed' ? 'yes' : 'no'}><span class="stats-assessor-name"><strong>{assessor.name}</strong><small>{assessor.people.toLocaleString()} {assessor.people === 1 ? 'person' : 'people'}</small></span><span class="stats-cell" data-label="Endorsements"><strong>{assessor.records.toLocaleString()}</strong></span><span class="country-list-arrow" aria-hidden="true">→</span></a>)}
+    </div>
+    <p class="stats-empty" data-stats-empty hidden>No assessors match these filters.</p>
+  </section>
+</Base>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-stats-list]');
+  if (root) {
+    const query = root.querySelector<HTMLInputElement>('[data-stats-query]')!;
+    const filter = root.querySelector<HTMLSelectElement>('[data-stats-filter]')!;
+    const rows = [...root.querySelectorAll<HTMLElement>('[data-stats-row]')];
+    const count = root.querySelector<HTMLElement>('[data-stats-count]')!;
+    const empty = root.querySelector<HTMLElement>('[data-stats-empty]')!;
+    const attrs: Record<string, string> = { 'no-domain': 'data-no-domain', 'no-location': 'data-no-location', 'no-link': 'data-no-link', review: 'data-review', failed: 'data-failed' };
+    function update() {
+      let visible = 0;
+      for (const row of rows) {
+        const matches = (row.dataset.name || '').includes(query.value.trim().toLocaleLowerCase()) && (filter.value === 'all' || row.getAttribute(attrs[filter.value]) === 'yes');
+        row.hidden = !matches;
+        if (matches) visible++;
+      }
+      count.textContent = `${visible.toLocaleString()} ${visible === 1 ? 'assessor' : 'assessors'}`;
+      empty.hidden = visible > 0;
+    }
+    query.addEventListener('input', update);
+    filter.addEventListener('change', update);
+  }
+</script>

@@ -30,6 +30,35 @@ Before publishing, inspect parser errors, unknown names, and the generated
 canonical records. Video-audit warnings are coverage diagnostics; they do not
 mean local page capture failed.
 
+The website's `/stats/` section summarizes coverage for each assessor from
+canonical individual records, including unclassified domains, unknown event
+locations, missing separate work links, and yearly counts. Records are counted
+per individual, so a co-authored work can appear more than once. Capture status
+and the review queue counts come from the saved assessor-local status and text
+files; they do not measure the completeness of the underlying sources. Check
+the dashboard calculations from the `website` directory with
+`node tests/assessor-stats.test.mjs`.
+
+Each assessor's cyber domain breakdown counts endorsements once per classified
+domain. An endorsement assigned to multiple domains contributes to each one;
+unclassified endorsements are shown separately. Subspecialties are not counted.
+
+Assessor detail pages list archive URLs from `links.processUrls` and count
+published individual records whose source URL matches each page, ignoring URL
+fragments. Links to individual talks may prevent a match, so these counts can
+be incomplete. Where needed, archived index-to-work links are stored in each
+assessor's `page-source-links.json`; regenerate them with `python -m scripts.generate_page_source_links`
+after updating the archives, source lists, or published records. Ambiguous links
+appearing on multiple configured pages are not attributed to either page.
+These derived files contain only separate record URLs linked from a configured
+index page; direct page matches do not need an entry. They do not modify
+endorsement records and cannot prove that a page without a match was parsed.
+Standard page scrapers also save
+the number of endorsements returned by each parser before validation. Older
+runs and collection scrapers do not provide per-page results, so their status
+is unknown; an unknown status does not imply that a page was never parsed.
+These results describe the last saved run, not the full capture history.
+
 ## Optional enrichment
 
 External video collection is separate from page capture:

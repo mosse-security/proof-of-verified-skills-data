@@ -34,6 +34,7 @@ def build_run_stats(report: RunReport, *, started_at: datetime, finished_at: dat
             "skipped": item.skipped,
             "overwritten": item.overwritten,
             "error": item.error,
+            "page-results": item.page_results,
         })
     validations = []
     for item in report.scrapers:

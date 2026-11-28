@@ -76,6 +76,7 @@ export interface Summary {
   assessorNames: Record<string, string>;
   countries: string[];
   locationEvidence: Record<string, Record<string, { records: number; domains: Record<string, number> }>>;
+  assessorQuality: Record<string, { records: number; unknownDomain: number; unknownLocation: number; noWorkLink: number; noYear: number; years: Record<string, number>; domains: Record<string, number>; sources: Record<string, number> }>;
   achievements: number;
 }
 
@@ -105,10 +106,23 @@ export function listProfiles(): Summary[] {
       const assessorNames = Object.fromEntries(p.endorsements.filter((item): item is Endorsement & { 'assessor-id': string; assessor: string } => Boolean(item['assessor-id'] && item.assessor)).map((item) => [item['assessor-id'], item.assessor]));
       const assessorIds = [...new Set(p.endorsements.map((item) => item['assessor-id']).filter((assessorId): assessorId is string => Boolean(assessorId)))].sort();
       const locationEvidence: Summary['locationEvidence'] = {};
+      const assessorQuality: Summary['assessorQuality'] = {};
       for (const item of p.endorsements ?? []) {
         const id = item['assessor-id'];
+        if (!id) continue;
+        const quality = assessorQuality[id] ??= { records: 0, unknownDomain: 0, unknownLocation: 0, noWorkLink: 0, noYear: 0, years: {}, domains: {}, sources: {} };
+        quality.records++;
+        if (item.url) {
+          try { const source = new URL(item.url); source.hash = ''; const key = source.href; quality.sources[key] = (quality.sources[key] ?? 0) + 1; } catch { /* Ignore malformed source URLs. */ }
+        }
+        if (!(item.domains ?? []).some((domain) => !['unknown', 'unclassified'].includes(domain.toLowerCase()))) quality.unknownDomain++;
+        for (const domain of new Set((item.domains ?? []).map((value) => value.trim().toLowerCase()).filter((value) => value && !['unknown', 'unclassified'].includes(value)))) quality.domains[domain] = (quality.domains[domain] ?? 0) + 1;
+        if (!item.location?.trim() || item.location.trim().toLowerCase() === 'unknown') quality.unknownLocation++;
+        if (!item['evidence-links']?.length) quality.noWorkLink++;
+        if (item.year) quality.years[item.year] = (quality.years[item.year] ?? 0) + 1;
+        else quality.noYear++;
         const location = item.location?.trim();
-        if (!id || !location || location.toLowerCase() === 'unknown') continue;
+        if (!location || location.toLowerCase() === 'unknown') continue;
         const byAssessor = locationEvidence[location] ??= {};
         const evidence = byAssessor[id] ??= { records: 0, domains: {} };
         evidence.records++;
@@ -130,6 +144,7 @@ export function listProfiles(): Summary[] {
         assessorNames,
         countries: Array.isArray(p.countries) ? p.countries.filter((country): country is string => typeof country === 'string' && !!country.trim() && country !== 'Worldwide') : [],
         locationEvidence,
+        assessorQuality,
         achievements: (p.tags ?? []).filter((tag) => ACHIEVEMENT_TAGS.has(tag)).length,
       };
     })

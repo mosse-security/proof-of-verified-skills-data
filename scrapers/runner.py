@@ -39,6 +39,7 @@ class ScraperReport:
     skipped: int = 0
     overwritten: int = 0
     error: str | None = None
+    page_results: list[dict] = field(default_factory=list)
 
 
 @dataclass(slots=True)
@@ -139,6 +140,8 @@ class ScraperRunner:
                     )
                 seen_requests.add(request.fingerprint)
 
+                page_record = {"url": request.url, "status": "failed", "records": None}
+                report.page_results.append(page_record)
                 response = client.fetch(request)
                 report.pages += 1
                 result = scraper.parse(response, request)
@@ -147,6 +150,8 @@ class ScraperRunner:
                         f"{scraper.scraper_id}.parse() must return PageResult, "
                         f"not {type(result).__name__}"
                     )
+
+                page_record.update(status="parsed", records=len(result.endorsements))
 
                 for endorsement in result.endorsements:
                     if endorsement.domains == ("unknown",) and is_non_endorsement_session(

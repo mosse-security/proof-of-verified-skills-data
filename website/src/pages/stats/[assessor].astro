@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import { listAssessorStats } from '../../lib/assessor-stats';
+import { sitePath } from '../../lib/site';
+import { formatDomain } from '../../lib/records';
+
+export function getStaticPaths() {
+  return listAssessorStats().map((assessor) => ({ params: { assessor: assessor.id }, props: { assessor } }));
+}
+const assessor = Astro.props.assessor;
+const percent = (count: number) => assessor.records ? `${Math.round(count / assessor.records * 100)}%` : '—';
+const recordedYears = Object.keys(assessor.years).map(Number).filter((year) => Number.isInteger(year) && year >= 1000 && year <= 9999);
+const firstYear = Math.min(...recordedYears);
+const lastYear = Math.max(...recordedYears);
+const years: Array<[string, number]> = recordedYears.length && lastYear - firstYear <= 100
+  ? Array.from({ length: lastYear - firstYear + 1 }, (_, index) => { const year = String(lastYear - index); return [year, assessor.years[year] ?? 0]; })
+  : Object.entries(assessor.years).sort(([a], [b]) => Number(b) - Number(a));
+const largest = Math.max(1, ...years.map(([, count]) => count));
+const domains = Object.entries(assessor.domains as Record<string, number>).sort(([a, countA], [b, countB]) => countB - countA || formatDomain(a).localeCompare(formatDomain(b)));
+const largestDomain = Math.max(1, ...domains.map(([, count]) => count), assessor.unknownDomain);
+const countOrUnknown = (count: number | null) => count === null ? 'Not available' : count.toLocaleString();
+const qualityMeasures = [
+  { label: 'Domain not classified', count: assessor.unknownDomain, help: 'These records have no classified cyber domain. Review the work and assign the relevant domain when supported by the source.' },
+  { label: 'Location unknown', count: assessor.unknownLocation, help: 'These records have no known event location. Check the source and add the country when it can be verified.' },
+  { label: 'No additional evidence links', count: assessor.noWorkLink, help: 'These records have no additional links to material such as videos or papers. Add a suitable public link if one exists; the source page may already be linked and extra material may not exist.' },
+  { label: 'Year not specified', count: assessor.noYear, help: 'These records have no year. Check the source and add the year when it can be verified.' },
+];
+const lastCapture = assessor.lastCapture && !Number.isNaN(Date.parse(assessor.lastCapture)) ? assessor.lastCapture.slice(0, 10) : 'Not available';
+---
+<Base home title={`${assessor.name} Data Coverage | Vetted Cyber Talent`} description={`Explore the data coverage of ${assessor.name}, including record counts and missing fields.`}>
+  <div class="country-detail-intro"><a class="country-back" href={sitePath('/stats/')}>← All assessor statistics</a><span class="section-kicker">Assessor data coverage</span><h1>{assessor.name}</h1><p>Explore the public records currently in the registry and identify fields that may need attention.</p></div>
+  <section class="stats-overview" aria-label="Assessor coverage overview">
+    <div><span>Endorsements</span><strong>{assessor.records.toLocaleString()}</strong><small>one per person credited</small></div>
+    <div><span>People</span><strong>{assessor.people.toLocaleString()}</strong><small>with a record from this assessor</small></div>
+    <div><span>Domain not classified</span><strong>{assessor.unknownDomain.toLocaleString()}</strong><small>{percent(assessor.unknownDomain)} of records</small></div>
+    <div><span>Location unknown</span><strong>{assessor.unknownLocation.toLocaleString()}</strong><small>{percent(assessor.unknownLocation)} of records</small></div>
+  </section>
+  <div class="country-explainer"><span class="country-explainer-icon" aria-hidden="true">◎</span><p>Record counts are based on individual profiles: a work credited to multiple people is counted once per person. Missing information is an opportunity to investigate, not proof that the underlying work is unavailable.</p></div>
+  <div class="stats-detail-grid">
+    <section class="stats-detail-card"><span class="section-kicker">Record quality</span><h2>Information to investigate</h2><div class="stats-detail-list stats-quality-list">{qualityMeasures.map((measure, index) => <div><span class="stats-quality-label">{measure.label} <button type="button" class="stats-help" aria-label={`About ${measure.label.toLowerCase()}`} aria-describedby={`quality-help-${index}`}>?<span class="stats-help-tooltip" id={`quality-help-${index}`} role="tooltip">{measure.help}</span></button></span><span class="stats-quality-value"><span class:list={['stats-evidence-chip', measure.count ? 'stats-evidence-chip-attention' : 'stats-evidence-chip-good']}>{measure.count.toLocaleString()}</span><small>{percent(measure.count)}</small></span></div>)}</div><p class="stats-note">Missing information is a prompt to investigate; additional material may not exist for every record.</p></section>
+    <section class="stats-detail-card"><span class="section-kicker">Collection status</span><h2>Capture and review</h2><div class="stats-detail-list"><div><span>Last capture</span><strong>{lastCapture}</strong></div><div><span>Last capture status</span><strong>{assessor.captureStatus === 'ok' ? 'Completed' : assessor.captureStatus === 'failed' ? 'Failed' : assessor.captureStatus === 'not-run' ? 'Not run' : 'Not available'}</strong></div><div><span>Names awaiting review</span><strong>{countOrUnknown(assessor.reviewNames)}</strong></div><div><span>Configured process URLs</span><strong>{assessor.sourceUrls.toLocaleString()}</strong></div></div><p class="stats-note">Capture status and review lists reflect the last saved run; configured URLs do not measure how much of the source has been collected.</p></section>
+  </div>
+  <section class="stats-detail-card stats-source-pages"><span class="section-kicker">Source coverage</span><h2>Pages listed for parsing</h2><p class="stats-note">Endorsements are counted from published records. A dash means the count could not be determined.</p>{assessor.pages.length ? <div class="stats-source-list"><div class="stats-source-row stats-source-header"><span>Page</span><span>Endorsements</span></div>{assessor.pages.map((page) => <div class="stats-source-row"><a href={page.url} target="_blank" rel="noopener noreferrer">{page.url}</a><strong>{page.published > 0 ? page.published.toLocaleString() : page.status === 'parsed' && page.records === 0 ? '0' : '—'}</strong></div>)}</div> : <p class="stats-note">No archive pages are listed for parsing for this assessor.</p>}</section>
+  <section class="stats-detail-card stats-years"><span class="section-kicker">Published records</span><h2>Records by year</h2><p class="stats-note">A zero indicates no records in POVS for that year; it does not establish whether the assessor had activity.</p>{years.length ? <div class="stats-year-list">{years.map(([year, count]) => <div class="stats-year-row"><span>{year}</span><span class="stats-year-track"><span style={`width:${count / largest * 100}%`}></span></span><strong>{count.toLocaleString()}</strong></div>)}</div> : <p class="stats-note">No dated records are available yet.</p>}</section>
+  <section class="stats-detail-card stats-domains"><span class="section-kicker">Published endorsements</span><h2>Endorsements by cyber domain</h2><p class="stats-note">An endorsement can be counted in more than one domain. Unclassified endorsements are shown separately.</p>{domains.length || assessor.unknownDomain ? <div class="stats-domain-list">{domains.map(([domain, count]) => <div class="stats-domain-row"><span>{formatDomain(domain)}</span><span class="stats-year-track"><span style={`width:${count / largestDomain * 100}%`}></span></span><strong>{count.toLocaleString()}</strong></div>)}{assessor.unknownDomain > 0 && <div class="stats-domain-row"><span>Not classified</span><span class="stats-year-track"><span style={`width:${assessor.unknownDomain / largestDomain * 100}%`}></span></span><strong>{assessor.unknownDomain.toLocaleString()}</strong></div>}</div> : <p class="stats-note">No endorsements are available yet.</p>}</section>
+  {assessor.people > 0 && <a class="stats-view-assessor" href={sitePath(`/assessors/${encodeURIComponent(assessor.id)}/`)}>View people endorsed by {assessor.name} →</a>}
+</Base>
